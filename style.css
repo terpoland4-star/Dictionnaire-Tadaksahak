@@ -178,6 +178,44 @@ audio {
   transform: translateY(-2px);
 }
 
+.suggestions {
+  list-style: none;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  max-height: 180px;
+  overflow-y: auto;
+  display: none;
+  position: absolute;
+  width: calc(100% - 2rem);
+  margin: 0;
+  padding: 0;
+  z-index: 10;
+}
+
+.suggestions.show { display: block; }
+
+.suggestions li {
+  padding: 0.6rem;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.suggestions li:hover {
+  background: #0077ff;
+  color: white;
+}
+
+.mot-historique {
+  cursor: pointer;
+  color: #66c;
+}
+
+.mot-historique:hover {
+  text-decoration: underline;
+}
+
+
 /* ========== PIED DE PAGE ========== */
 footer {
   margin-top: auto;
