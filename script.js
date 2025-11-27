@@ -1,15 +1,19 @@
 /* ===========================================================
    📘 Dictionnaire Tadakssahak Multilingue - compatible JSON Hamadine
    - Recherche multi-langues (fr / en / ar / tadaksahak)
+   - Suggestions tolérantes aux fautes (fuzzy / Levenshtein)
+   - Placeholder dynamique selon la langue de recherche
    =========================================================== */
 
 let vocabulaire = [];
 let langueActuelle = "fr"; // langue d'affichage de la traduction
-let searchLang = "td"; // langue utilisée pour la recherche : 'td' = Tadakssahak, 'fr','en','ar'
+let searchLang = "td"; // langue utilisée pour la recherche : 'td' = Tadaksahak, 'fr','en','ar'
 let motActuel = null;
 let historique = [];
 
-// Helper: récupérer le premier élément correspondant à une liste d'IDs
+/* ----------------------
+   UTILITAIRES
+   ---------------------- */
 function getByAnyId(...ids) {
   for (const id of ids) {
     const el = document.getElementById(id);
@@ -22,7 +26,6 @@ function getByAnyId(...ids) {
 function normalizeText(s) {
   if (!s) return "";
   try {
-    // Supprime les diacritiques (accents) pour la plupart des langues latines
     return s
       .toString()
       .normalize("NFD")
@@ -33,7 +36,33 @@ function normalizeText(s) {
   }
 }
 
-// === INITIALISATION ===
+// Calcul de la distance de Levenshtein (classic)
+// Source: implémentation standard, O(n*m)
+function levenshtein(a, b) {
+  const an = a.length, bn = b.length;
+  if (an === 0) return bn;
+  if (bn === 0) return an;
+
+  const matrix = Array.from({ length: an + 1 }, () => new Array(bn + 1).fill(0));
+  for (let i = 0; i <= an; i++) matrix[i][0] = i;
+  for (let j = 0; j <= bn; j++) matrix[0][j] = j;
+
+  for (let i = 1; i <= an; i++) {
+    for (let j = 1; j <= bn; j++) {
+      const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+      matrix[i][j] = Math.min(
+        matrix[i - 1][j] + 1,    // deletion
+        matrix[i][j - 1] + 1,    // insertion
+        matrix[i - 1][j - 1] + cost // substitution
+      );
+    }
+  }
+  return matrix[an][bn];
+}
+
+/* ----------------------
+   INITIALISATION
+   ---------------------- */
 document.addEventListener("DOMContentLoaded", async () => {
   await chargerDictionnaire();
   initialiserRecherche();
@@ -41,7 +70,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   console.log("📚 Dictionnaire Tadakssahak prêt !");
 });
 
-// === CHARGER LES MOTS ===
+/* ----------------------
+   CHARGER DICTIONNAIRE
+   ---------------------- */
 async function chargerDictionnaire() {
   try {
     const response = await fetch("data/mots.json");
@@ -59,86 +90,152 @@ async function chargerDictionnaire() {
   }
 }
 
-// === BARRE DE RECHERCHE + SUGGESTIONS (multi-langues) ===
+/* ----------------------
+   RECHERCHE + SUGGESTIONS (avec fuzzy)
+   ---------------------- */
 function initialiserRecherche() {
   const searchBar = document.getElementById("searchBar");
   const suggestionsList = document.getElementById("suggestions");
 
   // Créer un select pour choisir la langue de recherche (injection dynamique si HTML non modifié)
   const searchSection = document.querySelector(".search-section");
+  let select;
   if (searchSection) {
-    const selectorWrapper = document.createElement("div");
-    selectorWrapper.style.display = "flex";
-    selectorWrapper.style.justifyContent = "center";
-    selectorWrapper.style.marginBottom = "0.5rem";
-    selectorWrapper.style.gap = "0.5rem";
-    selectorWrapper.style.alignItems = "center";
+    const existing = document.getElementById("searchLangSelect");
+    if (!existing) {
+      const selectorWrapper = document.createElement("div");
+      selectorWrapper.style.display = "flex";
+      selectorWrapper.style.justifyContent = "center";
+      selectorWrapper.style.marginBottom = "0.5rem";
+      selectorWrapper.style.gap = "0.5rem";
+      selectorWrapper.style.alignItems = "center";
 
-    const label = document.createElement("label");
-    label.textContent = "Chercher depuis :";
-    label.style.fontSize = "0.9rem";
-    label.style.color = "#ccc";
+      const label = document.createElement("label");
+      label.textContent = "Chercher depuis :";
+      label.style.fontSize = "0.9rem";
+      label.style.color = "#ccc";
 
-    const select = document.createElement("select");
-    select.id = "searchLangSelect";
-    select.style.padding = "0.4rem";
-    select.style.borderRadius = "6px";
-    select.style.border = "1px solid #2b2f36";
-    select.style.background = "#1c1f26";
-    select.style.color = "#f1f1f1";
+      select = document.createElement("select");
+      select.id = "searchLangSelect";
+      select.style.padding = "0.4rem";
+      select.style.borderRadius = "6px";
+      select.style.border = "1px solid #2b2f36";
+      select.style.background = "#1c1f26";
+      select.style.color = "#f1f1f1";
 
-    const options = [
-      { value: "td", label: "Tadaksahak" },
-      { value: "fr", label: "FR" },
-      { value: "en", label: "EN" },
-      { value: "ar", label: "AR" }
-    ];
+      const options = [
+        { value: "td", label: "Tadaksahak" },
+        { value: "fr", label: "FR" },
+        { value: "en", label: "EN" },
+        { value: "ar", label: "AR" }
+      ];
 
-    options.forEach(o => {
-      const opt = document.createElement("option");
-      opt.value = o.value;
-      opt.textContent = o.label;
-      select.appendChild(opt);
-    });
+      options.forEach(o => {
+        const opt = document.createElement("option");
+        opt.value = o.value;
+        opt.textContent = o.label;
+        select.appendChild(opt);
+      });
 
-    select.value = searchLang;
-    select.addEventListener("change", () => {
-      searchLang = select.value;
-      // recalculer suggestions pour la valeur actuelle
-      triggerInput();
-      // mettre le focus sur la barre
-      searchBar.focus();
-    });
+      select.value = searchLang;
+      select.addEventListener("change", () => {
+        searchLang = select.value;
+        updatePlaceholder();
+        // recalculer suggestions pour la valeur actuelle
+        triggerInput();
+        searchBar.focus();
+      });
 
-    selectorWrapper.appendChild(label);
-    selectorWrapper.appendChild(select);
+      selectorWrapper.appendChild(label);
+      selectorWrapper.appendChild(select);
 
-    // Insérer au-dessus de la barre de recherche
-    searchSection.insertBefore(selectorWrapper, searchSection.firstChild);
+      // Insérer au-dessus de la barre de recherche
+      searchSection.insertBefore(selectorWrapper, searchSection.firstChild);
+    } else {
+      select = existing;
+      select.value = searchLang;
+      select.addEventListener("change", () => {
+        searchLang = select.value;
+        updatePlaceholder();
+        triggerInput();
+        searchBar.focus();
+      });
+    }
   }
+
+  // Met à jour le placeholder selon la langue de recherche
+  function updatePlaceholder() {
+    const map = { td: "Tadaksahak", fr: "FR", en: "EN", ar: "AR" };
+    if (searchBar) {
+      searchBar.placeholder = `Chercher un mot ${map[searchLang] || ""}...`;
+    }
+  }
+  updatePlaceholder();
 
   function triggerInput() {
     const evt = new Event("input");
     searchBar.dispatchEvent(evt);
   }
 
+  // Fonction qui retourne les résultats triés et tolérants aux fautes
+  function chercher(queryRaw) {
+    const query = normalizeText(queryRaw);
+    if (!query) return [];
+
+    // Pour chaque item, calculer une "distance/score" : lower = meilleur
+    const candidates = [];
+
+    for (const item of vocabulaire) {
+      const field = searchLang === "td" ? (item.mot || "") : (item[searchLang] || "");
+      const normField = normalizeText(field);
+
+      if (!normField) continue;
+
+      // Pré-calculer conditions préférentielles
+      if (normField.startsWith(query)) {
+        // meilleur score pour prefix match
+        candidates.push({ item, score: 0, displayField: field });
+        continue;
+      }
+      if (normField.includes(query)) {
+        // très bon score pour substring match
+        candidates.push({ item, score: 1, displayField: field });
+        continue;
+      }
+
+      // Sinon, calculer distance de Levenshtein pour tolérance aux fautes
+      // seuil variable selon longueur de la query
+      const dist = levenshtein(normField, query);
+      const maxAllowed = Math.max(1, Math.floor(query.length * 0.35)); // heuristique
+      if (dist <= maxAllowed) {
+        // score basé sur la distance mais pondéré
+        candidates.push({ item, score: 2 + dist, displayField: field });
+      } else {
+        // pour de longues chaines, on peut autoriser un peu plus (optionnel)
+        // on ignore les très mauvais candidats
+      }
+    }
+
+    // Trier par score puis par ordre alphabétique tadaksahak pour stabilité
+    candidates.sort((a, b) => {
+      if (a.score !== b.score) return a.score - b.score;
+      const am = normalizeText(a.item.mot);
+      const bm = normalizeText(b.item.mot);
+      return am < bm ? -1 : am > bm ? 1 : 0;
+    });
+
+    return candidates.map(c => c.item);
+  }
+
+  // Input handler
   searchBar.addEventListener("input", () => {
     const rawQuery = searchBar.value.trim();
-    const query = normalizeText(rawQuery);
     suggestionsList.innerHTML = "";
     suggestionsList.classList.remove("show");
 
-    if (query.length === 0) return;
+    if (rawQuery.length === 0) return;
 
-    // Filtrer selon la langue de recherche
-    const resultats = vocabulaire.filter(item => {
-      if (searchLang === "td") {
-        return normalizeText(item.mot).startsWith(query);
-      } else {
-        const field = item[searchLang] || "";
-        return normalizeText(field).startsWith(query);
-      }
-    });
+    const resultats = chercher(rawQuery);
 
     // Afficher un message si aucun résultat
     if (resultats.length === 0) {
@@ -148,17 +245,16 @@ function initialiserRecherche() {
       suggestionsList.appendChild(li);
     } else {
       resultats.slice(0, 12).forEach(item => {
-        // texte affiché : mot Tadakssahak — (traduction recherchée) [lang]
-        let matchedText = "";
-        if (searchLang === "td") matchedText = item.mot;
-        else matchedText = item[searchLang] || "";
-
+        // texte affiché : mot Tadaksahak — (traduction recherchée) [lang]
+        const matchedText = (searchLang === "td") ? (item.mot || "") : (item[searchLang] || "");
         const langLabel = searchLang === "td" ? "TD" : searchLang.toUpperCase();
 
-        const li = document.createElement("li");
-        li.innerHTML = `<strong>${item.mot}</strong> — <span style="opacity:.9">${matchedText}</span> <em style="opacity:.6">(${langLabel})</em>`;
+        // mise en évidence très simple du fragment correspondant (si possible)
+        const displayMatched = highlightMatch(matchedText, rawQuery);
 
-        // Au clic : afficher le mot Tadakssahak correspondant
+        const li = document.createElement("li");
+        li.innerHTML = `<strong>${escapeHtml(item.mot)}</strong> — <span style="opacity:.95">${displayMatched}</span> <em style="opacity:.6">(${langLabel})</em>`;
+
         li.addEventListener("click", () => {
           // remplir la barre par le texte trouvé dans la langue recherchée (utile pour contexte)
           searchBar.value = matchedText;
@@ -206,15 +302,15 @@ function initialiserRecherche() {
   });
 }
 
-// === AFFICHER UN MOT ===
+/* ----------------------
+   AFFICHAGE D'UN MOT
+   ---------------------- */
 function afficherMot(item) {
   motActuel = item;
 
-  // Supporter plusieurs IDs possibles dans index.html (motTexte ou mot)
   const motElem = getByAnyId("motTexte", "mot");
   if (motElem) {
     motElem.textContent = item.mot;
-    // animation simple
     motElem.style.opacity = 0;
     setTimeout(() => (motElem.style.opacity = 1), 150);
   } else {
@@ -224,16 +320,15 @@ function afficherMot(item) {
   const definitionElem = document.getElementById("definition");
   if (definitionElem) {
     definitionElem.innerHTML = `
-      <p><strong>Catégorie :</strong> ${item.categorie || ""}</p>
-      <p><strong>Prononciation :</strong> ${item.prononciation || ""}</p>
+      <p><strong>Catégorie :</strong> ${escapeHtml(item.categorie || "")}</p>
+      <p><strong>Prononciation :</strong> ${escapeHtml(item.prononciation || "")}</p>
       <p><strong>${langueActuelle.toUpperCase()} :</strong> ${
-      item[langueActuelle] || "Traduction non disponible."
+      escapeHtml(item[langueActuelle] || "Traduction non disponible.")
     }</p>
-      <p><em>${item.definition || ""}</em></p>
+      <p><em>${escapeHtml(item.definition || "")}</em></p>
     `;
   }
 
-  // Supporter plusieurs IDs d'audio (audioLecteur ou audio)
   const audio = getByAnyId("audioLecteur", "audio");
   if (audio && item.audio) {
     audio.src = `audio/${item.audio}`;
@@ -246,7 +341,9 @@ function afficherMot(item) {
   ajouterHistorique(item.mot);
 }
 
-// === CHANGEMENT DE LANGUE D'AFFICHAGE ===
+/* ----------------------
+   CHANGEMENT DE LANGUE D'AFFICHAGE
+   ---------------------- */
 function changerLangue(langue) {
   langueActuelle = langue;
 
@@ -254,12 +351,12 @@ function changerLangue(langue) {
     const definitionElem = document.getElementById("definition");
     if (definitionElem) {
       definitionElem.innerHTML = `
-        <p><strong>Catégorie :</strong> ${motActuel.categorie || ""}</p>
-        <p><strong>Prononciation :</strong> ${motActuel.prononciation || ""}</p>
+        <p><strong>Catégorie :</strong> ${escapeHtml(motActuel.categorie || "")}</p>
+        <p><strong>Prononciation :</strong> ${escapeHtml(motActuel.prononciation || "")}</p>
         <p><strong>${langueActuelle.toUpperCase()} :</strong> ${
-        motActuel[langueActuelle] || "Traduction non disponible."
+        escapeHtml(motActuel[langueActuelle] || "Traduction non disponible.")
       }</p>
-        <p><em>${motActuel.definition || ""}</em></p>
+        <p><em>${escapeHtml(motActuel.definition || "")}</em></p>
       `;
     }
   }
@@ -270,7 +367,9 @@ function changerLangue(langue) {
   });
 }
 
-// === HISTORIQUE ===
+/* ----------------------
+   HISTORIQUE
+   ---------------------- */
 function ajouterHistorique(mot) {
   historique = JSON.parse(localStorage.getItem("historiqueTadakssahak")) || [];
   historique = historique.filter(m => m !== mot);
@@ -304,7 +403,7 @@ function afficherHistorique() {
     bloc.innerHTML =
       "<strong>Derniers mots :</strong> " +
       historique
-        .map(m => `<span class='mot-historique' onclick="rechercherDepuisHistorique('${m}')">${m}</span>`)
+        .map(m => `<span class='mot-historique' onclick="rechercherDepuisHistorique('${m}')">${escapeHtml(m)}</span>`)
         .join(", ");
   }
 }
@@ -314,12 +413,46 @@ function rechercherDepuisHistorique(mot) {
   if (element) afficherMot(element);
 }
 
-// === AUDIO LECTURE ===
+/* ----------------------
+   AUDIO
+   ---------------------- */
 function jouerTadaksahak() {
   const audio = getByAnyId("audioLecteur", "audio");
   if (audio && motActuel && motActuel.audio) {
     audio.play();
   }
+}
+
+/* ----------------------
+   PETITES FONCTIONS D'AIDE (sécurité / mise en évidence)
+   ---------------------- */
+// échappe du HTML basique pour éviter l'injection via le JSON (sécurise les innerHTML)
+function escapeHtml(str) {
+  if (!str) return "";
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+// met en évidence la première occurrence de la sous-chaîne (après normalisation)
+// on réalise la recherche sur la version non-normalisée pour conserver les accents visibles
+function highlightMatch(text, queryRaw) {
+  if (!text) return "";
+  const normText = normalizeText(text);
+  const normQuery = normalizeText(queryRaw);
+  const idx = normText.indexOf(normQuery);
+  if (idx === -1) {
+    // pas de match direct, on retourne le texte échappé
+    return escapeHtml(text);
+  }
+  // mettre en bold la portion correspondante sur le texte original
+  const before = escapeHtml(text.slice(0, idx));
+  const match = escapeHtml(text.slice(idx, idx + queryRaw.length));
+  const after = escapeHtml(text.slice(idx + queryRaw.length));
+  return `${before}<mark style="background:rgba(255,255,0,0.12);color:inherit;padding:0 .1rem;border-radius:2px">${match}</mark>${after}`;
 }
 
 window.addEventListener("offline", () => {
