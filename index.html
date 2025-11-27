@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dictionnaire Tadakssahak Multilingue</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <img src="images/idaksahak_round.png" alt="Logo Tadakssahak" class="logo" />
+    <h1>Dictionnaire Tadakssahak Multilingue</h1>
+    <p class="subtitle">Découvrez et apprenez la langue des Idakssahak</p>
+  </header>
+
+  <main>
+    <section class="search-section">
+      <input 
+        id="searchBar" 
+        type="text" 
+        placeholder="Chercher un mot Tadakssahak..." 
+        autocomplete="off"
+      />
+      <ul id="suggestions" class="suggestions-list"></ul>
+    </section>
+
+    <section class="result-section">
+      <h2 id="mot"></h2>
+      <p id="definition"></p>
+      <audio id="audio" controls hidden></audio>
+
+      <div class="lang-switch">
+        <button onclick="changerLangue('fr')">FR</button>
+        <button onclick="changerLangue('en')">EN</button>
+        <button onclick="changerLangue('ar')">AR</button>
+        <button onclick="changerLangue('tz')">TZ</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 • Dictionnaire Tadakssahak Multilingue</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
