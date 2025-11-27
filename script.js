@@ -7,6 +7,15 @@ let langueActuelle = "fr";
 let motActuel = null;
 let historique = [];
 
+// Helper: récupérer le premier élément correspondant à une liste d'IDs
+function getByAnyId(...ids) {
+  for (const id of ids) {
+    const el = document.getElementById(id);
+    if (el) return el;
+  }
+  return null;
+}
+
 // === INITIALISATION ===
 document.addEventListener("DOMContentLoaded", async () => {
   await chargerDictionnaire();
@@ -22,6 +31,7 @@ async function chargerDictionnaire() {
     vocabulaire = await response.json();
   } catch (err) {
     console.error("❌ Erreur lors du chargement du dictionnaire :", err);
+    // Afficher un message utilisateur possible ici (amélioration future)
   }
 }
 
@@ -44,12 +54,44 @@ function initialiserRecherche() {
     resultats.slice(0, 8).forEach(item => {
       const li = document.createElement("li");
       li.textContent = `${item.mot} (${item.categorie})`;
-      li.addEventListener("click", () => afficherMot(item));
+
+      // Au clic : remplir la barre de recherche, masquer les suggestions et afficher le mot
+      li.addEventListener("click", () => {
+        searchBar.value = item.mot;
+        suggestionsList.innerHTML = "";
+        suggestionsList.classList.remove("show");
+        afficherMot(item);
+      });
+
       suggestionsList.appendChild(li);
     });
 
     if (resultats.length > 0) {
       suggestionsList.classList.add("show");
+    }
+  });
+
+  // Touche Entrée : sélectionner la première suggestion si elle existe
+  searchBar.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      const first = suggestionsList.querySelector("li");
+      if (first) {
+        first.click();
+        e.preventDefault();
+      } else {
+        // éventuellement lancer une recherche exacte
+        const query = searchBar.value.trim().toLowerCase();
+        const exact = vocabulaire.find(item => item.mot.toLowerCase() === query);
+        if (exact) afficherMot(exact);
+      }
+    }
+  });
+
+  // Clic à l'extérieur : masquer les suggestions
+  document.addEventListener("click", (e) => {
+    if (!searchBar.contains(e.target) && !suggestionsList.contains(e.target)) {
+      suggestionsList.innerHTML = "";
+      suggestionsList.classList.remove("show");
     }
   });
 }
@@ -58,29 +100,40 @@ function initialiserRecherche() {
 function afficherMot(item) {
   motActuel = item;
 
-  document.getElementById("motTexte").textContent = item.mot;
-  document.getElementById("definition").innerHTML = `
-    <p><strong>Catégorie :</strong> ${item.categorie}</p>
-    <p><strong>Prononciation :</strong> ${item.prononciation}</p>
-    <p><strong>${langueActuelle.toUpperCase()} :</strong> ${
-      item[langueActuelle] || "Traduction non disponible."
-    }</p>
-    <p><em>${item.definition}</em></p>
-  `;
+  // Supporter plusieurs IDs possibles dans index.html (motTexte ou mot)
+  const motElem = getByAnyId("motTexte", "mot");
+  if (motElem) {
+    motElem.textContent = item.mot;
+    // animation simple
+    motElem.style.opacity = 0;
+    setTimeout(() => (motElem.style.opacity = 1), 150);
+  } else {
+    console.warn("Aucun élément #motTexte ni #mot trouvé dans la page.");
+  }
 
-  const audio = document.getElementById("audioLecteur");
+  const definitionElem = document.getElementById("definition");
+  if (definitionElem) {
+    definitionElem.innerHTML = `
+      <p><strong>Catégorie :</strong> ${item.categorie}</p>
+      <p><strong>Prononciation :</strong> ${item.prononciation}</p>
+      <p><strong>${langueActuelle.toUpperCase()} :</strong> ${
+        item[langueActuelle] || "Traduction non disponible."
+      }</p>
+      <p><em>${item.definition}</em></p>
+    `;
+  }
+
+  // Supporter plusieurs IDs d'audio (audioLecteur ou audio)
+  const audio = getByAnyId("audioLecteur", "audio");
   if (audio && item.audio) {
     audio.src = `audio/${item.audio}`;
     audio.hidden = false;
   } else if (audio) {
     audio.hidden = true;
+    audio.removeAttribute("src");
   }
 
   ajouterHistorique(item.mot);
-
-  const motElem = document.getElementById("motTexte");
-  motElem.style.opacity = 0;
-  setTimeout(() => (motElem.style.opacity = 1), 150);
 }
 
 // === CHANGEMENT DE LANGUE ===
@@ -88,14 +141,17 @@ function changerLangue(langue) {
   langueActuelle = langue;
 
   if (motActuel) {
-    document.getElementById("definition").innerHTML = `
-      <p><strong>Catégorie :</strong> ${motActuel.categorie}</p>
-      <p><strong>Prononciation :</strong> ${motActuel.prononciation}</p>
-      <p><strong>${langueActuelle.toUpperCase()} :</strong> ${
-        motActuel[langueActuelle] || "Traduction non disponible."
-      }</p>
-      <p><em>${motActuel.definition}</em></p>
-    `;
+    const definitionElem = document.getElementById("definition");
+    if (definitionElem) {
+      definitionElem.innerHTML = `
+        <p><strong>Catégorie :</strong> ${motActuel.categorie}</p>
+        <p><strong>Prononciation :</strong> ${motActuel.prononciation}</p>
+        <p><strong>${langueActuelle.toUpperCase()} :</strong> ${
+          motActuel[langueActuelle] || "Traduction non disponible."
+        }</p>
+        <p><em>${motActuel.definition}</em></p>
+      `;
+    }
   }
 
   document.querySelectorAll(".lang-switch button").forEach(btn => {
@@ -150,7 +206,7 @@ function rechercherDepuisHistorique(mot) {
 
 // === AUDIO LECTURE ===
 function jouerTadaksahak() {
-  const audio = document.getElementById("audioLecteur");
+  const audio = getByAnyId("audioLecteur", "audio");
   if (audio && motActuel && motActuel.audio) {
     audio.play();
   }
