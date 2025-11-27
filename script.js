@@ -1,7 +1,5 @@
 /* ===========================================================
-   📘 Dictionnaire Tadakssahak Multilingue - Édition Oxford
-   Auteur : Hamadine AG MOCTAR
-   Version : 1.2 - Avec historique + animation + audio intelligent
+   📘 Dictionnaire Tadakssahak Multilingue - compatible JSON Hamadine
    =========================================================== */
 
 let vocabulaire = [];
@@ -9,7 +7,7 @@ let langueActuelle = "fr";
 let motActuel = null;
 let historique = [];
 
-// === INITIALISATION DU DICTIONNAIRE ===
+// === INITIALISATION ===
 document.addEventListener("DOMContentLoaded", async () => {
   await chargerDictionnaire();
   initialiserRecherche();
@@ -17,7 +15,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   console.log("📚 Dictionnaire Tadakssahak prêt !");
 });
 
-// === CHARGEMENT DU JSON ===
+// === CHARGER LES MOTS ===
 async function chargerDictionnaire() {
   try {
     const response = await fetch("data/mots.json");
@@ -27,7 +25,7 @@ async function chargerDictionnaire() {
   }
 }
 
-// === RECHERCHE AVEC SUGGESTIONS ===
+// === BARRE DE RECHERCHE + SUGGESTIONS ===
 function initialiserRecherche() {
   const searchBar = document.getElementById("searchBar");
   const suggestionsList = document.getElementById("suggestions");
@@ -43,9 +41,9 @@ function initialiserRecherche() {
       item.mot.toLowerCase().startsWith(query)
     );
 
-    resultats.slice(0, 5).forEach(item => {
+    resultats.slice(0, 8).forEach(item => {
       const li = document.createElement("li");
-      li.textContent = item.mot;
+      li.textContent = `${item.mot} (${item.categorie})`;
       li.addEventListener("click", () => afficherMot(item));
       suggestionsList.appendChild(li);
     });
@@ -56,33 +54,33 @@ function initialiserRecherche() {
   });
 }
 
-// === AFFICHAGE DU MOT SELECTIONNÉ ===
+// === AFFICHER UN MOT ===
 function afficherMot(item) {
   motActuel = item;
-  document.getElementById("mot").textContent = item.mot;
-  document.getElementById("definition").textContent =
-    item.definitions[langueActuelle] || "Définition indisponible.";
 
-  const audio = document.getElementById("audio");
-  if (item.audio) {
-    audio.src = item.audio;
+  document.getElementById("motTexte").textContent = item.mot;
+  document.getElementById("definition").innerHTML = `
+    <p><strong>Catégorie :</strong> ${item.categorie}</p>
+    <p><strong>Prononciation :</strong> ${item.prononciation}</p>
+    <p><strong>${langueActuelle.toUpperCase()} :</strong> ${
+      item[langueActuelle] || "Traduction non disponible."
+    }</p>
+    <p><em>${item.definition}</em></p>
+  `;
+
+  const audio = document.getElementById("audioLecteur");
+  if (audio && item.audio) {
+    audio.src = `audio/${item.audio}`;
     audio.hidden = false;
-  } else {
+  } else if (audio) {
     audio.hidden = true;
   }
 
-  // Enregistrer dans l’historique
   ajouterHistorique(item.mot);
 
-  // Effacer les suggestions
-  document.getElementById("suggestions").innerHTML = "";
-  document.getElementById("suggestions").classList.remove("show");
-  document.getElementById("searchBar").value = item.mot;
-
-  // Animation douce sur le mot
-  const motElem = document.getElementById("mot");
+  const motElem = document.getElementById("motTexte");
   motElem.style.opacity = 0;
-  setTimeout(() => (motElem.style.opacity = 1), 100);
+  setTimeout(() => (motElem.style.opacity = 1), 150);
 }
 
 // === CHANGEMENT DE LANGUE ===
@@ -90,8 +88,14 @@ function changerLangue(langue) {
   langueActuelle = langue;
 
   if (motActuel) {
-    document.getElementById("definition").textContent =
-      motActuel.definitions[langueActuelle] || "Définition indisponible.";
+    document.getElementById("definition").innerHTML = `
+      <p><strong>Catégorie :</strong> ${motActuel.categorie}</p>
+      <p><strong>Prononciation :</strong> ${motActuel.prononciation}</p>
+      <p><strong>${langueActuelle.toUpperCase()} :</strong> ${
+        motActuel[langueActuelle] || "Traduction non disponible."
+      }</p>
+      <p><em>${motActuel.definition}</em></p>
+    `;
   }
 
   document.querySelectorAll(".lang-switch button").forEach(btn => {
@@ -100,15 +104,11 @@ function changerLangue(langue) {
   });
 }
 
-// === GESTION DE L’HISTORIQUE ===
+// === HISTORIQUE ===
 function ajouterHistorique(mot) {
   historique = JSON.parse(localStorage.getItem("historiqueTadakssahak")) || [];
-
-  // Éviter les doublons
   historique = historique.filter(m => m !== mot);
   historique.unshift(mot);
-
-  // Conserver les 10 derniers
   if (historique.length > 10) historique.pop();
 
   localStorage.setItem("historiqueTadakssahak", JSON.stringify(historique));
@@ -148,21 +148,14 @@ function rechercherDepuisHistorique(mot) {
   if (element) afficherMot(element);
 }
 
-// === INTERACTION AUDIO INTELLIGENTE ===
-const audioElem = document.getElementById("audio");
-if (audioElem) {
-  audioElem.addEventListener("play", () => {
-    console.log("▶ Lecture audio en cours…");
-  });
-  audioElem.addEventListener("ended", () => {
-    console.log("⏹ Lecture terminée");
-  });
+// === AUDIO LECTURE ===
+function jouerTadaksahak() {
+  const audio = document.getElementById("audioLecteur");
+  if (audio && motActuel && motActuel.audio) {
+    audio.play();
+  }
 }
 
-// === GESTION DU MODE HORS-LIGNE ===
 window.addEventListener("offline", () => {
   alert("⚠️ Vous êtes hors ligne. Le dictionnaire fonctionne en mode limité.");
-});
-window.addEventListener("online", () => {
-  console.log("🌐 Connexion rétablie !");
 });
