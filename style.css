@@ -278,3 +278,38 @@ footer {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+/* ========== PAGINATION ========== */
+.suggestions-list div {
+  margin-top: 0.3rem;
+}
+
+.suggestions-list div button {
+  background: var(--bg-light);
+  color: var(--accent);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all var(--transition);
+}
+
+.suggestions-list div button:hover:not(:disabled) {
+  background: var(--accent);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.suggestions-list div button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.suggestions-list div span {
+  display: inline-block;
+  min-width: 2.5rem;
+  text-align: center;
+  font-weight: 600;
+  color: #bbb;
+  margin: 0 0.4rem;
+}
