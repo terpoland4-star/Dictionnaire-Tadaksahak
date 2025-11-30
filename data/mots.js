@@ -1,4 +1,4 @@
-window.vocabulaire = [
+[
 
   {
     "mot": "axay",
@@ -1079,7 +1079,7 @@ window.vocabulaire = [
     "definition": "Mot servant à désigner une personne ou une chose.",
     "exemple": "Man ari Tadaksahak — Notre nom est Tadaksahak."
   }
-];
+]
 
 
 
