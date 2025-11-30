@@ -1,4 +1,5 @@
-[
+window.vocabulaire = [
+
   {
     "mot": "axay",
     "categorie": "pronom personnel",
@@ -1078,6 +1079,7 @@
     "definition": "Mot servant à désigner une personne ou une chose.",
     "exemple": "Man ari Tadaksahak — Notre nom est Tadaksahak."
   }
-]
+];
+
 
 
