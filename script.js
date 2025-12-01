@@ -7,7 +7,7 @@
 
 let vocabulaire = [];
 let langueActuelle = "fr"; // langue d'affichage de la traduction
-let searchLang = "td"; // langue utilisée pour la recherche : 'td' = Tadaksahak, 'fr','en','ar'
+let searchLang = "td"; // langue utilisée pour la recherche : 'td' = Tadaksahak, 'fr','en','ar','ru'
 let motActuel = null;
 let historique = [];
 
@@ -165,7 +165,7 @@ function initialiserRecherche() {
 
   // Met à jour le placeholder selon la langue de recherche
   function updatePlaceholder() {
-    const map = { td: "Tadaksahak", fr: "FR", en: "EN", ar: "AR" };
+    const map = { td: "Tadaksahak", fr: "FR", en: "EN", ar: "AR", ru: "RU"  };
     if (searchBar) {
       searchBar.placeholder = `Chercher un mot ${map[searchLang] || ""}...`;
     }
