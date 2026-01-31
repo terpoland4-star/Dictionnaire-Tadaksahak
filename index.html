@@ -1,58 +1,306 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dictionnaire Tadakssahak Multilingue</title>
-  <link rel="stylesheet" href="style.css" />
+  <!-- =========================
+       MÉTADONNÉES GÉNÉRALES
+  ========================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tadaksahak Learning – Dictionnaire Tadaksahak Multilingue</title>
+  <meta name="description" content="Dictionnaire Tadaksahak multilingue, culture, histoire, médias, quiz et mémoire vivante du peuple Idaksahak.">
+  <meta name="author" content="Hamadine Ag Moctar">
+  <meta name="theme-color" content="#005fa3">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <!-- =========================
+       ICONES & PWA
+  ========================== -->
+  <link rel="icon" href="images/idaksahak_square.png" type="image/png">
+  <link rel="apple-touch-icon" href="images/idaksahak_square.png">
+  <link rel="manifest" href="manifest.webmanifest">
+
+  <!-- =========================
+       STYLES
+  ========================== -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- =========================
+       LIBRAIRIES & DONNÉES
+  ========================== -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+  <script src="data/mots_final_489.js"></script>
+  <script src="data/interface_langue.js"></script>
+  <script src="data/histoire.js"></script>
+  <script src="data/audios.js"></script>
+  <script src="data/photos.js"></script>
+  <script src="data/videos.js"></script>
+  <script src="data/docs.js"></script>
+  <script src="data/livres.js"></script>
+  <script src="data/quiz.js"></script>
+
+  <script defer src="app.js"></script>
 </head>
 
 <body>
-  <header>
-    <img src="images/idaksahak_round.png" alt="Logo Tadakssahak" class="logo" />
-    <h1>Dictionnaire Tadakssahak Multilingue</h1>
-    <p class="subtitle">Découvrez et apprenez la langue des Idakssahak</p>
-  </header>
 
-  <main>
-    <section class="search-section">
-      <input 
-        id="searchBar" 
-        type="text" 
-        placeholder="Chercher un mot Tadakssahak..." 
-        autocomplete="off"
-      />
-      <ul id="suggestions" class="suggestions-list"></ul>
-    </section>
+<noscript>
+  <div class="js-warning">
+    ⚠️ JavaScript est nécessaire pour le bon fonctionnement du dictionnaire.
+  </div>
+</noscript>
 
-    <section class="result-section">
-      <!-- id modifié pour correspondre à script.js -->
-      <h2 id="motTexte"></h2>
-      <p id="definition"></p>
-      <!-- id modifié pour correspondre à script.js -->
-      <audio id="audioLecteur" controls hidden></audio>
+<!-- =========================
+     HEADER & NAVIGATION
+========================== -->
+<header class="site-header">
+  <img src="images/idaksahak_round.png"
+       alt="Logo Tadaksahak"
+       class="logo-header"
+       loading="lazy">
 
-      <div class="lang-switch">
-        <button onclick="changerLangue('fr')">FR</button>
-        <button onclick="changerLangue('en')">EN</button>
-        <button onclick="changerLangue('ar')">AR</button>
-        <button onclick="changerLangue('tz')">TZ</button>
-      </div>
-    </section>
+  <h1>Tadaksahak Learning</h1>
+  <p class="subtitle">
+    Dictionnaire Tadaksahak Multilingue – Langue, culture et mémoire Idaksahak
+  </p>
 
-    <section class="bg-neutral-900 text-white py-8 px-6">
-  <h2 class="text-2xl font-bold mb-4">Dictionnaire Tadaksahak — Index Alphabétique</h2>
-  <div id="alphabetIndex" class="flex flex-wrap justify-center mb-6"></div>
-  <div id="wordList" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+  <nav class="main-nav" aria-label="Navigation principale">
+    <select id="sectionSelector">
+      <option value="accueil">🏠 Accueil</option>
+      <option value="dictionnaire">📖 Dictionnaire</option>
+      <option value="chat">💬 Chat</option>
+      <option value="audio">🎧 Audio</option>
+      <option value="photos">🖼️ Photos</option>
+      <option value="videos">🎥 Vidéos</option>
+      <option value="livres">📚 Livres</option>
+      <option value="rapports">📄 Rapports</option>
+      <option value="actualites">📰 Actualités</option>
+      <option value="quiz">❓ Quiz</option>
+    </select>
+  </nav>
+</header>
+
+<!-- =========================
+     CONTENU PRINCIPAL
+========================== -->
+<main>
+
+<!-- =========================
+     ACCUEIL
+========================== -->
+<section id="accueil" class="onglet-contenu">
+  <div class="hero">
+    <h2>Bienvenue sur Tadaksahak Learning</h2>
+    <p>
+      Une plateforme numérique dédiée à la langue Tadaksahak,
+      à la culture Idaksahak et à la transmission des savoirs.
+    </p>
+    <button class="btn" onclick="document.getElementById('sectionSelector').value='dictionnaire'; document.getElementById('sectionSelector').dispatchEvent(new Event('change'));">
+      Accéder au dictionnaire 📖
+    </button>
+  </div>
+
+  <div class="bio-container">
+    <img src="images/hamadine_bio.jpg"
+         alt="Hamadine Ag Moctar"
+         class="bio-photo"
+         loading="lazy">
+
+    <div class="bio-text">
+      <p><strong>Je m'appelle Hamadine Ag Moctar.</strong><br>
+      Interprète multilingue, conteur, développeur autodidacte… et survivant.</p>
+
+      <p>
+        Né au cœur du Sahel, j’ai traversé les frontières, les langues,
+        les conflits et les silences.
+      </p>
+
+      <p>
+        Je conçois des dictionnaires interactifs, des plateformes éducatives
+        multilingues et des outils numériques adaptés aux réalités locales.
+      </p>
+
+      <p>
+        <em>Un bras perdu, mais une voix debout. Une mission : connecter nos mondes.</em>
+      </p>
+    </div>
+  </div>
 </section>
 
-  </main>
+<!-- =========================
+     DICTIONNAIRE (CŒUR)
+========================== -->
+<section id="dictionnaire" class="onglet-contenu" hidden>
+  <h2>📖 Dictionnaire Tadaksahak Multilingue</h2>
 
-  <footer>
-    <p>&copy; 2025 • Dictionnaire Tadakssahak Multilingue</p>
-  </footer>
+  <div class="search-section">
+    <input id="searchBar"
+           type="text"
+           placeholder="Chercher un mot Tadaksahak…"
+           autocomplete="off">
+    <ul id="suggestions" class="suggestions-list"></ul>
+  </div>
 
-  <script src="script.js"></script>
-  <script src="ia_locale.js"></script>
+  <div class="result-section">
+    <h3 id="motTexte">—</h3>
+    <p id="definition">—</p>
+
+    <audio id="audioLecteur" controls hidden></audio>
+
+    <div class="lang-switch">
+      <button onclick="changerLangue('fr')">FR</button>
+      <button onclick="changerLangue('en')">EN</button>
+      <button onclick="changerLangue('ar')">AR</button>
+      <button onclick="changerLangue('tz')">TZ</button>
+    </div>
+
+    <p id="compteur">0 / 0</p>
+  </div>
+
+  <section class="alphabet-section">
+    <h3>Index alphabétique</h3>
+    <div id="alphabetIndex"></div>
+    <div id="wordList"></div>
+  </section>
+</section>
+
+  <!-- =========================
+     CHAT TADAKSAHAK
+========================== -->
+<section id="chat" class="onglet-contenu" hidden>
+  <h2>💬 Chat Tadaksahak</h2>
+  <div id="chatWindow" class="chatbox" role="log" aria-live="polite"></div>
+  <div id="botIntro">🤖 Salut, je suis Hamadine. Pose ta question.</div>
+  <div class="chat-input">
+    <input id="chatInput" placeholder="Écrivez votre message…" aria-label="Message du chat">
+    <button id="btnEnvoyer">Envoyer</button>
+  </div>
+</section>
+
+<!-- =========================
+     AUDIO
+========================== -->
+<section id="audio" class="onglet-contenu" hidden>
+  <h2>🎧 Albums & chants Tadaksahak</h2>
+  <div id="audioContainer"></div>
+</section>
+
+<!-- =========================
+     PHOTOS
+========================== -->
+<section id="photos" class="onglet-contenu" hidden>
+  <h2>🖼️ Galerie photo</h2>
+  <div id="photosContainer" class="grid"></div>
+</section>
+
+<!-- =========================
+     VIDÉOS
+========================== -->
+<section id="videos" class="onglet-contenu" hidden>
+  <h2>🎥 Vidéos</h2>
+  <label for="filtreVideos">Trier :</label>
+  <select id="filtreVideos">
+    <option value="nouveau">Récentes</option>
+    <option value="ancien">Anciennes</option>
+  </select>
+  <div id="videosContainer" class="grid"></div>
+</section>
+
+<!-- =========================
+     LIVRES
+========================== -->
+<section id="livres" class="onglet-contenu" hidden>
+  <h2>📚 Livres & études</h2>
+
+  <input id="rechercheLivres"
+         placeholder="Rechercher un livre…"
+         aria-label="Recherche livres">
+
+  <label for="selectThemeLivres">Filtrer par thème :</label>
+  <select id="selectThemeLivres">
+    <option value="">Tous</option>
+    <option value="linguistique">Linguistique</option>
+    <option value="histoire">Histoire</option>
+  </select>
+
+  <div id="livresContainer"></div>
+</section>
+
+<!-- =========================
+     RAPPORTS
+========================== -->
+<section id="rapports" class="onglet-contenu" hidden>
+  <h2>📄 Rapports & documents</h2>
+  <div id="rapportsContainer"></div>
+</section>
+
+<!-- =========================
+     ACTUALITÉS
+========================== -->
+<section id="actualites" class="onglet-contenu" hidden>
+  <h2>📰 Actualités</h2>
+  <div id="newsContainer"></div>
+</section>
+
+<!-- =========================
+     QUIZ
+========================== -->
+<section id="quiz" class="onglet-contenu" hidden>
+  <h2>❓ Quiz Tadaksahak</h2>
+  <div id="quizContainer"></div>
+</section>
+
+</main>
+
+<!-- =========================
+     BOUTON CHAT FLOTTANT
+========================== -->
+<button id="toggleChatBot" class="floating-chat-btn">💬</button>
+
+<!-- =========================
+     FOOTER
+========================== -->
+<footer class="site-footer">
+  <p>© 2025 Tadaksahak Learning — Tous droits réservés</p>
+  <p>
+    Projet conçu par <strong>Hamadine Ag Moctar</strong> —
+    Dictionnaire, culture et mémoire Idaksahak.
+  </p>
+  <p>
+    <a href="offline.html">Accès hors-ligne (Offline)</a>
+  </p>
+</footer>
+
+<!-- =========================
+     NAVIGATION & INITIALISATION
+========================== -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const select = document.getElementById("sectionSelector");
+  const sections = document.querySelectorAll("main > section");
+
+  function afficherSection(id) {
+    sections.forEach(sec => sec.hidden = sec.id !== id);
+    localStorage.setItem("lastSection", id);
+  }
+
+  if (select) {
+    select.addEventListener("change", () => afficherSection(select.value));
+    const last = localStorage.getItem("lastSection") || "accueil";
+    select.value = last;
+    afficherSection(last);
+  }
+
+  // Bouton chat flottant
+  const toggleChat = document.getElementById("toggleChatBot");
+  if (toggleChat) {
+    toggleChat.addEventListener("click", () => {
+      select.value = "chat";
+      afficherSection("chat");
+    });
+  }
+});
+</script>
+
 </body>
 </html>
+
