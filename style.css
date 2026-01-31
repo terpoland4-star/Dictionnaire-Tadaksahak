@@ -1,5 +1,5 @@
 /* ============================================
-   🎨 Dictionnaire Tadakssahak Multilingue
+   🎨 Tadaksahak Learning – Dictionnaire Fusionné
    Thème : Oxford Dark Mode
    Auteur : Hamadine AG MOCTAR
    ============================================ */
@@ -27,7 +27,6 @@ body {
   font-family: 'Inter', sans-serif;
   background-color: var(--bg);
   color: var(--text);
-  text-align: center;
   line-height: 1.6;
   min-height: 100vh;
   display: flex;
@@ -36,40 +35,136 @@ body {
 }
 
 /* ========== HEADER ========== */
-header {
+header.site-header {
   width: 100%;
   padding: 2rem 1rem;
   background-color: var(--bg-light);
   border-bottom: 1px solid var(--border);
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  text-align: center;
 }
 
-header .logo {
-  width: 80px;
+header.site-header .logo-header {
+  width: 100px;
   border-radius: 50%;
   margin-bottom: 1rem;
   transition: transform var(--transition);
 }
-header .logo:hover {
+header.site-header .logo-header:hover {
   transform: scale(1.05);
 }
 
-header h1 {
-  font-size: 1.6rem;
+header.site-header h1 {
+  font-size: 1.8rem;
   color: var(--accent);
   margin-bottom: 0.3rem;
 }
 
-.subtitle {
+header .subtitle {
   color: #ccc;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
-/* ========== BARRE DE RECHERCHE ========== */
+/* ========== NAVIGATION ========== */
+.main-nav select#sectionSelector {
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg-light);
+  color: var(--text);
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background var(--transition), border-color var(--transition);
+}
+.main-nav select#sectionSelector:hover {
+  border-color: var(--accent);
+}
+
+/* ========== SECTIONS ========== */
+.onglet-contenu {
+  width: 90%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  text-align: left;
+}
+
+/* =========================
+   ACCUEIL / HERO
+========================= */
+.hero {
+  background: var(--bg-light);
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 2rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+}
+
+.hero h2 {
+  color: var(--accent);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  color: #ddd;
+  margin-bottom: 1rem;
+}
+
+.hero .btn {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--primary);
+  color: #fff;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+}
+.hero .btn:hover {
+  background-color: var(--hover);
+  transform: translateY(-2px);
+}
+
+/* =========================
+   BIO / FONDATEUR
+========================= */
+.bio-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.bio-container .bio-photo {
+  width: 200px;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.bio-container .bio-text {
+  flex: 1;
+  color: #ccc;
+}
+
+.bio-container .bio-text a.linkedin-button {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  background-color: var(--primary);
+  color: #fff;
+  text-decoration: none;
+  transition: background var(--transition);
+}
+.bio-container .bio-text a.linkedin-button:hover {
+  background-color: var(--hover);
+}
+
+/* ========== DICTIONNAIRE ========== */
 .search-section {
   margin: 2rem auto;
   max-width: 480px;
-  width: 90%;
+  width: 100%;
   position: relative;
 }
 
@@ -84,14 +179,13 @@ header h1 {
   outline: none;
   transition: border-color var(--transition), background var(--transition);
 }
-
 #searchBar:focus {
   border-color: var(--accent);
   background-color: #1d222b;
 }
 
-/* ========== SUGGESTIONS ========== */
-.suggestions-list {
+/* Suggestions */
+#suggestions {
   list-style: none;
   margin-top: 0.5rem;
   padding: 0;
@@ -105,46 +199,41 @@ header h1 {
   opacity: 0;
   transform: translateY(-5px);
   transition: opacity var(--transition), transform var(--transition);
+  z-index: 10;
 }
-
-.suggestions-list.show {
+#suggestions.show {
   opacity: 1;
   transform: translateY(0);
 }
-
-.suggestions-list li {
+#suggestions li {
   padding: 0.8rem;
-  text-align: left;
   cursor: pointer;
   color: var(--text);
   border-bottom: 1px solid #222;
   transition: background var(--transition);
 }
-
-.suggestions-list li:hover {
+#suggestions li:hover {
   background-color: var(--hover);
 }
 
-/* ========== SECTION DE RESULTAT ========== */
+/* Résultats */
 .result-section {
   background: var(--bg-light);
   padding: 1.5rem;
   border-radius: 12px;
   margin-top: 2rem;
-  width: 90%;
-  max-width: 500px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.4);
   transition: all var(--transition);
 }
 
-#mot {
+.result-section h3#motTexte {
   font-size: 1.8rem;
   font-weight: 600;
   color: var(--accent);
   margin-bottom: 0.5rem;
 }
 
-#definition {
+.result-section p#definition {
   font-size: 1.1rem;
   margin-bottom: 1rem;
   color: #ddd;
@@ -156,11 +245,10 @@ audio {
   border-radius: 8px;
 }
 
-/* ========== BOUTONS DE LANGUE ========== */
+/* Langues */
 .lang-switch {
   margin-top: 1rem;
 }
-
 .lang-switch button {
   margin: 0.2rem;
   padding: 0.5rem 1rem;
@@ -168,148 +256,61 @@ audio {
   border-radius: 6px;
   font-size: 0.9rem;
   cursor: pointer;
-  color: white;
+  color: #fff;
   background-color: var(--primary);
   transition: background var(--transition), transform var(--transition);
 }
-
 .lang-switch button:hover {
   background-color: var(--hover);
   transform: translateY(-2px);
 }
 
-.suggestions {
-  list-style: none;
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  max-height: 180px;
-  overflow-y: auto;
-  display: none;
-  position: absolute;
-  width: calc(100% - 2rem);
-  margin: 0;
-  padding: 0;
-  z-index: 10;
+/* Alphabet index */
+.alphabet-section {
+  margin-top: 2rem;
+}
+.alphabet-section h3 {
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+#alphabetIndex, #wordList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 
-.suggestions.show { display: block; }
-
-.suggestions li {
-  padding: 0.6rem;
-  cursor: pointer;
-  border-bottom: 1px solid #eee;
+/* ========== CHAT, AUDIO, PHOTOS, VIDÉOS, LIVRES, RAPPORTS, ACTUALITÉS, QUIZ ========== */
+.onglet-contenu section, #chatWindow, #audioContainer,
+#photosContainer, #videosContainer, #livresContainer,
+#rapportsContainer, #newsContainer, #quizContainer {
+  background: var(--bg-light);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
 }
 
-.suggestions li:hover {
-  background: #0077ff;
-  color: white;
-}
-
-.mot-historique {
-  cursor: pointer;
-  color: #66c;
-}
-
-.mot-historique:hover {
-  text-decoration: underline;
-}
-
-
-/* ========== PIED DE PAGE ========== */
-footer {
-  margin-top: auto;
+/* ========== FOOTER ========== */
+footer.site-footer {
+  width: 100%;
   padding: 1rem;
   color: #999;
   font-size: 0.85rem;
   border-top: 1px solid var(--border);
   background: var(--bg-light);
+  text-align: center;
 }
 
-.ia-section {
-  background: #1a1d23;
-  border-radius: 12px;
-  padding: 1rem;
-  margin-top: 2rem;
-  box-shadow: 0 0 10px rgba(0,0,0,0.4);
-  animation: fadeIn 0.4s ease;
-}
-
-.ia-input-zone {
-  display: flex;
-  gap: 0.5rem;
-  margin-top: 0.5rem;
-}
-
-.ia-input-zone input {
-  flex: 1;
-  padding: 0.6rem;
-  border-radius: 6px;
-  border: 1px solid #333;
-  background: #111;
-  color: #eee;
-}
-
-.ia-input-zone button {
-  background: #005ed1;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.ia-input-zone button:hover {
-  background: #0077ff;
-}
-
-.ia-reponse {
-  margin-top: 1rem;
-  background: #0f1217;
-  padding: 0.75rem;
-  border-radius: 8px;
-  color: #ddd;
-  line-height: 1.5;
-  animation: fadeIn 0.3s ease;
-}
-
+/* =========================
+     ANIMATIONS
+========================= */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
-/* ========== PAGINATION ========== */
-.suggestions-list div {
-  margin-top: 0.3rem;
-}
 
-.suggestions-list div button {
-  background: var(--bg-light);
-  color: var(--accent);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 0.3rem 0.6rem;
-  cursor: pointer;
-  font-size: 0.9rem;
-  transition: all var(--transition);
-}
-
-.suggestions-list div button:hover:not(:disabled) {
-  background: var(--accent);
-  color: #fff;
-  transform: translateY(-2px);
-}
-
-.suggestions-list div button:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
-.suggestions-list div span {
-  display: inline-block;
-  min-width: 2.5rem;
-  text-align: center;
-  font-weight: 600;
-  color: #bbb;
-  margin: 0 0.4rem;
+.ia-section, .ia-reponse {
+  animation: fadeIn 0.3s ease;
 }
