@@ -1,7 +1,7 @@
 /* ===========================================================
-   🔹 Dictionnaire Tadakssahak Multilingue - Script Final
+   🔹 Dictionnaire Tadaksahak Multilingue - Script Unifié
    Auteur : Hamadine AG MOCTAR
-   Compatible : index fusionné + CSS Dark Mode
+   Version : Fusion + Index complet + Chat + Audio
    =========================================================== */
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   // ----------------------
   let vocabulaire = [];
   let motActuel = null;
-  let langueActuelle = "fr"; // langue d'affichage
-  let searchLang = "td";     // langue de recherche : td/fr/en/ar
+  let langueActuelle = "fr";
+  let searchLang = "td";
   let historique = [];
   let historiqueConversation = [];
   let albumsAudio = [];
@@ -26,14 +26,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   // ----------------------
   // UTILITAIRES
   // ----------------------
-  const escapeHtml = str => str ? String(str)
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#39;") : "";
-
-  const normalizeText = s => s ? s.toString().normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase() : "";
+  const escapeHtml = str => str ? String(str).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;") : "";
+  const normalizeText = s => s ? s.toString().normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase() : "";
 
   const levenshtein = (a,b) => {
     const an=a.length,bn=b.length;
@@ -51,8 +45,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     return matrix[an][bn];
   };
 
-  const getByAnyId = (...ids) => { for(const id of ids){ const el=document.getElementById(id); if(el) return el;} return null; };
-
   // ----------------------
   // CHARGEMENT DICTIONNAIRE JSON + AUDIO
   // ----------------------
@@ -63,7 +55,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   catch(e){ console.warn("Pas d'audios disponibles."); }
 
   // ----------------------
-  // HISTORIQUE
+  // HISTORIQUE MOTS
   // ----------------------
   function chargerHistorique(){
     historique = JSON.parse(localStorage.getItem("historiqueTadakssahak"))||[];
@@ -99,23 +91,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   // ----------------------
   function afficherMot(item){
     motActuel=item;
-    if(motElem){
-      motElem.textContent=item.mot;
-      motElem.style.opacity=0;
-      setTimeout(()=>motElem.style.opacity=1,150);
-    }
+    if(motElem){ motElem.textContent=item.mot; motElem.style.opacity=0; setTimeout(()=>motElem.style.opacity=1,150); }
     if(defElem){
-      defElem.innerHTML=`
-        <p><strong>Catégorie :</strong> ${escapeHtml(item.categorie||"")}</p>
-        <p><strong>Prononciation :</strong> ${escapeHtml(item.prononciation||"")}</p>
-        <p><strong>${langueActuelle.toUpperCase()} :</strong> ${escapeHtml(item[langueActuelle]||"Traduction non disponible.")}</p>
-        <p><em>${escapeHtml(item.definition||"")}</em></p>
-      `;
+      defElem.innerHTML=`<p><strong>Catégorie :</strong> ${escapeHtml(item.cat||"")}</p>
+                        <p><strong>${langueActuelle.toUpperCase()} :</strong> ${escapeHtml(item[langueActuelle]||"Traduction non disponible.")}</p>`;
     }
-    if(audioElem){
-      if(item.audio){ audioElem.src=`audio/${item.audio}`; audioElem.hidden=false; }
-      else{ audioElem.removeAttribute("src"); audioElem.hidden=true; }
-    }
+    if(audioElem){ if(item.audio){ audioElem.src=`audio/${item.audio}`; audioElem.hidden=false; } else{ audioElem.removeAttribute("src"); audioElem.hidden=true; } }
     ajouterHistorique(item.mot);
   }
 
@@ -125,9 +106,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   window.changerLangue = function(lang){
     langueActuelle=lang;
     if(motActuel) afficherMot(motActuel);
-    document.querySelectorAll(".lang-switch button").forEach(btn=>{
-      btn.style.background = btn.textContent.toLowerCase()===lang ? "#005ed1":"#0077ff";
-    });
+    document.querySelectorAll(".lang-switch button").forEach(btn=>{ btn.style.background = btn.textContent.toLowerCase()===lang ? "#005ed1":"#0077ff"; });
   };
 
   // ----------------------
@@ -163,25 +142,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     return candidates.map(c=>c.item);
   }
 
-  // Création du select langue recherche
-  const searchSection = document.querySelector(".search-section");
-  if(searchSection){
-    const selectorWrapper=document.createElement("div");
-    selectorWrapper.style.display="flex"; selectorWrapper.style.justifyContent="center"; selectorWrapper.style.marginBottom=".5rem"; selectorWrapper.style.gap=".5rem"; selectorWrapper.style.alignItems="center";
-    const label=document.createElement("label"); label.textContent="Chercher depuis :"; label.style.fontSize="0.9rem"; label.style.color="#ccc";
-    const select=document.createElement("select"); select.id="searchLangSelect";
-    select.style.padding=".4rem"; select.style.borderRadius="6px"; select.style.border="1px solid #2b2f36"; select.style.background="#1c1f26"; select.style.color="#f1f1f1";
-    [{v:"td",l:"Tadaksahak"},{v:"fr",l:"FR"},{v:"en",l:"EN"},{v:"ar",l:"AR"}].forEach(o=>{ const opt=document.createElement("option"); opt.value=o.v; opt.textContent=o.l; select.appendChild(opt); });
-    select.value=searchLang;
-    select.addEventListener("change",()=>{ searchLang=select.value; updatePlaceholder(); triggerInput(); searchBar.focus(); });
-    selectorWrapper.appendChild(label); selectorWrapper.appendChild(select);
-    searchSection.insertBefore(selectorWrapper,searchSection.firstChild);
-  }
-
-  function updatePlaceholder(){ const map={td:"Tadaksahak",fr:"FR",en:"EN",ar:"AR"}; if(searchBar) searchBar.placeholder=`Chercher un mot ${map[searchLang]||""}...`; }
-  updatePlaceholder();
-  function triggerInput(){ searchBar.dispatchEvent(new Event("input")); }
-
   searchBar.addEventListener("input",()=>{
     const raw=searchBar.value.trim();
     suggestionsList.innerHTML=""; suggestionsList.classList.remove("show");
@@ -197,8 +157,33 @@ document.addEventListener("DOMContentLoaded", async () => {
     }); suggestionsList.classList.add("show"); }
   });
 
-  searchBar.addEventListener("keydown",(e)=>{ if(e.key==="Enter"){ const first=suggestionsList.querySelector("li"); if(first&&first.textContent!=="Aucun résultat"){ first.click(); e.preventDefault(); } }});
-  document.addEventListener("click",e=>{ if(!searchBar.contains(e.target)&&!suggestionsList.contains(e.target)){ suggestionsList.innerHTML=""; suggestionsList.classList.remove("show"); }});
+  // ----------------------
+  // INDEX ALPHABETIQUE
+  // ----------------------
+  function construireIndexAlphabet(){
+    const container = document.getElementById("alphabetIndex");
+    const wordListContainer = document.getElementById("wordList");
+    if(!container || !wordListContainer) return;
+
+    const letters = Array.from(new Set(vocabulaire.map(v=>v.mot[0].toUpperCase()))).sort();
+    container.innerHTML="";
+    letters.forEach(l=>{
+      const btn = document.createElement("button");
+      btn.textContent=l; btn.className="alphabet-btn";
+      btn.addEventListener("click",()=>{
+        wordListContainer.innerHTML="";
+        const mots = vocabulaire.filter(v=>v.mot.toUpperCase().startsWith(l));
+        mots.forEach(m=>{
+          const div = document.createElement("div");
+          div.textContent=m.mot; div.className="mot-item";
+          div.addEventListener("click",()=>afficherMot(m));
+          wordListContainer.appendChild(div);
+        });
+      });
+      container.appendChild(btn);
+    });
+  }
+  construireIndexAlphabet();
 
   // ----------------------
   // CHAT BOT SIMPLE
@@ -207,10 +192,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     const chatWindow=document.getElementById("chatWindow"); if(!chatWindow) return;
     const div=document.createElement("div"); div.className=`message ${user}`;
     div.innerHTML=`<strong>${user==="bot"?"Bot":"Moi"}:</strong> ${html}`;
-    chatWindow.appendChild(div);
-    chatWindow.scrollTop=chatWindow.scrollHeight;
-    historiqueConversation.push({user,html});
-    if(historiqueConversation.length>20) historiqueConversation.shift();
+    chatWindow.appendChild(div); chatWindow.scrollTop=chatWindow.scrollHeight;
+    historiqueConversation.push({user,html}); if(historiqueConversation.length>20) historiqueConversation.shift();
   }
 
   function reponseBot(txt){
@@ -240,37 +223,16 @@ document.addEventListener("DOMContentLoaded", async () => {
     albumsAudio.forEach((piste,idx)=>{
       const idLyrics=`lyrics-${idx}`;
       const bloc=document.createElement("div"); bloc.className="audio-bloc";
-      bloc.innerHTML=`
-        <p><strong>${escapeHtml(piste.title)}</strong></p>
-        <audio controls src="${piste.src}" preload="none"></audio>
-        ${piste.lyrics?`<button class="btnLyrics" data-target="${idLyrics}">Voir les paroles</button><pre id="${idLyrics}" class="lyrics-text" style="display:none;">${escapeHtml(piste.lyrics)}</pre>`:""}
-        ${piste.lyrics?`<button class="btnPdf" data-target="${idLyrics}">Télécharger PDF</button>`:""}
-      `;
+      bloc.innerHTML=`<p><strong>${escapeHtml(piste.title)}</strong></p>
+                       <audio controls src="${piste.src}" preload="none"></audio>
+                       ${piste.lyrics?`<button class="btnLyrics" data-target="${idLyrics}">Voir les paroles</button><pre id="${idLyrics}" class="lyrics-text" style="display:none;">${escapeHtml(piste.lyrics)}</pre>`:""}`;
       section.appendChild(bloc);
     });
     conteneur.appendChild(section);
-
-    conteneur.querySelectorAll('.btnLyrics').forEach(btn=>btn.addEventListener('click',()=>{
-      const tgt=document.getElementById(btn.getAttribute('data-target'));
-      tgt.style.display=tgt.style.display==="block"?"none":"block";
-      btn.textContent=tgt.style.display==="block"?"Masquer paroles":"Voir les paroles";
-    }));
-
-    conteneur.querySelectorAll('.btnPdf').forEach(btn=>btn.addEventListener('click',()=>{
-      const tgt=document.getElementById(btn.getAttribute('data-target')); if(!tgt) return;
-      const doc=new window.jspdf.jsPDF();
-      doc.setFontSize(16); doc.text(btn.parentNode.querySelector('strong').textContent,10,20);
-      doc.setFontSize(12); const lines=doc.splitTextToSize(tgt.textContent,180); doc.text(lines,10,30);
-      doc.save(`${btn.parentNode.querySelector('strong').textContent}.pdf`);
-    }));
   }
-
   genererAlbumsAudio();
 
-  // ----------------------
-  // FONCTIONS GLOBALES AUDIO
-  // ----------------------
   window.jouerTadaksahak=function(){ if(audioElem && motActuel && motActuel.audio) audioElem.play(); }
 
-  console.log("✅ Script final harmonisé chargé.");
+  console.log("✅ Script unifié chargé avec dictionnaire, chat et audio.");
 });
