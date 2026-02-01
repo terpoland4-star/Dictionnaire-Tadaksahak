@@ -1,8 +1,8 @@
-/* ============================================
-   🎨 Tadaksahak Learning – Dictionnaire Fusionné
+/* ===========================================================
+   🎨 Tadaksahak Learning – Style global
    Thème : Oxford Dark Mode
-   Auteur : Hamadine AG MOCTAR
-   ============================================ */
+   Auteur : Hamadine AG Moctar
+   =========================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
@@ -27,144 +27,88 @@ body {
   font-family: 'Inter', sans-serif;
   background-color: var(--bg);
   color: var(--text);
-  line-height: 1.6;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
-/* ========== HEADER ========== */
+/* =========================
+   HEADER
+========================= */
 header.site-header {
   width: 100%;
-  padding: 2rem 1rem;
-  background-color: var(--bg-light);
+  padding: 1.5rem;
+  background: var(--bg-light);
   border-bottom: 1px solid var(--border);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 
-header.site-header .logo-header {
-  width: 100px;
+header .logo-header {
+  width: 90px;
   border-radius: 50%;
   margin-bottom: 1rem;
   transition: transform var(--transition);
 }
-header.site-header .logo-header:hover {
-  transform: scale(1.05);
-}
+header .logo-header:hover { transform: scale(1.05); }
 
-header.site-header h1 {
-  font-size: 1.8rem;
-  color: var(--accent);
-  margin-bottom: 0.3rem;
-}
+header h1 { font-size: 1.8rem; color: var(--accent); }
+header .subtitle { color: #ccc; font-size: 0.95rem; margin-top: 0.2rem; }
 
-header .subtitle {
-  color: #ccc;
-  font-size: 1rem;
-}
-
-/* ========== NAVIGATION ========== */
-.main-nav select#sectionSelector {
-  padding: 0.6rem 1rem;
+nav.main-nav { margin-top: 1rem; }
+nav.main-nav select {
+  padding: 0.5rem 0.8rem;
   border-radius: 6px;
   border: 1px solid var(--border);
-  background: var(--bg-light);
+  background: var(--bg);
   color: var(--text);
+  font-size: 0.95rem;
   cursor: pointer;
-  margin-top: 1rem;
-  transition: background var(--transition), border-color var(--transition);
-}
-.main-nav select#sectionSelector:hover {
-  border-color: var(--accent);
-}
-
-/* ========== SECTIONS ========== */
-.onglet-contenu {
-  width: 90%;
-  max-width: 1200px;
-  margin: 2rem auto;
-  text-align: left;
 }
 
 /* =========================
-   ACCUEIL / HERO
+   ONGLETS (Sections)
 ========================= */
-.hero {
-  background: var(--bg-light);
-  padding: 2rem;
-  border-radius: 12px;
-  text-align: center;
-  margin-bottom: 2rem;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.4);
-}
+.onglet-contenu { padding: 2rem 1rem; display: block; transition: opacity 0.3s ease; }
+.onglet-contenu[hidden] { display: none; }
 
-.hero h2 {
-  color: var(--accent);
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.hero p {
-  color: #ddd;
-  margin-bottom: 1rem;
-}
-
+/* =========================
+   HERO + BIO ACCUEIL
+========================= */
+.hero { text-align: center; margin-bottom: 2rem; }
+.hero h2 { font-size: 2rem; margin-bottom: 0.5rem; color: var(--accent); }
+.hero p { color: #ccc; font-size: 1rem; margin-bottom: 1rem; }
 .hero .btn {
   padding: 0.6rem 1.2rem;
+  background: var(--primary);
   border: none;
   border-radius: 6px;
-  background-color: var(--primary);
-  color: #fff;
+  color: white;
   cursor: pointer;
   transition: background var(--transition), transform var(--transition);
 }
-.hero .btn:hover {
-  background-color: var(--hover);
-  transform: translateY(-2px);
-}
+.hero .btn:hover { background: var(--hover); transform: translateY(-2px); }
 
-/* =========================
-   BIO / FONDATEUR
-========================= */
 .bio-container {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
 }
+.bio-photo { width: 180px; border-radius: 12px; }
+.bio-text { max-width: 550px; color: #ccc; line-height: 1.5; text-align: left; }
 
-.bio-container .bio-photo {
-  width: 200px;
-  border-radius: 12px;
-  flex-shrink: 0;
-}
-
-.bio-container .bio-text {
-  flex: 1;
-  color: #ccc;
-}
-
-.bio-container .bio-text a.linkedin-button {
-  display: inline-block;
-  margin-top: 0.5rem;
-  padding: 0.4rem 0.8rem;
-  border-radius: 6px;
-  background-color: var(--primary);
-  color: #fff;
-  text-decoration: none;
-  transition: background var(--transition);
-}
-.bio-container .bio-text a.linkedin-button:hover {
-  background-color: var(--hover);
-}
-
-/* ========== DICTIONNAIRE ========== */
+/* =========================
+   DICTIONNAIRE
+========================= */
 .search-section {
   margin: 2rem auto;
-  max-width: 480px;
-  width: 100%;
+  max-width: 500px;
+  width: 95%;
   position: relative;
 }
 
@@ -179,76 +123,59 @@ header .subtitle {
   outline: none;
   transition: border-color var(--transition), background var(--transition);
 }
-#searchBar:focus {
-  border-color: var(--accent);
-  background-color: #1d222b;
-}
+
+#searchBar:focus { border-color: var(--accent); background-color: #1d222b; }
 
 /* Suggestions */
-#suggestions {
+.suggestions-list {
   list-style: none;
-  margin-top: 0.5rem;
-  padding: 0;
   position: absolute;
-  background: var(--bg-light);
   width: 100%;
+  background: var(--bg-light);
   border: 1px solid var(--border);
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-  overflow: hidden;
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: 0.4rem;
+  padding: 0;
   opacity: 0;
   transform: translateY(-5px);
   transition: opacity var(--transition), transform var(--transition);
-  z-index: 10;
+  z-index: 50;
 }
-#suggestions.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-#suggestions li {
-  padding: 0.8rem;
+
+.suggestions-list.show { opacity: 1; transform: translateY(0); }
+
+.suggestions-list li {
+  padding: 0.7rem 1rem;
+  text-align: left;
   cursor: pointer;
   color: var(--text);
   border-bottom: 1px solid #222;
   transition: background var(--transition);
 }
-#suggestions li:hover {
-  background-color: var(--hover);
-}
+.suggestions-list li:hover { background-color: var(--hover); }
 
-/* Résultats */
+/* Result Section */
 .result-section {
   background: var(--bg-light);
   padding: 1.5rem;
   border-radius: 12px;
   margin-top: 2rem;
+  max-width: 500px;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
   box-shadow: 0 3px 10px rgba(0,0,0,0.4);
-  transition: all var(--transition);
 }
 
-.result-section h3#motTexte {
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: var(--accent);
-  margin-bottom: 0.5rem;
-}
+#motTexte { font-size: 1.8rem; font-weight: 600; color: var(--accent); margin-bottom: 0.5rem; }
+#definition { font-size: 1rem; color: #ddd; line-height: 1.5; }
+audio { width: 100%; margin-top: 1rem; border-radius: 8px; }
 
-.result-section p#definition {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-  color: #ddd;
-}
-
-audio {
-  width: 100%;
-  margin-top: 1rem;
-  border-radius: 8px;
-}
-
-/* Langues */
-.lang-switch {
-  margin-top: 1rem;
-}
+/* Language Switch */
+.lang-switch { margin-top: 1rem; }
 .lang-switch button {
   margin: 0.2rem;
   padding: 0.5rem 1rem;
@@ -256,61 +183,115 @@ audio {
   border-radius: 6px;
   font-size: 0.9rem;
   cursor: pointer;
-  color: #fff;
+  color: white;
   background-color: var(--primary);
   transition: background var(--transition), transform var(--transition);
 }
-.lang-switch button:hover {
-  background-color: var(--hover);
-  transform: translateY(-2px);
-}
+.lang-switch button:hover { background-color: var(--hover); transform: translateY(-2px); }
 
-/* Alphabet index */
-.alphabet-section {
-  margin-top: 2rem;
-}
-.alphabet-section h3 {
+/* Alphabet Index */
+.alphabet-section { margin-top: 2rem; }
+#alphabetIndex { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-bottom: 1rem; }
+#alphabetIndex button {
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg-light);
   color: var(--accent);
-  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: all var(--transition);
 }
-#alphabetIndex, #wordList {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: center;
-  margin-bottom: 1rem;
-}
+#alphabetIndex button:hover { background: var(--accent); color: #fff; transform: translateY(-2px); }
 
-/* ========== CHAT, AUDIO, PHOTOS, VIDÉOS, LIVRES, RAPPORTS, ACTUALITÉS, QUIZ ========== */
-.onglet-contenu section, #chatWindow, #audioContainer,
-#photosContainer, #videosContainer, #livresContainer,
-#rapportsContainer, #newsContainer, #quizContainer {
+#wordList { display: grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap: 0.5rem; }
+
+/* =========================
+   CHAT
+========================= */
+.chatbox {
   background: var(--bg-light);
   border-radius: 12px;
   padding: 1rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  max-height: 350px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
 }
 
-/* ========== FOOTER ========== */
-footer.site-footer {
-  width: 100%;
-  padding: 1rem;
+.chatbox .message { margin-bottom: 0.6rem; }
+.chatbox .message.user { text-align: right; color: #33ccff; }
+.chatbox .message.bot { text-align: left; color: #fff; }
+
+.chat-input { display: flex; gap: 0.5rem; margin-top: 0.5rem; }
+.chat-input input {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: #111;
+  color: #eee;
+}
+.chat-input button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.chat-input button:hover { background: var(--hover); }
+
+/* =========================
+   AUDIO, PHOTOS, VIDEOS, LIVRES
+========================= */
+.audio-bloc, #photosContainer div, #videosContainer div, #livresContainer div {
+  background: var(--bg-light);
+  border-radius: 10px;
+  padding: 0.8rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.audio-bloc audio { width: 100%; margin-top: 0.5rem; }
+.audio-bloc button { margin-top: 0.3rem; padding: 0.3rem 0.6rem; border-radius: 6px; cursor: pointer; border: none; background: var(--primary); color: #fff; transition: background var(--transition);}
+.audio-bloc button:hover { background: var(--hover); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(150px,1fr)); gap: 0.6rem; }
+
+/* =========================
+   FOOTER
+========================= */
+.site-footer {
+  background: var(--bg-light);
   color: #999;
   font-size: 0.85rem;
+  padding: 1rem;
   border-top: 1px solid var(--border);
-  background: var(--bg-light);
   text-align: center;
 }
 
 /* =========================
-     ANIMATIONS
+   BOUTON CHAT FLOTTANT
 ========================= */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+.floating-chat-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  transition: transform var(--transition), background var(--transition);
 }
+.floating-chat-btn:hover { transform: translateY(-2px); background: var(--hover); }
 
-.ia-section, .ia-reponse {
-  animation: fadeIn 0.3s ease;
-}
+/* =========================
+   UTILITAIRES
+========================= */
+mark { background: rgba(255,255,0,0.12); color: inherit; padding: 0 .1rem; border-radius: 2px; }
+.mot-historique { cursor: pointer; color: #66c; }
+.mot-historique:hover { text-decoration: underline; }
