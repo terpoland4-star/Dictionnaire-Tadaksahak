@@ -1,7 +1,7 @@
 /* ===========================================================
    🔹 Dictionnaire Tadaksahak Multilingue - Script Unifié
    Auteur : Hamadine AG MOCTAR
-   Version : Fusion + Index complet + Chat + Audio
+   Version : Fusion + Index + Chat amélioré + Audio
    =========================================================== */
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -17,6 +17,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   let historiqueConversation = [];
   let albumsAudio = [];
 
+  let quizActif = false;
+  let quizMot = null;
+
   const searchBar = document.getElementById("searchBar");
   const suggestionsList = document.getElementById("suggestions");
   const motElem = document.getElementById("motTexte");
@@ -27,7 +30,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   // UTILITAIRES
   // ----------------------
   const escapeHtml = str => str ? String(str).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;") : "";
-  const normalizeText = s => s ? s.toString().normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase() : "";
+  const normalizeText = s => s ? s.toString().normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase() : "";
 
   const levenshtein = (a,b) => {
     const an=a.length,bn=b.length;
@@ -164,7 +167,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     const container = document.getElementById("alphabetIndex");
     const wordListContainer = document.getElementById("wordList");
     if(!container || !wordListContainer) return;
-
     const letters = Array.from(new Set(vocabulaire.map(v=>v.mot[0].toUpperCase()))).sort();
     container.innerHTML="";
     letters.forEach(l=>{
@@ -186,7 +188,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   construireIndexAlphabet();
 
   // ----------------------
-  // CHAT BOT SIMPLE
+  // CHAT BOT AMELIORE
   // ----------------------
   function afficheMsg(user,html){
     const chatWindow=document.getElementById("chatWindow"); if(!chatWindow) return;
@@ -196,12 +198,71 @@ document.addEventListener("DOMContentLoaded", async () => {
     historiqueConversation.push({user,html}); if(historiqueConversation.length>20) historiqueConversation.shift();
   }
 
+  function lancerQuiz(){
+    quizMot = vocabulaire[Math.floor(Math.random()*vocabulaire.length)];
+    quizActif=true;
+    return `🎯 Devine ce mot : <em>${quizMot.fr}</em> (tape ta réponse ou "indice")`;
+  }
+
   function reponseBot(txt){
     const clean=normalizeText(txt);
+
+    // SALUTATIONS
     const salutations=["bonjour","salut","hello","bonsoir","bjr","bsr","salam"];
-    if(salutations.some(s=>clean.includes(s))) return "Bonjour ! Comment puis-je vous aider aujourd'hui ?";
-    const caVa=["comment ca va","ça va","cv"]; if(caVa.some(s=>clean.includes(s))) return "Ça va bien, merci ! Et toi ?";
-    return "Je n’ai pas compris. Essaie un mot ou dis-moi 'une histoire'.";
+    if(salutations.some(s=>clean.includes(s))) return "Bonjour ! 👋 Comment puis-je vous aider aujourd'hui ?";
+
+    const caVa=["comment ca va","ça va","cv"];
+    if(caVa.some(s=>clean.includes(s))) return "Ça va bien, merci ! Et toi ? 😊";
+
+    // QUIZ
+    if(quizActif){
+      const reponseCorrecte = normalizeText(quizMot.mot);
+      if(clean.includes(reponseCorrecte)){
+        const motPrecedent = quizMot.mot;
+        quizActif=false; quizMot=null;
+        return `✅ Correct ! Le mot <strong>${motPrecedent}</strong> signifie "${reponseCorrecte}". Tape "quiz" pour un nouveau mot.`;
+      }
+      if(clean==="indice"){ return `💡 Indice : Le mot commence par "${quizMot.mot[0]}"`; }
+      return `❌ Faux. Essaie encore !`;
+    }
+
+    // DEMANDER UN QUIZ OU MOT ALEATOIRE
+    if(clean.includes("quiz") || clean.includes("jeu")) return lancerQuiz();
+    if(clean.includes("mot aléatoire") || clean.includes("random word")){
+      const aleatoire=vocabulaire[Math.floor(Math.random()*vocabulaire.length)];
+      return `Voici un mot aléatoire : <strong>${aleatoire.mot}</strong> — FR: ${aleatoire.fr} — EN: ${aleatoire.en}`;
+    }
+
+    // DEMANDER DEFINITION
+    if(clean.startsWith("définition ") || clean.startsWith("definition ")){
+      const motDemande = clean.split(" ")[1];
+      const trouve = vocabulaire.find(v=>normalizeText(v.mot)===motDemande || normalizeText(v.fr)===motDemande);
+      if(trouve) return `Mot : <strong>${trouve.mot}</strong><br>FR: ${trouve.fr}<br>EN: ${trouve.en}<br>Catégorie: ${trouve.cat || "—"}<br>Prononciation: ${trouve.prononciation || "—"}`;
+      return "❌ Je n'ai pas trouvé ce mot.";
+    }
+
+    // PETITE HISTOIRE
+    if(clean.includes("histoire")){
+      const motsHistoire = [];
+      while(motsHistoire.length<4){
+        const m = vocabulaire[Math.floor(Math.random()*vocabulaire.length)];
+        if(!motsHistoire.includes(m)) motsHistoire.push(m);
+      }
+      return `📖 Voici une petite histoire : "Un jour, ${motsHistoire[0].mot} rencontra ${motsHistoire[1].mot}, et ensemble ils décidèrent de ${motsHistoire[2].mot}. Finalement, ${motsHistoire[3].mot} changea tout."`;
+    }
+
+    // SUGGESTION MOT
+    const motsTrouves=vocabulaire.filter(v=>normalizeText(v.mot)===clean || normalizeText(v.fr)===clean || normalizeText(v.en)===clean);
+    if(motsTrouves.length===1) return `Mot trouvé : <strong>${motsTrouves[0].mot}</strong> — FR: ${motsTrouves[0].fr} — EN: ${motsTrouves[0].en}`;
+    if(motsTrouves.length===0){
+      const proches = vocabulaire.filter(v=>{
+        const dist = levenshtein(normalizeText(v.mot), clean);
+        return dist <= Math.max(1, Math.floor(clean.length*0.3));
+      });
+      if(proches.length>0) return `⚠️ Mot non trouvé. Peut-être vouliez-vous : ${proches.slice(0,3).map(v=>v.mot).join(", ")}`;
+    }
+
+    return "🤔 Je n’ai pas compris. Tu peux demander un mot, un quiz, une histoire ou un mot aléatoire.";
   }
 
   function traiterSaisie(){
@@ -234,5 +295,5 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   window.jouerTadaksahak=function(){ if(audioElem && motActuel && motActuel.audio) audioElem.play(); }
 
-  console.log("✅ Script unifié chargé avec dictionnaire, chat et audio.");
+  console.log("✅ Script unifié chargé avec dictionnaire, chat amélioré et audio.");
 });
