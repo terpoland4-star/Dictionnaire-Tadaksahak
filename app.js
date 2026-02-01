@@ -187,93 +187,206 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
   construireIndexAlphabet();
 
-  // ----------------------
-  // CHAT BOT AMELIORE
-  // ----------------------
-  function afficheMsg(user,html){
-    const chatWindow=document.getElementById("chatWindow"); if(!chatWindow) return;
-    const div=document.createElement("div"); div.className=`message ${user}`;
-    div.innerHTML=`<strong>${user==="bot"?"Bot":"Moi"}:</strong> ${html}`;
-    chatWindow.appendChild(div); chatWindow.scrollTop=chatWindow.scrollHeight;
-    historiqueConversation.push({user,html}); if(historiqueConversation.length>20) historiqueConversation.shift();
+/* ===========================================================
+   🤖 CHATBOT TADAKSAHAK – Intelligence culturelle & pédagogique
+   Auteur : Hamadine AG MOCTAR
+   =========================================================== */
+
+// ----------------------
+// MÉMOIRE DU BOT
+// ----------------------
+const botMemory = {
+  lastTopic: null,
+  lastWord: null,
+  lang: "fr"
+};
+
+// ----------------------
+// DÉTECTION LANGUE
+// ----------------------
+function detectLang(txt) {
+  const t = txt.toLowerCase();
+  if (/[ء-ي]/.test(t)) return "ar";
+  if (t.includes("ⴰ") || t.includes("tadaksahak") || t.includes("tz")) return "tz";
+  return "fr";
+}
+
+// ----------------------
+// UTILITAIRES TEXTE
+// ----------------------
+function normalize(txt) {
+  return txt
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "");
+}
+
+// ----------------------
+// AFFICHAGE MESSAGE
+// ----------------------
+function afficheMsg(user, html) {
+  const chatWindow = document.getElementById("chatWindow");
+  if (!chatWindow) return;
+
+  const div = document.createElement("div");
+  div.className = `message ${user}`;
+  div.innerHTML = `<strong>${user === "bot" ? "🤖 Hamadine" : "Moi"} :</strong> ${html}`;
+
+  chatWindow.appendChild(div);
+  chatWindow.scrollTop = chatWindow.scrollHeight;
+}
+
+// ----------------------
+// NAVIGATION SITE
+// ----------------------
+function naviguer(section) {
+  const select = document.getElementById("sectionSelector");
+  if (select) {
+    select.value = section;
+    select.dispatchEvent(new Event("change"));
+  }
+}
+
+// ----------------------
+// RÉSUMÉ HISTORIQUE
+// ----------------------
+function resumeTexte(texte, niveau = "court") {
+  if (!texte) return "Je n’ai pas trouvé de texte à résumer.";
+
+  const phrases = texte.split(".").filter(p => p.length > 30);
+
+  if (niveau === "court") {
+    return phrases.slice(0, 2).join(". ") + ".";
+  }
+  if (niveau === "enfant") {
+    return "Voici une explication simple :<br>" +
+      phrases.slice(0, 1).join(". ") + ".";
+  }
+  return phrases.slice(0, 5).join(". ") + ".";
+}
+
+// ----------------------
+// RÉPONSES CULTURELLES
+// ----------------------
+function reponseCulture(txt) {
+  if (txt.includes("idaksahak") || txt.includes("tadaksahak")) {
+    return `
+Les Idaksahak sont un peuple du Sahel, porteur d’une langue,
+d’une mémoire et d’une culture orale très riches.
+Le Tadaksahak est une langue vivante,
+transmise par les récits, la musique et la sagesse.
+    `;
+  }
+  return null;
+}
+
+// ----------------------
+// DICTIONNAIRE INTELLIGENT
+// ----------------------
+function reponseDictionnaire(txt) {
+  const mot = vocabulaire.find(v =>
+    normalize(txt).includes(normalize(v.mot))
+  );
+
+  if (!mot) return null;
+
+  botMemory.lastWord = mot.mot;
+
+  return `
+<strong>${mot.mot}</strong><br>
+📚 Catégorie : ${mot.cat || "—"}<br>
+🇫🇷 Français : ${mot.fr || "—"}<br>
+🇬🇧 English : ${mot.en || "—"}<br>
+🌍 Tadaksahak : ${mot.mot}<br>
+💡 Astuce : tu peux dire <em>"explique encore"</em>
+  `;
+}
+
+// ----------------------
+// CŒUR DU BOT
+// ----------------------
+function reponseBot(txt) {
+  const clean = normalize(txt);
+  botMemory.lang = detectLang(txt);
+
+  // SALUTATIONS
+  if (/(bonjour|salut|hello|salam|bsr|bjr)/.test(clean)) {
+    return "Bonjour 🌍 Je suis Hamadine, gardien numérique de la langue Tadaksahak.";
   }
 
-  function lancerQuiz(){
-    quizMot = vocabulaire[Math.floor(Math.random()*vocabulaire.length)];
-    quizActif=true;
-    return `🎯 Devine ce mot : <em>${quizMot.fr}</em> (tape ta réponse ou "indice")`;
+  // REMERCIEMENTS
+  if (/(merci|thanks|chokran)/.test(clean)) {
+    return "Avec plaisir 🙏 La connaissance est un partage.";
   }
 
-  function reponseBot(txt){
-    const clean=normalizeText(txt);
-
-    // SALUTATIONS
-    const salutations=["bonjour","salut","hello","bonsoir","bjr","bsr","salam"];
-    if(salutations.some(s=>clean.includes(s))) return "Bonjour ! 👋 Comment puis-je vous aider aujourd'hui ?";
-
-    const caVa=["comment ca va","ça va","cv"];
-    if(caVa.some(s=>clean.includes(s))) return "Ça va bien, merci ! Et toi ? 😊";
-
-    // QUIZ
-    if(quizActif){
-      const reponseCorrecte = normalizeText(quizMot.mot);
-      if(clean.includes(reponseCorrecte)){
-        const motPrecedent = quizMot.mot;
-        quizActif=false; quizMot=null;
-        return `✅ Correct ! Le mot <strong>${motPrecedent}</strong> signifie "${reponseCorrecte}". Tape "quiz" pour un nouveau mot.`;
-      }
-      if(clean==="indice"){ return `💡 Indice : Le mot commence par "${quizMot.mot[0]}"`; }
-      return `❌ Faux. Essaie encore !`;
-    }
-
-    // DEMANDER UN QUIZ OU MOT ALEATOIRE
-    if(clean.includes("quiz") || clean.includes("jeu")) return lancerQuiz();
-    if(clean.includes("mot aléatoire") || clean.includes("random word")){
-      const aleatoire=vocabulaire[Math.floor(Math.random()*vocabulaire.length)];
-      return `Voici un mot aléatoire : <strong>${aleatoire.mot}</strong> — FR: ${aleatoire.fr} — EN: ${aleatoire.en}`;
-    }
-
-    // DEMANDER DEFINITION
-    if(clean.startsWith("définition ") || clean.startsWith("definition ")){
-      const motDemande = clean.split(" ")[1];
-      const trouve = vocabulaire.find(v=>normalizeText(v.mot)===motDemande || normalizeText(v.fr)===motDemande);
-      if(trouve) return `Mot : <strong>${trouve.mot}</strong><br>FR: ${trouve.fr}<br>EN: ${trouve.en}<br>Catégorie: ${trouve.cat || "—"}<br>Prononciation: ${trouve.prononciation || "—"}`;
-      return "❌ Je n'ai pas trouvé ce mot.";
-    }
-
-    // PETITE HISTOIRE
-    if(clean.includes("histoire")){
-      const motsHistoire = [];
-      while(motsHistoire.length<4){
-        const m = vocabulaire[Math.floor(Math.random()*vocabulaire.length)];
-        if(!motsHistoire.includes(m)) motsHistoire.push(m);
-      }
-      return `📖 Voici une petite histoire : "Un jour, ${motsHistoire[0].mot} rencontra ${motsHistoire[1].mot}, et ensemble ils décidèrent de ${motsHistoire[2].mot}. Finalement, ${motsHistoire[3].mot} changea tout."`;
-    }
-
-    // SUGGESTION MOT
-    const motsTrouves=vocabulaire.filter(v=>normalizeText(v.mot)===clean || normalizeText(v.fr)===clean || normalizeText(v.en)===clean);
-    if(motsTrouves.length===1) return `Mot trouvé : <strong>${motsTrouves[0].mot}</strong> — FR: ${motsTrouves[0].fr} — EN: ${motsTrouves[0].en}`;
-    if(motsTrouves.length===0){
-      const proches = vocabulaire.filter(v=>{
-        const dist = levenshtein(normalizeText(v.mot), clean);
-        return dist <= Math.max(1, Math.floor(clean.length*0.3));
-      });
-      if(proches.length>0) return `⚠️ Mot non trouvé. Peut-être vouliez-vous : ${proches.slice(0,3).map(v=>v.mot).join(", ")}`;
-    }
-
-    return "🤔 Je n’ai pas compris. Tu peux demander un mot, un quiz, une histoire ou un mot aléatoire.";
+  // NAVIGATION
+  if (clean.includes("dictionnaire")) {
+    naviguer("dictionnaire");
+    return "📖 Je t’emmène vers le dictionnaire.";
+  }
+  if (clean.includes("video")) {
+    naviguer("videos");
+    return "🎥 Voici les vidéos.";
+  }
+  if (clean.includes("livre")) {
+    naviguer("livres");
+    return "📚 Accès aux livres.";
   }
 
-  function traiterSaisie(){
-    const inp=document.getElementById("chatInput"), txt=inp.value.trim();
-    if(!txt) return; inp.value="";
-    afficheMsg("user",escapeHtml(txt));
-    afficheMsg("bot",reponseBot(txt));
+  // RÉSUMÉ HISTORIQUE
+  if (clean.includes("resume") || clean.includes("résume")) {
+    const h = window.histoireData?.[0]?.texte || "";
+    return resumeTexte(h, "court");
   }
 
-  document.getElementById("btnEnvoyer")?.addEventListener("click",traiterSaisie);
-  document.getElementById("chatInput")?.addEventListener("keypress",e=>{ if(e.key==="Enter"){ e.preventDefault(); traiterSaisie(); } });
+  if (clean.includes("enfant")) {
+    const h = window.histoireData?.[0]?.texte || "";
+    return resumeTexte(h, "enfant");
+  }
+
+  // CULTURE
+  const culture = reponseCulture(clean);
+  if (culture) return culture;
+
+  // DICTIONNAIRE
+  const dico = reponseDictionnaire(clean);
+  if (dico) return dico;
+
+  // MÉMOIRE CONTEXTUELLE
+  if (clean.includes("explique encore") && botMemory.lastWord) {
+    return `📖 <strong>${botMemory.lastWord}</strong> est un mot important dans la culture Tadaksahak,
+souvent utilisé dans les récits et la vie quotidienne.`;
+  }
+
+  return "🤔 Je peux expliquer un mot, raconter l’histoire, résumer un texte ou te guider dans le site.";
+}
+
+// ----------------------
+// TRAITEMENT SAISIE
+// ----------------------
+function traiterSaisie() {
+  const input = document.getElementById("chatInput");
+  const txt = input.value.trim();
+  if (!txt) return;
+
+  input.value = "";
+  afficheMsg("user", txt);
+
+  setTimeout(() => {
+    afficheMsg("bot", reponseBot(txt));
+  }, 300);
+}
+
+// ----------------------
+// EVENTS
+// ----------------------
+document.getElementById("btnEnvoyer")?.addEventListener("click", traiterSaisie);
+document.getElementById("chatInput")?.addEventListener("keypress", e => {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    traiterSaisie();
+  }
+});
 
   // ----------------------
   // AUDIO PLAY + Albums
