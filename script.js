@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   // ----------------------
   // CHARGEMENT DICTIONNAIRE JSON + AUDIO
   // ----------------------
-  try { const resp = await fetch("data/mots.json"); vocabulaire = await resp.json(); }
+  try { const resp = await fetch("data/mots_final_489.js"); vocabulaire = await resp.json(); }
   catch(e){ console.error("❌ Erreur chargement dictionnaire :", e); }
 
   try { const respAudio = await fetch("data/audios.json"); albumsAudio = await respAudio.json(); }
