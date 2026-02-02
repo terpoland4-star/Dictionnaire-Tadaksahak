@@ -223,8 +223,7 @@ function afficherLivres() {
   });
 }
 
-// Appel initial
-afficherLivres();
+
 
    
 /* ===========================================================
@@ -565,6 +564,16 @@ document.getElementById("chatInput")?.addEventListener("keypress", e => {
   genererAlbumsAudio();
 
   window.jouerTadaksahak=function(){ if(audioElem && motActuel && motActuel.audio) audioElem.play(); }
+// ----------------------
+// INITIALISATION LIVRES
+// ----------------------
+if (window.livresData && Array.isArray(window.livresData)) {
+  afficherLivres();
+  console.log("📚 Livres chargés :", window.livresData.length);
+} else {
+  console.warn("⏳ livresData non prêt, nouvelle tentative…");
+  setTimeout(afficherLivres, 300);
+}
 
   console.log("✅ Script unifié chargé avec dictionnaire, chat amélioré et audio.");
 });
