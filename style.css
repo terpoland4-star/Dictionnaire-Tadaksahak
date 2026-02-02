@@ -351,6 +351,93 @@ audio { width: 100%; margin-top: 1rem; border-radius: 8px; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(150px,1fr)); gap: 0.6rem; }
 
 /* =========================
+   LIVRES – STYLE ACADÉMIQUE
+========================= */
+
+#livresContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+/* Carte livre */
+.livre-card {
+  background: linear-gradient(180deg, #1c1f26, #171a20);
+  border-radius: 14px;
+  padding: 1.2rem;
+  border: 1px solid var(--border);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.livre-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.65);
+}
+
+/* Titre */
+.livre-titre {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+  line-height: 1.3;
+}
+
+/* Auteur */
+.livre-auteur {
+  font-size: 0.9rem;
+  color: #bbb;
+  margin-bottom: 0.6rem;
+  font-style: italic;
+}
+
+/* Badge thème */
+.livre-theme {
+  align-self: flex-start;
+  background: rgba(0,153,255,0.15);
+  color: var(--primary);
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  margin-bottom: 0.6rem;
+}
+
+/* Résumé */
+.livre-resume {
+  font-size: 0.9rem;
+  color: #ddd;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+/* Bouton */
+.livre-actions {
+  margin-top: 1rem;
+  text-align: right;
+}
+
+.livre-actions button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.livre-actions button:hover {
+  background: var(--hover);
+  transform: translateY(-1px);
+}
+
+
+/* =========================
    FOOTER
 ========================= */
 .site-footer {
