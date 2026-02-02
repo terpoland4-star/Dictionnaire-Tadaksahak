@@ -309,57 +309,160 @@ function reponseBot(txt) {
   const clean = normalize(txt);
   botMemory.lang = detectLang(txt);
 
-  // SALUTATIONS
+  /* =========================
+     SALUTATIONS
+  ========================= */
   if (/(bonjour|salut|hello|salam|bsr|bjr)/.test(clean)) {
-    return "Bonjour 🌍 Je suis Hamadine, gardien numérique de la langue Tadaksahak.";
+    return "Bonjour 🌍 Je suis Hamadine, le gardien numérique de la langue et de la mémoire Idaksahak. Que souhaites-tu apprendre aujourd’hui ?";
   }
 
-  // REMERCIEMENTS
+  /* =========================
+     REMERCIEMENTS
+  ========================= */
   if (/(merci|thanks|chokran)/.test(clean)) {
-    return "Avec plaisir 🙏 La connaissance est un partage.";
+    return "Avec plaisir 🙏 La connaissance est un héritage vivant.";
   }
 
-  // NAVIGATION
+  /* =========================
+     NAVIGATION SITE
+  ========================= */
   if (clean.includes("dictionnaire")) {
     naviguer("dictionnaire");
-    return "📖 Je t’emmène vers le dictionnaire.";
-  }
-  if (clean.includes("video")) {
-    naviguer("videos");
-    return "🎥 Voici les vidéos.";
-  }
-  if (clean.includes("livre")) {
-    naviguer("livres");
-    return "📚 Accès aux livres.";
+    return "📖 Je t’emmène vers le dictionnaire Tadaksahak.";
   }
 
-  // RÉSUMÉ HISTORIQUE
+  if (clean.includes("chat")) {
+    naviguer("chat");
+    return "💬 Nous sommes déjà dans l’espace de discussion.";
+  }
+
+  if (clean.includes("audio") || clean.includes("chant")) {
+    naviguer("audio");
+    return "🎧 Voici les chants et albums Tadaksahak.";
+  }
+
+  if (clean.includes("photo")) {
+    naviguer("photos");
+    return "🖼️ Découvrons les images et visages du peuple Idaksahak.";
+  }
+
+  if (clean.includes("video")) {
+    naviguer("videos");
+    return "🎥 Voici les vidéos disponibles.";
+  }
+
+  if (clean.includes("livre")) {
+    naviguer("livres");
+    return "📚 Accès aux livres et études.";
+  }
+
+  if (clean.includes("quiz")) {
+    naviguer("quiz");
+    return "❓ Prêt à tester tes connaissances ?";
+  }
+
+  /* =========================
+     HISTOIRE — RÉSUMÉS
+  ========================= */
   if (clean.includes("resume") || clean.includes("résume")) {
-    const h = window.histoireData?.[0]?.texte || "";
-    return resumeTexte(h, "court");
+    const texteComplet = window.histoireData?.sections
+      ?.map(s => s.texte)
+      .join("\n") || "";
+
+    return resumeTexte(texteComplet, "court");
   }
 
   if (clean.includes("enfant")) {
-    const h = window.histoireData?.[0]?.texte || "";
-    return resumeTexte(h, "enfant");
+    const texteComplet = window.histoireData?.sections
+      ?.map(s => s.texte)
+      .join("\n") || "";
+
+    return resumeTexte(texteComplet, "enfant");
   }
 
-  // CULTURE
-  const culture = reponseCulture(clean);
-  if (culture) return culture;
+  /* =========================
+     HISTOIRE — SECTIONS PRÉCISES
+  ========================= */
+  if (clean.includes("conclusion")) {
+    const sec = window.histoireData?.sections?.find(s => s.id === "conclusion");
+    return sec ? resumeTexte(sec.texte, "court") : "Je n’ai pas trouvé la conclusion.";
+  }
 
-  // DICTIONNAIRE
-  const dico = reponseDictionnaire(clean);
-  if (dico) return dico;
+  if (clean.includes("bibliographie")) {
+    const sec = window.histoireData?.sections?.find(s => s.id === "bibliographie");
+    return sec ? sec.texte : "La bibliographie est indisponible.";
+  }
 
-  // MÉMOIRE CONTEXTUELLE
+  const matchPage = clean.match(/page\s*(\d+)/);
+  if (matchPage) {
+    const index = parseInt(matchPage[1], 10) - 1;
+    const sec = window.histoireData?.sections?.[index];
+    if (sec) {
+      return `<strong>${sec.titre}</strong><br><br>${resumeTexte(sec.texte, "court")}`;
+    }
+    return "Cette page n’existe pas dans l’histoire.";
+  }
+
+  /* =========================
+     CULTURE & IDENTITÉ
+  ========================= */
+  if (clean.includes("idaksahak") || clean.includes("tadaksahak")) {
+    return `
+Les Idaksahak sont un peuple du Sahel,
+porteurs d’une langue singulière : le Tadaksahak.
+Pasteurs, commerçants et érudits,
+ils ont longtemps été discrets avant d’affirmer
+leur identité culturelle et politique.
+    `;
+  }
+
+  /* =========================
+     DICTIONNAIRE INTELLIGENT
+  ========================= */
+  const mot = vocabulaire.find(v =>
+    normalize(clean).includes(normalize(v.mot))
+  );
+
+  if (mot) {
+    botMemory.lastWord = mot.mot;
+
+    return `
+📖 <strong>${mot.mot}</strong><br>
+• Catégorie : ${mot.cat || "—"}<br>
+• 🇫🇷 Français : ${mot.fr || "—"}<br>
+• 🇬🇧 English : ${mot.en || "—"}<br>
+• 🌍 Tadaksahak : ${mot.mot}<br><br>
+💡 Tu peux dire <em>« explique encore »</em> ou demander un exemple.
+    `;
+  }
+
+  /* =========================
+     MÉMOIRE CONTEXTUELLE
+  ========================= */
   if (clean.includes("explique encore") && botMemory.lastWord) {
-    return `📖 <strong>${botMemory.lastWord}</strong> est un mot important dans la culture Tadaksahak,
-souvent utilisé dans les récits et la vie quotidienne.`;
+    return `
+📚 <strong>${botMemory.lastWord}</strong> est un mot important
+dans la culture Tadaksahak.
+Il est souvent utilisé dans les récits oraux,
+les proverbes et la vie quotidienne.
+    `;
   }
 
-  return "🤔 Je peux expliquer un mot, raconter l’histoire, résumer un texte ou te guider dans le site.";
+  /* =========================
+     AIDE GÉNÉRALE
+  ========================= */
+  return `
+🤖 Je peux :
+• expliquer un mot du dictionnaire  
+• résumer l’histoire des Idaksahak  
+• guider dans le site  
+• proposer un quiz  
+• parler culture et langue  
+
+Dis-moi ce que tu veux explorer 🌍
+  `;
 }
+
 
 // ----------------------
 // TRAITEMENT SAISIE
