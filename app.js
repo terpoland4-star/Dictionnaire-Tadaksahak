@@ -187,6 +187,46 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
   construireIndexAlphabet();
 
+// ----------------------
+// LIVRES – BIBLIOTHÈQUE NUMÉRIQUE
+// ----------------------
+function afficherLivres() {
+  const cont = document.getElementById("livresContainer");
+  if (!cont || !window.livresData) {
+    console.warn("📚 livresData non disponible ou conteneur absent");
+    return;
+  }
+
+  cont.innerHTML = "";
+
+  window.livresData.forEach(l => {
+    const div = document.createElement("div");
+    div.className = "livre-card";
+
+    div.innerHTML = `
+      <div class="livre-titre">${l.titre}</div>
+      <div class="livre-auteur">${l.auteur} • ${l.annee}</div>
+      <div class="livre-desc">${l.description}</div>
+      <div class="livre-meta">${l.type} — ${l.langue}</div>
+
+      <div class="livre-actions">
+        <button onclick="window.open('${l.lien}', '_blank')">
+          📖 Lire le livre
+        </button>
+        <button onclick="botParleLivre('${escapeHtml(l.titre)}')">
+          🤖 Demander au bot
+        </button>
+      </div>
+    `;
+
+    cont.appendChild(div);
+  });
+}
+
+// Appel initial
+afficherLivres();
+
+   
 /* ===========================================================
    🤖 CHATBOT TADAKSAHAK – Intelligence culturelle & pédagogique
    Auteur : Hamadine AG MOCTAR
