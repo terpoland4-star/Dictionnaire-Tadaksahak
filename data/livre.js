@@ -7,7 +7,7 @@ window.livresData = [
     type: "Chapitre académique",
     langue: "Français",
     description: "Analyse approfondie du processus d’émancipation politique des Idaksahak, de la condition subalterne à l’affirmation armée et politique contemporaine.",
-    lien: "livres/emancipation-politique-idaksahak.html",
+    lien: "livres/histoire-emancipation-integrale.html",
     source: "La tribu au Maghreb et au Sahara"
   }
 ];
