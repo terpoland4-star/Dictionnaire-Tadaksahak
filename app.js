@@ -342,6 +342,21 @@ function reponseDictionnaire(txt) {
   `;
 }
 
+function botParleLivre(titre) {
+  naviguer("chat");
+  afficheMsg("bot", `
+📚 <strong>${titre}</strong><br>
+Ce livre est une ressource importante pour comprendre
+l’histoire, la culture ou la langue des Idaksahak.<br><br>
+Tu peux me demander :
+• un résumé  
+• le contexte historique  
+• l’intérêt culturel  
+• ou un public recommandé
+  `);
+}
+
+   
 // ----------------------
 // CŒUR DU BOT
 // ----------------------
