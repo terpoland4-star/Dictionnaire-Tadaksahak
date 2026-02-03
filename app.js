@@ -187,9 +187,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
   construireIndexAlphabet();
 
-// ----------------------
-// LIVRES – BIBLIOTHÈQUE NUMÉRIQUE
-// ----------------------
 function afficherLivres() {
   const cont = document.getElementById("livresContainer");
   if (!cont || !window.livresData) {
@@ -204,27 +201,35 @@ function afficherLivres() {
     div.className = "livre-card";
 
     div.innerHTML = `
-      <div class="livre-titre">${l.titre}</div>
-      <div class="livre-auteur">${l.auteur} • ${l.annee}</div>
-      <div class="livre-desc">${l.description}</div>
-      <div class="livre-meta">${l.type} — ${l.langue}</div>
+      <div class="livre-titre">${escapeHtml(l.titre)}</div>
+      <div class="livre-auteur">${escapeHtml(l.auteur)} • ${escapeHtml(l.annee || "")}</div>
+      <div class="livre-desc">${escapeHtml(l.description || "")}</div>
+      <div class="livre-meta">${escapeHtml(l.type)} — ${escapeHtml(l.langue)}</div>
 
       <div class="livre-actions">
-        <button onclick="window.open('${l.lien}', '_blank')">
+        <button class="btn-lire">
           📖 Lire le livre
         </button>
-        <button data-titre="${escapeHtml(l.titre)}" class="btn-bot-livre">
-
+        <button class="btn-bot-livre">
           🤖 Demander au bot
         </button>
       </div>
     `;
 
+    // 📖 Lecture
+    div.querySelector(".btn-lire")
+      .addEventListener("click", () => {
+        window.open(l.lien, "_blank");
+      });
+
+    // 🤖 Bot
+    div.querySelector(".btn-bot-livre")
+      .addEventListener("click", () => {
+        botParleLivre(l.titre);
+      });
+
     cont.appendChild(div);
   });
-   div.querySelector(".btn-bot-livre")
-  .addEventListener("click", () => botParleLivre(l.titre));
-
 }
 
 
@@ -571,27 +576,15 @@ document.getElementById("chatInput")?.addEventListener("keypress", e => {
 
 // ----------------------
 // INITIALISATION LIVRES
-// ----------------------
+
 function initLivres() {
   if (!window.livresData || !Array.isArray(window.livresData)) {
     console.warn("📚 livresData indisponible");
     return;
   }
 
-  afficherLivres();
-  console.log("📚 Livres affichés :", window.livresData.length);
-}
-
 // Affichage quand on arrive sur la section Livres
-const sectionSelector = document.getElementById("sectionSelector");
 
-sectionSelector?.addEventListener("change", () => {
-  if (sectionSelector.value === "livres") {
-    initLivres();
-  }
-});
-
-// Cas où "Livres" est la section mémorisée au rechargement
 document.addEventListener("DOMContentLoaded", () => {
   if (sectionSelector?.value === "livres") {
     initLivres();
