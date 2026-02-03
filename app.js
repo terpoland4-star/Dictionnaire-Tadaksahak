@@ -213,7 +213,8 @@ function afficherLivres() {
         <button onclick="window.open('${l.lien}', '_blank')">
           📖 Lire le livre
         </button>
-        <button onclick="botParleLivre('${escapeHtml(l.titre)}')">
+        <button data-titre="${escapeHtml(l.titre)}" class="btn-bot-livre">
+
           🤖 Demander au bot
         </button>
       </div>
@@ -221,6 +222,9 @@ function afficherLivres() {
 
     cont.appendChild(div);
   });
+   div.querySelector(".btn-bot-livre")
+  .addEventListener("click", () => botParleLivre(l.titre));
+
 }
 
 
@@ -564,16 +568,36 @@ document.getElementById("chatInput")?.addEventListener("keypress", e => {
   genererAlbumsAudio();
 
   window.jouerTadaksahak=function(){ if(audioElem && motActuel && motActuel.audio) audioElem.play(); }
+
 // ----------------------
 // INITIALISATION LIVRES
 // ----------------------
-if (window.livresData && Array.isArray(window.livresData)) {
+function initLivres() {
+  if (!window.livresData || !Array.isArray(window.livresData)) {
+    console.warn("📚 livresData indisponible");
+    return;
+  }
+
   afficherLivres();
-  console.log("📚 Livres chargés :", window.livresData.length);
-} else {
-  console.warn("⏳ livresData non prêt, nouvelle tentative…");
-  setTimeout(afficherLivres, 300);
+  console.log("📚 Livres affichés :", window.livresData.length);
 }
+
+// Affichage quand on arrive sur la section Livres
+const sectionSelector = document.getElementById("sectionSelector");
+
+sectionSelector?.addEventListener("change", () => {
+  if (sectionSelector.value === "livres") {
+    initLivres();
+  }
+});
+
+// Cas où "Livres" est la section mémorisée au rechargement
+document.addEventListener("DOMContentLoaded", () => {
+  if (sectionSelector?.value === "livres") {
+    initLivres();
+  }
+});
+
 
   console.log("✅ Script unifié chargé avec dictionnaire, chat amélioré et audio.");
 });
