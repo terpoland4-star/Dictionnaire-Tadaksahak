@@ -8,6 +8,9 @@
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="stylesheet" href="style.css" />
 
+  <script src="data/livres.js"></script>
+  <script src="app.js" defer></script>
+  
 </head>
 <body>
   <header>
@@ -308,7 +311,9 @@
     dominé à celle d’une tribu guerrière.
   </p>
 
-  <h3>Références</h3>
+  
+    
+    <h3>Références</h3>
   <p>
     15. Entretien avec quatre Idaksahak, de différentes fractions, Bamako, le <strong>27/10/2020</strong>.<br>
     16. Ag Guidi <strong>2019</strong>, p. 9.<br>
@@ -428,7 +433,8 @@
     l’écriture de ces lignes (<strong>octobre 2023</strong>).
   </p>
 
-  <h3>Références</h3>
+  
+   <h3>Références</h3>
   <p>
     29. Richer <strong>1924</strong>, p. 162.<br>
     30. Entretien avec quatre Idaksahak, <strong>Bamako, le 27/10/2020</strong>.<br>
@@ -447,7 +453,9 @@
     43. Sa mère est Tamasheq, de la tribu des Kel Ensar qui évolue dans la région de Tombouctou.
   </p>
  </section>
-   <section id="conclusion-et-bibliographie">
+  
+  
+  <section id="conclusion-et-bibliographie">
   <h2>📄 Une tribu en construction politique ?</h2>
   <p>Les années 1990 ouvrent certainement une nouvelle ère dans l’histoire des Idaksahak, 
   avec l’engagement de peut-être plus de 2000 combattants dans une rébellion contre le 
@@ -483,7 +491,9 @@
   et plus largement des combattants de l’Adagh, lorsque la sécurité des populations et des 
   biens de la région de Ménaka est menacée. Or c’est dans cette région que vit la majorité des 
   Idaksahak.</p>
-   </section>
+  </section>
+  
+  
   <section>
   <p>Pour ces raisons et dans ce contexte est donc créé le premier mouvement armé 
   voué à la sauvegarde et à la promotion des intérêts des Idaksahak. En plus d’une force armée, 
@@ -516,6 +526,8 @@
   avec la force française Barkhane et à l’armée nigérienne dans une déclaration de guerre 
   contre l’EIGS.</p>
   </section>
+  
+  
   <section>
   <p>Ce dernier constat, d’une séquence historique toujours en cours, vient relancer la 
   question des liens de solidarité censés définir, avec d’autres éléments, la structure et le 
@@ -532,6 +544,8 @@
   au début du XXI<sup>e</sup> siècle. L’expérience contemporaine des Idaksahak ouvre sans doute de 
   nouvelles pistes à explorer.</p>
   </section>
+
+  
   <section>
   <h2>Références bibliographiques</h2>
   <ul>
@@ -558,16 +572,4 @@
 <div class="retour">
   <a class="button" href="#top">⬆ Retour en haut</a>
 </div>
-  <select id="themeSelect">
-  <option value="clair">Clair</option>
-  <option value="vert">Vert</option>
-  <option value="sombre">Sombre</option>
-</select>
 
-<script>
-  const select = document.getElementById('themeSelect');
-  const body = document.body;
-  select.value = body.dataset.theme;
-  select.onchange = e => body.setAttribute('data-theme', e.target.value);
-</script>
-  
