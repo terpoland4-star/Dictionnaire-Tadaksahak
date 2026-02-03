@@ -436,6 +436,77 @@ audio { width: 100%; margin-top: 1rem; border-radius: 8px; }
   transform: translateY(-1px);
 }
 
+/* =========================
+   LIVRES – DESIGN PRO
+========================= */
+
+#livresContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.livre-card {
+  background: linear-gradient(180deg, #111, #0b0b0b);
+  border: 1px solid #222;
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.45);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.livre-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+}
+
+.livre-titre {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #eaeaea;
+  margin-bottom: .3rem;
+}
+
+.livre-auteur {
+  font-size: .85rem;
+  color: #9aa0a6;
+  margin-bottom: .6rem;
+}
+
+.livre-desc {
+  font-size: .9rem;
+  color: #cfcfcf;
+  line-height: 1.45;
+  margin-bottom: .8rem;
+}
+
+.livre-meta {
+  font-size: .75rem;
+  color: #6f9cff;
+  margin-bottom: .8rem;
+}
+
+.livre-actions {
+  display: flex;
+  gap: .5rem;
+}
+
+.livre-actions button {
+  flex: 1;
+  padding: .45rem .6rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: #1e88e5;
+  color: #fff;
+  font-size: .8rem;
+  transition: background .2s ease;
+}
+
+.livre-actions button:hover {
+  background: #1565c0;
+}
 
 /* =========================
    FOOTER
