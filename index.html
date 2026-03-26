@@ -2,73 +2,67 @@
 <html lang="fr">
 <head>
   <!-- =========================
-       MÉTADONNÉES GÉNÉRALES
+       MÉTADONNÉES
   ========================== -->
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tadaksahak Learning – Dictionnaire Tadaksahak Multilingue</title>
-  <meta name="description" content="Dictionnaire Tadaksahak multilingue, culture, histoire, médias, quiz et mémoire vivante du peuple Idaksahak.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tadaksahak Learning – Dictionnaire Multilingue</title>
+
+  <meta name="description" content="Dictionnaire Tadaksahak multilingue, culture, histoire, médias et mémoire vivante Idaksahak.">
   <meta name="author" content="Hamadine Ag Moctar">
   <meta name="theme-color" content="#005fa3">
-  <meta name="apple-mobile-web-app-capable" content="yes">
 
-  <!-- =========================
-       ICONES & PWA
-  ========================== -->
-  <link rel="icon" href="images/idaksahak_square.png" type="image/png">
-  <link rel="apple-touch-icon" href="images/idaksahak_square.png">
+  <!-- PWA -->
   <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="images/idaksahak_square.png">
+  <link rel="apple-touch-icon" href="images/idaksahak_square.png">
 
-  <!-- =========================
-       STYLES
-  ========================== -->
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- =========================
-       LIBRAIRIES & DONNÉES
-  ========================== -->
-  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
-  
-  <script type="module">
-  import { histoire } from './data/histoire.js';
-  window.histoireData = histoire;
-</script>
-  
-  <script src="data/interface_langue.js"></script>
-  <script src="data/audios.js"></script>
-  <script src="data/photos.js"></script>
-  <script src="data/videos.js"></script>
-  <script src="data/docs.js"></script>
-  <script src="data/livres.js"></script>
-  <script src="data/quiz.js"></script>
-  <script src="app.js" defer></script>
+  <!-- Préconnexion (perf) -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
+  <!-- Fuse.js (ES Module) -->
+  <script type="module">
+    import Fuse from "https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.esm.js";
+    window.Fuse = Fuse;
+  </script>
+
+  <!-- App principale -->
+  <script type="module" src="app.js"></script>
 </head>
 
 <body>
 
+<!-- =========================
+     NOSCRIPT
+========================== -->
 <noscript>
   <div class="js-warning">
-    ⚠️ JavaScript est nécessaire pour le bon fonctionnement du dictionnaire.
+    ⚠️ JavaScript est nécessaire pour utiliser l'application.
   </div>
 </noscript>
 
 <!-- =========================
-     HEADER & NAVIGATION
+     HEADER
 ========================== -->
 <header class="site-header">
+
   <img src="images/idaksahak_round.png"
        alt="Logo Tadaksahak"
        class="logo-header"
        loading="lazy">
 
   <h1>Tadaksahak Learning</h1>
+
   <p class="subtitle">
-    Dictionnaire Tadaksahak Multilingue – Langue, culture et mémoire Idaksahak
+    Langue, culture et mémoire vivante du peuple Idaksahak
   </p>
 
+  <!-- NAVIGATION -->
   <nav class="main-nav" aria-label="Navigation principale">
-    <select id="sectionSelector">
+    <select id="sectionSelector" aria-label="Choisir une section">
       <option value="accueil">🏠 Accueil</option>
       <option value="dictionnaire">📖 Dictionnaire</option>
       <option value="chat">💬 Chat</option>
@@ -81,10 +75,11 @@
       <option value="quiz">❓ Quiz</option>
     </select>
   </nav>
+
 </header>
 
 <!-- =========================
-     CONTENU PRINCIPAL
+     MAIN
 ========================== -->
 <main>
 
@@ -92,13 +87,12 @@
      ACCUEIL
 ========================== -->
 <section id="accueil" class="onglet-contenu">
+
   <div class="hero">
-    <h2>Bienvenue sur Tadaksahak Learning</h2>
-    <p>
-      Une plateforme numérique dédiée à la langue Tadaksahak,
-      à la culture Idaksahak et à la transmission des savoirs.
-    </p>
-    <button class="btn" onclick="document.getElementById('sectionSelector').value='dictionnaire'; document.getElementById('sectionSelector').dispatchEvent(new Event('change'));">
+    <h2>Bienvenue</h2>
+    <p>Une plateforme dédiée à la langue et à la culture Tadaksahak.</p>
+
+    <button id="btnGoDico" class="btn">
       Accéder au dictionnaire 📖
     </button>
   </div>
@@ -110,78 +104,70 @@
          loading="lazy">
 
     <div class="bio-text">
-      <p><strong>Je m'appelle Hamadine Ag Moctar.</strong><br>
-      Interprète multilingue, conteur, développeur autodidacte… et survivant.</p>
-
-      <p>
-        Né au cœur du Sahel, j’ai traversé les frontières, les langues,
-        les conflits et les silences.
-      </p>
-
-      <p>
-        Je conçois des dictionnaires interactifs, des plateformes éducatives
-        multilingues et des outils numériques adaptés aux réalités locales.
-      </p>
-
-      <p>
-        <em>Un bras perdu, mais une voix debout. Une mission : connecter nos mondes.</em>
-      </p>
+      <p><strong>Hamadine Ag Moctar</strong></p>
+      <p>Interprète, développeur et gardien de la mémoire culturelle.</p>
+      <p><em>Une mission : connecter nos mondes.</em></p>
     </div>
   </div>
+
 </section>
 
 <!-- =========================
-     DICTIONNAIRE (CŒUR)
+     DICTIONNAIRE
 ========================== -->
 <section id="dictionnaire" class="onglet-contenu" hidden>
-  <h2>📖 Dictionnaire Tadaksahak Multilingue</h2>
+
+  <h2>📖 Dictionnaire Tadaksahak</h2>
 
   <div class="search-section">
     <input id="searchBar"
            type="text"
-           placeholder="Chercher un mot Tadaksahak…"
+           placeholder="Rechercher un mot…"
            autocomplete="off">
+
     <ul id="suggestions" class="suggestions-list"></ul>
   </div>
 
   <div class="result-section">
     <h3 id="motTexte">—</h3>
     <p id="definition">—</p>
-
     <audio id="audioLecteur" controls hidden></audio>
 
     <div class="lang-switch">
-      <button onclick="changerLangue('fr')">FR</button>
-      <button onclick="changerLangue('en')">EN</button>
+      <button data-lang="fr">FR</button>
+      <button data-lang="en">EN</button>
     </div>
-
   </div>
 
-  <section class="alphabet-section">
+  <div class="alphabet-section">
     <h3>Index alphabétique</h3>
     <div id="alphabetIndex"></div>
     <div id="wordList"></div>
-  </section>
+  </div>
+
 </section>
 
-  <!-- =========================
-     CHAT TADAKSAHAK
+<!-- =========================
+     CHAT
 ========================== -->
 <section id="chat" class="onglet-contenu" hidden>
-  <h2>💬 Chat Tadaksahak</h2>
+
+  <h2>💬 Chat</h2>
+
   <div id="chatWindow" class="chatbox" role="log" aria-live="polite"></div>
-  <div id="botIntro">🤖 Salut, je suis Hamadine. Pose ta question.</div>
+
   <div class="chat-input">
-    <input id="chatInput" placeholder="Écrivez votre message…" aria-label="Message du chat">
+    <input id="chatInput" placeholder="Écrivez..." aria-label="Message">
     <button id="btnEnvoyer">Envoyer</button>
   </div>
+
 </section>
 
 <!-- =========================
      AUDIO
 ========================== -->
 <section id="audio" class="onglet-contenu" hidden>
-  <h2>🎧 Albums & chants Tadaksahak</h2>
+  <h2>🎧 Audio</h2>
   <div id="audioContainer"></div>
 </section>
 
@@ -189,20 +175,21 @@
      PHOTOS
 ========================== -->
 <section id="photos" class="onglet-contenu" hidden>
-  <h2>🖼️ Galerie photo</h2>
+  <h2>🖼️ Photos</h2>
   <div id="photosContainer" class="grid"></div>
 </section>
 
 <!-- =========================
-     VIDÉOS
+     VIDEOS
 ========================== -->
 <section id="videos" class="onglet-contenu" hidden>
   <h2>🎥 Vidéos</h2>
-  <label for="filtreVideos">Trier :</label>
+
   <select id="filtreVideos">
     <option value="nouveau">Récentes</option>
     <option value="ancien">Anciennes</option>
   </select>
+
   <div id="videosContainer" class="grid"></div>
 </section>
 
@@ -210,102 +197,91 @@
      LIVRES
 ========================== -->
 <section id="livres" class="onglet-contenu" hidden>
-  <h2>📚 Livres & études</h2>
 
-  <input id="rechercheLivres"
-         placeholder="Rechercher un livre…"
-         aria-label="Recherche livres">
+  <h2>📚 Livres</h2>
 
-  <label for="selectThemeLivres">Filtrer par thème :</label>
+  <input id="rechercheLivres" placeholder="Rechercher..." />
+
   <select id="selectThemeLivres">
     <option value="">Tous</option>
     <option value="linguistique">Linguistique</option>
     <option value="histoire">Histoire</option>
   </select>
-   <h3>Émancipation politique des Idaksahak</h3>
-          <ul>
-      <li><a href="livres/histoire-emancipation-politique-integrale.html">Emancipation-politique-des Idaksahak par "Charles GREMONT"</a></li> 
+
+  <!-- FIX : UL fermé correctement -->
+  <h3>Émancipation politique</h3>
+  <ul>
+    <li>
+      <a href="livres/histoire-emancipation-politique-integrale.html">
+        Livre de Charles GREMONT
+      </a>
+    </li>
+  </ul>
 
   <div id="livresContainer"></div>
-  
+
 </section>
 
 <!-- =========================
-     RAPPORTS
+     AUTRES
 ========================== -->
-<section id="rapports" class="onglet-contenu" hidden>
-  <h2>📄 Rapports & documents</h2>
-  <div id="rapportsContainer"></div>
-</section>
-
-<!-- =========================
-     ACTUALITÉS
-========================== -->
-<section id="actualites" class="onglet-contenu" hidden>
-  <h2>📰 Actualités</h2>
-  <div id="newsContainer"></div>
-</section>
-
-<!-- =========================
-     QUIZ
-========================== -->
-<section id="quiz" class="onglet-contenu" hidden>
-  <h2>❓ Quiz Tadaksahak</h2>
-  <div id="quizContainer"></div>
-</section>
+<section id="rapports" hidden><h2>📄 Rapports</h2></section>
+<section id="actualites" hidden><h2>📰 Actualités</h2></section>
+<section id="quiz" hidden><h2>❓ Quiz</h2></section>
 
 </main>
 
 <!-- =========================
-     BOUTON CHAT FLOTTANT
+     CHAT FLOTTANT
 ========================== -->
-<button id="toggleChatBot" class="floating-chat-btn">💬</button>
+<button id="toggleChatBot"
+        class="floating-chat-btn"
+        aria-label="Ouvrir le chat">
+  💬
+</button>
 
 <!-- =========================
      FOOTER
 ========================== -->
 <footer class="site-footer">
-  <p>© 2025 Tadaksahak Learning — Tous droits réservés</p>
-  <p>
-    Projet conçu par <strong>Hamadine Ag Moctar</strong> —
-    Dictionnaire, culture et mémoire Idaksahak.
-  </p>
-  <p>
-    <a href="offline.html">Accès hors-ligne (Offline)</a>
-  </p>
+  <p>© 2026 Tadaksahak Learning</p>
+  <a href="offline.html">Mode hors-ligne</a>
 </footer>
 
 <!-- =========================
-     NAVIGATION & INITIALISATION
+     SCRIPT UI SIMPLE
 ========================== -->
-<script>
+<script type="module">
 document.addEventListener("DOMContentLoaded", () => {
+
   const select = document.getElementById("sectionSelector");
   const sections = document.querySelectorAll("main > section");
 
-  function afficherSection(id) {
+  function show(id) {
     sections.forEach(sec => sec.hidden = sec.id !== id);
-    localStorage.setItem("lastSection", id);
+    localStorage.setItem("section", id);
   }
 
-  if (select) {
-    select.addEventListener("change", () => afficherSection(select.value));
-    const last = localStorage.getItem("lastSection") || "accueil";
-    select.value = last;
-    afficherSection(last);
-  }
+  // Navigation
+  select.addEventListener("change", () => show(select.value));
+  show(localStorage.getItem("section") || "accueil");
 
-  // Bouton chat flottant
-  const toggleChat = document.getElementById("toggleChatBot");
-  if (toggleChat) {
-    toggleChat.addEventListener("click", () => {
-      select.value = "chat";
-      afficherSection("chat");
+  // Bouton accès dictionnaire
+  document.getElementById("btnGoDico")
+    ?.addEventListener("click", () => {
+      select.value = "dictionnaire";
+      show("dictionnaire");
     });
-  }
+
+  // Chat flottant
+  document.getElementById("toggleChatBot")
+    ?.addEventListener("click", () => {
+      select.value = "chat";
+      show("chat");
+    });
+
 });
 </script>
 
 </body>
 </html>
-
