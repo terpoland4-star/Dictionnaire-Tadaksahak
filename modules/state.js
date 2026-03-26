@@ -4,5 +4,5 @@ export const AppState = {
   histoire: {},
   langue: "fr",
   motActuel: null,
-  historique: []
+  indexActuel: -1
 };
