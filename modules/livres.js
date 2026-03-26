@@ -18,10 +18,10 @@ export function afficherLivres() {
     div.innerHTML = `
       <h3>${escapeHtml(l.titre)}</h3>
       <p>${escapeHtml(l.description || "")}</p>
-      <button class="btn-lire">Lire</button>
+      <button>Lire</button>
     `;
 
-    div.querySelector(".btn-lire")
+    div.querySelector("button")
       .addEventListener("click", () => window.open(l.lien));
 
     cont.appendChild(div);
