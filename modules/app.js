@@ -5,19 +5,18 @@ import { afficherLivres } from "./modules/livres.js";
 import { reponseBot } from "./modules/chatbot.js";
 import { initNavigation } from "./modules/navigation.js";
 import { debounce } from "./modules/utils.js";
+import { motSuivant, motPrecedent, updateNavigationUI } from "./modules/navigationMots.js";
+import { initSwipe } from "./modules/swipe.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
 
-  // Chargement données
   AppState.vocabulaire = await fetch("data/mots.json").then(r => r.json());
   AppState.livres = await fetch("data/livres.json").then(r => r.json());
 
-  // Init modules
   initSearch();
   initNavigation();
   afficherLivres();
 
-  // Recherche
   const searchBar = document.getElementById("searchBar");
   const suggestions = document.getElementById("suggestions");
 
@@ -30,23 +29,34 @@ document.addEventListener("DOMContentLoaded", async () => {
       const li = document.createElement("li");
       li.textContent = item.mot;
 
-      li.addEventListener("click", () => afficherMot(item));
+      li.addEventListener("click", () => {
+        const index = AppState.vocabulaire.findIndex(v => v.mot === item.mot);
+
+        AppState.indexActuel = index;
+        afficherMot(item);
+        updateNavigationUI();
+      });
 
       suggestions.appendChild(li);
     });
 
   }, 200));
 
-  // Chat
+  document.getElementById("btnNext").addEventListener("click", motSuivant);
+  document.getElementById("btnPrev").addEventListener("click", motPrecedent);
+
+  initSwipe(
+    document.getElementById("ficheMot"),
+    motSuivant,
+    motPrecedent
+  );
+
   document.getElementById("btnEnvoyer")
     .addEventListener("click", () => {
       const input = document.getElementById("chatInput");
-      const msg = input.value;
+      const rep = reponseBot(input.value);
       input.value = "";
-
-      const rep = reponseBot(msg);
-
-      console.log(rep); // à afficher dans UI
+      console.log(rep);
     });
 
 });
