@@ -5,67 +5,95 @@
        MÉTADONNÉES
   ========================== -->
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Tadaksahak Learning – Dictionnaire Multilingue</title>
 
   <meta name="description" content="Dictionnaire Tadaksahak multilingue, culture, histoire, médias et mémoire vivante Idaksahak.">
   <meta name="author" content="Hamadine Ag Moctar">
   <meta name="theme-color" content="#005fa3">
+  
+  <!-- SEO -->
+  <meta name="keywords" content="Tadaksahak, Idaksahak, dictionnaire, langue, culture, Afrique">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Tadaksahak Learning">
+  <meta property="og:description" content="Dictionnaire et culture Tadaksahak">
+  <meta property="og:image" content="images/idaksahak_square.png">
+  <meta property="og:type" content="website">
 
   <!-- PWA -->
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="icon" href="images/idaksahak_square.png">
+  <link rel="icon" href="images/idaksahak_square.png" type="image/png">
   <link rel="apple-touch-icon" href="images/idaksahak_square.png">
+  
+  <!-- Préchargement critiques -->
+  <link rel="preload" href="style.css" as="style">
+  <link rel="preload" href="images/idaksahak_round.png" as="image">
 
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 
   <!-- Préconnexion (perf) -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 
-  <!-- Fuse.js (ES Module) -->
-  <script type="module">
-    import Fuse from "https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.esm.js";
-    window.Fuse = Fuse;
-  </script>
-
-  <!-- App principale -->
-  <script type="module" src="app.js"></script>
+  <!-- Sécurité de base -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no">
 </head>
 
 <body>
 
 <!-- =========================
+     SKIP LINK (Accessibilité)
+========================== -->
+<a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+<!-- =========================
      NOSCRIPT
 ========================== -->
 <noscript>
-  <div class="js-warning">
+  <div class="js-warning" role="alert">
     ⚠️ JavaScript est nécessaire pour utiliser l'application.
   </div>
 </noscript>
 
 <!-- =========================
+     LOADER
+========================== -->
+<div id="loadingOverlay" class="loading-overlay" hidden>
+  <div class="spinner"></div>
+  <p>Chargement de l'application...</p>
+</div>
+
+<!-- =========================
      HEADER
 ========================== -->
 <header class="site-header">
+  <div class="header-container">
+    <img src="images/idaksahak_round.png"
+         alt="Logo Tadaksahak - Symbole du peuple Idaksahak"
+         class="logo-header"
+         width="60"
+         height="60"
+         loading="eager">
 
-  <img src="images/idaksahak_round.png"
-       alt="Logo Tadaksahak"
-       class="logo-header"
-       loading="lazy">
-
-  <h1>Tadaksahak Learning</h1>
-
-  <p class="subtitle">
-    Langue, culture et mémoire vivante du peuple Idaksahak
-  </p>
+    <div class="header-text">
+      <h1>Tadaksahak Learning</h1>
+      <p class="subtitle">
+        Langue, culture et mémoire vivante du peuple Idaksahak
+      </p>
+    </div>
+  </div>
 
   <!-- NAVIGATION -->
   <nav class="main-nav" aria-label="Navigation principale">
+    <label for="sectionSelector" class="visually-hidden">Choisir une section</label>
     <select id="sectionSelector" aria-label="Choisir une section">
       <option value="accueil">🏠 Accueil</option>
       <option value="dictionnaire">📖 Dictionnaire</option>
-      <option value="chat">💬 Chat</option>
+      <option value="chat">💬 Chat Bot</option>
       <option value="audio">🎧 Audio</option>
       <option value="photos">🖼️ Photos</option>
       <option value="videos">🎥 Vidéos</option>
@@ -75,33 +103,34 @@
       <option value="quiz">❓ Quiz</option>
     </select>
   </nav>
-
 </header>
 
 <!-- =========================
      MAIN
 ========================== -->
-<main>
+<main id="main-content">
 
 <!-- =========================
      ACCUEIL
 ========================== -->
-<section id="accueil" class="onglet-contenu">
-
+<section id="accueil" class="onglet-contenu" aria-labelledby="accueil-title">
   <div class="hero">
-    <h2>Bienvenue</h2>
+    <h2 id="accueil-title">Bienvenue</h2>
     <p>Une plateforme dédiée à la langue et à la culture Tadaksahak.</p>
 
-    <button id="btnGoDico" class="btn">
-      Accéder au dictionnaire 📖
+    <button id="btnGoDico" class="btn btn-primary">
+      📖 Accéder au dictionnaire
     </button>
   </div>
 
   <div class="bio-container">
     <img src="images/hamadine_bio.jpg"
-         alt="Hamadine Ag Moctar"
+         alt="Hamadine Ag Moctar - Interprète et développeur"
          class="bio-photo"
-         loading="lazy">
+         loading="lazy"
+         width="150"
+         height="150"
+         onerror="this.src='images/placeholder-avatar.jpg'">
 
     <div class="bio-text">
       <p><strong>Hamadine Ag Moctar</strong></p>
@@ -109,135 +138,202 @@
       <p><em>Une mission : connecter nos mondes.</em></p>
     </div>
   </div>
-
+  
+  <!-- Statistiques rapides -->
+  <div class="stats-container" id="statsContainer" hidden>
+    <div class="stat-card">
+      <span class="stat-number" id="statMots">0</span>
+      <span class="stat-label">mots</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number" id="statAudios">0</span>
+      <span class="stat-label">audios</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number" id="statLivres">0</span>
+      <span class="stat-label">livres</span>
+    </div>
+  </div>
 </section>
 
 <!-- =========================
-     DICTIONNAIRE
+     DICTIONNAIRE (CORRIGÉ)
 ========================== -->
-<section id="dictionnaire" class="onglet-contenu" hidden>
-
-  <h2>📖 Dictionnaire Tadaksahak</h2>
+<section id="dictionnaire" class="onglet-contenu" aria-labelledby="dico-title" hidden>
+  <h2 id="dico-title">📖 Dictionnaire Tadaksahak</h2>
 
   <div class="search-section">
-    <input id="searchBar"
-           type="text"
-           placeholder="Rechercher un mot…"
-           autocomplete="off">
-
-    <ul id="suggestions" class="suggestions-list"></ul>
+    <div class="search-wrapper">
+      <input id="searchBar"
+             type="search"
+             placeholder="Rechercher un mot…"
+             autocomplete="off"
+             aria-label="Rechercher un mot">
+      <button id="clearSearch" class="clear-search" aria-label="Effacer" hidden>✖</button>
+    </div>
+    <ul id="suggestions" class="suggestions-list" role="listbox"></ul>
   </div>
 
+  <!-- Bloc fiche mot unique (corrigé) -->
   <div class="result-section">
-    <h3 id="motTexte">—</h3>
-    <p id="definition">—</p>
-    <audio id="audioLecteur" controls hidden></audio>
-
     <div id="ficheMot">
-  <h2 id="motTexte"></h2>
-  <div id="definition"></div>
+      <h2 id="motTexte">—</h2>
+      <div id="definition">—</div>
+      
+      <audio id="audioLecteur" controls hidden preload="none">
+        Votre navigateur ne supporte pas l'audio.
+      </audio>
 
-  <div class="navigation-mots">
-    <button id="btnPrev">⬅️</button>
-    <span id="compteurMot">0 / 0</span>
-    <button id="btnNext">➡️</button>
-  </div>
-</div>
-    <div class="lang-switch">
-      <button data-lang="fr">FR</button>
-      <button data-lang="en">EN</button>
+      <div class="navigation-mots">
+        <button id="btnPrev" class="nav-btn" aria-label="Mot précédent" disabled>⬅️ Précédent</button>
+        <span id="compteurMot" class="compteur">0 / 0</span>
+        <button id="btnNext" class="nav-btn" aria-label="Mot suivant" disabled>Suivant ➡️</button>
+      </div>
+    </div>
+
+    <div class="lang-switch" role="group" aria-label="Langue de la définition">
+      <button data-lang="fr" class="lang-btn active" aria-pressed="true">🇫🇷 Français</button>
+      <button data-lang="en" class="lang-btn" aria-pressed="false">🇬🇧 English</button>
     </div>
   </div>
 
+  <!-- Index alphabétique -->
   <div class="alphabet-section">
     <h3>Index alphabétique</h3>
-    <div id="alphabetIndex"></div>
-    <div id="wordList"></div>
+    <div id="alphabetIndex" class="alphabet-buttons" role="group" aria-label="Lettres alphabétiques"></div>
+    <div id="wordList" class="word-list" role="list" aria-label="Liste des mots"></div>
   </div>
-
 </section>
 
 <!-- =========================
-     CHAT
+     CHAT (AMÉLIORÉ)
 ========================== -->
-<section id="chat" class="onglet-contenu" hidden>
+<section id="chat" class="onglet-contenu" aria-labelledby="chat-title" hidden>
+  <h2 id="chat-title">💬 Chat Bot Hamadine</h2>
+  
+  <div class="chat-container">
+    <div id="chatWindow" class="chatbox" role="log" aria-live="polite">
+      <div class="message bot">
+        <strong>🤖 Hamadine :</strong> Bonjour ! Je suis votre guide. Que souhaitez-vous apprendre ?
+      </div>
+    </div>
 
-  <h2>💬 Chat</h2>
-
-  <div id="chatWindow" class="chatbox" role="log" aria-live="polite"></div>
-
-  <div class="chat-input">
-    <input id="chatInput" placeholder="Écrivez..." aria-label="Message">
-    <button id="btnEnvoyer">Envoyer</button>
+    <div class="chat-input">
+      <input id="chatInput" 
+             type="text" 
+             placeholder="Écrivez votre message..." 
+             aria-label="Message"
+             autocomplete="off">
+      <button id="btnEnvoyer" class="btn-send">Envoyer 📤</button>
+    </div>
+    
+    <div class="chat-suggestions">
+      <button class="chat-suggestion">📖 Mot Tadaksahak</button>
+      <button class="chat-suggestion">📚 Histoire</button>
+      <button class="chat-suggestion">🎵 Culture</button>
+    </div>
   </div>
-
 </section>
 
 <!-- =========================
      AUDIO
 ========================== -->
-<section id="audio" class="onglet-contenu" hidden>
-  <h2>🎧 Audio</h2>
-  <div id="audioContainer"></div>
+<section id="audio" class="onglet-contenu" aria-labelledby="audio-title" hidden>
+  <h2 id="audio-title">🎧 Albums Audio</h2>
+  <div id="audioContainer" class="audio-grid"></div>
 </section>
 
 <!-- =========================
      PHOTOS
 ========================== -->
-<section id="photos" class="onglet-contenu" hidden>
-  <h2>🖼️ Photos</h2>
-  <div id="photosContainer" class="grid"></div>
+<section id="photos" class="onglet-contenu" aria-labelledby="photos-title" hidden>
+  <h2 id="photos-title">🖼️ Galerie Photos</h2>
+  <div id="photosContainer" class="grid">
+    <p class="info-message">📸 Galerie photo en préparation...</p>
+  </div>
 </section>
 
 <!-- =========================
      VIDEOS
 ========================== -->
-<section id="videos" class="onglet-contenu" hidden>
-  <h2>🎥 Vidéos</h2>
+<section id="videos" class="onglet-contenu" aria-labelledby="videos-title" hidden>
+  <h2 id="videos-title">🎥 Vidéos</h2>
 
-  <select id="filtreVideos">
-    <option value="nouveau">Récentes</option>
-    <option value="ancien">Anciennes</option>
-  </select>
+  <div class="filters">
+    <label for="filtreVideos">Trier par :</label>
+    <select id="filtreVideos" aria-label="Filtrer les vidéos">
+      <option value="nouveau">📅 Plus récentes</option>
+      <option value="ancien">📅 Plus anciennes</option>
+    </select>
+  </div>
 
-  <div id="videosContainer" class="grid"></div>
+  <div id="videosContainer" class="grid">
+    <p class="info-message">🎬 Vidéos à venir...</p>
+  </div>
 </section>
 
 <!-- =========================
-     LIVRES
+     LIVRES (CORRIGÉ)
 ========================== -->
-<section id="livres" class="onglet-contenu" hidden>
+<section id="livres" class="onglet-contenu" aria-labelledby="livres-title" hidden>
+  <h2 id="livres-title">📚 Bibliothèque</h2>
 
-  <h2>📚 Livres</h2>
+  <div class="filters">
+    <input id="rechercheLivres" 
+           type="search" 
+           placeholder="Rechercher un livre..."
+           aria-label="Rechercher">
+    
+    <select id="selectThemeLivres" aria-label="Thème">
+      <option value="">📚 Tous les thèmes</option>
+      <option value="linguistique">🔤 Linguistique</option>
+      <option value="histoire">📖 Histoire</option>
+      <option value="culture">🎭 Culture</option>
+      <option value="politique">🏛️ Politique</option>
+    </select>
+  </div>
 
-  <input id="rechercheLivres" placeholder="Rechercher..." />
+  <!-- Section livre spécifique (corrigée - UL fermée) -->
+  <div class="featured-book">
+    <h3>📘 Émancipation politique</h3>
+    <ul class="book-list">
+      <li>
+        <a href="livres/histoire-emancipation-politique-integrale.html" 
+           target="_blank"
+           rel="noopener noreferrer">
+          📖 Livre de Charles GREMONT - Histoire et émancipation politique
+        </a>
+      </li>
+    </ul>
+  </div>
 
-  <select id="selectThemeLivres">
-    <option value="">Tous</option>
-    <option value="linguistique">Linguistique</option>
-    <option value="histoire">Histoire</option>
-  </select>
-
-  <!-- FIX : UL fermé correctement -->
-  <h3>Émancipation politique</h3>
-  <ul>
-    <li>
-      <a href="livres/histoire-emancipation-politique-integrale.html">
-        Livre de Charles GREMONT
-      </a>
-    </li>
-  </ul>
-
-  <div id="livresContainer"></div>
-
+  <!-- Container pour les autres livres -->
+  <div id="livresContainer" class="books-grid"></div>
 </section>
 
 <!-- =========================
-     AUTRES
+     AUTRES SECTIONS (AVEC MESSAGES)
 ========================== -->
-<section id="rapports" hidden><h2>📄 Rapports</h2></section>
-<section id="actualites" hidden><h2>📰 Actualités</h2></section>
-<section id="quiz" hidden><h2>❓ Quiz</h2></section>
+<section id="rapports" class="onglet-contenu" aria-labelledby="rapports-title" hidden>
+  <h2 id="rapports-title">📄 Rapports et Documents</h2>
+  <div class="coming-soon">
+    <p>📑 Rapports culturels, linguistiques et communautaires bientôt disponibles.</p>
+  </div>
+</section>
+
+<section id="actualites" class="onglet-contenu" aria-labelledby="actualites-title" hidden>
+  <h2 id="actualites-title">📰 Actualités</h2>
+  <div class="coming-soon">
+    <p>📰 Restez connectés ! Les actualités arrivent prochainement.</p>
+  </div>
+</section>
+
+<section id="quiz" class="onglet-contenu" aria-labelledby="quiz-title" hidden>
+  <h2 id="quiz-title">❓ Quiz Culturel</h2>
+  <div class="coming-soon">
+    <p>🎯 Testez vos connaissances sur la culture Tadaksahak. Bientôt disponible !</p>
+  </div>
+</section>
 
 </main>
 
@@ -246,50 +342,140 @@
 ========================== -->
 <button id="toggleChatBot"
         class="floating-chat-btn"
-        aria-label="Ouvrir le chat">
+        aria-label="Ouvrir le chat bot"
+        title="Assistant Hamadine">
   💬
 </button>
+
+<!-- =========================
+     TOAST NOTIFICATIONS
+========================== -->
+<div id="toast" class="toast" role="alert" aria-live="assertive" hidden></div>
 
 <!-- =========================
      FOOTER
 ========================== -->
 <footer class="site-footer">
-  <p>© 2026 Tadaksahak Learning</p>
-  <a href="offline.html">Mode hors-ligne</a>
+  <div class="footer-content">
+    <p>© 2026 Tadaksahak Learning - Préservons notre héritage</p>
+    <div class="footer-links">
+      <a href="offline.html" rel="noopener">📱 Mode hors-ligne</a>
+      <button id="installPWA" class="install-btn" hidden>📲 Installer l'application</button>
+    </div>
+  </div>
 </footer>
 
 <!-- =========================
-     SCRIPT UI SIMPLE
+     SCRIPTS (ORDRE CORRIGÉ)
 ========================== -->
+<!-- Fuse.js chargé en premier -->
+<script type="module">
+  // Charger Fuse.js et le rendre global
+  import Fuse from "https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.esm.js";
+  window.Fuse = Fuse;
+  console.log("✅ Fuse.js chargé");
+</script>
+
+<!-- Application principale -->
+<script type="module" src="app.js"></script>
+
+<!-- Script de navigation amélioré -->
 <script type="module">
 document.addEventListener("DOMContentLoaded", () => {
-
   const select = document.getElementById("sectionSelector");
   const sections = document.querySelectorAll("main > section");
-
-  function show(id) {
-    sections.forEach(sec => sec.hidden = sec.id !== id);
-    localStorage.setItem("section", id);
+  
+  if (!select || !sections.length) {
+    console.error("Éléments de navigation manquants");
+    return;
   }
-
-  // Navigation
-  select.addEventListener("change", () => show(select.value));
-  show(localStorage.getItem("section") || "accueil");
-
+  
+  function showSection(id) {
+    // Vérifier que la section existe
+    const targetSection = document.getElementById(id);
+    if (!targetSection) {
+      console.warn(`Section "${id}" non trouvée, redirection vers accueil`);
+      id = "accueil";
+    }
+    
+    // Cacher toutes les sections
+    sections.forEach(sec => {
+      sec.hidden = sec.id !== id;
+    });
+    
+    // Sauvegarder la section active
+    localStorage.setItem("tadaksahak_active_section", id);
+    
+    // Mettre à jour le select si nécessaire
+    if (select.value !== id) {
+      select.value = id;
+    }
+    
+    // Déclencher un événement pour app.js
+    window.dispatchEvent(new CustomEvent('sectionChange', { 
+      detail: { section: id } 
+    }));
+    
+    // Scroll en haut
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  
+  // Navigation par select
+  select.addEventListener("change", (e) => {
+    showSection(e.target.value);
+  });
+  
+  // Section par défaut
+  const savedSection = localStorage.getItem("tadaksahak_active_section");
+  const defaultSection = (savedSection && document.getElementById(savedSection)) ? savedSection : "accueil";
+  showSection(defaultSection);
+  
   // Bouton accès dictionnaire
-  document.getElementById("btnGoDico")
-    ?.addEventListener("click", () => {
-      select.value = "dictionnaire";
-      show("dictionnaire");
+  const btnGoDico = document.getElementById("btnGoDico");
+  if (btnGoDico) {
+    btnGoDico.addEventListener("click", () => {
+      showSection("dictionnaire");
     });
-
+  }
+  
   // Chat flottant
-  document.getElementById("toggleChatBot")
-    ?.addEventListener("click", () => {
-      select.value = "chat";
-      show("chat");
+  const toggleChat = document.getElementById("toggleChatBot");
+  if (toggleChat) {
+    toggleChat.addEventListener("click", () => {
+      showSection("chat");
     });
-
+  }
+  
+  // Gestion PWA installation
+  let deferredPrompt;
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    const installBtn = document.getElementById('installPWA');
+    if (installBtn) {
+      installBtn.hidden = false;
+      installBtn.addEventListener('click', async () => {
+        installBtn.hidden = true;
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        if (outcome === 'accepted') {
+          console.log('PWA installée');
+        }
+        deferredPrompt = null;
+      });
+    }
+  });
+  
+  // Afficher les stats quand les données sont chargées
+  window.addEventListener('dataLoaded', (e) => {
+    const statsContainer = document.getElementById('statsContainer');
+    if (statsContainer && e.detail) {
+      document.getElementById('statMots').textContent = e.detail.mots || 0;
+      document.getElementById('statAudios').textContent = e.detail.audios || 0;
+      document.getElementById('statLivres').textContent = e.detail.livres || 0;
+      statsContainer.hidden = false;
+    }
+  });
 });
 </script>
 
