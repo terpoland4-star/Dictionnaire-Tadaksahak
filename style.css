@@ -733,19 +733,21 @@ audio {
   box-shadow: 0 0 0 3px var(--accent-glow);
 }
 
-.chat-input button {
+/* =========================
+   BOUTON ENVOYER CHAT (AJOUTÉ)
+========================= */
+.btn-send {
   background: linear-gradient(135deg, var(--primary), var(--hover));
   color: #fff;
   border: none;
   border-radius: var(--radius-md);
   padding: 0.8rem 1.5rem;
   cursor: pointer;
-  font-size: 0.95rem;
   font-weight: 600;
   transition: all var(--transition);
 }
 
-.chat-input button:hover {
+.btn-send:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
