@@ -720,6 +720,52 @@ if (selectTheme) {
     });
 }
 
+// ==============================
+// BOUTONS MANQUANTS (AJOUTÉS)
+// ==============================
+
+// Bouton "Accéder au dictionnaire" (page accueil)
+const btnGoDico = document.getElementById("btnGoDico");
+if (btnGoDico) {
+    btnGoDico.addEventListener("click", () => {
+        if (sectionSelector) {
+            sectionSelector.value = "dictionnaire";
+            sectionSelector.dispatchEvent(new Event("change"));
+        }
+    });
+}
+
+// Chat flottant (bouton en bas à droite)
+const toggleChatBtn = document.getElementById("toggleChatBot");
+if (toggleChatBtn) {
+    toggleChatBtn.addEventListener("click", () => {
+        if (sectionSelector) {
+            sectionSelector.value = "chat";
+            sectionSelector.dispatchEvent(new Event("change"));
+        }
+        const chatSection = document.getElementById("chat");
+        if (chatSection) {
+            chatSection.scrollIntoView({ behavior: "smooth" });
+        }
+    });
+}
+
+// Affichage des statistiques après chargement
+window.addEventListener('dataLoaded', (e) => {
+    const statsContainer = document.getElementById("statsContainer");
+    if (statsContainer) {
+        const statMots = document.getElementById("statMots");
+        const statAudios = document.getElementById("statAudios");
+        const statLivres = document.getElementById("statLivres");
+        
+        if (statMots) statMots.textContent = e.detail.mots || 0;
+        if (statAudios) statAudios.textContent = e.detail.audios || 0;
+        if (statLivres) statLivres.textContent = e.detail.livres || 0;
+        
+        statsContainer.hidden = false;
+    }
+});
+
 // ------------------------------
 // INITIALISATION
 // ------------------------------
