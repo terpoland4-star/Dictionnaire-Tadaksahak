@@ -1,6 +1,6 @@
 // ==============================
 // APPLICATION TADAKSAHAK LEARNING
-// Version corrigée et optimisée
+// Version finale corrigée et optimisée
 // ==============================
 
 // ------------------------------
@@ -9,7 +9,6 @@
 let vocabulaire = [];
 let motActuel = null;
 let langueActuelle = "fr";
-let searchLang = "td";
 let historique = [];
 let albumsAudio = [];
 let currentIndex = -1;
@@ -17,6 +16,9 @@ let motsListe = [];
 
 window.livresData = [];
 window.histoireData = {};
+
+// URLs GitHub (raw)
+const GITHUB_BASE = "https://raw.githubusercontent.com/terpoland4-star/Dictionnaire-Tadaksahak/main/data/";
 
 // Éléments DOM
 const searchBar = document.getElementById("searchBar");
@@ -71,23 +73,49 @@ function setLoading(show) {
 }
 
 // ------------------------------
-// CHARGEMENT DONNÉES JSON
+// CHARGEMENT DONNÉES JSON (GitHub)
 // ------------------------------
 async function chargerDonnees() {
     setLoading(true);
+    console.log("📥 Chargement des données depuis GitHub...");
     
-    const fetches = [
-        fetch("data/mots.json").then(r => r.json()).then(d => vocabulaire = d).catch(e => console.error("❌ Mots:", e)),
-        fetch("data/audios.json").then(r => r.json()).then(d => albumsAudio = d).catch(e => console.warn("⚠️ Audios:", e)),
-        fetch("data/livres.json").then(r => r.json()).then(d => window.livresData = d).catch(e => console.warn("⚠️ Livres:", e)),
-        fetch("data/histoire.json").then(r => r.json()).then(d => window.histoireData = d).catch(e => console.warn("⚠️ Histoire:", e))
-    ];
-    
-    await Promise.all(fetches);
-    
-    console.log(`✅ ${vocabulaire.length} mots chargés`);
-    console.log(`✅ ${albumsAudio.length} audios`);
-    console.log(`✅ ${window.livresData.length} livres`);
+    try {
+        // Charger mots.json
+        const motsUrl = GITHUB_BASE + "mots.json";
+        console.log("  -", motsUrl);
+        const motsReponse = await fetch(motsUrl);
+        
+        if (motsReponse.ok) {
+            vocabulaire = await motsReponse.json();
+            console.log(`✅ ${vocabulaire.length} mots chargés`);
+        } else {
+            throw new Error(`HTTP ${motsReponse.status}`);
+        }
+        
+        // Autres fichiers (optionnels)
+        try {
+            const audiosReponse = await fetch(GITHUB_BASE + "audios.json");
+            if (audiosReponse.ok) albumsAudio = await audiosReponse.json();
+            console.log(`✅ ${albumsAudio.length} audios`);
+        } catch(e) { console.warn("⚠️ Pas d'audios.json"); albumsAudio = []; }
+        
+        try {
+            const livresReponse = await fetch(GITHUB_BASE + "livres.json");
+            if (livresReponse.ok) window.livresData = await livresReponse.json();
+            console.log(`✅ ${window.livresData.length} livres`);
+        } catch(e) { console.warn("⚠️ Pas de livres.json"); window.livresData = []; }
+        
+        try {
+            const histoireReponse = await fetch(GITHUB_BASE + "histoire.json");
+            if (histoireReponse.ok) window.histoireData = await histoireReponse.json();
+            console.log("✅ Histoire chargée");
+        } catch(e) { console.warn("⚠️ Pas de histoire.json"); window.histoireData = {}; }
+        
+    } catch (error) {
+        console.error("❌ Erreur de chargement:", error);
+        showToast("Erreur de chargement des données", "error");
+        vocabulaire = [];
+    }
     
     // Préparer liste des mots pour navigation
     motsListe = vocabulaire.map((item, idx) => ({ ...item, index: idx }));
@@ -104,9 +132,16 @@ async function chargerDonnees() {
     }));
     
     // Initialiser les composants
-    construireIndexAlphabet();
+    if (vocabulaire.length) {
+        construireIndexAlphabet();
+        chargerHistorique();
+    } else {
+        console.warn("⚠️ Aucun mot chargé, vérifiez le fichier mots.json");
+        if (motElem) motElem.textContent = "Erreur de chargement";
+        if (defElem) defElem.innerHTML = "<p>Impossible de charger le dictionnaire. Vérifiez votre connexion.</p>";
+    }
+    
     genererAlbumsAudio();
-    chargerHistorique();
     
     // Afficher livres si section active
     if (sectionSelector && sectionSelector.value === "livres") {
@@ -145,7 +180,6 @@ function afficherHistorique() {
             `<strong>📜 Derniers mots :</strong> ${historique.map(m => `<span class='mot-historique' data-mot="${escapeHtml(m)}" style="cursor:pointer;margin:0 5px;">${escapeHtml(m)}</span>`).join(", ")}` : 
             "<em>Aucun mot consulté récemment.</em>";
         
-        // Attacher événements
         bloc.querySelectorAll(".mot-historique").forEach(el => {
             el.addEventListener("click", () => {
                 const mot = vocabulaire.find(v => v.mot === el.dataset.mot);
@@ -156,16 +190,19 @@ function afficherHistorique() {
 }
 
 // ------------------------------
-// AFFICHAGE MOT
+// AFFICHAGE MOT (CORRIGÉ)
 // ------------------------------
 function afficherMot(item) {
-    if (!item) return;
+    if (!item || !item.mot) {
+        console.warn("Item invalide:", item);
+        return;
+    }
     
     motActuel = item;
     currentIndex = motsListe.findIndex(m => m.mot === item.mot);
     
     // Mettre à jour compteur
-    if (compteurMot) {
+    if (compteurMot && motsListe.length) {
         compteurMot.textContent = `${currentIndex + 1} / ${motsListe.length}`;
     }
     
@@ -182,9 +219,19 @@ function afficherMot(item) {
         }, 50);
     }
     
-    // Afficher définition
+    // Afficher définition (CORRIGÉ - utilise item.fr et item.en)
     if (defElem) {
-        const definition = item[langueActuelle] || "Non disponible";
+        let definition = "";
+        if (langueActuelle === "fr" && item.fr) {
+            definition = item.fr;
+        } else if (langueActuelle === "en" && item.en) {
+            definition = item.en;
+        } else if (item.fr) {
+            definition = item.fr;
+        } else {
+            definition = "Définition non disponible";
+        }
+        
         defElem.innerHTML = `
             <p><strong>📂 Catégorie :</strong> ${escapeHtml(item.cat || "Général")}</p>
             <p><strong>${langueActuelle.toUpperCase()} :</strong> ${escapeHtml(definition)}</p>
@@ -225,7 +272,6 @@ window.changerLangue = function(lang) {
     langueActuelle = lang;
     if (motActuel) afficherMot(motActuel);
     
-    // Mettre à jour l'UI des boutons
     document.querySelectorAll(".lang-btn").forEach(btn => {
         const isActive = btn.dataset.lang === lang;
         btn.classList.toggle("active", isActive);
@@ -234,62 +280,65 @@ window.changerLangue = function(lang) {
 };
 
 // ------------------------------
-// RECHERCHE AVEC Fuse.js
+// RECHERCHE (CORRIGÉE - cherche dans mot, fr, en)
 // ------------------------------
-let fuse = null;
-
-function initFuse() {
-    if (window.Fuse && vocabulaire.length) {
-        fuse = new window.Fuse(vocabulaire, {
-            keys: ['mot', 'fr', 'en', 'td'],
-            threshold: 0.3,
-            includeScore: true
-        });
-        console.log("✅ Fuse.js initialisé");
-    }
-}
-
-function chercherFuse(query) {
-    if (!fuse || !query) return [];
-    const results = fuse.search(query);
-    return results.slice(0, 12).map(r => r.item);
-}
-
-function chercherLevenshtein(queryRaw) {
+function chercher(queryRaw) {
     const query = normalizeText(queryRaw);
-    if (!query) return [];
+    if (!query || !vocabulaire.length) return [];
     
-    return vocabulaire
-        .map(item => {
-            const field = searchLang === "td" ? item.mot || "" : item[searchLang] || "";
-            const normField = normalizeText(field);
-            if (!normField) return null;
-            
-            let score = Infinity;
-            if (normField.startsWith(query)) score = 0;
-            else if (normField.includes(query)) score = 1;
-            else {
-                const dist = levenshtein(normField, query);
-                if (dist <= Math.max(2, Math.floor(query.length * 0.4))) score = 2 + dist;
+    const resultats = [];
+    
+    for (const item of vocabulaire) {
+        let score = Infinity;
+        let champTrouve = "";
+        
+        // Chercher dans le mot Tadaksahak (priorité 1)
+        const motNorm = normalizeText(item.mot);
+        if (motNorm.includes(query)) {
+            score = motNorm.startsWith(query) ? 0 : 1;
+            champTrouve = item.mot;
+        }
+        
+        // Chercher en français (priorité 2)
+        if (score > 1 && item.fr) {
+            const frNorm = normalizeText(item.fr);
+            if (frNorm.includes(query)) {
+                score = frNorm.startsWith(query) ? 1 : 2;
+                champTrouve = item.fr;
             }
-            return score < Infinity ? { item, score } : null;
-        })
-        .filter(Boolean)
+        }
+        
+        // Chercher en anglais (priorité 3)
+        if (score > 2 && item.en) {
+            const enNorm = normalizeText(item.en);
+            if (enNorm.includes(query)) {
+                score = enNorm.startsWith(query) ? 2 : 3;
+                champTrouve = item.en;
+            }
+        }
+        
+        // Recherche floue (fuzzy) si pas de correspondance exacte
+        if (score === Infinity && item.mot) {
+            const dist = levenshtein(motNorm, query);
+            if (dist <= Math.max(2, Math.floor(query.length * 0.4))) {
+                score = 4 + dist;
+                champTrouve = item.mot;
+            }
+        }
+        
+        if (score < Infinity) {
+            resultats.push({ item, score, champTrouve });
+        }
+    }
+    
+    return resultats
         .sort((a, b) => a.score - b.score)
         .slice(0, 12)
-        .map(c => c.item);
-}
-
-function chercher(query) {
-    // Priorité à Fuse.js si disponible
-    if (window.Fuse && fuse) {
-        return chercherFuse(query);
-    }
-    return chercherLevenshtein(query);
+        .map(r => r.item);
 }
 
 function highlightMatch(text, queryRaw) {
-    if (!text || !queryRaw) return escapeHtml(text);
+    if (!text || !queryRaw) return escapeHtml(text || "");
     const normText = normalizeText(text);
     const normQuery = normalizeText(queryRaw);
     const idx = normText.indexOf(normQuery);
@@ -324,8 +373,19 @@ if (searchBar) {
             suggestionsList.appendChild(li);
         } else {
             resultats.forEach(item => {
-                const matchedText = searchLang === "td" ? item.mot || "" : item[searchLang] || "";
-                const langLabel = searchLang === "td" ? "Tadaksahak" : searchLang.toUpperCase();
+                // Déterminer quel champ a matché pour l'affichage
+                let matchedText = item.mot;
+                let langLabel = "Tadaksahak";
+                const rawNorm = normalizeText(raw);
+                
+                if (item.fr && normalizeText(item.fr).includes(rawNorm)) {
+                    matchedText = item.fr;
+                    langLabel = "Français";
+                } else if (item.en && normalizeText(item.en).includes(rawNorm)) {
+                    matchedText = item.en;
+                    langLabel = "English";
+                }
+                
                 const li = document.createElement("li");
                 li.innerHTML = `<strong>${escapeHtml(item.mot)}</strong> — <span style="opacity:.95">${highlightMatch(matchedText, raw)}</span> <em style="opacity:.6">(${langLabel})</em>`;
                 li.addEventListener("click", () => {
@@ -340,7 +400,6 @@ if (searchBar) {
         suggestionsList.classList.add("show");
     });
     
-    // Clear search
     if (clearSearchBtn) {
         clearSearchBtn.addEventListener("click", () => {
             if (searchBar) {
@@ -516,14 +575,6 @@ function afficheMsg(user, html) {
     chatWindow.scrollTop = chatWindow.scrollHeight;
 }
 
-function resumeTexte(texte, niveau = "court") {
-    if (!texte) return "Pas de texte disponible.";
-    const phrases = texte.split(/[.!?]+/).filter(p => p.trim().length > 30);
-    if (niveau === "court") return phrases.slice(0, 2).join(". ") + ".";
-    if (niveau === "enfant") return `📖 Explication simple : ${phrases[0]}.`;
-    return phrases.slice(0, 5).join(". ") + ".";
-}
-
 function reponseBot(txt) {
     const clean = normalize(txt);
     botMemory.lang = detectLang(txt);
@@ -613,7 +664,6 @@ function traiterSaisie() {
     }, 500);
 }
 
-// Suggestions chat
 function initChatSuggestions() {
     const suggestions = document.querySelectorAll(".chat-suggestion");
     const chatInput = document.getElementById("chatInput");
@@ -628,13 +678,12 @@ function initChatSuggestions() {
     });
 }
 
-// Événements chat
+// ------------------------------
+// ÉVÉNEMENTS
+// ------------------------------
 document.getElementById("btnEnvoyer")?.addEventListener("click", traiterSaisie);
 document.getElementById("chatInput")?.addEventListener("keypress", e => e.key === "Enter" && traiterSaisie());
 
-// ------------------------------
-// BOUTONS LANGUE
-// ------------------------------
 document.querySelectorAll(".lang-btn").forEach(btn => {
     btn.addEventListener("click", () => {
         const lang = btn.dataset.lang;
@@ -642,15 +691,10 @@ document.querySelectorAll(".lang-btn").forEach(btn => {
     });
 });
 
-// ------------------------------
-// NAVIGATION MOTS
-// ------------------------------
 btnPrev?.addEventListener("click", navigationPrecedent);
 btnNext?.addEventListener("click", navigationSuivant);
 
-// ------------------------------
-// RECHERCHE LIVRES
-// ------------------------------
+// Filtres livres
 const rechercheLivres = document.getElementById("rechercheLivres");
 if (rechercheLivres) {
     rechercheLivres.addEventListener("input", (e) => {
@@ -659,13 +703,11 @@ if (rechercheLivres) {
         cartes.forEach(carte => {
             const titre = carte.querySelector(".livre-titre")?.textContent.toLowerCase() || "";
             const auteur = carte.querySelector(".livre-auteur")?.textContent.toLowerCase() || "";
-            const visible = titre.includes(query) || auteur.includes(query);
-            carte.style.display = visible ? "block" : "none";
+            carte.style.display = titre.includes(query) || auteur.includes(query) ? "block" : "none";
         });
     });
 }
 
-// Filtre thèmes livres
 const selectTheme = document.getElementById("selectThemeLivres");
 if (selectTheme) {
     selectTheme.addEventListener("change", (e) => {
@@ -673,8 +715,7 @@ if (selectTheme) {
         const cartes = document.querySelectorAll(".livre-card");
         cartes.forEach(carte => {
             const meta = carte.querySelector(".livre-meta")?.textContent.toLowerCase() || "";
-            const visible = !theme || meta.includes(theme);
-            carte.style.display = visible ? "block" : "none";
+            carte.style.display = !theme || meta.includes(theme) ? "block" : "none";
         });
     });
 }
@@ -686,22 +727,17 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.log("🚀 Démarrage de Tadaksahak Learning");
     
     await chargerDonnees();
-    initFuse();
     initChatSuggestions();
     
-    // Navigation par événement personnalisé
     window.addEventListener('sectionChange', (e) => {
-        if (e.detail.section === "livres") {
-            afficherLivres();
-        } else if (e.detail.section === "audio") {
-            genererAlbumsAudio();
-        }
+        if (e.detail.section === "livres") afficherLivres();
+        else if (e.detail.section === "audio") genererAlbumsAudio();
     });
     
     console.log("✅ Application prête !");
 });
 
-// Exporter quelques fonctions globales
+// Exporter fonctions globales
 window.afficherMot = afficherMot;
 window.jouerTadaksahak = () => {
     if (audioElem && motActuel?.audio) {
