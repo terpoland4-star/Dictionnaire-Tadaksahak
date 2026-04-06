@@ -3,571 +3,709 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Émancipation politique des Idaksahak</title>
+  <title>📘 L'émancipation politique des Idaksahak - Charles Grémont</title>
   <link rel="icon" href="images/idaksahak_round.png" type="image/png" />
-  <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="stylesheet" href="style.css" />
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================
+       STYLE LIVRE PREMIUM - ÉDITION ACADÉMIQUE
+    ============================================ */
+    
+    :root {
+      --page-bg: #faf7f2;
+      --paper-edge: #e8e4db;
+      --text-primary: #2c2418;
+      --text-secondary: #5a4a3a;
+      --accent-gold: #c6a43b;
+      --accent-burgundy: #7a2e3a;
+      --spine-shadow: rgba(0,0,0,0.1);
+      --margin-note: #e8e0d5;
+    }
+    
+    [data-theme="sombre"] {
+      --page-bg: #1a1814;
+      --paper-edge: #2a2620;
+      --text-primary: #e8e0d5;
+      --text-secondary: #b8a898;
+      --accent-gold: #d4af37;
+      --accent-burgundy: #9e3a4a;
+      --margin-note: #2a2620;
+    }
+    
+    [data-theme="sepia"] {
+      --page-bg: #f4ecd8;
+      --paper-edge: #e0d5c0;
+      --text-primary: #4a3728;
+      --text-secondary: #6b5340;
+      --accent-gold: #b8962a;
+      --accent-burgundy: #8b2a3a;
+      --margin-note: #e8ddc8;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background: #2a2420;
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 2rem;
+    }
+    
+    /* Livre container avec effet 3D */
+    .book-container {
+      max-width: 1200px;
+      width: 100%;
+      background: var(--page-bg);
+      border-radius: 4px;
+      box-shadow: 
+        0 30px 40px -20px rgba(0,0,0,0.5),
+        inset 0 0 0 1px rgba(255,255,255,0.1);
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    /* Effet de tranche de livre */
+    .book-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -12px;
+      width: 12px;
+      height: 100%;
+      background: linear-gradient(90deg, var(--paper-edge), var(--page-bg));
+      border-radius: 2px 0 0 2px;
+      box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    }
+    
+    /* Effet de reliure */
+    .book-container::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-gold), var(--accent-burgundy), var(--accent-gold));
+    }
+    
+    /* En-tête de livre */
+    .book-header {
+      padding: 3rem 3rem 1rem 3rem;
+      border-bottom: 1px solid var(--paper-edge);
+      text-align: center;
+      position: relative;
+    }
+    
+    .book-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--accent-burgundy);
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    
+    .book-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+    
+    .book-author {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--accent-gold);
+      margin-bottom: 0.5rem;
+    }
+    
+    .book-meta {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+    
+    /* Ruban décoratif */
+    .ribbon {
+      position: absolute;
+      bottom: -1px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: var(--accent-gold);
+    }
+    
+    /* Contenu principal */
+    .book-content {
+      padding: 2rem 3rem;
+    }
+    
+    /* Sommaire style premium */
+    .table-of-contents {
+      background: var(--margin-note);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 8px;
+      position: relative;
+    }
+    
+    .table-of-contents h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      color: var(--accent-burgundy);
+      margin-bottom: 1.5rem;
+      border-left: 3px solid var(--accent-gold);
+      padding-left: 1rem;
+    }
+    
+    .toc-section {
+      margin-bottom: 1.5rem;
+    }
+    
+    .toc-section summary {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      cursor: pointer;
+      padding: 0.5rem 0;
+      transition: color 0.2s;
+    }
+    
+    .toc-section summary:hover {
+      color: var(--accent-gold);
+    }
+    
+    .toc-section ul {
+      list-style: none;
+      padding-left: 1.5rem;
+      margin-top: 0.5rem;
+    }
+    
+    .toc-section li {
+      margin: 0.5rem 0;
+    }
+    
+    .toc-section a {
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      transition: all 0.2s;
+      display: inline-block;
+      border-bottom: 1px dotted transparent;
+    }
+    
+    .toc-section a:hover {
+      color: var(--accent-gold);
+      border-bottom-color: var(--accent-gold);
+      transform: translateX(5px);
+    }
+    
+    /* Chapitres */
+    .chapter {
+      margin-bottom: 3rem;
+      page-break-after: avoid;
+      break-inside: avoid;
+    }
+    
+    .chapter-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--accent-gold);
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+    
+    .chapter-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent-burgundy);
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid var(--paper-edge);
+      padding-bottom: 0.5rem;
+    }
+    
+    .chapter-content p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text-primary);
+      margin-bottom: 1.2rem;
+      text-align: justify;
+    }
+    
+    /* Citations et blocs */
+    blockquote {
+      margin: 1.5rem 2rem;
+      padding: 1rem 2rem;
+      background: var(--margin-note);
+      border-left: 4px solid var(--accent-gold);
+      font-style: italic;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      color: var(--text-secondary);
+    }
+    
+    /* Notes de bas de page style */
+    .footnote {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      border-top: 1px solid var(--paper-edge);
+      margin-top: 1rem;
+      padding-top: 0.5rem;
+    }
+    
+    /* Bibliographie */
+    .bibliography {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 2px solid var(--paper-edge);
+    }
+    
+    .bibliography h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      color: var(--accent-burgundy);
+      margin-bottom: 1rem;
+    }
+    
+    .bibliography ul {
+      list-style: none;
+    }
+    
+    .bibliography li {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    
+    /* Pied de page */
+    .book-footer {
+      padding: 2rem 3rem;
+      border-top: 1px solid var(--paper-edge);
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+    
+    /* Navigation flottante */
+    .floating-nav {
+      position: fixed;
+      right: 2rem;
+      bottom: 2rem;
+      display: flex;
+      gap: 0.5rem;
+      z-index: 100;
+    }
+    
+    .floating-nav button {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      border: none;
+      background: var(--accent-burgundy);
+      color: white;
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    
+    .floating-nav button:hover {
+      transform: scale(1.1);
+      background: var(--accent-gold);
+    }
+    
+    /* Thème selector */
+    .theme-selector {
+      position: fixed;
+      left: 2rem;
+      bottom: 2rem;
+      z-index: 100;
+    }
+    
+    .theme-selector select {
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      background: var(--accent-burgundy);
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 0.8rem;
+    }
+    
+    /* Bouton retour haut */
+    .back-to-top {
+      position: fixed;
+      right: 2rem;
+      bottom: 8rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--accent-gold);
+      color: white;
+      border: none;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    
+    .back-to-top.visible {
+      opacity: 1;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      body { padding: 1rem; }
+      .book-header { padding: 2rem 1.5rem; }
+      .book-content { padding: 1rem 1.5rem; }
+      .book-title { font-size: 1.8rem; }
+      .chapter-title { font-size: 1.5rem; }
+      blockquote { margin: 1rem; padding: 1rem; }
+      .floating-nav { right: 1rem; bottom: 1rem; }
+      .theme-selector { left: 1rem; bottom: 1rem; }
+    }
+    
+    /* Animation d'entrée */
+    @keyframes pageFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .chapter {
+      animation: pageFadeIn 0.5s ease-out;
+    }
+    
+    /* Marque-page décoratif */
+    .bookmark {
+      position: fixed;
+      right: 0;
+      top: 30%;
+      width: 40px;
+      height: 80px;
+      background: var(--accent-burgundy);
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      writing-mode: vertical-rl;
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>📘 L’émancipation politique des Idaksahak</h1>
-    <p><em>Charles Grémont, in <strong>La tribu au Maghreb et au Sahara</strong> (2009–2023)</em></p>
-  </header>
 
-  <section>
-  <h2>📄 Sommaire interactif</h2>
-  <details open>
-    <summary><strong>Identité et fondements</strong></summary>
-    <ul>
-      <li><a href="#page1">L’émancipation politique au commencement de la tribu ?</a></li>
-      <li><a href="#page2">Les Idaksahak par eux-mêmes</a></li>
-      <li><a href="#page3">Que disent les Idaksahak de ce qu’ils sont aujourd’hui ?</a></li>
-      <li><a href="#page4">L’image d’un groupe subalterne et pacifique</a></li>
-    </ul>
-  </details>
-  <details>
-    <summary><strong>Vers la lutte armée</strong></summary>
-    <ul>
-      <li><a href="#page5">“Nous avons troqué nos chèvres contre des Kalachnikov !”</a></li>
-      <li><a href="#page6">Des armes pour se défendre</a></li>
-      <li><a href="#page7">La rébellion des années 1990 et ses limites</a></li>
-      <li><a href="#page8">La confrontation de 1994</a></li>
-    </ul>
-  </details>
-  <details>
-    <summary><strong>Reconnaissance politique</strong></summary>
-    <ul>
-      <li><a href="#page9">Une visibilité politique acquise par les armes</a></li>
-      <li><a href="#page10">Affirmation militaire face aux Imajeghen</a></li>
-      <li><a href="#page11">Le Mouvement pour le salut de l’Azawad (MSA)</a></li>
-      <li><a href="#page12">Des jeunes Idaksahak dans le djihadisme</a></li>
-    </ul>
-  </details>
-  <details>
-    <summary><strong>Conclusion et bibliographie</strong></summary>
-    <ul>
-      <li><a href="#page13">Un ordre politique autonome ?</a></li>
-      <li><a href="#references">Références bibliographiques</a></li>
-    </ul>
-  </details>
-  </section>
-  <section id="page1">
-  
-<strong>L’émancipation politique au commencement de la tribu&nbsp;?<br>
-  Réflexion sur la notion de tribu à partir des revendications des Idaksahak (Nord-Mali)</strong><br>
-  <em>Charles Grémont</em>
+<div class="book-container" id="book">
+  <div class="book-header">
+    <div class="book-author">CHARLES GRÉMONT</div>
+    <h1 class="book-title">L'émancipation politique<br>des Idaksahak</h1>
+    <div class="book-subtitle">Une tribu en construction dans le nord du Mali</div>
+    <div class="book-meta">
+      <span>📅 2009-2023</span>
+      <span>📖 Extrait de "La tribu au Maghreb et au Sahara"</span>
+      <span>🏷️ Anthropologie politique</span>
+    </div>
+    <div class="ribbon"></div>
+  </div>
 
-  <p>
-    Ce texte propose d’interroger le lien entre l’émancipation politique d’un groupe social, des pasteurs-nomades du nord-est du Mali qui portent le nom de Idaksahak, et la reconnaissance de ce groupe en tant que tribu. Si après la reconnaissance d’un nom, d’un “emblème onomastique”, l’on retient, comme le propose <sup>1</sup>Yazid Ben Hounet, l’existence d’un ordre politique autonome comme l’un des critères fondamentaux de ce que serait une tribu, une question se pose : un groupe subalterne qui serait soumis à l’autorité (ou dépendant) d’un autre groupe pourrait-il être reconnu en tant que tribu ? 
-  </p>
+  <div class="book-content">
+    <!-- Sommaire interactif -->
+    <div class="table-of-contents">
+      <h2>📑 Sommaire</h2>
+      
+      <details class="toc-section" open>
+        <summary>Identité et fondements</summary>
+        <ul>
+          <li><a href="#page1">L'émancipation politique au commencement de la tribu ?</a></li>
+          <li><a href="#page2">Les Idaksahak par eux-mêmes</a></li>
+          <li><a href="#page3">Que disent les Idaksahak de ce qu'ils sont aujourd'hui ?</a></li>
+          <li><a href="#page4">L'image d'un groupe subalterne et pacifique</a></li>
+        </ul>
+      </details>
+      
+      <details class="toc-section">
+        <summary>Vers la lutte armée</summary>
+        <ul>
+          <li><a href="#page5">Des armes pour se défendre</a></li>
+          <li><a href="#page6">La rébellion des années 1990 et ses limites</a></li>
+          <li><a href="#page7">La confrontation de 1994</a></li>
+        </ul>
+      </details>
+      
+      <details class="toc-section">
+        <summary>Reconnaissance politique</summary>
+        <ul>
+          <li><a href="#page8">Une visibilité politique acquise par les armes</a></li>
+          <li><a href="#page9">Affirmation militaire face aux Imajeghen</a></li>
+          <li><a href="#page10">Le Mouvement pour le salut de l'Azawad (MSA)</a></li>
+          <li><a href="#page11">Des jeunes Idaksahak dans le djihadisme</a></li>
+        </ul>
+      </details>
+      
+      <details class="toc-section">
+        <summary>Conclusion et bibliographie</summary>
+        <ul>
+          <li><a href="#conclusion">Un ordre politique autonome ?</a></li>
+          <li><a href="#bibliographie">Références bibliographiques</a></li>
+        </ul>
+      </details>
+    </div>
 
-  <p>
-    Au-delà donc des références généalogiques, de la question du nom ou encore des notions d’alliance et de solidarité, déjà largement traitées par la littérature anthropologique, c’est la question de l’autonomie politique qui sera ici mise en avant pour réinterroger la notion de tribu, dans un contexte contemporain et dans la partie sud du Sahara, au nord-est du Mali.
-  </p>
+    <!-- CHAPITRE 1 -->
+    <div id="page1" class="chapter">
+      <div class="chapter-number">CHAPITRE PREMIER</div>
+      <h2 class="chapter-title">L'émancipation politique au commencement de la tribu ?<br><span style="font-size:1rem;">Réflexion sur la notion de tribu à partir des revendications des Idaksahak (Nord-Mali)</span></h2>
+      <div class="chapter-content">
+        <p>Ce texte propose d'interroger le lien entre l'émancipation politique d'un groupe social, des pasteurs-nomades du nord-est du Mali qui portent le nom de Idaksahak, et la reconnaissance de ce groupe en tant que tribu. Si après la reconnaissance d'un nom, d'un "emblème onomastique", l'on retient, comme le propose Yazid Ben Hounet, l'existence d'un ordre politique autonome comme l'un des critères fondamentaux de ce que serait une tribu, une question se pose : un groupe subalterne qui serait soumis à l'autorité (ou dépendant) d'un autre groupe pourrait-il être reconnu en tant que tribu ?</p>
+        
+        <p>Au-delà donc des références généalogiques, de la question du nom ou encore des notions d'alliance et de solidarité, déjà largement traitées par la littérature anthropologique, c'est la question de l'autonomie politique qui sera ici mise en avant pour réinterroger la notion de tribu, dans un contexte contemporain et dans la partie sud du Sahara, au nord-est du Mali.</p>
+        
+        <p>Les configurations sociales et politiques au Sahara ont très souvent été présentées, et le sont encore, par les médias comme par les productions académiques, sous la forme d'agrégations de tribus, reliées les unes aux autres par des rapports complexes et fortement hiérarchisés. Derrière l'adjectif "complexes" se cachent toujours des histoires singulières, où l'ordre hiérarchique au sein et entre les groupes sociaux n'est jamais stable. Au mieux est-il stabilisé, pour un certain temps. Les rapports de forces, qui déterminent la place et le rôle des uns par rapport aux autres, sont sans cesse réajustés, parfois renversés, à la faveur de nouvelles revendications contre l'ordre (pré)établi. Les rapports sociaux, économiques et politiques qui, en interne comme avec l'extérieur, fondent les tribus, les font émerger, perdurer ou disparaître, sont en recomposition permanente.</p>
+        
+        <p>Les Idaksahak, groupe de pasteurs-nomades évoluant dans les régions de <strong>Ménaka</strong> et <strong>Gao</strong> (au nord-est du Mali), se distinguent de leurs voisins proches par la singularité de leur langue, en forme de sabir, empruntant des mots à la langue tamasheq, à la langue songhay, quelques-uns aussi au français et même à l'anglais. Ce critère linguistique est largement mis en avant depuis une dizaine d'années pour marquer leur spécificité et leur différence vis-à-vis des Touaregs (Kel Tamasheq, "ceux de la langue tamasheq", selon la terminologie vernaculaire).</p>
+        
+        <blockquote>
+          "La plupart d'entre eux parle parfaitement la langue tamasheq, mais dans des réunions publiques, de plus en plus d'orateurs tiennent à s'exprimer dans leur langue, la tadaksahak. Les propos sont ensuite interprétés dans d'autres langues en fonction des autres participants. Dans la région de Ménaka, les Idaksahak sont les plus nombreux et les plus riches économiquement, mais n'ont jamais véritablement occupé le devant de la scène politique."
+        </blockquote>
+        
+        <p>De ce fait, l'histoire contemporaine de ce groupe offre une belle occasion de re-questionner le concept de tribu. En effet, depuis la rébellion touarègue des années 1990 et plus encore depuis 2012 – relance d'une insurrection armée, cette fois-ci bien plus violente, plus étendue et plus longue – les Idaksahak émergent sur la scène politique locale et sous-régionale. Ils revendiquent désormais des places de pouvoir qu'ils n'ont jamais occupées. Aussi parce qu'ils ne les avaient jamais véritablement cherchées auparavant. Si donc une tribu se définit par l'existence d'un ordre politique autonome en son sein, par un espace de souveraineté interne, l'analyse du processus d'émancipation enclenché par les Idaksahak depuis les années 1990 pourrait être riche d'enseignements.</p>
+        
+        <div class="footnote">1. Ben Hounet, 2009.</div>
+      </div>
+    </div>
 
-  <p>
-    Les configurations sociales et politiques au Sahara ont très souvent été présentées, et le sont encore, par les médias comme par les productions académiques, sous la forme d’agrégations de tribus, reliées les unes aux autres par des rapports complexes et fortement hiérarchisés. Derrière l’adjectif “complexes” se cachent toujours des histoires singulières, où l’ordre hiérarchique au sein et entre les groupes sociaux n’est jamais stable. Au mieux est-il stabilisé, pour un certain temps. Les rapports de forces, qui déterminent la place et le rôle des uns par rapport aux autres, sont sans cesse réajustés, parfois renversés, à la faveur de nouvelles revendications contre l’ordre (pré)établi. Les rapports sociaux, économiques et politiques qui, en interne comme avec l’extérieur, fondent les tribus, les font émerger, perdurer ou disparaître, sont en recomposition permanente.
-  </p>
+    <!-- CHAPITRE 2 -->
+    <div id="page2" class="chapter">
+      <div class="chapter-number">CHAPITRE DEUX</div>
+      <h2 class="chapter-title">Les Idaksahak par eux-mêmes</h2>
+      <div class="chapter-content">
+        <p>Comment les Idaksahak se définissent-ils ? Quels termes utilisent-ils, dans leur propre langue (tadaksahak), pour dire ce qu'ils sont ? Ont-ils recours aussi à des termes tamasheq, arabe ou français ? J'ai eu l'occasion de leur poser directement la question. Les documents qu'ils produisent eux-mêmes apportent aussi des réponses.</p>
+        
+        <blockquote>
+          <strong>"Nous sommes une tawset. C'est cela notre catégorie, c'est ce que l'on dit. En français, on peut dire le 'peuple Dawsahaq' comme on dit le 'peuple Kel Tamasheq'. Nous utilisons aussi le mot communauté. 'La communauté Idaksahak', c'est ce que nous utilisons dans nos communiqués."</strong>
+          <div class="footnote">Entretien avec quatre Idaksahak, Bamako, 31/10/2020</div>
+        </blockquote>
+        
+        <p>Sur la page d'accueil du site Facebook dédié aux Idaksahak, la phrase suivante est mise en exergue : <strong>"La communauté Idaksahak est l'une des grandes tribus du Nord du Mali."</strong></p>
+        
+        <p>Peuple, communauté, tribu… ces termes de la langue française sont tour à tour mobilisés par les Idaksahak sans véritable effort de définition et sans que l'usage de l'un semble exclure l'usage des autres. Comme les auteurs scientifiques, les premiers intéressés oscillent à trouver les bons mots pour dire ce qu'ils sont.</p>
+        
+        <p>Ouvrons plutôt la question du statut du groupe et de l'existence ou non d'un ordre politique autonome en son sein, pour appréhender ce que sont ou ce que voudraient être ces gens qui répondent à l'appellation Idaksahak.</p>
+      </div>
+    </div>
 
-  <p>
-    Les Idaksahak, groupe de pasteurs-nomades évoluant dans les régions de <strong>Ménaka</strong> et <strong>Gao</strong> (au nord-est du Mali), se distinguent de leurs voisins proches par la singularité de leur langue, en forme de sabir, empruntant des mots à la langue tamasheq, à la langue songhay, quelques-uns aussi au français et même à l’anglais. Ce critère linguistique est largement mis en avant depuis une dizaine d’années pour marquer leur spécificité et leur différence vis-à-vis des Touaregs (Kel Tamasheq, “ceux de la langue tamasheq”, selon la terminologie vernaculaire).
-  </p>
+    <!-- CHAPITRE 3 -->
+    <div id="page3" class="chapter">
+      <div class="chapter-number">CHAPITRE TROIS</div>
+      <h2 class="chapter-title">Que disent les Idaksahak de ce qu'ils sont aujourd'hui ?</h2>
+      <div class="chapter-content">
+        <blockquote>
+          <strong>"Idaksahak, une communauté riche économiquement et instruite religieusement. Idaksahak, une communauté touarègue qui parle tadaksahak différent du tamashek."</strong>
+        </blockquote>
+        
+        <p>Tel est le slogan qui défile en lettres capitales sur la page d'accueil du site internet Idaksahak. Le logo qui orne l'ensemble des rubriques du site, ainsi que la page Facebook et autres supports de communication, est tout aussi instructif.</p>
+        
+        <p>Au premier plan, un homme assis s'adonne à la lecture, à l'étude coranique certainement, une épée blanche ressort sur sa silhouette sombre. À l'arrière-plan, deux dromadaires adultes et leur petit viennent compléter la scène. Des mots au dessin, l'image d'eux-mêmes que les Idaksahak ont choisi de diffuser au monde réunit toutes les qualités pour bien vivre et se faire respecter au Sahara et au Sahel : la richesse économique, à travers la pratique de l'élevage (camelin) ; l'instruction religieuse et le maniement des armes.</p>
+        
+        <p>Une caractéristique, et non des moindres, manque au logo : le poids démographique des Idaksahak. Elle figure tout de même dans la phrase, déjà évoquée et mise en exergue sur la page d'accueil du site Facebook : <strong>"La communauté Idaksahak est l'une des grandes tribus du Nord du Mali. Elle est estimée à cent mille."</strong></p>
+        
+        <p>Cette estimation, non référencée à une source, est certainement surestimée. Toujours est-il que dans la région de Ménaka, où ils vivent majoritairement, ils sont, comparés aux autres groupes sociaux, les plus nombreux, et de très loin.</p>
+      </div>
+    </div>
 
-  <p>
-    La plupart d’entre eux parle parfaitement la langue tamasheq, mais dans des réunions publiques, de plus en plus d’orateurs tiennent à s’exprimer dans leur langue, la tadaksahak. Les propos sont ensuite interprétés dans d’autres langues en fonction des autres participants. Dans la région de Ménaka, les Idaksahak sont les plus nombreux et les plus riches économiquement, mais n’ont jamais véritablement occupé le devant de la scène politique. Les configurations socio-politiques sont largement recomposées depuis une vingtaine d’années dans cette région.
-  </p>
+    <!-- CHAPITRE 4 -->
+    <div id="page4" class="chapter">
+      <div class="chapter-number">CHAPITRE QUATRE</div>
+      <h2 class="chapter-title">L'image d'un groupe subalterne et pacifique</h2>
+      <div class="chapter-content">
+        <p>La présence d'une arme, sur le logo censé définir les grands traits de l'identité des Idaksahak, tranche avec la dimension pacifique qu'ils ont longtemps mise en avant pour se définir vis-à-vis des autres. Des membres du groupe insistent aujourd'hui encore sur cette spécificité.</p>
+        
+        <blockquote>
+          <strong>"Pour moi, ce qui nous caractérise, de tout le temps, c'est que nous sommes un peuple de paix, qui s'occupe uniquement de la religion et de l'élevage. Nous ne nous mêlons pas d'autres choses. Et c'est ce qui fait qu'on ne parle pas beaucoup de nous. Nous ne participions pas à des guerres, ni à des razzias, ni au banditisme. Nous ne participions à rien de tout ça."</strong>
+        </blockquote>
+        
+        <p>Ahmed Mohamed Ag Guidi souligne, lui aussi, dans son document écrit, le caractère non violent des Idaksahak et ce, même dans un contexte de dangers quasi permanent :</p>
+        
+        <blockquote>
+          <strong>"Les IDAKSAHK, peuple pacifique, ne répondaient pas à l'agression, même très intentionnée, sauf en cas d'humiliation à dessein ou de provocation évidente. Cette communauté avait toujours opté pour la non-violence visant, essentiellement à sauvegarder leur assiette économique d'un risque permanent de destruction dans un contexte culturel de rezzous et de contre rezzous."</strong>
+        </blockquote>
+      </div>
+    </div>
 
-  <p>
-    De ce fait, l’histoire contemporaine de ce groupe offre une belle occasion de re-questionner le concept de tribu. En effet, depuis la rébellion touarègue des années 1990 et plus encore depuis 2012 – relance d’une insurrection armée, cette fois-ci bien plus violente, plus étendue et plus longue – les Idaksahak émergent sur la scène politique locale et sous-régionale. Ils revendiquent désormais des places de pouvoir qu’ils n’ont jamais occupées. Aussi parce qu’ils ne les avaient jamais véritablement cherchées auparavant. Si donc une tribu se définit par l’existence d’un ordre politique autonome en son sein, par un espace de souveraineté interne, l’analyse du processus d’émancipation enclenché par les Idaksahak depuis les années 1990 pourrait être riche d’enseignements. C’est la réflexion que je propose d’amorcer dans ce texte.
-  </p>
+    <!-- CHAPITRE 5 - La confrontation -->
+    <div id="page7" class="chapter">
+      <div class="chapter-number">CHAPITRE CINQ</div>
+      <h2 class="chapter-title">La confrontation de 1994</h2>
+      <div class="chapter-content">
+        <p>Un événement peu connu, mais hautement symbolique, doit être rappelé ici. Comme de nombreuses communautés, dans la vallée du fleuve Niger ou dans les zones pastorales, les Idaksahak ont subi des vols et des pillages dans la première moitié des années 1990. Dans un contexte de non application des accords de paix, de prolifération des armes et d'absence de justice, les actes de banditisme se sont multipliés et le bétail des Idaksahak a fait l'objet de nombreuses convoitises, notamment de la part de leurs voisins proches, dont des Imajeghen.</p>
+        
+        <blockquote>
+          <strong>"Cet épisode de 1994 est historique ! C'est la première fois que nous avons délogé notre tête de sous le pied des Imajeghen. Avant cela, nos biens étaient leurs biens. Un Adaksahak n'était rien aux yeux des Imajeghen."</strong>
+          <div class="footnote">Entretien avec un ex-combattant Idaksahak, Bamako, 23/02/2022</div>
+        </blockquote>
+        
+        <p>Cette séquence marque clairement le passage des Idaksahak dans une autre dimension sociologique et politique, celle d'une tribu capable d'opposer elle-même une riposte militaire lorsque ses biens sont menacés et pillés. Un passage d'autant plus marquant qu'il s'est opéré dans une confrontation directe avec leurs anciens suzerains.</p>
+      </div>
+    </div>
 
-  <p>
-    Plusieurs interrogations seront ainsi (re)formulées à l’aune de l’histoire singulière de ce groupe, laquelle sera abordée à travers des représentations produites par les Idaksahak eux-mêmes, par leurs voisins, ainsi que par des observateurs extérieurs (explorateurs européens, administrateurs coloniaux, chercheurs et médias).
-  </p>
+    <!-- CONCLUSION -->
+    <div id="conclusion" class="chapter">
+      <div class="chapter-number">CONCLUSION</div>
+      <h2 class="chapter-title">Une tribu en construction politique ?</h2>
+      <div class="chapter-content">
+        <p>Les années 1990 ouvrent certainement une nouvelle ère dans l'histoire des Idaksahak, avec l'engagement de peut-être plus de 2000 combattants dans une rébellion contre le pouvoir central malien et, plus encore, la défense de leurs biens par leurs propres armes, mais le gain politique de cette conversion restait encore assez faible. Comme le souligne le jeune Adksahak interrogé en 2020, les postes à responsabilité, les "élus, les ministres, les officiers supérieurs" sont restés dévolus aux autres. La volonté de changer cette donne a animé plusieurs jeunes diplômés de la communauté dès la reprise des hostilités contre l'État central malien en 2012.</p>
+        
+        <p>Ce dernier constat, d'une séquence historique toujours en cours, vient relancer la question des liens de solidarité censés définir, avec d'autres éléments, la structure et le fonctionnement interne d'une tribu. L'idée selon laquelle les membres d'une tribu, de par leurs liens de sang et de parenté, et de par leur inscription dans une histoire commune, se mobiliseraient comme un seul homme dans une situation de conflit, devrait être largement pondérée.</p>
+        
+        <p>Les travaux sur l'histoire très contemporaine, ou du "temps présent", permettent certainement aussi de reconsidérer les vérités parfois trop vite énoncées sur le caractère unitaire, solidaire et cohérent de la tribu. L'existence ou non d'un ordre politique autonome, avec ses forces de contradiction internes, me semble de ce fait une question bien plus féconde si l'on cherche à réinterroger la notion de tribu, ici dans la partie sud du Sahara au début du XXIe siècle. L'expérience contemporaine des Idaksahak ouvre sans doute de nouvelles pistes à explorer.</p>
+      </div>
+    </div>
 
-  <h3>Références</h3>
-  <p>
-    <sup>1</sup> Ben Hounet, 2009.
-  </p>
+    <!-- BIBLIOGRAPHIE -->
+    <div id="bibliographie" class="bibliography">
+      <h2>📚 Références bibliographiques</h2>
+      <ul>
+        <li>Ag Guidi, A. M. (2019) : <em>Contribution à la connaissance de la communauté Idaksahak (cas de Ménaka et Talatayt)</em>, 16 p.</li>
+        <li>Barth, H. (1858) : <em>Travels and Discoveries in North and Central Africa, 1849–1855</em>, Londres, 5 vol.</li>
+        <li>Ben Hounet, Y. (2009) : "Que faire de la tribu ? À propos du phénomène tribal en Algérie et dans le monde musulman", <em>Journal des anthropologues</em>, 116–117, 493–515.</li>
+        <li>Boilley, P. (1999) : <em>Les Touaregs Kel Adagh. Dépendances et révoltes : du Soudan français au Mali contemporain</em>, Paris.</li>
+        <li>Grémont, C. (2010) : <em>Les Touaregs Iwellemmedan. Un ensemble politique de la Boucle du Niger</em>, Paris.</li>
+        <li>Grémont, C. (2019) : "Dans le piège des offres de violence. Concurrences, protections et représailles dans la région de Ménaka (Nord-Mali, 2000–2018)", <em>Hérodote</em>, 172, 43–62.</li>
+        <li>Lecoq, B. (2010) : <em>Disputed Desert: Decolonisation, Competing Nationalisms and Tuareg Rebellions in Northern Mali</em>, Leyde.</li>
+        <li>Richer, A. (1924) : <em>Les Touaregs du Niger (Région de Tombouctou-Gao). Les Oulliminden</em>, Paris.</li>
+      </ul>
+    </div>
+  </div>
 
-  <p><em>Fig. 1. Sahara central, groupements touaregs et localisation des Idaksahak (DAO, C. Grémont)</em></p>
-  </section>
-  <section id="page2">
-  <h2>Les Idaksahak par eux-mêmes</h2>
-  <p>
-    Comment les Idaksahak se définissent-ils ? Quels termes utilisent-ils, dans leur propre langue (tadaksahak), pour dire ce qu’ils sont ? Ont-ils recours aussi à des termes tamasheq, arabe ou français ? J’ai eu l’occasion de leur poser directement la question. Les documents qu’ils produisent eux-mêmes apportent aussi des réponses.
-  </p>
-  <p><strong>“Nous sommes une tawset<sup>2</sup>. C’est cela notre catégorie, c’est ce que l’on dit. En français, on peut dire le “peuple Dawsahaq” comme on dit le “peuple Kel Tamasheq”. Nous utilisons aussi le mot communauté. “La communauté Idaksahak”, c’est ce que nous utilisons dans nos communiqués.”<sup>3</sup></strong></p>
-  <p>Sur la page d’accueil du site Facebook dédié aux Idaksahak, la phrase suivante est mise en exergue : <strong>“La communauté Idaksahak est l’une des grandes tribus du Nord du Mali.”<sup>4</sup></strong></p>
-  <p>Peuple, communauté, tribu… ces termes de la langue française sont tour à tour mobilisés par les Idaksahak sans véritable effort de définition et sans que l’usage de l’un semble exclure l’usage des autres. Comme les auteurs scientifiques, les premiers intéressés oscillent à trouver les bons mots pour dire ce qu’ils sont.</p>
-  <p>Ouvrons plutôt la question du statut du groupe et de l’existence ou non d’un ordre politique autonome en son sein, pour appréhender ce que sont ou ce que voudraient être ces gens qui répondent à l’appellation Idaksahak.</p>
-  <p>Au <strong>Sahara</strong> et au <strong>Sahel</strong>, comme dans bien d’autres régions du monde, le statut et le rang que les groupes sociaux cherchent à maintenir, ou à conquérir, tiennent pour une large part à la place qu’ils revendiquent dans l’histoire. Cela commence par les origines du groupe et, donc, par les récits qui y sont associés, lesquels sont sans cesse réajustés, au gré des contextes. Ainsi par exemple, lors de mes premières recherches menées en <strong>1994</strong> dans la zone de <strong>Ménaka</strong>...</p>
-  <blockquote><strong>
-    “L’appellation ‘IDAKSAHAK’<sup>6</sup> que se donne la communauté de même nom, provient certainement d’une contraction du mot IDD-AGG ISHAK. Les communautés voisines les nomment DAW-SAHAK ou DAW-ISHAK, selon la prononciation qu’on fait du terme ISHAK, nom propre dont la connotation est plutôt de langue Sonrhaï et non celle de l’arabe ISHAQ du Coran ou ISAAC de la Bible. Il peut s’agir donc, d’une référence au nom d’un roi, en l’occurrence ISHAK I empereur Songhoï du Moyen Âge.
-    Bien entendu l’appellation IDD-AGG (“fils de” en Tamasheq) suivi du nom du chef de Tobol dominant était très courante dans le <strong>Soudan</strong> notamment dans les contrées de <strong>Tombouctou</strong> du Moyen Âge avant la colonisation, ceci pour désigner une communauté donnée sans référence à un quelconque arbre généalogique. Il en est de même pour le mot DAW ou IDAW ou Oulad (“fils de” en Arabo-berbère) suivi d’un nom propre d’un chef, un érudit ou un homme spirituel de grande renommée, dans tous les cas de l’espèce, l’appellation précédée d’un préfixe finit par la désignation de toute une communauté.
-    (…) Dans cet ordre d’idée DAWSAHAK est une formulation de nom de communauté qui se prête difficilement à l’analyse tendant à une descendance généalogique D’ISHAQ ou d’ISAAC donc Juive. 
-    (…) Dans tous les cas l’occasion est saisie pour une propension à vouloir faire un rapprochement avec le nom Is-haq du coran ou d’Isaac de la Bible. Cette source, dans le cas des IDAKSAHAK opte pour une origine israélite donc juive de cette communauté. Hypothèse qu’on ne peut exclure faute de preuves ou de raisonnement de démonstration possible, mais parfaitement vérifiable aujourd’hui par des analyses de l’ADN. Il est aussi possible d’étudier les communautés juives biens connues dans la région de <strong>Tombouctou</strong>.
-    Les IDAKSAHK retiennent en mémoire leur déplacement de <strong>Tafilalet</strong> sud <strong>Marocain</strong> via <strong>Tombouctou</strong>, mais rien d’une éventuelle origine juive à la différence de certaines communautés de la boucle du <strong>Niger</strong> qui en gardent un souvenir bien vivant.”<sup>7</sup>
-  </strong></blockquote>
-  <p>Dans une période de guerre comme celle que traverse les Idaksahak depuis <strong>2012</strong>, à l’instar de l’ensemble des populations des régions du nord et du centre du <strong>Mali</strong>, les récits portant sur les origines anciennes et les ancêtres fondateurs sont certes toujours présents, mais ils ne sont pas forcément les plus travaillés et les plus mis en avant. À une époque où l’actualité immédiate et le caractère instantané de l’information impriment le rythme et le contenu des échanges entre les gens, les enjeux contemporains concentrent la plupart des attentions.</p>
-  <h3>Références</h3>
-  <p>
-    2. Tawset ou tawsit (pl. tiwsaten), mot de la langue tamasheq...<br>
-    3. Entretien avec quatre Idaksahak, de différentes fractions, <strong>Bamako</strong>, le <strong>31/10/2020</strong>.<br>
-    4. <a href="https://www.facebook.com/people/Communaut%C3%A9-Idaksahak/100057182781477/?mibextid=LQQJ4d" target="_blank">Page Facebook – Communauté Idaksahak</a><br>
-    5. <strong>Ahmed Mohammed Ag Guidi</strong>, fraction Kel Tabho, ingénieur géologue, décédé en <strong>2020</strong>.<br>
-    6. Mise en forme majuscule conservée telle que dans le document original.<br>
-    7. Ag Guidi <strong>2019</strong>, 1–2.
-  </p>
-  </section>
-
-   <section id="page3">
-  
-  <p><strong>Que disent les Idaksahak de ce qu’ils sont aujourd’hui ?</strong></p>
-
-  <p><strong>“Idaksahak, une communauté riche économiquement et instruite religieusement. Idaksahak, une communauté touarègue qui parle tadaksahak différent du tamashek.”<sup>8</sup></strong></p>
-
-  <p>
-    Tel est le slogan qui défile en lettres capitales sur la page d’accueil du site internet Idaksahak. Le logo qui orne l’ensemble des rubriques du site, ainsi que la page Facebook et autres supports de communication, est tout aussi instructif :
-  </p>
-
-  <p>
-    Au premier plan, un homme assis s’adonne à la lecture, à l’étude coranique certainement, une épée blanche ressort sur sa silhouette sombre. À l’arrière-plan, deux dromadaires adultes et leur petit viennent compléter la scène. Des mots au dessin, l’image d’eux-mêmes que les Idaksahak ont choisi de diffuser au monde réunit toutes les qualités pour bien vivre et se faire respecter au <strong>Sahara</strong> et au <strong>Sahel</strong> : la richesse économique, à travers la pratique de l’élevage (camelin) ; l’instruction religieuse et le maniement des armes.
-  </p>
-
-  <p>
-    Une caractéristique, et non des moindres, manque au logo : le poids démographique des Idaksahak<sup>9</sup>. Elle figure tout de même dans la phrase, déjà évoquée et mise en exergue sur la page d’accueil du site Facebook :
-  </p>
-
-  <p><strong>“La communauté Idaksahak est l’une des grandes tribus du Nord du Mali. Elle est estimée à cent mille.”<sup>10</sup></strong></p>
-
-  <p>
-    Cette estimation, non référencée à une source, est certainement surestimée. Toujours est-il que dans la région de <strong>Ménaka</strong>, où ils vivent majoritairement, ils sont, comparés aux autres groupes sociaux, les plus nombreux, et de très loin<sup>11</sup>. Cette précision revêt une certaine importance si on la rapporte au fait que, depuis 1992, l’élection des députés à l’Assemblée nationale et, depuis 1999, celle des maires de communes, se fait par voie d’élections et au suffrage universel direct.
-  </p>
-
-  <p>
-    La richesse économique, à travers la pratique de l’élevage notamment, mais aussi des activités de commerce qui s’appuient sur un vaste réseau d’échanges mobilisant une diaspora importante dans les pays voisins (<strong>Algérie</strong>, <strong>Niger</strong>, <strong>Libye</strong>) et jusqu’en <strong>Arabie Saoudite</strong>, ne fait aucun doute. Elle est constamment mise en avant lorsque les Idaksahak parlent d’eux-mêmes.
-  </p>
-
-  <p>
-    L’instruction religieuse de l’ensemble du groupe est également une caractéristique fondamentale de la présentation de soi. Elle constitue, avec l’élevage et le commerce, la deuxième clé de voûte du groupe.
-  </p>
-
-  <blockquote><strong>
-    “Nous sommes la seule communauté, que je connais au nord, qui suit son économie et sa religion à la fois. Nous étudions et nous travaillons à la fois ! Alors que chez les autres, ceux qui étudient ne travaillent pas ! Et ceux qui travaillent n’étudient pas !”<sup>12</sup>
-  </strong></blockquote>
-
-  <p>
-    Dans son document de <strong>2019</strong>, déjà cité, <strong>Ag Guidi</strong> souligne à son tour que <strong>“le tandem savoir religieux et puissance économique a toujours fait la fierté et l’indépendance des Idaksahak par rapport aux communautés voisines.”</strong><sup>13</sup>
-  </p>
-
-  <p>
-    Si les Idaksahak se réfèrent toujours à la pratique de l’élevage comme support de leur richesse économique, ils déplorent aussi, ces dernières années, une forme de fragilisation et d’appauvrissement liée au développement d’une économie financière et souvent criminelle à laquelle ils disent avoir du mal à adhérer.
-  </p>
-
-  <blockquote><strong>
-    “Ce qui caractérise les Idaksahak, c’est d’abord leur économie. Et leur économie c’est l’animal ! Nous étions les plus riches, mais aujourd’hui nous sommes parmi les plus pauvres. Nous étions des gens enviés par nos voisins nomades et même par les sédentaires, du fait de cette richesse basée sur l’élevage. Mais aujourd’hui nous sommes au bas de la pyramide, parce qu’il y a maintenant une nouvelle façon de s’enrichir à laquelle nous n’avons pas encore adhéré. Il y a d’abord la drogue. Il y a aussi le trafic des armes et il y a le mensonge légal au niveau des États. Tout ça génère d’énormes ressources, en termes de centaines de millions, mais les Idaksahak n’ont pas adhéré à cela encore. (…) Il y a aujourd’hui, à Bamako, des notables de toutes les tribus qui se bousculent devant la présidence, à la sécurité d’État, au niveau des grands opérateurs économiques. On ne voit jamais des notables Dawsahaq là-dedans. Il y a les gangs de la drogue. Les Idaksahak ne sont pas là-dedans. Le trafic d’armes, je ne peux pas affirmer qu’ils ne s’y intéressent pas, mais c’est quand même à une petite échelle. Ceux que ce trafic intéresse ne sont pas nombreux et sont très récents. Mais au niveau des autres communautés, tous les intérêts sont exploités par tout le monde. Par tout le monde !”<sup>14</sup>
-  </strong></blockquote>
-
-  <p>
-    Ce regard porté par un homme d’une soixantaine d’années, sur les fondements économiques de son groupe d’appartenance, révèle un tournant dans les valeurs qui ont cours aujourd’hui au <strong>Sahara</strong> et au <strong>Sahel</strong>. Si ce tournant semble difficile à emprunter pour les Idaksahak, il s’agit aussi, à travers ce discours, d’exprimer sa différence en se démarquant de pratiques mal considérées, voire condamnées, par des valeurs sociétales et religieuses auxquelles cette personne s’identifie. Il y a certainement ici une rupture générationnelle, qui touche particulièrement des Idaksahak tiraillés entre la volonté de perpétrer l’image d’un groupe pacifique, irréprochable au plan de la morale et de la religion, et celle d’une tribu à part entière, capable d’assurer sa propre sécurité et revendiquant une place sur l’échiquier politique, avec tout ce que cela implique au <strong>Sahara</strong> dans un contexte de crise et de conflits armés, qui ravive les concurrences entre les groupes.
-  </p>
-
-  <h3>Références</h3>
-  <p>
-    8. <a href="http://www.idaksahak.com/" target="_blank">http://www.idaksahak.com</a><br>
-    9. Cette caractéristique est évidemment difficile à représenter par un dessin.<br>
-    10. <a href="https://www.facebook.com/people/Communaut%C3%A9-Idaksahak/100057182781477/?mibextid=LQQJ4d" target="_blank">Page Facebook – Communauté Idaksahak</a><br>
-    11. Une partie d’entre eux occupe également le flanc est de la région de <strong>Gao</strong>, cercle d’<strong>Ansongo</strong>, communes de <strong>Talatayt</strong> et <strong>Tin Hama</strong>.<br>
-    12. Entretien avec trois Idaksahak, de différentes fractions, <strong>Bamako</strong>, le <strong>27/10/2020</strong>.<br>
-    13. <strong>Ag Guidi</strong>, 2019, p. 11.<br>
-    14. Entretien avec quatre Idaksahak, de différentes fractions, <strong>Bamako</strong>, le <strong>31/10/2020</strong>.
-  </p>
-   </section>
-
-  <section id="page4">
-  <h2>L’image d’un groupe subalterne et pacifique</h2>
-
-  <p>
-    La présence d’une arme, sur le logo censé définir les grands traits de l’identité des 
-    Idaksahak, tranche avec la dimension pacifique qu’ils ont longtemps mise en avant pour se 
-    définir vis-à-vis des autres. Des membres du groupe insistent aujourd’hui encore sur cette 
-    spécificité. Voici, à titre d’exemple, comment un homme d’une soixantaine d’années, de la 
-    fraction des Kel Abakott, répondait à la question “qu’est-ce qui caractérise les Idaksahak ?” :
-  </p>
-
-  <blockquote>
-    <strong>
-      “Pour moi, ce qui nous caractérise, de tout le temps, c’est que nous sommes un peuple de 
-      paix, qui s’occupe uniquement de la religion et de l’élevage. Nous ne nous mêlons pas d’autres 
-      choses. Et c’est ce qui fait qu’on ne parle pas beaucoup de nous. Nous ne participions pas à des 
-      guerres, ni à des razzias, ni au banditisme. Nous ne participions à rien de tout ça.”<sup>15</sup>
-    </strong>
-  </blockquote>
-
-  <p>
-    Ahmed Mohamed Ag Guidi souligne, lui aussi, dans son document écrit, le caractère 
-    non violent des Idaksahak et ce, même dans un contexte de dangers quasi permanent :
-  </p>
-
-  <blockquote>
-    <strong>
-      “Les IDAKSAHK, peuple pacifique, ne répondaient pas à l’agression, même très intentionnée, 
-      sauf en cas d’humiliation à dessein ou de provocation évidente. Cette communauté avait 
-      toujours opté pour la non-violence visant, essentiellement à sauvegarder leur assiette 
-      économique d’un risque permanent de destruction dans un contexte culturel de rezzous et 
-      de contre rezzous.”<sup>16</sup>
-    </strong>
-  </blockquote>
-
-  <p>
-    La dimension essentialiste plane évidemment sur ces discours, comme c’est toujours 
-    un peu le cas lorsque l’on cherche à définir l’identité de son groupe d’appartenance. Les 
-    singularités, les aspérités et les contradictions sont gommées au profit de récits unitaires. 
-    Mais la mise en scène de soi est, aussi, toujours riche d’enseignements. “Un peuple de paix 
-    qui s’occupe de sa religion…”, mais un groupe qui n’a jamais pour autant bénéficié du statut 
-    de tribu “maraboutique” (zwâya), comme c’est le cas par exemple des Touaregs Kel Es-Suq 
-    ou bien des Arabes Kunta<sup>17</sup>. Les Idaksahak, pourtant très instruits en islam – c’est d’ailleurs 
-    la principale raison qu’ils invoquent dans leur refus opposé à l’école des Blancs et à celle de 
-    l’État malien – n’ont jamais vraiment obtenu cette reconnaissance. En ce qui les concerne, le 
-    caractère pacifique rime surtout avec un statut de subalterne.
-  </p>
-
-  <p>
-    Pour la plupart de leurs voisins, en effet, les Idaksahak demeurent un groupe subalterne, 
-    toujours sous le joug, ou au moins l’influence, de ceux qui furent les leaders politiques et 
-    guerriers de la Boucle du Niger jusqu’à l’Adagh des Ifoghas compris, pendant plus de deux 
-    siècles, les Iwellemmedan<sup>18</sup>.
-  </p>
-
-  <p>
-    Les Idaksahak étaient loin d’être les seuls à reconnaître, de gré ou de force, l’autorité 
-    politique des Iwellemmedan. Mais en ce qui les concerne, et à la différence d’autres groupes, 
-    ce statut de subalterne était d’autant plus avéré que les Idaksahak ne semblent pas avoir 
-    réellement porté des armes, en tout cas de guerre, telles que les épées, les lances et autres 
-    boucliers<sup>19</sup>. Ce qui les mettait de fait sous la protection et la dépendance d’autres groupes 
-    guerriers, en l’occurrence les Imajeghen Iwellemmedan, et plus spécifiquement le lignage 
-    détenteur du tambour de commandement (ettebel), les Kel Talatayt.
-  </p>
-
-  <p>
-    L’épée qui figure aujourd’hui symboliquement sur leur logo de présentation renvoie donc à une histoire 
-    très récente. Les plus anciennes sources disponibles qui évoquent les Idkasahak insistent 
-    effectivement sur le caractère pacifique de ce groupe social. C’est le cas, par exemple, du 
-    marabout Kunta Shaykh Baye qui a rédigé, vers la fin du XIX<sup>e</sup> siècle, des notes sur d’anciennes 
-    tribus touarègues :
-  </p>
-
-  <blockquote>
-    <strong>
-      “Les Dû Sahâq sont un peuple des Touaregs. Il est certain qu’à l’origine ils étaient Sûdân, car 
-      leur parler (kalâm) est composé des mots (kalâm) des Sûdân<sup>20</sup> et des Touaregs. Et parmi eux 
-      (il y a) une tribu qui situe ses origines vers l’Est. Ils sont tous des gens de la paix et de l’étude. 
-      La plupart d’entre eux habite avec les Ilmidan [Iwellemmedan]. Il est évident qu’ils sont des 
-      tribus d’Es-Suq. Entre eux et les Dabâkir il y a des relations.”<sup>21</sup>
-    </strong>
-  </blockquote>
-
-  <p>
-    Quelques années avant, au milieu du XIX<sup>e</sup> siècle, l’explorateur allemand Heinrich Barth 
-    fait également mention des Idaksahak lors de son passage dans la Boucle du Niger. Une 
-    simple mention, dans les annexes du dernier volume, précisant le nom de quelques fractions 
-    composant l’ensemble des Idaksahak<sup>22</sup>. Mais le plus instructif est la catégorie dans laquelle 
-    Heinrich Barth les répertorie :
-  </p>
-
-  <blockquote>
-    <strong>
-      “The tribes of Anislimen or Tolba, peaceable tribes given to learning and religious devotion among the group of the Awelimminden.”<sup>23</sup>
-    </strong>
-  </blockquote>
-
-  <p>
-    Ce sont là les sources les plus anciennes qui mentionnent l’existence des Idaksahak au 
-    nord du Mali actuel. Difficile donc d’en tirer des enseignements définitifs, mais précisons 
-    tout de même que les écrits des colonisateurs véhiculent aussi très largement cette image 
-    de “communauté ou peuple pacifique”. Et les Idaksahak eux-mêmes, comme il a déjà été précisé, insistent, aujourd’hui encore, sur ce trait caractéristique. Comme le résume 
-    clairement Ahmed Mohamed Ag Guidi :
-  </p>
-
-  <blockquote>
-    <strong>
-      “D’une manière générale les Idaksahak sont classés implicitement parmi les dominés, ils gardent en mémoire un passé récent d’assujettissement politique et idéologique.”<sup>24</sup>
-    </strong>
-  </blockquote>
-
-  <p>
-    C’est précisément la volonté de sortir de cette condition subalterne sur le plan politique 
-    qui anime aujourd’hui une grande partie des Idaksahak. De jeunes leaders diplômés portent 
-    ouvertement cette revendication depuis 2012, année qui marque la relance des hostilités 
-    entre des mouvements armés du nord du Mali et l’État central. La question de la prise des 
-    armes, du recours à la violence pour exprimer ses revendications, apparaît incontournable 
-    dans cette quête de l’autonomie politique. Il importe alors de retracer l’historique de ce 
-    processus par lequel les Idaksahak cherchent à évoluer de l’image d’un groupe pacifique et 
-    dominé à celle d’une tribu guerrière.
-  </p>
-
-  <h3>Références</h3>
-  <p>
-    15. Entretien avec quatre Idaksahak, de différentes fractions, Bamako, le <strong>27/10/2020</strong>.<br>
-    16. Ag Guidi <strong>2019</strong>, p. 9.<br>
-    17. Voir Grémont <strong>2010</strong>.<br>
-    18. Au sens strict, les Iwellemmedan sont des Imajeghen (“hommes libres” en tamasheq, représentants de 
-    la classe des “aristocrates-guerriers”), descendants d’un ancêtre commun nommé Karidenna. Voir Grémont <strong>2010</strong>.<br>
-    19. Disons que le statut de guerrier ne leur était reconnu par aucun de leurs voisins.<br>
-    20. Kalâm est utilisée pour différencier les “parlers locaux” des “vraies langues” (lugha).<br>
-    21. Shaykh Baye, manuscrits conservés à la bibliothèque de l’Institut de France. Traduction par Judith Scheele.<br>
-    22. Barth <strong>1858</strong>, vol. 5, p. 559.<br>
-    23. Barth <strong>1858</strong>, vol. 5, p. 558.<br>
-    24. Ag Guidi <strong>2019</strong>, p. 10.
-  </p>
-  </section>
-  
- <section id="page6">
-  
-  <p>
-    Par la suite, à ma connaissance, les archives coloniales ne mentionnent aucun fait d’armes 
-    de la part des Idaksahak. C’est toujours l’image d’un groupe pacifique et riche en bétail qui 
-    est rapportée dans les rapports des officiers français. Ce n’est qu’après l’Indépendance du 
-    <strong>Mali</strong>, en <strong>1963-1964</strong>, que des Idaksahak se font remarquer dans un épisode guerrier. Il s’agit 
-    de la révolte menée par une poignée d’hommes dans l’<strong>Adagh des Ifoghas</strong>, à laquelle ont 
-    participé deux Idaksahak de la zone de <strong>Talatayt</strong>, <strong>Ilias</strong> et <strong>Younes</strong>, deux fils d’<strong>Ayouba</strong>, le chef 
-    de la fraction <strong>Ihanakaten</strong><sup>32</sup>. Proches du chef des <strong>Ifoghas</strong> à ce moment-là<sup>33</sup>, <strong>Zeïd ag Attaher</strong>, 
-    ces deux jeunes Idaksahak ont contribué activement à cette révolte, notamment à travers 
-    un soutien financier qui a permis d’acheter des armes en <strong>Algérie</strong><sup>34</sup>.
-  </p>
-
-  <p>
-    <strong>Ilias</strong> et <strong>Zeyd</strong> sont arrêtés en <strong>Algérie</strong>, à <strong>Colomb-Béchar</strong>, en <strong>novembre 1963</strong>. Ils sont remis aux 
-    autorités maliennes qui les exposent dans des situations humiliantes aux yeux des populations 
-    de l’<strong>Adagh</strong>. À titre d’exemple ! Arrêté avec eux, <strong>Younes</strong> réussit à s’échapper et s’installe en 
-    <strong>Algérie</strong>. <strong>Ayouba</strong>, le père, est arrêté et assassiné, comme d’autres chefs qui n’ont pas accepté 
-    de collaborer avec l’armée malienne.
-  </p>
-
-  <p>
-    La participation de ces deux seuls individus ne suffit certainement pas à retenir cette date 
-    et cet événement comme une prise d’armes de la part des Idaksahak. Mais l’identité de ces 
-    jeunes hommes est tout de même symboliquement importante. Leur engagement aux côtés 
-    des <strong>Kel Adagh</strong> insurgés, et la répression qu’ils ont subie, avec leur père, marquent le premier 
-    acte d’une relation conflictuelle entre les Idaksahak et le pouvoir central malien.
-  </p>
-
-  <p>
-    Une première prise de conscience, sans doute aussi, que la posture de l’éleveur pacifique, 
-    attaché à l’étude coranique, n’était pas un horizon indépassable. Avec le recul, on sait maintenant 
-    la filiation des rébellions armées entre elles, qui surgissent et ressurgissent régulièrement depuis 
-    <strong>1963</strong> dans le nord du <strong>Mali</strong><sup>35</sup>. C’est particulièrement avéré entre l’épisode de <strong>1963</strong> et celui de 
-    <strong>1990</strong>. La rancœur des orphelins de <strong>1963</strong>, contre le pouvoir central malien, est une des matrices 
-    aujourd’hui bien documentée de la rébellion des années <strong>1990</strong>.
-  </p>
-
-  <p>
-    Dans son ouvrage, <strong>Baz Lecoq</strong> présente <strong>Younes ag Ayouba</strong> comme l’un de ses principaux leaders, 
-    au moins dans sa phase de préparation<sup>36</sup>.
-  </p>
-
-  <p>
-    L’engagement de plusieurs centaines d’Idaksahak, les armes à la main, dans la rébellion 
-    de <strong>1990</strong> marque une première marche dans le processus d’émancipation de ce groupe. Aussi 
-    et surtout parce que ces armes n’ont pas visé uniquement l’armée malienne.
-  </p>
-
-  <p>
-    En effet, un événement peu connu, mais hautement symbolique, doit être rappelé ici. 
-    Comme de nombreuses communautés, dans la vallée du <strong>fleuve Niger</strong> ou dans les zones 
-    pastorales, les Idaksahak ont subi des vols et des pillages dans la première moitié des années 
-    <strong>1990</strong>. Dans un contexte de non application des accords de paix, de prolifération des armes et 
-    d’absence de justice, les actes de banditisme se sont multipliés et le bétail des Idaksahak a fait 
-    l’objet de nombreuses convoitises, notamment de la part de leurs voisins proches, dont des 
-    <strong>Imajeghen</strong>.
-  </p>
-
-  <p>
-    Autrement dit, des gens appartenant à l’ancienne classe dominante et guerrière au sein 
-    de l’ensemble des <strong>Iwellemmedan</strong> – dont le rôle historique était la défense des groupes 
-    subalternes et pacifiques, en échange bien sûr de contreparties (la soumission politique 
-    et des contributions en bétail) – ont enlevé à plusieurs reprises des animaux appartenant 
-    à des Idaksahak. Une fois ils ont même pris pour cible un campement et pillé les biens 
-    domestiques d’une famille<sup>39</sup>, à une dizaine de kilomètres de la base armée des Idaksahak 
-    (<strong>Izilili</strong>, à une quarantaine de kilomètres au nord-est de <strong>Ménaka</strong>).
-  </p>
-
-  <p>
-    Cet acte, hautement répréhensible du point de vue des valeurs sociétales, a entraîné le même 
-    jour une poursuite armée de la part de combattants Idaksahak présents à <strong>Izilili</strong>. Une série 
-    d’accrochages armés a eu lieu entre combattants <strong>Imajeghen</strong> et Idaksahak dans les semaines 
-    qui ont suivi, faisant plusieurs blessés et peut-être quelques morts<sup>40</sup>. Un cessez-le-feu et un 
-    accord ont pu être rapidement trouvés entre les deux parties.
-  </p>
-
-  <p>
-    Cette séquence marque clairement le passage des Idaksahak dans une autre dimension 
-    sociologique et politique, celle d’une tribu capable d’opposer elle-même une riposte militaire 
-    lorsque ses biens sont menacés et pillés. Un passage d’autant plus marquant qu’il s’est opéré 
-    dans une confrontation directe avec leurs anciens suzerains.
-  </p>
-
-  <blockquote>
-    <strong>
-      “Cet épisode de 1994 est historique ! C’est la première fois que nous avons délogé notre 
-      tête de sous le pied des Imajeghen. Avant cela, nos biens étaient leurs biens. Un Adaksahak 
-      n’était rien aux yeux des Imajeghen.”<sup>41</sup>
-    </strong>
-  </blockquote>
-
-  <p>
-    Comme annoncé dès l’introduction, c’est véritablement à partir des années <strong>2010</strong> que 
-    les Idaksahak ont exprimé leur force guerrière et des revendications politiques, tant au 
-    niveau régional, que national, voire international, tant sur le terrain militaire que sur les 
-    ondes médiatiques et sur les réseaux sociaux. Le propos n’est plus ici de retracer les formes 
-    d’engagement des Idaksahak dans la guerre déclenchée au nord du <strong>Mali</strong> en <strong>2012</strong>, mais de 
-    tenter de conclure cette réflexion autour de la notion de tribu, en intégrant une séquence 
-    historique complètement contemporaine, car elle est toujours en cours au moment de 
-    l’écriture de ces lignes (<strong>octobre 2023</strong>).
-  </p>
-
-  <h3>Références</h3>
-  <p>
-    29. Richer <strong>1924</strong>, p. 162.<br>
-    30. Entretien avec quatre Idaksahak, <strong>Bamako, le 27/10/2020</strong>.<br>
-    31. Richer <strong>1924</strong>, p. 275.<br>
-    32. Ayouba : chef renommé, soutenu par les autorités coloniales.<br>
-    33. Les Ifoghas sont la tribu dominante de l’<strong>Adagh</strong> (<strong>Kidal</strong>).<br>
-    34. Voir Boilley <strong>1999</strong>, pp. 321–324 ; Lecoq <strong>2010</strong>, pp. 192, 214, 224.<br>
-    35. Rébellions : <strong>1963–1964</strong>, <strong>1990</strong>, <strong>2006</strong>, <strong>2012</strong> (Klüte, Boilley, Lecoq, Grémont, Chebli).<br>
-    36. Lecoq <strong>2010</strong>, p. 192.<br>
-    37. Entretien avec un ex-combattant Idaksahak, <strong>Bamako, 23/02/2022</strong>.<br>
-    38. Groupes : MPA, FPLA, ARLA, FIAA.<br>
-    39. Entretien avec un ex-combattant Idaksahak, <strong>Bamako, 23/02/2022</strong>.<br>
-    40. Aucun mort déclaré côté Idaksahak.<br>
-    41. Entretien avec un ex-combattant Idaksahak, <strong>Bamako, 23/02/2022</strong>.
-    42. Pour l’histoire de la création du MNA et du MNLA, voir la thèse de Denia Chebli (2021).
-    43. Sa mère est Tamasheq, de la tribu des Kel Ensar qui évolue dans la région de Tombouctou.
-  </p>
- </section>
-   <section id="conclusion-et-bibliographie">
-  <h2>📄 Une tribu en construction politique ?</h2>
-  <p>Les années 1990 ouvrent certainement une nouvelle ère dans l’histoire des Idaksahak, 
-  avec l’engagement de peut-être plus de 2000 combattants dans une rébellion contre le 
-  pouvoir central malien et, plus encore, la défense de leurs biens par leurs propres armes, 
-  mais le gain politique de cette conversion restait encore assez faible. Comme le souligne 
-  le jeune Adksahak interrogé en 2020, les postes à responsabilité, les “élus, les ministres, les 
-  officiers supérieurs” sont restés dévolus aux autres. La volonté de changer cette donne a 
-  animé plusieurs jeunes diplômés de la communauté dès la reprise des hostilités contre l’État 
-  central malien en 2012.</p>
-
-  <p>Mais c’est surtout l’année 2016 qui marque ouvertement cette prise de position 
-  avec la création du Mouvement pour le salut de l’Azawad (MSA), par un de ces jeunes, 
-  Moussa Ag Acharatouman. Il est l’un des fondateurs du Mouvement national de l’Azawad 
-  (MNA), une organisation de jeunes gens diplômés du Nord qui tente, à partir de 2010, 
-  d’interpeller l’État et les leaders du Nord sur la question de l’Azawad, de son autonomie et de 
-  sa gouvernance. Avec le choix de la lutte armée en janvier 2012, le MNA devient Mouvement 
-  national de libération de l’Azawad (MNLA). Jusqu’à l’année 2016 et la création du MSA, 
-  qui regroupe donc essentiellement des combattants Idaksahak, seuls ses proches savent que 
-  Moussa ag Acharatouman est Adaksahak, par son père. Il a grandi à Kidal, puis a fait ses 
-  études à Bamako et ce n’est qu’à partir des années 2010 qu’il initie un rapprochement avec ses 
-  parents paternels, dans la région de Ménaka. C’est le moment aussi où il commence à parler 
-  tadaksahak, sa langue paternelle qu’il ne maîtrisait pas vraiment auparavant.</p>
-
-  <p>Très vite il se positionne comme un jeune leader communautaire cherchant à porter et à faire entendre 
-  la voix et les revendications des Idaksahak. Il a de nombreux atouts pour cela : une maîtrise 
-  des moyens modernes de communication, un réseau international de connaissances, un 
-  savoir-faire politique et une position sociale, à la fois intérieure et extérieure au sein de 
-  la communauté Idaksahak, qui lui permet de transcender les rivalités lignagères internes. 
-  Moussa prend conscience de la force démographique et économique que les Idaksahak 
-  représentent. Il réalise en même temps que les Idaksahak se sont largement mis au service 
-  de la cause de l’Azawad, dont le centre de gravité est principalement la région de Kidal et 
-  la tribu des Ifoghas. Il regrette le manque de soutien de ses camarades militants du MNLA, 
-  et plus largement des combattants de l’Adagh, lorsque la sécurité des populations et des 
-  biens de la région de Ménaka est menacée. Or c’est dans cette région que vit la majorité des 
-  Idaksahak.</p>
-   </section>
-  <section>
-  <p>Pour ces raisons et dans ce contexte est donc créé le premier mouvement armé 
-  voué à la sauvegarde et à la promotion des intérêts des Idaksahak. En plus d’une force armée, 
-  les Idaksahak peuvent aussi compter sur un leader politique qui leur avait largement fait 
-  défaut jusqu’alors.</p>
-
-  <p>L’ascendance de Moussa, à la fois Idaksahak et Tamasheq, a certainement d’abord été un 
-  atout, mais face à ses premiers succès politiques, plusieurs chefs de fraction Idaksahak de 
-  la région de Ménaka ont commencé à voir en lui un rival, plutôt qu’une opportunité à saisir 
-  de voir l’ensemble de cette communauté émerger politiquement sur la scène régionale. Les 
-  logiques tribales de la distribution du pouvoir ont des règles et des usages qu’un contexte de 
-  crise et de guerre ne saurait à lui seul abolir.</p>
-
-  <p>La crise et les conflits armés déclenchés à partir de 2012 révèlent par ailleurs des 
-  situations bien plus complexes qu’une opposition entre des mouvements indépendantistes 
-  et le pouvoir central de l’État malien. Des milices et des groupes armés loyalistes sont aussi 
-  parmi les protagonistes du conflit, ainsi bien sûr que plusieurs mouvements djihadistes. Or il 
-  se trouve qu’une partie de la jeunesse des Idaksahak, certes minoritaire mais bien présente, a 
-  adhéré très tôt à la proposition djihadiste, à travers le Mouvement pour l’unicité et le djihad 
-  en Afrique de l’Ouest (MUJAO), Al-Qaïda au Maghreb islamique (AQMI) et aussi l’État 
-  islamique au Grand Sahara (EIGS).</p>
-
-  <p>Chacun de ces mouvements proposait une alternative 
-  radicale à la gouvernance étatique du Mali, qu’ils jugeaient largement corrompue. Mais 
-  surtout, dans le paysage diversifié des offres de violence, ces groupes djihadistes se sont 
-  posés en défenseurs des groupes subalternes. C’est la raison pour laquelle une partie des 
-  jeunes Idaksahak, en rupture à la fois avec l’État et ses représentants, avec les groupes 
-  dominants des régions de Ménaka et de Gao et avec leurs propres chefs de fraction, s’est 
-  enrôlée dans cette voie. Une voie totalement opposée à celle du MSA qui, en 2018, s’est allié 
-  avec la force française Barkhane et à l’armée nigérienne dans une déclaration de guerre 
-  contre l’EIGS.</p>
-  </section>
-  <section>
-  <p>Ce dernier constat, d’une séquence historique toujours en cours, vient relancer la 
-  question des liens de solidarité censés définir, avec d’autres éléments, la structure et le 
-  fonctionnement interne d’une tribu. L’idée selon laquelle les membres d’une tribu, de par 
-  leurs liens de sang et de parenté, et de par leur inscription dans une histoire commune, se 
-  mobiliseraient comme un seul homme dans une situation de conflit, devrait être largement 
-  pondérée.</p>
-
-  <p>Les travaux sur l’histoire très contemporaine, ou du “temps présent”, permettent 
-  certainement aussi de reconsidérer les vérités parfois trop vite énoncées sur le caractère 
-  unitaire, solidaire et cohérent de la tribu. L’existence ou non d’un ordre politique autonome, 
-  avec ses forces de contradiction internes, me semble de ce fait une question bien plus 
-  féconde si l’on cherche à réinterroger la notion de tribu, ici dans la partie sud du Sahara 
-  au début du XXI<sup>e</sup> siècle. L’expérience contemporaine des Idaksahak ouvre sans doute de 
-  nouvelles pistes à explorer.</p>
-  </section>
-  <section>
-  <h2>Références bibliographiques</h2>
-  <ul>
-    <li>Ag Guidi, A. M. (2019) : <em>Contribution à la connaissance de la communauté Idaksahak (cas de Ménaka et Talatayt)</em>, 16 p. (document non publié).</li>
-    <li>Barth, H. (1858) : <em>Travels and Discoveries in North and Central Africa, 1849–1855</em>, Londres, 5 vol. (traduction intégrale de la première version en allemand).</li>
-    <li>Ben Hounet, Y. (2009) : “Que faire de la tribu ? À propos du phénomène tribal en Algérie et dans le monde musulman”, <em>Journal des anthropologues</em>, 116–117, 493–515.</li>
-    <li>Ben Hounet, Y. et Bonte, P. (2009) : “Introduction” au dossier “La tribu à l’heure de la globalisation”, <em>Études rurales</em>, 184, 13–32.</li>
-    <li>Boilley, P. (1999) : <em>Les Touaregs Kel Adagh. Dépendances et révoltes : du Soudan français au Mali contemporain</em>, Paris.</li>
-    <li>Bonte, P. et Echard, M. (1976) : “Histoires et Histoire. Conception du passé chez les Haoussa et les Touaregs Kel Gress de l’Adrar”, <em>Cahiers d’Études Africaines</em>, 61–62, 237–296.</li>
-    <li>Chaventré, A. (1983) : <em>Évolution anthropo-biologique d’une population touarègue. Les Kel Kummer et leurs apparentés</em>, Paris.</li>
-    <li>Chebli, D. (2021) : “Jusqu’à maintenant, il n’y a pas de révolution”. <em>Itinéraire du Mouvement national de libération de l’Azawad dans la guerre au Mali</em>, thèse de doctorat, université Paris I, Panthéon Sorbonne.</li>
-    <li>Claudot-Hawad, H. (1990) : “Honneur et politique : les choix stratégiques des Touaregs pendant la colonisation”, <em>REMMM</em>, 57, 11–47.</li>
-    <li>Grémont, C. (2010) : <em>Les Touaregs Iwellemmedan. Un ensemble politique de la Boucle du Niger</em>, Paris.</li>
-    <li>Grémont, C. (2017) : “Origines et perspectives des conflits menés par des Touaregs au Mali”, <em>L’ENA hors les murs</em>, janv.-févr., 467, 16–20.</li>
-    <li>Grémont, C. (2019) : “Dans le piège des offres de violence. Concurrences, protections et représailles dans la région de Ménaka (Nord-Mali, 2000–2018)”, <em>Hérodote</em>, 172, 43–62.</li>
-    <li>Klüte, G. (1995) : “Hostilités et alliances. Archéologie de la dissidence des Touaregs au Mali”, <em>Cahiers d’Études Africaines</em>, vol. 35, 137, 55–71.</li>
-    <li>Lecoq, B. (2010) : <em>Disputed Desert: Decolonisation, Competing Nationalisms and Tuareg Rebellions in Northern Mali</em>, Leyde.</li>
-    <li>Richer, A. (1924) : <em>Les Touaregs du Niger (Région de Tombouctou-Gao). Les Oulliminden</em>, Paris.</li>
-    <li>Scheele, J. (2009) : “Tribus, États et fraude : la région frontalière algéro-malienne”, <em>Études rurales</em>, 184, 79–94.</li>
-    <li>Shaykh Baye (s.d., c. XIX<sup>e</sup> s.) : <em>Sur d’anciennes tribus touareg</em>, Série de manuscrits arabes du fonds de Gironcourt, numérotés de 91 à 104, conservés à la bibliothèque de l’Institut de France, 14 p.</li>
-  </ul>
-  </section>
-  
-<div class="retour">
-  <a class="button" href="#top">⬆ Retour en haut</a>
+  <div class="book-footer">
+    <p>© 2023 Charles Grémont — Extrait de "La tribu au Maghreb et au Sahara"</p>
+    <p style="margin-top:0.5rem; font-size:0.7rem;">Édition numérique — Tadaksahak Learning</p>
+  </div>
 </div>
+
+<!-- Navigation flottante -->
+<div class="floating-nav">
+  <button id="prevChapter" title="Chapitre précédent">◀</button>
+  <button id="nextChapter" title="Chapitre suivant">▶</button>
+</div>
+
+<div class="theme-selector">
   <select id="themeSelect">
-  <option value="clair">Clair</option>
-  <option value="vert">Vert</option>
-  <option value="sombre">Sombre</option>
-</select>
+    <option value="clair">📖 Clair</option>
+    <option value="sepia">📜 Sepia</option>
+    <option value="sombre">🌙 Sombre</option>
+  </select>
+</div>
+
+<button id="backToTop" class="back-to-top" title="Retour en haut">⬆</button>
+
+<div class="bookmark" id="bookmark">
+  MARQUE-PAGE
+</div>
 
 <script>
+  // Gestion des thèmes
   const select = document.getElementById('themeSelect');
   const body = document.body;
-  select.value = body.dataset.theme;
-  select.onchange = e => body.setAttribute('data-theme', e.target.value);
-</script>
+  const savedTheme = localStorage.getItem('livre-theme') || 'sombre';
+  body.setAttribute('data-theme', savedTheme);
+  select.value = savedTheme;
   
+  select.onchange = (e) => {
+    const theme = e.target.value;
+    body.setAttribute('data-theme', theme);
+    localStorage.setItem('livre-theme', theme);
+  };
+  
+  // Navigation entre chapitres
+  const chapters = document.querySelectorAll('.chapter');
+  let currentChapter = 0;
+  
+  function scrollToChapter(index) {
+    if (index >= 0 && index < chapters.length) {
+      chapters[index].scrollIntoView({ behavior: 'smooth', block: 'start' });
+      currentChapter = index;
+    }
+  }
+  
+  document.getElementById('prevChapter')?.addEventListener('click', () => {
+    scrollToChapter(currentChapter - 1);
+  });
+  
+  document.getElementById('nextChapter')?.addEventListener('click', () => {
+    scrollToChapter(currentChapter + 1);
+  });
+  
+  // Back to top
+  const backBtn = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backBtn.classList.add('visible');
+    } else {
+      backBtn.classList.remove('visible');
+    }
+  });
+  
+  backBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+  
+  // Sauvegarder la position de lecture
+  window.addEventListener('scroll', () => {
+    const scrollPercent = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+    localStorage.setItem('livre-scroll', scrollPercent);
+  });
+  
+  // Restaurer la position
+  const savedScroll = localStorage.getItem('livre-scroll');
+  if (savedScroll) {
+    const targetScroll = parseFloat(savedScroll) * (document.body.scrollHeight - window.innerHeight);
+    setTimeout(() => window.scrollTo(0, targetScroll), 100);
+  }
+  
+  // Marque-page
+  document.getElementById('bookmark')?.addEventListener('click', () => {
+    localStorage.setItem('livre-bookmark', window.scrollY);
+    alert('📌 Position enregistrée !');
+  });
+  
+  const savedBookmark = localStorage.getItem('livre-bookmark');
+  if (savedBookmark) {
+    setTimeout(() => {
+      if (confirm('📖 Reprendre la lecture à votre marque-page ?')) {
+        window.scrollTo(0, parseInt(savedBookmark));
+      }
+    }, 500);
+  }
+</script>
+
+</body>
+</html>
