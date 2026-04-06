@@ -1137,3 +1137,132 @@ mark {
     page-break-inside: avoid;
   }
 }
+
+/* ============================================
+   STYLE CARTE LIVRE PREMIUM
+   ============================================ */
+
+.featured-book-premium {
+  margin-bottom: 2rem;
+}
+
+.premium-book-card {
+  display: flex;
+  gap: 2rem;
+  background: linear-gradient(135deg, var(--bg-card), var(--bg-light));
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.premium-book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--accent);
+}
+
+.premium-book-cover {
+  flex-shrink: 0;
+  width: 180px;
+  background: linear-gradient(135deg, #2a1810, #3a2820);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  border: 1px solid var(--accent-gold, #c6a43b);
+}
+
+.cover-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.cover-title {
+  font-family: 'Georgia', serif;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--accent-gold, #c6a43b);
+  line-height: 1.3;
+  margin-bottom: 0.8rem;
+}
+
+.cover-author {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.premium-book-info {
+  flex: 1;
+}
+
+.premium-book-info h3 {
+  font-size: 1.4rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.book-description {
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.book-meta-details {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.book-meta-details span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+}
+
+.btn-read-premium {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, var(--primary), var(--hover));
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-read-premium:hover {
+  transform: translateX(5px);
+  gap: 0.8rem;
+  background: linear-gradient(135deg, var(--hover), var(--primary-dark));
+}
+
+.btn-icon {
+  transition: transform 0.3s ease;
+}
+
+.btn-read-premium:hover .btn-icon {
+  transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+  .premium-book-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .premium-book-cover {
+    width: 160px;
+  }
+  
+  .book-meta-details {
+    justify-content: center;
+  }
+}
