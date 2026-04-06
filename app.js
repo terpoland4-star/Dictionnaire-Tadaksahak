@@ -17,6 +17,9 @@ let motsListe = [];
 window.livresData = [];
 window.histoireData = {};
 
+// URLs GitHub (raw)
+const GITHUB_BASE = "https://raw.githubusercontent.com/terpoland4-star/Dictionnaire-Tadaksahak/main/data/";
+
 
 // Éléments DOM
 const searchBar = document.getElementById("searchBar");
