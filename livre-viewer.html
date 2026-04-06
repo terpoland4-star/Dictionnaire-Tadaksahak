@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📘 L'émancipation politique des Idaksahak - Charles Grémont</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/idaksahak_round.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="livre-page">
+
+<div class="back-to-app">
+  <a href="index.html" class="app-link">🏠 Retour à l'application</a>
+</div>
+
+<div class="book-viewer" id="bookViewer">
+  <div class="book-loading">📖 Chargement du livre...</div>
+</div>
+
+<div class="floating-nav">
+  <button id="prevChapter" class="nav-chapter" title="Chapitre précédent">◀</button>
+  <button id="nextChapter" class="nav-chapter" title="Chapitre suivant">▶</button>
+</div>
+
+<div class="theme-selector">
+  <select id="themeSelect">
+    <option value="clair">📖 Clair</option>
+    <option value="sepia">📜 Sepia</option>
+    <option value="sombre">🌙 Sombre</option>
+  </select>
+</div>
+
+<button id="backToTop" class="back-to-top" title="Haut de page">⬆</button>
+
+<script>
+  // Gestion du thème
+  const select = document.getElementById('themeSelect');
+  const body = document.body;
+  const savedTheme = localStorage.getItem('livre-theme') || 'sombre';
+  body.setAttribute('data-theme', savedTheme);
+  if (select) select.value = savedTheme;
+  select.onchange = (e) => {
+    body.setAttribute('data-theme', e.target.value);
+    localStorage.setItem('livre-theme', e.target.value);
+  };
+
+  // Récupérer l'ID du livre dans l'URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const livreId = parseInt(urlParams.get('id')) || 1;
+
+  let currentChapter = 0;
+  let livreData = null;
+
+  function escapeHtml(str) {
+    if (!str) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function afficherLivre() {
+    if (!livreData) return;
+
+    const container = document.getElementById('bookViewer');
+    if (!container) return;
+
+    // Construction du HTML
+    let html = `
+      <div class="book-header">
+        <div class="book-author">${escapeHtml(livreData.auteur.toUpperCase())}</div>
+        <h1 class="book-title">${escapeHtml(livreData.titre)}</h1>
+        <div class="book-subtitle">${escapeHtml(livreData.sous_titre || '')}</div>
+        <div class="book-meta">📅 ${livreData.annee || ''} • 📄 ${livreData.pages || '?'} pages • 🏷️ ${escapeHtml(livreData.categorie || '')}</div>
+      </div>
+      <div class="book-content">
+        <div class="book-description">${escapeHtml(livreData.description || '')}</div>
+        <div class="chapters-container" id="chaptersContainer"></div>
+    `;
+
+    if (livreData.conclusion) {
+      html += `<div class="conclusion-section" id="conclusionSection"></div>`;
+    }
+
+    if (livreData.bibliographie && livreData.bibliographie.length) {
+      html += `<div class="bibliography-section" id="bibliographySection"></div>`;
+    }
+
+    html += `
+      </div>
+      <div class="book-footer">
+        <p>© ${livreData.annee || ''} ${escapeHtml(livreData.auteur)}</p>
+        <p>Édition numérique — Tadaksahak Learning</p>
+      </div>
+    `;
+
+    container.innerHTML = html;
+
+    // Ajouter les chapitres
+    const chaptersContainer = document.getElementById('chaptersContainer');
+    if (chaptersContainer && livreData.chapitres && livreData.chapitres.length) {
+      livreData.chapitres.forEach((chap, idx) => {
+        const chapDiv = document.createElement('div');
+        chapDiv.className = 'chapter';
+        chapDiv.id = `chapter-${idx}`;
+        
+        let chapHtml = `
+          <div class="chapter-number">CHAPITRE ${chap.numero}</div>
+          <h2 class="chapter-title">${escapeHtml(chap.titre)}</h2>
+        `;
+        
+        if (chap.sous_titre) {
+          chapHtml += `<div class="chapter-subtitle">${escapeHtml(chap.sous_titre)}</div>`;
+        }
+        
+        chapHtml += `<div class="chapter-content">`;
+        
+        if (chap.contenu && chap.contenu.length) {
+          chap.contenu.forEach(paragraphe => {
+            chapHtml += `<p>${escapeHtml(paragraphe).replace(/\n/g, '<br>')}</p>`;
+          });
+        }
+        
+        if (chap.notes && chap.notes.length) {
+          chapHtml += `<div class="footnotes">`;
+          chap.notes.forEach(note => {
+            chapHtml += `<div class="footnote">${escapeHtml(note)}</div>`;
+          });
+          chapHtml += `</div>`;
+        }
+        
+        chapHtml += `</div>`;
+        chapDiv.innerHTML = chapHtml;
+        chaptersContainer.appendChild(chapDiv);
+      });
+    }
+
+    // Ajouter la conclusion
+    if (livreData.conclusion) {
+      const conclusionDiv = document.getElementById('conclusionSection');
+      if (conclusionDiv) {
+        let conclusionHtml = `
+          <div class="conclusion">
+            <h2 class="conclusion-title">${escapeHtml(livreData.conclusion.titre || 'Conclusion')}</h2>
+        `;
+        if (livreData.conclusion.contenu && livreData.conclusion.contenu.length) {
+          livreData.conclusion.contenu.forEach(paragraphe => {
+            conclusionHtml += `<p>${escapeHtml(paragraphe)}</p>`;
+          });
+        }
+        conclusionHtml += `</div>`;
+        conclusionDiv.innerHTML = conclusionHtml;
+      }
+    }
+
+    // Ajouter la bibliographie
+    if (livreData.bibliographie && livreData.bibliographie.length) {
+      const biblioDiv = document.getElementById('bibliographySection');
+      if (biblioDiv) {
+        let biblioHtml = `
+          <div class="bibliography">
+            <h2>📚 Références bibliographiques</h2>
+            <ul>
+        `;
+        livreData.bibliographie.forEach(ref => {
+          biblioHtml += `<li>${escapeHtml(ref)}</li>`;
+        });
+        biblioHtml += `
+            </ul>
+          </div>
+        `;
+        biblioDiv.innerHTML = biblioHtml;
+      }
+    }
+  }
+
+  function chargerLivre() {
+    fetch('data/livres.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(livres => {
+        if (livres && livres.length) {
+          livreData = livres.find(l => l.id === livreId) || livres[0];
+          if (livreData) {
+            afficherLivre();
+            // Mettre à jour le titre de la page
+            document.title = `📘 ${livreData.titre} - ${livreData.auteur}`;
+          } else {
+            document.getElementById('bookViewer').innerHTML = '<div class="error-message">📚 Livre non trouvé</div>';
+          }
+        } else {
+          document.getElementById('bookViewer').innerHTML = '<div class="error-message">📚 Aucun livre disponible</div>';
+        }
+      })
+      .catch(error => {
+        console.error('Erreur:', error);
+        document.getElementById('bookViewer').innerHTML = '<div class="error-message">❌ Erreur de chargement du livre. Vérifiez que le fichier data/livres.json existe.</div>';
+      });
+  }
+
+  function scrollToChapter(index) {
+    const chapters = document.querySelectorAll('.chapter');
+    if (chapters && chapters[index]) {
+      chapters[index].scrollIntoView({ behavior: 'smooth', block: 'start' });
+      currentChapter = index;
+    }
+  }
+
+  // Navigation chapitres
+  document.getElementById('prevChapter')?.addEventListener('click', () => scrollToChapter(currentChapter - 1));
+  document.getElementById('nextChapter')?.addEventListener('click', () => scrollToChapter(currentChapter + 1));
+
+  // Bouton retour haut de page
+  const backBtn = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    if (backBtn) {
+      backBtn.classList.toggle('visible', window.scrollY > 300);
+    }
+  });
+  backBtn?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // Démarrer le chargement
+  chargerLivre();
+</script>
+
+</body>
+</html>
