@@ -1,6 +1,6 @@
 // ==============================
 // APPLICATION TADAKSAHAK LEARNING
-// Version finale corrigée et optimisée
+// Version finale corrigée
 // ==============================
 
 // ------------------------------
@@ -17,8 +17,8 @@ let motsListe = [];
 window.livresData = [];
 window.histoireData = {};
 
-https://raw.githubusercontent.com/terpoland4-star/Dictionnaire-Tadaksahak/main/data/mots.json
-
+// URLs GitHub (raw) - CORRIGÉ
+const GITHUB_BASE = "https://raw.githubusercontent.com/terpoland4-star/Dictionnaire-Tadaksahak/main/data/";
 
 // Éléments DOM
 const searchBar = document.getElementById("searchBar");
@@ -54,7 +54,6 @@ const levenshtein = (a, b) => {
     return matrix[an][bn];
 };
 
-// Notification toast
 function showToast(message, type = "info") {
     const toast = document.getElementById("toast");
     if (!toast) return;
@@ -66,7 +65,6 @@ function showToast(message, type = "info") {
     }, 3000);
 }
 
-// Gestion loader
 function setLoading(show) {
     const loader = document.getElementById("loadingOverlay");
     if (loader) loader.hidden = !show;
@@ -80,7 +78,6 @@ async function chargerDonnees() {
     console.log("📥 Chargement des données depuis GitHub...");
     
     try {
-        // Charger mots.json
         const motsUrl = GITHUB_BASE + "mots.json";
         console.log("  -", motsUrl);
         const motsReponse = await fetch(motsUrl);
@@ -92,7 +89,6 @@ async function chargerDonnees() {
             throw new Error(`HTTP ${motsReponse.status}`);
         }
         
-        // Autres fichiers (optionnels)
         try {
             const audiosReponse = await fetch(GITHUB_BASE + "audios.json");
             if (audiosReponse.ok) albumsAudio = await audiosReponse.json();
@@ -117,12 +113,10 @@ async function chargerDonnees() {
         vocabulaire = [];
     }
     
-    // Préparer liste des mots pour navigation
     motsListe = vocabulaire.map((item, idx) => ({ ...item, index: idx }));
     
     setLoading(false);
     
-    // Émettre événement stats
     window.dispatchEvent(new CustomEvent('dataLoaded', { 
         detail: { 
             mots: vocabulaire.length,
@@ -131,19 +125,17 @@ async function chargerDonnees() {
         }
     }));
     
-    // Initialiser les composants
     if (vocabulaire.length) {
         construireIndexAlphabet();
         chargerHistorique();
     } else {
-        console.warn("⚠️ Aucun mot chargé, vérifiez le fichier mots.json");
+        console.warn("⚠️ Aucun mot chargé");
         if (motElem) motElem.textContent = "Erreur de chargement";
         if (defElem) defElem.innerHTML = "<p>Impossible de charger le dictionnaire. Vérifiez votre connexion.</p>";
     }
     
     genererAlbumsAudio();
     
-    // Afficher livres si section active
     if (sectionSelector && sectionSelector.value === "livres") {
         afficherLivres();
     }
@@ -190,7 +182,7 @@ function afficherHistorique() {
 }
 
 // ------------------------------
-// AFFICHAGE MOT (CORRIGÉ)
+// AFFICHAGE MOT
 // ------------------------------
 function afficherMot(item) {
     if (!item || !item.mot) {
@@ -201,16 +193,13 @@ function afficherMot(item) {
     motActuel = item;
     currentIndex = motsListe.findIndex(m => m.mot === item.mot);
     
-    // Mettre à jour compteur
     if (compteurMot && motsListe.length) {
         compteurMot.textContent = `${currentIndex + 1} / ${motsListe.length}`;
     }
     
-    // Mettre à jour boutons navigation
     if (btnPrev) btnPrev.disabled = currentIndex <= 0;
     if (btnNext) btnNext.disabled = currentIndex >= motsListe.length - 1;
     
-    // Afficher mot avec animation
     if (motElem) {
         motElem.textContent = item.mot;
         motElem.style.opacity = 0;
@@ -219,7 +208,6 @@ function afficherMot(item) {
         }, 50);
     }
     
-    // Afficher définition (CORRIGÉ - utilise item.fr et item.en)
     if (defElem) {
         let definition = "";
         if (langueActuelle === "fr" && item.fr) {
@@ -238,7 +226,6 @@ function afficherMot(item) {
         `;
     }
     
-    // Gérer audio
     if (audioElem) {
         if (item.audio && item.audio.trim()) {
             audioElem.src = `audio/${item.audio}`;
@@ -265,9 +252,6 @@ function navigationSuivant() {
     }
 }
 
-// ------------------------------
-// CHANGEMENT LANGUE
-// ------------------------------
 window.changerLangue = function(lang) {
     langueActuelle = lang;
     if (motActuel) afficherMot(motActuel);
@@ -280,7 +264,7 @@ window.changerLangue = function(lang) {
 };
 
 // ------------------------------
-// RECHERCHE (CORRIGÉE - cherche dans mot, fr, en)
+// RECHERCHE
 // ------------------------------
 function chercher(queryRaw) {
     const query = normalizeText(queryRaw);
@@ -292,14 +276,12 @@ function chercher(queryRaw) {
         let score = Infinity;
         let champTrouve = "";
         
-        // Chercher dans le mot Tadaksahak (priorité 1)
         const motNorm = normalizeText(item.mot);
         if (motNorm.includes(query)) {
             score = motNorm.startsWith(query) ? 0 : 1;
             champTrouve = item.mot;
         }
         
-        // Chercher en français (priorité 2)
         if (score > 1 && item.fr) {
             const frNorm = normalizeText(item.fr);
             if (frNorm.includes(query)) {
@@ -308,7 +290,6 @@ function chercher(queryRaw) {
             }
         }
         
-        // Chercher en anglais (priorité 3)
         if (score > 2 && item.en) {
             const enNorm = normalizeText(item.en);
             if (enNorm.includes(query)) {
@@ -317,7 +298,6 @@ function chercher(queryRaw) {
             }
         }
         
-        // Recherche floue (fuzzy) si pas de correspondance exacte
         if (score === Infinity && item.mot) {
             const dist = levenshtein(motNorm, query);
             if (dist <= Math.max(2, Math.floor(query.length * 0.4))) {
@@ -347,7 +327,6 @@ function highlightMatch(text, queryRaw) {
     return `${escapeHtml(text.slice(0, idx))}<mark style="background:rgba(255,255,0,0.3);padding:0 .1rem;border-radius:2px">${escapeHtml(text.slice(idx, idx + queryRaw.length))}</mark>${escapeHtml(text.slice(idx + queryRaw.length))}`;
 }
 
-// Événements recherche
 if (searchBar) {
     searchBar.addEventListener("input", (e) => {
         const raw = e.target.value.trim();
@@ -373,7 +352,6 @@ if (searchBar) {
             suggestionsList.appendChild(li);
         } else {
             resultats.forEach(item => {
-                // Déterminer quel champ a matché pour l'affichage
                 let matchedText = item.mot;
                 let langLabel = "Tadaksahak";
                 const rawNorm = normalizeText(raw);
@@ -579,7 +557,6 @@ function reponseBot(txt) {
     const clean = normalize(txt);
     botMemory.lang = detectLang(txt);
     
-    // Salutations
     if (/(bonjour|salut|hello|salam|bsr|bjr|hey)/i.test(clean)) {
         return "👋 Bonjour ! Je suis Hamadine, gardien de la langue Tadaksahak. Que souhaitez-vous explorer aujourd'hui ?";
     }
@@ -588,7 +565,6 @@ function reponseBot(txt) {
         return "🙏 De rien ! La sagesse se partage. N'hésitez pas si vous avez d'autres questions.";
     }
     
-    // Navigation rapide
     const navMap = {
         dico: "dictionnaire", dictionnaire: "dictionnaire",
         chat: "chat", audio: "audio", chant: "audio",
@@ -605,7 +581,6 @@ function reponseBot(txt) {
         }
     }
     
-    // Histoire et culture
     if (clean.includes("histoire") || clean.includes("origine")) {
         return "📜 Les Idaksahak sont un peuple sahélien dont l'histoire mêle traditions pastorales, routes commerciales et résilience culturelle. Le Tadaksahak, leur langue, est un trésor vivant.";
     }
@@ -618,7 +593,6 @@ function reponseBot(txt) {
         return "🎭 La culture Idaksahak est riche en poésie, musique (tinde, imzad), contes et proverbes. La transmission orale est au cœur de notre héritage.";
     }
     
-    // Recherche de mot dans dictionnaire
     const motTrouve = vocabulaire.find(v => 
         normalize(v.mot).includes(clean) || 
         (v.fr && normalize(v.fr).includes(clean)) ||
@@ -634,17 +608,14 @@ function reponseBot(txt) {
         return `📚 <strong>${botMemory.lastWord}</strong> : Ce mot clé dans la culture Tadaksahak illustre la richesse de notre langue. Voulez-vous l'ajouter à votre historique ?`;
     }
     
-    // Résumés
     if (clean.includes("resume") || clean.includes("résumé")) {
         return "📖 Pour découvrir notre culture, explorez le dictionnaire, écoutez les chants traditionnels ou consultez la bibliothèque. Que vous intéresse particulièrement ?";
     }
     
-    // Aide
     if (clean.includes("aide") || clean.includes("help") || clean.includes("quoi faire")) {
         return "🤖 <strong>Ce que je sais faire :</strong><br>• 📖 Expliquer des mots Tadaksahak<br>• 📚 Parler de notre histoire et culture<br>• 🧭 Naviguer vers les sections (dictionnaire, audio, livres...)<br>• 🎯 Répondre à vos questions<br><br>Que souhaitez-vous explorer ? 🌍";
     }
     
-    // Réponse par défaut
     return "🤔 Je n'ai pas bien compris. Essayez : « dictionnaire », « histoire », « culture », ou un mot en Tadaksahak. Dites « aide » pour voir ce que je peux faire !";
 }
 
@@ -694,7 +665,6 @@ document.querySelectorAll(".lang-btn").forEach(btn => {
 btnPrev?.addEventListener("click", navigationPrecedent);
 btnNext?.addEventListener("click", navigationSuivant);
 
-// Filtres livres
 const rechercheLivres = document.getElementById("rechercheLivres");
 if (rechercheLivres) {
     rechercheLivres.addEventListener("input", (e) => {
@@ -720,11 +690,7 @@ if (selectTheme) {
     });
 }
 
-// ==============================
-// BOUTONS MANQUANTS (AJOUTÉS)
-// ==============================
-
-// Bouton "Accéder au dictionnaire" (page accueil)
+// Bouton "Accéder au dictionnaire"
 const btnGoDico = document.getElementById("btnGoDico");
 if (btnGoDico) {
     btnGoDico.addEventListener("click", () => {
@@ -735,7 +701,7 @@ if (btnGoDico) {
     });
 }
 
-// Chat flottant (bouton en bas à droite)
+// Chat flottant
 const toggleChatBtn = document.getElementById("toggleChatBot");
 if (toggleChatBtn) {
     toggleChatBtn.addEventListener("click", () => {
@@ -750,7 +716,7 @@ if (toggleChatBtn) {
     });
 }
 
-// Affichage des statistiques après chargement
+// Affichage des statistiques
 window.addEventListener('dataLoaded', (e) => {
     const statsContainer = document.getElementById("statsContainer");
     if (statsContainer) {
@@ -783,7 +749,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.log("✅ Application prête !");
 });
 
-// Exporter fonctions globales
 window.afficherMot = afficherMot;
 window.jouerTadaksahak = () => {
     if (audioElem && motActuel?.audio) {
