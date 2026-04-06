@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Lecteur de livres - Tadaksahak Learning</title>
+  <link rel="icon" href="images/idaksahak_round.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================
+       STYLE LIVRE PREMIUM - VERSION DYNAMIQUE
+    ============================================ */
+    
+    :root {
+      --page-bg: #faf7f2;
+      --paper-edge: #e8e4db;
+      --text-primary: #2c2418;
+      --text-secondary: #5a4a3a;
+      --accent-gold: #c6a43b;
+      --accent-burgundy: #7a2e3a;
+      --margin-note: #e8e0d5;
+    }
+    
+    [data-theme="sombre"] {
+      --page-bg: #1a1814;
+      --paper-edge: #2a2620;
+      --text-primary: #e8e0d5;
+      --text-secondary: #b8a898;
+      --accent-gold: #d4af37;
+      --accent-burgundy: #9e3a4a;
+      --margin-note: #2a2620;
+    }
+    
+    [data-theme="sepia"] {
+      --page-bg: #f4ecd8;
+      --paper-edge: #e0d5c0;
+      --text-primary: #4a3728;
+      --text-secondary: #6b5340;
+      --accent-gold: #b8962a;
+      --accent-burgundy: #8b2a3a;
+      --margin-note: #e8ddc8;
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      background: #2a2420;
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 2rem;
+    }
+    
+    .book-container {
+      max-width: 1200px;
+      width: 100%;
+      background: var(--page-bg);
+      border-radius: 4px;
+      box-shadow: 0 30px 40px -20px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,255,255,0.1);
+      position: relative;
+    }
+    
+    .book-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -12px;
+      width: 12px;
+      height: 100%;
+      background: linear-gradient(90deg, var(--paper-edge), var(--page-bg));
+      border-radius: 2px 0 0 2px;
+    }
+    
+    .book-container::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-gold), var(--accent-burgundy), var(--accent-gold));
+    }
+    
+    .back-to-app {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      z-index: 100;
+    }
+    
+    .app-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--accent-burgundy);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 0.8rem;
+      transition: all 0.3s;
+    }
+    
+    .app-link:hover {
+      background: var(--accent-gold);
+      transform: translateY(-2px);
+    }
+    
+    .loader-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 400px;
+    }
+    
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid var(--paper-edge);
+      border-top-color: var(--accent-gold);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    .book-header {
+      padding: 3rem 3rem 1rem 3rem;
+      border-bottom: 1px solid var(--paper-edge);
+      text-align: center;
+    }
+    
+    .book-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--accent-burgundy);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    
+    .book-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+    
+    .book-author {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--accent-gold);
+    }
+    
+    .book-meta {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+    
+    .book-meta span {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      background: var(--margin-note);
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+    }
+    
+    .book-content {
+      padding: 2rem 3rem;
+    }
+    
+    .table-of-contents {
+      background: var(--margin-note);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 8px;
+    }
+    
+    .table-of-contents h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      color: var(--accent-burgundy);
+      margin-bottom: 1.5rem;
+      border-left: 3px solid var(--accent-gold);
+      padding-left: 1rem;
+    }
+    
+    .toc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 0.8rem;
+    }
+    
+    .toc-link {
+      display: block;
+      padding: 0.5rem 0;
+      color: var(--text-primary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      border-bottom: 1px dotted transparent;
+      transition: all 0.2s;
+    }
+    
+    .toc-link:hover {
+      color: var(--accent-gold);
+      border-bottom-color: var(--accent-gold);
+      transform: translateX(5px);
+    }
+    
+    .chapter {
+      margin-bottom: 3rem;
+      scroll-margin-top: 2rem;
+    }
+    
+    .chapter-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--accent-gold);
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+    
+    .chapter-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--accent-burgundy);
+      margin-bottom: 0.5rem;
+      border-bottom: 2px solid var(--paper-edge);
+      padding-bottom: 0.5rem;
+    }
+    
+    .chapter-sous-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+    
+    .chapter-content p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text-primary);
+      margin-bottom: 1.2rem;
+      text-align: justify;
+    }
+    
+    .chapter-content h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      color: var(--accent-burgundy);
+      margin: 1.5rem 0 1rem 0;
+    }
+    
+    .chapter-content h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--accent-gold);
+      margin: 1rem 0 0.5rem 0;
+    }
+    
+    blockquote {
+      margin: 1.5rem 2rem;
+      padding: 1rem 2rem;
+      background: var(--margin-note);
+      border-left: 4px solid var(--accent-gold);
+      font-style: italic;
+      font-family: 'Cormorant Garamond', serif;
+    }
+    
+    .chapter-notes {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--paper-edge);
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+    
+    .chapter-notes p {
+      margin-bottom: 0.3rem;
+    }
+    
+    .bibliography {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 2px solid var(--paper-edge);
+    }
+    
+    .bibliography h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      color: var(--accent-burgundy);
+      margin-bottom: 1rem;
+    }
+    
+    .bibliography ul {
+      list-style: none;
+      padding-left: 1rem;
+    }
+    
+    .bibliography li {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    
+    .book-footer {
+      padding: 2rem 3rem;
+      border-top: 1px solid var(--paper-edge);
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+    
+    .floating-nav {
+      position: fixed;
+      right: 2rem;
+      bottom: 2rem;
+      display: flex;
+      gap: 0.5rem;
+      z-index: 100;
+    }
+    
+    .floating-nav button {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      border: none;
+      background: var(--accent-burgundy);
+      color: white;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .floating-nav button:hover {
+      transform: scale(1.1);
+      background: var(--accent-gold);
+    }
+    
+    .theme-selector {
+      position: fixed;
+      left: 2rem;
+      bottom: 2rem;
+      z-index: 100;
+    }
+    
+    .theme-selector select {
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      background: var(--accent-burgundy);
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .back-to-top {
+      position: fixed;
+      right: 2rem;
+      bottom: 8rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--accent-gold);
+      color: white;
+      border: none;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    
+    .back-to-top.visible { opacity: 1; }
+    
+    .error-message {
+      text-align: center;
+      padding: 3rem;
+      color: var(--text-secondary);
+    }
+    
+    .error-message h2 {
+      color: var(--accent-burgundy);
+      margin-bottom: 1rem;
+    }
+    
+    @media (max-width: 768px) {
+      body { padding: 1rem; }
+      .book-header, .book-content { padding: 1.5rem; }
+      .book-title { font-size: 1.8rem; }
+      .chapter-title { font-size: 1.4rem; }
+      blockquote { margin: 1rem; padding: 1rem; }
+      .toc-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="back-to-app">
+  <a href="index.html" class="app-link">🏠 Retour à l'application</a>
+</div>
+
+<div class="book-container" id="bookContainer">
+  <div class="loader-container">
+    <div class="spinner"></div>
+  </div>
+</div>
+
+<div class="floating-nav">
+  <button id="prevChapter" title="Chapitre précédent">◀</button>
+  <button id="nextChapter" title="Chapitre suivant">▶</button>
+</div>
+
+<div class="theme-selector">
+  <select id="themeSelect">
+    <option value="clair">📖 Clair</option>
+    <option value="sepia">📜 Sepia</option>
+    <option value="sombre">🌙 Sombre</option>
+  </select>
+</div>
+
+<button id="backToTop" class="back-to-top">⬆</button>
+
+<script>
+  // ==============================
+  // LIVRE VIEWER DYNAMIQUE
+  // ==============================
+  
+  // Récupérer l'ID du livre depuis l'URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const livreId = parseInt(urlParams.get('id'));
+  
+  let livreData = null;
+  let chapters = [];
+  let currentChapter = 0;
+  
+  // Gestion des thèmes
+  const select = document.getElementById('themeSelect');
+  const body = document.body;
+  const savedTheme = localStorage.getItem('livre-theme') || 'sombre';
+  body.setAttribute('data-theme', savedTheme);
+  select.value = savedTheme;
+  select.onchange = (e) => {
+    body.setAttribute('data-theme', e.target.value);
+    localStorage.setItem('livre-theme', e.target.value);
+  };
+  
+  // Back to top
+  const backBtn = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    backBtn.classList.toggle('visible', window.scrollY > 300);
+  });
+  backBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  
+  // Navigation entre chapitres
+  function scrollToChapter(index) {
+    if (index >= 0 && index < chapters.length) {
+      const element = document.getElementById(`chapter-${index + 1}`);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        currentChapter = index;
+      }
+    }
+  }
+  
+  document.getElementById('prevChapter')?.addEventListener('click', () => scrollToChapter(currentChapter - 1));
+  document.getElementById('nextChapter')?.addEventListener('click', () => scrollToChapter(currentChapter + 1));
+  
+  // Charger les livres depuis le JSON
+  async function chargerLivres() {
+    try {
+      const response = await fetch('data/livres.json');
+      if (!response.ok) throw new Error('Impossible de charger les livres');
+      const livres = await response.json();
+      
+      // Trouver le livre correspondant à l'ID
+      livreData = livres.find(l => l.id === livreId);
+      
+      if (!livreData) {
+        throw new Error('Livre non trouvé');
+      }
+      
+      // Extraire les chapitres
+      chapters = livreData.chapitres || [];
+      
+      // Afficher le livre
+      afficherLivre();
+      
+    } catch (error) {
+      console.error('Erreur:', error);
+      afficherErreur(error.message);
+    }
+  }
+  
+  // Afficher l'erreur
+  function afficherErreur(message) {
+    const container = document.getElementById('bookContainer');
+    container.innerHTML = `
+      <div class="error-message">
+        <h2>📚 Livre non trouvé</h2>
+        <p>${message}</p>
+        <p><a href="index.html" style="color: var(--accent-gold);">Retour à l'accueil</a></p>
+      </div>
+    `;
+  }
+  
+  // Afficher le livre
+  function afficherLivre() {
+    const container = document.getElementById('bookContainer');
+    
+    // Générer le sommaire
+    const sommaireHtml = chapters.map(ch => `
+      <a href="#chapter-${ch.numero}" class="toc-link">
+        ${ch.numero}. ${ch.titre}
+        ${ch.sous_titre ? `<span style="font-size:0.8rem; color:var(--text-secondary);"> — ${ch.sous_titre}</span>` : ''}
+      </a>
+    `).join('');
+    
+    // Générer les chapitres
+    const chapitresHtml = chapters.map(ch => `
+      <div id="chapter-${ch.numero}" class="chapter">
+        <div class="chapter-number">CHAPITRE ${ch.numero.toString().padStart(2, ' ')}</div>
+        <h2 class="chapter-title">${escapeHtml(ch.titre)}</h2>
+        ${ch.sous_titre ? `<div class="chapter-sous-titre">${escapeHtml(ch.sous_titre)}</div>` : ''}
+        <div class="chapter-content">
+          ${(ch.contenu || []).map(para => `<p>${escapeHtml(para)}</p>`).join('')}
+        </div>
+        ${ch.notes && ch.notes.length ? `
+          <div class="chapter-notes">
+            ${ch.notes.map(note => `<p>📌 ${escapeHtml(note)}</p>`).join('')}
+          </div>
+        ` : ''}
+      </div>
+    `).join('');
+    
+    // Générer la conclusion si elle existe
+    const conclusionHtml = livreData.conclusion ? `
+      <div id="conclusion" class="chapter">
+        <div class="chapter-number">CONCLUSION</div>
+        <h2 class="chapter-title">${escapeHtml(livreData.conclusion.titre || 'Conclusion')}</h2>
+        <div class="chapter-content">
+          ${(livreData.conclusion.contenu || []).map(para => `<p>${escapeHtml(para)}</p>`).join('')}
+        </div>
+      </div>
+    ` : '';
+    
+    // Générer la bibliographie
+    const bibliographieHtml = livreData.bibliographie && livreData.bibliographie.length ? `
+      <div class="bibliography">
+        <h2>📚 Références bibliographiques</h2>
+        <ul>
+          ${livreData.bibliographie.map(ref => `<li>${escapeHtml(ref)}</li>`).join('')}
+        </ul>
+      </div>
+    ` : '';
+    
+    // Assembler la page
+    container.innerHTML = `
+      <div class="book-header">
+        <div class="book-author">${escapeHtml(livreData.auteur || 'Auteur inconnu')}</div>
+        <h1 class="book-title">${escapeHtml(livreData.titre)}</h1>
+        ${livreData.sous_titre ? `<div class="book-subtitle">${escapeHtml(livreData.sous_titre)}</div>` : ''}
+        <div class="book-meta">
+          <span>📅 ${livreData.annee || 'Date inconnue'}</span>
+          <span>📄 ${livreData.pages || '?'} pages</span>
+          <span>🏷️ ${escapeHtml(livreData.categorie || livreData.type || 'Général')}</span>
+          <span>🌍 ${escapeHtml(livreData.langue || 'Français')}</span>
+        </div>
+      </div>
+      
+      <div class="book-content">
+        <div class="table-of-contents">
+          <h2>📑 Sommaire</h2>
+          <div class="toc-grid">
+            ${sommaireHtml}
+            ${livreData.conclusion ? '<a href="#conclusion" class="toc-link">📖 Conclusion</a>' : ''}
+            ${livreData.bibliographie && livreData.bibliographie.length ? '<a href="#bibliographie" class="toc-link">📚 Bibliographie</a>' : ''}
+          </div>
+        </div>
+        
+        ${chapitresHtml}
+        ${conclusionHtml}
+        ${bibliographieHtml}
+      </div>
+      
+      <div class="book-footer">
+        <p>© ${livreData.annee || '2024'} ${escapeHtml(livreData.auteur || 'Tadaksahak Learning')}</p>
+        <p style="margin-top:0.5rem;">Édition numérique — Tadaksahak Learning</p>
+      </div>
+    `;
+  }
+  
+  // Échapper le HTML
+  function escapeHtml(str) {
+    if (!str) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+  
+  // Démarrer
+  if (livreId) {
+    chargerLivres();
+  } else {
+    afficherErreur('Aucun livre sélectionné. Veuillez spécifier un ID.');
+  }
+</script>
+
+</body>
+</html>
