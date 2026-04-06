@@ -1,0 +1,16 @@
+{
+  "name": "Tadaksahak Learning",
+  "short_name": "Tadaksahak",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0e1116",
+  "theme_color": "#0099ff",
+  "description": "Dictionnaire et culture Tadaksahak",
+  "icons": [
+    {
+      "src": "images/idaksahak_round.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
