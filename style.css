@@ -1268,3 +1268,14 @@ mark {
     justify-content: center;
   }
 }
+/* ============================================
+   FORCER LA DISPARITION DU LOADER
+   ============================================ */
+.loading-overlay[hidden] {
+  display: none !important;
+}
+
+/* S'assurer que le contenu principal est visible */
+main:not(.hidden) {
+  display: block;
+}
