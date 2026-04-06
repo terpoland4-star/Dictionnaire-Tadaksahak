@@ -17,8 +17,7 @@ let motsListe = [];
 window.livresData = [];
 window.histoireData = {};
 
-// URLs GitHub (raw)
-const GITHUB_BASE = "https://raw.githubusercontent.com/terpoland4-star/Dictionnaire-Tadaksahak/main/data/";
+https://raw.githubusercontent.com/terpoland4-star/Dictionnaire-Tadaksahak/main/data/mots.json
 
 
 // Éléments DOM
