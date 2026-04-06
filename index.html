@@ -130,7 +130,7 @@
          loading="lazy"
          width="150"
          height="150"
-         onerror="this.src='images/placeholder-avatar.jpg'">
+         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22150%22 height=%22150%22%3E%3Crect width=%22150%22 height=%22150%22 fill=%22%23333%22/%3E%3Ctext x=%2250%22 y=%2275%22 fill=%22%23fff%22%3EHamadine%3C/text%3E%3C/svg%3E'">
 
     <div class="bio-text">
       <p><strong>Hamadine Ag Moctar</strong></p>
@@ -157,7 +157,7 @@
 </section>
 
 <!-- =========================
-     DICTIONNAIRE (CORRIGÉ)
+     DICTIONNAIRE
 ========================== -->
 <section id="dictionnaire" class="onglet-contenu" aria-labelledby="dico-title" hidden>
   <h2 id="dico-title">📖 Dictionnaire Tadaksahak</h2>
@@ -174,7 +174,7 @@
     <ul id="suggestions" class="suggestions-list" role="listbox"></ul>
   </div>
 
-  <!-- Bloc fiche mot unique (corrigé) -->
+  <!-- Bloc fiche mot -->
   <div class="result-section">
     <div id="ficheMot">
       <h2 id="motTexte">—</h2>
@@ -206,7 +206,7 @@
 </section>
 
 <!-- =========================
-     CHAT (AMÉLIORÉ)
+     CHAT
 ========================== -->
 <section id="chat" class="onglet-contenu" aria-labelledby="chat-title" hidden>
   <h2 id="chat-title">💬 Chat Bot Hamadine</h2>
@@ -273,7 +273,7 @@
 </section>
 
 <!-- =========================
-     LIVRES (CORRIGÉ)
+     LIVRES (VERSION COMPLÈTE ET CORRIGÉE)
 ========================== -->
 <section id="livres" class="onglet-contenu" aria-labelledby="livres-title" hidden>
   <h2 id="livres-title">📚 Bibliothèque</h2>
@@ -293,26 +293,36 @@
     </select>
   </div>
 
-  <!-- Section livre spécifique (corrigée - UL fermée) -->
-  <div class="featured-book">
-    <h3>📘 Émancipation politique</h3>
-    <ul class="book-list">
-      <li>
-        <a href="livres/histoire-emancipation-politique-integrale.html" 
-           target="_blank"
-           rel="noopener noreferrer">
-          📖 Livre de Charles GREMONT - Histoire et émancipation politique
+  <!-- CARTE LIVRE PREMIUM -->
+  <div class="featured-book-premium">
+    <div class="premium-book-card">
+      <div class="premium-book-cover">
+        <div class="cover-icon">📘</div>
+        <div class="cover-title">L'émancipation politique<br>des Idaksahak</div>
+        <div class="cover-author">Charles Grémont</div>
+      </div>
+      <div class="premium-book-info">
+        <h3>📖 Édition académique</h3>
+        <p class="book-description">Une analyse approfondie de l'histoire politique des Idaksahak, leur quête d'autonomie et leur émergence sur la scène politique sahélienne.</p>
+        <div class="book-meta-details">
+          <span>🏷️ Anthropologie politique</span>
+          <span>📅 2009-2023</span>
+          <span>📄 48 pages</span>
+        </div>
+        <a href="livre.html" class="btn-read-premium" target="_blank" rel="noopener noreferrer">
+          📖 Lire l'ouvrage
+          <span class="btn-icon">→</span>
         </a>
-      </li>
-    </ul>
+      </div>
+    </div>
   </div>
 
-  <!-- Container pour les autres livres -->
+  <!-- Container pour les autres livres (données JSON) -->
   <div id="livresContainer" class="books-grid"></div>
 </section>
 
 <!-- =========================
-     AUTRES SECTIONS (AVEC MESSAGES)
+     RAPPORTS
 ========================== -->
 <section id="rapports" class="onglet-contenu" aria-labelledby="rapports-title" hidden>
   <h2 id="rapports-title">📄 Rapports et Documents</h2>
@@ -321,6 +331,9 @@
   </div>
 </section>
 
+<!-- =========================
+     ACTUALITÉS
+========================== -->
 <section id="actualites" class="onglet-contenu" aria-labelledby="actualites-title" hidden>
   <h2 id="actualites-title">📰 Actualités</h2>
   <div class="coming-soon">
@@ -328,6 +341,9 @@
   </div>
 </section>
 
+<!-- =========================
+     QUIZ
+========================== -->
 <section id="quiz" class="onglet-contenu" aria-labelledby="quiz-title" hidden>
   <h2 id="quiz-title">❓ Quiz Culturel</h2>
   <div class="coming-soon">
@@ -359,14 +375,144 @@
   <div class="footer-content">
     <p>© 2026 Tadaksahak Learning - Préservons notre héritage</p>
     <div class="footer-links">
-      <a href="offline.html" rel="noopener">📱 Mode hors-ligne</a>
       <button id="installPWA" class="install-btn" hidden>📲 Installer l'application</button>
     </div>
   </div>
 </footer>
 
 <!-- =========================
-     SCRIPTS (ORDRE CORRIGÉ)
+     STYLES SUPPLÉMENTAIRES POUR LA CARTE PREMIUM
+========================== -->
+<style>
+  /* Styles pour la carte livre premium */
+  .featured-book-premium {
+    margin-bottom: 2rem;
+  }
+  
+  .premium-book-card {
+    display: flex;
+    gap: 2rem;
+    background: linear-gradient(135deg, var(--bg-card, #151820), var(--bg-light, #1c1f26));
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1px solid var(--border, #2b2f36);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .premium-book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 36px rgba(0,0,0,0.5);
+    border-color: var(--accent, #33ccff);
+  }
+  
+  .premium-book-cover {
+    flex-shrink: 0;
+    width: 160px;
+    background: linear-gradient(135deg, #2a1810, #3a2820);
+    border-radius: 12px;
+    padding: 1.2rem;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    border: 1px solid #c6a43b;
+  }
+  
+  .cover-icon {
+    font-size: 3rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .cover-title {
+    font-family: 'Georgia', serif;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #c6a43b;
+    line-height: 1.3;
+    margin-bottom: 0.6rem;
+  }
+  
+  .cover-author {
+    font-size: 0.65rem;
+    color: #b8a898;
+    font-style: italic;
+  }
+  
+  .premium-book-info {
+    flex: 1;
+  }
+  
+  .premium-book-info h3 {
+    font-size: 1.3rem;
+    color: var(--accent, #33ccff);
+    margin-bottom: 0.5rem;
+  }
+  
+  .book-description {
+    color: var(--text-muted, #a0a0a0);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  .book-meta-details {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.2rem;
+  }
+  
+  .book-meta-details span {
+    font-size: 0.75rem;
+    color: var(--text-muted, #a0a0a0);
+    background: var(--bg, #0e1116);
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+  }
+  
+  .btn-read-premium {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #0099ff, #1a73e8);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-read-premium:hover {
+    transform: translateX(5px);
+    gap: 0.8rem;
+    background: linear-gradient(135deg, #1a73e8, #005ed1);
+  }
+  
+  .btn-icon {
+    transition: transform 0.3s ease;
+  }
+  
+  .btn-read-premium:hover .btn-icon {
+    transform: translateX(5px);
+  }
+  
+  @media (max-width: 768px) {
+    .premium-book-card {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    
+    .premium-book-cover {
+      width: 140px;
+    }
+    
+    .book-meta-details {
+      justify-content: center;
+    }
+  }
+</style>
+
+<!-- =========================
+     SCRIPTS
 ========================== -->
 <!-- Fuse.js chargé en premier -->
 <script type="module">
@@ -379,7 +525,7 @@
 <!-- Application principale -->
 <script type="module" src="app.js"></script>
 
-<!-- Script de navigation amélioré -->
+<!-- Script de navigation -->
 <script type="module">
 document.addEventListener("DOMContentLoaded", () => {
   const select = document.getElementById("sectionSelector");
@@ -391,46 +537,37 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   
   function showSection(id) {
-    // Vérifier que la section existe
     const targetSection = document.getElementById(id);
     if (!targetSection) {
       console.warn(`Section "${id}" non trouvée, redirection vers accueil`);
       id = "accueil";
     }
     
-    // Cacher toutes les sections
     sections.forEach(sec => {
       sec.hidden = sec.id !== id;
     });
     
-    // Sauvegarder la section active
     localStorage.setItem("tadaksahak_active_section", id);
     
-    // Mettre à jour le select si nécessaire
     if (select.value !== id) {
       select.value = id;
     }
     
-    // Déclencher un événement pour app.js
     window.dispatchEvent(new CustomEvent('sectionChange', { 
       detail: { section: id } 
     }));
     
-    // Scroll en haut
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
   
-  // Navigation par select
   select.addEventListener("change", (e) => {
     showSection(e.target.value);
   });
   
-  // Section par défaut
   const savedSection = localStorage.getItem("tadaksahak_active_section");
   const defaultSection = (savedSection && document.getElementById(savedSection)) ? savedSection : "accueil";
   showSection(defaultSection);
   
-  // Bouton accès dictionnaire
   const btnGoDico = document.getElementById("btnGoDico");
   if (btnGoDico) {
     btnGoDico.addEventListener("click", () => {
@@ -438,7 +575,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
   
-  // Chat flottant
   const toggleChat = document.getElementById("toggleChatBot");
   if (toggleChat) {
     toggleChat.addEventListener("click", () => {
@@ -466,7 +602,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   
-  // Afficher les stats quand les données sont chargées
   window.addEventListener('dataLoaded', (e) => {
     const statsContainer = document.getElementById('statsContainer');
     if (statsContainer && e.detail) {
