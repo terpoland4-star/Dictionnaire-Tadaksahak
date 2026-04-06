@@ -1,6 +1,6 @@
 // ==============================
 // APPLICATION TADAKSAHAK LEARNING
-// Version finale corrigée
+// Version finale - Corrigée & Optimisée
 // ==============================
 
 // ------------------------------
@@ -17,7 +17,7 @@ let motsListe = [];
 window.livresData = [];
 window.histoireData = {};
 
-// URLs GitHub (raw) - CORRIGÉ
+// URLs GitHub (raw)
 const GITHUB_BASE = "https://raw.githubusercontent.com/terpoland4-star/Dictionnaire-Tadaksahak/main/data/";
 
 // Éléments DOM
@@ -67,7 +67,16 @@ function showToast(message, type = "info") {
 
 function setLoading(show) {
     const loader = document.getElementById("loadingOverlay");
-    if (loader) loader.hidden = !show;
+    if (loader) {
+        loader.hidden = !show;
+    }
+}
+
+function hideLoader() {
+    const loader = document.getElementById("loadingOverlay");
+    if (loader) {
+        loader.hidden = true;
+    }
 }
 
 // ------------------------------
@@ -77,7 +86,14 @@ async function chargerDonnees() {
     setLoading(true);
     console.log("📥 Chargement des données depuis GitHub...");
     
+    // Timeout de sécurité : force la disparition du loader après 5 secondes
+    const safetyTimeout = setTimeout(() => {
+        console.warn("⚠️ Timeout sécurité: masquage forcé du loader");
+        hideLoader();
+    }, 5000);
+    
     try {
+        // 1. Charger mots.json
         const motsUrl = GITHUB_BASE + "mots.json";
         console.log("  -", motsUrl);
         const motsReponse = await fetch(motsUrl);
@@ -86,37 +102,68 @@ async function chargerDonnees() {
             vocabulaire = await motsReponse.json();
             console.log(`✅ ${vocabulaire.length} mots chargés`);
         } else {
-            throw new Error(`HTTP ${motsReponse.status}`);
+            throw new Error(`HTTP ${motsReponse.status} pour mots.json`);
         }
         
+        // 2. Charger audios.json (optionnel)
         try {
             const audiosReponse = await fetch(GITHUB_BASE + "audios.json");
-            if (audiosReponse.ok) albumsAudio = await audiosReponse.json();
-            console.log(`✅ ${albumsAudio.length} audios`);
-        } catch(e) { console.warn("⚠️ Pas d'audios.json"); albumsAudio = []; }
+            if (audiosReponse.ok) {
+                albumsAudio = await audiosReponse.json();
+                console.log(`✅ ${albumsAudio.length} audios`);
+            } else {
+                console.log("⚠️ Pas de fichier audios.json");
+                albumsAudio = [];
+            }
+        } catch(e) {
+            console.warn("⚠️ Erreur chargement audios:", e.message);
+            albumsAudio = [];
+        }
         
+        // 3. Charger livres.json (optionnel)
         try {
             const livresReponse = await fetch(GITHUB_BASE + "livres.json");
-            if (livresReponse.ok) window.livresData = await livresReponse.json();
-            console.log(`✅ ${window.livresData.length} livres`);
-        } catch(e) { console.warn("⚠️ Pas de livres.json"); window.livresData = []; }
+            if (livresReponse.ok) {
+                window.livresData = await livresReponse.json();
+                console.log(`✅ ${window.livresData.length} livres`);
+            } else {
+                console.log("⚠️ Pas de fichier livres.json");
+                window.livresData = [];
+            }
+        } catch(e) {
+            console.warn("⚠️ Erreur chargement livres:", e.message);
+            window.livresData = [];
+        }
         
+        // 4. Charger histoire.json (optionnel)
         try {
             const histoireReponse = await fetch(GITHUB_BASE + "histoire.json");
-            if (histoireReponse.ok) window.histoireData = await histoireReponse.json();
-            console.log("✅ Histoire chargée");
-        } catch(e) { console.warn("⚠️ Pas de histoire.json"); window.histoireData = {}; }
+            if (histoireReponse.ok) {
+                window.histoireData = await histoireReponse.json();
+                console.log("✅ Histoire chargée");
+            } else {
+                console.log("⚠️ Pas de fichier histoire.json");
+                window.histoireData = {};
+            }
+        } catch(e) {
+            console.warn("⚠️ Erreur chargement histoire:", e.message);
+            window.histoireData = {};
+        }
         
     } catch (error) {
-        console.error("❌ Erreur de chargement:", error);
-        showToast("Erreur de chargement des données", "error");
+        console.error("❌ Erreur de chargement:", error.message);
+        showToast("Erreur de chargement des données: " + error.message, "error");
         vocabulaire = [];
     }
     
+    // Préparer la liste des mots pour la navigation
     motsListe = vocabulaire.map((item, idx) => ({ ...item, index: idx }));
     
-    setLoading(false);
+    // Masquer le loader
+    clearTimeout(safetyTimeout);
+    hideLoader();
     
+    // Émettre l'événement pour les statistiques
     window.dispatchEvent(new CustomEvent('dataLoaded', { 
         detail: { 
             mots: vocabulaire.length,
@@ -125,17 +172,21 @@ async function chargerDonnees() {
         }
     }));
     
+    // Initialiser les composants si des mots sont chargés
     if (vocabulaire.length) {
         construireIndexAlphabet();
         chargerHistorique();
+        console.log("✅ Dictionnaire prêt -", vocabulaire.length, "mots disponibles");
     } else {
-        console.warn("⚠️ Aucun mot chargé");
-        if (motElem) motElem.textContent = "Erreur de chargement";
-        if (defElem) defElem.innerHTML = "<p>Impossible de charger le dictionnaire. Vérifiez votre connexion.</p>";
+        console.warn("⚠️ Aucun mot chargé - vérifiez les fichiers JSON");
+        if (motElem) motElem.textContent = "❌ Erreur de chargement";
+        if (defElem) defElem.innerHTML = "<p>❌ Impossible de charger le dictionnaire. Vérifiez votre connexion Internet ou réessayez plus tard.</p>";
     }
     
+    // Générer les albums audio
     genererAlbumsAudio();
     
+    // Afficher les livres si la section est active
     if (sectionSelector && sectionSelector.value === "livres") {
         afficherLivres();
     }
@@ -749,6 +800,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.log("✅ Application prête !");
 });
 
+// Exporter les fonctions globales
 window.afficherMot = afficherMot;
 window.jouerTadaksahak = () => {
     if (audioElem && motActuel?.audio) {
