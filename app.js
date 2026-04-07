@@ -129,6 +129,12 @@ function reponsePolieInsulte() {
   return reponses[Math.floor(Math.random() * reponses.length)];
 }
 
+// Détection de la langue arabe dans la question (CORRIGÉ - déplacé avant initialiserApplication)
+function contientArabe(texte) {
+  const arabeRegex = /[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF]/;
+  return arabeRegex.test(texte);
+}
+
 // Notification toast
 function showToast(message, type = "info") {
     const toast = document.getElementById("toast");
@@ -645,6 +651,11 @@ function reponseBot(txt) {
         return reponsePolieInsulte();
     }
     
+    // CORRECTION: Détection de la langue arabe (maintenant la fonction existe)
+    if (contientArabe(txt)) {
+        return "📖 يمكنك قراءة الكتاب الثالث باللغة العربية: 'التحرر السياسي للإدكساهق' لشارل غريمون. اسألني سؤالاً محدداً عن محتواه!";
+    }
+    
     const salutations = ["bonjour", "salut", "hello", "salam", "bsr", "bjr", "coucou", "hé", "hey", "yo"];
     if (salutations.some(s => clean.includes(s))) {
         const reponses = [
@@ -850,17 +861,8 @@ async function initialiserApplication() {
     
     console.log("✅ Application prête !");
 }
-// Détection de la langue arabe dans la question
-function contientArabe(texte) {
-  const arabeRegex = /[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF]/;
-  return arabeRegex.test(texte);
-}
 
-// Dans reponseBot(), après la détection des insultes, ajoute :
-if (contientArabe(clean)) {
-  return "📖 يمكنك قراءة الكتاب الثالث باللغة العربية: 'التحرر السياسي للإدكساهق' لشارل غريمون. اسألني سؤالاً محدداً عن محتواه!";
-}
-// Démarrer
+// Démarrer (CORRIGÉ - la fonction contientArabe est maintenant définie avant)
 initialiserApplication();
 
 // Exporter fonctions globales
