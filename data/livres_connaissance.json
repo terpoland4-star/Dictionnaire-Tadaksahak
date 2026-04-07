@@ -1,0 +1,172 @@
+{
+  "livres": [
+    {
+      "id": 1,
+      "titre": "L'émancipation politique des Idaksahak",
+      "auteur": "Charles Grémont",
+      "chunks": [
+        {
+          "id": 1,
+          "chapitre": 1,
+          "titre": "L'émancipation politique au commencement de la tribu ?",
+          "texte": "Ce texte propose d'interroger le lien entre l'émancipation politique d'un groupe social, des pasteurs-nomades du nord-est du Mali qui portent le nom de Idaksahak, et la reconnaissance de ce groupe en tant que tribu.",
+          "mots_cles": ["émancipation", "tribu", "Idaksahak", "groupe social", "reconnaissance"]
+        },
+        {
+          "id": 2,
+          "chapitre": 1,
+          "titre": "L'émancipation politique au commencement de la tribu ?",
+          "texte": "Les Idaksahak, groupe de pasteurs-nomades évoluant dans les régions de Ménaka et Gao, se distinguent de leurs voisins proches par la singularité de leur langue, en forme de sabir, empruntant des mots à la langue tamasheq, à la langue songhay.",
+          "mots_cles": ["Idaksahak", "pasteurs", "nomades", "Ménaka", "Gao", "langue", "tadaksahak", "tamasheq", "songhay"]
+        },
+        {
+          "id": 3,
+          "chapitre": 2,
+          "titre": "Les Idaksahak par eux-mêmes",
+          "texte": "Nous sommes une tawset. C'est cela notre catégorie, c'est ce que l'on dit. En français, on peut dire le 'peuple Dawsahaq' comme on dit le 'peuple Kel Tamasheq'.",
+          "mots_cles": ["tawset", "peuple", "Dawsahaq", "Kel Tamasheq", "identité"]
+        },
+        {
+          "id": 4,
+          "chapitre": 3,
+          "titre": "Que disent les Idaksahak de ce qu'ils sont aujourd'hui ?",
+          "texte": "Idaksahak, une communauté riche économiquement et instruite religieusement. Idaksahak, une communauté touarègue qui parle tadaksahak différent du tamashek.",
+          "mots_cles": ["Idaksahak", "riche", "économie", "instruite", "religion", "touareg", "tadaksahak", "tamashek"]
+        },
+        {
+          "id": 5,
+          "chapitre": 4,
+          "titre": "L'image d'un groupe subalterne et pacifique",
+          "texte": "Pour moi, ce qui nous caractérise, de tout le temps, c'est que nous sommes un peuple de paix, qui s'occupe uniquement de la religion et de l'élevage. Nous ne nous mêlons pas d'autres choses.",
+          "mots_cles": ["paix", "pacifique", "religion", "élevage", "non-violence", "subalterne"]
+        },
+        {
+          "id": 6,
+          "chapitre": 5,
+          "titre": "Nous avons troqué nos chèvres contre des Kalachnikov !",
+          "texte": "L'épée qui figure aujourd'hui symboliquement sur leur logo de présentation renvoie à une histoire très récente. Les Idaksahak ne semblaient pas avoir réellement porté des armes de guerre par le passé.",
+          "mots_cles": ["armes", "épée", "logo", "guerre", "histoire", "Idaksahak"]
+        },
+        {
+          "id": 7,
+          "chapitre": 6,
+          "titre": "Des armes pour se défendre",
+          "texte": "En 1963-1964, des Idaksahak se font remarquer dans un épisode guerrier. Leur engagement aux côtés des Kel Adagh insurgés marque le premier acte d'une relation conflictuelle avec le pouvoir central malien.",
+          "mots_cles": ["1963", "1964", "révolte", "Kel Adagh", "conflit", "pouvoir central", "Mali"]
+        },
+        {
+          "id": 8,
+          "chapitre": 7,
+          "titre": "La rébellion des années 1990 et ses limites",
+          "texte": "L'engagement de plusieurs centaines d'Idaksahak, les armes à la main, dans la rébellion de 1990 marque une première marche dans le processus d'émancipation de ce groupe.",
+          "mots_cles": ["1990", "rébellion", "armes", "émancipation", "Idaksahak"]
+        },
+        {
+          "id": 9,
+          "chapitre": 8,
+          "titre": "La confrontation de 1994",
+          "texte": "Cet épisode de 1994 est historique ! C'est la première fois que nous avons délogé notre tête de sous le pied des Imajeghen. Avant cela, nos biens étaient leurs biens.",
+          "mots_cles": ["1994", "Imajeghen", "conflit", "Idaksahak", "émancipation", "historique"]
+        },
+        {
+          "id": 10,
+          "chapitre": 9,
+          "titre": "Une visibilité politique acquise par les armes",
+          "texte": "À partir des années 2010, les Idaksahak ont exprimé leur force guerrière et des revendications politiques, tant au niveau régional, que national, voire international.",
+          "mots_cles": ["2010", "Idaksahak", "guerrier", "revendications", "politique", "régional", "national", "international"]
+        },
+        {
+          "id": 11,
+          "chapitre": 11,
+          "titre": "Le Mouvement pour le salut de l'Azawad (MSA)",
+          "texte": "En 2016, création du Mouvement pour le salut de l'Azawad (MSA) par Moussa Ag Acharatouman, l'un des fondateurs du Mouvement national de l'Azawad (MNA).",
+          "mots_cles": ["MSA", "MNA", "2016", "Azawad", "Moussa Ag Acharatouman", "indépendance"]
+        },
+        {
+          "id": 12,
+          "chapitre": 12,
+          "titre": "Des jeunes Idaksahak dans le djihadisme",
+          "texte": "Une partie de la jeunesse des Idaksahak a adhéré à la proposition djihadiste, à travers le MUJAO, AQMI et l'État islamique au Grand Sahara (EIGS).",
+          "mots_cles": ["djihad", "MUJAO", "AQMI", "EIGS", "Idaksahak", "jeunesse", "islamique"]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titre": "Les Périls d'une Époque Touarègue au Mali",
+      "auteur": "Collectif d'études",
+      "chunks": [
+        {
+          "id": 101,
+          "chapitre": 1,
+          "titre": "Les causes profondes des tourments",
+          "texte": "Les causes profondes des tourments de l'époque touarègue au Mali sont multiples : marginalisation, conflits liés aux ressources naturelles, revendications identitaires, influence des conflits régionaux et facteurs socio-économiques.",
+          "mots_cles": ["causes", "tourments", "marginalisation", "ressources naturelles", "identité", "conflits régionaux"]
+        },
+        {
+          "id": 102,
+          "chapitre": 2,
+          "titre": "L'héritage ancestral et les luttes pour l'autonomie",
+          "texte": "Les Touaregs, appelés les 'hommes bleus', ont une histoire millénaire dans la région du Sahel. Ils revendiquent leur droit à l'autodétermination, à une participation politique équitable et à la préservation de leur patrimoine culturel.",
+          "mots_cles": ["hommes bleus", "Touaregs", "Sahel", "autodétermination", "patrimoine", "culturel"]
+        },
+        {
+          "id": 103,
+          "chapitre": 3,
+          "titre": "Les ravages de la guerre",
+          "texte": "Les témoignages décrivent les horreurs de la violence : attaques sanglantes, bombardements, pillages, déplacements forcés, pertes humaines et traumatismes durables.",
+          "mots_cles": ["guerre", "violence", "attaques", "bombardements", "pillages", "déplacements", "traumatismes"]
+        },
+        {
+          "id": 104,
+          "chapitre": 4,
+          "titre": "Patrimoine en péril",
+          "texte": "Les sites historiques touaregs (mausolées, palais, mosquées anciennes, gravures rupestres) ont été victimes de pillages, de vandalisme et de trafic d'antiquités.",
+          "mots_cles": ["patrimoine", "sites historiques", "mausolées", "pillages", "trafic", "antiquités"]
+        },
+        {
+          "id": 105,
+          "chapitre": 5,
+          "titre": "Le combat pour l'autonomie",
+          "texte": "Les Touaregs maliens ont longtemps revendiqué une plus grande autonomie dans la gestion de leurs affaires internes, à travers des mouvements comme le MNLA et le HCUA.",
+          "mots_cles": ["autonomie", "MNLA", "HCUA", "revendications", "Touaregs", "Mali"]
+        },
+        {
+          "id": 106,
+          "chapitre": 6,
+          "titre": "De la paix fragile à l'escalade des violences",
+          "texte": "La période de paix fragile a été suivie par une escalade des violences due aux revendications non satisfaites, aux rivalités politiques et aux tensions ethniques.",
+          "mots_cles": ["paix", "violence", "revendications", "rivalités politiques", "tensions ethniques"]
+        },
+        {
+          "id": 107,
+          "chapitre": 7,
+          "titre": "En quête d'identité",
+          "texte": "Les Touaregs maliens sont fiers de leur héritage culturel : langue, musique, danse, artisanat. Ils cherchent un équilibre entre traditions séculaires et aspirations contemporaines.",
+          "mots_cles": ["identité", "culture", "langue", "musique", "artisanat", "traditions"]
+        },
+        {
+          "id": 108,
+          "chapitre": 8,
+          "titre": "Les femmes touarègues du Mali",
+          "texte": "Les femmes touarègues sont les gardiennes des traditions. Elles jouent un rôle vital dans la résilience communautaire, l'éducation, la santé, l'agriculture et le commerce.",
+          "mots_cles": ["femmes", "touarègues", "traditions", "résilience", "éducation", "commerce"]
+        },
+        {
+          "id": 109,
+          "chapitre": 9,
+          "titre": "Ressources naturelles et enjeux géopolitiques",
+          "texte": "Les territoires touaregs regorgent de ressources naturelles : pétrole, gaz, uranium, or. L'accès et le contrôle de ces ressources sont marqués par des enjeux géopolitiques.",
+          "mots_cles": ["ressources naturelles", "pétrole", "uranium", "or", "géopolitique", "conflits"]
+        },
+        {
+          "id": 110,
+          "chapitre": 10,
+          "titre": "Vers un avenir incertain",
+          "texte": "L'avenir des Touaregs au Mali repose sur la paix durable, le développement socio-économique, une gouvernance inclusive et la reconnaissance de leur identité culturelle.",
+          "mots_cles": ["avenir", "paix", "développement", "gouvernance", "identité", "reconnaissance"]
+        }
+      ]
+    }
+  ]
+}
