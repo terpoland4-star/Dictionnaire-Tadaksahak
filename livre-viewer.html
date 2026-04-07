@@ -8,14 +8,8 @@
   <!-- Héritage du style principal -->
   <link rel="stylesheet" href="style.css">
   
-  <!-- Styles spécifiques au viewer (sans conflit) -->
+  <!-- Styles spécifiques au viewer -->
   <style>
-    /* Désactiver le système de thème interne pour utiliser celui de style.css */
-    body[data-theme] {
-      /* Les couleurs viennent déjà de style.css via les variables */
-    }
-    
-    /* Ajustements spécifiques au viewer */
     .back-to-app {
       position: sticky;
       top: 0;
@@ -175,7 +169,6 @@
       opacity: 0.6;
     }
     
-    /* Navigation flottante adaptée */
     .floating-nav {
       position: fixed;
       bottom: 100px;
@@ -203,7 +196,6 @@
       transform: scale(1.05);
     }
     
-    /* Sélecteur de thème (utilise celui de l'app, pas un doublon) */
     .theme-selector {
       position: fixed;
       bottom: 100px;
@@ -258,7 +250,7 @@
     }
   </style>
 </head>
-<body>
+<body class="dark">
 
 <div class="back-to-app">
   <a href="index.html">🏠 Retour à l'application principale</a>
@@ -284,18 +276,20 @@
 <button id="backToTop" class="back-to-top" title="Haut de page">⬆</button>
 
 <script>
-  // Gestion du thème via les classes body (compatible avec ton style.css)
+  // Gestion du thème avec les CLASSES (comme dans style.css)
   const select = document.getElementById('themeSelect');
   const body = document.body;
   
-  // Appliquer le thème sauvegardé ou dark par défaut
+  // Récupérer le thème sauvegardé
   const savedTheme = localStorage.getItem('livre-theme') || 'dark';
-  body.className = savedTheme; // style.css utilise des classes "dark", "light", "sepia"
+  body.className = savedTheme;
   if (select) select.value = savedTheme;
   
+  // Sauvegarder et appliquer le thème
   select.onchange = (e) => {
-    body.className = e.target.value;
-    localStorage.setItem('livre-theme', e.target.value);
+    const newTheme = e.target.value;
+    body.className = newTheme;
+    localStorage.setItem('livre-theme', newTheme);
   };
 
   // Récupérer l'ID du livre dans l'URL
