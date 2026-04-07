@@ -1,6 +1,6 @@
 // ==============================
 // APPLICATION TADAKSAHAK LEARNING
-// VERSION FINALE - CHARGEMENT JSON EXTERNE
+// VERSION FINALE - AVEC BANNIÈRE ANIMÉE
 // ==============================
 
 console.log("🚀 Démarrage de l'application...");
@@ -41,6 +41,52 @@ const clearSearchBtn = document.getElementById("clearSearch");
 const btnPrev = document.getElementById("btnPrev");
 const btnNext = document.getElementById("btnNext");
 const compteurMot = document.getElementById("compteurMot");
+
+// ------------------------------
+// BANNIÈRE ANIMÉE
+// ------------------------------
+function ajouterBanniereAnimée() {
+  // Vérifier si la bannière existe déjà
+  if (document.getElementById("banniereAnimée")) return;
+  
+  const banniere = document.createElement("div");
+  banniere.id = "banniereAnimée";
+  banniere.className = "banniere-animee";
+  banniere.innerHTML = `
+    <div class="banniere-contenu">
+      <span class="banniere-icone">📚</span>
+      <span class="banniere-texte">Découvrez les deux livres sur les Idaksahak et les Touaregs du Mali !</span>
+      <span class="banniere-icone">🤖</span>
+    </div>
+    <div class="banniere-sous-texte">
+      💬 Testez le bot Hamadine — posez-lui une question sur les livres ou le dictionnaire !
+    </div>
+    <button class="banniere-fermer" id="fermerBanniere" aria-label="Fermer">✕</button>
+  `;
+  
+  // Insérer la bannière au début du main
+  const main = document.querySelector("main");
+  if (main) {
+    main.insertBefore(banniere, main.firstChild);
+  } else {
+    document.body.insertBefore(banniere, document.body.firstChild);
+  }
+  
+  // Gestionnaire de fermeture
+  const fermerBtn = document.getElementById("fermerBanniere");
+  if (fermerBtn) {
+    fermerBtn.addEventListener("click", () => {
+      banniere.style.opacity = "0";
+      setTimeout(() => banniere.remove(), 300);
+      localStorage.setItem("bannierefermee", "true");
+    });
+  }
+  
+  // Ne pas réafficher si déjà fermée
+  if (localStorage.getItem("bannierefermee") === "true") {
+    banniere.style.display = "none";
+  }
+}
 
 // ------------------------------
 // UTILITAIRES
@@ -182,13 +228,11 @@ async function chargerDictionnaire() {
     showLoader();
     console.log("📥 Chargement du dictionnaire...");
     
-    // Timeout de sécurité (5 secondes max)
     const timeoutPromise = new Promise((_, reject) => {
         setTimeout(() => reject(new Error("Timeout")), 5000);
     });
     
     try {
-        // Essayer plusieurs chemins possibles
         const chemins = [
             "data/mots.json",
             "./data/mots.json",
@@ -225,7 +269,6 @@ async function chargerDictionnaire() {
         console.error("❌ Erreur chargement:", error);
         showToast("Erreur de chargement du dictionnaire", "error");
         
-        // Fallback : données minimales
         vocabulaire = [
             {"mot":"Báy","cat":"vt.","fr":"Pouvoir (faire)","en":"Able, to be"},
             {"mot":"Yiddár","cat":"vi.","fr":"Être en vie","en":"Alive, to be"},
@@ -234,10 +277,8 @@ async function chargerDictionnaire() {
         showToast("Utilisation du dictionnaire par défaut", "warning");
     }
     
-    // Préparer la liste pour navigation
     motsListe = vocabulaire.map((item, idx) => ({ ...item, index: idx }));
     
-    // Mettre à jour les statistiques
     const statsContainer = document.getElementById("statsContainer");
     if (statsContainer) {
         const statMots = document.getElementById("statMots");
@@ -247,7 +288,6 @@ async function chargerDictionnaire() {
     
     console.log(`✅ ${vocabulaire.length} mots chargés`);
     
-    // Initialiser les composants qui dépendent du dictionnaire
     if (vocabulaire.length) {
         construireIndexAlphabet();
         if (vocabulaire[0]) afficherMot(vocabulaire[0]);
@@ -268,16 +308,13 @@ function afficherMot(item) {
     motActuel = item;
     currentIndex = motsListe.findIndex(m => m.mot === item.mot);
     
-    // Mettre à jour compteur
     if (compteurMot && motsListe.length) {
         compteurMot.textContent = `${currentIndex + 1} / ${motsListe.length}`;
     }
     
-    // Mettre à jour boutons navigation
     if (btnPrev) btnPrev.disabled = currentIndex <= 0;
     if (btnNext) btnNext.disabled = currentIndex >= motsListe.length - 1;
     
-    // Afficher mot avec animation
     if (motElem) {
         motElem.textContent = item.mot;
         motElem.style.opacity = 0;
@@ -286,7 +323,6 @@ function afficherMot(item) {
         }, 50);
     }
     
-    // Afficher définition
     if (defElem) {
         let definition = "";
         if (langueActuelle === "fr" && item.fr) {
@@ -305,7 +341,6 @@ function afficherMot(item) {
         `;
     }
     
-    // Gérer audio
     if (audioElem) {
         if (item.audio && item.audio.trim()) {
             audioElem.src = `audio/${item.audio}`;
@@ -358,13 +393,11 @@ function chercher(queryRaw) {
     for (const item of vocabulaire) {
         let score = Infinity;
         
-        // Chercher dans le mot Tadaksahak
         const motNorm = normalizeText(item.mot);
         if (motNorm.includes(query)) {
             score = motNorm.startsWith(query) ? 0 : 1;
         }
         
-        // Chercher en français
         if (score > 1 && item.fr) {
             const frNorm = normalizeText(item.fr);
             if (frNorm.includes(query)) {
@@ -372,7 +405,6 @@ function chercher(queryRaw) {
             }
         }
         
-        // Chercher en anglais
         if (score > 2 && item.en) {
             const enNorm = normalizeText(item.en);
             if (enNorm.includes(query)) {
@@ -380,7 +412,6 @@ function chercher(queryRaw) {
             }
         }
         
-        // Recherche floue
         if (score === Infinity && item.mot) {
             const dist = levenshtein(motNorm, query);
             if (dist <= Math.max(2, Math.floor(query.length * 0.4))) {
@@ -409,7 +440,6 @@ function highlightMatch(text, queryRaw) {
     return `${escapeHtml(text.slice(0, idx))}<mark style="background:rgba(255,255,0,0.3);padding:0 .1rem;border-radius:2px">${escapeHtml(text.slice(idx, idx + queryRaw.length))}</mark>${escapeHtml(text.slice(idx + queryRaw.length))}`;
 }
 
-// Événements recherche
 if (searchBar) {
     searchBar.addEventListener("input", (e) => {
         const raw = e.target.value.trim();
@@ -611,12 +641,10 @@ function afficheMsg(user, html) {
 function reponseBot(txt) {
     const clean = txt.toLowerCase().trim();
     
-    // --- VÉRIFICATION DES INSULTES ---
     if (contientInsulte(clean)) {
         return reponsePolieInsulte();
     }
     
-    // --- SALUTATIONS ---
     const salutations = ["bonjour", "salut", "hello", "salam", "bsr", "bjr", "coucou", "hé", "hey", "yo"];
     if (salutations.some(s => clean.includes(s))) {
         const reponses = [
@@ -627,18 +655,15 @@ function reponseBot(txt) {
         return reponses[Math.floor(Math.random() * reponses.length)];
     }
     
-    // --- REMERCIEMENTS ---
     if (/(merci|thanks|chokran|gracias|thank you)/i.test(clean)) {
         return "🙏 De rien ! La sagesse se partage. N'hésitez pas à me poser d'autres questions sur les livres ou le dictionnaire.";
     }
     
-    // --- DICTIONNAIRE ---
     const motsDico = ["dictionnaire", "dico", "mot", "vocabulaire", "tadaksahak", "langue", "traduction", "signification"];
     if (motsDico.some(m => clean.includes(m)) && !clean.includes("livre")) {
         return "📖 Rendez-vous dans la section Dictionnaire. Vous pouvez :\n• Taper un mot dans la barre de recherche\n• Parcourir l'index alphabétique\n• Écouter la prononciation (quand disponible)\n• Chercher en français ou en anglais\n\n💡 Essayez de taper un mot comme « Báy » ou « Yiddár » !";
     }
     
-    // --- LIVRES ---
     const motsLivres = ["livre", "bibliothèque", "bibliotheque", "ouvrage", "chapitre", "lire", "livres"];
     if (motsLivres.some(m => clean.includes(m))) {
         const reponses = [
@@ -648,13 +673,11 @@ function reponseBot(txt) {
         return reponses[Math.floor(Math.random() * reponses.length)];
     }
     
-    // --- AUDIO ---
     const motsAudio = ["audio", "musique", "chant", "chanson", "son", "écouter", "podcast"];
     if (motsAudio.some(m => clean.includes(m))) {
         return "🎵 La section Audio proposera bientôt des chants traditionnels Idaksahak, des poésies tamasheq et des enregistrements linguistiques. Revenez bientôt !";
     }
     
-    // --- RECHERCHE DANS LES LIVRES ---
     if (livresConnaissance) {
         const resultatLivre = chercherDansLivres(txt);
         if (resultatLivre) {
@@ -662,7 +685,6 @@ function reponseBot(txt) {
         }
     }
     
-    // --- HISTOIRE / CULTURE ---
     const motsHistoire = ["histoire", "culture", "origine", "tradition", "coutume", "peuple", "ancêtre", "héritage"];
     if (motsHistoire.some(m => clean.includes(m))) {
         const reponses = [
@@ -672,7 +694,6 @@ function reponseBot(txt) {
         return reponses[Math.floor(Math.random() * reponses.length)];
     }
     
-    // --- QUESTIONS SPÉCIFIQUES ---
     if (clean.includes("idaksahak")) {
         return "🏜️ Les Idaksahak sont un groupe pastoral du nord-est du Mali (Ménaka et Gao). Ils parlent le tadaksahak, une langue mêlant tamasheq et songhay. Leur histoire politique est marquée par une émancipation progressive, racontée dans le livre de Charles Grémont. Posez-moi une question précise !";
     }
@@ -681,7 +702,6 @@ function reponseBot(txt) {
         return "🌍 Les Touaregs (Kel Tamasheq) sont un peuple berbère nomade du Sahara. Au Mali, ils vivent principalement dans le Nord (Kidal, Gao, Tombouctou, Ménaka). Le livre « Les Périls d'une Époque Touarègue au Mali » explore leurs défis politiques, économiques et culturels.";
     }
     
-    // --- RECHERCHE DE MOT DANS LE DICTIONNAIRE ---
     if (vocabulaire && vocabulaire.length) {
         const motTrouve = vocabulaire.find(v => 
             normalizeText(v.mot).includes(clean) || 
@@ -694,13 +714,11 @@ function reponseBot(txt) {
         }
     }
     
-    // --- AIDE ---
     const motsAide = ["aide", "help", "quoi faire", "commande", "instruction", "tuto", "guide"];
     if (motsAide.some(m => clean.includes(m))) {
         return "🤖 <strong>Ce que je sais faire :</strong>\n\n📖 <strong>Dictionnaire</strong> → Chercher un mot, index alphabétique, français/anglais\n📚 <strong>Livres</strong> → Consulter les deux ouvrages, poser des questions sur leur contenu\n🎵 <strong>Audio</strong> → Chants et musiques (bientôt)\n💬 <strong>Questions culturelles</strong> → Histoire, traditions, langue\n\n🔍 <strong>Exemples de questions :</strong>\n• « Que disent les Idaksahak d'eux-mêmes ? »\n• « Quelles sont les causes des tourments touaregs ? »\n• « Quel est le rôle des femmes touarègues ? »\n• « Que veut dire Báy en français ? »\n\n⚠️ Je réponds poliment, merci de faire de même !";
     }
     
-    // --- RÉPONSE PAR DÉFAUT ---
     return "🤔 Je n'ai pas bien compris votre demande.\n\n🔍 <strong>Essayez :</strong>\n• « dictionnaire » ou un mot comme « Báy »\n• « livres » pour voir les ouvrages\n• Une question précise sur un livre (ex: « Que disent les Idaksahak d'eux-mêmes ? »)\n• « aide » pour voir toutes mes capacités\n\n📖 Je réponds à vos questions sur les deux livres, le dictionnaire et la culture sahélienne !";
 }
 
@@ -734,6 +752,14 @@ function initChatSuggestions() {
     });
 }
 
+// Message d'accueil automatique du bot
+function afficherMessageAccueilBot() {
+    setTimeout(() => {
+        const messageAccueil = "👋 Salam aleikum ! Je suis Hamadine, gardien de la langue Tadaksahak et des savoirs Idaksahak.\n\n📘 Tape « aide » pour voir ce que je peux faire.\n\n🔍 Exemples :\n• « Que disent les Idaksahak d'eux-mêmes ? »\n• « Quelles sont les causes des tourments touaregs ? »\n• « Que veut dire Báy ? »\n• « Livres »\n\n📚 N'hésitez pas à consulter les deux livres dans la section Livres !";
+        afficheMsg("bot", messageAccueil);
+    }, 800);
+}
+
 // ------------------------------
 // AUDIO
 // ------------------------------
@@ -757,9 +783,14 @@ function initNavigation() {
         });
         localStorage.setItem("tadaksahak_active_section", id);
         
-        // Déclencher des actions spécifiques selon la section
         if (id === "livres") afficherLivres();
         if (id === "audio") genererAlbumsAudio();
+        
+        // Réafficher la bannière si elle a été fermée et qu'on change de section
+        const banniere = document.getElementById("banniereAnimée");
+        if (banniere && localStorage.getItem("bannierefermee") === "true") {
+            // Ne pas réafficher si déjà fermée manuellement
+        }
     }
     
     sectionSelector.addEventListener("change", (e) => {
@@ -788,7 +819,6 @@ document.querySelectorAll(".lang-btn").forEach(btn => {
 btnPrev?.addEventListener("click", navigationPrecedent);
 btnNext?.addEventListener("click", navigationSuivant);
 
-// Bouton accès dictionnaire depuis accueil
 document.getElementById("btnGoDico")?.addEventListener("click", () => {
     if (sectionSelector) {
         sectionSelector.value = "dictionnaire";
@@ -796,7 +826,6 @@ document.getElementById("btnGoDico")?.addEventListener("click", () => {
     }
 });
 
-// Chat flottant
 document.getElementById("toggleChatBot")?.addEventListener("click", () => {
     if (sectionSelector) {
         sectionSelector.value = "chat";
@@ -811,11 +840,13 @@ async function initialiserApplication() {
     console.log("🚀 Initialisation...");
     
     initNavigation();
-    await chargerLivresConnaissance();  // Charge la base de connaissances des livres
+    ajouterBanniereAnimée();  // Ajoute la bannière animée dans toutes les sections
+    await chargerLivresConnaissance();
     await chargerDictionnaire();
     chargerHistorique();
     genererAlbumsAudio();
     initChatSuggestions();
+    afficherMessageAccueilBot();  // Message d'accueil automatique du bot
     
     console.log("✅ Application prête !");
 }
