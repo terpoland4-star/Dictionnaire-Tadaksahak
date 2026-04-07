@@ -19,6 +19,17 @@ let motsListe = [];
 window.livresData = [];
 window.histoireData = {};
 
+// Base de connaissances des livres
+let livresConnaissance = null;
+
+// Liste des insultes / gros mots
+const insultes = [
+  "con", "connard", "connasse", "pute", "salope", "merde", "fuck", "shit",
+  "bordel", "enculé", "enculer", "nique", "bite", "couille", "pd", "tapette",
+  "gros", "idiot", "stupide", "crétin", "abruti", "imbécile", "nul",
+  "tah", "wakh", "degueulasse", "salaud", "salopard", "batard", "bâtard"
+];
+
 // Éléments DOM
 const searchBar = document.getElementById("searchBar");
 const suggestionsList = document.getElementById("suggestions");
@@ -53,6 +64,25 @@ const levenshtein = (a, b) => {
     return matrix[an][bn];
 };
 
+function contientInsulte(texte) {
+  const clean = texte.toLowerCase();
+  for (const insulte of insultes) {
+    if (clean.includes(insulte)) return true;
+  }
+  return false;
+}
+
+function reponsePolieInsulte() {
+  const reponses = [
+    "🙏 Je comprends votre émotion, mais restons respectueux. Je suis là pour vous aider avec bienveillance.",
+    "🌿 Chez les Idaksahak, on dit que la parole douce ouvre plus de portes que la colère. Comment puis-je vous aider poliment ?",
+    "📖 Je préfère ne pas répondre à ce langage. Posez-moi une question sur la langue, les livres ou la culture, j'y répondrai avec plaisir.",
+    "🤝 Le respect est au cœur de nos échanges. Reformulez votre question s'il vous plaît.",
+    "⚡ Je ne réponds pas aux insultes, mais je reste disponible pour toute question constructive."
+  ];
+  return reponses[Math.floor(Math.random() * reponses.length)];
+}
+
 // Notification toast
 function showToast(message, type = "info") {
     const toast = document.getElementById("toast");
@@ -74,6 +104,75 @@ function hideLoader() {
 function showLoader() {
     const loader = document.getElementById("loadingOverlay");
     if (loader) loader.hidden = false;
+}
+
+// ------------------------------
+// CHARGEMENT DE LA BASE DE CONNAISSANCES DES LIVRES
+// ------------------------------
+async function chargerLivresConnaissance() {
+  try {
+    const response = await fetch('data/livres_connaissance.json');
+    if (response.ok) {
+      livresConnaissance = await response.json();
+      console.log('📚 Base de connaissances chargée');
+    } else {
+      console.warn('⚠️ Fichier livres_connaissance.json non trouvé');
+    }
+  } catch (e) {
+    console.warn('⚠️ Impossible de charger la base de connaissances', e);
+  }
+}
+
+function extraireMotsCles(question) {
+  const stopWords = ['le', 'la', 'les', 'un', 'une', 'de', 'du', 'des', 'et', 'ou', 'mais', 'donc', 'car', 'pour', 'dans', 'avec', 'sans', 'par', 'sur', 'sous', 'que', 'qui', 'quoi', 'dont', 'où', 'comment', 'pourquoi', 'est', 'sont', 'être', 'avoir', 'faire'];
+  
+  const mots = question.toLowerCase()
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .replace(/[?;:!,.']/g, '')
+    .split(/\s+/);
+  
+  return mots.filter(m => m.length > 2 && !stopWords.includes(m));
+}
+
+function chercherDansLivres(question) {
+  if (!livresConnaissance || !livresConnaissance.livres) return null;
+  
+  const motsClesQuestion = extraireMotsCles(question);
+  if (motsClesQuestion.length === 0) return null;
+  
+  const resultats = [];
+  
+  for (const livre of livresConnaissance.livres) {
+    for (const chunk of livre.chunks) {
+      let score = 0;
+      const motsClesChunk = chunk.mots_cles.map(m => m.toLowerCase());
+      
+      for (const mot of motsClesQuestion) {
+        if (motsClesChunk.some(mc => mc.includes(mot) || mot.includes(mc))) {
+          score += 2;
+        }
+        if (chunk.texte.toLowerCase().includes(mot)) {
+          score += 1;
+        }
+      }
+      
+      if (score > 0) {
+        resultats.push({
+          livre: livre.titre,
+          auteur: livre.auteur,
+          chapitre: chunk.chapitre,
+          titre: chunk.titre || chunk.sous_titre || `Chapitre ${chunk.chapitre}`,
+          texte: chunk.texte,
+          score: score
+        });
+      }
+    }
+  }
+  
+  if (resultats.length === 0) return null;
+  
+  resultats.sort((a, b) => b.score - a.score);
+  return resultats[0];
 }
 
 // ------------------------------
@@ -458,32 +557,41 @@ function construireIndexAlphabet() {
 }
 
 // ------------------------------
-// LIVRES
+// LIVRES (DYNAMIQUE)
 // ------------------------------
-function afficherLivres() {
+async function afficherLivres() {
     const cont = document.getElementById("livresContainer");
     if (!cont) return;
     
-    cont.innerHTML = `
-        <div class="livre-card">
-            <div class="livre-titre">📖 L'émancipation politique des Idaksahak</div>
-            <div class="livre-auteur">✍️ Charles Grémont</div>
-            <div class="livre-desc">Une analyse anthropologique de l'émergence politique des Idaksahak au Mali</div>
-            <div class="livre-meta">🏷️ Histoire • 🌍 Français</div>
-            <div class="livre-actions">
-                <a href="livre.html" class="btn-small" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:inline-block;text-align:center;">📖 Lire l'ouvrage</a>
+    cont.innerHTML = `<div class="loading-books">📚 Chargement des livres...</div>`;
+    
+    try {
+        const response = await fetch('data/livres.json');
+        if (!response.ok) throw new Error('Impossible de charger les livres');
+        
+        const livres = await response.json();
+        
+        if (!livres.length) {
+            cont.innerHTML = `<p class="info-message">📚 Aucun livre disponible pour le moment.</p>`;
+            return;
+        }
+        
+        cont.innerHTML = livres.map(livre => `
+            <div class="livre-card">
+                <div class="livre-titre">📖 ${escapeHtml(livre.titre)}</div>
+                <div class="livre-auteur">✍️ ${escapeHtml(livre.auteur)}</div>
+                <div class="livre-desc">${escapeHtml(livre.description || '')}</div>
+                <div class="livre-meta">🏷️ ${escapeHtml(livre.categorie || 'Général')} • 📅 ${livre.annee || '?'} • 📄 ${livre.pages || '?'} pages</div>
+                <div class="livre-actions">
+                    <a href="livre-viewer.html?id=${livre.id}" class="btn-small" target="_blank" rel="noopener noreferrer">📖 Lire l'ouvrage</a>
+                </div>
             </div>
-        </div>
-    `;
-}
-
-// ------------------------------
-// AUDIO
-// ------------------------------
-function genererAlbumsAudio() {
-    const conteneur = document.getElementById("audioContainer");
-    if (!conteneur) return;
-    conteneur.innerHTML = "<p class='info-message'>🎵 Pistes audio à venir prochainement...</p>";
+        `).join('');
+        
+    } catch (error) {
+        console.error('Erreur chargement livres:', error);
+        cont.innerHTML = `<p class="error-message">❌ Erreur de chargement des livres. Vérifiez que le fichier data/livres.json existe.</p>`;
+    }
 }
 
 // ------------------------------
@@ -501,52 +609,99 @@ function afficheMsg(user, html) {
 }
 
 function reponseBot(txt) {
-    const clean = txt.toLowerCase();
+    const clean = txt.toLowerCase().trim();
     
-    // Salutations
-    if (/(bonjour|salut|hello|salam|bsr|bjr)/i.test(clean)) {
-        return "👋 Bonjour ! Je suis Hamadine, gardien de la langue Tadaksahak. Que souhaitez-vous explorer aujourd'hui ?";
+    // --- VÉRIFICATION DES INSULTES ---
+    if (contientInsulte(clean)) {
+        return reponsePolieInsulte();
     }
     
-    if (/(merci|thanks|chokran)/i.test(clean)) {
-        return "🙏 De rien ! La sagesse se partage.";
+    // --- SALUTATIONS ---
+    const salutations = ["bonjour", "salut", "hello", "salam", "bsr", "bjr", "coucou", "hé", "hey", "yo"];
+    if (salutations.some(s => clean.includes(s))) {
+        const reponses = [
+            "👋 Salam aleikum ! Je suis Hamadine, gardien de la langue Tadaksahak et des savoirs Idaksahak. Que souhaitez-vous explorer aujourd'hui ?",
+            "🌞 Bonjour à vous ! Je connais les deux livres de la bibliothèque. Posez-moi une question sur les Idaksahak ou les Touaregs du Mali.",
+            "📚 Bienvenue ! Je peux vous parler du dictionnaire, des livres, ou répondre à vos questions sur la culture sahélienne."
+        ];
+        return reponses[Math.floor(Math.random() * reponses.length)];
     }
     
-    // Navigation
-    if (clean.includes("dictionnaire") || clean.includes("dico") || clean.includes("mot")) {
-        return "📖 Rendez-vous dans la section Dictionnaire et tapez un mot dans la barre de recherche !";
+    // --- REMERCIEMENTS ---
+    if (/(merci|thanks|chokran|gracias|thank you)/i.test(clean)) {
+        return "🙏 De rien ! La sagesse se partage. N'hésitez pas à me poser d'autres questions sur les livres ou le dictionnaire.";
     }
     
-    if (clean.includes("livre") || clean.includes("bibliothèque")) {
-        return "📚 La section Livres vous attend ! Vous y trouverez 'L'émancipation politique des Idaksahak' de Charles Grémont.";
+    // --- DICTIONNAIRE ---
+    const motsDico = ["dictionnaire", "dico", "mot", "vocabulaire", "tadaksahak", "langue", "traduction", "signification"];
+    if (motsDico.some(m => clean.includes(m)) && !clean.includes("livre")) {
+        return "📖 Rendez-vous dans la section Dictionnaire. Vous pouvez :\n• Taper un mot dans la barre de recherche\n• Parcourir l'index alphabétique\n• Écouter la prononciation (quand disponible)\n• Chercher en français ou en anglais\n\n💡 Essayez de taper un mot comme « Báy » ou « Yiddár » !";
     }
     
-    if (clean.includes("audio") || clean.includes("musique") || clean.includes("chant")) {
-        return "🎵 La section Audio proposera bientôt des chants et musiques traditionnels Idaksahak.";
+    // --- LIVRES ---
+    const motsLivres = ["livre", "bibliothèque", "bibliotheque", "ouvrage", "chapitre", "lire", "livres"];
+    if (motsLivres.some(m => clean.includes(m))) {
+        const reponses = [
+            "📚 La bibliothèque contient deux ouvrages :\n\n1️⃣ « L'émancipation politique des Idaksahak » de Charles Grémont (2023) — Anthropologie politique\n\n2️⃣ « Les Périls d'une Époque Touarègue au Mali » (œuvre en construction) — Sciences politiques\n\n🔍 Posez-moi une question précise sur leur contenu !",
+            "📖 Vous pouvez accéder aux livres depuis la section dédiée. Je peux aussi vous répondre directement : demandez-moi par exemple « Que disent les Idaksahak d'eux-mêmes ? »"
+        ];
+        return reponses[Math.floor(Math.random() * reponses.length)];
     }
     
-    if (clean.includes("histoire") || clean.includes("culture") || clean.includes("origine")) {
-        return "📜 Les Idaksahak sont un peuple sahélien à la riche histoire. Leur langue, le Tadaksahak, est un trésor vivant mêlant influences tamasheq, songhay et arabe.";
+    // --- AUDIO ---
+    const motsAudio = ["audio", "musique", "chant", "chanson", "son", "écouter", "podcast"];
+    if (motsAudio.some(m => clean.includes(m))) {
+        return "🎵 La section Audio proposera bientôt des chants traditionnels Idaksahak, des poésies tamasheq et des enregistrements linguistiques. Revenez bientôt !";
     }
     
-    // Recherche de mot
-    if (vocabulaire.length) {
-        const motTrouve = vocabulaire.find(v => 
-            normalizeText(v.mot).includes(clean) || 
-            (v.fr && normalizeText(v.fr).includes(clean))
-        );
-        
-        if (motTrouve) {
-            return `📖 <strong>${motTrouve.mot}</strong><br>• 📂 ${motTrouve.cat || "Général"}<br>• 🇫🇷 ${motTrouve.fr || "—"}<br><br>💡 Tapez ce mot dans la barre de recherche du dictionnaire pour plus de détails.`;
+    // --- RECHERCHE DANS LES LIVRES ---
+    if (livresConnaissance) {
+        const resultatLivre = chercherDansLivres(txt);
+        if (resultatLivre) {
+            return `📖 D'après « ${resultatLivre.livre} » (${resultatLivre.auteur}), chapitre ${resultatLivre.chapitre} — « ${resultatLivre.titre} » :\n\n“${resultatLivre.texte}”\n\n💡 Posez-moi d'autres questions sur ce livre !`;
         }
     }
     
-    // Aide
-    if (clean.includes("aide") || clean.includes("help") || clean.includes("quoi faire")) {
-        return "🤖 <strong>Ce que je sais faire :</strong><br>• 📖 Vous guider dans le dictionnaire<br>• 📚 Vous parler des livres disponibles<br>• 🧭 Naviguer vers les sections<br><br>Que souhaitez-vous explorer ?";
+    // --- HISTOIRE / CULTURE ---
+    const motsHistoire = ["histoire", "culture", "origine", "tradition", "coutume", "peuple", "ancêtre", "héritage"];
+    if (motsHistoire.some(m => clean.includes(m))) {
+        const reponses = [
+            "📜 Les Idaksahak sont un peuple sahélien à la riche histoire. Leur langue, le Tadaksahak, est un trésor vivant mêlant influences tamasheq, songhay et arabe. Consultez le livre de Charles Grémont pour une analyse approfondie !",
+            "🏜️ Les Touaregs, appelés « Hommes bleus », vivent dans le Sahara depuis des millénaires. Leur culture nomade, leur poésie et leur artisanat sont uniques. Le livre « Les Périls d'une Époque Touarègue » explore leur situation contemporaine."
+        ];
+        return reponses[Math.floor(Math.random() * reponses.length)];
     }
     
-    return "🤔 Je n'ai pas bien compris. Essayez : « dictionnaire », « livres », « audio », « histoire », ou un mot en Tadaksahak. Dites « aide » pour voir ce que je peux faire !";
+    // --- QUESTIONS SPÉCIFIQUES ---
+    if (clean.includes("idaksahak")) {
+        return "🏜️ Les Idaksahak sont un groupe pastoral du nord-est du Mali (Ménaka et Gao). Ils parlent le tadaksahak, une langue mêlant tamasheq et songhay. Leur histoire politique est marquée par une émancipation progressive, racontée dans le livre de Charles Grémont. Posez-moi une question précise !";
+    }
+    
+    if (clean.includes("touareg") || clean.includes("touarègue")) {
+        return "🌍 Les Touaregs (Kel Tamasheq) sont un peuple berbère nomade du Sahara. Au Mali, ils vivent principalement dans le Nord (Kidal, Gao, Tombouctou, Ménaka). Le livre « Les Périls d'une Époque Touarègue au Mali » explore leurs défis politiques, économiques et culturels.";
+    }
+    
+    // --- RECHERCHE DE MOT DANS LE DICTIONNAIRE ---
+    if (vocabulaire && vocabulaire.length) {
+        const motTrouve = vocabulaire.find(v => 
+            normalizeText(v.mot).includes(clean) || 
+            (v.fr && normalizeText(v.fr).includes(clean)) ||
+            (v.en && normalizeText(v.en).includes(clean))
+        );
+        
+        if (motTrouve) {
+            return `📖 <strong>${motTrouve.mot}</strong><br>• 📂 ${motTrouve.cat || "Général"}<br>• 🇫🇷 ${motTrouve.fr || "—"}<br>• 🇬🇧 ${motTrouve.en || "—"}<br><br>💡 Tapez ce mot dans la barre de recherche du dictionnaire pour plus de détails et l'audio.`;
+        }
+    }
+    
+    // --- AIDE ---
+    const motsAide = ["aide", "help", "quoi faire", "commande", "instruction", "tuto", "guide"];
+    if (motsAide.some(m => clean.includes(m))) {
+        return "🤖 <strong>Ce que je sais faire :</strong>\n\n📖 <strong>Dictionnaire</strong> → Chercher un mot, index alphabétique, français/anglais\n📚 <strong>Livres</strong> → Consulter les deux ouvrages, poser des questions sur leur contenu\n🎵 <strong>Audio</strong> → Chants et musiques (bientôt)\n💬 <strong>Questions culturelles</strong> → Histoire, traditions, langue\n\n🔍 <strong>Exemples de questions :</strong>\n• « Que disent les Idaksahak d'eux-mêmes ? »\n• « Quelles sont les causes des tourments touaregs ? »\n• « Quel est le rôle des femmes touarègues ? »\n• « Que veut dire Báy en français ? »\n\n⚠️ Je réponds poliment, merci de faire de même !";
+    }
+    
+    // --- RÉPONSE PAR DÉFAUT ---
+    return "🤔 Je n'ai pas bien compris votre demande.\n\n🔍 <strong>Essayez :</strong>\n• « dictionnaire » ou un mot comme « Báy »\n• « livres » pour voir les ouvrages\n• Une question précise sur un livre (ex: « Que disent les Idaksahak d'eux-mêmes ? »)\n• « aide » pour voir toutes mes capacités\n\n📖 Je réponds à vos questions sur les deux livres, le dictionnaire et la culture sahélienne !";
 }
 
 function traiterSaisie() {
@@ -577,6 +732,15 @@ function initChatSuggestions() {
             }
         });
     });
+}
+
+// ------------------------------
+// AUDIO
+// ------------------------------
+function genererAlbumsAudio() {
+    const conteneur = document.getElementById("audioContainer");
+    if (!conteneur) return;
+    conteneur.innerHTML = "<p class='info-message'>🎵 Pistes audio à venir prochainement...</p>";
 }
 
 // ------------------------------
@@ -647,6 +811,7 @@ async function initialiserApplication() {
     console.log("🚀 Initialisation...");
     
     initNavigation();
+    await chargerLivresConnaissance();  // Charge la base de connaissances des livres
     await chargerDictionnaire();
     chargerHistorique();
     genererAlbumsAudio();
