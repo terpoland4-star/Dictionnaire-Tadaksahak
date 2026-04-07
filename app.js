@@ -850,7 +850,16 @@ async function initialiserApplication() {
     
     console.log("✅ Application prête !");
 }
+// Détection de la langue arabe dans la question
+function contientArabe(texte) {
+  const arabeRegex = /[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF]/;
+  return arabeRegex.test(texte);
+}
 
+// Dans reponseBot(), après la détection des insultes, ajoute :
+if (contientArabe(clean)) {
+  return "📖 يمكنك قراءة الكتاب الثالث باللغة العربية: 'التحرر السياسي للإدكساهق' لشارل غريمون. اسألني سؤالاً محدداً عن محتواه!";
+}
 // Démarrer
 initialiserApplication();
 
