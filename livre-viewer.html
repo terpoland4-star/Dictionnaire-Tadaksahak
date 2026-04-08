@@ -79,6 +79,18 @@
       border-left: 4px solid var(--accent);
     }
     
+    .book-cover {
+      text-align: center;
+      margin: 1.5rem 0;
+    }
+    
+    .book-cover img {
+      max-width: 100%;
+      max-height: 400px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+    }
+    
     .chapter {
       margin-bottom: 3rem;
       padding-bottom: 2rem;
@@ -108,6 +120,24 @@
     .chapter-content p {
       margin-bottom: 1.2rem;
       line-height: 1.7;
+    }
+    
+    .illustration {
+      margin: 1.5rem 0;
+      text-align: center;
+    }
+    
+    .illustration img {
+      max-width: 100%;
+      border-radius: var(--radius-md);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .illustration .legende {
+      font-size: 0.85rem;
+      opacity: 0.8;
+      margin-top: 0.5rem;
+      font-style: italic;
     }
     
     .footnotes {
@@ -276,23 +306,19 @@
 <button id="backToTop" class="back-to-top" title="Haut de page">⬆</button>
 
 <script>
-  // Gestion du thème avec les CLASSES (comme dans style.css)
+  // Gestion du thème
   const select = document.getElementById('themeSelect');
   const body = document.body;
-  
-  // Récupérer le thème sauvegardé
   const savedTheme = localStorage.getItem('livre-theme') || 'dark';
   body.className = savedTheme;
   if (select) select.value = savedTheme;
-  
-  // Sauvegarder et appliquer le thème
   select.onchange = (e) => {
     const newTheme = e.target.value;
     body.className = newTheme;
     localStorage.setItem('livre-theme', newTheme);
   };
 
-  // Récupérer l'ID du livre dans l'URL
+  // Récupérer l'ID du livre
   const urlParams = new URLSearchParams(window.location.search);
   const livreId = parseInt(urlParams.get('id')) || 1;
 
@@ -309,9 +335,32 @@
       .replace(/'/g, '&#39;');
   }
 
+  // Afficher la couverture (première image du tableau ou champ dédié)
+  function getCoverImage() {
+    // Priorité au champ couverture
+    if (livreData.couverture) return livreData.couverture;
+    // Sinon, première illustration (si elle n'est pas associée à un chapitre)
+    if (livreData.illustrations && livreData.illustrations.length) {
+      const first = livreData.illustrations.find(ill => !ill.chapitre && !ill.conclusion);
+      if (first) return first.fichier;
+    }
+    return null;
+  }
+
+  // Récupérer les illustrations d'un chapitre
+  function getIllustrationsForChapter(chapNumero) {
+    if (!livreData.illustrations) return [];
+    return livreData.illustrations.filter(ill => ill.chapitre === chapNumero);
+  }
+
+  // Récupérer les illustrations pour la conclusion
+  function getIllustrationsForConclusion() {
+    if (!livreData.illustrations) return [];
+    return livreData.illustrations.filter(ill => ill.conclusion === true);
+  }
+
   function afficherLivre() {
     if (!livreData) return;
-
     const container = document.getElementById('bookViewer');
     if (!container) return;
 
@@ -322,10 +371,17 @@
         <div class="book-subtitle">${escapeHtml(livreData.sous_titre || '')}</div>
         <div class="book-meta">📅 ${livreData.annee || ''} • 📄 ${livreData.pages || '?'} pages • 🏷️ ${escapeHtml(livreData.categorie || '')}</div>
       </div>
-      <div class="book-content">
-        <div class="book-description">${escapeHtml(livreData.description || '')}</div>
-        <div class="chapters-container" id="chaptersContainer"></div>
     `;
+
+    // Affichage de la couverture
+    const cover = getCoverImage();
+    if (cover) {
+      html += `<div class="book-cover"><img src="${escapeHtml(cover)}" alt="Couverture de ${escapeHtml(livreData.titre)}"></div>`;
+    }
+
+    html += `<div class="book-content">`;
+    html += `<div class="book-description">${escapeHtml(livreData.description || '')}</div>`;
+    html += `<div class="chapters-container" id="chaptersContainer"></div>`;
 
     if (livreData.conclusion) {
       html += `<div class="conclusion-section" id="conclusionSection"></div>`;
@@ -370,6 +426,19 @@
           });
         }
         
+        // Illustrations du chapitre (avant les notes)
+        const illChap = getIllustrationsForChapter(chap.numero);
+        if (illChap.length) {
+          illChap.forEach(ill => {
+            chapHtml += `
+              <div class="illustration">
+                <img src="${escapeHtml(ill.fichier)}" alt="${escapeHtml(ill.titre || 'Illustration')}">
+                <div class="legende">${escapeHtml(ill.legende || '')}</div>
+              </div>
+            `;
+          });
+        }
+        
         if (chap.notes && chap.notes.length) {
           chapHtml += `<div class="footnotes">`;
           chap.notes.forEach(note => {
@@ -395,6 +464,18 @@
         if (livreData.conclusion.contenu && livreData.conclusion.contenu.length) {
           livreData.conclusion.contenu.forEach(paragraphe => {
             conclusionHtml += `<p>${escapeHtml(paragraphe)}</p>`;
+          });
+        }
+        // Illustrations de la conclusion
+        const illConc = getIllustrationsForConclusion();
+        if (illConc.length) {
+          illConc.forEach(ill => {
+            conclusionHtml += `
+              <div class="illustration">
+                <img src="${escapeHtml(ill.fichier)}" alt="${escapeHtml(ill.titre || 'Illustration')}">
+                <div class="legende">${escapeHtml(ill.legende || '')}</div>
+              </div>
+            `;
           });
         }
         conclusionHtml += `</div>`;
@@ -426,9 +507,7 @@
   function chargerLivre() {
     fetch('data/livres.json')
       .then(response => {
-        if (!response.ok) {
-          throw new Error(`HTTP ${response.status}`);
-        }
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
         return response.json();
       })
       .then(livres => {
@@ -463,9 +542,7 @@
 
   const backBtn = document.getElementById('backToTop');
   window.addEventListener('scroll', () => {
-    if (backBtn) {
-      backBtn.classList.toggle('visible', window.scrollY > 300);
-    }
+    if (backBtn) backBtn.classList.toggle('visible', window.scrollY > 300);
   });
   backBtn?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
