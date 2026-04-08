@@ -2,19 +2,57 @@
   {
     "id": 1,
     "titre": "L'émancipation politique des Idaksahak",
+    "titre_arabe": "التحرر السياسي للإدكساهق",
     "auteur": "Charles Grémont",
+    "auteur_arabe": "شارل غريمون",
     "sous_titre": "Une tribu en construction dans le nord du Mali",
+    "sous_titre_arabe": "قبيلة قيد التكوين في شمال مالي",
     "annee": "2023",
     "pages": 48,
     "type": "histoire",
-    "langue": "Français",
+    "langue": "Français / Arabe (bilingue)",
     "categorie": "Anthropologie politique",
+    "categorie_arabe": "الأنثروبولوجيا السياسية",
     "description": "Une analyse approfondie de l'histoire politique des Idaksahak, leur quête d'autonomie et leur émergence sur la scène politique sahélienne.",
+    "description_arabe": "تحليل متعمق للتاريخ السياسي للإدكساهق، سعيهم نحو الحكم الذاتي وظهورهم على الساحة السياسية في منطقة الساحل.",
+    "couverture": "data/images/livres/couverture_idaksahak.jpg",
+    "couverture_arabe": "data/images/livres/couverture_idaksahak_ar.jpg",
+    "illustrations": [
+      {
+        "id": "illu_zone",
+        "chapitre": 1,
+        "titre": "Zone des Idaksahak",
+        "titre_arabe": "منطقة الإدكساهق",
+        "fichier": "data/images/livres/zone des idaksahak.jpeg",
+        "legende": "Carte et territoire des Idaksahak dans le nord-est du Mali.",
+        "legende_arabe": "خريطة وأراضي الإدكساهق في شمال شرق مالي."
+      },
+      {
+        "id": "illu_logo",
+        "chapitre": 3,
+        "titre": "Logo de la communauté Idaksahak",
+        "titre_arabe": "شعار مجتمع الإدكساهق",
+        "fichier": "data/images/livres/idaksahak_square.png",
+        "legende": "Logo officiel avec l'homme lisant, l'épée et les dromadaires.",
+        "legende_arabe": "الشعار الرسمي مع الرجل القارئ والسيف والجمال."
+      },
+      {
+        "id": "illu_combattant",
+        "chapitre": 7,
+        "titre": "Jeune combattant Adaksahak (1994)",
+        "titre_arabe": "مقاتل شاب أدكساهق (1994)",
+        "fichier": "data/images/livres/Un jeune combattant Adaksahak, au nord de Ménaka, mars 1994. Photo C.G.jpeg",
+        "legende": "La rébellion des années 1990 marque la première prise d'armes de guerre par une partie significative des Idaksahak. Photo prise au nord de Ménaka en mars 1994.",
+        "legende_arabe": "يمثل تمرد التسعينيات أول تسليح حربي لجزء كبير من الإدكساهق. الصورة التقطت شمال مناكا في مارس 1994."
+      }
+    ],
     "chapitres": [
       {
         "numero": 1,
         "titre": "L'émancipation politique au commencement de la tribu ?",
+        "titre_arabe": "التحرر السياسي في بداية القبيلة؟",
         "sous_titre": "Réflexion sur la notion de tribu à partir des revendications des Idaksahak (Nord-Mali)",
+        "sous_titre_arabe": "تأمل في مفهوم القبيلة من خلال مطالب الإدكساهق (شمال مالي)",
         "contenu": [
           "Ce texte propose d'interroger le lien entre l'émancipation politique d'un groupe social, des pasteurs-nomades du nord-est du Mali qui portent le nom de Idaksahak, et la reconnaissance de ce groupe en tant que tribu. Si après la reconnaissance d'un nom, d'un 'emblème onomastique', l'on retient, comme le propose Yazid Ben Hounet, l'existence d'un ordre politique autonome comme l'un des critères fondamentaux de ce que serait une tribu, une question se pose : un groupe subalterne qui serait soumis à l'autorité (ou dépendant) d'un autre groupe pourrait-il être reconnu en tant que tribu ?",
           "Au-delà donc des références généalogiques, de la question du nom ou encore des notions d'alliance et de solidarité, déjà largement traitées par la littérature anthropologique, c'est la question de l'autonomie politique qui sera ici mise en avant pour réinterroger la notion de tribu, dans un contexte contemporain et dans la partie sud du Sahara, au nord-est du Mali.",
@@ -29,6 +67,7 @@
       {
         "numero": 2,
         "titre": "Les Idaksahak par eux-mêmes",
+        "titre_arabe": "الإدكساهق كما يرون أنفسهم",
         "contenu": [
           "Comment les Idaksahak se définissent-ils ? Quels termes utilisent-ils, dans leur propre langue (tadaksahak), pour dire ce qu'ils sont ? Ont-ils recours aussi à des termes tamasheq, arabe ou français ? J'ai eu l'occasion de leur poser directement la question. Les documents qu'ils produisent eux-mêmes apportent aussi des réponses.",
           "\"Nous sommes une tawset². C'est cela notre catégorie, c'est ce que l'on dit. En français, on peut dire le 'peuple Dawsahaq' comme on dit le 'peuple Kel Tamasheq'. Nous utilisons aussi le mot communauté. 'La communauté Idaksahak', c'est ce que nous utilisons dans nos communiqués.\"³",
@@ -43,6 +82,7 @@
       {
         "numero": 3,
         "titre": "Que disent les Idaksahak de ce qu'ils sont aujourd'hui ?",
+        "titre_arabe": "ماذا يقول الإدكساهق عن أنفسهم اليوم؟",
         "contenu": [
           "\"Idaksahak, une communauté riche économiquement et instruite religieusement. Idaksahak, une communauté touarègue qui parle tadaksahak différent du tamashek.\"⁸",
           "Tel est le slogan qui défile en lettres capitales sur la page d'accueil du site internet Idaksahak. Le logo qui orne l'ensemble des rubriques du site, ainsi que la page Facebook et autres supports de communication, est tout aussi instructif : au premier plan, un homme assis s'adonne à la lecture, à l'étude coranique certainement, une épée blanche ressort sur sa silhouette sombre. À l'arrière-plan, deux dromadaires adultes et leur petit viennent compléter la scène. Des mots au dessin, l'image d'eux-mêmes que les Idaksahak ont choisi de diffuser au monde réunit toutes les qualités pour bien vivre et se faire respecter au Sahara et au Sahel : la richesse économique, à travers la pratique de l'élevage (camelin) ; l'instruction religieuse et le maniement des armes.",
@@ -57,6 +97,7 @@
       {
         "numero": 4,
         "titre": "L'image d'un groupe subalterne et pacifique",
+        "titre_arabe": "صورة مجموعة تابعة وسلمية",
         "contenu": [
           "La présence d'une arme, sur le logo censé définir les grands traits de l'identité des Idaksahak, tranche avec la dimension pacifique qu'ils ont longtemps mise en avant pour se définir vis-à-vis des autres. Des membres du groupe insistent aujourd'hui encore sur cette spécificité. Voici, à titre d'exemple, comment un homme d'une soixantaine d'années, de la fraction des Kel Abakott, répondait à la question 'qu'est-ce qui caractérise les Idaksahak ?' :",
           "\"Pour moi, ce qui nous caractérise, de tout le temps, c'est que nous sommes un peuple de paix, qui s'occupe uniquement de la religion et de l'élevage. Nous ne nous mêlons pas d'autres choses. Et c'est ce qui fait qu'on ne parle pas beaucoup de nous. Nous ne participions pas à des guerres, ni à des razzias, ni au banditisme. Nous ne participions à rien de tout ça.\"¹⁵",
@@ -69,6 +110,7 @@
       {
         "numero": 5,
         "titre": "\"Nous avons troqué nos chèvres contre des Kalachnikov !\"",
+        "titre_arabe": "\"لقد استبدلنا ماعزنا بكلاشينكوفات!\"",
         "contenu": [
           "Pour la plupart de leurs voisins, en effet, les Idaksahak demeurent un groupe subalterne, toujours sous le joug, ou au moins l'influence, de ceux qui furent les leaders politiques et guerriers de la Boucle du Niger jusqu'à l'Adagh des Ifoghas compris, pendant plus de deux siècles, les Iwellemmedan¹⁸.",
           "Les Idaksahak étaient loin d'être les seuls à reconnaître, de gré ou de force, l'autorité politique des Iwellemmedan. Mais en ce qui les concerne, et à la différence d'autres groupes, ce statut de subalterne était d'autant plus avéré que les Idaksahak ne semblent pas avoir réellement porté des armes, en tout cas de guerre, telles que les épées, les lances et autres boucliers¹⁹. Ce qui les mettait de fait sous la protection et la dépendance d'autres groupes guerriers, en l'occurrence les Imajeghen Iwellemmedan, et plus spécifiquement le lignage détenteur du tambour de commandement (ettebel), les Kel Talatayt.",
@@ -80,6 +122,7 @@
       {
         "numero": 6,
         "titre": "Des armes pour se défendre",
+        "titre_arabe": "أسلحة للدفاع عن النفس",
         "contenu": [
           "Par la suite, à ma connaissance, les archives coloniales ne mentionnent aucun fait d'armes de la part des Idaksahak. C'est toujours l'image d'un groupe pacifique et riche en bétail qui est rapportée dans les rapports des officiers français. Ce n'est qu'après l'Indépendance du Mali, en 1963-1964, que des Idaksahak se font remarquer dans un épisode guerrier. Il s'agit de la révolte menée par une poignée d'hommes dans l'Adagh des Ifoghas, à laquelle ont participé deux Idaksahak de la zone de Talatayt, Ilias et Younes, deux fils d'Ayouba, le chef de la fraction Ihanakaten³². Proches du chef des Ifoghas à ce moment-là³³, Zeïd ag Attaher, ces deux jeunes Idaksahak ont contribué activement à cette révolte, notamment à travers un soutien financier qui a permis d'acheter des armes en Algérie³⁴.",
           "Ilias et Zeyd sont arrêtés en Algérie, à Colomb-Béchar, en novembre 1963. Ils sont remis aux autorités maliennes qui les exposent dans des situations humiliantes aux yeux des populations de l'Adagh. À titre d'exemple ! Arrêté avec eux, Younes réussit à s'échapper et s'installe en Algérie. Ayouba, le père, est arrêté et assassiné, comme d'autres chefs qui n'ont pas accepté de collaborer avec l'armée malienne.",
@@ -90,6 +133,7 @@
       {
         "numero": 7,
         "titre": "La rébellion des années 1990 et ses limites",
+        "titre_arabe": "تمرد التسعينيات وحدوده",
         "contenu": [
           "Une première prise de conscience, sans doute aussi, que la posture de l'éleveur pacifique, attaché à l'étude coranique, n'était pas un horizon indépassable. Avec le recul, on sait maintenant la filiation des rébellions armées entre elles, qui surgissent et ressurgissent régulièrement depuis 1963 dans le nord du Mali³⁵. C'est particulièrement avéré entre l'épisode de 1963 et celui de 1990. La rancœur des orphelins de 1963, contre le pouvoir central malien, est une des matrices aujourd'hui bien documentée de la rébellion des années 1990.",
           "Dans son ouvrage, Baz Lecoq présente Younes ag Ayouba comme l'un de ses principaux leaders, au moins dans sa phase de préparation³⁶.",
@@ -100,6 +144,7 @@
       {
         "numero": 8,
         "titre": "La confrontation de 1994",
+        "titre_arabe": "مواجهة 1994",
         "contenu": [
           "En effet, un événement peu connu, mais hautement symbolique, doit être rappelé ici. Comme de nombreuses communautés, dans la vallée du fleuve Niger ou dans les zones pastorales, les Idaksahak ont subi des vols et des pillages dans la première moitié des années 1990. Dans un contexte de non application des accords de paix, de prolifération des armes et d'absence de justice, les actes de banditisme se sont multipliés et le bétail des Idaksahak a fait l'objet de nombreuses convoitises, notamment de la part de leurs voisins proches, dont des Imajeghen.",
           "Autrement dit, des gens appartenant à l'ancienne classe dominante et guerrière au sein de l'ensemble des Iwellemmedan – dont le rôle historique était la défense des groupes subalternes et pacifiques, en échange bien sûr de contreparties (la soumission politique et des contributions en bétail) – ont enlevé à plusieurs reprises des animaux appartenant à des Idaksahak. Une fois ils ont même pris pour cible un campement et pillé les biens domestiques d'une famille³⁹, à une dizaine de kilomètres de la base armée des Idaksahak (Izilili, à une quarantaine de kilomètres au nord-est de Ménaka).",
@@ -112,26 +157,39 @@
       {
         "numero": 9,
         "titre": "Une visibilité politique acquise par les armes",
-        "contenu": ["Comme annoncé dès l'introduction, c'est véritablement à partir des années 2010 que les Idaksahak ont exprimé leur force guerrière et des revendications politiques, tant au niveau régional, que national, voire international, tant sur le terrain militaire que sur les ondes médiatiques et sur les réseaux sociaux. Le propos n'est plus ici de retracer les formes d'engagement des Idaksahak dans la guerre déclenchée au nord du Mali en 2012, mais de tenter de conclure cette réflexion autour de la notion de tribu, en intégrant une séquence historique complètement contemporaine, car elle est toujours en cours au moment de l'écriture de ces lignes (octobre 2023)."]
+        "titre_arabe": "رؤية سياسية مكتسبة بالأسلحة",
+        "contenu": [
+          "Comme annoncé dès l'introduction, c'est véritablement à partir des années 2010 que les Idaksahak ont exprimé leur force guerrière et des revendications politiques, tant au niveau régional, que national, voire international, tant sur le terrain militaire que sur les ondes médiatiques et sur les réseaux sociaux. Le propos n'est plus ici de retracer les formes d'engagement des Idaksahak dans la guerre déclenchée au nord du Mali en 2012, mais de tenter de conclure cette réflexion autour de la notion de tribu, en intégrant une séquence historique complètement contemporaine, car elle est toujours en cours au moment de l'écriture de ces lignes (octobre 2023)."
+        ]
       },
       {
         "numero": 10,
         "titre": "Affirmation militaire face aux Imajeghen",
-        "contenu": ["Les années 1990 ouvrent certainement une nouvelle ère dans l'histoire des Idaksahak, avec l'engagement de peut-être plus de 2000 combattants dans une rébellion contre le pouvoir central malien et, plus encore, la défense de leurs biens par leurs propres armes, mais le gain politique de cette conversion restait encore assez faible. Comme le souligne le jeune Adksahak interrogé en 2020, les postes à responsabilité, les 'élus, les ministres, les officiers supérieurs' sont restés dévolus aux autres. La volonté de changer cette donne a animé plusieurs jeunes diplômés de la communauté dès la reprise des hostilités contre l'État central malien en 2012."]
+        "titre_arabe": "تأكيد عسكري ضد إماجيغن",
+        "contenu": [
+          "Les années 1990 ouvrent certainement une nouvelle ère dans l'histoire des Idaksahak, avec l'engagement de peut-être plus de 2000 combattants dans une rébellion contre le pouvoir central malien et, plus encore, la défense de leurs biens par leurs propres armes, mais le gain politique de cette conversion restait encore assez faible. Comme le souligne le jeune Adksahak interrogé en 2020, les postes à responsabilité, les 'élus, les ministres, les officiers supérieurs' sont restés dévolus aux autres. La volonté de changer cette donne a animé plusieurs jeunes diplômés de la communauté dès la reprise des hostilités contre l'État central malien en 2012."
+        ]
       },
       {
         "numero": 11,
         "titre": "Le Mouvement pour le salut de l'Azawad (MSA)",
-        "contenu": ["Mais c'est surtout l'année 2016 qui marque ouvertement cette prise de position avec la création du Mouvement pour le salut de l'Azawad (MSA), par un de ces jeunes, Moussa Ag Acharatouman. Il est l'un des fondateurs du Mouvement national de l'Azawad (MNA), une organisation de jeunes gens diplômés du Nord qui tente, à partir de 2010, d'interpeller l'État et les leaders du Nord sur la question de l'Azawad, de son autonomie et de sa gouvernance. Avec le choix de la lutte armée en janvier 2012, le MNA devient Mouvement national de libération de l'Azawad (MNLA)."]
+        "titre_arabe": "حركة إنقاذ أزواد",
+        "contenu": [
+          "Mais c'est surtout l'année 2016 qui marque ouvertement cette prise de position avec la création du Mouvement pour le salut de l'Azawad (MSA), par un de ces jeunes, Moussa Ag Acharatouman. Il est l'un des fondateurs du Mouvement national de l'Azawad (MNA), une organisation de jeunes gens diplômés du Nord qui tente, à partir de 2010, d'interpeller l'État et les leaders du Nord sur la question de l'Azawad, de son autonomie et de sa gouvernance. Avec le choix de la lutte armée en janvier 2012, le MNA devient Mouvement national de libération de l'Azawad (MNLA)."
+        ]
       },
       {
         "numero": 12,
         "titre": "Des jeunes Idaksahak dans le djihadisme",
-        "contenu": ["La crise et les conflits armés déclenchés à partir de 2012 révèlent par ailleurs des situations bien plus complexes qu'une opposition entre des mouvements indépendantistes et le pouvoir central de l'État malien. Des milices et des groupes armés loyalistes sont aussi parmi les protagonistes du conflit, ainsi bien sûr que plusieurs mouvements djihadistes. Or il se trouve qu'une partie de la jeunesse des Idaksahak, certes minoritaire mais bien présente, a adhéré très tôt à la proposition djihadiste, à travers le Mouvement pour l'unicité et le djihad en Afrique de l'Ouest (MUJAO), Al-Qaïda au Maghreb islamique (AQMI) et aussi l'État islamique au Grand Sahara (EIGS)."]
+        "titre_arabe": "شباب إدكساهق في الجهاد",
+        "contenu": [
+          "La crise et les conflits armés déclenchés à partir de 2012 révèlent par ailleurs des situations bien plus complexes qu'une opposition entre des mouvements indépendantistes et le pouvoir central de l'État malien. Des milices et des groupes armés loyalistes sont aussi parmi les protagonistes du conflit, ainsi bien sûr que plusieurs mouvements djihadistes. Or il se trouve qu'une partie de la jeunesse des Idaksahak, certes minoritaire mais bien présente, a adhéré très tôt à la proposition djihadiste, à travers le Mouvement pour l'unicité et le djihad en Afrique de l'Ouest (MUJAO), Al-Qaïda au Maghreb islamique (AQMI) et aussi l'État islamique au Grand Sahara (EIGS)."
+        ]
       }
     ],
     "conclusion": {
       "titre": "Un ordre politique autonome ?",
+      "titre_arabe": "نظام سياسي مستقل؟",
       "contenu": [
         "Ce dernier constat, d'une séquence historique toujours en cours, vient relancer la question des liens de solidarité censés définir, avec d'autres éléments, la structure et le fonctionnement interne d'une tribu. L'idée selon laquelle les membres d'une tribu, de par leurs liens de sang et de parenté, et de par leur inscription dans une histoire commune, se mobiliseraient comme un seul homme dans une situation de conflit, devrait être largement pondérée.",
         "Les travaux sur l'histoire très contemporaine, ou du 'temps présent', permettent certainement aussi de reconsidérer les vérités parfois trop vite énoncées sur le caractère unitaire, solidaire et cohérent de la tribu. L'existence ou non d'un ordre politique autonome, avec ses forces de contradiction internes, me semble de ce fait une question bien plus féconde si l'on cherche à réinterroger la notion de tribu, ici dans la partie sud du Sahara au début du XXIe siècle. L'expérience contemporaine des Idaksahak ouvre sans doute de nouvelles pistes à explorer."
@@ -164,6 +222,30 @@
     "langue": "Français",
     "categorie": "Sciences politiques",
     "description": "Une analyse approfondie des défis politiques, économiques et culturels auxquels les Touaregs maliens font face dans une époque tourmentée. Des causes profondes des conflits aux espoirs de réconciliation, en passant par le rôle des femmes et la destruction du patrimoine.",
+    "couverture": "data/images/livres/couverture_touareg.jpg",
+    "illustrations": [
+      {
+        "id": "illu_t1",
+        "chapitre": 4,
+        "titre": "Mosquée de Djingareyber",
+        "fichier": "data/images/livres/illu_t_mosquee.jpg",
+        "legende": "Mosquée historique de Tombouctou, patrimoine mondial en péril"
+      },
+      {
+        "id": "illu_t2",
+        "chapitre": 8,
+        "titre": "Femme touarègue",
+        "fichier": "data/images/livres/illu_t_femme.jpg",
+        "legende": "Femme touarègue dans sa parure traditionnelle"
+      },
+      {
+        "id": "illu_t3",
+        "chapitre": 7,
+        "titre": "Musiciens touaregs",
+        "fichier": "data/images/livres/illu_t_musique.jpg",
+        "legende": "Musiciens jouant de la guitare traditionnelle (tindé)"
+      }
+    ],
     "chapitres": [
       {
         "numero": 1,
@@ -189,8 +271,7 @@
           "Au fil des siècles, les Touaregs ont fait face à de nombreux défis, dont l'un des plus significatifs est leur lutte pour l'autonomie et la reconnaissance de leur identité distincte. Ils ont revendiqué leur droit à l'autodétermination, à une participation politique équitable et à la préservation de leur patrimoine culturel. Ces aspirations ont été souvent confrontées à l'indifférence des gouvernements centraux et à des politiques d'assimilation, créant ainsi des tensions persistantes.",
           "L'époque touarègue au Mali a été marquée par une série de conflits armés et de rébellions. Les revendications des Touaregs pour l'autonomie et la justice ont conduit à des affrontements violents avec les forces armées maliennes. Ces tourments ont eu des conséquences dévastatrices, avec des pertes humaines, des déplacements forcés et la destruction de nombreuses communautés touarègues.",
           "Malgré les difficultés, des voix courageuses se sont élevées pour promouvoir la paix, la réconciliation et le dialogue. Des initiatives de médiation ont été lancées pour résoudre les conflits et favoriser la compréhension mutuelle entre les différentes parties prenantes. Des efforts de développement économique, d'accès à l'éducation et d'amélioration des conditions de vie ont également été entrepris pour offrir aux Touaregs des perspectives d'avenir plus sereines."
-        ],
-        "notes": []
+        ]
       },
       {
         "numero": 3,
@@ -201,9 +282,8 @@
           "Les témoignages décrivent les horreurs de la violence qui a éclaté pendant l'époque touarègue. Des récits bouleversants émergent, racontant les attaques sanglantes, les bombardements et les pillages qui ont dévasté les villages et les villes. Les victimes racontent leur traumatisme, leur peur constante et la perte déchirante de leurs proches.",
           "Les témoignages révèlent également les douloureux récits des déplacements forcés. Des familles entières ont été contraintes de fuir leurs maisons, abandonnant leurs biens et leur terre ancestrale pour échapper à la violence. Ces témoignages mettent en lumière les défis auxquels sont confrontées les personnes déplacées, allant de la recherche de sécurité à la lutte pour reconstruire une vie normale.",
           "Malgré les souffrances, les témoignages reflètent également la résilience remarquable des individus et des communautés touchés par la guerre. Des histoires inspirantes émergent, décrivant comment des personnes ont trouvé la force de reconstruire leur vie, de soutenir leurs proches et de préserver leur culture et leur identité face à l'adversité.",
-          "Ces témoignages appellent également à la justice et à la réconciliation. Ils mettent en évidence la nécessité de rendre compte des violations des droits humains et de garantir que les responsables de la violence soient tenus pour responsables de leurs actes. Ils soulignent également l'importance de la réconciliation et du dialogue intercommunautaire pour surmonter les divisions et reconstruire une société pacifique et inclusive."
-        ],
-        "notes": []
+          "Ces témoignages appellent également à la justice et à la réconciliation. Ils mettent en évidence la nécessité de rendre compte des violations des droits humains et de garantir que les responsables de la violence soient tenus pour responsables de leurs actes. Ils soulignent l'importance de la réconciliation et du dialogue intercommunautaire pour surmonter les divisions et reconstruire une société pacifique et inclusive."
+        ]
       },
       {
         "numero": 4,
@@ -215,8 +295,7 @@
           "Durant les périodes de conflit, les sites historiques sont souvent la cible de pillages organisés et de trafic d'antiquités. Des trésors culturels uniques sont volés et vendus sur le marché noir, alimentant ainsi un commerce illicite qui prive les communautés locales de leurs ressources culturelles et historiques. Les conséquences de ces activités illégales sont désastreuses, car elles entraînent la disparition irréversible d'objets précieux et affaiblissent l'identité culturelle des Touaregs.",
           "La destruction des sites historiques touaregs a un impact profond sur l'identité culturelle des Touaregs et sur leur capacité à transmettre leur histoire et leurs traditions aux générations futures. Ces sites étaient des symboles de fierté et de lien avec le passé, et leur disparition laisse un vide douloureux dans la conscience collective des Touaregs.",
           "Face à la destruction des sites historiques touaregs, des voix s'élèvent pour appeler à leur protection et à leur préservation. Des efforts sont déployés pour documenter et sauvegarder les sites restants, ainsi que pour sensibiliser à leur valeur culturelle et historique. La coopération internationale et les initiatives locales sont essentielles pour lutter contre le pillage et le trafic d'antiquités, ainsi que pour restaurer et préserver les sites endommagés."
-        ],
-        "notes": []
+        ]
       },
       {
         "numero": 5,
@@ -228,8 +307,7 @@
           "Au fil de l'histoire, les Touaregs maliens ont exprimé leur mécontentement par le biais de révoltes et de mouvements de résistance. Ce chapitre examine les soulèvements armés et les mouvements politiques qui ont marqué l'histoire des Touaregs maliens, tels que le Mouvement national de libération de l'Azawad (MNLA) et le Haut Conseil pour l'unité de l'Azawad (HCUA). Il met en lumière les raisons qui ont conduit à ces mouvements et explore leurs objectifs et leurs revendications.",
           "La réalisation de l'autonomie pour les Touaregs maliens est confrontée à de nombreux défis. Ce chapitre examine les obstacles politiques, économiques et sociaux qui ont entravé la mise en œuvre de solutions durables. Il aborde également les difficultés liées à la coordination entre les différentes parties prenantes et les efforts déployés pour surmonter les divisions et parvenir à un consensus.",
           "Malgré les défis persistants, ce chapitre explore les perspectives d'un avenir plus inclusif pour les Touaregs maliens. Il met en lumière les initiatives de dialogue et de négociation, ainsi que les efforts déployés pour renforcer la participation politique et l'inclusion des Touaregs dans les processus de prise de décision. Il souligne l'importance de reconnaître les aspirations légitimes des Touaregs maliens et de travailler ensemble à la construction d'une société plus équitable et harmonieuse."
-        ],
-        "notes": []
+        ]
       },
       {
         "numero": 6,
@@ -241,8 +319,7 @@
           "Malheureusement, la période de paix fragile a été suivie par une escalade des violences. Ce chapitre examine les facteurs qui ont contribué à cette escalade, tels que les revendications non satisfaites, les rivalités politiques et les tensions ethniques. Il explore les attaques, les affrontements armés et les représailles qui ont plongé la région dans un cycle de violences destructrices.",
           "Au cœur de cette époque tourmentée se trouvent les communautés touchées par les violences. Ce chapitre donne la parole aux membres de ces communautés, qui partagent leurs expériences et les conséquences dévastatrices qu'ils ont subies. Il examine les traumatismes, les déplacements forcés, les pertes en vies humaines et les bouleversements socio-économiques qui ont marqué la vie quotidienne des personnes touchées.",
           "Malgré les difficultés, ce chapitre explore également les efforts déployés pour reconstruire la paix et la stabilité dans la région. Il met en évidence les initiatives de réconciliation, les projets de développement et les processus de justice transitionnelle qui visent à répondre aux blessures du passé et à prévenir la récurrence des violences. Il souligne l'importance d'une approche holistique et inclusive pour construire une paix durable."
-        ],
-        "notes": []
+        ]
       },
       {
         "numero": 7,
@@ -254,8 +331,7 @@
           "Les aspirations contemporaines et les influences extérieures ont également un impact sur l'identité touarègue. L'avènement des nouvelles technologies de communication, l'accès à l'éducation et les échanges culturels avec d'autres communautés peuvent engendrer des changements et des adaptations. Ce chapitre examine comment les Touaregs maliens naviguent entre la préservation de leurs traditions et l'adoption d'éléments de la culture contemporaine, tout en cherchant un équilibre qui leur permette de se sentir enracinés dans leur identité tout en s'adaptant aux changements du monde moderne.",
           "Les périodes de conflit et de violence ont un impact profond sur la construction de l'identité. Ce chapitre explore comment les Touaregs maliens ont fait face aux défis de maintenir leur identité culturelle au milieu des violences et des déplacements forcés. Il examine les stratégies de résilience et de préservation de l'identité adoptées par les communautés touarègues pendant les périodes difficiles, ainsi que les transformations qui peuvent survenir à travers ces expériences.",
           "Les Touaregs maliens sont engagés dans une quête d'équilibre entre la préservation de leur héritage culturel et les aspirations contemporaines. Ce chapitre met en évidence les défis auxquels ils sont confrontés dans cette recherche d'identité, tels que la transmission intergénérationnelle des traditions, la préservation des langues et la valorisation des savoir-faire traditionnels, tout en étant ouverts aux opportunités et aux changements du monde moderne."
-        ],
-        "notes": []
+        ]
       },
       {
         "numero": 8,
@@ -267,8 +343,7 @@
           "Malgré les défis auxquels elles sont confrontées, les femmes touarègues jouent un rôle vital dans la résilience et le développement de leur communauté. Elles sont actives dans des domaines tels que l'éducation, la santé, l'agriculture, l'élevage et le commerce. Ce chapitre explore comment les femmes touarègues s'organisent en groupes de soutien, en coopératives et en associations pour renforcer leur impact et promouvoir le bien-être de leur communauté.",
           "Les femmes touarègues sont confrontées à des inégalités de genre persistantes, tant sur le plan social que sur le plan juridique. Cependant, elles font preuve d'une audace remarquable dans la défense de leurs droits et la promotion de l'égalité. Ce chapitre examine les actions entreprises par les femmes touarègues pour obtenir une participation politique accrue, accéder à l'éducation, lutter contre les violences basées sur le genre et promouvoir une représentation équilibrée au sein de leur communauté.",
           "Le chapitre met en lumière l'émergence de nouvelles voix et de nouvelles perspectives chez les femmes touarègues. Il explore les défis auxquels elles sont confrontées dans leur quête d'autonomie et d'autodétermination, ainsi que leur contribution croissante dans les domaines de l'art, de la littérature, de la musique et de l'entrepreneuriat. Les femmes touarègues repoussent les limites traditionnelles pour façonner leur propre destinée et inspirer les générations futures."
-        ],
-        "notes": []
+        ]
       },
       {
         "numero": 9,
@@ -280,8 +355,7 @@
           "Cependant, l'accès et le contrôle des ressources naturelles sont souvent marqués par des enjeux géopolitiques et des conflits d'intérêts. Ce chapitre examine les défis auxquels les Touaregs sont confrontés pour sécuriser leurs droits d'accès et de contrôle sur ces ressources, en tenant compte des dynamiques politiques, des accords internationaux et des intérêts des acteurs régionaux et mondiaux.",
           "L'exploitation des ressources naturelles représente à la fois une opportunité économique et un défi pour le peuple touareg. Ce chapitre explore les différentes approches et stratégies adoptées par les Touaregs pour une exploitation responsable et durable de ces ressources, en veillant à préserver l'environnement et à maximiser les bénéfices socio-économiques pour la communauté.",
           "Face aux défis économiques, les Touaregs cherchent à développer des initiatives d'autonomie économique et à diversifier leurs sources de revenus. Ce chapitre examine les projets et les programmes mis en place pour promouvoir l'entrepreneuriat, le développement agricole, l'élevage, le tourisme culturel et d'autres secteurs économiques, afin de réduire la dépendance vis-à-vis des ressources naturelles et de créer des opportunités économiques durables."
-        ],
-        "notes": []
+        ]
       },
       {
         "numero": 10,
@@ -293,8 +367,7 @@
           "L'avenir des Touaregs au Mali est étroitement lié au développement socio-économique et à une gouvernance inclusive. Ce chapitre explore les défis auxquels sont confrontées les communautés touarègues en termes d'accès aux services de base, de développement des infrastructures, d'éducation, d'emploi et de participation politique. Il examine également les initiatives de développement local et les programmes visant à renforcer les capacités des communautés touarègues et à promouvoir leur autonomie économique.",
           "Un aspect crucial pour l'avenir des Touaregs est la reconnaissance de leur identité culturelle, linguistique et historique. Ce chapitre explore les revendications des Touaregs en matière de droits culturels, de préservation de leur langue, de leur patrimoine et de leur mode de vie nomade. Il examine les initiatives visant à promouvoir l'inclusion et la participation des Touaregs dans les sphères politiques, culturelles et économiques du pays.",
           "Malgré les espoirs, des défis et des craintes persistent quant à l'avenir du peuple touareg au Mali. Parmi ces défis figurent la résurgence de violences, les rivalités politiques, les tensions ethniques, l'insécurité persistante et la marginalisation socio-économique. Ce chapitre aborde ces préoccupations et examine les efforts nécessaires pour les surmonter et construire un avenir plus stable et inclusif pour tous les habitants de la région."
-        ],
-        "notes": []
+        ]
       }
     ],
     "conclusion": {
@@ -310,19 +383,57 @@
   {
     "id": 3,
     "titre": "التحرر السياسي للإدكساهق",
+    "titre_arabe": "التحرر السياسي للإدكساهق",
     "auteur": "شارل غريمون",
+    "auteur_arabe": "شارل غريمون",
     "sous_titre": "قبيلة قيد التكوين في شمال مالي",
+    "sous_titre_arabe": "قبيلة قيد التكوين في شمال مالي",
     "annee": "2023",
     "pages": 48,
     "type": "histoire",
     "langue": "Arabe",
     "categorie": "الأنثروبولوجيا السياسية",
+    "categorie_arabe": "الأنثروبولوجيا السياسية",
     "description": "تحليل متعمق للتاريخ السياسي للإدكساهق، سعيهم نحو الحكم الذاتي وظهورهم على الساحة السياسية في منطقة الساحل.",
+    "description_arabe": "تحليل متعمق للتاريخ السياسي للإدكساهق، سعيهم نحو الحكم الذاتي وظهورهم على الساحة السياسية في منطقة الساحل.",
+    "couverture": "data/images/livres/couverture_idaksahak_ar.jpg",
+    "couverture_arabe": "data/images/livres/couverture_idaksahak_ar.jpg",
+    "illustrations": [
+      {
+        "id": "illu_zone",
+        "chapitre": 1,
+        "titre": "منطقة الإدكساهق",
+        "titre_arabe": "منطقة الإدكساهق",
+        "fichier": "data/images/livres/zone des idaksahak.jpeg",
+        "legende": "خريطة وأراضي الإدكساهق في شمال شرق مالي.",
+        "legende_arabe": "خريطة وأراضي الإدكساهق في شمال شرق مالي."
+      },
+      {
+        "id": "illu_logo",
+        "chapitre": 3,
+        "titre": "شعار مجتمع الإدكساهق",
+        "titre_arabe": "شعار مجتمع الإدكساهق",
+        "fichier": "data/images/livres/idaksahak_square.png",
+        "legende": "الشعار الرسمي مع الرجل القارئ والسيف والجمال.",
+        "legende_arabe": "الشعار الرسمي مع الرجل القارئ والسيف والجمال."
+      },
+      {
+        "id": "illu_combattant",
+        "chapitre": 7,
+        "titre": "مقاتل شاب أدكساهق (1994)",
+        "titre_arabe": "مقاتل شاب أدكساهق (1994)",
+        "fichier": "data/images/livres/Un jeune combattant Adaksahak, au nord de Ménaka, mars 1994. Photo C.G.jpeg",
+        "legende": "يمثل تمرد التسعينيات أول تسليح حربي لجزء كبير من الإدكساهق. الصورة التقطت شمال مناكا في مارس 1994.",
+        "legende_arabe": "يمثل تمرد التسعينيات أول تسليح حربي لجزء كبير من الإدكساهق. الصورة التقطت شمال مناكا في مارس 1994."
+      }
+    ],
     "chapitres": [
       {
         "numero": 1,
         "titre": "التحرر السياسي في بداية القبيلة؟",
+        "titre_arabe": "التحرر السياسي في بداية القبيلة؟",
         "sous_titre": "تأمل في مفهوم القبيلة من خلال مطالب الإدكساهق (شمال مالي)",
+        "sous_titre_arabe": "تأمل في مفهوم القبيلة من خلال مطالب الإدكساهق (شمال مالي)",
         "contenu": [
           "يقترح هذا النص استكشاف العلاقة بين التحرر السياسي لمجموعة اجتماعية، وهم رعاة رحّل من شمال شرق مالي يعرفون باسم إدكساهق، والاعتراف بهذه المجموعة كقبيلة. إذا تم قبول، كما يقترح يزيد بن حونيت، وجود نظام سياسي مستقل كأحد المعايير الأساسية للقبيلة، فإن السؤال يطرح: هل يمكن لمجموعة تابعة تخضع لسلطة مجموعة أخرى أن تُعترف بها كقبيلة؟",
           "بعيدًا عن المراجع الأنسابية، ومسألة الاسم، ومفاهيم التحالف والتضامن، التي تناولها الأدب الأنثروبولوجي على نطاق واسع، فإن مسألة الاستقلال السياسي هي التي ستُطرح هنا لإعادة النظر في مفهوم القبيلة، في سياق معاصر وفي الجزء الجنوبي من الصحراء الكبرى، شمال شرق مالي.",
@@ -337,6 +448,7 @@
       {
         "numero": 2,
         "titre": "الإدكساهق كما يرون أنفسهم",
+        "titre_arabe": "الإدكساهق كما يرون أنفسهم",
         "contenu": [
           "كيف يعرّف الإدكساهق أنفسهم؟ ما هي المصطلحات التي يستخدمونها، بلغتهم الخاصة (التاداكساهق)، لوصف ما هم عليه؟ هل يستخدمون أيضًا مصطلحات من تماشق أو العربية أو الفرنسية؟ أتيحت لي الفرصة لسؤالهم مباشرة. الوثائق التي ينتجونها بأنفسهم تقدم أيضًا إجابات.",
           "'نحن تاوست². هذه هي فئتنا، هذا ما نقوله. بالفرنسية، يمكننا أن نقول 'شعب داوصاهق' كما نقول 'شعب كل تماشق'. نحن نستخدم أيضًا كلمة مجتمع. 'مجتمع الإدكساهق'، هذا ما نستخدمه في بياناتنا.'³",
@@ -351,6 +463,7 @@
       {
         "numero": 3,
         "titre": "ماذا يقول الإدكساهق عن أنفسهم اليوم؟",
+        "titre_arabe": "ماذا يقول الإدكساهق عن أنفسهم اليوم؟",
         "contenu": [
           "'إدكساهق، مجتمع غني اقتصاديًا ومتعلم دينيًا. إدكساهق، مجتمع طوارق يتحدث التاداكساهق المختلف عن التماشق.'⁸",
           "هذا هو الشعار الذي يظهر بالأحرف الكبيرة على الصفحة الرئيسية لموقع إدكساهق على الإنترنت. الشعار الذي يزين جميع أقسام الموقع، وكذلك صفحة فيسبوك ووسائل الاتصال الأخرى، هو أيضًا مفيد جدًا: في المقدمة، رجل جالس يقرأ، بالتأكيد الدراسة القرآنية، سيف أبيض يبرز على شكله المظلم. في الخلفية، جملان بالغان وصغيرهما يكملان المشهد. من الكلمات إلى الرسم، الصورة التي اختارها الإدكساهق لنشرها للعالم تجمع كل الصفات للعيش بشكل جيد وكسب الاحترام في الصحراء والساحل: الثروة الاقتصادية، من خلال ممارسة تربية الإبل؛ التعليم الديني واستخدام الأسلحة.",
@@ -361,10 +474,103 @@
           "'نحن المجتمع الوحيد، الذي أعرفه في الشمال، الذي يتابع اقتصاده ودينه في نفس الوقت! نحن ندرس ونعمل في نفس الوقت! بينما عند الآخرين، أولئك الذين يدرسون لا يعملون! وأولئك الذين يعملون لا يدرسون!'¹²"
         ],
         "notes": ["8. http://www.idaksahak.com/", "9. من الواضح أن هذه الخاصية يصعب تمثيلها برسم.", "10. صفحة فيسبوك – مجتمع الإدكساهق", "11. جزء منهم يسكن أيضًا الجانب الشرقي من منطقة غاو", "12. مقابلة مع ثلاثة من الإدكساهق، باماكو، 27/10/2020"]
+      },
+      {
+        "numero": 4,
+        "titre": "صورة مجموعة تابعة وسلمية",
+        "titre_arabe": "صورة مجموعة تابعة وسلمية",
+        "contenu": [
+          "وجود سلاح على الشعار الذي يفترض أن يحدد المعالم الرئيسية لهوية الإدكساهق، يتناقض مع البعد السلمي الذي طالما أبرزوه لتعريف أنفسهم تجاه الآخرين. لا يزال بعض أفراد المجموعة يصرون اليوم على هذه الخصوصية. على سبيل المثال، كيف أجاب رجل في الستينيات من عمره، من فئة كل أباكوت، على سؤال 'ما الذي يميز الإدكساهق؟':",
+          "'بالنسبة لي، ما يميزنا، طوال الوقت، هو أننا شعب سلام، يهتم فقط بالدين وتربية الماشية. لا نتدخل في أشياء أخرى. وهذا ما يجعل الناس لا يتحدثون عنا كثيرًا. كنا لا نشارك في حروب، ولا في غارات، ولا في اللصوصية. كنا لا نشارك في أي من ذلك.'¹⁵",
+          "أحمد محمد أغ غيدي يؤكد أيضًا، في وثيقة كتبها، على الطابع غير العنيف للإدكساهق، حتى في سياق من الأخطار شبه الدائمة:",
+          "'الإدكساهق، شعب مسالم، لم يردوا على العدوان، حتى لو كان مقصودًا جدًا، إلا في حالة الإهانة المتعمدة أو الاستفزاز الواضح. هذا المجتمع كان دائمًا يختار اللاعنف بهدف حماية قاعدته الاقتصادية من خطر دائم للتدمير في سياق ثقافي من الغارات والغارات المضادة.'¹⁶",
+          "البعد الجوهري يلوح بوضوح في هذه الخطابات، كما هو الحال دائمًا إلى حد ما عندما يحاول المرء تعريف هوية مجموعته. يتم محو الخصوصيات والنتوءات والتناقضات لصالح روايات موحدة. لكن تقديم الذات هو دائمًا غني بالدروس. 'شعب سلام يهتم بدينه...'، لكن مجموعة لم تستفد أبدًا من وضع قبيلة 'مرابطية' (زوايا)، كما هو الحال مثلاً مع طوارق كل السوق أو العرب الكونطة¹⁷. الإدكساهق، مع أنهم متعلمون جدًا في الإسلام – وهذا هو السبب الرئيسي الذي يذكرونه في رفضهم لمدرسة البيض ومدرسة الدولة المالية – لم يحصلوا أبدًا على هذا الاعتراف. فيما يخصهم، فإن الطابع السلمي يرتبط أكثر بوضعية تابعة."
+        ],
+        "notes": ["15. مقابلة مع أربعة من الإدكساهق، باماكو، 27/10/2020", "16. أغ غيدي 2019، ص. 9", "17. انظر غريمون 2010"]
+      },
+      {
+        "numero": 5,
+        "titre": "\"لقد استبدلنا ماعزنا بكلاشينكوفات!\"",
+        "titre_arabe": "\"لقد استبدلنا ماعزنا بكلاشينكوفات!\"",
+        "contenu": [
+          "بالنسبة لمعظم جيرانهم، لا يزال الإدكساهق مجموعة تابعة، لا تزال تحت نير، أو على الأقل تأثير، أولئك الذين كانوا القادة السياسيين والحربيين في حوض النيجر حتى أداغ إيفوغاس، لأكثر من قرنين، وهم الإوليمدان¹⁸.",
+          "لم يكن الإدكساهق وحدهم من اعترفوا، طوعًا أو كرهًا، بسلطة الإوليمدان السياسية. لكن فيما يخصهم، وعلى عكس مجموعات أخرى، كانت هذه التبعية أكثر وضوحًا لأن الإدكساهق لا يبدو أنهم حملوا أسلحة حربية حقيقية، مثل السيوف والرماح والدروع¹⁹. مما جعلهم فعليًا تحت حماية وتبعية مجموعات حربية أخرى، وهم إماجيغن إوليمدان، وبشكل أكثر تحديدًا سلالة حاملة طبول القيادة (إتيبل)، كل تالاتايت.",
+          "السيف الذي يظهر اليوم رمزيًا على شعارهم يشير إلى تاريخ حديث جدًا. أقدم المصادر المتاحة التي تذكر الإدكساهق تؤكد على الطابع السلمي لهذه المجموعة الاجتماعية. وهذا هو حال المارابوط كونطة الشيخ باي الذي كتب، في أواخر القرن التاسع عشر، ملاحظات عن القبائل الطوارقية القديمة:",
+          "'داو صاحق هم شعب من الطوارق. من المؤكد أنهم في الأصل كانوا سودان، لأن لغتهم (كلام) تتكون من كلمات السودان²⁰ والطوارق. ومن بينهم قبيلة ترجع أصولها إلى الشرق. كلهم أهل سلام ودراسة. معظمهم يعيشون مع إيلميدان [الإوليمدان]. من الواضح أنهم قبائل السوق. بينهم وبين دباكير هناك علاقات.'²¹"
+        ],
+        "notes": ["18. بالمعنى الدقيق، الإوليمدان هم إماجيغن", "19. لنقل أن وضع المحارب لم يكن معترفًا به من قبل أي من جيرانهم", "20. كلام تستخدم للتمييز بين 'اللهجات المحلية' و 'اللغات الحقيقية' (لغة)", "21. الشيخ باي، مخطوطات محفوظة في مكتبة معهد فرنسا"]
+      },
+      {
+        "numero": 6,
+        "titre": "أسلحة للدفاع عن النفس",
+        "titre_arabe": "أسلحة للدفاع عن النفس",
+        "contenu": [
+          "بعد ذلك، على حد علمي، لا تذكر الأرشيفات الاستعمارية أي عمل عسكري من جانب الإدكساهق. إنها دائمًا صورة مجموعة سلمية وغنية بالماشية التي ترد في تقارير الضباط الفرنسيين. فقط بعد استقلال مالي، في 1963-1964، برز الإدكساهق في حلقة حربية. يتعلق الأمر بتمرد قادته حفنة من الرجال في أداغ إيفوغاس، شارك فيه إدكساهقان من منطقة تالاتايت، إلياس ويونس، ابنا أيوبا، زعيم فرقة إيهاناتن³². قريبان من زعيم إيفوغاس في ذلك الوقت³³، زيد أغ أتاهير، ساهم هذان الشابان الإدكساهق بنشاط في هذا التمرد، خاصة من خلال دعم مالي مكّن من شراء أسلحة في الجزائر³⁴.",
+          "تم القبض على إلياس وزيد في الجزائر، في كولومب بشار، في نوفمبر 1963. تم تسليمهما للسلطات المالية التي عرّضتهما لمواقف مهينة أمام سكان أداغ. على سبيل المثال! تم القبض معهم، ونجح يونس في الفرار واستقر في الجزائر. تم القبض على أيوبا، الأب، واغتياله، مثل غيره من الزعماء الذين لم يقبلوا التعاون مع الجيش المالي.",
+          "مشاركة هذين الفردين فقط لا تكفي بالتأكيد لتحديد هذا التاريخ وهذا الحدث كحمل سلاح من قبل الإدكساهق. لكن هوية هؤلاء الشباب مهمة رمزيًا. إن انخراطهم إلى جانب كل أداغ المتمردين، والقمع الذي تعرضوا له، مع والدهم، يمثل الفعل الأول للعلاقة المتوترة بين الإدكساهق والسلطة المركزية المالية."
+        ],
+        "notes": ["32. أيوبا: زعيم مشهور، مدعوم من السلطات الاستعمارية", "33. إيفوغاس هي القبيلة المهيمنة في أداغ (كيدال)", "34. انظر بواييه 1999، ص. 321–324؛ ليكوك 2010، ص. 192، 214، 224"]
+      },
+      {
+        "numero": 7,
+        "titre": "تمرد التسعينيات وحدوده",
+        "titre_arabe": "تمرد التسعينيات وحدوده",
+        "contenu": [
+          "وعي أول، بلا شك، بأن موقف المربي المسالم، الملتزم بالدراسة القرآنية، لم يكن أفقًا لا يمكن تجاوزه. مع مرور الوقت، نعرف الآن علاقة التمردات المسلحة ببعضها البعض، التي تندلع وتندلع بانتظام منذ 1963 في شمال مالي³⁵. هذا واضح بشكل خاص بين حلقة 1963 وحلقة 1990. إن مرارة أيتام 1963، ضد السلطة المركزية المالية، هي إحدى المصفوفات الموثقة جيدًا اليوم لتمرد التسعينيات.",
+          "في كتابه، يقدم باز ليكوك يونس أغ أيوبا كأحد قادته الرئيسيين، على الأقل في مرحلة التحضير³⁶.",
+          "يمثل انخراط عدة مئات من الإدكساهق، حاملين السلاح، في تمرد 1990 خطوة أولى في عملية تحرر هذه المجموعة. وأيضًا وأساسًا لأن هذه الأسلحة لم تستهدف الجيش المالي فقط."
+        ],
+        "notes": ["35. تمردات: 1963–1964، 1990، 2006، 2012", "36. ليكوك 2010، ص. 192"]
+      },
+      {
+        "numero": 8,
+        "titre": "مواجهة 1994",
+        "titre_arabe": "مواجهة 1994",
+        "contenu": [
+          "في الواقع، حدث غير معروف، لكنه رمزي للغاية، يجب تذكره هنا. مثل العديد من المجتمعات، في وادي نهر النيجر أو في المناطق الرعوية، تعرض الإدكساهق للسرقات والنهب في النصف الأول من التسعينيات. في سياق عدم تطبيق اتفاقيات السلام، وانتشار الأسلحة وانعدام العدالة، تضاعفت أعمال اللصوصية وكانت ماشية الإدكساهق هدفًا للعديد من الأطماع، وخاصة من قبل جيرانهم المقربين، بما في ذلك إماجيغن.",
+          "بمعنى آخر، أشخاص ينتمون إلى الطبقة المهيمنة والحربية السابقة داخل مجموعة الإوليمدان – الذين كان دورهم التاريخي الدفاع عن المجموعات التابعة والمسالمة، مقابل مقابل بالطبع (الخضوع السياسي ومساهمات في الماشية) – قاموا عدة مرات بأخذ حيوانات تعود للإدكساهق. مرة واحدة استهدفوا حتى مخيمًا ونهبوا الممتلكات المنزلية لعائلة³⁹، على بعد عشرة كيلومترات من القاعدة المسلحة للإدكساهق (إيزيليلي، على بعد حوالي أربعين كيلومترًا شمال شرق مناكا).",
+          "هذا الفعل، المذموم للغاية من وجهة نظر القيم المجتمعية، أدى في نفس اليوم إلى مطاردة مسلحة من قبل مقاتلي الإدكساهق الموجودين في إيزيليلي. وقعت سلسلة من الاشتباكات المسلحة بين مقاتلي إماجيغن والإدكساهق في الأسابيع التالية، مما أسفر عن عدة جرحى وربما بعض القتلى⁴⁰. تم التوصل إلى وقف إطلاق النار واتفاق بسرعة بين الطرفين.",
+          "يمثل هذا التسلسل بوضوح انتقال الإدكساهق إلى بعد اجتماعي وسياسي آخر، بعد قبيلة قادرة على معارضة رد عسكري بنفسها عندما تكون ممتلكاتها مهددة ومنهوبة. انتقال أكثر أهمية لأنه تم في مواجهة مباشرة مع أسيادهم السابقين.",
+          "'حلقة 1994 هذه تاريخية! إنها المرة الأولى التي نزيل فيها رأسنا من تحت قدم إماجيغن. قبل ذلك، كانت ممتلكاتنا ممتلكاتهم. لم يكن الأدكساهق شيئًا في أعين إماجيغن.'⁴¹"
+        ],
+        "notes": ["39. مقابلة مع مقاتل سابق إدكساهق، باماكو، 23/02/2022", "40. لم يتم الإعلان عن أي قتلى من جانب الإدكساهق", "41. مقابلة مع مقاتل سابق إدكساهق، باماكو، 23/02/2022"]
+      },
+      {
+        "numero": 9,
+        "titre": "رؤية سياسية مكتسبة بالأسلحة",
+        "titre_arabe": "رؤية سياسية مكتسبة بالأسلحة",
+        "contenu": [
+          "كما أعلن في المقدمة، ابتداءً من عام 2010، عبر الإدكساهق عن قوتهم الحربية ومطالبهم السياسية، على المستوى الإقليمي والوطني والدولي، سواء على الأرض العسكرية أو على الأثير الإعلامي ووسائل التواصل الاجتماعي. لم يعد الهدف هنا تتبع أشكال انخراط الإدكساهق في الحرب التي اندلعت في شمال مالي عام 2012، ولكن محاولة اختتام هذا التأمل حول مفهوم القبيلة، من خلال دمج تسلسل تاريخي معاصر تمامًا، لأنه لا يزال جاريًا في وقت كتابة هذه السطور (أكتوبر 2023)."
+        ]
+      },
+      {
+        "numero": 10,
+        "titre": "تأكيد عسكري ضد إماجيغن",
+        "titre_arabe": "تأكيد عسكري ضد إماجيغن",
+        "contenu": [
+          "تفتح التسعينيات بالتأكيد عصرًا جديدًا في تاريخ الإدكساهق، مع انخراط ربما أكثر من 2000 مقاتل في تمرد ضد السلطة المركزية المالية، والأكثر من ذلك، الدفاع عن ممتلكاتهم بأسلحتهم الخاصة، لكن المكسب السياسي لهذا التحول لا يزال ضعيفًا نسبيًا. كما يشير الشاب الأدكساهق الذي تمت مقابلته في 2020، فإن المناصب المسؤولة، 'المنتخبون، الوزراء، كبار الضباط' ظلت مخصصة للآخرين. الرغبة في تغيير هذا الوضع حفزت العديد من الخريجين الشباب من المجتمع منذ استئناف الأعمال العدائية ضد الدولة المركزية المالية في 2012."
+        ]
+      },
+      {
+        "numero": 11,
+        "titre": "حركة إنقاذ أزواد",
+        "titre_arabe": "حركة إنقاذ أزواد",
+        "contenu": [
+          "لكن عام 2016 هو الذي يميز علنًا هذا الموقف مع إنشاء حركة إنقاذ أزواد (MSA)، على يد أحد هؤلاء الشباب، موسى أغ أشاراتومان. وهو أحد مؤسسي الحركة الوطنية لأزواد (MNA)، وهي منظمة من الشباب الخريجين من الشمال تحاول، ابتداءً من 2010، استجواب الدولة وقادة الشمال بشأن قضية أزواد، واستقلاليتها وحوكمتها. مع اختيار الكفاح المسلح في يناير 2012، أصبحت MNA الحركة الوطنية لتحرير أزواد (MNLA)."
+        ]
+      },
+      {
+        "numero": 12,
+        "titre": "شباب إدكساهق في الجهاد",
+        "titre_arabe": "شباب إدكساهق في الجهاد",
+        "contenu": [
+          "تكشف الأزمة والصراعات المسلحة التي اندلعت منذ 2012 أيضًا عن أوضاع أكثر تعقيدًا من مجرد معارضة بين حركات انفصالية والسلطة المركزية للدولة المالية. هناك ميليشيات وجماعات مسلحة موالية أيضًا من بين أطراف النزاع، وكذلك بالطبع العديد من الحركات الجهادية. وقد تبين أن جزءًا من شباب الإدكساهق، أقلية لكنه موجود، انخرط مبكرًا في العرض الجهادي، من خلال حركة التوحيد والجهاد في غرب إفريقيا (MUJAO)، والقاعدة في بلاد المغرب الإسلامي (AQMI) وكذلك الدولة الإسلامية في الصحراء الكبرى (EIGS)."
+        ]
       }
     ],
     "conclusion": {
       "titre": "نظام سياسي مستقل؟",
+      "titre_arabe": "نظام سياسي مستقل؟",
       "contenu": [
         "هذه الملاحظة الأخيرة، لتسلسل تاريخي لا يزال مستمرًا، تعيد طرح مسألة روابط التضامن التي من المفترض أن تحدد، مع عناصر أخرى، بنية وأداء القبيلة. فكرة أن أفراد القبيلة، من خلال روابط الدم والقرابة، ومن خلال تسجيلهم في تاريخ مشترك، سيتعبأون كرجل واحد في حالة النزاع، يجب أن تكون موزونة بشكل كبير.",
         "الأعمال المتعلقة بالتاريخ المعاصر جدًا، أو 'الحاضر'، تسمح بالتأكيد أيضًا بإعادة النظر في الحقائق التي يتم التصريح بها أحيانًا بسرعة كبيرة حول الطبيعة الوحدوية والتضامنية والمتماسكة للقبيلة. وجود أو عدم وجود نظام سياسي مستقل، مع قوى التناقض الداخلي الخاصة به، يبدو لي سؤالًا أكثر إنتاجية إذا أردنا إعادة النظر في مفهوم القبيلة، هنا في الجزء الجنوبي من الصحراء الكبرى في بداية القرن الحادي والعشرين. التجربة المعاصرة للإدكساهق تفتح بلا شك آفاقًا جديدة لاستكشافها."
