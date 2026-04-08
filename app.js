@@ -1,6 +1,6 @@
 // ==============================
 // APPLICATION TADAKSAHAK LEARNING
-// VERSION FINALE - AVEC BANNIÈRE ANIMÉE
+// VERSION FINALE - AVEC BANNIÈRE ANIMÉE ET COUVERTURES DES LIVRES
 // ==============================
 
 console.log("🚀 Démarrage de l'application...");
@@ -46,7 +46,6 @@ const compteurMot = document.getElementById("compteurMot");
 // BANNIÈRE ANIMÉE
 // ------------------------------
 function ajouterBanniereAnimée() {
-  // Vérifier si la bannière existe déjà
   if (document.getElementById("banniereAnimée")) return;
   
   const banniere = document.createElement("div");
@@ -64,7 +63,6 @@ function ajouterBanniereAnimée() {
     <button class="banniere-fermer" id="fermerBanniere" aria-label="Fermer">✕</button>
   `;
   
-  // Insérer la bannière au début du main
   const main = document.querySelector("main");
   if (main) {
     main.insertBefore(banniere, main.firstChild);
@@ -72,7 +70,6 @@ function ajouterBanniereAnimée() {
     document.body.insertBefore(banniere, document.body.firstChild);
   }
   
-  // Gestionnaire de fermeture
   const fermerBtn = document.getElementById("fermerBanniere");
   if (fermerBtn) {
     fermerBtn.addEventListener("click", () => {
@@ -82,7 +79,6 @@ function ajouterBanniereAnimée() {
     });
   }
   
-  // Ne pas réafficher si déjà fermée
   if (localStorage.getItem("bannierefermee") === "true") {
     banniere.style.display = "none";
   }
@@ -129,13 +125,11 @@ function reponsePolieInsulte() {
   return reponses[Math.floor(Math.random() * reponses.length)];
 }
 
-// Détection de la langue arabe dans la question (CORRIGÉ - déplacé avant initialiserApplication)
 function contientArabe(texte) {
   const arabeRegex = /[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF]/;
   return arabeRegex.test(texte);
 }
 
-// Notification toast
 function showToast(message, type = "info") {
     const toast = document.getElementById("toast");
     if (!toast) return;
@@ -147,7 +141,6 @@ function showToast(message, type = "info") {
     }, 3000);
 }
 
-// Gestion loader
 function hideLoader() {
     const loader = document.getElementById("loadingOverlay");
     if (loader) loader.hidden = true;
@@ -593,7 +586,7 @@ function construireIndexAlphabet() {
 }
 
 // ------------------------------
-// LIVRES (DYNAMIQUE)
+// LIVRES (DYNAMIQUE) - AVEC COUVERTURES
 // ------------------------------
 async function afficherLivres() {
     const cont = document.getElementById("livresContainer");
@@ -614,6 +607,7 @@ async function afficherLivres() {
         
         cont.innerHTML = livres.map(livre => `
             <div class="livre-card">
+                ${livre.couverture ? `<div class="livre-cover"><img src="${escapeHtml(livre.couverture)}" alt="Couverture de ${escapeHtml(livre.titre)}" style="width:100%; height:auto; border-radius:8px; margin-bottom:0.8rem;"></div>` : ''}
                 <div class="livre-titre">📖 ${escapeHtml(livre.titre)}</div>
                 <div class="livre-auteur">✍️ ${escapeHtml(livre.auteur)}</div>
                 <div class="livre-desc">${escapeHtml(livre.description || '')}</div>
@@ -651,7 +645,6 @@ function reponseBot(txt) {
         return reponsePolieInsulte();
     }
     
-    // CORRECTION: Détection de la langue arabe (maintenant la fonction existe)
     if (contientArabe(txt)) {
         return "📖 يمكنك قراءة الكتاب الثالث باللغة العربية: 'التحرر السياسي للإدكساهق' لشارل غريمون. اسألني سؤالاً محدداً عن محتواه!";
     }
@@ -763,7 +756,6 @@ function initChatSuggestions() {
     });
 }
 
-// Message d'accueil automatique du bot
 function afficherMessageAccueilBot() {
     setTimeout(() => {
         const messageAccueil = "👋 Salam aleikum ! Je suis Hamadine, gardien de la langue Tadaksahak et des savoirs Idaksahak.\n\n📘 Tape « aide » pour voir ce que je peux faire.\n\n🔍 Exemples :\n• « Que disent les Idaksahak d'eux-mêmes ? »\n• « Quelles sont les causes des tourments touaregs ? »\n• « Que veut dire Báy ? »\n• « Livres »\n\n📚 N'hésitez pas à consulter les deux livres dans la section Livres !";
@@ -797,7 +789,6 @@ function initNavigation() {
         if (id === "livres") afficherLivres();
         if (id === "audio") genererAlbumsAudio();
         
-        // Réafficher la bannière si elle a été fermée et qu'on change de section
         const banniere = document.getElementById("banniereAnimée");
         if (banniere && localStorage.getItem("bannierefermee") === "true") {
             // Ne pas réafficher si déjà fermée manuellement
@@ -851,21 +842,19 @@ async function initialiserApplication() {
     console.log("🚀 Initialisation...");
     
     initNavigation();
-    ajouterBanniereAnimée();  // Ajoute la bannière animée dans toutes les sections
+    ajouterBanniereAnimée();
     await chargerLivresConnaissance();
     await chargerDictionnaire();
     chargerHistorique();
     genererAlbumsAudio();
     initChatSuggestions();
-    afficherMessageAccueilBot();  // Message d'accueil automatique du bot
+    afficherMessageAccueilBot();
     
     console.log("✅ Application prête !");
 }
 
-// Démarrer (CORRIGÉ - la fonction contientArabe est maintenant définie avant)
 initialiserApplication();
 
-// Exporter fonctions globales
 window.afficherMot = afficherMot;
 window.jouerTadaksahak = () => {
     if (audioElem && motActuel?.audio) {
