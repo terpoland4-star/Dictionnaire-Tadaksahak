@@ -15,16 +15,16 @@
     "categorie_arabe": "الأنثروبولوجيا السياسية",
     "description": "Une analyse approfondie de l'histoire politique des Idaksahak, leur quête d'autonomie et leur émergence sur la scène politique sahélienne.",
     "description_arabe": "تحليل متعمق للتاريخ السياسي للإدكساهق، سعيهم نحو الحكم الذاتي وظهورهم على الساحة السياسية في منطقة الساحل.",
-    "credit_traduction": "Traduction du français vers l'arabe par Hamadine AG MOCTAR, CEO de HAM Global Words."
-    "couverture": "data/images/livres/couverture_idaksahak.jpg.jpg",
-    "couverture_arabe": "data/images/livres/couverture_idaksahak_ar.jpg",
+    "credit_traduction": "Traduction du français vers l'arabe par Hamadine AG MOCTAR, CEO de HAM Global Words.",
+    "couverture": "data/images/couverture_idaksahak.jpg",
+    "couverture_arabe": "data/images/couverture_idaksahak_ar.jpg",
     "illustrations": [
       {
         "id": "illu_zone",
         "chapitre": 1,
         "titre": "Zone des Idaksahak",
         "titre_arabe": "منطقة الإدكساهق",
-        "fichier": "data/images/livres/zone des idaksahak.jpeg",
+        "fichier": "data/images/zone_des_idaksahak.jpeg",
         "legende": "Carte et territoire des Idaksahak dans le nord-est du Mali.",
         "legende_arabe": "خريطة وأراضي الإدكساهق في شمال شرق مالي."
       },
@@ -33,7 +33,7 @@
         "chapitre": 3,
         "titre": "Logo de la communauté Idaksahak",
         "titre_arabe": "شعار مجتمع الإدكساهق",
-        "fichier": "data/images/livres/idaksahak_square.png",
+        "fichier": "data/images/idaksahak_square.png",
         "legende": "Logo officiel avec l'homme lisant, l'épée et les dromadaires.",
         "legende_arabe": "الشعار الرسمي مع الرجل القارئ والسيف والجمال."
       },
@@ -42,7 +42,7 @@
         "chapitre": 7,
         "titre": "Jeune combattant Adaksahak (1994)",
         "titre_arabe": "مقاتل شاب أدكساهق (1994)",
-        "fichier": "data/images/livres/Un jeune combattant Adaksahak, au nord de Ménaka, mars 1994. Photo  C.G..jpeg",
+        "fichier": "data/images/jeune_combattant_adaksahak_1994.jpeg",
         "legende": "La rébellion des années 1990 marque la première prise d'armes de guerre par une partie significative des Idaksahak. Photo prise au nord de Ménaka en mars 1994.",
         "legende_arabe": "يمثل تمرد التسعينيات أول تسليح حربي لجزء كبير من الإدكساهق. الصورة التقطت شمال مناكا في مارس 1994."
       }
@@ -223,27 +223,27 @@
     "langue": "Français",
     "categorie": "Sciences politiques",
     "description": "Une analyse approfondie des défis politiques, économiques et culturels auxquels les Touaregs maliens font face dans une époque tourmentée. Des causes profondes des conflits aux espoirs de réconciliation, en passant par le rôle des femmes et la destruction du patrimoine.",
-    "couverture": "data/images/livres/couverture_touareg.jpg",
+    "couverture": "data/images/couverture_touareg.jpg",
     "illustrations": [
       {
         "id": "illu_t1",
         "chapitre": 4,
         "titre": "Mosquée de Djingareyber",
-        "fichier": "data/images/livres/illu_t_mosquee.jpg",
+        "fichier": "data/images/illu_t_mosquee.jpg",
         "legende": "Mosquée historique de Tombouctou, patrimoine mondial en péril"
       },
       {
         "id": "illu_t2",
         "chapitre": 8,
         "titre": "Femme touarègue",
-        "fichier": "data/images/livres/illu_t_femme.jpg",
+        "fichier": "data/images/illu_t_femme.jpg",
         "legende": "Femme touarègue dans sa parure traditionnelle"
       },
       {
         "id": "illu_t3",
         "chapitre": 7,
         "titre": "Musiciens touaregs",
-        "fichier": "data/images/livres/illu_t_musique.jpg",
+        "fichier": "data/images/illu_t_musique.jpg",
         "legende": "Musiciens jouant de la guitare traditionnelle (tindé)"
       }
     ],
@@ -396,16 +396,16 @@
     "categorie": "الأنثروبولوجيا السياسية",
     "categorie_arabe": "الأنثروبولوجيا السياسية",
     "description": "تحليل متعمق للتاريخ السياسي للإدكساهق، سعيهم نحو الحكم الذاتي وظهورهم على الساحة السياسية في منطقة الساحل.",
-    "description_arabe": "تحليل متعمق للتاريخ السياسي للإدكساهق، سعيهم نحو الحكم الذاتي وظهورهم على الساحة السياسية في منطقة الساحل. (تمت ترجمة هذا الكتاب من الفرنسية إلى العربية بواسطة حمدين أغ مكتار، الرئيس التنفيذي لشركة HAM Global Words.)"
-    "couverture": "data/images/livres/couverture_idaksahak.jpg.jpg",
-    "couverture_arabe": "data/images/livres/couverture_idaksahak.jpg.jpg",
+    "description_arabe": "تحليل متعمق للتاريخ السياسي للإدكساهق، سعيهم نحو الحكم الذاتي وظهورهم على الساحة السياسية في منطقة الساحل. (تمت ترجمة هذا الكتاب من الفرنسية إلى العربية بواسطة حمدين أغ مكتار، الرئيس التنفيذي لشركة HAM Global Words.)",
+    "couverture": "data/images/couverture_idaksahak_ar.jpg",
+    "couverture_arabe": "data/images/couverture_idaksahak_ar.jpg",
     "illustrations": [
       {
         "id": "illu_zone",
         "chapitre": 1,
         "titre": "منطقة الإدكساهق",
         "titre_arabe": "منطقة الإدكساهق",
-        "fichier": "data/images/livres/zone des idaksahak.jpeg",
+        "fichier": "data/images/zone_des_idaksahak.jpeg",
         "legende": "خريطة وأراضي الإدكساهق في شمال شرق مالي.",
         "legende_arabe": "خريطة وأراضي الإدكساهق في شمال شرق مالي."
       },
@@ -414,7 +414,7 @@
         "chapitre": 3,
         "titre": "شعار مجتمع الإدكساهق",
         "titre_arabe": "شعار مجتمع الإدكساهق",
-        "fichier": "data/images/livres/idaksahak_square.png",
+        "fichier": "data/images/idaksahak_square.png",
         "legende": "الشعار الرسمي مع الرجل القارئ والسيف والجمال.",
         "legende_arabe": "الشعار الرسمي مع الرجل القارئ والسيف والجمال."
       },
@@ -423,7 +423,7 @@
         "chapitre": 7,
         "titre": "مقاتل شاب أدكساهق (1994)",
         "titre_arabe": "مقاتل شاب أدكساهق (1994)",
-        "fichier": "data/images/livres/Un jeune combattant Adaksahak, au nord de Ménaka, mars 1994. Photo  C.G..jpeg",
+        "fichier": "data/images/jeune_combattant_adaksahak_1994.jpeg",
         "legende": "يمثل تمرد التسعينيات أول تسليح حربي لجزء كبير من الإدكساهق. الصورة التقطت شمال مناكا في مارس 1994.",
         "legende_arabe": "يمثل تمرد التسعينيات أول تسليح حربي لجزء كبير من الإدكساهق. الصورة التقطت شمال مناكا في مارس 1994."
       }
