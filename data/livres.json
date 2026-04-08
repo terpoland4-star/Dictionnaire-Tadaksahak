@@ -229,7 +229,7 @@
     "description": "Une analyse approfondie des défis politiques, économiques et culturels auxquels les Touaregs maliens font face dans une époque tourmentée. Des causes profondes des conflits aux espoirs de réconciliation, en passant par le rôle des femmes et la destruction du patrimoine.",
     "description_arabe": "تحليل متعمق للتحديات السياسية والاقتصادية والثقافية التي يواجهها طوارق مالي في عصر مضطرب. من الأسباب العميقة للصراعات إلى آمال المصالحة، مروراً بدور المرأة وتدمير التراث.",
     "credit_traduction_arabe": "تمت ترجمة هذا الكتاب من الفرنسية إلى العربية بواسطة حمدين أغ مكتار، الرئيس التنفيذي لشركة HAM Global Words.",
-    "couverture": "data/images/couverture_touareg.jpg",
+    "couverture": "data/images/livres/couverture_touareg.png",
     "illustrations": [
       {
         "id": "illu_t1",
