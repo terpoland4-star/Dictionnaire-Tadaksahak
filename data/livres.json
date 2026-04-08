@@ -396,8 +396,8 @@
     "categorie_arabe": "الأنثروبولوجيا السياسية",
     "description": "تحليل متعمق للتاريخ السياسي للإدكساهق، سعيهم نحو الحكم الذاتي وظهورهم على الساحة السياسية في منطقة الساحل.",
     "description_arabe": "تحليل متعمق للتاريخ السياسي للإدكساهق، سعيهم نحو الحكم الذاتي وظهورهم على الساحة السياسية في منطقة الساحل.",
-    "couverture": "data/images/livres/couverture_idaksahak_ar.jpg",
-    "couverture_arabe": "data/images/livres/couverture_idaksahak_ar.jpg",
+    "couverture": "data/images/livres/couverture_idaksahak.jpg.jpg",
+    "couverture_arabe": "data/images/livres/couverture_idaksahak.jpg.jpg",
     "illustrations": [
       {
         "id": "illu_zone",
@@ -422,7 +422,7 @@
         "chapitre": 7,
         "titre": "مقاتل شاب أدكساهق (1994)",
         "titre_arabe": "مقاتل شاب أدكساهق (1994)",
-        "fichier": "data/images/livres/Un jeune combattant Adaksahak, au nord de Ménaka, mars 1994. Photo C.G.jpeg",
+        "fichier": "data/images/livres/Un jeune combattant Adaksahak, au nord de Ménaka, mars 1994. Photo  C.G..jpeg",
         "legende": "يمثل تمرد التسعينيات أول تسليح حربي لجزء كبير من الإدكساهق. الصورة التقطت شمال مناكا في مارس 1994.",
         "legende_arabe": "يمثل تمرد التسعينيات أول تسليح حربي لجزء كبير من الإدكساهق. الصورة التقطت شمال مناكا في مارس 1994."
       }
