@@ -2,7 +2,7 @@
    🎨 Tadaksahak Learning – Style global
    Thème : Oxford Dark Mode (Version améliorée)
    Auteur : Hamadine AG Moctar
-   Version : 2.0
+   Version : 2.1 (Correction affichage livres)
    =========================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
@@ -837,6 +837,7 @@ audio {
 
 /* =========================
    LIVRES – DESIGN PRO (UNIFIÉ)
+   AVEC CORRECTIONS POUR TITRES NON TRONQUÉS ET COUVERTURES
 ========================= */
 .filters {
   display: flex;
@@ -888,13 +889,16 @@ audio {
   text-decoration: underline;
 }
 
+/* Conteneur de la grille des livres */
 #livresContainer {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.2rem;
   margin-top: 1rem;
+  align-items: start;   /* Évite l'étirement vertical des cartes */
 }
 
+/* Carte individuelle */
 .livre-card {
   background: linear-gradient(180deg, var(--bg-light), var(--bg-card));
   border: 1px solid var(--border);
@@ -902,6 +906,11 @@ audio {
   padding: 1.2rem;
   box-shadow: var(--shadow-md);
   transition: all var(--transition);
+  height: auto;          /* Supprime toute hauteur fixe */
+  min-height: 0;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
 }
 
 .livre-card:hover {
@@ -910,11 +919,19 @@ audio {
   border-color: var(--accent);
 }
 
+/* Titre : pas de troncature */
 .livre-titre {
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--accent);
   margin-bottom: 0.4rem;
+  white-space: normal !important;   /* Force le retour à la ligne */
+  word-break: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.3;
+  max-height: none;
+  overflow: visible;
+  text-overflow: clip;
 }
 
 .livre-auteur {
@@ -957,6 +974,17 @@ audio {
 .btn-small:hover {
   background: var(--hover);
   transform: translateY(-1px);
+}
+
+/* Image de couverture dans la carte */
+.livre-cover img {
+  width: 100%;
+  height: auto;
+  max-height: 220px;
+  object-fit: contain;   /* Préserve l'intégralité de l'image (pas de rognage) */
+  border-radius: var(--radius-md);
+  margin-bottom: 0.8rem;
+  background-color: var(--bg-card);
 }
 
 /* =========================
@@ -1143,7 +1171,6 @@ mark {
 /* ============================================
    STYLE CARTE LIVRE PREMIUM
    ============================================ */
-
 .featured-book-premium {
   margin-bottom: 2rem;
 }
@@ -1268,6 +1295,7 @@ mark {
     justify-content: center;
   }
 }
+
 /* ============================================
    FORCER LA DISPARITION DU LOADER
    ============================================ */
@@ -1392,12 +1420,4 @@ main:not(.hidden) {
   .banniere-sous-texte {
     font-size: 0.75rem;
   }
-}
-
-.livre-card .livre-cover img {
-  width: 100%;
-  height: auto;
-  border-radius: var(--radius-md);
-  object-fit: cover;
-  max-height: 220px;
 }
