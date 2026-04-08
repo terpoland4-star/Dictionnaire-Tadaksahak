@@ -16,15 +16,15 @@
     "description": "Une analyse approfondie de l'histoire politique des Idaksahak, leur quête d'autonomie et leur émergence sur la scène politique sahélienne.",
     "description_arabe": "تحليل متعمق للتاريخ السياسي للإدكساهق، سعيهم نحو الحكم الذاتي وظهورهم على الساحة السياسية في منطقة الساحل.",
     "credit_traduction": "Traduction du français vers l'arabe par Hamadine AG MOCTAR, CEO de HAM Global Words.",
-    "couverture": "data/images/livres/couverture_idaksahak.jpg.jpg",
-    "couverture_arabe": "data/images/couverture_idaksahak_ar.jpg",
+    "couverture": "data/images/livres/couverture_idaksahak.jpg",
+    "couverture_arabe": "data/images/livres/couverture_idaksahak_ar.jpg",
     "illustrations": [
       {
         "id": "illu_zone",
         "chapitre": 1,
         "titre": "Zone des Idaksahak",
         "titre_arabe": "منطقة الإدكساهق",
-        "fichier": "data/images/zone des idaksahak.jpeg",
+        "fichier": "data/images/livres/zone des idaksahak.jpeg",
         "legende": "Carte et territoire des Idaksahak dans le nord-est du Mali.",
         "legende_arabe": "خريطة وأراضي الإدكساهق في شمال شرق مالي."
       },
@@ -33,7 +33,7 @@
         "chapitre": 3,
         "titre": "Logo de la communauté Idaksahak",
         "titre_arabe": "شعار مجتمع الإدكساهق",
-        "fichier": "data/images/idaksahak_square.png",
+        "fichier": "data/images/livres/idaksahak_square.png",
         "legende": "Logo officiel avec l'homme lisant, l'épée et les dromadaires.",
         "legende_arabe": "الشعار الرسمي مع الرجل القارئ والسيف والجمال."
       },
@@ -42,9 +42,36 @@
         "chapitre": 7,
         "titre": "Jeune combattant Adaksahak (1994)",
         "titre_arabe": "مقاتل شاب أدكساهق (1994)",
-        "fichier": "data/images/livres/Un jeune combattant Adaksahak, au nord de Ménaka, mars 1994. Photo  C.G..jpeg",
+        "fichier": "data/images/livres/Un jeune combattant Adaksahak, au nord de Ménaka, mars 1994. Photo C.G.jpeg",
         "legende": "La rébellion des années 1990 marque la première prise d'armes de guerre par une partie significative des Idaksahak. Photo prise au nord de Ménaka en mars 1994.",
         "legende_arabe": "يمثل تمرد التسعينيات أول تسليح حربي لجزء كبير من الإدكساهق. الصورة التقطت شمال مناكا في مارس 1994."
+      },
+      {
+        "id": "illu_chef_idoguiritane_1",
+        "chapitre": 2,
+        "titre": "Chef historique de la fraction Idoguiritane (1)",
+        "titre_arabe": "الشيخ التاريخي لفصيلة إيدوغيريتان (١)",
+        "fichier": "data/images/livres/chef_idoguiritane_1.jpg",
+        "legende": "Portrait du chef de la fraction Idoguiritane des Idaksahak, photo prise par Charles Grémont à Tin Abaw (région de Ménaka).",
+        "legende_arabe": "صورة لشيخ فصيلة إيدوغيريتان من الإدكساهق، التقطها شارل غريمون في تين أبا (منطقة مناكا)."
+      },
+      {
+        "id": "illu_chef_idoguiritane_2",
+        "chapitre": 2,
+        "titre": "Chef historique de la fraction Idoguiritane (2)",
+        "titre_arabe": "الشيخ التاريخي لفصيلة إيدوغيريتان (٢)",
+        "fichier": "data/images/livres/chef_idoguiritane_2.jpg",
+        "legende": "Le chef Idoguiritane lors d'une réunion traditionnelle à Tin Abaw. Photo Charles Grémont.",
+        "legende_arabe": "الشيخ إيدوغيريتان خلال اجتماع تقليدي في تين أبا. تصوير شارل غريمون."
+      },
+      {
+        "id": "illu_chef_idoguiritane_3",
+        "chapitre": 2,
+        "titre": "Chef historique de la fraction Idoguiritane (3)",
+        "titre_arabe": "الشيخ التاريخي لفصيلة إيدوغيريتان (٣)",
+        "fichier": "data/images/livres/chef_idoguiritane_3.jpg",
+        "legende": "Le chef Idoguiritane entouré de notables, Tin Abaw. Archives Charles Grémont.",
+        "legende_arabe": "الشيخ إيدوغيريتان وحوله الأعيان، تين أبا. أرشيف شارل غريمون."
       }
     ],
     "chapitres": [
@@ -236,7 +263,7 @@
         "chapitre": 4,
         "titre": "Mosquée de Djingareyber",
         "titre_arabe": "مسجد دجينغاريبير",
-        "fichier": "data/images/illu_t_mosquee.jpg",
+        "fichier": "data/images/livres/illu_t_mosquee.jpg",
         "legende": "Mosquée historique de Tombouctou, patrimoine mondial en péril",
         "legende_arabe": "مسجد تمبكتو التاريخي، تراث عالمي في خطر"
       },
@@ -245,7 +272,7 @@
         "chapitre": 8,
         "titre": "Femme touarègue",
         "titre_arabe": "امرأة طوارقية",
-        "fichier": "data/images/illu_t_femme.jpg",
+        "fichier": "data/images/livres/illu_t_femme.jpg",
         "legende": "Femme touarègue dans sa parure traditionnelle",
         "legende_arabe": "امرأة طوارقية في زينتها التقليدية"
       },
@@ -254,9 +281,36 @@
         "chapitre": 7,
         "titre": "Musiciens touaregs",
         "titre_arabe": "موسيقيون طوارق",
-        "fichier": "data/images/illu_t_musique.jpg",
+        "fichier": "data/images/livres/illu_t_musique.jpg",
         "legende": "Musiciens jouant de la guitare traditionnelle (tindé)",
         "legende_arabe": "موسيقيون يعزفون على القيتارة التقليدية (تندي)"
+      },
+      {
+        "id": "illu_chef_idoguiritane_1",
+        "chapitre": 2,
+        "titre": "Chef historique de la fraction Idoguiritane (1)",
+        "titre_arabe": "الشيخ التاريخي لفصيلة إيدوغيريتان (١)",
+        "fichier": "data/images/livres/chef_idoguiritane_1.jpg",
+        "legende": "Portrait du chef de la fraction Idoguiritane des Idaksahak, photo prise par Charles Grémont à Tin Abaw (région de Ménaka).",
+        "legende_arabe": "صورة لشيخ فصيلة إيدوغيريتان من الإدكساهق، التقطها شارل غريمون في تين أبا (منطقة مناكا)."
+      },
+      {
+        "id": "illu_chef_idoguiritane_2",
+        "chapitre": 2,
+        "titre": "Chef historique de la fraction Idoguiritane (2)",
+        "titre_arabe": "الشيخ التاريخي لفصيلة إيدوغيريتان (٢)",
+        "fichier": "data/images/livres/chef_idoguiritane_2.jpg",
+        "legende": "Le chef Idoguiritane lors d'une réunion traditionnelle à Tin Abaw. Photo Charles Grémont.",
+        "legende_arabe": "الشيخ إيدوغيريتان خلال اجتماع تقليدي في تين أبا. تصوير شارل غريمون."
+      },
+      {
+        "id": "illu_chef_idoguiritane_3",
+        "chapitre": 2,
+        "titre": "Chef historique de la fraction Idoguiritane (3)",
+        "titre_arabe": "الشيخ التاريخي لفصيلة إيدوغيريتان (٣)",
+        "fichier": "data/images/livres/chef_idoguiritane_3.jpg",
+        "legende": "Le chef Idoguiritane entouré de notables, Tin Abaw. Archives Charles Grémont.",
+        "legende_arabe": "الشيخ إيدوغيريتان وحوله الأعيان، تين أبا. أرشيف شارل غريمون."
       }
     ],
     "chapitres": [
@@ -507,15 +561,15 @@
     "categorie_arabe": "الأنثروبولوجيا السياسية",
     "description": "تحليل متعمق للتاريخ السياسي للإدكساهق، سعيهم نحو الحكم الذاتي وظهورهم على الساحة السياسية في منطقة الساحل.",
     "description_arabe": "تحليل متعمق للتاريخ السياسي للإدكساهق، سعيهم نحو الحكم الذاتي وظهورهم على الساحة السياسية في منطقة الساحل. (تمت ترجمة هذا الكتاب من الفرنسية إلى العربية بواسطة حمدين أغ مكتار، الرئيس التنفيذي لشركة HAM Global Words.)",
-    "couverture": "data/images/livres/couverture_idaksahak.jpg.jpg",
-    "couverture_arabe": "data/images/couverture_idaksahak_ar.jpg",
+    "couverture": "data/images/livres/couverture_idaksahak_ar.jpg",
+    "couverture_arabe": "data/images/livres/couverture_idaksahak_ar.jpg",
     "illustrations": [
       {
         "id": "illu_zone",
         "chapitre": 1,
         "titre": "منطقة الإدكساهق",
         "titre_arabe": "منطقة الإدكساهق",
-        "fichier": "data/images/zone des idaksahak.jpeg",
+        "fichier": "data/images/livres/zone des idaksahak.jpeg",
         "legende": "خريطة وأراضي الإدكساهق في شمال شرق مالي.",
         "legende_arabe": "خريطة وأراضي الإدكساهق في شمال شرق مالي."
       },
@@ -524,7 +578,7 @@
         "chapitre": 3,
         "titre": "شعار مجتمع الإدكساهق",
         "titre_arabe": "شعار مجتمع الإدكساهق",
-        "fichier": "data/images/idaksahak_square.png",
+        "fichier": "data/images/livres/idaksahak_square.png",
         "legende": "الشعار الرسمي مع الرجل القارئ والسيف والجمال.",
         "legende_arabe": "الشعار الرسمي مع الرجل القارئ والسيف والجمال."
       },
@@ -533,9 +587,36 @@
         "chapitre": 7,
         "titre": "مقاتل شاب أدكساهق (1994)",
         "titre_arabe": "مقاتل شاب أدكساهق (1994)",
-        "fichier": "data/images/Un jeune combattant Adaksahak, au nord de Ménaka, mars 1994. Photo C.G.jpeg",
+        "fichier": "data/images/livres/Un jeune combattant Adaksahak, au nord de Ménaka, mars 1994. Photo C.G.jpeg",
         "legende": "يمثل تمرد التسعينيات أول تسليح حربي لجزء كبير من الإدكساهق. الصورة التقطت شمال مناكا في مارس 1994.",
         "legende_arabe": "يمثل تمرد التسعينيات أول تسليح حربي لجزء كبير من الإدكساهق. الصورة التقطت شمال مناكا في مارس 1994."
+      },
+      {
+        "id": "illu_chef_idoguiritane_1",
+        "chapitre": 2,
+        "titre": "الشيخ التاريخي لفصيلة إيدوغيريتان (١)",
+        "titre_arabe": "الشيخ التاريخي لفصيلة إيدوغيريتان (١)",
+        "fichier": "data/images/livres/chef_idoguiritane_1.jpg",
+        "legende": "صورة لشيخ فصيلة إيدوغيريتان من الإدكساهق، التقطها شارل غريمون في تين أبا (منطقة مناكا).",
+        "legende_arabe": "صورة لشيخ فصيلة إيدوغيريتان من الإدكساهق، التقطها شارل غريمون في تين أبا (منطقة مناكا)."
+      },
+      {
+        "id": "illu_chef_idoguiritane_2",
+        "chapitre": 2,
+        "titre": "الشيخ التاريخي لفصيلة إيدوغيريتان (٢)",
+        "titre_arabe": "الشيخ التاريخي لفصيلة إيدوغيريتان (٢)",
+        "fichier": "data/images/livres/chef_idoguiritane_2.jpg",
+        "legende": "الشيخ إيدوغيريتان خلال اجتماع تقليدي في تين أبا. تصوير شارل غريمون.",
+        "legende_arabe": "الشيخ إيدوغيريتان خلال اجتماع تقليدي في تين أبا. تصوير شارل غريمون."
+      },
+      {
+        "id": "illu_chef_idoguiritane_3",
+        "chapitre": 2,
+        "titre": "الشيخ التاريخي لفصيلة إيدوغيريتان (٣)",
+        "titre_arabe": "الشيخ التاريخي لفصيلة إيدوغيريتان (٣)",
+        "fichier": "data/images/livres/chef_idoguiritane_3.jpg",
+        "legende": "الشيخ إيدوغيريتان وحوله الأعيان، تين أبا. أرشيف شارل غريمون.",
+        "legende_arabe": "الشيخ إيدوغيريتان وحوله الأعيان، تين أبا. أرشيف شارل غريمون."
       }
     ],
     "chapitres": [
