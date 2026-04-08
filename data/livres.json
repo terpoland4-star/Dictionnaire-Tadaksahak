@@ -16,8 +16,8 @@
     "description": "Une analyse approfondie de l'histoire politique des Idaksahak, leur quête d'autonomie et leur émergence sur la scène politique sahélienne.",
     "description_arabe": "تحليل متعمق للتاريخ السياسي للإدكساهق، سعيهم نحو الحكم الذاتي وظهورهم على الساحة السياسية في منطقة الساحل.",
     "credit_traduction": "Traduction du français vers l'arabe par Hamadine AG MOCTAR, CEO de HAM Global Words.",
-    "couverture": "data/images/livres/couverture_idaksahak.jpg",
-    "couverture_arabe": "data/images/livres/couverture_idaksahak_ar.jpg",
+    "couverture": "data/images/livres/couverture_idaksahak.jpg.jpg",
+    "couverture_arabe": "data/images/livres/couverture_idaksahak.jpg.jpg",
     "illustrations": [
       {
         "id": "illu_zone",
@@ -561,8 +561,8 @@
     "categorie_arabe": "الأنثروبولوجيا السياسية",
     "description": "تحليل متعمق للتاريخ السياسي للإدكساهق، سعيهم نحو الحكم الذاتي وظهورهم على الساحة السياسية في منطقة الساحل.",
     "description_arabe": "تحليل متعمق للتاريخ السياسي للإدكساهق، سعيهم نحو الحكم الذاتي وظهورهم على الساحة السياسية في منطقة الساحل. (تمت ترجمة هذا الكتاب من الفرنسية إلى العربية بواسطة حمدين أغ مكتار، الرئيس التنفيذي لشركة HAM Global Words.)",
-    "couverture": "data/images/livres/couverture_idaksahak_ar.jpg",
-    "couverture_arabe": "data/images/livres/couverture_idaksahak_ar.jpg",
+    "couverture": "data/images/livres/couverture_idaksahak.jpg.jpg",
+    "couverture_arabe": "data/images/livres/couverture_idaksahak.jpg.jpg",
     "illustrations": [
       {
         "id": "illu_zone",
