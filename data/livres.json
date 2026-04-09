@@ -1112,7 +1112,7 @@
   "langue": "Français",
   "categorie": "Histoire / Journalisme",
   "description": "Portrait de Mohamed Maïga, journaliste malien, figure du panafricanisme et proche de Thomas Sankara. Son parcours, ses combats et sa mort mystérieuse.",
-  "couverture": "data/images/livres/couverture_mohamed_maiga.jpg",
+  "couverture": "data/images/livres/Couverture de livre _ héritage et journalisme.png",
   "illustrations": [],
   "chapitres": [
     {
@@ -1183,7 +1183,7 @@
   "categorie": "تاريخ / صحافة",
   "description": "صورة لمحمد مايغا، صحفي مالي، شخصية بارزة في الوحدة الأفريقية ومقرب من توماس سانكارا. مسيرته ونضالاته ووفاته الغامضة.",
   "credit_traduction": "تمت ترجمة هذا الكتاب من الفرنسية إلى العربية بواسطة حمدين أغ مكتار، الرئيس التنفيذي لشركة HAM Global Words.",
-  "couverture": "data/images/livres/couverture_mohamed_maiga_ar.jpg",
+  "couverture": "data/images/livres/Couverture de livre _ héritage et journalisme.png",
   "illustrations": [],
   "chapitres": [
     {
