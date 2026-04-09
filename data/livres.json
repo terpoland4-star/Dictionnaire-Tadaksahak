@@ -1100,5 +1100,147 @@
     ],
     "conclusion": null,
     "bibliographie": []
-  }
-]
+  },
+{
+  "id": 7,
+  "titre": "Mohamed Maïga : Journaliste engagé, ami de Thomas Sankara",
+  "auteur": "Collectif",
+  "sous_titre": "Biographie d’un pionnier du journalisme africain",
+  "annee": "2024",
+  "pages": 8,
+  "type": "biographie",
+  "langue": "Français",
+  "categorie": "Histoire / Journalisme",
+  "description": "Portrait de Mohamed Maïga, journaliste malien, figure du panafricanisme et proche de Thomas Sankara. Son parcours, ses combats et sa mort mystérieuse.",
+  "couverture": "data/images/livres/couverture_mohamed_maiga.jpg",
+  "illustrations": [],
+  "chapitres": [
+    {
+      "numero": 1,
+      "titre": "Jeunesse et formation",
+      "contenu": [
+        "Mohamed Maïga est né le 20 août 1950 à Ansongo, une petite ville située à une centaine de kilomètres de Gao, au Soudan Français (aujourd'hui République du Mali). Il a grandi dans une famille nombreuse, entre l'ethnie Peule nomade de sa mère, Adizatou Diallo, et le milieu sédentaire Songhaï de son père, Boncaneye Hambou Maïga.",
+        "Malgré les réticences de sa classe sociale, son père a plaidé pour l'éducation scolaire et a envoyé tous ses enfants, y compris les filles, à l'école française. Après avoir obtenu son baccalauréat en 1969, Mohamed a bénéficié d'une bourse pour étudier au Centre Universitaire d’Enseignement du Journalisme (CUEJ) de Strasbourg, en France.",
+        "Il a ensuite poursuivi ses études en journalisme au Centre d'Études des Sciences et Techniques de l'Information (CESTI) à Dakar puis au Canada, au Centre Audiovisuel de l’Université de Montréal. Il a terminé ses études en 1977 à l’Institut Français de Presse (IFP) à l’Université Panthéon-Assas.",
+        "Sa scolarité au Mali est marquée par la promotion de l'Histoire et de la Culture africaines, à la suite de la décolonisation. Ses études en Afrique, en Europe et en Amérique du Nord lui permettent de développer une conscience politique aiguisée. Les théories du Marxisme africain et du Panafricanisme, développées par Kwame Nkrumah (Ghana) et Amilcar Cabral (Guinée Bissau & Cap Vert), lui apparaissent comme des solutions potentielles pour mettre fin à la corruption et au néocolonialisme."
+      ]
+    },
+    {
+      "numero": 2,
+      "titre": "Carrière journalistique",
+      "contenu": [
+        "En 1977, Mohamed Maïga est embauché par le magazine hebdomadaire Jeune Afrique, référence en politique africaine. Il rejoint la rédaction du fondateur, Bechir Ben Yahmed, aux côtés de collègues tels que Amin Maalouf et François Soudan. Sa plume engagée l'impose en tant que journaliste politique, attirant l'attention des populations et de la jeunesse politisées dans les pays africains francophones.",
+        "Au début des années 80, Mohamed Maïga écrit pour le magazine Afrique Asie. Dirigé par Simon Malley, le bimensuel est considéré comme le plus à gauche des médias internationaux panafricains. Maïga y trouve un espace de liberté plus grand où mener ses enquêtes et exprimer ses convictions de journaliste engagé, polyvalent, aussi à l’aise dans les espaces francophones qu’anglophones."
+      ]
+    },
+    {
+      "numero": 3,
+      "titre": "Rencontre avec Thomas Sankara et engagement politique",
+      "contenu": [
+        "En Haute Volta (futur Burkina Faso), le jeune capitaine Thomas Sankara devient incontournable : critique du néocolonialisme, combat contre la corruption et vision positive pour l'avenir de son pays sont articulés avec brio par ce militaire humaniste et instruit. Maïga voit en lui une promesse de changement et consacre de grands entretiens exclusifs à Thomas Sankara, lui donnant ainsi l'occasion de s'exprimer directement, sans l'intermédiaire de la presse occidentale qui le caricaturait alors.",
+        "Maïga œuvre ainsi pour la légitimisation de Sankara auprès de la gauche burkinabè. Ses articles et entretiens à Afrique-Asie contribueront à faire connaître Sankara à l'étranger. Les deux hommes sont liés par une forte amitié et un profond respect mutuel. Ils participent à la première révolution burkinabè."
+      ]
+    },
+    {
+      "numero": 4,
+      "titre": "Circonstances du décès",
+      "contenu": [
+        "En décembre 1983, Maïga rend visite à Jerry Rawlings, dirigeant ghanéen, puis à Thomas Sankara, à Ouagadougou. C’est dans cette ville que son destin tragique se scelle, le 1er janvier 1984 dans des circonstances troubles jamais élucidées. L'autopsie conclut à un empoisonnement. Les responsabilités et les motifs restent inconnus à ce jour."
+      ]
+    },
+    {
+      "numero": 5,
+      "titre": "Héritage et hommages",
+      "contenu": [
+        "Mohamed Maïga reçoit des obsèques nationales. Les funérailles sont retransmises à la télévision nationale burkinabè et un convoi militaire accompagne la dépouille en vue de son rapatriement au Mali. Une importante délégation, avec à sa tête, le ministre de l'Information, accompagne le corps sur sa terre natale, à Ansongo.",
+        "Sankara le décore à titre posthume Commandeur de l'Ordre National du Mérite. La Maison de la Presse à Ouagadougou est baptisée en son honneur. Et la chanson « Hommage à Mohamed Maïga » commandée par Thomas Sankara témoigne de l’apport du journaliste à la libération africaine.",
+        "L’Association Mohamed Maïga est lancée le 1er janvier 2024, quarante ans jour pour jour après le décès du journaliste. Elle célèbre l’héritage intellectuel et le courage politique de Mohamed Maïga à travers des projets positifs qui perpétuent ses combats sur le continent africain."
+      ]
+    }
+  ],
+  "conclusion": {
+    "titre": "Un héritage vivant",
+    "contenu": [
+      "Mohamed Maïga incarne le journalisme d’investigation et l’engagement panafricain. Sa mort mystérieuse n’a pas effacé sa mémoire : ses écrits, ses entretiens avec Sankara et l’association qui porte son nom continuent d’inspirer les jeunes générations. En redécouvrant son parcours, on mesure l’importance d’une presse libre et indépendante pour la renaissance de l’Afrique."
+    ]
+  },
+  "bibliographie": [
+    "Articles de Mohamed Maïga dans Jeune Afrique et Afrique Asie (1977-1983)",
+    "Témoignages sur Thomas Sankara et la révolution burkinabè",
+    "Archives de la Maison de la Presse de Ouagadougou",
+    "Association Mohamed Maïga (www.association-mohamed-maiga.org)"
+  ]
+},
+{
+  "id": 8,
+  "titre": "محمد مايغا: صحفي ملتزم وصديق لتوماس سانكارا",
+  "auteur": "فريق بحثي",
+  "sous_titre": "سيرة رائد الصحافة الأفريقية",
+  "annee": "2024",
+  "pages": 8,
+  "type": "biographie",
+  "langue": "Arabe",
+  "categorie": "تاريخ / صحافة",
+  "description": "صورة لمحمد مايغا، صحفي مالي، شخصية بارزة في الوحدة الأفريقية ومقرب من توماس سانكارا. مسيرته ونضالاته ووفاته الغامضة.",
+  "credit_traduction": "تمت ترجمة هذا الكتاب من الفرنسية إلى العربية بواسطة حمدين أغ مكتار، الرئيس التنفيذي لشركة HAM Global Words.",
+  "couverture": "data/images/livres/couverture_mohamed_maiga_ar.jpg",
+  "illustrations": [],
+  "chapitres": [
+    {
+      "numero": 1,
+      "titre": "النشأة والتكوين",
+      "contenu": [
+        "وُلد محمد مايغا في 20 أغسطس 1950 في أنسونغو، بلدة صغيرة تبعد حوالي مائة كيلومتر عن غاو، في السودان الفرنسي (جمهورية مالي حالياً). نشأ في عائلة كبيرة، بين عرق الفلان الرحل من والدته عادياتو ديالو، والوسط المستقر السونغهاي لوالده بونكاناي هامبو مايغا.",
+        "على الرغم من تحفظات طبقته الاجتماعية، دافع والده عن التعليم المدرسي وأرسل جميع أطفاله، بمن فيهم الفتيات، إلى المدرسة الفرنسية. بعد حصوله على البكالوريا عام 1969، استفاد محمد من منحة للدراسة في المركز الجامعي لتعليم الصحافة (CUEJ) في ستراسبورغ بفرنسا.",
+        "تابع دراساته في الصحافة في مركز دراسات علوم وتقنيات الإعلام (CESTI) في داكار ثم في كندا، في المركز السمعي البصري بجامعة مونتريال. أنهى دراساته عام 1977 في المعهد الفرنسي للصحافة (IFP) بجامعة بانتيون أساس.",
+        "تميزت دراسته في مالي بتعزيز التاريخ والثقافة الأفريقية، في أعقاب إنهاء الاستعمار. سمحت له دراساته في أفريقيا وأوروبا وأمريكا الشمالية بتطوير وعي سياسي حاد. بدت له نظريات الماركسية الأفريقية والوحدة الأفريقية، التي طورها كوامي نكروما (غانا) وأميلكار كابرال (غينيا بيساو والرأس الأخضر)، كحلول محتملة لإنهاء الفساد والاستعمار الجديد الذي يعاني منه الشعوب الأفريقية."
+      ]
+    },
+    {
+      "numero": 2,
+      "titre": "المسيرة الصحفية",
+      "contenu": [
+        "في عام 1977، تم تعيين محمد مايغا في مجلة (جون أفريك) الأسبوعية، المرجع في السياسة الأفريقية. انضم إلى تحرير المؤسس بشير بن يحيى، إلى جانب زملاء مثل أمين معلوف وفرانسوا سودان. فرضته قلمه الملتزم كصحفي سياسي، وجذب انتباه السكان والشباب المثقف سياسياً في البلدان الأفريقية الناطقة بالفرنسية.",
+        "في أوائل الثمانينيات، كتب محمد مايغا لمجلة (أفريك آسي). كانت المجلة نصف الشهرية، بقيادة سيمون مالي، تعتبر الأكثر يسارية بين وسائل الإعلام الدولية الوحدوية الأفريقية. وجد مايغا فيها مساحة أكبر من الحرية لإجراء تحقيقاته والتعبير عن قناعاته كصحفي ملتزم ومتعدد المهارات، مرتاح في الأوساط الناطقة بالفرنسية والإنجليزية على حد سواء."
+      ]
+    },
+    {
+      "numero": 3,
+      "titre": "لقاء توماس سانكارا والالتزام السياسي",
+      "contenu": [
+        "في فولتا العليا (بوركينا فاسو لاحقاً)، أصبح النقيب الشاب توماس سانكارا شخصية لا غنى عنها: نقد الاستعمار الجديد، ومكافحة الفساد، والرؤية الإيجابية لمستقبل بلاده، كل ذلك تم التعبير عنه ببراعة من قبل هذا العسكري الإنساني والمثقف. رأى مايغا فيه وعداً بالتغيير وكرس مقابلات حصرية كبيرة لتوماس سانكارا، مما أتاح له الفرصة للتحدث مباشرة، دون وساطة الصحافة الغربية التي كانت تقدمه بشكل كاريكاتوري.",
+        "عمل مايغا على إضفاء الشرعية على سانكارا لدى اليسار البوركينابي. ساهمت مقالاته ومقابلاته في (أفريك آسي) في تعريف سانكارا في الخارج. كان الرجلان مرتبطين بصداقة قوية واحترام متبادل عميق. شاركا في الثورة البوركينابية الأولى."
+      ]
+    },
+    {
+      "numero": 4,
+      "titre": "ظروف الوفاة",
+      "contenu": [
+        "في ديسمبر 1983، زار مايغا جيري رولينغز، الزعيم الغاني، ثم توماس سانكارا في واغادوغو. في هذه المدينة تم حسم مصيره المأساوي، في 1 يناير 1984 في ظروف غامضة لم تُكشف قط. خلص تشريح الجثة إلى التسمم. لا تزال المسؤوليات والدوافع غير معروفة حتى اليوم."
+      ]
+    },
+    {
+      "numero": 5,
+      "titre": "الإرث والتكريمات",
+      "contenu": [
+        "حظي محمد مايغا بجنازات وطنية. تم بث الجنازة على التلفزيون الوطني البوركينابي ورافق موكب عسكري الرفقة تمهيداً لإعادتها إلى مالي. وفد مهم، على رأسه وزير الإعلام، رافق الجثمان إلى موطنه الأصلي، أنسونغو.",
+        "قلده سانكارا بعد وفاته وسام قائد في النظام الوطني للاستحقاق. سُمي بيت الصحافة في واغادوغو باسمه. وأغنية (تحية لمحمد مايغا) التي أمر بها توماس سانكارا تشهد على إسهام الصحفي في تحرير أفريقيا.",
+        "تم إطلاق جمعية محمد مايغا في 1 يناير 2024، بعد أربعين سنة بالضبط من وفاة الصحفي. تحتفي بالإرث الفكري والشجاعة السياسية لمحمد مايغا من خلال مشاريع إيجابية تواصل نضالاته في القارة الأفريقية."
+      ]
+    }
+  ],
+  "conclusion": {
+    "titre": "إرث حي",
+    "contenu": [
+      "يجسد محمد مايغا صحافة التحقيق والالتزام الوحدوي الأفريقي. وفاته الغامضة لم تمح ذكراه: كتاباته ومقابلاته مع سانكارا والجمعية التي تحمل اسمه لا تزال تلهم الأجيال الشابة. بإعادة اكتشاف مسيرته، ندرك أهمية الصحافة الحرة والمستقلة لنهضة أفريقيا."
+    ]
+  },
+  "bibliographie": [
+    "مقالات محمد مايغا في (جون أفريك) و(أفريك آسي) (1977-1983)",
+    "شهادات عن توماس سانكارا والثورة البوركينابية",
+    "أرشيف بيت الصحافة في واغادوغو",
+    "جمعية محمد مايغا (www.association-mohamed-maiga.org)"
+  ]
+}
+  ]
+  
