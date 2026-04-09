@@ -407,7 +407,7 @@
     "langue": "Français",
     "categorie": "Anthropologie / Histoire",
     "description": "Étude approfondie sur l'origine, le dialecte, le territoire, la vie sociale et le statut des Idaksahak. Présentée par Hamadine AG MOCTAR.",
-    "couverture": "data/images/livres/couverture_livre4.jpg",
+    "couverture": "data/images/livres/Contribution à la connaissance de la communauté Idaksahak.jpg",
     "illustrations": [],
     "chapitres": [
       {
@@ -766,7 +766,7 @@
     "categorie": "العلوم السياسية",
     "description": "تحليل متعمق للتحديات السياسية والاقتصادية والثقافية التي يواجهها طوارق مالي في عصر مضطرب. من الأسباب العميقة للصراعات إلى آمال المصالحة، مروراً بدور المرأة وتدمير التراث.",
     "credit_traduction": "تمت ترجمة هذا الكتاب من الفرنسية إلى العربية بواسطة حمدين أغ مكتار، الرئيس التنفيذي لشركة HAM Global Words.",
-    "couverture": "data/images/livres/couverture_touareg.png",
+    "couverture": "data/images/livres/Contribution à la connaissance de la communauté Idaksahak.jpg",
     "illustrations": [
       {
         "id": "illu_t1",
