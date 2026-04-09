@@ -1254,7 +1254,7 @@
   "langue": "Français",
   "categorie": "Histoire coloniale / Résistance",
   "description": "Portrait de Morou (Oumarou), chef du canton de Karma au Niger, descendant de l’empereur songhaï Askia Daoud. Son humiliation par l’administration coloniale française en 1905, sa révolte ouverte en 1906 et la répression brutale de son village.",
-  "couverture": "data/images/livres/couverture_morou_karma.jpg",
+  "couverture": "data/images/livres/Morou de Karma au crépuscule.png",
   "illustrations": [],
   "chapitres": [
     {
@@ -1314,7 +1314,7 @@
   "categorie": "تاريخ استعماري / مقاومة",
   "description": "صورة لمورو (عمر) رئيس كانتون كارما في النيجر، سليل الإمبراطور السونغهاي أسكيا داود. إذلاله من قبل الإدارة الاستعمارية الفرنسية عام 1905، وثورته العلنية عام 1906، والقمع الوحشي لقرية بوبون.",
   "credit_traduction": "تمت ترجمة هذا الكتاب من الفرنسية إلى العربية بواسطة حمدين أغ مكتار، الرئيس التنفيذي لشركة HAM Global Words.",
-  "couverture": "data/images/livres/couverture_morou_karma_ar.jpg",
+  "couverture": "data/images/livres/Morou de Karma au crépuscule.png",
   "illustrations": [],
   "chapitres": [
     {
