@@ -1373,7 +1373,7 @@
   "langue": "Français",
   "categorie": "Littérature / Témoignage",
   "description": "Récit intime d’un homme entre amour interdit, pertes irréversibles et résilience. Né dans le désert, Hamadine raconte son enfance, ses voyages, ses amours (Elvie, Tabalit, Habiba), la perte de son bras, et sa foi qui l’a guidé. Un chemin de cicatrices devenues lumière.",
-  "couverture": "data/images/livres/couverture_hamadine_tome1.jpg",
+  "couverture": "data/images/livres/Hamadine sur les dunes sous les étoiles.png",
   "illustrations": [],
   "chapitres": [
     {
@@ -1472,7 +1472,7 @@
   "categorie": "أدب / شهادة",
   "description": "رواية حميمية لرجل بين حب محظور، وخسائر لا رجعة فيها، وصمود. وُلد حمدين في الصحراء، ويروي طفولته، وأسفاره، وحبه (إلفي، تاباتليت، حبيبة)، وفقدانه ذراعه، وإيمانه الذي قاده. طريق من الجروح تحولت إلى نور.",
   "credit_traduction": "تمت ترجمة هذا الكتاب من الفرنسية إلى العربية بواسطة حمدين أغ مكتار، الرئيس التنفيذي لشركة HAM Global Words.",
-  "couverture": "data/images/livres/couverture_hamadine_tome1_ar.jpg",
+  "couverture": "data/images/livres/Hamadine sur les dunes sous les étoiles.png",
   "illustrations": [],
   "chapitres": [
     {
