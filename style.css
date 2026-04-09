@@ -1421,3 +1421,60 @@ main:not(.hidden) {
     font-size: 0.75rem;
   }
 }
+
+/* =========================
+   GALERIE PHOTOS
+========================= */
+.album-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.album-header h3 {
+  color: var(--accent);
+  font-size: 1.5rem;
+}
+.galerie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.galerie-item {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid var(--border);
+}
+.galerie-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent);
+}
+.galerie-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+.galerie-caption {
+  padding: 0.8rem;
+  text-align: center;
+}
+.galerie-caption strong {
+  color: var(--accent);
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+.galerie-caption .legende {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0.3rem 0;
+}
+.galerie-caption .credit {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  opacity: 0.7;
+  display: block;
+  margin-top: 0.3rem;
+}
