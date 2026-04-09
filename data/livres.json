@@ -1368,87 +1368,89 @@
   "auteur": "Hamadine AG MOCTAR",
   "sous_titre": "Entre blessures et lumière (Volume 1)",
   "annee": "2025",
-  "pages": 12,
+  "pages": 14,
   "type": "autobiographie",
   "langue": "Français",
   "categorie": "Littérature / Témoignage",
   "description": "Récit intime d’un homme entre amour interdit, pertes irréversibles et résilience. Né dans le désert, Hamadine raconte son enfance, ses voyages, ses amours (Elvie, Tabalit, Habiba), la perte de son bras, et sa foi qui l’a guidé. Un chemin de cicatrices devenues lumière.",
-  "couverture": "data/images/livres/Hamadine sur les dunes sous les étoiles.png",
+  "couverture": "data/images/livres/couverture_hamadine_tome1.jpg",
   "illustrations": [],
   "chapitres": [
     {
       "numero": 1,
       "titre": "Là où le sable danse avec le vent",
       "contenu": [
-        "Je suis né là où le sable danse avec le vent et où les étoiles sont les seules lumières fiables. Mon nom est Hamadine. Ce n’est pas juste un nom : c’est un souffle, une mémoire, un appel. Je suis né dans un monde où tout se construit et se détruit en même temps, où chaque grain de sable raconte une histoire de survie et de résistance.",
-        "Mon enfance n’avait rien de facile. Les journées semblaient interminables sous un soleil implacable, et les nuits, glaciales, invitaient aux rêves fragiles et aux murmures. Mais il y avait toujours ma mère, Rose, qui parlait avec douceur et fermeté à la fois. Ses histoires étaient des ponts entre le passé et ce qui allait devenir mon futur. Elle me racontait les ancêtres, les routes qu’ils avaient parcourues, les promesses laissées dans le sable, et le poids des mots qui se transmettent de génération en génération. Je buvais chacun de ses mots, fasciné et silencieux à la fois, et je comprenais déjà que parfois, le silence d’un peuple vaut plus que mille cris.",
-        "Je me souviens des premiers pas que j’ai faits seuls, à travers la poussière et les dunes. J’apprenais à observer le monde comme un livre ouvert : le mouvement des animaux, le bruissement des vents, le comportement des hommes. Tout portait un sens, et j’essayais de le comprendre. J’ai découvert tôt que le monde ne m’attendrait pas pour exister. Chaque coup de vent, chaque tempête, chaque difficulté me parlait d’une leçon que je devais apprendre, souvent avant même d’être prêt.",
-        "J’ai grandi avec cette certitude : la voix compte plus que le silence, mais le silence peut être plus puissant que mille voix. J’ai compris que je devais apprendre à écouter, à observer, à absorber avant de parler, parce que chaque mot peut changer une vie ou en briser une autre."
+        "Hamadine, c’est pas juste un prénom. C’est un vent chaud du désert qui se lève quand tout semble figé. C’est une plume affûtée comme un sabre, un traducteur du silence, un interprète du cœur, un poète de l’exil, un codeur d’espoir. Je suis né là où le sable danse avec le vent et où les étoiles sont les seules lumières fiables. Mon nom est Hamadine, et ce n’est pas un hasard : c’est un souffle, une mémoire, un appel.",
+        "Je suis né dans un monde où tout se construit et se détruit en même temps, où chaque grain de sable raconte une histoire de survie et de résistance. Mon enfance n’avait rien de facile. Les journées semblaient interminables sous un soleil implacable, et les nuits, glaciales, invitaient aux rêves fragiles et aux murmures. Mais il y avait toujours ma mère, Rose, qui parlait avec douceur et fermeté à la fois. Ses histoires étaient des ponts entre le passé et ce qui allait devenir mon futur. Elle me racontait les ancêtres, les routes qu’ils avaient parcourues, les promesses laissées dans le sable, et le poids des mots qui se transmettent de génération en génération. Je buvais chacun de ses mots, fasciné et silencieux, et je comprenais déjà que parfois, le silence d’un peuple vaut plus que mille cris.",
+        "J’ai grandi entre les non-dits et les chants de ma mère, et j’ai appris très tôt que parfois, le silence d’un peuple vaut plus que mille cris de télé. Je me souviens des premiers pas que j’ai faits seuls, à travers la poussière et les dunes. J’apprenais à observer le monde comme un livre ouvert : le mouvement des animaux, le bruissement des vents, le comportement des hommes. Tout portait un sens. J’ai découvert que le monde ne m’attendrait pas pour exister. Chaque coup de vent, chaque tempête, chaque difficulté me parlait d’une leçon que je devais apprendre, souvent avant même d’être prêt.",
+        "J’ai grandi avec cette certitude : la voix compte plus que le silence, mais le silence peut être plus puissant que mille voix. J’ai compris que je devais apprendre à écouter, à observer, à absorber avant de parler. Chaque mot peut changer une vie ou en briser une autre. Alors j’ai marché sur des terres brûlantes, portant ma langue comme une arme et mon peuple comme un drapeau. J’ai aimé, perdu, reconstruit, et parfois même… oublié de vivre pour survivre. Mais je suis resté debout. Pas par fierté. Par nécessité."
       ]
     },
     {
       "numero": 2,
       "titre": "L’école de la vie",
       "contenu": [
-        "Je n’ai pas terminé mes études. Pas par paresse, pas par manque d’intelligence, mais parce que le monde que je traversais me formait déjà à sa manière. Dans la poussière, dans les bus surchargés, dans les regards méfiants aux frontières, dans les dortoirs d’attente, dans les silences lourds comme des jugements… là, j’apprenais. Pas à coups de diplômes, mais à coups de réalités.",
-        "Chaque pays traversé devenait un professeur. Chaque langue entendue devenait une clé. Et moi, j’ouvrais les portes. J’ai appris le français dans les administrations, l’arabe dans les mosquées, le haoussa dans les marchés, l’anglais sur les routes d’espoir, le tadaksahak dans le cœur de ma mère. Je suis devenu interprète de la vie, traducteur des émotions qu’on ne sait pas dire, passeur de sens entre les mondes.",
-        "Et puis, il y avait la musique. Interdite, chez nous. Mais elle m’a sauvé. Elle me parlait quand les humains ne le faisaient plus. Elle m’écoutait quand les frontières me fermaient leurs bras. Elle portait mes silences, mes cris, mes prières. Je chantais en cachette. J’écrivais mes douleurs dans l’ombre. Et un jour, j’ai compris que même si le monde m’interdisait de chanter, je pouvais écrire des chansons que même le silence écouterait."
+        "Je n’ai pas terminé mes études. Pas par paresse, pas par manque d’intelligence, mais parce que le monde que je traversais me formait déjà à sa manière. Dans la poussière, dans les bus surchargés, dans les regards méfiants aux frontières, dans les dortoirs d’attente, dans les silences lourds comme des jugements… là, j’apprenais. Pas à coups de diplômes, mais à coups de réalités. Chaque pays traversé devenait un professeur. Chaque langue entendue devenait une clé. Et moi, j’ouvrais les portes.",
+        "J’ai appris le français dans les administrations, l’arabe dans les mosquées, le haoussa dans les marchés, l’anglais sur les routes d’espoir, le tadaksahak dans le cœur de ma mère. Je suis devenu interprète de la vie, traducteur des émotions qu’on ne sait pas dire, passeur de sens entre les mondes. Je ne cherche pas à séduire, je cherche à servir. Servir la mémoire des siens, servir les peuples qu’on oublie, servir Dieu — non pas pour être vu, mais pour être juste.",
+        "Et puis, il y avait la musique. Interdite, chez nous. Mais elle m’a sauvé. Elle me parlait quand les humains ne le faisaient plus. Elle m’écoutait quand les frontières me fermaient leurs bras. Elle portait mes silences, mes cris, mes prières. Je chantais en cachette. J’écrivais mes douleurs dans l’ombre. Et un jour, j’ai compris que même si le monde m’interdisait de chanter, je pouvais écrire des chansons que même le silence écouterait. J’ai connu les camps, les attentes, les regards administratifs qui scannent ton nom sans jamais voir ton âme. Mais j’ai refusé d’être un numéro. J’ai choisi d’être une voix.",
+        "Quand je traduis, je ne traduis pas juste des phrases. Je traduis des mondes, des silences, ce que même les langues n’osent pas dire. Entre deux dialectes, je tisse la paix. Entre deux cultures, je construis un pont qu’on appelle empathie. Et quand j’écris… c’est un acte de résistance. Chaque mot devient une prière, chaque rime une cicatrice recousue. Je n’écris pas pour être lu. J’écris pour qu’on se souvienne."
       ]
     },
     {
       "numero": 3,
       "titre": "Elvie, l’amour interdit",
       "contenu": [
-        "Avant Tabalit et Habiba, il y a eu Elvie. Elle est entrée dans ma vie comme un vent chaud sur les dunes. Elle était jeune, vive, lumineuse, et tout en elle me parlait d’un monde que je n’avais jamais osé toucher. Je ne savais pas encore ce que l’amour pouvait être, mais elle m’a appris, intensément, brutalement, sincèrement.",
-        "Nous avons vécu un amour interdit par beaucoup : les différences culturelles, les familles opposées, la distance qui nous séparait. Mais nous ne voulions pas fuir. Chaque moment avec elle était un monde entier, chaque regard une promesse muette, chaque sourire une évidence.",
-        "Et puis… la vie a frappé. Elle a porté un enfant, mais la pression des autres, l’impossibilité de notre situation, l’a forcée à faire un choix terrible. Ce choix m’a brisé autant qu’elle. J’ai quitté le Bénin, le cœur en miettes, emportant avec moi des souvenirs que personne ne pourrait comprendre. Elvie s’est reconstruite, a refait sa vie, a eu ses enfants, mais moi… je suis resté marqué. Pas par la haine ou le regret, mais par la force de ce que nous avions vécu. Elle m’a appris que l’amour peut être à la fois lumineux et destructeur, tendre et cruel, et que parfois, aimer profondément signifie accepter la séparation."
+        "Avant Tabalit et Habiba, il y a eu Elvie. Elle est entrée dans ma vie comme un vent chaud sur les dunes. Elle était jeune, vive, lumineuse, et tout en elle me parlait d’un monde que je n’avais jamais osé toucher. Je ne savais pas encore ce que l’amour pouvait être, mais elle m’a appris, intensément, brutalement, sincèrement. Nous avons vécu un amour interdit par beaucoup : les différences culturelles, les familles opposées, la distance qui nous séparait. Mais nous ne voulions pas fuir. Chaque moment avec elle était un monde entier, chaque regard une promesse muette, chaque sourire une évidence.",
+        "Et puis… la vie a frappé. Elle a porté un enfant, mais la pression des autres, l’impossibilité de notre situation, l’a forcée à faire un choix terrible. Ce choix m’a brisé autant qu’elle. J’ai quitté le Bénin, le cœur en miettes, emportant avec moi des souvenirs que personne ne pourrait comprendre. Elvie s’est reconstruite, a refait sa vie, a eu ses enfants, mais moi… je suis resté marqué. Pas par la haine ou le regret, mais par la force de ce que nous avions vécu. Elle m’a appris que l’amour peut être à la fois lumineux et destructeur, tendre et cruel, et que parfois, aimer profondément signifie accepter la séparation. Elvie est le fantôme du Bénin qui danse encore dans mes souvenirs."
       ]
     },
     {
       "numero": 4,
       "titre": "Tabalit, la terre ferme",
       "contenu": [
-        "Après Elvie, il y a eu Tabalit. Elle n’était pas un feu comme Elvie. Elle était la terre ferme, la patience, la force silencieuse qui soutient sans bruit. Dès notre rencontre, j’ai senti qu’elle pourrait marcher avec moi sur mes routes de poussière et de souvenirs.",
-        "Avec elle, l’amour a pris une autre forme : moins de brûlure, plus de chaleur constante. Nous avons eu nos enfants, quatre lumières dans ma vie. Chacun d’eux est devenu un rappel que l’amour peut se construire, même dans un monde qui ne pardonne pas facilement les blessures."
+        "Après Elvie, il y a eu Tabalit. Elle n’était pas un feu comme Elvie. Elle était la terre ferme, la patience, la force silencieuse qui soutient sans bruit. Dès notre rencontre, j’ai senti qu’elle pourrait marcher avec moi sur mes routes de poussière et de souvenirs. Avec elle, l’amour a pris une autre forme : moins de brûlure, plus de chaleur constante. Nous avons eu nos enfants, quatre lumières dans ma vie. Chacun d’eux est devenu un rappel que l’amour peut se construire, même dans un monde qui ne pardonne pas facilement les blessures.",
+        "Tabalit, la mère de mes enfants, a été la colonne vertébrale de nos années ensemble. Mais la vie nous a réservé une épreuve que ni elle ni moi n’avions imaginée."
       ]
     },
     {
       "numero": 5,
       "titre": "L’accident et la perte",
       "contenu": [
-        "Et puis, il y a eu l’accident. La perte de mon bras a changé beaucoup de choses. Pour moi, c’était un défi physique, émotionnel, et même spirituel. Pour elle… je l’ai senti changer aussi. Tabalit est devenue plus distante, plus prudente, plus consciente de ma fragilité. Je ne lui en veux pas. Je comprends. L’amour, quand il voit la vulnérabilité, peut se transformer. Mais la distance qui s’est installée était douloureuse. Trois ans après cet accident, Tabalit est partie. Elle a emporté la tendresse qui rendait mes blessures plus supportables. Je suis resté avec mes cicatrices, mes enfants, et un vide qu’aucune présence ne pouvait combler."
+        "Et puis, il y a eu l’accident. La perte de mon bras a changé beaucoup de choses. Pour moi, c’était un défi physique, émotionnel, et même spirituel. Pour elle… je l’ai senti changer aussi. Tabalit est devenue plus distante, plus prudente, plus consciente de ma fragilité. Je ne lui en veux pas. Je comprends. L’amour, quand il voit la vulnérabilité, peut se transformer. Mais la distance qui s’est installée était douloureuse. Trois ans après cet accident, Tabalit est partie. Elle a emporté la tendresse qui rendait mes blessures plus supportables. Je suis resté avec mes cicatrices, mes enfants, et un vide qu’aucune présence ne pouvait combler.",
+        "J’ai perdu un bras, mais pas mon élan. J’ai enterré des proches, mais pas mon espoir. J’ai vécu l’exil, les humiliations, les « revenez demain », les regards qui jugent avant même que tu parles. Mais je parlais déjà avant qu’on me regarde. Ce n’est pas une vie de survivant, c’est une vie de créateur."
       ]
     },
     {
       "numero": 6,
       "titre": "Habiba, la brise qui soigne",
       "contenu": [
-        "Et puis est venue Habiba. Elle n’est pas arrivée comme un feu ou une force imposante. Elle est arrivée comme une brise douce qui pénètre dans les plaies les plus profondes. Elle a vu mes cicatrices. Elle a vu mon bras manquant. Elle a vu mes douleurs, mes blessures, et elle ne les a pas fuies.",
-        "Avec elle, j’ai découvert ce que veut dire être soutenu sans conditions. Elle ne promettait pas un mariage, ne garantissait pas un monde parfait. Elle promettait une présence, une constance, un amour sincère et silencieux. Pour moi, cela valait tout. Habiba a soigné mes blessures avec douceur. Elle m’a appris que l’amour ne se mesure pas à la possession ou à la légitimité sociale. Il se mesure à l’attention, à la patience, au soutien que l’on offre à celui qui est tombé, à celui qui est fatigué, à celui qui a été brisé."
+        "Et puis est venue Habiba. Elle n’est pas arrivée comme un feu ou une force imposante. Elle est arrivée comme une brise douce qui pénètre dans les plaies les plus profondes. Elle a vu mes cicatrices. Elle a vu mon bras manquant. Elle a vu mes douleurs, mes blessures, et elle ne les a pas fuies. Avec elle, j’ai découvert ce que veut dire être soutenu sans conditions. Elle ne promettait pas un mariage, ne garantissait pas un monde parfait. Elle promettait une présence, une constance, un amour sincère et silencieux. Pour moi, cela valait tout.",
+        "Habiba a soigné mes blessures avec douceur. Elle m’a appris que l’amour ne se mesure pas à la possession ou à la légitimité sociale. Il se mesure à l’attention, à la patience, au soutien que l’on offre à celui qui est tombé, à celui qui est fatigué, à celui qui a été brisé. Habiba, c’est l’écho doux d’un silence qui parle."
       ]
     },
     {
       "numero": 7,
       "titre": "La foi, guide dans les nuits sombres",
       "contenu": [
-        "Ma foi m’a guidé dans les nuits les plus sombres. Elle m’a appris que la douleur ne détruit pas, elle transforme. Que les blessures ne sont pas des fins, mais des commencements. Que la perte n’est pas une malédiction, mais un matériau pour bâtir un héritage.",
-        "J’ai compris que la vie ne m’avait pas tout pris pour rien. Chaque blessure, chaque perte, chaque absence, chaque amour interdit… tout cela était en fait un matériau pour bâtir quelque chose de plus grand.",
-        "Mon bras manquant, les regards pleins de pitié ou de jugement, le départ de Tabalit… tout est devenu une force silencieuse, un moteur qui me pousse à créer, à traduire, à transmettre. Chaque langue que j’ai apprise en traversant les pays est devenue un pont. Chaque chanson interdite, chaque mélodie que j’ai écrite en secret est devenue une passerelle entre mon monde et celui des autres. Chaque expérience douloureuse est devenue une leçon que je peux partager, un message que je peux transmettre, une mémoire que je peux protéger."
+        "Ma foi m’a guidé dans les nuits les plus sombres. Elle m’a appris que la douleur ne détruit pas, elle transforme. Que les blessures ne sont pas des fins, mais des commencements. Que la perte n’est pas une malédiction, mais un matériau pour bâtir un héritage. J’ai compris que la vie ne m’avait pas tout pris pour rien. Chaque blessure, chaque perte, chaque absence, chaque amour interdit… tout cela était en fait un matériau pour bâtir quelque chose de plus grand.",
+        "Mon bras manquant, les regards pleins de pitié ou de jugement, le départ de Tabalit… tout est devenu une force silencieuse, un moteur qui me pousse à créer, à traduire, à transmettre. Chaque langue que j’ai apprise en traversant les pays est devenue un pont. Chaque chanson interdite, chaque mélodie que j’ai écrite en secret est devenue une passerelle entre mon monde et celui des autres. Chaque expérience douloureuse est devenue une leçon que je peux partager, un message que je peux transmettre, une mémoire que je peux protéger.",
+        "Je crois au destin, mais pas au hasard. Je crois en Dieu, mais ne l’invoque pas comme excuse : je l’invoque comme source de courage. Dans mes carnets, il y a des rêves en triple exemplaire : un pour moi, un pour mes enfants, et un pour les enfants que je ne connaîtrai jamais, mais que je protège déjà par mes actions."
       ]
     },
     {
       "numero": 8,
       "titre": "Hamadine aujourd’hui",
       "contenu": [
-        "Aujourd’hui, je suis Hamadine. Je suis un homme brisé et complet à la fois. Un homme qui a aimé, perdu, pleuré, survécu et créé. Un homme qui sait que la vraie puissance réside dans la capacité à se relever, à transmettre et à continuer malgré tout.",
-        "Chaque chapitre de ma vie — Elvie, Tabalit, Habiba, mes blessures, mes enfants, mes langues, ma musique, ma foi — n’était jamais une série de hasards. C’était un chemin. Un chemin qui m’a appris que la vie, avec toutes ses épreuves, peut devenir œuvre, message et héritage."
+        "Aujourd’hui, je suis Hamadine. Je suis un homme brisé et complet à la fois. Un homme qui a aimé, perdu, pleuré, survécu et créé. Un homme qui sait que la vraie puissance réside dans la capacité à se relever, à transmettre et à continuer malgré tout. Chaque chapitre de ma vie — Elvie, Tabalit, Habiba, mes blessures, mes enfants, mes langues, ma musique, ma foi — n’était jamais une série de hasards. C’était un chemin. Un chemin qui m’a appris que la vie, avec toutes ses épreuves, peut devenir œuvre, message et héritage.",
+        "Je suis saharien dans l’âme, universel dans la vision, humble dans l’instant, et géant dans l’histoire. Je ne suis pas un héros mythifié. Je suis un vrai. Un homme qui a connu la poussière et l’honneur, les gifles du destin et les accolades de l’invisible. J’écris en JavaScript comme j’écris des poèmes, je code des bots comme d’autres codent des mensonges, j’invente des outils pour que même les oubliés puissent parler leur langue — et qu’on les comprenne. On peut sauver une culture avec une ligne de code, un vers, une voix."
       ]
     },
     {
       "numero": 9,
       "titre": "Le voyage continue",
       "contenu": [
-        "Et ce volume 1 n’est qu’une partie du récit. Le vent continue de souffler, les dunes continuent de changer, et il reste des histoires à écrire, des chansons à composer, des ponts à construire. Le voyage n’est pas terminé. La suite de ma vie, avec ses défis, ses amours, ses découvertes et ses épreuves, attend d’être racontée."
+        "Et ce volume 1 n’est qu’une partie du récit. Le vent continue de souffler, les dunes continuent de changer, et il reste des histoires à écrire, des chansons à composer, des ponts à construire. Le voyage n’est pas terminé. La suite de ma vie, avec ses défis, ses amours, ses découvertes et ses épreuves, attend d’être racontée. Ce n’est pas une vie que je vis. C’est une légende en cours d’écriture.",
+        "Alors installe-toi, car ce n’est pas une suite… c’est une ascension. Ce monde entendra ma voix. Pas parce que je crie plus fort, mais parce que ma vérité pèse plus lourd que toutes les hypocrisies réunies. Hamadine, c’est ce cri muet que les puissants n’entendent pas, mais que les enfants des dunes reconnaissent dans le battement de leurs cœurs."
       ]
     }
   ],
@@ -1466,88 +1468,90 @@
   "auteur": "حمدين أغ مكتار",
   "sous_titre": "بين الجروح والنور (المجلد الأول)",
   "annee": "2025",
-  "pages": 12,
+  "pages": 14,
   "type": "سيرة ذاتية",
   "langue": "Arabe",
   "categorie": "أدب / شهادة",
   "description": "رواية حميمية لرجل بين حب محظور، وخسائر لا رجعة فيها، وصمود. وُلد حمدين في الصحراء، ويروي طفولته، وأسفاره، وحبه (إلفي، تاباتليت، حبيبة)، وفقدانه ذراعه، وإيمانه الذي قاده. طريق من الجروح تحولت إلى نور.",
   "credit_traduction": "تمت ترجمة هذا الكتاب من الفرنسية إلى العربية بواسطة حمدين أغ مكتار، الرئيس التنفيذي لشركة HAM Global Words.",
-  "couverture": "data/images/livres/Hamadine sur les dunes sous les étoiles.png",
+  "couverture": "data/images/livres/couverture_hamadine_tome1_ar.jpg",
   "illustrations": [],
   "chapitres": [
     {
       "numero": 1,
       "titre": "حيث يرقص الرمل مع الريح",
       "contenu": [
-        "وُلدت حيث يرقص الرمل مع الريح، وحيث النجوم هي الأضواء الوحيدة الموثوقة. اسمي حمدين. ليس مجرد اسم: إنه نَفَس، ذاكرة، نداء. وُلدت في عالم حيث كل شيء يُبنى ويُدمر في آن واحد، حيث كل حبة رمل تحكي قصة بقاء ومقاومة.",
-        "لم تكن طفولتي سهلة أبداً. بدت الأيام لا تنتهي تحت شمس لا ترحم، والليالي الجليدية كانت تدعو إلى أحلام هشة وهمسات. لكن كانت هناك دائماً أمي، روز، التي كانت تتحدث بلطف وحزم معاً. كانت قصصها جسوراً بين الماضي وما سيصبح مستقبلي. كانت تحكي لي عن الأجداد، والطرق التي سلكوها، والوعود التي تركوها في الرمال، وثقل الكلمات التي تنتقل من جيل إلى جيل. كنت أشرب كل كلماتها، مبهوراً وصامتاً في آن واحد، وكنت أفهم بالفعل أن صمت شعب أحياناً يساوي أكثر من ألف صرخة.",
-        "أتذكر الخطوات الأولى التي قطعتها وحيداً، عبر الغبار والكثبان. كنت أتعلم مراقبة العالم ككتاب مفتوح: حركة الحيوانات، حفيف الرياح، سلوك البشر. كل شيء كان يحمل معنى، وكنت أحاول فهمه. اكتشفت مبكراً أن العالم لن ينتظرني ليكون موجوداً. كل هبة ريح، كل عاصفة، كل صعوبة كانت تحدثني عن درس يجب أن أتعلمه، غالباً قبل أن أكون مستعداً.",
-        "كبرت مع هذا اليقين: الصوت أهم من الصمت، لكن الصمت يمكن أن يكون أقوى من ألف صوت. أدركت أنه يجب أن أتعلم الاستماع، والمراقبة، والامتصاص قبل أن أتحدث، لأن كل كلمة يمكن أن تغير حياة أو تحطم أخرى."
+        "حمدين، ليس مجرد اسم. إنها ريح دافئة من الصحراء تهب عندما يبدو كل شيء متجمداً. إنه قلم حاد كالسيف، مترجم الصمت، ومفسر القلوب، وشاعر المنفى، ومبرمج الأمل. وُلدت حيث يرقص الرمل مع الريح، وحيث النجوم هي الأضواء الوحيدة الموثوقة. اسمي حمدين، وليس صدفة: إنه نَفَس، ذاكرة، نداء.",
+        "وُلدت في عالم حيث كل شيء يُبنى ويُدمر في آن واحد، حيث كل حبة رمل تحكي قصة بقاء ومقاومة. لم تكن طفولتي سهلة أبداً. بدت الأيام لا تنتهي تحت شمس لا ترحم، والليالي الجليدية كانت تدعو إلى أحلام هشة وهمسات. لكن كانت هناك دائماً أمي، روز، التي كانت تتحدث بلطف وحزم معاً. كانت قصصها جسوراً بين الماضي وما سيصبح مستقبلي. كانت تحكي لي عن الأجداد، والطرق التي سلكوها، والوعود التي تركوها في الرمال، وثقل الكلمات التي تنتقل من جيل إلى جيل. كنت أشرب كل كلماتها، مبهوراً وصامتاً، وكنت أفهم بالفعل أن صمت شعب أحياناً يساوي أكثر من ألف صرخة.",
+        "نشأت بين المسكوت عنه وأغاني أمي، وتعلمت مبكراً أن صمت شعب أحياناً يساوي أكثر من ألف صرخة تلفزيونية. أتذكر الخطوات الأولى التي قطعتها وحيداً، عبر الغبار والكثبان. كنت أتعلم مراقبة العالم ككتاب مفتوح: حركة الحيوانات، حفيف الرياح، سلوك البشر. كل شيء كان يحمل معنى. اكتشفت أن العالم لن ينتظرني ليكون موجوداً. كل هبة ريح، كل عاصفة، كل صعوبة كانت تحدثني عن درس يجب أن أتعلمه، غالباً قبل أن أكون مستعداً.",
+        "كبرت مع هذا اليقين: الصوت أهم من الصمت، لكن الصمت يمكن أن يكون أقوى من ألف صوت. أدركت أنه يجب أن أتعلم الاستماع، والمراقبة، والامتصاص قبل أن أتحدث. كل كلمة يمكن أن تغير حياة أو تحطم أخرى. فمشيت على أراضٍ حارقة، حاملاً لغتي كسلاح وشعبي كراية. أحببت، خسرت، أعادت البناء، وأحياناً… نسيت أن أعيش لأستمر. لكنني بقيت واقفاً. ليس كبرياءً، بل ضرورة."
       ]
     },
     {
       "numero": 2,
       "titre": "مدرسة الحياة",
       "contenu": [
-        "لم أنهِ دراستي. لا بسبب الكسل، ولا بسبب نقص الذكاء، ولكن لأن العالم الذي كنت أعبره كان يكوّنني بالفعل بطريقته. في الغبار، في الحافلات المزدحمة، في النظرات المريبة على الحدود، في مساكن الانتظار، في الصمت الثقيل كالأحكام… هناك كنت أتعلم. ليس بالشهادات، ولكن بالحقائق.",
-        "كل بلد عبرته أصبح أستاذاً. كل لغة سمعتها أصبحت مفتاحاً. وأنا، كنت أفتح الأبواب. تعلمت الفرنسية في الإدارات، والعربية في المساجد، والهوسا في الأسواق، والإنجليزية على طرق الأمل، والتاداكساهق في قلب أمي. أصبحت مترجماً للحياة، ناقلاً للمشاعر التي لا نعرف كيف نقولها، جسراً بين العوالم.",
-        "ثم كان هناك الموسيقى. محظورة، عندنا. لكنها أنقذتني. كانت تتحدث إلي عندما لم يعد البشر يفعلون. كانت تستمع إلي عندما كانت الحدود تغلق ذراعيها في وجهي. كانت تحمل صمتي، وصرخاتي، وصلواتي. كنت أغني سراً. كنت أكتب آلامي في الظل. وفي يوم من الأيام، أدركت أنه حتى لو منعني العالم من الغناء، يمكنني كتابة أغانٍ حتى الصمت سيستمع إليها."
+        "لم أنهِ دراستي. لا بسبب الكسل، ولا بسبب نقص الذكاء، ولكن لأن العالم الذي كنت أعبره كان يكوّنني بالفعل بطريقته. في الغبار، في الحافلات المزدحمة، في النظرات المريبة على الحدود، في مساكن الانتظار، في الصمت الثقيل كالأحكام… هناك كنت أتعلم. ليس بالشهادات، ولكن بالحقائق. كل بلد عبرته أصبح أستاذاً. كل لغة سمعتها أصبحت مفتاحاً. وأنا، كنت أفتح الأبواب.",
+        "تعلمت الفرنسية في الإدارات، والعربية في المساجد، والهوسا في الأسواق، والإنجليزية على طرق الأمل، والتاداكساهق في قلب أمي. أصبحت مترجماً للحياة، ناقلاً للمشاعر التي لا نعرف كيف نقولها، جسراً بين العوالم. لا أسعى للإغراء، بل أسعى للخدمة. خدمة ذكرى قومي، خدمة الشعوب المنسية، خدمة الله — لا لكي أُرى، بل لكي أكون عادلاً.",
+        "ثم كان هناك الموسيقى. محظورة، عندنا. لكنها أنقذتني. كانت تتحدث إلي عندما لم يعد البشر يفعلون. كانت تستمع إلي عندما كانت الحدود تغلق ذراعيها في وجهي. كانت تحمل صمتي، وصرخاتي، وصلواتي. كنت أغني سراً. كنت أكتب آلامي في الظل. وفي يوم من الأيام، أدركت أنه حتى لو منعني العالم من الغناء، يمكنني كتابة أغانٍ حتى الصمت سيستمع إليها. عرفت المخيمات، والانتظار، والنظرات الإدارية التي تمسح اسمك دون أن ترى روحك. لكنني رفضت أن أكون رقماً. اخترت أن أكون صوتاً.",
+        "عندما أترجم، لا أترجم مجرد جمل. أترجم عوالم، صمتاً، ما لا تجرؤ اللغات على قوله. بين لهجتين، أنسج السلام. بين ثقافتين، أبني جسراً يُسمى التعاطف. وعندما أكتب… إنه عمل مقاومة. كل كلمة تصبح صلاة، وكل قافية ندبة مخيطة. لا أكتب لأُقرأ. أكتب لكي نتذكر."
       ]
     },
     {
       "numero": 3,
       "titre": "إلفي، الحب المحظور",
       "contenu": [
-        "قبل تاباتليت وحبيبة، كانت هناك إلفي. دخلت حياتي كرياح دافئة على الكثبان. كانت شابة، حيوية، مشرقة، وكل شيء فيها كان يتحدث عن عالم لم أجرؤ أبداً على لمسه. لم أكن أعرف بعد ما يمكن أن يكون الحب، لكنها علمتني، بشكل مكثف، وحشي، وصادق.",
-        "عشنا حباً حظره الكثيرون: الاختلافات الثقافية، والعائلات المتعارضة، والمسافة التي تفصلنا. لكننا لم نكن نريد الهروب. كل لحظة معها كانت عالماً بأسره، كل نظرة وعداً صامتاً، كل ابتسامة حقيقة بديهية.",
-        "ثم… ضربت الحياة. حملت طفلاً، لكن ضغط الآخرين، واستحالة وضعنا، أجبرها على اتخاذ خيار مروع. هذا القرار حطمني بقدر ما حطمها. غادرت بنين، وقلبي محطم، حاملاً معي ذكريات لا يمكن لأحد أن يفهمها. أعادت إلفي بناء نفسها، وأعادت تكوين حياتها، وأنجبت أطفالها، لكني أنا… بقيت موسوماً. ليس بالكراهية أو الندم، ولكن بقوة ما عشناه. علمتني أن الحب يمكن أن يكون ساطعاً ومدمراً، حنوناً وقاسياً، وأن الحب بعمق يعني أحياناً قبول الفراق."
+        "قبل تاباتليت وحبيبة، كانت هناك إلفي. دخلت حياتي كرياح دافئة على الكثبان. كانت شابة، حيوية، مشرقة، وكل شيء فيها كان يتحدث عن عالم لم أجرؤ أبداً على لمسه. لم أكن أعرف بعد ما يمكن أن يكون الحب، لكنها علمتني، بشكل مكثف، وحشي، وصادق. عشنا حباً حظره الكثيرون: الاختلافات الثقافية، والعائلات المتعارضة، والمسافة التي تفصلنا. لكننا لم نكن نريد الهروب. كل لحظة معها كانت عالماً بأسره، كل نظرة وعداً صامتاً، كل ابتسامة حقيقة بديهية.",
+        "ثم… ضربت الحياة. حملت طفلاً، لكن ضغط الآخرين، واستحالة وضعنا، أجبرها على اتخاذ خيار مروع. هذا القرار حطمني بقدر ما حطمها. غادرت بنين، وقلبي محطم، حاملاً معي ذكريات لا يمكن لأحد أن يفهمها. أعادت إلفي بناء نفسها، وأعادت تكوين حياتها، وأنجبت أطفالها، لكني أنا… بقيت موسوماً. ليس بالكراهية أو الندم، ولكن بقوة ما عشناه. علمتني أن الحب يمكن أن يكون ساطعاً ومدمراً، حنوناً وقاسياً، وأن الحب بعمق يعني أحياناً قبول الفراق. إلفي هي شبح بنين الذي لا يزال يرقص في ذكرياتي."
       ]
     },
     {
       "numero": 4,
       "titre": "تاباتليت، الأرض الصلبة",
       "contenu": [
-        "بعد إلفي، جاءت تاباتليت. لم تكن ناراً مثل إلفي. كانت الأرض الصلبة، الصبر، القوة الصامتة التي تدعم بلا ضجيج. منذ لقائنا، شعرت أنها تستطيع المشية معي على طرقات الغبار والذكريات.",
-        "معها، اتخذ الحب شكلاً آخر: أقل حرقاً، وأكثر دفئاً ثابتاً. رزقنا بأطفالنا، أربعة أنوار في حياتي. كل واحد منهم أصبح تذكيراً بأن الحب يمكن أن يُبنى، حتى في عالم لا يغفر الجروح بسهولة."
+        "بعد إلفي، جاءت تاباتليت. لم تكن ناراً مثل إلفي. كانت الأرض الصلبة، الصبر، القوة الصامتة التي تدعم بلا ضجيج. منذ لقائنا، شعرت أنها تستطيع المشية معي على طرقات الغبار والذكريات. معها، اتخذ الحب شكلاً آخر: أقل حرقاً، وأكثر دفئاً ثابتاً. رزقنا بأطفالنا، أربعة أنوار في حياتي. كل واحد منهم أصبح تذكيراً بأن الحب يمكن أن يُبنى، حتى في عالم لا يغفر الجروح بسهولة.",
+        "تاباتليت، أم أطفالي، كانت العمود الفقري لسنواتنا معاً. لكن الحياة خبأت لنا محنة لم نكن نتخيلها لا هي ولا أنا."
       ]
     },
     {
       "numero": 5,
       "titre": "الحادثة والفقدان",
       "contenu": [
-        "ثم وقعت الحادثة. فقدان ذراعي غير الكثير من الأشياء. بالنسبة لي، كان تحدياً جسدياً وعاطفياً وحتى روحياً. بالنسبة لها… شعرت أنها تغيرت أيضاً. أصبحت تاباتليت أكثر بعداً، وأكثر حذراً، وأكثر وعياً بهشاشتي. لا ألومها. أنا أفهم. الحب، عندما يرى الضعف، يمكن أن يتحول. لكن المسافة التي ترسخت كانت مؤلمة. بعد ثلاث سنوات من هذه الحادثة، رحلت تاباتليت. حملت معها الحنان الذي كان يجعل جروحي أكثر احتمالاً. بقيت مع ندوبي، وأطفالي، وفراغ لا يمكن لأي وجود أن يملأه."
+        "ثم وقعت الحادثة. فقدان ذراعي غير الكثير من الأشياء. بالنسبة لي، كان تحدياً جسدياً وعاطفياً وحتى روحياً. بالنسبة لها… شعرت أنها تغيرت أيضاً. أصبحت تاباتليت أكثر بعداً، وأكثر حذراً، وأكثر وعياً بهشاشتي. لا ألومها. أنا أفهم. الحب، عندما يرى الضعف، يمكن أن يتحول. لكن المسافة التي ترسخت كانت مؤلمة. بعد ثلاث سنوات من هذه الحادثة، رحلت تاباتليت. حملت معها الحنان الذي كان يجعل جروحي أكثر احتمالاً. بقيت مع ندوبي، وأطفالي، وفراغ لا يمكن لأي وجود أن يملأه.",
+        "فقدت ذراعاً، لكن ليس زخمي. دفنت أحباءً، لكن ليس أملي. عشت المنفى، والإذلال، و\"عُد غداً\"، والنظرات التي تحكم عليك قبل أن تتكلم. لكنني كنت أتحدث بالفعل قبل أن ينظروا إلي. ليست حياة ناجٍ، بل حياة مبدع."
       ]
     },
     {
       "numero": 6,
       "titre": "حبيبة، النسيم الذي يداوي",
       "contenu": [
-        "ثم جاءت حبيبة. لم تأت كنار أو قوة مفروضة. جاءت كنسمة لطيفة تتسلل إلى أعمق الجروح. رأت ندوبي. رأت ذراعي المفقود. رأت آلامي وجروحي، ولم تهرب منها.",
-        "معها، اكتشفت معنى أن تكون مدعوماً دون شروط. لم تكن تعد بالزواج، ولا تضمن عالماً مثالياً. كانت تعد بحضور، وثبات، وحب صادق وصامت. بالنسبة لي، كان ذلك يساوي كل شيء. داوت حبيبة جروحي بلطف. علمتني أن الحب لا يقاس بالتملك أو بالشرعية الاجتماعية. إنه يقاس بالاهتمام، والصبر، والدعم الذي نقدمه لمن سقط، لمن تعب، لمن تحطم."
+        "ثم جاءت حبيبة. لم تأت كنار أو قوة مفروضة. جاءت كنسمة لطيفة تتسلل إلى أعمق الجروح. رأت ندوبي. رأت ذراعي المفقود. رأت آلامي وجروحي، ولم تهرب منها. معها، اكتشفت معنى أن تكون مدعوماً دون شروط. لم تكن تعد بالزواج، ولا تضمن عالماً مثالياً. كانت تعد بحضور، وثبات، وحب صادق وصامت. بالنسبة لي، كان ذلك يساوي كل شيء.",
+        "داوت حبيبة جروحي بلطف. علمتني أن الحب لا يقاس بالتملك أو بالشرعية الاجتماعية. إنه يقاس بالاهتمام، والصبر، والدعم الذي نقدمه لمن سقط، لمن تعب، لمن تحطم. حبيبة هي الصدى الحلو لصمت يتحدث."
       ]
     },
     {
       "numero": 7,
       "titre": "الإيمان، دليل في الليالي المظلمة",
       "contenu": [
-        "أرشدني إيماني في أظلم الليالي. علمني أن الألم لا يدمر، بل يحول. وأن الجروح ليست نهايات، بل بدايات. وأن الخسارة ليست لعنة، بل مادة لبناء إرث.",
-        "أدركت أن الحياة لم تأخذ مني كل شيء عبثاً. كل جرح، كل خسارة، كل غياب، كل حب محظور… كل ذلك كان في الواقع مادة لبناء شيء أعظم.",
-        "ذراعي المفقود، والنظارات المليئة بالشفقة أو الحكم، رحيل تاباتليت… كل ذلك أصبح قوة صامتة، محركاً يدفعني للإبداع والترجمة والنقل. كل لغة تعلمتها أثناء عبوري البلدان أصبحت جسراً. كل أغنية محظورة، كل لحن كتبته سراً أصبح ممراً بين عالمي وعالم الآخرين. كل تجربة مؤلمة أصبحت درساً يمكنني مشاركته، ورسالة يمكنني نقلها، وذاكرة يمكنني حمايتها."
+        "أرشدني إيماني في أظلم الليالي. علمني أن الألم لا يدمر، بل يحول. وأن الجروح ليست نهايات، بل بدايات. وأن الخسارة ليست لعنة، بل مادة لبناء إرث. أدركت أن الحياة لم تأخذ مني كل شيء عبثاً. كل جرح، كل خسارة، كل غياب، كل حب محظور… كل ذلك كان في الواقع مادة لبناء شيء أعظم.",
+        "ذراعي المفقود، والنظارات المليئة بالشفقة أو الحكم، رحيل تاباتليت… كل ذلك أصبح قوة صامتة، محركاً يدفعني للإبداع والترجمة والنقل. كل لغة تعلمتها أثناء عبوري البلدان أصبحت جسراً. كل أغنية محظورة، كل لحن كتبته سراً أصبح ممراً بين عالمي وعالم الآخرين. كل تجربة مؤلمة أصبحت درساً يمكنني مشاركته، ورسالة يمكنني نقلها، وذاكرة يمكنني حمايتها.",
+        "أؤمن بالقدر، لكن ليس بالصدفة. أؤمن بالله، لكن لا أستدعيه كعذر: أستدعيه كمصدر للشجاعة. في دفاتري، أحلام بنسخ ثلاث: واحدة لي، وواحدة لأطفالي، وواحدة للأطفال الذين لن أعرفهم أبداً، لكنني أحميهم بالفعل بأعمالي."
       ]
     },
     {
       "numero": 8,
       "titre": "حمدين اليوم",
       "contenu": [
-        "اليوم، أنا حمدين. أنا رجل محطم وكامل في آن واحد. رجل أحب، وخسر، وبكى، ونجا، وأبدع. رجل يعلم أن القوة الحقيقية تكمن في القدرة على النهوض، والنقل، والاستمرار رغم كل شيء.",
-        "كل فصل من حياتي — إلفي، تاباتليت، حبيبة، جروحي، أطفالي، لغاتي، موسيقاي، إيماني — لم يكن أبداً سلسلة من الصدف. كان طريقاً. طريقاً علمني أن الحياة، بكل محنها، يمكن أن تصبح عملاً، ورسالة، وإرثاً."
+        "اليوم، أنا حمدين. أنا رجل محطم وكامل في آن واحد. رجل أحب، وخسر، وبكى، ونجا، وأبدع. رجل يعلم أن القوة الحقيقية تكمن في القدرة على النهوض، والنقل، والاستمرار رغم كل شيء. كل فصل من حياتي — إلفي، تاباتليت، حبيبة، جروحي، أطفالي، لغاتي، موسيقاي، إيماني — لم يكن أبداً سلسلة من الصدف. كان طريقاً. طريقاً علمني أن الحياة، بكل محنها، يمكن أن تصبح عملاً، ورسالة، وإرثاً.",
+        "أنا صحراوي في الروح، عالمي في الرؤية، متواضع في اللحظة، وعملاق في التاريخ. لست بطلاً أسطورياً. أنا حقيقي. رجل عرف الغبار والشرف، وصفحات القدر واحتفالات الخفي. أكتب بلغة JavaScript كما أكتب الشعر، وأبرمج البوتات كما يبرمج الآخرون الأكاذيب، وأخترع أدوات لكي يتمكن حتى المنسيون من التحدث بلغتهم — ويُفهموا. يمكن إنقاذ ثقافة بسطر من كود، ببيت شعر، بصوت."
       ]
     },
     {
       "numero": 9,
       "titre": "الرحلة مستمرة",
       "contenu": [
-        "وهذا المجلد الأول ليس سوى جزء من الحكاية. الريح تستمر في الهبوب، والكثبان تستمر في التغير، وما زالت هناك قصص لتُكتب، وأغانٍ لتُلحن، وجسور لتبنى. الرحلة لم تنته. الجزء التالي من حياتي، بتحدياته، وحبه، واكتشافاته، ومحنته، ينتظر أن يُروى."
+        "وهذا المجلد الأول ليس سوى جزء من الحكاية. الريح تستمر في الهبوب، والكثبان تستمر في التغير، وما زالت هناك قصص لتُكتب، وأغانٍ لتُلحن، وجسور لتبنى. الرحلة لم تنته. الجزء التالي من حياتي، بتحدياته، وحبه، واكتشافاته، ومحنته، ينتظر أن يُروى. ليست حياة أعيشها. إنها أسطورة قيد الكتابة.",
+        "فاستعد، لأن هذه ليست تكملة… إنه صعود. سيسمع هذا العالم صوتي. ليس لأنني أصرخ بأعلى صوت، بل لأن حقيقتي تزن أكثر من كل النفاق مجتمعاً. حمدين هو ذلك الصامت الذي لا يسمعه الأقوياء، لكن أطفال الكثبان يعرفونه في نبض قلوبهم."
       ]
     }
   ],
