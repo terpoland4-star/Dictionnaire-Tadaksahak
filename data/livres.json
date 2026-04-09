@@ -10,7 +10,7 @@
     "langue": "Français",
     "categorie": "Anthropologie politique",
     "description": "Une analyse approfondie de l'histoire politique des Idaksahak, leur quête d'autonomie et leur émergence sur la scène politique sahélienne.",
-    "couverture": "data/images/livres/couverture_idaksahak.jpg",
+    "couverture": "data/images/livres/couverture_idaksahak.jpg.jpg",
     "illustrations": [
       {
         "id": "illu_zone",
@@ -563,7 +563,7 @@
     "categorie": "الأنثروبولوجيا السياسية",
     "description": "تحليل متعمق للتاريخ السياسي للإدكساهق، سعيهم نحو الحكم الذاتي وظهورهم على الساحة السياسية في منطقة الساحل. (تمت ترجمة هذا الكتاب من الفرنسية إلى العربية بواسطة حمدين أغ مكتار، الرئيس التنفيذي لشركة HAM Global Words.)",
     "credit_traduction": "تمت ترجمة هذا الكتاب من الفرنسية إلى العربية بواسطة حمدين أغ مكتار، الرئيس التنفيذي لشركة HAM Global Words.",
-    "couverture": "data/images/livres/couverture_idaksahak_ar.jpg",
+    "couverture": "data/images/livres/couverture_idaksahak.jpg.jpg",
     "illustrations": [
       {
         "id": "illu_zone",
