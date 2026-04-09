@@ -1,6 +1,6 @@
 // ==============================
 // APPLICATION TADAKSAHAK LEARNING
-// VERSION FINALE - AVEC BANNIÈRE ANIMÉE ET COUVERTURES DES LIVRES
+// VERSION FINALE - AVEC GALERIE PHOTOS
 // ==============================
 
 console.log("🚀 Démarrage de l'application...");
@@ -41,6 +41,60 @@ const clearSearchBtn = document.getElementById("clearSearch");
 const btnPrev = document.getElementById("btnPrev");
 const btnNext = document.getElementById("btnNext");
 const compteurMot = document.getElementById("compteurMot");
+
+// ------------------------------
+// DONNÉES DE LA GALERIE PHOTOS
+// ------------------------------
+const imagesGalerie = [
+  {
+    fichier: "data/images/livres/chef_idoguiritane_1.jpg",
+    titre_fr: "Chef Idoguiritane à Tin Abaw",
+    titre_ar: "الشيخ إيدوغيريتان في تين أبا",
+    legende_fr: "Portrait du chef historique de la fraction Idoguiritane. Photo Charles Grémont, années 1990.",
+    legende_ar: "صورة للشيخ التاريخي لفصيلة إيدوغيريتان. تصوير شارل غريمون، التسعينيات.",
+    credit: "© Charles Grémont"
+  },
+  {
+    fichier: "data/images/livres/chef_idoguiritane_2.jpg",
+    titre_fr: "Réunion traditionnelle à Tin Abaw",
+    titre_ar: "اجتماع تقليدي في تين أبا",
+    legende_fr: "Le chef Idoguiritane entouré de notables lors d'une assemblée coutumière.",
+    legende_ar: "الشيخ إيدوغيريتان وحوله الأعيان خلال مجلس عرفي.",
+    credit: "© Charles Grémont"
+  },
+  {
+    fichier: "data/images/livres/chef_idoguitirane_3.jpg",
+    titre_fr: "Le chef et ses conseillers",
+    titre_ar: "الشيخ ومستشاروه",
+    legende_fr: "Moment de discussion autour des affaires de la communauté.",
+    legende_ar: "لحظة نقاش حول شؤون المجتمع.",
+    credit: "© Charles Grémont"
+  },
+  {
+    fichier: "data/images/livres/Un jeune combattant Adaksahak, au nord de Ménaka, mars 1994. Photo C.G.jpeg",
+    titre_fr: "Jeune combattant Idaksahak (1994)",
+    titre_ar: "مقاتل شاب إدكساهق (١٩٩٤)",
+    legende_fr: "Portrait d’un jeune homme armé lors de la rébellion des années 1990, nord de Ménaka.",
+    legende_ar: "صورة لشاب مسلح أثناء تمرد التسعينيات، شمال مناكا.",
+    credit: "© Charles Grémont"
+  },
+  {
+    fichier: "data/images/livres/zone des idaksahak.jpeg",
+    titre_fr: "Carte de la région des Idaksahak",
+    titre_ar: "خريطة منطقة الإدكساهق",
+    legende_fr: "Localisation des Idaksahak dans le nord-est du Mali (Ménaka, Gao).",
+    legende_ar: "موقع الإدكساهق في شمال شرق مالي (منطقة مناكا وغاو).",
+    credit: "Source : Charles Grémont"
+  },
+  {
+    fichier: "data/images/livres/idaksahak_square.png",
+    titre_fr: "Logo de la communauté Idaksahak",
+    titre_ar: "شعار مجتمع الإدكساهق",
+    legende_fr: "Symbole officiel : lecture, épée et dromadaires.",
+    legende_ar: "الشعار الرسمي: القراءة، السيف والجمال.",
+    credit: "Communauté Idaksahak"
+  }
+];
 
 // ------------------------------
 // BANNIÈRE ANIMÉE
@@ -378,6 +432,12 @@ window.changerLangue = function(lang) {
         btn.classList.toggle("active", isActive);
         btn.setAttribute("aria-pressed", isActive);
     });
+    
+    // Rafraîchir la galerie si elle est visible
+    const sectionPhotos = document.getElementById("photos");
+    if (sectionPhotos && !sectionPhotos.hidden) {
+        afficherPhotos();
+    }
 };
 
 // ------------------------------
@@ -625,6 +685,41 @@ async function afficherLivres() {
 }
 
 // ------------------------------
+// GALERIE PHOTOS
+// ------------------------------
+function afficherPhotos() {
+  const container = document.getElementById("photosContainer");
+  if (!container) return;
+
+  let html = `
+    <div class="album-header">
+      <h3>📷 Album : Photos historiques (années 1990-2000)</h3>
+      <p>Clichés de Charles Grémont et archives communautaires.</p>
+    </div>
+    <div class="galerie-grid">
+  `;
+
+  imagesGalerie.forEach(img => {
+    const titre = (langueActuelle === "fr") ? img.titre_fr : img.titre_ar;
+    const legende = (langueActuelle === "fr") ? img.legende_fr : img.legende_ar;
+
+    html += `
+      <div class="galerie-item">
+        <img src="${escapeHtml(img.fichier)}" alt="${escapeHtml(titre)}" loading="lazy">
+        <div class="galerie-caption">
+          <strong>${escapeHtml(titre)}</strong>
+          <p class="legende">${escapeHtml(legende)}</p>
+          <small class="credit">${escapeHtml(img.credit)}</small>
+        </div>
+      </div>
+    `;
+  });
+
+  html += `</div>`;
+  container.innerHTML = html;
+}
+
+// ------------------------------
 // CHATBOT
 // ------------------------------
 function afficheMsg(user, html) {
@@ -788,6 +883,7 @@ function initNavigation() {
         
         if (id === "livres") afficherLivres();
         if (id === "audio") genererAlbumsAudio();
+        if (id === "photos") afficherPhotos();
         
         const banniere = document.getElementById("banniereAnimée");
         if (banniere && localStorage.getItem("bannierefermee") === "true") {
