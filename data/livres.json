@@ -1241,6 +1241,125 @@
     "أرشيف بيت الصحافة في واغادوغو",
     "جمعية محمد مايغا (www.association-mohamed-maiga.org)"
   ]
-}
+},
+
+{
+  "id": 9,
+  "titre": "Morou of Karma : Un descendant d’Askia Daoud, figure de la résistance anti-coloniale",
+  "auteur": "Collectif (d’après Abdulhasieb Elsharief, dit Ko zeeni)",
+  "sous_titre": "L’insurrection de Karma‑Boubon (1905‑1906)",
+  "annee": "2024",
+  "pages": 4,
+  "type": "histoire",
+  "langue": "Français",
+  "categorie": "Histoire coloniale / Résistance",
+  "description": "Portrait de Morou (Oumarou), chef du canton de Karma au Niger, descendant de l’empereur songhaï Askia Daoud. Son humiliation par l’administration coloniale française en 1905, sa révolte ouverte en 1906 et la répression brutale de son village.",
+  "couverture": "data/images/livres/couverture_morou_karma.jpg",
+  "illustrations": [],
+  "chapitres": [
+    {
+      "numero": 1,
+      "titre": "Morou, chef du canton de Karma",
+      "contenu": [
+        "Morou (ou Oumarou) se distingue comme l’une des figures marquantes de la résistance locale dans la région songhaï du Niger au début du XXe siècle. Il est le chef du canton de Karma, une zone stratégique le long du fleuve Niger qui constituait un carrefour important pour les communautés locales.",
+        "Il est dit que Morou descend d’Askia Daoud, l’un des souverains notables de l’Empire songhaï, ce qui donne à sa résistance une dimension historique plus profonde, reliant la lutte présente à l’héritage de l’État songhaï."
+      ]
+    },
+    {
+      "numero": 2,
+      "titre": "L’humiliation de 1905",
+      "contenu": [
+        "Alors que le contrôle colonial français s’intensifie, de lourdes charges pèsent sur la population : impôts forcés et obligation de fournir des provisions aux troupes coloniales. Morou et son peuple résistent de plus en plus à ces mesures.",
+        "Les tensions atteignent leur paroxysme en 1905 lorsqu’il est faussement accusé de refuser de fournir de la nourriture aux soldats français. En punition, il est soumis à une épreuve humiliante : forcé de marcher pieds nus sur une longue distance jusqu’à Niamey, portant une peau de chèvre remplie d’eau devant les troupes coloniales."
+      ]
+    },
+    {
+      "numero": 3,
+      "titre": "La révolte ouverte de 1906",
+      "contenu": [
+        "Cet incident marque un tournant. Après sa libération, Morou défie ouvertement l’autorité coloniale en refusant de payer les impôts et commence à organiser la résistance contre les Français.",
+        "En mars 1906, il mène un soulèvement dans la région de Karma‑Boubon, exprimant le rejet de la domination coloniale par la population."
+      ]
+    },
+    {
+      "numero": 4,
+      "titre": "La répression coloniale",
+      "contenu": [
+        "Les autorités coloniales réagissent durement à cette défi : en 1906, elles brûlent le village de Boubon pour tenter d’étouffer l’insurrection et d’intimider la population.",
+        "Malgré cette répression, la mémoire de Morou et de sa résistance reste vivante, symbole de la lutte contre l’oppression coloniale dans la région songhaï."
+      ]
+    }
+  ],
+  "conclusion": {
+    "titre": "Un héritage de résistance",
+    "contenu": [
+      "L’histoire de Morou of Karma illustre la manière dont les héritages impériaux précoloniaux (Askia Daoud) ont nourri les résistances locales à la colonisation. Son humiliation publique puis sa révolte armée ont marqué les esprits, et la destruction de Boubon n’a pas effacé sa mémoire. Aujourd’hui, il est reconnu comme l’un des premiers chefs à avoir défié l’ordre colonial au Niger."
+    ]
+  },
+  "bibliographie": [
+    "Archives coloniales françaises (Niger, cercle de Niamey, 1905‑1906)",
+    "Travaux oraux et traditions locales recueillis par Abdulhasieb Elsharief (Ko zeeni)",
+    "Études sur l’Empire songhaï et Askia Daoud"
   ]
-  
+},
+{
+  "id": 10,
+  "titre": "مورو أوف كارما: سليل أسكيا داود، رمز المقاومة المناهضة للاستعمار",
+  "auteur": "فريق بحثي (نقلاً عن عبد الحسيب الشريف، الملقب كو زيني)",
+  "sous_titre": "انتفاضة كارما‑بوبون (1905‑1906)",
+  "annee": "2024",
+  "pages": 4,
+  "type": "histoire",
+  "langue": "Arabe",
+  "categorie": "تاريخ استعماري / مقاومة",
+  "description": "صورة لمورو (عمر) رئيس كانتون كارما في النيجر، سليل الإمبراطور السونغهاي أسكيا داود. إذلاله من قبل الإدارة الاستعمارية الفرنسية عام 1905، وثورته العلنية عام 1906، والقمع الوحشي لقرية بوبون.",
+  "credit_traduction": "تمت ترجمة هذا الكتاب من الفرنسية إلى العربية بواسطة حمدين أغ مكتار، الرئيس التنفيذي لشركة HAM Global Words.",
+  "couverture": "data/images/livres/couverture_morou_karma_ar.jpg",
+  "illustrations": [],
+  "chapitres": [
+    {
+      "numero": 1,
+      "titre": "مورو، رئيس كانتون كارما",
+      "contenu": [
+        "يبرز مورو (أو عمر) كأحد أبرز شخصيات المقاومة المحلية في منطقة سونغهاي بالنيجر في مطلع القرن العشرين. كان رئيس كانتون كارما، وهي منطقة استراتيجية على طول نهر النيجر شكلت مركزاً مهماً للمجتمعات المحلية.",
+        "يُقال إن مورو ينحدر من أسكيا داود، أحد حكام إمبراطورية سونغهاي البارزين، مما أعطى مقاومته بعداً تاريخياً أعمق، يربط النضال الحالي بإرث الدولة السونغهاوية."
+      ]
+    },
+    {
+      "numero": 2,
+      "titre": "إذلال عام 1905",
+      "contenu": [
+        "مع اشتداد السيطرة الاستعمارية الفرنسية، فُرضت أعباء ثقيلة على السكان: ضرائب إجبارية وإلزام بتزويد القوات الاستعمارية بالمؤن. قاوم مورو وشعبه هذه الإجراءات بشكل متزايد.",
+        "بلغت التوترات ذروتها عام 1905 عندما اتُهم زوراً برفض توفير الطعام للجنود الفرنسيين. كعقاب، خضع لمحنة مهينة: أُجبر على المشي حافي القدمين لمسافة طويلة إلى نيامي وهو يحمل جلد ماعز مملوء بالماء أمام القوات الاستعمارية."
+      ]
+    },
+    {
+      "numero": 3,
+      "titre": "الثورة المعلنة عام 1906",
+      "contenu": [
+        "شكل هذا الحادث نقطة تحول. بعد إطلاق سراحه، تحدى مورو السلطة الاستعمارية علناً برفضه دفع الضرائب وبدأ في تنظيم المقاومة ضد الفرنسيين.",
+        "في مارس 1906، قاد انتفاضة في منطقة كارما‑بوبون، معبراً عن رفض السكان للهيمنة الاستعمارية."
+      ]
+    },
+    {
+      "numero": 4,
+      "titre": "القمع الاستعماري",
+      "contenu": [
+        "ردت السلطات الاستعمارية بقسوة على هذا التحدي: ففي عام 1906، أحرقت قرية بوبون في محاولة لقمع الانتفاضة وترويع السكان.",
+        "على الرغم من هذا القمع، تبقى ذكرى مورو ومقاومته حية، رمزاً للنضال ضد الاضطهاد الاستعماري في منطقة سونغهاي."
+      ]
+    }
+  ],
+  "conclusion": {
+    "titre": "إرث من المقاومة",
+    "contenu": [
+      "تظهر قصة مورو أوف كارما كيف أن الإرث الإمبراطوري ما قبل الاستعماري (أسكيا داود) غذى المقاومة المحلية للاستعمار. إذلاله العلني ثم تمرده المسلح تركا بصمة في الأذهان، وتدمير بوبون لم يمح ذكراه. يُعترف به اليوم كأحد أوائل الزعماء الذين تحدوا النظام الاستعماري في النيجر."
+    ]
+  },
+  "bibliographie": [
+    "أرشيفات استعمارية فرنسية (النيجر، دائرة نيامي، 1905‑1906)",
+    "تقاليد شفوية ومصادر محلية جمعها عبد الحسيب الشريف (كو زيني)",
+    "دراسات حول إمبراطورية سونغهاي وأسكيا داود"
+  ]
+}
+]
