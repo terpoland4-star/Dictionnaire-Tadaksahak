@@ -1101,466 +1101,1246 @@
     "conclusion": null,
     "bibliographie": []
   },
-{
-  "id": 7,
-  "titre": "Mohamed Maïga : Journaliste engagé, ami de Thomas Sankara",
-  "auteur": "Collectif",
-  "sous_titre": "Biographie d’un pionnier du journalisme africain",
-  "annee": "2024",
-  "pages": 8,
-  "type": "biographie",
-  "langue": "Français",
-  "categorie": "Histoire / Journalisme",
-  "description": "Portrait de Mohamed Maïga, journaliste malien, figure du panafricanisme et proche de Thomas Sankara. Son parcours, ses combats et sa mort mystérieuse.",
-  "couverture": "data/images/livres/Couverture de livre _ héritage et journalisme.png",
-  "illustrations": [],
-  "chapitres": [
-    {
-      "numero": 1,
-      "titre": "Jeunesse et formation",
+  {
+    "id": 7,
+    "titre": "Mohamed Maïga : Journaliste engagé, ami de Thomas Sankara",
+    "auteur": "Collectif",
+    "sous_titre": "Biographie d’un pionnier du journalisme africain",
+    "annee": "2024",
+    "pages": 8,
+    "type": "biographie",
+    "langue": "Français",
+    "categorie": "Histoire / Journalisme",
+    "description": "Portrait de Mohamed Maïga, journaliste malien, figure du panafricanisme et proche de Thomas Sankara. Son parcours, ses combats et sa mort mystérieuse.",
+    "couverture": "data/images/livres/Couverture de livre _ héritage et journalisme.png",
+    "illustrations": [],
+    "chapitres": [
+      {
+        "numero": 1,
+        "titre": "Jeunesse et formation",
+        "contenu": [
+          "Mohamed Maïga est né le 20 août 1950 à Ansongo, une petite ville située à une centaine de kilomètres de Gao, au Soudan Français (aujourd'hui République du Mali). Il a grandi dans une famille nombreuse, entre l'ethnie Peule nomade de sa mère, Adizatou Diallo, et le milieu sédentaire Songhaï de son père, Boncaneye Hambou Maïga.",
+          "Malgré les réticences de sa classe sociale, son père a plaidé pour l'éducation scolaire et a envoyé tous ses enfants, y compris les filles, à l'école française. Après avoir obtenu son baccalauréat en 1969, Mohamed a bénéficié d'une bourse pour étudier au Centre Universitaire d’Enseignement du Journalisme (CUEJ) de Strasbourg, en France.",
+          "Il a ensuite poursuivi ses études en journalisme au Centre d'Études des Sciences et Techniques de l'Information (CESTI) à Dakar puis au Canada, au Centre Audiovisuel de l’Université de Montréal. Il a terminé ses études en 1977 à l’Institut Français de Presse (IFP) à l’Université Panthéon-Assas.",
+          "Sa scolarité au Mali est marquée par la promotion de l'Histoire et de la Culture africaines, à la suite de la décolonisation. Ses études en Afrique, en Europe et en Amérique du Nord lui permettent de développer une conscience politique aiguisée. Les théories du Marxisme africain et du Panafricanisme, développées par Kwame Nkrumah (Ghana) et Amilcar Cabral (Guinée Bissau & Cap Vert), lui apparaissent comme des solutions potentielles pour mettre fin à la corruption et au néocolonialisme."
+        ]
+      },
+      {
+        "numero": 2,
+        "titre": "Carrière journalistique",
+        "contenu": [
+          "En 1977, Mohamed Maïga est embauché par le magazine hebdomadaire Jeune Afrique, référence en politique africaine. Il rejoint la rédaction du fondateur, Bechir Ben Yahmed, aux côtés de collègues tels que Amin Maalouf et François Soudan. Sa plume engagée l'impose en tant que journaliste politique, attirant l'attention des populations et de la jeunesse politisées dans les pays africains francophones.",
+          "Au début des années 80, Mohamed Maïga écrit pour le magazine Afrique Asie. Dirigé par Simon Malley, le bimensuel est considéré comme le plus à gauche des médias internationaux panafricains. Maïga y trouve un espace de liberté plus grand où mener ses enquêtes et exprimer ses convictions de journaliste engagé, polyvalent, aussi à l’aise dans les espaces francophones qu’anglophones."
+        ]
+      },
+      {
+        "numero": 3,
+        "titre": "Rencontre avec Thomas Sankara et engagement politique",
+        "contenu": [
+          "En Haute Volta (futur Burkina Faso), le jeune capitaine Thomas Sankara devient incontournable : critique du néocolonialisme, combat contre la corruption et vision positive pour l'avenir de son pays sont articulés avec brio par ce militaire humaniste et instruit. Maïga voit en lui une promesse de changement et consacre de grands entretiens exclusifs à Thomas Sankara, lui donnant ainsi l'occasion de s'exprimer directement, sans l'intermédiaire de la presse occidentale qui le caricaturait alors.",
+          "Maïga œuvre ainsi pour la légitimisation de Sankara auprès de la gauche burkinabè. Ses articles et entretiens à Afrique-Asie contribueront à faire connaître Sankara à l'étranger. Les deux hommes sont liés par une forte amitié et un profond respect mutuel. Ils participent à la première révolution burkinabè."
+        ]
+      },
+      {
+        "numero": 4,
+        "titre": "Circonstances du décès",
+        "contenu": [
+          "En décembre 1983, Maïga rend visite à Jerry Rawlings, dirigeant ghanéen, puis à Thomas Sankara, à Ouagadougou. C’est dans cette ville que son destin tragique se scelle, le 1er janvier 1984 dans des circonstances troubles jamais élucidées. L'autopsie conclut à un empoisonnement. Les responsabilités et les motifs restent inconnus à ce jour."
+        ]
+      },
+      {
+        "numero": 5,
+        "titre": "Héritage et hommages",
+        "contenu": [
+          "Mohamed Maïga reçoit des obsèques nationales. Les funérailles sont retransmises à la télévision nationale burkinabè et un convoi militaire accompagne la dépouille en vue de son rapatriement au Mali. Une importante délégation, avec à sa tête, le ministre de l'Information, accompagne le corps sur sa terre natale, à Ansongo.",
+          "Sankara le décore à titre posthume Commandeur de l'Ordre National du Mérite. La Maison de la Presse à Ouagadougou est baptisée en son honneur. Et la chanson « Hommage à Mohamed Maïga » commandée par Thomas Sankara témoigne de l’apport du journaliste à la libération africaine.",
+          "L’Association Mohamed Maïga est lancée le 1er janvier 2024, quarante ans jour pour jour après le décès du journaliste. Elle célèbre l’héritage intellectuel et le courage politique de Mohamed Maïga à travers des projets positifs qui perpétuent ses combats sur le continent africain."
+        ]
+      }
+    ],
+    "conclusion": {
+      "titre": "Un héritage vivant",
       "contenu": [
-        "Mohamed Maïga est né le 20 août 1950 à Ansongo, une petite ville située à une centaine de kilomètres de Gao, au Soudan Français (aujourd'hui République du Mali). Il a grandi dans une famille nombreuse, entre l'ethnie Peule nomade de sa mère, Adizatou Diallo, et le milieu sédentaire Songhaï de son père, Boncaneye Hambou Maïga.",
-        "Malgré les réticences de sa classe sociale, son père a plaidé pour l'éducation scolaire et a envoyé tous ses enfants, y compris les filles, à l'école française. Après avoir obtenu son baccalauréat en 1969, Mohamed a bénéficié d'une bourse pour étudier au Centre Universitaire d’Enseignement du Journalisme (CUEJ) de Strasbourg, en France.",
-        "Il a ensuite poursuivi ses études en journalisme au Centre d'Études des Sciences et Techniques de l'Information (CESTI) à Dakar puis au Canada, au Centre Audiovisuel de l’Université de Montréal. Il a terminé ses études en 1977 à l’Institut Français de Presse (IFP) à l’Université Panthéon-Assas.",
-        "Sa scolarité au Mali est marquée par la promotion de l'Histoire et de la Culture africaines, à la suite de la décolonisation. Ses études en Afrique, en Europe et en Amérique du Nord lui permettent de développer une conscience politique aiguisée. Les théories du Marxisme africain et du Panafricanisme, développées par Kwame Nkrumah (Ghana) et Amilcar Cabral (Guinée Bissau & Cap Vert), lui apparaissent comme des solutions potentielles pour mettre fin à la corruption et au néocolonialisme."
+        "Mohamed Maïga incarne le journalisme d’investigation et l’engagement panafricain. Sa mort mystérieuse n’a pas effacé sa mémoire : ses écrits, ses entretiens avec Sankara et l’association qui porte son nom continuent d’inspirer les jeunes générations. En redécouvrant son parcours, on mesure l’importance d’une presse libre et indépendante pour la renaissance de l’Afrique."
       ]
     },
-    {
-      "numero": 2,
-      "titre": "Carrière journalistique",
-      "contenu": [
-        "En 1977, Mohamed Maïga est embauché par le magazine hebdomadaire Jeune Afrique, référence en politique africaine. Il rejoint la rédaction du fondateur, Bechir Ben Yahmed, aux côtés de collègues tels que Amin Maalouf et François Soudan. Sa plume engagée l'impose en tant que journaliste politique, attirant l'attention des populations et de la jeunesse politisées dans les pays africains francophones.",
-        "Au début des années 80, Mohamed Maïga écrit pour le magazine Afrique Asie. Dirigé par Simon Malley, le bimensuel est considéré comme le plus à gauche des médias internationaux panafricains. Maïga y trouve un espace de liberté plus grand où mener ses enquêtes et exprimer ses convictions de journaliste engagé, polyvalent, aussi à l’aise dans les espaces francophones qu’anglophones."
-      ]
-    },
-    {
-      "numero": 3,
-      "titre": "Rencontre avec Thomas Sankara et engagement politique",
-      "contenu": [
-        "En Haute Volta (futur Burkina Faso), le jeune capitaine Thomas Sankara devient incontournable : critique du néocolonialisme, combat contre la corruption et vision positive pour l'avenir de son pays sont articulés avec brio par ce militaire humaniste et instruit. Maïga voit en lui une promesse de changement et consacre de grands entretiens exclusifs à Thomas Sankara, lui donnant ainsi l'occasion de s'exprimer directement, sans l'intermédiaire de la presse occidentale qui le caricaturait alors.",
-        "Maïga œuvre ainsi pour la légitimisation de Sankara auprès de la gauche burkinabè. Ses articles et entretiens à Afrique-Asie contribueront à faire connaître Sankara à l'étranger. Les deux hommes sont liés par une forte amitié et un profond respect mutuel. Ils participent à la première révolution burkinabè."
-      ]
-    },
-    {
-      "numero": 4,
-      "titre": "Circonstances du décès",
-      "contenu": [
-        "En décembre 1983, Maïga rend visite à Jerry Rawlings, dirigeant ghanéen, puis à Thomas Sankara, à Ouagadougou. C’est dans cette ville que son destin tragique se scelle, le 1er janvier 1984 dans des circonstances troubles jamais élucidées. L'autopsie conclut à un empoisonnement. Les responsabilités et les motifs restent inconnus à ce jour."
-      ]
-    },
-    {
-      "numero": 5,
-      "titre": "Héritage et hommages",
-      "contenu": [
-        "Mohamed Maïga reçoit des obsèques nationales. Les funérailles sont retransmises à la télévision nationale burkinabè et un convoi militaire accompagne la dépouille en vue de son rapatriement au Mali. Une importante délégation, avec à sa tête, le ministre de l'Information, accompagne le corps sur sa terre natale, à Ansongo.",
-        "Sankara le décore à titre posthume Commandeur de l'Ordre National du Mérite. La Maison de la Presse à Ouagadougou est baptisée en son honneur. Et la chanson « Hommage à Mohamed Maïga » commandée par Thomas Sankara témoigne de l’apport du journaliste à la libération africaine.",
-        "L’Association Mohamed Maïga est lancée le 1er janvier 2024, quarante ans jour pour jour après le décès du journaliste. Elle célèbre l’héritage intellectuel et le courage politique de Mohamed Maïga à travers des projets positifs qui perpétuent ses combats sur le continent africain."
-      ]
-    }
-  ],
-  "conclusion": {
-    "titre": "Un héritage vivant",
-    "contenu": [
-      "Mohamed Maïga incarne le journalisme d’investigation et l’engagement panafricain. Sa mort mystérieuse n’a pas effacé sa mémoire : ses écrits, ses entretiens avec Sankara et l’association qui porte son nom continuent d’inspirer les jeunes générations. En redécouvrant son parcours, on mesure l’importance d’une presse libre et indépendante pour la renaissance de l’Afrique."
+    "bibliographie": [
+      "Articles de Mohamed Maïga dans Jeune Afrique et Afrique Asie (1977-1983)",
+      "Témoignages sur Thomas Sankara et la révolution burkinabè",
+      "Archives de la Maison de la Presse de Ouagadougou",
+      "Association Mohamed Maïga (www.association-mohamed-maiga.org)"
     ]
   },
-  "bibliographie": [
-    "Articles de Mohamed Maïga dans Jeune Afrique et Afrique Asie (1977-1983)",
-    "Témoignages sur Thomas Sankara et la révolution burkinabè",
-    "Archives de la Maison de la Presse de Ouagadougou",
-    "Association Mohamed Maïga (www.association-mohamed-maiga.org)"
-  ]
-},
-{
-  "id": 8,
-  "titre": "محمد مايغا: صحفي ملتزم وصديق لتوماس سانكارا",
-  "auteur": "فريق بحثي",
-  "sous_titre": "سيرة رائد الصحافة الأفريقية",
-  "annee": "2024",
-  "pages": 8,
-  "type": "biographie",
-  "langue": "Arabe",
-  "categorie": "تاريخ / صحافة",
-  "description": "صورة لمحمد مايغا، صحفي مالي، شخصية بارزة في الوحدة الأفريقية ومقرب من توماس سانكارا. مسيرته ونضالاته ووفاته الغامضة.",
-  "credit_traduction": "تمت ترجمة هذا الكتاب من الفرنسية إلى العربية بواسطة حمدين أغ مكتار، الرئيس التنفيذي لشركة HAM Global Words.",
-  "couverture": "data/images/livres/Couverture de livre _ héritage et journalisme.png",
-  "illustrations": [],
-  "chapitres": [
-    {
-      "numero": 1,
-      "titre": "النشأة والتكوين",
+  {
+    "id": 8,
+    "titre": "محمد مايغا: صحفي ملتزم وصديق لتوماس سانكارا",
+    "auteur": "فريق بحثي",
+    "sous_titre": "سيرة رائد الصحافة الأفريقية",
+    "annee": "2024",
+    "pages": 8,
+    "type": "biographie",
+    "langue": "Arabe",
+    "categorie": "تاريخ / صحافة",
+    "description": "صورة لمحمد مايغا، صحفي مالي، شخصية بارزة في الوحدة الأفريقية ومقرب من توماس سانكارا. مسيرته ونضالاته ووفاته الغامضة.",
+    "credit_traduction": "تمت ترجمة هذا الكتاب من الفرنسية إلى العربية بواسطة حمدين أغ مكتار، الرئيس التنفيذي لشركة HAM Global Words.",
+    "couverture": "data/images/livres/Couverture de livre _ héritage et journalisme.png",
+    "illustrations": [],
+    "chapitres": [
+      {
+        "numero": 1,
+        "titre": "النشأة والتكوين",
+        "contenu": [
+          "وُلد محمد مايغا في 20 أغسطس 1950 في أنسونغو، بلدة صغيرة تبعد حوالي مائة كيلومتر عن غاو، في السودان الفرنسي (جمهورية مالي حالياً). نشأ في عائلة كبيرة، بين عرق الفلان الرحل من والدته عادياتو ديالو، والوسط المستقر السونغهاي لوالده بونكاناي هامبو مايغا.",
+          "على الرغم من تحفظات طبقته الاجتماعية، دافع والده عن التعليم المدرسي وأرسل جميع أطفاله، بمن فيهم الفتيات، إلى المدرسة الفرنسية. بعد حصوله على البكالوريا عام 1969، استفاد محمد من منحة للدراسة في المركز الجامعي لتعليم الصحافة (CUEJ) في ستراسبورغ بفرنسا.",
+          "تابع دراساته في الصحافة في مركز دراسات علوم وتقنيات الإعلام (CESTI) في داكار ثم في كندا، في المركز السمعي البصري بجامعة مونتريال. أنهى دراساته عام 1977 في المعهد الفرنسي للصحافة (IFP) بجامعة بانتيون أساس.",
+          "تميزت دراسته في مالي بتعزيز التاريخ والثقافة الأفريقية، في أعقاب إنهاء الاستعمار. سمحت له دراساته في أفريقيا وأوروبا وأمريكا الشمالية بتطوير وعي سياسي حاد. بدت له نظريات الماركسية الأفريقية والوحدة الأفريقية، التي طورها كوامي نكروما (غانا) وأميلكار كابرال (غينيا بيساو والرأس الأخضر)، كحلول محتملة لإنهاء الفساد والاستعمار الجديد الذي يعاني منه الشعوب الأفريقية."
+        ]
+      },
+      {
+        "numero": 2,
+        "titre": "المسيرة الصحفية",
+        "contenu": [
+          "في عام 1977، تم تعيين محمد مايغا في مجلة (جون أفريك) الأسبوعية، المرجع في السياسة الأفريقية. انضم إلى تحرير المؤسس بشير بن يحيى، إلى جانب زملاء مثل أمين معلوف وفرانسوا سودان. فرضته قلمه الملتزم كصحفي سياسي، وجذب انتباه السكان والشباب المثقف سياسياً في البلدان الأفريقية الناطقة بالفرنسية.",
+          "في أوائل الثمانينيات، كتب محمد مايغا لمجلة (أفريك آسي). كانت المجلة نصف الشهرية، بقيادة سيمون مالي، تعتبر الأكثر يسارية بين وسائل الإعلام الدولية الوحدوية الأفريقية. وجد مايغا فيها مساحة أكبر من الحرية لإجراء تحقيقاته والتعبير عن قناعاته كصحفي ملتزم ومتعدد المهارات، مرتاح في الأوساط الناطقة بالفرنسية والإنجليزية على حد سواء."
+        ]
+      },
+      {
+        "numero": 3,
+        "titre": "لقاء توماس سانكارا والالتزام السياسي",
+        "contenu": [
+          "في فولتا العليا (بوركينا فاسو لاحقاً)، أصبح النقيب الشاب توماس سانكارا شخصية لا غنى عنها: نقد الاستعمار الجديد، ومكافحة الفساد، والرؤية الإيجابية لمستقبل بلاده، كل ذلك تم التعبير عنه ببراعة من قبل هذا العسكري الإنساني والمثقف. رأى مايغا فيه وعداً بالتغيير وكرس مقابلات حصرية كبيرة لتوماس سانكارا، مما أتاح له الفرصة للتحدث مباشرة، دون وساطة الصحافة الغربية التي كانت تقدمه بشكل كاريكاتوري.",
+          "عمل مايغا على إضفاء الشرعية على سانكارا لدى اليسار البوركينابي. ساهمت مقالاته ومقابلاته في (أفريك آسي) في تعريف سانكارا في الخارج. كان الرجلان مرتبطين بصداقة قوية واحترام متبادل عميق. شاركا في الثورة البوركينابية الأولى."
+        ]
+      },
+      {
+        "numero": 4,
+        "titre": "ظروف الوفاة",
+        "contenu": [
+          "في ديسمبر 1983، زار مايغا جيري رولينغز، الزعيم الغاني، ثم توماس سانكارا في واغادوغو. في هذه المدينة تم حسم مصيره المأساوي، في 1 يناير 1984 في ظروف غامضة لم تُكشف قط. خلص تشريح الجثة إلى التسمم. لا تزال المسؤوليات والدوافع غير معروفة حتى اليوم."
+        ]
+      },
+      {
+        "numero": 5,
+        "titre": "الإرث والتكريمات",
+        "contenu": [
+          "حظي محمد مايغا بجنازات وطنية. تم بث الجنازة على التلفزيون الوطني البوركينابي ورافق موكب عسكري الرفقة تمهيداً لإعادتها إلى مالي. وفد مهم، على رأسه وزير الإعلام، رافق الجثمان إلى موطنه الأصلي، أنسونغو.",
+          "قلده سانكارا بعد وفاته وسام قائد في النظام الوطني للاستحقاق. سُمي بيت الصحافة في واغادوغو باسمه. وأغنية (تحية لمحمد مايغا) التي أمر بها توماس سانكارا تشهد على إسهام الصحفي في تحرير أفريقيا.",
+          "تم إطلاق جمعية محمد مايغا في 1 يناير 2024، بعد أربعين سنة بالضبط من وفاة الصحفي. تحتفي بالإرث الفكري والشجاعة السياسية لمحمد مايغا من خلال مشاريع إيجابية تواصل نضالاته في القارة الأفريقية."
+        ]
+      }
+    ],
+    "conclusion": {
+      "titre": "إرث حي",
       "contenu": [
-        "وُلد محمد مايغا في 20 أغسطس 1950 في أنسونغو، بلدة صغيرة تبعد حوالي مائة كيلومتر عن غاو، في السودان الفرنسي (جمهورية مالي حالياً). نشأ في عائلة كبيرة، بين عرق الفلان الرحل من والدته عادياتو ديالو، والوسط المستقر السونغهاي لوالده بونكاناي هامبو مايغا.",
-        "على الرغم من تحفظات طبقته الاجتماعية، دافع والده عن التعليم المدرسي وأرسل جميع أطفاله، بمن فيهم الفتيات، إلى المدرسة الفرنسية. بعد حصوله على البكالوريا عام 1969، استفاد محمد من منحة للدراسة في المركز الجامعي لتعليم الصحافة (CUEJ) في ستراسبورغ بفرنسا.",
-        "تابع دراساته في الصحافة في مركز دراسات علوم وتقنيات الإعلام (CESTI) في داكار ثم في كندا، في المركز السمعي البصري بجامعة مونتريال. أنهى دراساته عام 1977 في المعهد الفرنسي للصحافة (IFP) بجامعة بانتيون أساس.",
-        "تميزت دراسته في مالي بتعزيز التاريخ والثقافة الأفريقية، في أعقاب إنهاء الاستعمار. سمحت له دراساته في أفريقيا وأوروبا وأمريكا الشمالية بتطوير وعي سياسي حاد. بدت له نظريات الماركسية الأفريقية والوحدة الأفريقية، التي طورها كوامي نكروما (غانا) وأميلكار كابرال (غينيا بيساو والرأس الأخضر)، كحلول محتملة لإنهاء الفساد والاستعمار الجديد الذي يعاني منه الشعوب الأفريقية."
+        "يجسد محمد مايغا صحافة التحقيق والالتزام الوحدوي الأفريقي. وفاته الغامضة لم تمح ذكراه: كتاباته ومقابلاته مع سانكارا والجمعية التي تحمل اسمه لا تزال تلهم الأجيال الشابة. بإعادة اكتشاف مسيرته، ندرك أهمية الصحافة الحرة والمستقلة لنهضة أفريقيا."
       ]
     },
-    {
-      "numero": 2,
-      "titre": "المسيرة الصحفية",
-      "contenu": [
-        "في عام 1977، تم تعيين محمد مايغا في مجلة (جون أفريك) الأسبوعية، المرجع في السياسة الأفريقية. انضم إلى تحرير المؤسس بشير بن يحيى، إلى جانب زملاء مثل أمين معلوف وفرانسوا سودان. فرضته قلمه الملتزم كصحفي سياسي، وجذب انتباه السكان والشباب المثقف سياسياً في البلدان الأفريقية الناطقة بالفرنسية.",
-        "في أوائل الثمانينيات، كتب محمد مايغا لمجلة (أفريك آسي). كانت المجلة نصف الشهرية، بقيادة سيمون مالي، تعتبر الأكثر يسارية بين وسائل الإعلام الدولية الوحدوية الأفريقية. وجد مايغا فيها مساحة أكبر من الحرية لإجراء تحقيقاته والتعبير عن قناعاته كصحفي ملتزم ومتعدد المهارات، مرتاح في الأوساط الناطقة بالفرنسية والإنجليزية على حد سواء."
-      ]
-    },
-    {
-      "numero": 3,
-      "titre": "لقاء توماس سانكارا والالتزام السياسي",
-      "contenu": [
-        "في فولتا العليا (بوركينا فاسو لاحقاً)، أصبح النقيب الشاب توماس سانكارا شخصية لا غنى عنها: نقد الاستعمار الجديد، ومكافحة الفساد، والرؤية الإيجابية لمستقبل بلاده، كل ذلك تم التعبير عنه ببراعة من قبل هذا العسكري الإنساني والمثقف. رأى مايغا فيه وعداً بالتغيير وكرس مقابلات حصرية كبيرة لتوماس سانكارا، مما أتاح له الفرصة للتحدث مباشرة، دون وساطة الصحافة الغربية التي كانت تقدمه بشكل كاريكاتوري.",
-        "عمل مايغا على إضفاء الشرعية على سانكارا لدى اليسار البوركينابي. ساهمت مقالاته ومقابلاته في (أفريك آسي) في تعريف سانكارا في الخارج. كان الرجلان مرتبطين بصداقة قوية واحترام متبادل عميق. شاركا في الثورة البوركينابية الأولى."
-      ]
-    },
-    {
-      "numero": 4,
-      "titre": "ظروف الوفاة",
-      "contenu": [
-        "في ديسمبر 1983، زار مايغا جيري رولينغز، الزعيم الغاني، ثم توماس سانكارا في واغادوغو. في هذه المدينة تم حسم مصيره المأساوي، في 1 يناير 1984 في ظروف غامضة لم تُكشف قط. خلص تشريح الجثة إلى التسمم. لا تزال المسؤوليات والدوافع غير معروفة حتى اليوم."
-      ]
-    },
-    {
-      "numero": 5,
-      "titre": "الإرث والتكريمات",
-      "contenu": [
-        "حظي محمد مايغا بجنازات وطنية. تم بث الجنازة على التلفزيون الوطني البوركينابي ورافق موكب عسكري الرفقة تمهيداً لإعادتها إلى مالي. وفد مهم، على رأسه وزير الإعلام، رافق الجثمان إلى موطنه الأصلي، أنسونغو.",
-        "قلده سانكارا بعد وفاته وسام قائد في النظام الوطني للاستحقاق. سُمي بيت الصحافة في واغادوغو باسمه. وأغنية (تحية لمحمد مايغا) التي أمر بها توماس سانكارا تشهد على إسهام الصحفي في تحرير أفريقيا.",
-        "تم إطلاق جمعية محمد مايغا في 1 يناير 2024، بعد أربعين سنة بالضبط من وفاة الصحفي. تحتفي بالإرث الفكري والشجاعة السياسية لمحمد مايغا من خلال مشاريع إيجابية تواصل نضالاته في القارة الأفريقية."
-      ]
-    }
-  ],
-  "conclusion": {
-    "titre": "إرث حي",
-    "contenu": [
-      "يجسد محمد مايغا صحافة التحقيق والالتزام الوحدوي الأفريقي. وفاته الغامضة لم تمح ذكراه: كتاباته ومقابلاته مع سانكارا والجمعية التي تحمل اسمه لا تزال تلهم الأجيال الشابة. بإعادة اكتشاف مسيرته، ندرك أهمية الصحافة الحرة والمستقلة لنهضة أفريقيا."
+    "bibliographie": [
+      "مقالات محمد مايغا في (جون أفريك) و(أفريك آسي) (1977-1983)",
+      "شهادات عن توماس سانكارا والثورة البوركينابية",
+      "أرشيف بيت الصحافة في واغادوغو",
+      "جمعية محمد مايغا (www.association-mohamed-maiga.org)"
     ]
   },
-  "bibliographie": [
-    "مقالات محمد مايغا في (جون أفريك) و(أفريك آسي) (1977-1983)",
-    "شهادات عن توماس سانكارا والثورة البوركينابية",
-    "أرشيف بيت الصحافة في واغادوغو",
-    "جمعية محمد مايغا (www.association-mohamed-maiga.org)"
-  ]
-},
-
-{
-  "id": 9,
-  "titre": "Morou of Karma : Un descendant d’Askia Daoud, figure de la résistance anti-coloniale",
-  "auteur": "Collectif (d’après Abdulhasieb Elsharief, dit Ko zeeni)",
-  "sous_titre": "L’insurrection de Karma‑Boubon (1905‑1906)",
-  "annee": "2024",
-  "pages": 4,
-  "type": "histoire",
-  "langue": "Français",
-  "categorie": "Histoire coloniale / Résistance",
-  "description": "Portrait de Morou (Oumarou), chef du canton de Karma au Niger, descendant de l’empereur songhaï Askia Daoud. Son humiliation par l’administration coloniale française en 1905, sa révolte ouverte en 1906 et la répression brutale de son village.",
-  "couverture": "data/images/livres/Morou de Karma au crépuscule.png",
-  "illustrations": [],
-  "chapitres": [
-    {
-      "numero": 1,
-      "titre": "Morou, chef du canton de Karma",
+  {
+    "id": 9,
+    "titre": "Morou of Karma : Un descendant d’Askia Daoud, figure de la résistance anti-coloniale",
+    "auteur": "Collectif (d’après Abdulhasieb Elsharief, dit Ko zeeni)",
+    "sous_titre": "L’insurrection de Karma‑Boubon (1905‑1906)",
+    "annee": "2024",
+    "pages": 4,
+    "type": "histoire",
+    "langue": "Français",
+    "categorie": "Histoire coloniale / Résistance",
+    "description": "Portrait de Morou (Oumarou), chef du canton de Karma au Niger, descendant de l’empereur songhaï Askia Daoud. Son humiliation par l’administration coloniale française en 1905, sa révolte ouverte en 1906 et la répression brutale de son village.",
+    "couverture": "data/images/livres/Morou de Karma au crépuscule.png",
+    "illustrations": [],
+    "chapitres": [
+      {
+        "numero": 1,
+        "titre": "Morou, chef du canton de Karma",
+        "contenu": [
+          "Morou (ou Oumarou) se distingue comme l’une des figures marquantes de la résistance locale dans la région songhaï du Niger au début du XXe siècle. Il est le chef du canton de Karma, une zone stratégique le long du fleuve Niger qui constituait un carrefour important pour les communautés locales.",
+          "Il est dit que Morou descend d’Askia Daoud, l’un des souverains notables de l’Empire songhaï, ce qui donne à sa résistance une dimension historique plus profonde, reliant la lutte présente à l’héritage de l’État songhaï."
+        ]
+      },
+      {
+        "numero": 2,
+        "titre": "L’humiliation de 1905",
+        "contenu": [
+          "Alors que le contrôle colonial français s’intensifie, de lourdes charges pèsent sur la population : impôts forcés et obligation de fournir des provisions aux troupes coloniales. Morou et son peuple résistent de plus en plus à ces mesures.",
+          "Les tensions atteignent leur paroxysme en 1905 lorsqu’il est faussement accusé de refuser de fournir de la nourriture aux soldats français. En punition, il est soumis à une épreuve humiliante : forcé de marcher pieds nus sur une longue distance jusqu’à Niamey, portant une peau de chèvre remplie d’eau devant les troupes coloniales."
+        ]
+      },
+      {
+        "numero": 3,
+        "titre": "La révolte ouverte de 1906",
+        "contenu": [
+          "Cet incident marque un tournant. Après sa libération, Morou défie ouvertement l’autorité coloniale en refusant de payer les impôts et commence à organiser la résistance contre les Français.",
+          "En mars 1906, il mène un soulèvement dans la région de Karma‑Boubon, exprimant le rejet de la domination coloniale par la population."
+        ]
+      },
+      {
+        "numero": 4,
+        "titre": "La répression coloniale",
+        "contenu": [
+          "Les autorités coloniales réagissent durement à cette défi : en 1906, elles brûlent le village de Boubon pour tenter d’étouffer l’insurrection et d’intimider la population.",
+          "Malgré cette répression, la mémoire de Morou et de sa résistance reste vivante, symbole de la lutte contre l’oppression coloniale dans la région songhaï."
+        ]
+      }
+    ],
+    "conclusion": {
+      "titre": "Un héritage de résistance",
       "contenu": [
-        "Morou (ou Oumarou) se distingue comme l’une des figures marquantes de la résistance locale dans la région songhaï du Niger au début du XXe siècle. Il est le chef du canton de Karma, une zone stratégique le long du fleuve Niger qui constituait un carrefour important pour les communautés locales.",
-        "Il est dit que Morou descend d’Askia Daoud, l’un des souverains notables de l’Empire songhaï, ce qui donne à sa résistance une dimension historique plus profonde, reliant la lutte présente à l’héritage de l’État songhaï."
+        "L’histoire de Morou of Karma illustre la manière dont les héritages impériaux précoloniaux (Askia Daoud) ont nourri les résistances locales à la colonisation. Son humiliation publique puis sa révolte armée ont marqué les esprits, et la destruction de Boubon n’a pas effacé sa mémoire. Aujourd’hui, il est reconnu comme l’un des premiers chefs à avoir défié l’ordre colonial au Niger."
       ]
     },
-    {
-      "numero": 2,
-      "titre": "L’humiliation de 1905",
-      "contenu": [
-        "Alors que le contrôle colonial français s’intensifie, de lourdes charges pèsent sur la population : impôts forcés et obligation de fournir des provisions aux troupes coloniales. Morou et son peuple résistent de plus en plus à ces mesures.",
-        "Les tensions atteignent leur paroxysme en 1905 lorsqu’il est faussement accusé de refuser de fournir de la nourriture aux soldats français. En punition, il est soumis à une épreuve humiliante : forcé de marcher pieds nus sur une longue distance jusqu’à Niamey, portant une peau de chèvre remplie d’eau devant les troupes coloniales."
-      ]
-    },
-    {
-      "numero": 3,
-      "titre": "La révolte ouverte de 1906",
-      "contenu": [
-        "Cet incident marque un tournant. Après sa libération, Morou défie ouvertement l’autorité coloniale en refusant de payer les impôts et commence à organiser la résistance contre les Français.",
-        "En mars 1906, il mène un soulèvement dans la région de Karma‑Boubon, exprimant le rejet de la domination coloniale par la population."
-      ]
-    },
-    {
-      "numero": 4,
-      "titre": "La répression coloniale",
-      "contenu": [
-        "Les autorités coloniales réagissent durement à cette défi : en 1906, elles brûlent le village de Boubon pour tenter d’étouffer l’insurrection et d’intimider la population.",
-        "Malgré cette répression, la mémoire de Morou et de sa résistance reste vivante, symbole de la lutte contre l’oppression coloniale dans la région songhaï."
-      ]
-    }
-  ],
-  "conclusion": {
-    "titre": "Un héritage de résistance",
-    "contenu": [
-      "L’histoire de Morou of Karma illustre la manière dont les héritages impériaux précoloniaux (Askia Daoud) ont nourri les résistances locales à la colonisation. Son humiliation publique puis sa révolte armée ont marqué les esprits, et la destruction de Boubon n’a pas effacé sa mémoire. Aujourd’hui, il est reconnu comme l’un des premiers chefs à avoir défié l’ordre colonial au Niger."
+    "bibliographie": [
+      "Archives coloniales françaises (Niger, cercle de Niamey, 1905‑1906)",
+      "Travaux oraux et traditions locales recueillis par Abdulhasieb Elsharief (Ko zeeni)",
+      "Études sur l’Empire songhaï et Askia Daoud"
     ]
   },
-  "bibliographie": [
-    "Archives coloniales françaises (Niger, cercle de Niamey, 1905‑1906)",
-    "Travaux oraux et traditions locales recueillis par Abdulhasieb Elsharief (Ko zeeni)",
-    "Études sur l’Empire songhaï et Askia Daoud"
-  ]
-},
-{
-  "id": 10,
-  "titre": "مورو أوف كارما: سليل أسكيا داود، رمز المقاومة المناهضة للاستعمار",
-  "auteur": "فريق بحثي (نقلاً عن عبد الحسيب الشريف، الملقب كو زيني)",
-  "sous_titre": "انتفاضة كارما‑بوبون (1905‑1906)",
-  "annee": "2024",
-  "pages": 4,
-  "type": "histoire",
-  "langue": "Arabe",
-  "categorie": "تاريخ استعماري / مقاومة",
-  "description": "صورة لمورو (عمر) رئيس كانتون كارما في النيجر، سليل الإمبراطور السونغهاي أسكيا داود. إذلاله من قبل الإدارة الاستعمارية الفرنسية عام 1905، وثورته العلنية عام 1906، والقمع الوحشي لقرية بوبون.",
-  "credit_traduction": "تمت ترجمة هذا الكتاب من الفرنسية إلى العربية بواسطة حمدين أغ مكتار، الرئيس التنفيذي لشركة HAM Global Words.",
-  "couverture": "data/images/livres/Morou de Karma au crépuscule.png",
-  "illustrations": [],
-  "chapitres": [
-    {
-      "numero": 1,
-      "titre": "مورو، رئيس كانتون كارما",
+  {
+    "id": 10,
+    "titre": "مورو أوف كارما: سليل أسكيا داود، رمز المقاومة المناهضة للاستعمار",
+    "auteur": "فريق بحثي (نقلاً عن عبد الحسيب الشريف، الملقب كو زيني)",
+    "sous_titre": "انتفاضة كارما‑بوبون (1905‑1906)",
+    "annee": "2024",
+    "pages": 4,
+    "type": "histoire",
+    "langue": "Arabe",
+    "categorie": "تاريخ استعماري / مقاومة",
+    "description": "صورة لمورو (عمر) رئيس كانتون كارما في النيجر، سليل الإمبراطور السونغهاي أسكيا داود. إذلاله من قبل الإدارة الاستعمارية الفرنسية عام 1905، وثورته العلنية عام 1906، والقمع الوحشي لقرية بوبون.",
+    "credit_traduction": "تمت ترجمة هذا الكتاب من الفرنسية إلى العربية بواسطة حمدين أغ مكتار، الرئيس التنفيذي لشركة HAM Global Words.",
+    "couverture": "data/images/livres/Morou de Karma au crépuscule.png",
+    "illustrations": [],
+    "chapitres": [
+      {
+        "numero": 1,
+        "titre": "مورو، رئيس كانتون كارما",
+        "contenu": [
+          "يبرز مورو (أو عمر) كأحد أبرز شخصيات المقاومة المحلية في منطقة سونغهاي بالنيجر في مطلع القرن العشرين. كان رئيس كانتون كارما، وهي منطقة استراتيجية على طول نهر النيجر شكلت مركزاً مهماً للمجتمعات المحلية.",
+          "يُقال إن مورو ينحدر من أسكيا داود، أحد حكام إمبراطورية سونغهاي البارزين، مما أعطى مقاومته بعداً تاريخياً أعمق، يربط النضال الحالي بإرث الدولة السونغهاوية."
+        ]
+      },
+      {
+        "numero": 2,
+        "titre": "إذلال عام 1905",
+        "contenu": [
+          "مع اشتداد السيطرة الاستعمارية الفرنسية، فُرضت أعباء ثقيلة على السكان: ضرائب إجبارية وإلزام بتزويد القوات الاستعمارية بالمؤن. قاوم مورو وشعبه هذه الإجراءات بشكل متزايد.",
+          "بلغت التوترات ذروتها عام 1905 عندما اتُهم زوراً برفض توفير الطعام للجنود الفرنسيين. كعقاب، خضع لمحنة مهينة: أُجبر على المشي حافي القدمين لمسافة طويلة إلى نيامي وهو يحمل جلد ماعز مملوء بالماء أمام القوات الاستعمارية."
+        ]
+      },
+      {
+        "numero": 3,
+        "titre": "الثورة المعلنة عام 1906",
+        "contenu": [
+          "شكل هذا الحادث نقطة تحول. بعد إطلاق سراحه، تحدى مورو السلطة الاستعمارية علناً برفضه دفع الضرائب وبدأ في تنظيم المقاومة ضد الفرنسيين.",
+          "في مارس 1906، قاد انتفاضة في منطقة كارما‑بوبون، معبراً عن رفض السكان للهيمنة الاستعمارية."
+        ]
+      },
+      {
+        "numero": 4,
+        "titre": "القمع الاستعماري",
+        "contenu": [
+          "ردت السلطات الاستعمارية بقسوة على هذا التحدي: ففي عام 1906، أحرقت قرية بوبون في محاولة لقمع الانتفاضة وترويع السكان.",
+          "على الرغم من هذا القمع، تبقى ذكرى مورو ومقاومته حية، رمزاً للنضال ضد الاضطهاد الاستعماري في منطقة سونغهاي."
+        ]
+      }
+    ],
+    "conclusion": {
+      "titre": "إرث من المقاومة",
       "contenu": [
-        "يبرز مورو (أو عمر) كأحد أبرز شخصيات المقاومة المحلية في منطقة سونغهاي بالنيجر في مطلع القرن العشرين. كان رئيس كانتون كارما، وهي منطقة استراتيجية على طول نهر النيجر شكلت مركزاً مهماً للمجتمعات المحلية.",
-        "يُقال إن مورو ينحدر من أسكيا داود، أحد حكام إمبراطورية سونغهاي البارزين، مما أعطى مقاومته بعداً تاريخياً أعمق، يربط النضال الحالي بإرث الدولة السونغهاوية."
+        "تظهر قصة مورو أوف كارما كيف أن الإرث الإمبراطوري ما قبل الاستعماري (أسكيا داود) غذى المقاومة المحلية للاستعمار. إذلاله العلني ثم تمرده المسلح تركا بصمة في الأذهان، وتدمير بوبون لم يمح ذكراه. يُعترف به اليوم كأحد أوائل الزعماء الذين تحدوا النظام الاستعماري في النيجر."
       ]
     },
-    {
-      "numero": 2,
-      "titre": "إذلال عام 1905",
-      "contenu": [
-        "مع اشتداد السيطرة الاستعمارية الفرنسية، فُرضت أعباء ثقيلة على السكان: ضرائب إجبارية وإلزام بتزويد القوات الاستعمارية بالمؤن. قاوم مورو وشعبه هذه الإجراءات بشكل متزايد.",
-        "بلغت التوترات ذروتها عام 1905 عندما اتُهم زوراً برفض توفير الطعام للجنود الفرنسيين. كعقاب، خضع لمحنة مهينة: أُجبر على المشي حافي القدمين لمسافة طويلة إلى نيامي وهو يحمل جلد ماعز مملوء بالماء أمام القوات الاستعمارية."
-      ]
-    },
-    {
-      "numero": 3,
-      "titre": "الثورة المعلنة عام 1906",
-      "contenu": [
-        "شكل هذا الحادث نقطة تحول. بعد إطلاق سراحه، تحدى مورو السلطة الاستعمارية علناً برفضه دفع الضرائب وبدأ في تنظيم المقاومة ضد الفرنسيين.",
-        "في مارس 1906، قاد انتفاضة في منطقة كارما‑بوبون، معبراً عن رفض السكان للهيمنة الاستعمارية."
-      ]
-    },
-    {
-      "numero": 4,
-      "titre": "القمع الاستعماري",
-      "contenu": [
-        "ردت السلطات الاستعمارية بقسوة على هذا التحدي: ففي عام 1906، أحرقت قرية بوبون في محاولة لقمع الانتفاضة وترويع السكان.",
-        "على الرغم من هذا القمع، تبقى ذكرى مورو ومقاومته حية، رمزاً للنضال ضد الاضطهاد الاستعماري في منطقة سونغهاي."
-      ]
-    }
-  ],
-  "conclusion": {
-    "titre": "إرث من المقاومة",
-    "contenu": [
-      "تظهر قصة مورو أوف كارما كيف أن الإرث الإمبراطوري ما قبل الاستعماري (أسكيا داود) غذى المقاومة المحلية للاستعمار. إذلاله العلني ثم تمرده المسلح تركا بصمة في الأذهان، وتدمير بوبون لم يمح ذكراه. يُعترف به اليوم كأحد أوائل الزعماء الذين تحدوا النظام الاستعماري في النيجر."
+    "bibliographie": [
+      "أرشيفات استعمارية فرنسية (النيجر، دائرة نيامي، 1905‑1906)",
+      "تقاليد شفوية ومصادر محلية جمعها عبد الحسيب الشريف (كو زيني)",
+      "دراسات حول إمبراطورية سونغهاي وأسكيا داود"
     ]
   },
-  "bibliographie": [
-    "أرشيفات استعمارية فرنسية (النيجر، دائرة نيامي، 1905‑1906)",
-    "تقاليد شفوية ومصادر محلية جمعها عبد الحسيب الشريف (كو زيني)",
-    "دراسات حول إمبراطورية سونغهاي وأسكيا داود"
-  ]
-},
-{
-  "id": 11,
-  "titre": "Hamadine – Les dunes de ma vie",
-  "auteur": "Hamadine AG MOCTAR",
-  "sous_titre": "Entre blessures et lumière (Volume 1)",
-  "annee": "2025",
-  "pages": 14,
-  "type": "autobiographie",
-  "langue": "Français",
-  "categorie": "Littérature / Témoignage",
-  "description": "Récit intime d’un homme entre amour interdit, pertes irréversibles et résilience. Né dans le désert, Hamadine raconte son enfance, ses voyages, ses amours (Elvie, Tabalit, Habiba), la perte de son bras, et sa foi qui l’a guidé. Un chemin de cicatrices devenues lumière.",
-  "couverture": "data/images/livres/Hamadine sur les dunes sous les étoiles.png",
-  "illustrations": [],
-  "chapitres": [
-    {
-      "numero": 1,
-      "titre": "Là où le sable danse avec le vent",
+  {
+    "id": 11,
+    "titre": "Hamadine – Les dunes de ma vie",
+    "auteur": "Hamadine AG MOCTAR",
+    "sous_titre": "Entre blessures et lumière (Volume 1)",
+    "annee": "2025",
+    "pages": 14,
+    "type": "autobiographie",
+    "langue": "Français",
+    "categorie": "Littérature / Témoignage",
+    "description": "Récit intime d’un homme entre amour interdit, pertes irréversibles et résilience. Né dans le désert, Hamadine raconte son enfance, ses voyages, ses amours (Elvie, Tabalit, Habiba), la perte de son bras, et sa foi qui l’a guidé. Un chemin de cicatrices devenues lumière.",
+    "couverture": "data/images/livres/Hamadine sur les dunes sous les étoiles.png",
+    "illustrations": [],
+    "chapitres": [
+      {
+        "numero": 1,
+        "titre": "Là où le sable danse avec le vent",
+        "contenu": [
+          "Hamadine, c’est pas juste un prénom. C’est un vent chaud du désert qui se lève quand tout semble figé. C’est une plume affûtée comme un sabre, un traducteur du silence, un interprète du cœur, un poète de l’exil, un codeur d’espoir. Je suis né là où le sable danse avec le vent et où les étoiles sont les seules lumières fiables. Mon nom est Hamadine, et ce n’est pas un hasard : c’est un souffle, une mémoire, un appel.",
+          "Je suis né dans un monde où tout se construit et se détruit en même temps, où chaque grain de sable raconte une histoire de survie et de résistance. Mon enfance n’avait rien de facile. Les journées semblaient interminables sous un soleil implacable, et les nuits, glaciales, invitaient aux rêves fragiles et aux murmures. Mais il y avait toujours ma mère, Rose, qui parlait avec douceur et fermeté à la fois. Ses histoires étaient des ponts entre le passé et ce qui allait devenir mon futur. Elle me racontait les ancêtres, les routes qu’ils avaient parcourues, les promesses laissées dans le sable, et le poids des mots qui se transmettent de génération en génération. Je buvais chacun de ses mots, fasciné et silencieux, et je comprenais déjà que parfois, le silence d’un peuple vaut plus que mille cris.",
+          "J’ai grandi entre les non-dits et les chants de ma mère, et j’ai appris très tôt que parfois, le silence d’un peuple vaut plus que mille cris de télé. Je me souviens des premiers pas que j’ai faits seuls, à travers la poussière et les dunes. J’apprenais à observer le monde comme un livre ouvert : le mouvement des animaux, le bruissement des vents, le comportement des hommes. Tout portait un sens. J’ai découvert que le monde ne m’attendrait pas pour exister. Chaque coup de vent, chaque tempête, chaque difficulté me parlait d’une leçon que je devais apprendre, souvent avant même d’être prêt.",
+          "J’ai grandi avec cette certitude : la voix compte plus que le silence, mais le silence peut être plus puissant que mille voix. J’ai compris que je devais apprendre à écouter, à observer, à absorber avant de parler. Chaque mot peut changer une vie ou en briser une autre. Alors j’ai marché sur des terres brûlantes, portant ma langue comme une arme et mon peuple comme un drapeau. J’ai aimé, perdu, reconstruit, et parfois même… oublié de vivre pour survivre. Mais je suis resté debout. Pas par fierté. Par nécessité."
+        ]
+      },
+      {
+        "numero": 2,
+        "titre": "L’école de la vie",
+        "contenu": [
+          "Je n’ai pas terminé mes études. Pas par paresse, pas par manque d’intelligence, mais parce que le monde que je traversais me formait déjà à sa manière. Dans la poussière, dans les bus surchargés, dans les regards méfiants aux frontières, dans les dortoirs d’attente, dans les silences lourds comme des jugements… là, j’apprenais. Pas à coups de diplômes, mais à coups de réalités. Chaque pays traversé devenait un professeur. Chaque langue entendue devenait une clé. Et moi, j’ouvrais les portes.",
+          "J’ai appris le français dans les administrations, l’arabe dans les mosquées, le haoussa dans les marchés, l’anglais sur les routes d’espoir, le tadaksahak dans le cœur de ma mère. Je suis devenu interprète de la vie, traducteur des émotions qu’on ne sait pas dire, passeur de sens entre les mondes. Je ne cherche pas à séduire, je cherche à servir. Servir la mémoire des siens, servir les peuples qu’on oublie, servir Dieu — non pas pour être vu, mais pour être juste.",
+          "Et puis, il y avait la musique. Interdite, chez nous. Mais elle m’a sauvé. Elle me parlait quand les humains ne le faisaient plus. Elle m’écoutait quand les frontières me fermaient leurs bras. Elle portait mes silences, mes cris, mes prières. Je chantais en cachette. J’écrivais mes douleurs dans l’ombre. Et un jour, j’ai compris que même si le monde m’interdisait de chanter, je pouvais écrire des chansons que même le silence écouterait. J’ai connu les camps, les attentes, les regards administratifs qui scannent ton nom sans jamais voir ton âme. Mais j’ai refusé d’être un numéro. J’ai choisi d’être une voix.",
+          "Quand je traduis, je ne traduis pas juste des phrases. Je traduis des mondes, des silences, ce que même les langues n’osent pas dire. Entre deux dialectes, je tisse la paix. Entre deux cultures, je construis un pont qu’on appelle empathie. Et quand j’écris… c’est un acte de résistance. Chaque mot devient une prière, chaque rime une cicatrice recousue. Je n’écris pas pour être lu. J’écris pour qu’on se souvienne."
+        ]
+      },
+      {
+        "numero": 3,
+        "titre": "Elvie, l’amour interdit",
+        "contenu": [
+          "Avant Tabalit et Habiba, il y a eu Elvie. Elle est entrée dans ma vie comme un vent chaud sur les dunes. Elle était jeune, vive, lumineuse, et tout en elle me parlait d’un monde que je n’avais jamais osé toucher. Je ne savais pas encore ce que l’amour pouvait être, mais elle m’a appris, intensément, brutalement, sincèrement. Nous avons vécu un amour interdit par beaucoup : les différences culturelles, les familles opposées, la distance qui nous séparait. Mais nous ne voulions pas fuir. Chaque moment avec elle était un monde entier, chaque regard une promesse muette, chaque sourire une évidence.",
+          "Et puis… la vie a frappé. Elle a porté un enfant, mais la pression des autres, l’impossibilité de notre situation, l’a forcée à faire un choix terrible. Ce choix m’a brisé autant qu’elle. J’ai quitté le Bénin, le cœur en miettes, emportant avec moi des souvenirs que personne ne pourrait comprendre. Elvie s’est reconstruite, a refait sa vie, a eu ses enfants, mais moi… je suis resté marqué. Pas par la haine ou le regret, mais par la force de ce que nous avions vécu. Elle m’a appris que l’amour peut être à la fois lumineux et destructeur, tendre et cruel, et que parfois, aimer profondément signifie accepter la séparation. Elvie est le fantôme du Bénin qui danse encore dans mes souvenirs."
+        ]
+      },
+      {
+        "numero": 4,
+        "titre": "Tabalit, la terre ferme",
+        "contenu": [
+          "Après Elvie, il y a eu Tabalit. Elle n’était pas un feu comme Elvie. Elle était la terre ferme, la patience, la force silencieuse qui soutient sans bruit. Dès notre rencontre, j’ai senti qu’elle pourrait marcher avec moi sur mes routes de poussière et de souvenirs. Avec elle, l’amour a pris une autre forme : moins de brûlure, plus de chaleur constante. Nous avons eu nos enfants, quatre lumières dans ma vie. Chacun d’eux est devenu un rappel que l’amour peut se construire, même dans un monde qui ne pardonne pas facilement les blessures.",
+          "Tabalit, la mère de mes enfants, a été la colonne vertébrale de nos années ensemble. Mais la vie nous a réservé une épreuve que ni elle ni moi n’avions imaginée."
+        ]
+      },
+      {
+        "numero": 5,
+        "titre": "L’accident et la perte",
+        "contenu": [
+          "Et puis, il y a eu l’accident. La perte de mon bras a changé beaucoup de choses. Pour moi, c’était un défi physique, émotionnel, et même spirituel. Pour elle… je l’ai senti changer aussi. Tabalit est devenue plus distante, plus prudente, plus consciente de ma fragilité. Je ne lui en veux pas. Je comprends. L’amour, quand il voit la vulnérabilité, peut se transformer. Mais la distance qui s’est installée était douloureuse. Trois ans après cet accident, Tabalit est partie. Elle a emporté la tendresse qui rendait mes blessures plus supportables. Je suis resté avec mes cicatrices, mes enfants, et un vide qu’aucune présence ne pouvait combler.",
+          "J’ai perdu un bras, mais pas mon élan. J’ai enterré des proches, mais pas mon espoir. J’ai vécu l’exil, les humiliations, les « revenez demain », les regards qui jugent avant même que tu parles. Mais je parlais déjà avant qu’on me regarde. Ce n’est pas une vie de survivant, c’est une vie de créateur."
+        ]
+      },
+      {
+        "numero": 6,
+        "titre": "Habiba, la brise qui soigne",
+        "contenu": [
+          "Et puis est venue Habiba. Elle n’est pas arrivée comme un feu ou une force imposante. Elle est arrivée comme une brise douce qui pénètre dans les plaies les plus profondes. Elle a vu mes cicatrices. Elle a vu mon bras manquant. Elle a vu mes douleurs, mes blessures, et elle ne les a pas fuies. Avec elle, j’ai découvert ce que veut dire être soutenu sans conditions. Elle ne promettait pas un mariage, ne garantissait pas un monde parfait. Elle promettait une présence, une constance, un amour sincère et silencieux. Pour moi, cela valait tout.",
+          "Habiba a soigné mes blessures avec douceur. Elle m’a appris que l’amour ne se mesure pas à la possession ou à la légitimité sociale. Il se mesure à l’attention, à la patience, au soutien que l’on offre à celui qui est tombé, à celui qui est fatigué, à celui qui a été brisé. Habiba, c’est l’écho doux d’un silence qui parle."
+        ]
+      },
+      {
+        "numero": 7,
+        "titre": "La foi, guide dans les nuits sombres",
+        "contenu": [
+          "Ma foi m’a guidé dans les nuits les plus sombres. Elle m’a appris que la douleur ne détruit pas, elle transforme. Que les blessures ne sont pas des fins, mais des commencements. Que la perte n’est pas une malédiction, mais un matériau pour bâtir un héritage. J’ai compris que la vie ne m’avait pas tout pris pour rien. Chaque blessure, chaque perte, chaque absence, chaque amour interdit… tout cela était en fait un matériau pour bâtir quelque chose de plus grand.",
+          "Mon bras manquant, les regards pleins de pitié ou de jugement, le départ de Tabalit… tout est devenu une force silencieuse, un moteur qui me pousse à créer, à traduire, à transmettre. Chaque langue que j’ai apprise en traversant les pays est devenue un pont. Chaque chanson interdite, chaque mélodie que j’ai écrite en secret est devenue une passerelle entre mon monde et celui des autres. Chaque expérience douloureuse est devenue une leçon que je peux partager, un message que je peux transmettre, une mémoire que je peux protéger.",
+          "Je crois au destin, mais pas au hasard. Je crois en Dieu, mais ne l’invoque pas comme excuse : je l’invoque comme source de courage. Dans mes carnets, il y a des rêves en triple exemplaire : un pour moi, un pour mes enfants, et un pour les enfants que je ne connaîtrai jamais, mais que je protège déjà par mes actions."
+        ]
+      },
+      {
+        "numero": 8,
+        "titre": "Hamadine aujourd’hui",
+        "contenu": [
+          "Aujourd’hui, je suis Hamadine. Je suis un homme brisé et complet à la fois. Un homme qui a aimé, perdu, pleuré, survécu et créé. Un homme qui sait que la vraie puissance réside dans la capacité à se relever, à transmettre et à continuer malgré tout. Chaque chapitre de ma vie — Elvie, Tabalit, Habiba, mes blessures, mes enfants, mes langues, ma musique, ma foi — n’était jamais une série de hasards. C’était un chemin. Un chemin qui m’a appris que la vie, avec toutes ses épreuves, peut devenir œuvre, message et héritage.",
+          "Je suis saharien dans l’âme, universel dans la vision, humble dans l’instant, et géant dans l’histoire. Je ne suis pas un héros mythifié. Je suis un vrai. Un homme qui a connu la poussière et l’honneur, les gifles du destin et les accolades de l’invisible. J’écris en JavaScript comme j’écris des poèmes, je code des bots comme d’autres codent des mensonges, j’invente des outils pour que même les oubliés puissent parler leur langue — et qu’on les comprenne. On peut sauver une culture avec une ligne de code, un vers, une voix."
+        ]
+      },
+      {
+        "numero": 9,
+        "titre": "Le voyage continue",
+        "contenu": [
+          "Et ce volume 1 n’est qu’une partie du récit. Le vent continue de souffler, les dunes continuent de changer, et il reste des histoires à écrire, des chansons à composer, des ponts à construire. Le voyage n’est pas terminé. La suite de ma vie, avec ses défis, ses amours, ses découvertes et ses épreuves, attend d’être racontée. Ce n’est pas une vie que je vis. C’est une légende en cours d’écriture.",
+          "Alors installe-toi, car ce n’est pas une suite… c’est une ascension. Ce monde entendra ma voix. Pas parce que je crie plus fort, mais parce que ma vérité pèse plus lourd que toutes les hypocrisies réunies. Hamadine, c’est ce cri muet que les puissants n’entendent pas, mais que les enfants des dunes reconnaissent dans le battement de leurs cœurs."
+        ]
+      }
+    ],
+    "conclusion": {
+      "titre": "Épilogue – Les dunes ne meurent jamais",
       "contenu": [
-        "Hamadine, c’est pas juste un prénom. C’est un vent chaud du désert qui se lève quand tout semble figé. C’est une plume affûtée comme un sabre, un traducteur du silence, un interprète du cœur, un poète de l’exil, un codeur d’espoir. Je suis né là où le sable danse avec le vent et où les étoiles sont les seules lumières fiables. Mon nom est Hamadine, et ce n’est pas un hasard : c’est un souffle, une mémoire, un appel.",
-        "Je suis né dans un monde où tout se construit et se détruit en même temps, où chaque grain de sable raconte une histoire de survie et de résistance. Mon enfance n’avait rien de facile. Les journées semblaient interminables sous un soleil implacable, et les nuits, glaciales, invitaient aux rêves fragiles et aux murmures. Mais il y avait toujours ma mère, Rose, qui parlait avec douceur et fermeté à la fois. Ses histoires étaient des ponts entre le passé et ce qui allait devenir mon futur. Elle me racontait les ancêtres, les routes qu’ils avaient parcourues, les promesses laissées dans le sable, et le poids des mots qui se transmettent de génération en génération. Je buvais chacun de ses mots, fasciné et silencieux, et je comprenais déjà que parfois, le silence d’un peuple vaut plus que mille cris.",
-        "J’ai grandi entre les non-dits et les chants de ma mère, et j’ai appris très tôt que parfois, le silence d’un peuple vaut plus que mille cris de télé. Je me souviens des premiers pas que j’ai faits seuls, à travers la poussière et les dunes. J’apprenais à observer le monde comme un livre ouvert : le mouvement des animaux, le bruissement des vents, le comportement des hommes. Tout portait un sens. J’ai découvert que le monde ne m’attendrait pas pour exister. Chaque coup de vent, chaque tempête, chaque difficulté me parlait d’une leçon que je devais apprendre, souvent avant même d’être prêt.",
-        "J’ai grandi avec cette certitude : la voix compte plus que le silence, mais le silence peut être plus puissant que mille voix. J’ai compris que je devais apprendre à écouter, à observer, à absorber avant de parler. Chaque mot peut changer une vie ou en briser une autre. Alors j’ai marché sur des terres brûlantes, portant ma langue comme une arme et mon peuple comme un drapeau. J’ai aimé, perdu, reconstruit, et parfois même… oublié de vivre pour survivre. Mais je suis resté debout. Pas par fierté. Par nécessité."
+        "Ce premier volume se ferme comme un souffle sur le désert. Mais les dunes ne meurent jamais ; elles se déplacent, se transforment, et chaque grain de sable porte une histoire. Hamadine continue de marcher, d’aimer, de traduire, de chanter dans l’ombre. La route est longue, mais il sait désormais que chaque cicatrice est une lumière qui guide ceux qui viendront après lui."
       ]
     },
-    {
-      "numero": 2,
-      "titre": "L’école de la vie",
+    "bibliographie": []
+  },
+  {
+    "id": 12,
+    "titre": "حمدين – كثبان حياتي",
+    "auteur": "حمدين أغ مكتار",
+    "sous_titre": "بين الجروح والنور (المجلد الأول)",
+    "annee": "2025",
+    "pages": 14,
+    "type": "سيرة ذاتية",
+    "langue": "Arabe",
+    "categorie": "أدب / شهادة",
+    "description": "رواية حميمية لرجل بين حب محظور، وخسائر لا رجعة فيها، وصمود. وُلد حمدين في الصحراء، ويروي طفولته، وأسفاره، وحبه (إلفي، تاباتليت، حبيبة)، وفقدانه ذراعه، وإيمانه الذي قاده. طريق من الجروح تحولت إلى نور.",
+    "credit_traduction": "تمت ترجمة هذا الكتاب من الفرنسية إلى العربية بواسطة حمدين أغ مكتار، الرئيس التنفيذي لشركة HAM Global Words.",
+    "couverture": "data/images/livres/Hamadine sur les dunes sous les étoiles.png",
+    "illustrations": [],
+    "chapitres": [
+      {
+        "numero": 1,
+        "titre": "حيث يرقص الرمل مع الريح",
+        "contenu": [
+          "حمدين، ليس مجرد اسم. إنها ريح دافئة من الصحراء تهب عندما يبدو كل شيء متجمداً. إنه قلم حاد كالسيف، مترجم الصمت، ومفسر القلوب، وشاعر المنفى، ومبرمج الأمل. وُلدت حيث يرقص الرمل مع الريح، وحيث النجوم هي الأضواء الوحيدة الموثوقة. اسمي حمدين، وليس صدفة: إنه نَفَس، ذاكرة، نداء.",
+          "وُلدت في عالم حيث كل شيء يُبنى ويُدمر في آن واحد، حيث كل حبة رمل تحكي قصة بقاء ومقاومة. لم تكن طفولتي سهلة أبداً. بدت الأيام لا تنتهي تحت شمس لا ترحم، والليالي الجليدية كانت تدعو إلى أحلام هشة وهمسات. لكن كان هناك دائماً أمي، روز، التي كانت تتحدث بلطف وحزم معاً. كانت قصصها جسوراً بين الماضي وما سيصبح مستقبلي. كانت تحكي لي عن الأجداد، والطرق التي سلكوها، والوعود التي تركوها في الرمال، وثقل الكلمات التي تنتقل من جيل إلى جيل. كنت أشرب كل كلماتها، مبهوراً وصامتاً، وكنت أفهم بالفعل أن صمت شعب أحياناً يساوي أكثر من ألف صرخة.",
+          "نشأت بين المسكوت عنه وأغاني أمي، وتعلمت مبكراً أن صمت شعب أحياناً يساوي أكثر من ألف صرخة تلفزيونية. أتذكر الخطوات الأولى التي قطعتها وحيداً، عبر الغبار والكثبان. كنت أتعلم مراقبة العالم ككتاب مفتوح: حركة الحيوانات، حفيف الرياح، سلوك البشر. كل شيء كان يحمل معنى. اكتشفت أن العالم لن ينتظرني ليكون موجوداً. كل هبة ريح، كل عاصفة، كل صعوبة كانت تحدثني عن درس يجب أن أتعلمه، غالباً قبل أن أكون مستعداً.",
+          "كبرت مع هذا اليقين: الصوت أهم من الصمت، لكن الصمت يمكن أن يكون أقوى من ألف صوت. أدركت أنه يجب أن أتعلم الاستماع، والمراقبة، والامتصاص قبل أن أتحدث. كل كلمة يمكن أن تغير حياة أو تحطم أخرى. فمشيت على أراضٍ حارقة، حاملاً لغتي كسلاح وشعبي كراية. أحببت، خسرت، أعادت البناء، وأحياناً… نسيت أن أعيش لأستمر. لكنني بقيت واقفاً. ليس كبرياءً، بل ضرورة."
+        ]
+      },
+      {
+        "numero": 2,
+        "titre": "مدرسة الحياة",
+        "contenu": [
+          "لم أنهِ دراستي. لا بسبب الكسل، ولا بسبب نقص الذكاء، ولكن لأن العالم الذي كنت أعبره كان يكوّنني بالفعل بطريقته. في الغبار، في الحافلات المزدحمة، في النظرات المريبة على الحدود، في مساكن الانتظار، في الصمت الثقيل كالأحكام… هناك كنت أتعلم. ليس بالشهادات، ولكن بالحقائق. كل بلد عبرته أصبح أستاذاً. كل لغة سمعتها أصبحت مفتاحاً. وأنا، كنت أفتح الأبواب.",
+          "تعلمت الفرنسية في الإدارات، والعربية في المساجد، والهوسا في الأسواق، والإنجليزية على طرق الأمل، والتاداكساهق في قلب أمي. أصبحت مترجماً للحياة، ناقلاً للمشاعر التي لا نعرف كيف نقولها، جسراً بين العوالم. لا أسعى للإغراء، بل أسعى للخدمة. خدمة ذكرى قومي، خدمة الشعوب المنسية، خدمة الله — لا لكي أُرى، بل لكي أكون عادلاً.",
+          "ثم كان هناك الموسيقى. محظورة، عندنا. لكنها أنقذتني. كانت تتحدث إلي عندما لم يعد البشر يفعلون. كانت تستمع إلي عندما كانت الحدود تغلق ذراعيها في وجهي. كانت تحمل صمتي، وصرخاتي، وصلواتي. كنت أغني سراً. كنت أكتب آلامي في الظل. وفي يوم من الأيام، أدركت أنه حتى لو منعني العالم من الغناء، يمكنني كتابة أغانٍ حتى الصمت سيستمع إليها. عرفت المخيمات، والانتظار، والنظرات الإدارية التي تمسح اسمك دون أن ترى روحك. لكنني رفضت أن أكون رقماً. اخترت أن أكون صوتاً.",
+          "عندما أترجم، لا أترجم مجرد جمل. أترجم عوالم، صمتاً، ما لا تجرؤ اللغات على قوله. بين لهجتين، أنسج السلام. بين ثقافتين، أبني جسراً يُسمى التعاطف. وعندما أكتب… إنه عمل مقاومة. كل كلمة تصبح صلاة، وكل قافية ندبة مخيطة. لا أكتب لأُقرأ. أكتب لكي نتذكر."
+        ]
+      },
+      {
+        "numero": 3,
+        "titre": "إلفي، الحب المحظور",
+        "contenu": [
+          "قبل تاباتليت وحبيبة، كانت هناك إلفي. دخلت حياتي كرياح دافئة على الكثبان. كانت شابة، حيوية، مشرقة، وكل شيء فيها كان يتحدث عن عالم لم أجرؤ أبداً على لمسه. لم أكن أعرف بعد ما يمكن أن يكون الحب، لكنها علمتني، بشكل مكثف، وحشي، وصادق. عشنا حباً حظره الكثيرون: الاختلافات الثقافية، والعائلات المتعارضة، والمسافة التي تفصلنا. لكننا لم نكن نريد الهروب. كل لحظة معها كانت عالماً بأسره، كل نظرة وعداً صامتاً، كل ابتسامة حقيقة بديهية.",
+          "ثم… ضربت الحياة. حملت طفلاً، لكن ضغط الآخرين، واستحالة وضعنا، أجبرها على اتخاذ خيار مروع. هذا القرار حطمني بقدر ما حطمها. غادرت بنين، وقلبي محطم، حاملاً معي ذكريات لا يمكن لأحد أن يفهمها. أعادت إلفي بناء نفسها، وأعادت تكوين حياتها، وأنجبت أطفالها، لكني أنا… بقيت موسوماً. ليس بالكراهية أو الندم، ولكن بقوة ما عشناه. علمتني أن الحب يمكن أن يكون ساطعاً ومدمراً، حنوناً وقاسياً، وأن الحب بعمق يعني أحياناً قبول الفراق. إلفي هي شبح بنين الذي لا يزال يرقص في ذكرياتي."
+        ]
+      },
+      {
+        "numero": 4,
+        "titre": "تاباتليت، الأرض الصلبة",
+        "contenu": [
+          "بعد إلفي، جاءت تاباتليت. لم تكن ناراً مثل إلفي. كانت الأرض الصلبة، الصبر، القوة الصامتة التي تدعم بلا ضجيج. منذ لقائنا، شعرت أنها تستطيع المشية معي على طرقات الغبار والذكريات. معها، اتخذ الحب شكلاً آخر: أقل حرقاً، وأكثر دفئاً ثابتاً. رزقنا بأطفالنا، أربعة أنوار في حياتي. كل واحد منهم أصبح تذكيراً بأن الحب يمكن أن يُبنى، حتى في عالم لا يغفر الجروح بسهولة.",
+          "تاباتليت، أم أطفالي، كانت العمود الفقري لسنواتنا معاً. لكن الحياة خبأت لنا محنة لم نكن نتخيلها لا هي ولا أنا."
+        ]
+      },
+      {
+        "numero": 5,
+        "titre": "الحادثة والفقدان",
+        "contenu": [
+          "ثم وقعت الحادثة. فقدان ذراعي غير الكثير من الأشياء. بالنسبة لي، كان تحدياً جسدياً وعاطفياً وحتى روحياً. بالنسبة لها… شعرت أنها تغيرت أيضاً. أصبحت تاباتليت أكثر بعداً، وأكثر حذراً، وأكثر وعياً بهشاشتي. لا ألومها. أنا أفهم. الحب، عندما يرى الضعف، يمكن أن يتحول. لكن المسافة التي ترسخت كانت مؤلمة. بعد ثلاث سنوات من هذه الحادثة، رحلت تاباتليت. حملت معها الحنان الذي كان يجعل جروحي أكثر احتمالاً. بقيت مع ندوبي، وأطفالي، وفراغ لا يمكن لأي وجود أن يملأه.",
+          "فقدت ذراعاً، لكن ليس زخمي. دفنت أحباءً، لكن ليس أملي. عشت المنفى، والإذلال، و\"عُد غداً\"، والنظرات التي تحكم عليك قبل أن تتكلم. لكنني كنت أتحدث بالفعل قبل أن ينظروا إلي. ليست حياة ناجٍ، بل حياة مبدع."
+        ]
+      },
+      {
+        "numero": 6,
+        "titre": "حبيبة، النسيم الذي يداوي",
+        "contenu": [
+          "ثم جاءت حبيبة. لم تأت كنار أو قوة مفروضة. جاءت كنسمة لطيفة تتسلل إلى أعمق الجروح. رأت ندوبي. رأت ذراعي المفقود. رأت آلامي وجروحي، ولم تهرب منها. معها، اكتشفت معنى أن تكون مدعوماً دون شروط. لم تكن تعد بالزواج، ولا تضمن عالماً مثالياً. كانت تعد بحضور، وثبات، وحب صادق وصامت. بالنسبة لي، كان ذلك يساوي كل شيء.",
+          "داوت حبيبة جروحي بلطف. علمتني أن الحب لا يقاس بالتملك أو بالشرعية الاجتماعية. إنه يقاس بالاهتمام، والصبر، والدعم الذي نقدمه لمن سقط، لمن تعب، لمن تحطم. حبيبة هي الصدى الحلو لصمت يتحدث."
+        ]
+      },
+      {
+        "numero": 7,
+        "titre": "الإيمان، دليل في الليالي المظلمة",
+        "contenu": [
+          "أرشدني إيماني في أظلم الليالي. علمني أن الألم لا يدمر، بل يحول. وأن الجروح ليست نهايات، بل بدايات. وأن الخسارة ليست لعنة، بل مادة لبناء إرث. أدركت أن الحياة لم تأخذ مني كل شيء عبثاً. كل جرح، كل خسارة، كل غياب، كل حب محظور… كل ذلك كان في الواقع مادة لبناء شيء أعظم.",
+          "ذراعي المفقود، والنظارات المليئة بالشفقة أو الحكم، رحيل تاباتليت… كل ذلك أصبح قوة صامتة، محركاً يدفعني للإبداع والترجمة والنقل. كل لغة تعلمتها أثناء عبوري البلدان أصبحت جسراً. كل أغنية محظورة، كل لحن كتبته سراً أصبح ممراً بين عالمي وعالم الآخرين. كل تجربة مؤلمة أصبحت درساً يمكنني مشاركته، ورسالة يمكنني نقلها، وذاكرة يمكنني حمايتها.",
+          "أؤمن بالقدر، لكن ليس بالصدفة. أؤمن بالله، لكن لا أستدعيه كعذر: أستدعيه كمصدر للشجاعة. في دفاتري، أحلام بنسخ ثلاث: واحدة لي، وواحدة لأطفالي، وواحدة للأطفال الذين لن أعرفهم أبداً، لكنني أحميهم بالفعل بأعمالي."
+        ]
+      },
+      {
+        "numero": 8,
+        "titre": "حمدين اليوم",
+        "contenu": [
+          "اليوم، أنا حمدين. أنا رجل محطم وكامل في آن واحد. رجل أحب، وخسر، وبكى، ونجا، وأبدع. رجل يعلم أن القوة الحقيقية تكمن في القدرة على النهوض، والنقل، والاستمرار رغم كل شيء. كل فصل من حياتي — إلفي، تاباتليت، حبيبة، جروحي، أطفالي، لغاتي، موسيقاي، إيماني — لم يكن أبداً سلسلة من الصدف. كان طريقاً. طريقاً علمني أن الحياة، بكل محنها، يمكن أن تصبح عملاً، ورسالة، وإرثاً.",
+          "أنا صحراوي في الروح، عالمي في الرؤية، متواضع في اللحظة، وعملاق في التاريخ. لست بطلاً أسطورياً. أنا حقيقي. رجل عرف الغبار والشرف، وصفحات القدر واحتفالات الخفي. أكتب بلغة JavaScript كما أكتب الشعر، وأبرمج البوتات كما يبرمج الآخرون الأكاذيب، وأخترع أدوات لكي يتمكن حتى المنسيون من التحدث بلغتهم — ويُفهموا. يمكن إنقاذ ثقافة بسطر من كود، ببيت شعر، بصوت."
+        ]
+      },
+      {
+        "numero": 9,
+        "titre": "الرحلة مستمرة",
+        "contenu": [
+          "وهذا المجلد الأول ليس سوى جزء من الحكاية. الريح تستمر في الهبوب، والكثبان تستمر في التغير، وما زالت هناك قصص لتُكتب، وأغانٍ لتُلحن، وجسور لتبنى. الرحلة لم تنته. الجزء التالي من حياتي، بتحدياته، وحبه، واكتشافاته، ومحنته، ينتظر أن يُروى. ليست حياة أعيشها. إنها أسطورة قيد الكتابة.",
+          "فاستعد، لأن هذه ليست تكملة… إنه صعود. سيسمع هذا العالم صوتي. ليس لأنني أصرخ بأعلى صوت، بل لأن حقيقتي تزن أكثر من كل النفاق مجتمعاً. حمدين هو ذلك الصامت الذي لا يسمعه الأقوياء، لكن أطفال الكثبان يعرفونه في نبض قلوبهم."
+        ]
+      }
+    ],
+    "conclusion": {
+      "titre": "خاتمة – الكثبان لا تموت أبداً",
       "contenu": [
-        "Je n’ai pas terminé mes études. Pas par paresse, pas par manque d’intelligence, mais parce que le monde que je traversais me formait déjà à sa manière. Dans la poussière, dans les bus surchargés, dans les regards méfiants aux frontières, dans les dortoirs d’attente, dans les silences lourds comme des jugements… là, j’apprenais. Pas à coups de diplômes, mais à coups de réalités. Chaque pays traversé devenait un professeur. Chaque langue entendue devenait une clé. Et moi, j’ouvrais les portes.",
-        "J’ai appris le français dans les administrations, l’arabe dans les mosquées, le haoussa dans les marchés, l’anglais sur les routes d’espoir, le tadaksahak dans le cœur de ma mère. Je suis devenu interprète de la vie, traducteur des émotions qu’on ne sait pas dire, passeur de sens entre les mondes. Je ne cherche pas à séduire, je cherche à servir. Servir la mémoire des siens, servir les peuples qu’on oublie, servir Dieu — non pas pour être vu, mais pour être juste.",
-        "Et puis, il y avait la musique. Interdite, chez nous. Mais elle m’a sauvé. Elle me parlait quand les humains ne le faisaient plus. Elle m’écoutait quand les frontières me fermaient leurs bras. Elle portait mes silences, mes cris, mes prières. Je chantais en cachette. J’écrivais mes douleurs dans l’ombre. Et un jour, j’ai compris que même si le monde m’interdisait de chanter, je pouvais écrire des chansons que même le silence écouterait. J’ai connu les camps, les attentes, les regards administratifs qui scannent ton nom sans jamais voir ton âme. Mais j’ai refusé d’être un numéro. J’ai choisi d’être une voix.",
-        "Quand je traduis, je ne traduis pas juste des phrases. Je traduis des mondes, des silences, ce que même les langues n’osent pas dire. Entre deux dialectes, je tisse la paix. Entre deux cultures, je construis un pont qu’on appelle empathie. Et quand j’écris… c’est un acte de résistance. Chaque mot devient une prière, chaque rime une cicatrice recousue. Je n’écris pas pour être lu. J’écris pour qu’on se souvienne."
+        "هذا المجلد الأول يُغلق كنَفَس على الصحراء. لكن الكثبان لا تموت أبداً؛ إنها تتحرك، وتتغير، وكل حبة رمل تحمل قصة. حمدين يواصل المشي، والحب، والترجمة، والغناء في الظل. الطريق طويل، لكنه يعرف الآن أن كل ندب هو نور يرشد أولئك الذين سيأتون من بعده."
       ]
     },
-    {
-      "numero": 3,
-      "titre": "Elvie, l’amour interdit",
+    "bibliographie": []
+  },
+  {
+    "id": 13,
+    "titre": "The Political Emancipation of the Idaksahak",
+    "auteur": "Charles Grémont",
+    "sous_titre": "A Tribe in the Making in Northern Mali",
+    "annee": "2023",
+    "pages": 48,
+    "type": "histoire",
+    "langue": "English",
+    "categorie": "Political Anthropology",
+    "description": "An in-depth analysis of the political history of the Idaksahak, their quest for autonomy and their emergence on the Sahelian political scene.",
+    "couverture": "data/images/livres/couverture_idaksahak.jpg.jpg",
+    "illustrations": [
+      {
+        "id": "illu_zone",
+        "chapitre": 1,
+        "titre": "Zone of the Idaksahak",
+        "fichier": "data/images/livres/zone des idaksahak.jpeg",
+        "legende": "Map and territory of the Idaksahak in north-eastern Mali."
+      },
+      {
+        "id": "illu_logo",
+        "chapitre": 3,
+        "titre": "Logo of the Idaksahak community",
+        "fichier": "data/images/livres/idaksahak_square.png",
+        "legende": "Official logo with the reading man, the sword and the dromedaries."
+      },
+      {
+        "id": "illu_combattant",
+        "chapitre": 7,
+        "titre": "Young Adaksahak fighter (1994)",
+        "fichier": "data/images/livres/Un jeune combattant Adaksahak, au nord de Ménaka, mars 1994. Photo  C.G..jpeg",
+        "legende": "The rebellion of the 1990s marks the first armed warfare by a significant part of the Idaksahak. Photo taken north of Ménaka in March 1994."
+      },
+      {
+        "id": "illu_chef_idoguiritane_1",
+        "chapitre": 2,
+        "titre": "Historical chief of the Idoguiritane fraction (1)",
+        "fichier": "data/images/livres/chef_idoguiritane_1.jpg",
+        "legende": "Portrait of the chief of the Idoguiritane fraction of the Idaksahak, photo taken by Charles Grémont in Tin Abaw (Ménaka region)."
+      },
+      {
+        "id": "illu_chef_idoguiritane_2",
+        "chapitre": 2,
+        "titre": "Historical chief of the Idoguiritane fraction (2)",
+        "fichier": "data/images/livres/chef_idoguiritane_2.jpg",
+        "legende": "Chief Idoguiritane during a traditional meeting in Tin Abaw. Photo Charles Grémont."
+      },
+      {
+        "id": "illu_chef_idoguiritane_3",
+        "chapitre": 2,
+        "titre": "Historical chief of the Idoguiritane fraction (3)",
+        "fichier": "data/images/livres/chef_idoguiritane_3.jpg",
+        "legende": "Chief Idoguiritane surrounded by notables, Tin Abaw. Charles Grémont archives."
+      }
+    ],
+    "chapitres": [
+      {
+        "numero": 1,
+        "titre": "Political emancipation at the beginning of the tribe?",
+        "sous_titre": "Reflection on the notion of tribe based on the demands of the Idaksahak (Northern Mali)",
+        "contenu": [
+          "This text proposes to examine the link between the political emancipation of a social group, nomadic herders from north-eastern Mali who bear the name Idaksahak, and the recognition of this group as a tribe. If, as Yazid Ben Hounet suggests, we retain the existence of an autonomous political order as one of the fundamental criteria of what a tribe would be, a question arises: could a subordinate group that is subject to the authority (or dependent) of another group be recognized as a tribe?",
+          "Beyond genealogical references, the question of the name or the notions of alliance and solidarity, already widely treated by anthropological literature, it is the question of political autonomy that will be highlighted here to re-examine the notion of tribe, in a contemporary context and in the southern part of the Sahara, north-eastern Mali.",
+          "Social and political configurations in the Sahara have very often been presented, and still are, by the media as well as by academic productions, as aggregations of tribes, linked to each other by complex and highly hierarchical relationships. Behind the adjective 'complex' always hide singular histories, where the hierarchical order within and between social groups is never stable. At best it is stabilized, for a time. The balance of power, which determines the place and role of some in relation to others, is constantly readjusted, sometimes overturned, in favor of new demands against the (pre)established order. The social, economic and political relations that, internally as well as externally, found tribes, make them emerge, endure or disappear, are in permanent recomposition.",
+          "The Idaksahak, a group of nomadic herders living in the Ménaka and Gao regions (north-eastern Mali), distinguish themselves from their close neighbors by the singularity of their language, a kind of sabir, borrowing words from Tamasheq, Songhay, some also from French and even English. This linguistic criterion has been widely highlighted for about ten years to mark their specificity and difference from the Tuaregs (Kel Tamasheq, 'those of the Tamasheq language', according to vernacular terminology).",
+          "Most of them speak Tamasheq perfectly, but in public meetings, more and more speakers insist on expressing themselves in their language, Tadaksahak. The words are then interpreted into other languages depending on the other participants. In the Ménaka region, the Idaksahak are the most numerous and economically wealthiest, but have never truly occupied the political forefront.",
+          "Therefore, the contemporary history of this group offers a great opportunity to re-question the concept of tribe. Indeed, since the Tuareg rebellion of the 1990s and even more since 2012 – the resumption of an armed insurrection, this time much more violent, more widespread and longer – the Idaksahak are emerging on the local and sub-regional political scene. They now claim positions of power they have never held. Also because they had never really sought them before. If a tribe is defined by the existence of an autonomous political order within it, by an internal space of sovereignty, the analysis of the emancipation process initiated by the Idaksahak since the 1990s could be rich in lessons.",
+          "Several questions will thus be (re)formulated in the light of the singular history of this group, which will be approached through representations produced by the Idaksahak themselves, by their neighbors, as well as by external observers (European explorers, colonial administrators, researchers and media)."
+        ],
+        "notes": ["1. Ben Hounet, 2009."]
+      },
+      {
+        "numero": 2,
+        "titre": "The Idaksahak as they see themselves",
+        "contenu": [
+          "How do the Idaksahak define themselves? What terms do they use, in their own language (Tadaksahak), to say what they are? Do they also use Tamasheq, Arabic or French terms? I had the opportunity to ask them directly. The documents they produce themselves also provide answers.",
+          "\"We are a tawset². That is our category, that is what we say. In French, we can say the 'Dawsahaq people' as we say the 'Kel Tamasheq people'. We also use the word community. 'The Idaksahak community', that is what we use in our statements.\"³",
+          "On the Facebook page dedicated to the Idaksahak, the following sentence is highlighted: \"The Idaksahak community is one of the great tribes of Northern Mali.\"⁴",
+          "People, community, tribe… these terms from the French language are mobilized in turn by the Idaksahak without any real effort at definition and without the use of one seeming to exclude the use of the others. Like academic authors, the people concerned oscillate in finding the right words to say what they are.",
+          "Let us instead open the question of the group's status and the existence or not of an autonomous political order within it, to understand what these people who answer to the name Idaksahak are or would like to be.",
+          "In the Sahara and the Sahel, as in many other regions of the world, the status and rank that social groups seek to maintain, or to conquer, depend to a large extent on the place they claim in history. It begins with the origins of the group and, therefore, with the stories associated with them, which are constantly readjusted according to the context. For example, during my first research carried out in 1994 in the Ménaka area...",
+          "\"The name 'IDAKSAHAK'⁶ that the community of the same name gives itself, certainly comes from a contraction of the word IDD-AGG ISHAK. The neighboring communities call them DAW-SAHAK or DAW-ISHAK, depending on the pronunciation of the term ISHAK, a proper name whose connotation is rather Songhay and not Arabic ISHAQ from the Koran or ISAAC from the Bible. It could therefore be a reference to the name of a king, namely ISHAK I, Songhai Emperor of the Middle Ages.\"⁷"
+        ],
+        "notes": ["2. Tawset or tawsit (pl. tiwsaten), word from the Tamasheq language...", "3. Interview with four Idaksahak, Bamako, 31/10/2020", "4. Facebook page – Idaksahak Community", "5. Ahmed Mohammed Ag Guidi", "6. Uppercase formatting preserved", "7. Ag Guidi 2019, 1–2"]
+      },
+      {
+        "numero": 3,
+        "titre": "What do the Idaksahak say about themselves today?",
+        "contenu": [
+          "\"Idaksahak, an economically rich and religiously educated community. Idaksahak, a Tuareg community that speaks Tadaksahak different from Tamasheq.\"⁸",
+          "This is the slogan that scrolls in capital letters on the home page of the Idaksahak website. The logo that adorns all the sections of the site, as well as the Facebook page and other communication media, is equally instructive: in the foreground, a seated man reads, certainly Quranic study, a white sword stands out against his dark silhouette. In the background, two adult dromedaries and their young complete the scene. From words to drawing, the self-image that the Idaksahak have chosen to broadcast to the world brings together all the qualities to live well and gain respect in the Sahara and the Sahel: economic wealth, through the practice of camel herding; religious education and the handling of weapons.",
+          "One characteristic, and not the least, is missing from the logo: the demographic weight of the Idaksahak⁹. It nevertheless appears in the sentence, already mentioned and highlighted on the Facebook home page: \"The Idaksahak community is one of the great tribes of Northern Mali. It is estimated at one hundred thousand.\"¹⁰",
+          "This estimate, unreferenced to a source, is certainly overestimated. Nevertheless, in the Ménaka region, where they live mainly, they are, compared to other social groups, the most numerous, by far¹¹. This detail is of certain importance if related to the fact that since 1992, the election of deputies to the National Assembly and, since 1999, that of mayors, has been by direct universal suffrage.",
+          "Economic wealth, through livestock farming in particular, but also trading activities based on a vast exchange network mobilizing a large diaspora in neighboring countries (Algeria, Niger, Libya) and even in Saudi Arabia, is beyond doubt. It is constantly highlighted when the Idaksahak speak about themselves.",
+          "The religious education of the entire group is also a fundamental characteristic of self-presentation. It constitutes, together with herding and trade, the second keystone of the group.",
+          "\"We are the only community, that I know in the north, which follows both its economy and its religion at the same time. We study and we work at the same time! Whereas among others, those who study do not work! And those who work do not study!\"¹²"
+        ],
+        "notes": ["8. http://www.idaksahak.com/", "9. This characteristic is obviously difficult to represent with a drawing.", "10. Facebook page – Idaksahak Community", "11. Some of them also occupy the eastern side of the Gao region", "12. Interview with three Idaksahak, Bamako, 27/10/2020"]
+      },
+      {
+        "numero": 4,
+        "titre": "The image of a subordinate and peaceful group",
+        "contenu": [
+          "The presence of a weapon on the logo intended to define the main features of the Idaksahak identity contrasts with the peaceful dimension they have long highlighted to define themselves vis-à-vis others. Some members of the group still insist on this specificity today. Here is, for example, how a man in his sixties, from the Kel Abakott fraction, answered the question 'what characterizes the Idaksahak?':",
+          "\"For me, what characterizes us, all the time, is that we are a people of peace, who only take care of religion and livestock. We do not get involved in other things. And that is why people do not talk much about us. We did not participate in wars, nor in raids, nor in banditry. We did not participate in any of that.\"¹⁵",
+          "Ahmed Mohamed Ag Guidi also emphasizes, in his written document, the non-violent nature of the Idaksahak, even in a context of almost permanent danger:",
+          "\"The IDAKSAHK, a peaceful people, did not respond to aggression, even very intentional, except in cases of deliberate humiliation or obvious provocation. This community had always opted for non-violence aimed essentially at safeguarding their economic base from a permanent risk of destruction in a cultural context of raids and counter-raids.\"¹⁶",
+          "The essentialist dimension obviously hovers over these speeches, as is always the case when trying to define the identity of one's own group. Singularities, rough edges and contradictions are erased in favor of unitary narratives. But self-presentation is also always rich in lessons. 'A people of peace who take care of their religion…', but a group that has never benefited from the status of a 'maraboutic' tribe (zwâya), as is the case for example with the Kel Es-Suq Tuaregs or the Kunta Arabs¹⁷. The Idaksahak, although very educated in Islam – this is moreover the main reason they invoke in their refusal of the White man's school and that of the Malian state – never really obtained this recognition. As far as they are concerned, the peaceful character rhymes above all with a subordinate status."
+        ],
+        "notes": ["15. Interview with four Idaksahak, Bamako, 27/10/2020", "16. Ag Guidi 2019, p. 9", "17. See Grémont 2010"]
+      },
+      {
+        "numero": 5,
+        "titre": "\"We traded our goats for Kalashnikovs!\"",
+        "contenu": [
+          "For most of their neighbors, indeed, the Idaksahak remain a subordinate group, still under the yoke, or at least the influence, of those who were the political and war leaders of the Niger Loop up to and including the Adagh of the Ifoghas, for more than two centuries, the Iwellemmedan¹⁸.",
+          "The Idaksahak were far from being the only ones to recognize, willingly or by force, the political authority of the Iwellemmedan. But as far as they are concerned, and unlike other groups, this subordinate status was all the more obvious since the Idaksahak do not seem to have really carried weapons, at least war weapons, such as swords, spears and shields¹⁹. This in fact placed them under the protection and dependence of other warrior groups, in this case the Imajeghen Iwellemmedan, and more specifically the lineage holding the command drum (ettebel), the Kel Talatayt.",
+          "The sword that appears today symbolically on their presentation logo therefore refers to a very recent history. The oldest available sources that mention the Idaksahak indeed insist on the peaceful nature of this social group. This is the case, for example, of the Kunta marabout Shaykh Baye who wrote, towards the end of the 19th century, notes on ancient Tuareg tribes:",
+          "\"The Dû Sahâq are a people of the Tuaregs. It is certain that originally they were Sûdân, because their speech (kalâm) is composed of the words (kalâm) of the Sûdân²⁰ and the Tuaregs. And among them there is a tribe which traces its origins to the East. They are all people of peace and study. Most of them live with the Ilmidan [Iwellemmedan]. It is obvious that they are tribes of Es-Suq. Between them and the Dabâkir there are relations.\"²¹"
+        ],
+        "notes": ["18. Strictly speaking, the Iwellemmedan are Imajeghen", "19. Let's say that the status of warrior was not recognized by any of their neighbors", "20. Kalâm is used to differentiate 'local dialects' from 'real languages' (lugha)", "21. Shaykh Baye, manuscripts kept at the library of the Institut de France"]
+      },
+      {
+        "numero": 6,
+        "titre": "Weapons for self-defense",
+        "contenu": [
+          "Subsequently, to my knowledge, the colonial archives mention no military action on the part of the Idaksahak. It is always the image of a peaceful and cattle-rich group that is reported in the reports of French officers. It was only after Mali's independence, in 1963-1964, that Idaksahak distinguished themselves in a war episode. It concerns the revolt led by a handful of men in the Adagh des Ifoghas, in which two Idaksahak from the Talatayt area, Ilias and Younes, two sons of Ayouba, the head of the Ihanakaten fraction³², took part. Close to the chief of the Ifoghas at that time³³, Zeïd ag Attaher, these two young Idaksahak actively contributed to this revolt, notably through financial support that enabled the purchase of weapons in Algeria³⁴.",
+          "Ilias and Zeyd were arrested in Algeria, in Colomb-Béchar, in November 1963. They were handed over to the Malian authorities who exposed them to humiliating situations in front of the populations of the Adagh. As an example! Arrested with them, Younes managed to escape and settled in Algeria. Ayouba, the father, was arrested and murdered, like other chiefs who did not agree to collaborate with the Malian army.",
+          "The participation of these two individuals alone is certainly not enough to mark this date and this event as an armed action by the Idaksahak. But the identity of these young men is nevertheless symbolically important. Their commitment alongside the insurgent Kel Adagh, and the repression they suffered, along with their father, mark the first act of a conflictual relationship between the Idaksahak and the Malian central power."
+        ],
+        "notes": ["32. Ayouba: renowned chief, supported by colonial authorities", "33. The Ifoghas are the dominant tribe of the Adagh (Kidal)", "34. See Boilley 1999, pp. 321–324; Lecoq 2010, pp. 192, 214, 224"]
+      },
+      {
+        "numero": 7,
+        "titre": "The rebellion of the 1990s and its limits",
+        "contenu": [
+          "A first awakening, no doubt, that the posture of the peaceful herder, attached to Quranic study, was not an insurmountable horizon. In hindsight, we now know the lineage of armed rebellions, which have erupted and re-erupted regularly since 1963 in northern Mali³⁵. This is particularly true between the 1963 episode and that of 1990. The bitterness of the orphans of 1963 against the Malian central power is one of the well-documented matrices of the 1990s rebellion.",
+          "In his work, Baz Lecoq presents Younes ag Ayouba as one of its main leaders, at least in its preparation phase³⁶.",
+          "The commitment of several hundred Idaksahak, armed, in the 1990 rebellion marks a first step in the emancipation process of this group. Also and above all because these weapons did not target only the Malian army."
+        ],
+        "notes": ["35. Rebellions: 1963–1964, 1990, 2006, 2012", "36. Lecoq 2010, p. 192"]
+      },
+      {
+        "numero": 8,
+        "titre": "The confrontation of 1994",
+        "contenu": [
+          "Indeed, a little-known but highly symbolic event should be recalled here. Like many communities in the Niger River valley or in pastoral areas, the Idaksahak suffered theft and looting in the first half of the 1990s. In a context of non-application of peace agreements, proliferation of weapons and lack of justice, acts of banditry multiplied and the Idaksahak's cattle were coveted by many, especially by their close neighbors, including Imajeghen.",
+          "In other words, people belonging to the former dominant and warrior class within the Iwellemmedan – whose historical role was the defense of subordinate and peaceful groups, in exchange of course for counterparts (political submission and contributions in cattle) – repeatedly took animals belonging to Idaksahak. Once they even targeted a camp and pillaged a family's household goods³⁹, about ten kilometers from the Idaksahak armed base (Izilili, about forty kilometers north-east of Ménaka).",
+          "This act, highly reprehensible from the point of view of societal values, led the same day to an armed pursuit by Idaksahak fighters present in Izilili. A series of armed clashes took place between Imajeghen and Idaksahak fighters in the following weeks, resulting in several wounded and perhaps a few dead⁴⁰. A ceasefire and an agreement were quickly reached between the two parties.",
+          "This sequence clearly marks the transition of the Idaksahak into another sociological and political dimension, that of a tribe capable of mounting its own military response when its property is threatened and looted. A transition all the more striking because it took place in direct confrontation with their former suzerains.",
+          "\"This 1994 episode is historic! It is the first time that we have removed our head from under the foot of the Imajeghen. Before that, our goods were their goods. An Adaksahak was nothing in the eyes of the Imajeghen.\"⁴¹"
+        ],
+        "notes": ["39. Interview with a former Idaksahak fighter, Bamako, 23/02/2022", "40. No deaths declared on the Idaksahak side", "41. Interview with a former Idaksahak fighter, Bamako, 23/02/2022"]
+      },
+      {
+        "numero": 9,
+        "titre": "Political visibility acquired through weapons",
+        "contenu": [
+          "As announced in the introduction, it was truly from the 2010s that the Idaksahak expressed their warrior strength and political demands, both regionally, nationally and even internationally, both on the military ground and on the media and social networks. The aim here is no longer to retrace the forms of involvement of the Idaksahak in the war triggered in northern Mali in 2012, but to try to conclude this reflection on the notion of tribe, by integrating a completely contemporary historical sequence, because it is still ongoing at the time of writing these lines (October 2023)."
+        ]
+      },
+      {
+        "numero": 10,
+        "titre": "Military affirmation against the Imajeghen",
+        "contenu": [
+          "The 1990s certainly open a new era in the history of the Idaksahak, with the commitment of perhaps more than 2,000 fighters in a rebellion against the Malian central power and, even more so, the defense of their property by their own weapons, but the political gain of this conversion remained quite low. As the young Adksahak interviewed in 2020 points out, positions of responsibility, 'elected officials, ministers, senior officers' remained assigned to others. The desire to change this situation motivated several young graduates of the community from the resumption of hostilities against the Malian central state in 2012."
+        ]
+      },
+      {
+        "numero": 11,
+        "titre": "The Movement for the Salvation of Azawad (MSA)",
+        "contenu": [
+          "But it was above all the year 2016 that openly marked this position with the creation of the Movement for the Salvation of Azawad (MSA), by one of these young people, Moussa Ag Acharatouman. He is one of the founders of the National Movement of Azawad (MNA), an organization of young graduates from the North which, from 2010, tried to challenge the state and the leaders of the North on the question of Azawad, its autonomy and its governance. With the choice of armed struggle in January 2012, the MNA became the National Movement for the Liberation of Azawad (MNLA)."
+        ]
+      },
+      {
+        "numero": 12,
+        "titre": "Young Idaksahak in jihadism",
+        "contenu": [
+          "The crisis and armed conflicts triggered from 2012 also reveal much more complex situations than an opposition between independentist movements and the central power of the Malian state. Loyalist militias and armed groups are also among the protagonists of the conflict, as well as several jihadist movements. Now it happens that a part of the Idaksahak youth, certainly a minority but well present, adhered very early to the jihadist offer, through the Movement for Oneness and Jihad in West Africa (MUJAO), Al-Qaeda in the Islamic Maghreb (AQIM) and also the Islamic State in the Greater Sahara (EIGS)."
+        ]
+      }
+    ],
+    "conclusion": {
+      "titre": "An autonomous political order?",
       "contenu": [
-        "Avant Tabalit et Habiba, il y a eu Elvie. Elle est entrée dans ma vie comme un vent chaud sur les dunes. Elle était jeune, vive, lumineuse, et tout en elle me parlait d’un monde que je n’avais jamais osé toucher. Je ne savais pas encore ce que l’amour pouvait être, mais elle m’a appris, intensément, brutalement, sincèrement. Nous avons vécu un amour interdit par beaucoup : les différences culturelles, les familles opposées, la distance qui nous séparait. Mais nous ne voulions pas fuir. Chaque moment avec elle était un monde entier, chaque regard une promesse muette, chaque sourire une évidence.",
-        "Et puis… la vie a frappé. Elle a porté un enfant, mais la pression des autres, l’impossibilité de notre situation, l’a forcée à faire un choix terrible. Ce choix m’a brisé autant qu’elle. J’ai quitté le Bénin, le cœur en miettes, emportant avec moi des souvenirs que personne ne pourrait comprendre. Elvie s’est reconstruite, a refait sa vie, a eu ses enfants, mais moi… je suis resté marqué. Pas par la haine ou le regret, mais par la force de ce que nous avions vécu. Elle m’a appris que l’amour peut être à la fois lumineux et destructeur, tendre et cruel, et que parfois, aimer profondément signifie accepter la séparation. Elvie est le fantôme du Bénin qui danse encore dans mes souvenirs."
+        "This last observation, of a historical sequence still in progress, reopens the question of the solidarity ties supposed to define, with other elements, the structure and internal functioning of a tribe. The idea that members of a tribe, by virtue of their blood and kinship ties, and by their inscription in a common history, would mobilize as one man in a conflict situation, should be largely weighted.",
+        "Work on very contemporary history, or the 'present time', certainly also makes it possible to reconsider truths that are sometimes stated too quickly about the unitary, solidary and coherent character of the tribe. The existence or not of an autonomous political order, with its internal forces of contradiction, therefore seems to me a much more fruitful question if one seeks to re-examine the notion of tribe, here in the southern part of the Sahara at the beginning of the 21st century. The contemporary experience of the Idaksahak undoubtedly opens up new avenues to explore."
       ]
     },
-    {
-      "numero": 4,
-      "titre": "Tabalit, la terre ferme",
-      "contenu": [
-        "Après Elvie, il y a eu Tabalit. Elle n’était pas un feu comme Elvie. Elle était la terre ferme, la patience, la force silencieuse qui soutient sans bruit. Dès notre rencontre, j’ai senti qu’elle pourrait marcher avec moi sur mes routes de poussière et de souvenirs. Avec elle, l’amour a pris une autre forme : moins de brûlure, plus de chaleur constante. Nous avons eu nos enfants, quatre lumières dans ma vie. Chacun d’eux est devenu un rappel que l’amour peut se construire, même dans un monde qui ne pardonne pas facilement les blessures.",
-        "Tabalit, la mère de mes enfants, a été la colonne vertébrale de nos années ensemble. Mais la vie nous a réservé une épreuve que ni elle ni moi n’avions imaginée."
-      ]
-    },
-    {
-      "numero": 5,
-      "titre": "L’accident et la perte",
-      "contenu": [
-        "Et puis, il y a eu l’accident. La perte de mon bras a changé beaucoup de choses. Pour moi, c’était un défi physique, émotionnel, et même spirituel. Pour elle… je l’ai senti changer aussi. Tabalit est devenue plus distante, plus prudente, plus consciente de ma fragilité. Je ne lui en veux pas. Je comprends. L’amour, quand il voit la vulnérabilité, peut se transformer. Mais la distance qui s’est installée était douloureuse. Trois ans après cet accident, Tabalit est partie. Elle a emporté la tendresse qui rendait mes blessures plus supportables. Je suis resté avec mes cicatrices, mes enfants, et un vide qu’aucune présence ne pouvait combler.",
-        "J’ai perdu un bras, mais pas mon élan. J’ai enterré des proches, mais pas mon espoir. J’ai vécu l’exil, les humiliations, les « revenez demain », les regards qui jugent avant même que tu parles. Mais je parlais déjà avant qu’on me regarde. Ce n’est pas une vie de survivant, c’est une vie de créateur."
-      ]
-    },
-    {
-      "numero": 6,
-      "titre": "Habiba, la brise qui soigne",
-      "contenu": [
-        "Et puis est venue Habiba. Elle n’est pas arrivée comme un feu ou une force imposante. Elle est arrivée comme une brise douce qui pénètre dans les plaies les plus profondes. Elle a vu mes cicatrices. Elle a vu mon bras manquant. Elle a vu mes douleurs, mes blessures, et elle ne les a pas fuies. Avec elle, j’ai découvert ce que veut dire être soutenu sans conditions. Elle ne promettait pas un mariage, ne garantissait pas un monde parfait. Elle promettait une présence, une constance, un amour sincère et silencieux. Pour moi, cela valait tout.",
-        "Habiba a soigné mes blessures avec douceur. Elle m’a appris que l’amour ne se mesure pas à la possession ou à la légitimité sociale. Il se mesure à l’attention, à la patience, au soutien que l’on offre à celui qui est tombé, à celui qui est fatigué, à celui qui a été brisé. Habiba, c’est l’écho doux d’un silence qui parle."
-      ]
-    },
-    {
-      "numero": 7,
-      "titre": "La foi, guide dans les nuits sombres",
-      "contenu": [
-        "Ma foi m’a guidé dans les nuits les plus sombres. Elle m’a appris que la douleur ne détruit pas, elle transforme. Que les blessures ne sont pas des fins, mais des commencements. Que la perte n’est pas une malédiction, mais un matériau pour bâtir un héritage. J’ai compris que la vie ne m’avait pas tout pris pour rien. Chaque blessure, chaque perte, chaque absence, chaque amour interdit… tout cela était en fait un matériau pour bâtir quelque chose de plus grand.",
-        "Mon bras manquant, les regards pleins de pitié ou de jugement, le départ de Tabalit… tout est devenu une force silencieuse, un moteur qui me pousse à créer, à traduire, à transmettre. Chaque langue que j’ai apprise en traversant les pays est devenue un pont. Chaque chanson interdite, chaque mélodie que j’ai écrite en secret est devenue une passerelle entre mon monde et celui des autres. Chaque expérience douloureuse est devenue une leçon que je peux partager, un message que je peux transmettre, une mémoire que je peux protéger.",
-        "Je crois au destin, mais pas au hasard. Je crois en Dieu, mais ne l’invoque pas comme excuse : je l’invoque comme source de courage. Dans mes carnets, il y a des rêves en triple exemplaire : un pour moi, un pour mes enfants, et un pour les enfants que je ne connaîtrai jamais, mais que je protège déjà par mes actions."
-      ]
-    },
-    {
-      "numero": 8,
-      "titre": "Hamadine aujourd’hui",
-      "contenu": [
-        "Aujourd’hui, je suis Hamadine. Je suis un homme brisé et complet à la fois. Un homme qui a aimé, perdu, pleuré, survécu et créé. Un homme qui sait que la vraie puissance réside dans la capacité à se relever, à transmettre et à continuer malgré tout. Chaque chapitre de ma vie — Elvie, Tabalit, Habiba, mes blessures, mes enfants, mes langues, ma musique, ma foi — n’était jamais une série de hasards. C’était un chemin. Un chemin qui m’a appris que la vie, avec toutes ses épreuves, peut devenir œuvre, message et héritage.",
-        "Je suis saharien dans l’âme, universel dans la vision, humble dans l’instant, et géant dans l’histoire. Je ne suis pas un héros mythifié. Je suis un vrai. Un homme qui a connu la poussière et l’honneur, les gifles du destin et les accolades de l’invisible. J’écris en JavaScript comme j’écris des poèmes, je code des bots comme d’autres codent des mensonges, j’invente des outils pour que même les oubliés puissent parler leur langue — et qu’on les comprenne. On peut sauver une culture avec une ligne de code, un vers, une voix."
-      ]
-    },
-    {
-      "numero": 9,
-      "titre": "Le voyage continue",
-      "contenu": [
-        "Et ce volume 1 n’est qu’une partie du récit. Le vent continue de souffler, les dunes continuent de changer, et il reste des histoires à écrire, des chansons à composer, des ponts à construire. Le voyage n’est pas terminé. La suite de ma vie, avec ses défis, ses amours, ses découvertes et ses épreuves, attend d’être racontée. Ce n’est pas une vie que je vis. C’est une légende en cours d’écriture.",
-        "Alors installe-toi, car ce n’est pas une suite… c’est une ascension. Ce monde entendra ma voix. Pas parce que je crie plus fort, mais parce que ma vérité pèse plus lourd que toutes les hypocrisies réunies. Hamadine, c’est ce cri muet que les puissants n’entendent pas, mais que les enfants des dunes reconnaissent dans le battement de leurs cœurs."
-      ]
-    }
-  ],
-  "conclusion": {
-    "titre": "Épilogue – Les dunes ne meurent jamais",
-    "contenu": [
-      "Ce premier volume se ferme comme un souffle sur le désert. Mais les dunes ne meurent jamais ; elles se déplacent, se transforment, et chaque grain de sable porte une histoire. Hamadine continue de marcher, d’aimer, de traduire, de chanter dans l’ombre. La route est longue, mais il sait désormais que chaque cicatrice est une lumière qui guide ceux qui viendront après lui."
+    "bibliographie": [
+      "Ag Guidi, A. M. (2019): Contribution to the knowledge of the Idaksahak community (case of Ménaka and Talatayt), 16 p.",
+      "Barth, H. (1858): Travels and Discoveries in North and Central Africa, 1849–1855, London, 5 vol.",
+      "Ben Hounet, Y. (2009): 'What to do with the tribe? On the tribal phenomenon in Algeria and the Muslim world', Journal of Anthropologists, 116–117, 493–515.",
+      "Ben Hounet, Y. and Bonte, P. (2009): 'Introduction' to the dossier 'The tribe in the age of globalization', Rural Studies, 184, 13–32.",
+      "Boilley, P. (1999): The Kel Adagh Tuaregs. Dependencies and revolts: from French Sudan to contemporary Mali, Paris.",
+      "Bonte, P. and Echard, M. (1976): 'Histories and History. Conception of the past among the Hausa and the Kel Gress Tuaregs of the Adrar', Cahiers d'Études Africaines, 61–62, 237–296.",
+      "Chebli, D. (2021): 'Until now, there is no revolution'. Itinerary of the National Movement for the Liberation of Azawad in the war in Mali, PhD thesis.",
+      "Grémont, C. (2010): The Iwellemmedan Tuaregs. A political entity of the Niger Loop, Paris.",
+      "Grémont, C. (2017): 'Origins and perspectives of conflicts led by Tuaregs in Mali', L'ENA hors les murs, 467, 16–20.",
+      "Grémont, C. (2019): 'In the trap of offers of violence', Hérodote, 172, 43–62.",
+      "Lecoq, B. (2010): Disputed Desert: Decolonisation, Competing Nationalisms and Tuareg Rebellions in Northern Mali, Leiden.",
+      "Richer, A. (1924): The Tuaregs of Niger (Timbuktu-Gao region). The Oulliminden, Paris.",
+      "Scheele, J. (2009): 'Tribes, States and fraud: the Algerian-Malian border region', Rural Studies, 184, 79–94."
     ]
   },
-  "bibliographie": []
-},
-{
-  "id": 12,
-  "titre": "حمدين – كثبان حياتي",
-  "auteur": "حمدين أغ مكتار",
-  "sous_titre": "بين الجروح والنور (المجلد الأول)",
-  "annee": "2025",
-  "pages": 14,
-  "type": "سيرة ذاتية",
-  "langue": "Arabe",
-  "categorie": "أدب / شهادة",
-  "description": "رواية حميمية لرجل بين حب محظور، وخسائر لا رجعة فيها، وصمود. وُلد حمدين في الصحراء، ويروي طفولته، وأسفاره، وحبه (إلفي، تاباتليت، حبيبة)، وفقدانه ذراعه، وإيمانه الذي قاده. طريق من الجروح تحولت إلى نور.",
-  "credit_traduction": "تمت ترجمة هذا الكتاب من الفرنسية إلى العربية بواسطة حمدين أغ مكتار، الرئيس التنفيذي لشركة HAM Global Words.",
-  "couverture": "data/images/livres/Hamadine sur les dunes sous les étoiles.png",
-  "illustrations": [],
-  "chapitres": [
-    {
-      "numero": 1,
-      "titre": "حيث يرقص الرمل مع الريح",
+  {
+    "id": 14,
+    "titre": "The Perils of a Tuareg Era in Mali",
+    "auteur": "Study Collective",
+    "sous_titre": "Understanding the challenges, aspirations and resilience of a people",
+    "annee": "2024",
+    "pages": 156,
+    "type": "histoire",
+    "langue": "English",
+    "categorie": "Political Science",
+    "description": "An in-depth analysis of the political, economic and cultural challenges facing Malian Tuaregs in a troubled era. From the root causes of conflicts to hopes for reconciliation, including the role of women and the destruction of heritage.",
+    "couverture": "data/images/livres/couverture_touareg.png",
+    "illustrations": [
+      {
+        "id": "illu_t1",
+        "chapitre": 4,
+        "titre": "Djingareyber Mosque",
+        "fichier": "data/images/livres/illu_t_mosquee.jpg",
+        "legende": "Historic mosque of Timbuktu, world heritage in peril"
+      },
+      {
+        "id": "illu_t2",
+        "chapitre": 8,
+        "titre": "Tuareg woman",
+        "fichier": "data/images/livres/illu_t_femme.jpg",
+        "legende": "Tuareg woman in traditional adornment"
+      },
+      {
+        "id": "illu_t3",
+        "chapitre": 7,
+        "titre": "Tuareg musicians",
+        "fichier": "data/images/livres/illu_t_musique.jpg",
+        "legende": "Musicians playing traditional guitar (tindé)"
+      },
+      {
+        "id": "illu_chef_idoguiritane_1",
+        "chapitre": 2,
+        "titre": "Historical chief of the Idoguiritane fraction (1)",
+        "fichier": "data/images/livres/chef_idoguiritane_1.jpg",
+        "legende": "Portrait of the chief of the Idoguiritane fraction of the Idaksahak, photo taken by Charles Grémont in Tin Abaw (Ménaka region)."
+      },
+      {
+        "id": "illu_chef_idoguiritane_2",
+        "chapitre": 2,
+        "titre": "Historical chief of the Idoguiritane fraction (2)",
+        "fichier": "data/images/livres/chef_idoguiritane_2.jpg",
+        "legende": "Chief Idoguiritane during a traditional meeting in Tin Abaw. Photo Charles Grémont."
+      },
+      {
+        "id": "illu_chef_idoguiritane_3",
+        "chapitre": 2,
+        "titre": "Historical chief of the Idoguiritane fraction (3)",
+        "fichier": "data/images/livres/chef_idoguiritane_3.jpg",
+        "legende": "Chief Idoguiritane surrounded by notables, Tin Abaw. Charles Grémont archives."
+      }
+    ],
+    "chapitres": [
+      {
+        "numero": 1,
+        "titre": "Mali in turmoil: the torments of the Tuareg era",
+        "sous_titre": "The root causes of the torments",
+        "contenu": [
+          "Mali, a country of striking beauty and profound cultural wealth, is plunged into a tumultuous period marked by a series of crises and upheavals. At the heart of these torments lies the complex question of the Tuareg era, which shakes the very foundations of the nation.",
+          "For decades, Malian Tuaregs have been demanding their distinct identity, their right to autonomy and their fair share of the natural resources of the Saharan region. These demands have often been met with indifference or repression from the central government, thus generating persistent tensions and conflicts.",
+          "The torments of the Tuareg era manifest themselves through armed uprisings, rebellions, political negotiations, but also through the resulting violence and suffering. Clashes between Tuareg armed groups, government forces and extremist groups have sown chaos and destruction in vast regions of the country.",
+          "The quest for recognition and justice of the Malian Tuaregs has encountered numerous obstacles. Issues of political representation, resource sharing, access to education and basic services have exacerbated already existing tensions. Ethnic divisions and rivalries between different Malian communities have also complicated the peaceful resolution of these conflicts.",
+          "Yet, despite the torments, the Tuareg era has also been the scene of moments of resilience and solidarity. Courageous voices have been raised to promote peace, reconciliation and dialogue, seeking to transcend divisions and find lasting solutions to the problems afflicting the country.",
+          "Thus, Mali in turmoil is a reflection of a tormented era, where the aspirations of a people seeking justice and recognition collide with the complex challenges of governance, national unity and stability."
+        ],
+        "notes": ["Root causes include marginalization, natural resource conflicts, identity demands, the influence of regional conflicts and socio-economic factors."]
+      },
+      {
+        "numero": 2,
+        "titre": "At the crossroads: the eventful destiny of the Malian Tuaregs",
+        "sous_titre": "Ancestral heritage and struggles for autonomy",
+        "contenu": [
+          "The Tuareg people, known for their rich culture and nomadic lifestyle in the vast desert expanses of the Sahel, find themselves at the heart of a tumultuous history in Mali. Their eventful destiny has placed them at a crossroads, faced with multiple challenges, aspirations and upheavals that have profoundly marked their trajectory.",
+          "The Tuaregs, also called the 'blue men' because of their traditional clothing, have a thousand-year history in the Sahel region. Their nomadic lifestyle, intimate knowledge of the desert and ability to navigate the vast arid expanses make them precious guardians of this unique ecosystem. Their ancestral heritage is imbued with oral traditions, songs, poetry and deep spirituality.",
+          "Over the centuries, the Tuaregs have faced many challenges, one of the most significant being their struggle for autonomy and recognition of their distinct identity. They have claimed their right to self-determination, fair political participation and the preservation of their cultural heritage. These aspirations have often been met with indifference from central governments and assimilation policies, thus creating persistent tensions.",
+          "The Tuareg era in Mali has been marked by a series of armed conflicts and rebellions. The Tuaregs' demands for autonomy and justice led to violent clashes with the Malian armed forces. These torments had devastating consequences, with loss of life, forced displacement and the destruction of many Tuareg communities.",
+          "Despite the difficulties, courageous voices have been raised to promote peace, reconciliation and dialogue. Mediation initiatives have been launched to resolve conflicts and foster mutual understanding between the different stakeholders. Economic development, access to education and improved living conditions have also been undertaken to offer Tuaregs more serene prospects for the future."
+        ]
+      },
+      {
+        "numero": 3,
+        "titre": "The ravages of war: testimonies from a troubled era",
+        "sous_titre": "Horrors, displacement and resilience",
+        "contenu": [
+          "The ravages of war delve into the heart of the experiences and poignant testimonies of those who lived through the torments of the Tuareg era in Mali. Through these accounts, we are confronted with the brutal reality of the consequences of war and the profound impact it has had on individuals, families and communities.",
+          "The testimonies describe the horrors of the violence that broke out during the Tuareg era. Heartbreaking accounts emerge, telling of bloody attacks, bombings and looting that devastated villages and towns. The victims recount their trauma, their constant fear and the heartbreaking loss of their loved ones.",
+          "The testimonies also reveal the painful stories of forced displacement. Entire families were forced to flee their homes, abandoning their belongings and ancestral land to escape violence. These testimonies highlight the challenges faced by displaced people, from seeking safety to struggling to rebuild a normal life.",
+          "Despite the suffering, the testimonies also reflect the remarkable resilience of individuals and communities affected by war. Inspiring stories emerge, describing how people found the strength to rebuild their lives, support their loved ones and preserve their culture and identity in the face of adversity.",
+          "These testimonies also call for justice and reconciliation. They highlight the need to account for human rights violations and ensure that those responsible for violence are held accountable for their actions. They emphasize the importance of reconciliation and inter-community dialogue to overcome divisions and rebuild a peaceful and inclusive society."
+        ]
+      },
+      {
+        "numero": 4,
+        "titre": "Heritage in peril: the destruction of Tuareg historical sites",
+        "sous_titre": "Witnesses of the past in danger",
+        "contenu": [
+          "This chapter highlights the sad reality of the destruction of Tuareg historical and cultural sites during the troubled era in Mali. These sites, witnesses to a rich history and unique cultural identity, have been victims of looting, vandalism and irreparable degradation.",
+          "Tuareg historical sites are living testimonies of the rich past of this community. These sites include mausoleums, palaces, ancient mosques, rock engravings and other remains that tell the history of the Tuaregs and their relationship with the land and the desert. The destruction of these sites not only deprives the Tuaregs of their cultural heritage, but also deprives the world of a precious part of human history.",
+          "During periods of conflict, historical sites are often the target of organized looting and trafficking of antiquities. Unique cultural treasures are stolen and sold on the black market, fueling an illicit trade that deprives local communities of their cultural and historical resources. The consequences of these illegal activities are disastrous, as they lead to the irreversible disappearance of precious objects and weaken the cultural identity of the Tuaregs.",
+          "The destruction of Tuareg historical sites has a profound impact on the cultural identity of the Tuaregs and their ability to transmit their history and traditions to future generations. These sites were symbols of pride and connection to the past, and their disappearance leaves a painful void in the collective consciousness of the Tuaregs.",
+          "Faced with the destruction of Tuareg historical sites, voices are being raised to call for their protection and preservation. Efforts are being made to document and safeguard the remaining sites, as well as to raise awareness of their cultural and historical value. International cooperation and local initiatives are essential to combat looting and trafficking of antiquities, as well as to restore and preserve damaged sites."
+        ]
+      },
+      {
+        "numero": 5,
+        "titre": "The struggle for autonomy: aspirations and resistance of the Malian Tuaregs",
+        "sous_titre": "The quest for autonomy and resistance movements",
+        "contenu": [
+          "This chapter highlights the struggle of the Malian Tuaregs for autonomy and recognition of their legitimate rights. It explores the deep aspirations of the Tuaregs to exercise control over their own destiny, as well as the forms of resistance they have adopted to assert their demands.",
+          "Malian Tuaregs have long demanded greater autonomy in the management of their internal affairs. This chapter examines the underlying reasons for this quest, such as the preservation of their culture, the protection of their land rights and equitable access to natural resources. It also explores the different forms of autonomy envisaged, from regional autonomy to the recognition of specific statuses for Tuareg communities.",
+          "Throughout history, Malian Tuaregs have expressed their discontent through uprisings and resistance movements. This chapter examines the armed uprisings and political movements that have marked the history of the Malian Tuaregs, such as the National Movement for the Liberation of Azawad (MNLA) and the High Council for the Unity of Azawad (HCUA). It highlights the reasons that led to these movements and explores their objectives and demands.",
+          "Achieving autonomy for the Malian Tuaregs faces many challenges. This chapter examines the political, economic and social obstacles that have hindered the implementation of sustainable solutions. It also addresses the difficulties related to coordination between different stakeholders and the efforts made to overcome divisions and reach consensus.",
+          "Despite the persistent challenges, this chapter explores the prospects for a more inclusive future for the Malian Tuaregs. It highlights dialogue and negotiation initiatives, as well as efforts to strengthen political participation and inclusion of Tuaregs in decision-making processes. It underlines the importance of recognizing the legitimate aspirations of the Malian Tuaregs and working together to build a more equitable and harmonious society."
+        ]
+      },
+      {
+        "numero": 6,
+        "titre": "From fragile peace to escalating violence: chronicles of a tormented era",
+        "sous_titre": "From hopes of peace to escalating violence",
+        "contenu": [
+          "This chapter highlights the complex evolution of peace and violence dynamics, describing the different phases that led to a period of turmoil and intense conflict.",
+          "This chapter explores the early signs of hope and peace initiatives that emerged in the region. It highlights the negotiations, ceasefire agreements and mediation efforts deployed to resolve tensions and achieve peaceful coexistence between different communities. It highlights the hopes that accompanied these initiatives and the challenges they faced.",
+          "Unfortunately, the fragile peace period was followed by an escalation of violence. This chapter examines the factors that contributed to this escalation, such as unmet demands, political rivalries and ethnic tensions. It explores the attacks, armed clashes and reprisals that plunged the region into a cycle of destructive violence.",
+          "At the heart of this tormented era are the communities affected by the violence. This chapter gives a voice to members of these communities, who share their experiences and the devastating consequences they have suffered. It examines the trauma, forced displacement, loss of life and socio-economic upheavals that marked the daily lives of affected people.",
+          "Despite the difficulties, this chapter also explores efforts to rebuild peace and stability in the region. It highlights reconciliation initiatives, development projects and transitional justice processes aimed at healing the wounds of the past and preventing the recurrence of violence. It emphasizes the importance of a holistic and inclusive approach to building lasting peace."
+        ]
+      },
+      {
+        "numero": 7,
+        "titre": "In search of identity: between age-old traditions and contemporary aspirations",
+        "sous_titre": "Cultural heritage and external influences",
+        "contenu": [
+          "This chapter explores the complexity of Tuareg identity in a context where age-old traditions coexist with contemporary aspirations. Malian Tuaregs face major challenges in preserving and promoting their cultural identity while navigating an ever-changing world.",
+          "Malian Tuaregs are proud of their rich cultural heritage, rooted in age-old traditions. This chapter examines the key elements of this cultural identity, such as language, music, dance, crafts and customs. It highlights the importance of preserving these traditions, not only as a source of pride and identity, but also as a means of strengthening community ties and passing on heritage to future generations.",
+          "Contemporary aspirations and external influences also have an impact on Tuareg identity. The advent of new communication technologies, access to education and cultural exchanges with other communities can generate changes and adaptations. This chapter examines how Malian Tuaregs navigate between preserving their traditions and adopting elements of contemporary culture, seeking a balance that allows them to feel rooted in their identity while adapting to changes in the modern world.",
+          "Periods of conflict and violence have a profound impact on identity construction. This chapter explores how Malian Tuaregs have faced the challenges of maintaining their cultural identity amidst violence and forced displacement. It examines the strategies of resilience and identity preservation adopted by Tuareg communities during difficult periods, as well as the transformations that may occur through these experiences.",
+          "Malian Tuaregs are engaged in a quest for balance between preserving their cultural heritage and contemporary aspirations. This chapter highlights the challenges they face in this search for identity, such as the intergenerational transmission of traditions, the preservation of languages and the valorization of traditional know-how, while being open to the opportunities and changes of the modern world."
+        ]
+      },
+      {
+        "numero": 8,
+        "titre": "Tuareg women of Mali: audacity at the heart of challenges",
+        "sous_titre": "Preservation of culture, resilience and fight for equality",
+        "contenu": [
+          "This chapter highlights the essential role and audacity of Tuareg women in a context marked by multiple challenges. Women play a central role in preserving culture, community resilience and the fight for equal rights, despite the obstacles they face.",
+          "Tuareg women are the guardians of the traditions and culture of their community. This chapter explores how they pass on knowledge, songs, dances, crafts and ancestral stories to future generations. It highlights their crucial role in maintaining Tuareg identity, as guardians of values and age-old customs.",
+          "Despite the challenges they face, Tuareg women play a vital role in the resilience and development of their community. They are active in fields such as education, health, agriculture, livestock and trade. This chapter explores how Tuareg women organize themselves into support groups, cooperatives and associations to strengthen their impact and promote the well-being of their community.",
+          "Tuareg women face persistent gender inequalities, both socially and legally. However, they show remarkable audacity in defending their rights and promoting equality. This chapter examines the actions taken by Tuareg women to gain increased political participation, access to education, fight gender-based violence and promote balanced representation within their community.",
+          "The chapter highlights the emergence of new voices and new perspectives among Tuareg women. It explores the challenges they face in their quest for autonomy and self-determination, as well as their growing contribution in the fields of art, literature, music and entrepreneurship. Tuareg women are pushing traditional boundaries to shape their own destiny and inspire future generations."
+        ]
+      },
+      {
+        "numero": 9,
+        "titre": "Natural resources and geopolitical issues: the economic challenges of the Tuareg people",
+        "sous_titre": "Resource wealth and economic autonomy",
+        "contenu": [
+          "This chapter explores the economic challenges facing the Tuareg people in relation to natural resources and geopolitical issues. It highlights the economic opportunities and constraints faced by the Tuaregs in the exploitation and management of these resources, as well as the geopolitical implications that shape their economic reality.",
+          "Tuareg territories are rich in precious natural resources, such as oil, gas, uranium, gold, minerals and water resources. This chapter explores how these resources can be a source of potential wealth for the Tuareg people and how they could contribute to the socio-economic development of the region.",
+          "However, access to and control of natural resources are often marked by geopolitical issues and conflicts of interest. This chapter examines the challenges faced by the Tuaregs in securing their rights of access and control over these resources, taking into account political dynamics, international agreements and the interests of regional and global actors.",
+          "The exploitation of natural resources represents both an economic opportunity and a challenge for the Tuareg people. This chapter explores the different approaches and strategies adopted by the Tuaregs for responsible and sustainable exploitation of these resources, ensuring environmental preservation and maximizing socio-economic benefits for the community.",
+          "Faced with economic challenges, the Tuaregs seek to develop economic autonomy initiatives and diversify their sources of income. This chapter examines projects and programs set up to promote entrepreneurship, agricultural development, livestock farming, cultural tourism and other economic sectors, in order to reduce dependence on natural resources and create sustainable economic opportunities."
+        ]
+      },
+      {
+        "numero": 10,
+        "titre": "Towards an uncertain future: hopes and fears of a Tuareg era in Mali",
+        "sous_titre": "Hopes for peace, development challenges and identity recognition",
+        "contenu": [
+          "This chapter explores the hopes and fears surrounding the future of the Tuareg people in Mali. While the region has been marked by periods of conflict, violence and instability, there are also aspirations and desires for peace, development and recognition of Tuareg identity.",
+          "Despite the trials they have been through, many Tuaregs nurture the hope of lasting peace and reconciliation between different communities. This chapter examines the efforts made by Malian and international actors to achieve a peaceful resolution of conflicts, through dialogues, negotiations and peace agreements. It also highlights community reconciliation initiatives and transitional justice mechanisms aimed at healing the wounds of the past.",
+          "The future of the Tuaregs in Mali is closely linked to socio-economic development and inclusive governance. This chapter explores the challenges facing Tuareg communities in terms of access to basic services, infrastructure development, education, employment and political participation. It also examines local development initiatives and programs aimed at strengthening the capacities of Tuareg communities and promoting their economic autonomy.",
+          "A crucial aspect for the future of the Tuaregs is the recognition of their cultural, linguistic and historical identity. This chapter explores the demands of the Tuaregs regarding cultural rights, preservation of their language, heritage and nomadic way of life. It examines initiatives aimed at promoting the inclusion and participation of Tuaregs in the political, cultural and economic spheres of the country.",
+          "Despite the hopes, challenges and fears persist regarding the future of the Tuareg people in Mali. Among these challenges are the resurgence of violence, political rivalries, ethnic tensions, persistent insecurity and socio-economic marginalization. This chapter addresses these concerns and examines the efforts needed to overcome them and build a more stable and inclusive future for all inhabitants of the region."
+        ]
+      }
+    ],
+    "conclusion": {
+      "titre": "A future to build together",
       "contenu": [
-        "حمدين، ليس مجرد اسم. إنها ريح دافئة من الصحراء تهب عندما يبدو كل شيء متجمداً. إنه قلم حاد كالسيف، مترجم الصمت، ومفسر القلوب، وشاعر المنفى، ومبرمج الأمل. وُلدت حيث يرقص الرمل مع الريح، وحيث النجوم هي الأضواء الوحيدة الموثوقة. اسمي حمدين، وليس صدفة: إنه نَفَس، ذاكرة، نداء.",
-        "وُلدت في عالم حيث كل شيء يُبنى ويُدمر في آن واحد، حيث كل حبة رمل تحكي قصة بقاء ومقاومة. لم تكن طفولتي سهلة أبداً. بدت الأيام لا تنتهي تحت شمس لا ترحم، والليالي الجليدية كانت تدعو إلى أحلام هشة وهمسات. لكن كانت هناك دائماً أمي، روز، التي كانت تتحدث بلطف وحزم معاً. كانت قصصها جسوراً بين الماضي وما سيصبح مستقبلي. كانت تحكي لي عن الأجداد، والطرق التي سلكوها، والوعود التي تركوها في الرمال، وثقل الكلمات التي تنتقل من جيل إلى جيل. كنت أشرب كل كلماتها، مبهوراً وصامتاً، وكنت أفهم بالفعل أن صمت شعب أحياناً يساوي أكثر من ألف صرخة.",
-        "نشأت بين المسكوت عنه وأغاني أمي، وتعلمت مبكراً أن صمت شعب أحياناً يساوي أكثر من ألف صرخة تلفزيونية. أتذكر الخطوات الأولى التي قطعتها وحيداً، عبر الغبار والكثبان. كنت أتعلم مراقبة العالم ككتاب مفتوح: حركة الحيوانات، حفيف الرياح، سلوك البشر. كل شيء كان يحمل معنى. اكتشفت أن العالم لن ينتظرني ليكون موجوداً. كل هبة ريح، كل عاصفة، كل صعوبة كانت تحدثني عن درس يجب أن أتعلمه، غالباً قبل أن أكون مستعداً.",
-        "كبرت مع هذا اليقين: الصوت أهم من الصمت، لكن الصمت يمكن أن يكون أقوى من ألف صوت. أدركت أنه يجب أن أتعلم الاستماع، والمراقبة، والامتصاص قبل أن أتحدث. كل كلمة يمكن أن تغير حياة أو تحطم أخرى. فمشيت على أراضٍ حارقة، حاملاً لغتي كسلاح وشعبي كراية. أحببت، خسرت، أعادت البناء، وأحياناً… نسيت أن أعيش لأستمر. لكنني بقيت واقفاً. ليس كبرياءً، بل ضرورة."
+        "By exploring the hopes and fears of a Tuareg era in Mali, this book underlines the importance of building a future based on peace, sustainable development, recognition of cultural rights and equitable participation of all communities.",
+        "It highlights the challenges to be met and the actions needed to shape a more promising and serene future for the Tuareg people and the country as a whole. The road is long, but the resilience and determination of the Malian Tuaregs, particularly the women, are living forces that allow us to envision a better future.",
+        "This book is an invitation to deep reflection on the complex dynamics that shape the destiny of a people and on the crucial issues at play in the heart of the Sahara. It is a captivating journey that illuminates our understanding of this troubled era and the extraordinary resilience of the Malian Tuaregs in the face of adversity."
       ]
     },
-    {
-      "numero": 2,
-      "titre": "مدرسة الحياة",
+    "bibliographie": []
+  },
+  {
+    "id": 15,
+    "titre": "Contribution to the knowledge of the Idaksahak community (Case of Ménaka and Talatayt)",
+    "auteur": "Ahmed-Mohamed AG GUIDI",
+    "sous_titre": "Unpublished study",
+    "annee": "2019",
+    "pages": 38,
+    "type": "histoire",
+    "langue": "English",
+    "categorie": "Anthropology / History",
+    "description": "In-depth study on the origin, dialect, territory, social life and status of the Idaksahak. Presented by Hamadine AG MOCTAR.",
+    "couverture": "data/images/livres/Paysage du désert de Ménaka au coucher du soleil.png",
+    "illustrations": [],
+    "chapitres": [
+      {
+        "numero": 1,
+        "titre": "The word IDAKSAHAK",
+        "contenu": [
+          "The name 'IDAKSAHAK' that the community of the same name gives itself certainly comes from a contraction of the word IDD-AGG ISHAK. Otherwise, neighboring communities call them DAW-SAHAK or DAW-ISHAK, depending on the pronunciation of the term 'ISHAK', a proper name whose connotation is rather Songhay and not the Arabic 'ISHAQ' from the Koran or ISAAC from the Bible. It could therefore be a reference to the name of a king, namely ISHAK I, Songhai Emperor of the Middle Ages.",
+          "Of course, the name IDD-AGG (son of in Tamasheq) followed by the name of the dominant Tobol chief was very common in the SUDAN, particularly in the Timbuktu areas of the Middle Ages before colonization, to designate a given community without reference to any genealogical tree. The same applies to the word DAW or IDAW or Oulad (son of in Arabo-Berber) followed by a proper name of a chief, a scholar or a spiritual man of great renown, in all cases, the name preceded by a prefix ends up designating an entire community.",
+          "Thus we can also speak of Oulad ISHAK as mentioned in some writings of the AHMAD BABA library archives of TOMBOUCTOU.",
+          "For the word 'DAW' - ISHAK, we can think of the meaning 'under the Tobol of ISHAK ASKIA', under the domination of….. ISHAK ASKIA",
+          "In fact, neither the Bible nor the Koran refer to the Tobol of King Isaac, let alone his domination, to introduce DAW which means under, in Tamasheq otherwise 'UNDER the domination of….. (ISAAC of the Bible or IS HA Q of the Koran)'. By analogy and in this order of ideas, DAWSAHAK is a formulation of a community name that is difficult to analyze tending towards a genealogical descent from IS HA Q or ISAAC, therefore Jewish.",
+          "Moreover, the IDAKSAHAK cannot deform the name of an ancestor they claim, namely 'IS HA Q'. Because their dialect is 'Fous ha', meaning a good pronunciation of the letters of the Arabic alphabet in the name Is-ha-q as written in the Koran.",
+          "Furthermore, each of the neighboring communities pronounces this name differently, but always keeping the part 'ISHAK' with a Songhay accent.",
+          "The IDAKSAHAK therefore appropriated, like other communities, the name that their neighbors gave them in reference to a TOBOL chief, in this case a SONGHOÏ. The pronunciation is contracted by the consonance of the dialect, IDD-AGG –ISAHAK becomes IDAK - SAHAK. Remember that the word Agg returns to the singular: Agg DAK – SAHK while retaining the part 'DAK' which has no place in the singular.",
+          "In any case, the construction of the singular could have been rather Agg Is-h-aq emphasizing the letter –h-, in a case referring to an ancestor according to a well-pronounced 'fous_ha' because the community is 95% literate in Arabic. Thus the singular in the form Agg DAK – SAHK clearly shows that the origin of the word IDAK – SAHK can indeed come from a contraction of idd – agg Ishak which designates the community with or without reference to an ancestor.",
+          "Note that the word daw, idaw, oulad or in particular AGG does not always mean son of, but also a professional appropriation, e.g.: AGG 'abaguày' is said for a professional in horse riding.",
+          "The ambiguity of the subject is aggravated by the existence of Arab communities that refer to the name IS- HA- Q, as well as those of the Muslim empire of Andalusia, however it could be a simple first name because Muslims use the pronoun ISHAQ.",
+          "In all cases, the opportunity is seized for a propensity to want to make a rapprochement with the name Is-haq from the Koran or Isaac from the Bible. This source, in the case of the IDAKSAHAK, opts for an Israelite, therefore Jewish, origin of this community. A hypothesis that cannot be excluded for lack of evidence or possibility of demonstration, but perfectly verifiable today by DNA analysis. It is also possible to study the well-known Jewish communities in the Timbuktu region.",
+          "The IDAKSAHK remember their displacement from TAFILALET southern Morocco via Timbuktu but nothing of a possible Jewish origin, unlike some communities of the Niger loop that keep a very vivid memory.",
+          "We emphasize that the IDAKSAHAK are not offended by a possible Israelite origin insofar as they consider themselves all Muslims, parents and brothers among themselves, moreover Islam or the Antichrist are in no way conditioned by an identity reference."
+        ]
+      },
+      {
+        "numero": 2,
+        "titre": "The origin",
+        "contenu": [
+          "The IDAKSAHAK and the DIARMA according to BOUBOU HAMA are the descendants of two brothers; for the SONRAÏ of the Gao river valley they are the people of ISYAKA or ISHAKA; finally for those of Timbuktu; it is a mixing from which new dialects were born by referring to other borrowed Songhay dialects well known in Timbuktu.",
+          "One source evokes an ISRAELITE origin supported by the KEL ESSOUK (those of ESSOUK) Egadech, ideologues of the suzerains of the IWILLIMIDEN who, like all the scholars of AZAWAD, master very little the settlement of the SAHARA, history not being a religious concept in this milieu.",
+          "Historians think that the IDAKSAHAK are known among the Berbers in Africa before Christ and in the Roman era of the GARAMANT and GOUDALA; among the Berbers in addition to the GARAMANT and the GOUDALA, we remember the Lemtouma; the Sanhaja; all these peoples are said to have come from YEMEN.",
+          "However; some IDAKSAHAK who recognize their affiliation with the GOUDALA or their kinship with the IGDALANE claim to be descendants of Fatimat, daughter of the prophet (pbuh). This belief is strong among those IDAKSAHAK who still remember a region (Tafilalt or Tafilalet) in the south of present-day Morocco where their old ancestral land is located. Thus, they hold a written Idrissid genealogical tree recited by heart. They attach themselves to a certain AÏTA (Moamed Elmoktar) who would have married a woman from the area and produced descendants.",
+          "The same version (AÏTA taking root in the area) is found throughout the GAO area among some IDAKSAHAK, the Touré and Arma; in TOMBOUCTOU among the sharifs of this entire region; in KIDAL among some IFOURAS of the Adrar mountain where the ruins of ESSOUK are still visible, capital of TADAMAKAT, a city that gave its name to the KEL ESOUK.",
+          "According to these sources, in each case, the genealogy is traced back to one of the four sons of AÏTA (Mohamed Elmoctar) who all took root in turn like their father who first passed through TADAMAKAT before descending to the SUDAN or vice versa. The fifth son of AÏTA had no children.",
+          "Independently of the descendants of AÏTA, we find white Sharifs KEL TAMASHEQ, ARAB and black throughout the edge of the SAHARA on both sides of the Niger River valley in the Republic of Mali as well as in Niger.",
+          "Entire IDAKSAHAK Fractions are called Sharifian descendants of the prophet (pbuh), implicitly recognized as such by all communities. The descendants of INKIBIT are distinguished. The nickname INKIBIT, their ancestor, would come from the miracle manifested about him; the arrival of an unusual black wind following a refusal opposed to his request for the hand in marriage of a girl from the IDAKSAHAK milieu.",
+          "His testimony is finally taken into account supported by the mark on his stick. The stranger, finally rehabilitated, wins his case and takes root in the IDAKSAHAK milieu, his descendants are also called sharifs.",
+          "According to a popular source, INKIBIT would have arrived in an IDAKSAHAK camp led by one of the grandsons of AÏTA who could be named Sharif TINDER. The descendants of INKIBIT keep the appellation Sharifian among the other fractions including those who claim AÏTA (Mohamed Elmoctar), the only difference being that they do not possess a written or recited genealogy going back to Fatimat, daughter of the prophet (pbuh) or even to the Al INSAR of Medina.",
+          "It is good to remember that most of the Tamasheq communities living on the edge of the Sahara have components that preserve their genealogies dating back to the Hegira; AL INSAR and CHERIFEN, one claiming Medina and the other Mecca, the rest of the TUAREG are generally named otherwise, the IMGHAD being the most numerous in the area of interest to us, among which an IMIDDIDEGHEN family is considered descended from AÏTA (Mohamed Elmoctar), like the ICHIDNHAREN kel ACHOU and other families of certain fractions of AZAWAD.",
+          "It is certain that the IDAKSAHAK community, which has several fractions and nearly 400,000 souls in total, like other ethnic groups, does not have a single origin; their sharifian and their Al INSSAR would only be a minority in the IDAKSAHAK ethnic group.",
+          "The IDAKSAHAK would surely be among the first groups of 'Berbers' to descend from the MAGHREB towards the SUDAN (Timbuktu). They must have at some point actively participated in commercial transactions between the land of the blacks (SUDAN) and southern Morocco. This activity must have forced them to speak Songhay, the language of communication of Sudanese markets (in this area and at that time), before entering and integrating into southern Morocco. During iterative displacements, a fringe may have ended up residing in the Niger valley after a good stay in Timbuktu, before residing in the current regions of Mali and Niger.",
+          "The exodus of the IDASAHK group from the North to the South continues and can still be observed today in a helical form with an expansion towards the East in the IWILLIMIDEN basin (Mali/Niger).",
+          "The IDAKSAHAK of Mali and Niger still remember legends about the land of 'Tafilalt'; Tafilalet of Morocco from where emigration reached the Niger valley. This certainly explains in part, with the help of commercial transactions, the Songhay syntax of Timbuktu in the base of their spoken dialect. Later they became attached to the iwillimiden group, with which they still coexist divided into two blocks, Kel ATARAM and Kel DINNIG, a relatively recent fact and whose memory is still in the mouths of popular chroniclers.",
+          "The separation of the IDAKSAHAK from the SONGHOÏ group in the middle of the 17th century would come from a misunderstanding born of a brawl among young people supported by elders, thus breaking the peaceful coexistence in the river valley area.",
+          "However, the IDAKSAHAK do not seem to be part of the settlement groups of 'TADAMAKAT'. Indeed, the popular memory of their milieu does not mention this legendary cradle and reference territory of the dominant class Kel EKIMED, IFOURAS, the class of KEL ESSOUK which borrows the name of the capital of this country, the classes of the various other tribes. This certainly explains why the IDAKSAHAK are not found in the hierarchical organization of the Tuareg.",
+          "In fact, unlike other ethnic groups, the IDAKSAHAK do not know 'Addaoulat (country) TADAMAKAT' nor the capital Essouk engraved in the memory of the Kel Tamasheq of AZAWAD and part of those of the Republic of Niger.",
+          "However, the IDAKSAHAK community had indeed stayed in the ADRAR where 'TADAMAKAT' is located, a fact attested by the toponymy of certain wadis such as 'Ibdaqqane' and by several popular accounts of the existence of very ancient family ties with the great family of IFORAS.",
+          "The stay in the territory of the ADRAR DES IFORAS is certainly linked to the very high mobility of herders whose obligatory passage was the Telemsi, a valley where ancestors are buried, whose names are still cited."
+        ]
+      },
+      {
+        "numero": 3,
+        "titre": "The dialect",
+        "contenu": [
+          "The IDAKSAHAK do not speak the Tamasheq language, which they do not understand at all, nor those spoken throughout the SUDAN. This dialect does not use feminine pronouns, unlike Tamasheq, hence all the difficulties of learning it by the IDAKSAHAK who often speak Tamasheq without taking into account grammatical gender.",
+          "The Tadaksahak language is therefore distinguished from other dialects by its purely Songhay syntax, like that of the IGDALANE belonging to the same group. Example: 'Huru Hugu Gna Hawru' (enter the tent, eat the meal). Ex: 'keedi bari darjed hawu koss - anga' (ride a horse, chase the cow, and cut its hamstring) - Thus the syntax or 'grammatical analysis' of Idaksahak speech is Songhay par excellence. It is very difficult to build similar sentences with only Tamasheq words (subject, verb, object).",
+          "This dialect remains a sabir, a mixture of Songhay, notably of Timbuktu, and Tamasheq Iwillimiden with a few words from ancient Arabic or words of Arabic origin from Timbuktu, e.g.: 'daghnu (cream), zambu (residue), achiguim (ladle)…' words not found in other Arabic dialects except those influenced by the Songhay language, however the IDASAHAK dialect also contains words from ancient literary Arabic, the same as in Tawullimit, e.g.: y-nbezan nabaza in Arabic.",
+          "Thus TADAKSAHAK, a dialect, is composed above all of the Songhay of Timbuktu from which the maximum number of verbs that regulate syntax and names of things, notably mothers or roots of words, are drawn, the specifics being reserved for other borrowed dialects, in particular Tawullimit and Taguilgalt (Arabo-Berber borrowed from Songhay). As for literary Arabic words, they remain common with Tawullimit.",
+          "Examples of verbs of Songhay origin are very numerous: zouru (to run), keeni (to sleep), gorgor (to laugh); in Tawillimit the verbs are more difficult to cite: digummut in Tawillimit is said to make a mount (horse) run. Names of things, for their part, are shared, however specifics are generally drawn from Tawillimit.",
+          "The name Kamba (the arm) is Songhay but we say tikmert (elbow), adad (finger), eshkar (nail), Tawillimit names. The same for animals: yaw (camel) in Songhay but (alagod) the young is in Tawillimit, we also say feeji (sheep) in Songhay and ajàmàr the young in Tawillimit. The same applies to all animals except the cow, for which we say 'hawu (the cow) and handi the young, both borrowed from Songhay.",
+          "It is relevant to deduce that the first animals domesticated by the IDAKSAHAK were cows, hence the retention of the name of the young 'handi' in Songhay. This hypothesis agrees with those who think that the IDAKSAHAK were cattle herders who descended towards the Niger River valley coming from the North (southern Morocco). This does not mean that the IDAKSAHAK did not know other animals, whose mother names remain borrowings from Songhay and their young in Tawillimit, simply that their domestication was later.",
+          "All the remarks and analyses made on the TADAKSAHAK dialect would also be valid, with a few exceptions, for that of TAGDALT, also a mixture of Songhay and TAWILLIMIT. The Igdalane community belongs to the same group as the 'IDAKSAHAK' through a dialectal proximity whose syntax remains Songhay.",
+          "However, some people think that TADAKSAHAK like TAGDALT are dialects that, with the SONGHAY language, constitute variants of Berber languages (i.e. Tamashèq). Adherents of this hypothesis refer to the advent of the Islamization of Sudan by the Almoravids, whose IDAKSAHK and IGDALANE groups would have imposed their language. The maraboutic role of the IDAKSAHAK does not exclude borrowing from a Songhay language, a SUDANESE dialect.",
+          "The reference may also bear on elements of words of Berber origin such as 'KUSU (pot) in Songhay and Tadaksahak; a word considered derived from akuus, tukusé' (heat); finally, there are very significant examples from a linguistic point of view tending to consider Songhay languages as close to Berber, therefore Hamito-Semitic and not Sudanese."
+        ]
+      },
+      {
+        "numero": 4,
+        "titre": "Habitation territories",
+        "contenu": [
+          "The ancestral lands of the IDAKSAHAK are very far today from the City of 333 saints; it should be remembered that AHMAD BABA of Timbuktu is an 'AGDAKSAHAK', an 'AGDAL' and not a Songhay or an Arab. Therefore, it must be recognized that the IDAKSAHAK stayed for a long time in Timbuktu. The composition of the Songhay borrowed words in the TADAKSAHAK dialect is above all TIMBUKTUAN. Indeed, this speech uses names (foufou for cold, bassi for dipper, talissit for cushion, zambou for cream residues, etc.) and verbs (gogor for laugh, zawkàt for bring back, etc.) that remain specific to the Songhay of TIMBUKTU, which differs from DANDI, the Songhay of GAO or DIARMA.",
+          "The dialects that can be linked to the TIMBUKTUAN speech and very far from this area currently are those of the IDAKSAHAK, IGDALANE and ISSAWAGHAN. These communities reside in the NORTH and NORTH-EAST of the Republic of Niger, with a minority in Mali. Let us also emphasize the similarities of animal marks (Azguit, Tilift, Tahimimt, Agayd, Askum or Agayog, etc.) common to all these peoples and those of animals in the Timbuktu area, whose populations also share certain very specific societal customs, in particular the free Quranic education for young people.",
+          "Consequently, it seems that the IDAKSAHAK have been 'neighbors' of the SONGHOÏ for a long time, medieval SONGHOÏ Empires? Era of the Almoravid conquests? Are the IDKSAHAK among the Almoravids with the IGDALANES? Peaceful people and men of the sword, unlike the Kel Essouk, holders of the ideology of the populations of TADAMAKAT since its peak. The IDAKSAHAK and IGDALANE, closer to the Songhay world, over time would have been assimilated as a linguistic minority.",
+          "Of course, the IDAKSAHAK and all the groups that speak a Songhay/Tamasheq sabir remain communities of deep Muslim Berber roots, maintaining family and kinship ties among themselves, and good neighborly relations with the Kel Tamasheq and other communities. They share with the populations of the Niger River valley, the Songhay and the Diarma, family ties, grain markets, cattle markets, and especially grazing and watering areas for animals along the river. The low-water areas and crossings of the riverbed to the Gourma are used in times of famine due to frequent droughts or in cases of extreme insecurity in Hausa land, as happened several times in recent history during the great droughts of 1930, 1973, 1984 or in times of unrest in 1916, 1990, 2012."
+        ]
+      },
+      {
+        "numero": 5,
+        "titre": "Active life",
+        "contenu": [
+          "The IDAKSAHAK tribe coexists especially with the Kel Tamasheq (those speaking the Tamashèqt dialect), notably Tawillimit (a dialect borrowed by Tadaksahak along with Songhay) in the dry area south of the Kidal region. They share with other ethnic groups the TUAREG culture, some of whose customs are analogous to those of the Songhay, namely the semi-sedentary lifestyle, housing, clothing, entertainment and the exploitation of pastoral resources.",
+          "In the Middle Ages, the region inhabited by the IDAKSAHAK groups, in a nomadic pastoral lifestyle, remains the same as that occupied by the Kel Tamasheq, which is today called AZAWAD in its widest extension in Mali.",
+          "In the South, commercial transactions are carried out with the Songhay and MOSSI countries (FADANGOURMA market) and even with GHANA (Koumassi market). To the West and North-West, commercial transactions are carried out with the Fulani countries (DJENNE markets), the Maghreb and Morocco (Touaten markets). To the North-East and East, the commercial transactions of the Idaksahak are carried out with the sultanates of Agadez and the markets of Tawa and even Libya. To the South and South-East, commercial transactions are carried out with the HAUSSA country through the markets of BADEM and KANO.",
+          "The economic base of this trade in the West and North-West is based on live cattle and slaves sold for gold, salt, dates and later tobacco.",
+          "The economic base of this trade in the North, East and North-East is based on live cattle sold for slaves, fabrics and cottons, to which must be added basic necessities and harnesses for mounts (horses and dromedaries).",
+          "From the armed conflicts of the two world wars, all commercial transactions on the edge of the SAHARA were disrupted not only by border closures, particularly between France and Great Britain, but also by various colonial penetrations.",
+          "The IDAKSAHAK of Mali and their brothers in NIGER, always particularly attached to commercial transactions in the EAST and SOUTH-EAST (Tawa and Badem in Nigeria), fleeing dune farming lands incompatible with livestock and insecurity, were pushed towards the northern regions of present-day Mali (the Aazawak Valley) and those of Niger (Chintibaraden). They vainly tried to continue their natural supplies, particularly from the HAUSSA countries, but suffered losses of innocent and victimized human lives.",
+          "On both sides of the border resulting from colonization, the IDAKSAHAK group found itself divided in two, with some being attached to the present-day Sudan (Republic of Mali) with the western iwillimiden 'KEL ATARAM' and the others to the Republic of Niger with the eastern iwillimiden 'KEL DINNIG'. The IDAKSAHAK group among the KEL DINNIG ended up speaking Tamasheq at the expense of their dialect, unlike those who remained with the KEL ATARAM, less assimilated and less integrated into the KEL TAMASHEQT.",
+          "Note that the Tadaksahak dialect continues to be spoken in AGADEZ in the border area of KEL DINNIG's influence; a particularity to study because in the confines, the language is nevertheless abandoned under the influence of 'KEL DINNIG'.",
+          "Throughout the colonial period, the IDAKSAHAK did not fundamentally change their pastoral lifestyle. Their mobility disregards state barriers and they indifferently occupy a large area, the exploitation of which remains temporary according to the availability of water and pastures, sometimes in Mali, sometimes in Niger.",
+          "Their adaptation strategy for supplying basic necessities consisted of creating local markets such as Filingué, Aerou, Abala in Niger, Ansongo, Ménaka, Anderamboucane in Mali.",
+          "Always at the forefront of live cattle trade transactions in their areas, the IDAKSAHAK, due to insecurity resulting from the Tuareg armed conflict with the states, brought more local markets to their camps, which have since been transformed into real villages with weekly markets: in the Ménaka district: Inchinane, Aghazraghane in the AZAWAK valley; Infoucarayten, Tinfadimata, Ikadewan in the AZGUERET; in the Ansongo district: Indelemane, Talatayt; nothing had been planned in this regard by the administrative authorities.",
+          "The mobility for undifferentiated transhumance from one state to another was not without consequences for the IDAKSAHAK. Thus we find populations whose centuries-old ancestral lands are located in the country of Niger. However, they continue to be subject to the Malian Administration through its chieftaincies, without being able to benefit from any basic services (education, health, drinking water, employment) that the mother fractions remaining in Mali benefit from. A similar situation is experienced by the Fulani in Mali considered nationals of Niger."
+        ]
+      },
+      {
+        "numero": 6,
+        "titre": "Cohabitation",
+        "contenu": [
+          "The IDAKSAHAK live in good neighborliness with the Kel Tamasheq (those speaking Tamasheqt, particularly Tawillimit) in the dry area where they share the nomadic lifestyle and the exploitation of pastoral resources while keeping a foothold in the Niger River valley area. Like the Tamasheq, they share with the Songhay a culture that has many similarities, particularly in clothing.",
+          "Because of their difference, particularly their dialect, the IDAKSAHAK distinguish themselves and adapt to their neighbors' kinship ties. Sometimes it is contempt resulting from conflicts arising from the exploitation of natural resources because they are large transhumant herders. However, inhospitality can be deep and lasting when the 'FATWA' of the Kel Essouk cadi makes the goods of the IDAKSAHAK lawful to the suzerains of the IWILLIMIDEN.",
+          "However, the IDAKSAHAK community always managed to issue refuting FATWAS through its own scholars who each time forced the Kel Essouk to rally. This was the case of the IDAKSAHAK cadis HADAHADA known for his relations with DAN FODJO, of Cadi HAMA-HOUDA (Talataye Ménaka) and those of the Kel Essouk under the reign of KAWA (AMENOKAL OF THE IWILLIMIDEN CONFEDERATION); also the case of Mohamed AG YAGNA, Mohamed AG ALY and Cadi ALBAHRI of the Kel Essouk Egadech in 1940; Elmouner AG ADEM, Abdu Salam AG MAHAMMAD and Acheck Almahmoud of the Kel Essouk of the valley in 1960; Ahmadou Ag Adem and Fadil Ag Alhassane and their counterparts Kel ESSOUK since independence.",
+          "Thus, debates on Islamic law between the IDAK-SAHAK and the Kel Essouk have always existed and maintained a strictly religious rivalry, a situation that attests to the very ancient knowledge of the IDAKSAHAK. In this fundamental debate, the IDAKSAHAK perceive the Kel Essouk as unconditional supporters of the dominant 'Imajeghan', the summit of the sociological stratification of the TUAREG.",
+          "The IDAKSAHK, a peaceful people, did not respond to aggression, even very intentional, except in cases of deliberate humiliation or obvious provocation. This community had always opted for non-violence aimed essentially at safeguarding their economic base from a permanent risk of destruction in a cultural context of raids and counter-raids.",
+          "However, the community never gave in to resignation in the name of peaceful culture, because when necessary, it sometimes supports very violent conflicts with any Kel Tamasheq ethnic group or not that deliberately and repeatedly transgresses the implicitly known rules of good neighborliness.",
+          "The wealth of the 'IDAKSAHAK' has always been coveted by their neighbors who coexist with them on the same ancestral lands. The outcome of open conflicts has always been in their favor in living memory; likewise throughout the colonial period until the independence of the Republic of Mali. Their actions always remained anonymous, which was not always profitable for them.",
+          "Recently in 1990, they suffered as many losses in property and human lives as other ethnic groups during the armed conflicts against Mali. They did not gain much from it, neither during the integration of ex-combatants nor in reintegration projects, despite their alliance with the MPA (Popular Movement of AZAWAD) which managed quantities of weapons, including the most sophisticated, deposited by IDAKSAHAK fighters.",
+          "Confined to the edge of the Mali/Niger border, forced into self-defense, the IDAKSAHAK have in recent years been ensuring their own security internally and externally. Brawls with other communities, notably the Fulani, and the pursuit of stolen cattle in reciprocity did not end on either side of the border, while the AZAWAK markets remain permanently the target of road cutters.",
+          "The salvation of the 'IDAKSAHK' was largely due to their own internal organization, their solidarity cemented by blood ties and good neighborliness with others, but above all to a deeply Muslim culture, unobtrusive and full of humility."
+        ]
+      },
+      {
+        "numero": 7,
+        "titre": "Hierarchy",
+        "contenu": [
+          "The dominant groups are highly hierarchical: the KEL IKIMED Iwillimiden and the Iforas of the Adrar constitute the dominant layers capable of influencing the traditional and scholarly chieftaincies of the IDAKSAHAK.",
+          "But in fact, the entire Tuareg society, including the IDAKSAHAK, remains highly hierarchical, and within the same class there are the great, the middle and the small, considered as nothing in their eyes, even in the case of very close kinship, blood ties with a less 'noble' branch. The classes of the Tuareg hierarchies are individualistic, closed and operate according to communitarian management.",
+          "In the hierarchy of the Kel Tamasheq, there is no place for the IDAKSAHAK, who are often considered a class not speaking the same language, 'bourgeois' at least the families of traditional chieftaincies, because they own enormous herds and many slaves. But generally speaking, the IDAKSAHAK community is implicitly classified among the dominated. Nevertheless, their property was never inherited by any 'group'. This attests that the domination of this community in the current area of the iwillimiden 'kel Ikimed' in Ménaka is relatively recent in historical time, unlike other dominated whose relations date from the peak period of 'Tadamakat'. Until recently, certain Imghad classes of Ménaka and TAWA were always stripped of their property, often inherited by iwillimiden, leaving the orphans to their fate.",
+          "Let us recall that other Imghad classes, particularly in the Gourma and on the outskirts of the Niger valley of GAO, had ceased to be subject to this subjugation well before the arrival of the colonizers, following the decline and weakness of the IWILLIMIDEN; added to this is the distance of those concerned from the dry area on the left bank of the NIGER river.",
+          "This decline was very favorable, with the complicity of France, to the emancipation of the populations of TOMBOUCTOU and the 'ADRAR des IFOGHAS'. Let us recall that at the end of the 19th century, ILLY, the grandfather of INTALLA, reorganized seven (7) tribes in the ADRAR, defended the Kidal region, drove away the iwillimiden, contained the attacks of Kel AHAGGAR and sealed an alliance with the KUNTA, sworn enemies of the IWILLIMIDEN. France later used this division deliberately against the IWILLIMIDEN by providing firearms to the Arabs.",
+          "The decline of the Confederation worsened with the reluctance of AMENOKAL Fihroun AG ALINSAR, after submission, to accept French domination (refusal of taxation, schooling and military enlistment) and especially the Oulimendène revolt (iwillimiden). In retaliation, colonization decreed a dispossession of land in the Niger valley for all nationals of the Confederation (at least what remained of it in the Ménaka area). It installed newly freed slaves there. These measures were aimed above all at the economic weakening of the recalcitrant dominant classes.",
+          "It should also be emphasized that in Timbuktu the picture of social relations was different because the land was not dispossessed and some dominated classes possessed 'small' Tobols while recognizing the 'great'. We can think that this was also facilitated by the fact that the armies of raids, encouraged and adored smugglers, are always recruited among the vassals who are also less inclined to know the precepts of the Islamic religion.",
+          "Let us emphasize that the IDAKSAHK, holders with the KEL ESSOUK of Islamic law, remain the only ones to obstinately refuse enlistment and participation in the raids organized by the confederation.",
+          "Some practices were considered in the very essence of IDAKSAHAK culture as theft, spoliation of others' property, vices abhorred in this community. It was for them to never fight except to defend their property, never steal the property of others unless it was a right of reciprocity, always remain on the side of peace and zonal or national stability.",
+          "Note that the IDAKSAHAK did not participate in the theft of 4x4 vehicles either in Mali or in Niger. However, they would not hesitate to seize property considered war booty when they participate in a conflict. It seems that this partly explains the rush of IDAKSAHAK youth towards gold recently discovered in the desert."
+        ]
+      },
+      {
+        "numero": 8,
+        "titre": "The status and role of the Idaksahak (Part 1)",
+        "contenu": [
+          "Today, the IDAKSAHAK remember a recent past of political and ideological subjugation. Some of the most gullible still believe in the cantons established by the colonizer, although already effectively abolished, while others recall the tandem of religious knowledge and economic power that have always been their pride and independence from neighboring communities.",
+          "The IDAKSAHAK community remains and is an integral part of the IWILLIMIDEN CONFEDERATION, they accommodated its domination. This spared them to a lesser extent the usual hassles suffered by other TOBOL communities, except for the Kel ESOUK considered ideologues of the Confederation.",
+          "However, the IDAKSAHK did not participate in organized raids, rezzous in search of booty or larceny. This behavior was generally interpreted and considered by their neighbors as weakness, cowardice; even though they were brilliant in sword training and effective dexterity in judo and hand-to-hand combat, essential skills in past times and widely recognized in them.",
+          "At the dawn of the French penetration, the inability of the Confederation to protect the dominated and their property was exposed by the frequency of raids by enemies from other regions who swept away and took everything in their path.",
+          "The IDAKSAHAK then organized themselves locally, in order to safeguard their societal values and their property, against enemies who were often their own neighbors.",
+          "IDAKSAHAK contingents actively participated in conflicts against the invaders throughout the pastoral space of the great watersheds of the ADRAR DES IFOURAS: fossil valley of Telemsi; of the Azawak right bank, of the Aazgueret and those of the AÏR: Azawak left bank valley and Azar.",
+          "The IDAKSAHAK organized resistance against the AÏR, KEL GUERESS, RAGAÏBAT and AHAGGAR, who were the real rivals and enemies of the Iwillimiden, whom they never stopped fighting.",
+          "The IDAKSAHAK distinguished themselves several times during battles against the invading enemy inside the territory they shared with their dominants, who did not possess more trophies than them (Tazghait, swords of the greatest heroes of the defeated enemy)."
+        ]
+      }
+    ],
+    "conclusion": null,
+    "bibliographie": []
+  },
+  {
+    "id": 16,
+    "titre": "Mohamed Maïga: Committed Journalist, Friend of Thomas Sankara",
+    "auteur": "Collective",
+    "sous_titre": "Biography of a pioneer of African journalism",
+    "annee": "2024",
+    "pages": 8,
+    "type": "biographie",
+    "langue": "English",
+    "categorie": "History / Journalism",
+    "description": "Portrait of Mohamed Maïga, Malian journalist, figure of Pan-Africanism and close to Thomas Sankara. His career, his struggles and his mysterious death.",
+    "couverture": "data/images/livres/Couverture de livre _ héritage et journalisme.png",
+    "illustrations": [],
+    "chapitres": [
+      {
+        "numero": 1,
+        "titre": "Youth and training",
+        "contenu": [
+          "Mohamed Maïga was born on August 20, 1950 in Ansongo, a small town located about a hundred kilometers from Gao, in French Sudan (now the Republic of Mali). He grew up in a large family, between the nomadic Peulh ethnicity of his mother, Adizatou Diallo, and the sedentary Songhai background of his father, Boncaneye Hambou Maïga.",
+          "Despite the reluctance of his social class, his father advocated for school education and sent all his children, including girls, to French school. After obtaining his baccalaureate in 1969, Mohamed received a scholarship to study at the Centre Universitaire d’Enseignement du Journalisme (CUEJ) in Strasbourg, France.",
+          "He then continued his journalism studies at the Centre d'Études des Sciences et Techniques de l'Information (CESTI) in Dakar, then in Canada, at the Centre Audiovisuel de l’Université de Montréal. He completed his studies in 1977 at the Institut Français de Presse (IFP) at the Université Panthéon-Assas.",
+          "His schooling in Mali was marked by the promotion of African History and Culture, following decolonization. His studies in Africa, Europe and North America allowed him to develop a sharp political consciousness. The theories of African Marxism and Pan-Africanism, developed by Kwame Nkrumah (Ghana) and Amilcar Cabral (Guinea-Bissau & Cape Verde), appeared to him as potential solutions to end corruption and neo-colonialism suffered by African peoples."
+        ]
+      },
+      {
+        "numero": 2,
+        "titre": "Journalistic career",
+        "contenu": [
+          "In 1977, Mohamed Maïga was hired by the weekly magazine Jeune Afrique, a reference in African politics. He joined the editorial team of the founder, Bechir Ben Yahmed, alongside colleagues such as Amin Maalouf and François Soudan. His committed pen established him as a political journalist, attracting the attention of populations and politicized youth in French-speaking African countries.",
+          "In the early 1980s, Mohamed Maïga wrote for the magazine Afrique Asie. Directed by Simon Malley, the bi-monthly was considered the most left-wing of pan-African international media. Maïga found there a greater space of freedom to conduct his investigations and express his convictions as a committed, versatile journalist, as comfortable in French-speaking as in English-speaking environments."
+        ]
+      },
+      {
+        "numero": 3,
+        "titre": "Meeting with Thomas Sankara and political commitment",
+        "contenu": [
+          "In Upper Volta (future Burkina Faso), the young captain Thomas Sankara became essential: criticism of neo-colonialism, fight against corruption and a positive vision for the future of his country were brilliantly articulated by this humanist and educated military man. Maïga saw in him a promise of change and devoted major exclusive interviews to Thomas Sankara, thus giving him the opportunity to speak directly, without the mediation of the Western press that was caricaturing him at the time.",
+          "Maïga thus worked for the legitimization of Sankara among the Burkinabè left. His articles and interviews in Afrique-Asie contributed to making Sankara known abroad. The two men were linked by a strong friendship and deep mutual respect. They participated in the first Burkinabè revolution."
+        ]
+      },
+      {
+        "numero": 4,
+        "titre": "Circumstances of death",
+        "contenu": [
+          "In December 1983, Maïga visited Jerry Rawlings, the Ghanaian leader, then Thomas Sankara, in Ouagadougou. It was in this city that his tragic fate was sealed, on January 1, 1984, under murky circumstances that have never been elucidated. The autopsy concluded poisoning. Responsibilities and motives remain unknown to this day."
+        ]
+      },
+      {
+        "numero": 5,
+        "titre": "Legacy and tributes",
+        "contenu": [
+          "Mohamed Maïga received a national funeral. The funeral was broadcast on Burkinabè national television and a military convoy accompanied the body for repatriation to Mali. An important delegation, headed by the Minister of Information, accompanied the body to his native land, in Ansongo.",
+          "Sankara posthumously decorated him as Commander of the National Order of Merit. The Maison de la Presse in Ouagadougou was named in his honor. And the song 'Homage to Mohamed Maïga' commissioned by Thomas Sankara testifies to the journalist's contribution to African liberation.",
+          "The Mohamed Maïga Association was launched on January 1, 2024, exactly forty years after the journalist's death. It celebrates the intellectual legacy and political courage of Mohamed Maïga through positive projects that perpetuate his struggles on the African continent."
+        ]
+      }
+    ],
+    "conclusion": {
+      "titre": "A living legacy",
       "contenu": [
-        "لم أنهِ دراستي. لا بسبب الكسل، ولا بسبب نقص الذكاء، ولكن لأن العالم الذي كنت أعبره كان يكوّنني بالفعل بطريقته. في الغبار، في الحافلات المزدحمة، في النظرات المريبة على الحدود، في مساكن الانتظار، في الصمت الثقيل كالأحكام… هناك كنت أتعلم. ليس بالشهادات، ولكن بالحقائق. كل بلد عبرته أصبح أستاذاً. كل لغة سمعتها أصبحت مفتاحاً. وأنا، كنت أفتح الأبواب.",
-        "تعلمت الفرنسية في الإدارات، والعربية في المساجد، والهوسا في الأسواق، والإنجليزية على طرق الأمل، والتاداكساهق في قلب أمي. أصبحت مترجماً للحياة، ناقلاً للمشاعر التي لا نعرف كيف نقولها، جسراً بين العوالم. لا أسعى للإغراء، بل أسعى للخدمة. خدمة ذكرى قومي، خدمة الشعوب المنسية، خدمة الله — لا لكي أُرى، بل لكي أكون عادلاً.",
-        "ثم كان هناك الموسيقى. محظورة، عندنا. لكنها أنقذتني. كانت تتحدث إلي عندما لم يعد البشر يفعلون. كانت تستمع إلي عندما كانت الحدود تغلق ذراعيها في وجهي. كانت تحمل صمتي، وصرخاتي، وصلواتي. كنت أغني سراً. كنت أكتب آلامي في الظل. وفي يوم من الأيام، أدركت أنه حتى لو منعني العالم من الغناء، يمكنني كتابة أغانٍ حتى الصمت سيستمع إليها. عرفت المخيمات، والانتظار، والنظرات الإدارية التي تمسح اسمك دون أن ترى روحك. لكنني رفضت أن أكون رقماً. اخترت أن أكون صوتاً.",
-        "عندما أترجم، لا أترجم مجرد جمل. أترجم عوالم، صمتاً، ما لا تجرؤ اللغات على قوله. بين لهجتين، أنسج السلام. بين ثقافتين، أبني جسراً يُسمى التعاطف. وعندما أكتب… إنه عمل مقاومة. كل كلمة تصبح صلاة، وكل قافية ندبة مخيطة. لا أكتب لأُقرأ. أكتب لكي نتذكر."
+        "Mohamed Maïga embodies investigative journalism and pan-African commitment. His mysterious death has not erased his memory: his writings, his interviews with Sankara and the association that bears his name continue to inspire young generations. By rediscovering his career, we measure the importance of a free and independent press for the rebirth of Africa."
       ]
     },
-    {
-      "numero": 3,
-      "titre": "إلفي، الحب المحظور",
-      "contenu": [
-        "قبل تاباتليت وحبيبة، كانت هناك إلفي. دخلت حياتي كرياح دافئة على الكثبان. كانت شابة، حيوية، مشرقة، وكل شيء فيها كان يتحدث عن عالم لم أجرؤ أبداً على لمسه. لم أكن أعرف بعد ما يمكن أن يكون الحب، لكنها علمتني، بشكل مكثف، وحشي، وصادق. عشنا حباً حظره الكثيرون: الاختلافات الثقافية، والعائلات المتعارضة، والمسافة التي تفصلنا. لكننا لم نكن نريد الهروب. كل لحظة معها كانت عالماً بأسره، كل نظرة وعداً صامتاً، كل ابتسامة حقيقة بديهية.",
-        "ثم… ضربت الحياة. حملت طفلاً، لكن ضغط الآخرين، واستحالة وضعنا، أجبرها على اتخاذ خيار مروع. هذا القرار حطمني بقدر ما حطمها. غادرت بنين، وقلبي محطم، حاملاً معي ذكريات لا يمكن لأحد أن يفهمها. أعادت إلفي بناء نفسها، وأعادت تكوين حياتها، وأنجبت أطفالها، لكني أنا… بقيت موسوماً. ليس بالكراهية أو الندم، ولكن بقوة ما عشناه. علمتني أن الحب يمكن أن يكون ساطعاً ومدمراً، حنوناً وقاسياً، وأن الحب بعمق يعني أحياناً قبول الفراق. إلفي هي شبح بنين الذي لا يزال يرقص في ذكرياتي."
-      ]
-    },
-    {
-      "numero": 4,
-      "titre": "تاباتليت، الأرض الصلبة",
-      "contenu": [
-        "بعد إلفي، جاءت تاباتليت. لم تكن ناراً مثل إلفي. كانت الأرض الصلبة، الصبر، القوة الصامتة التي تدعم بلا ضجيج. منذ لقائنا، شعرت أنها تستطيع المشية معي على طرقات الغبار والذكريات. معها، اتخذ الحب شكلاً آخر: أقل حرقاً، وأكثر دفئاً ثابتاً. رزقنا بأطفالنا، أربعة أنوار في حياتي. كل واحد منهم أصبح تذكيراً بأن الحب يمكن أن يُبنى، حتى في عالم لا يغفر الجروح بسهولة.",
-        "تاباتليت، أم أطفالي، كانت العمود الفقري لسنواتنا معاً. لكن الحياة خبأت لنا محنة لم نكن نتخيلها لا هي ولا أنا."
-      ]
-    },
-    {
-      "numero": 5,
-      "titre": "الحادثة والفقدان",
-      "contenu": [
-        "ثم وقعت الحادثة. فقدان ذراعي غير الكثير من الأشياء. بالنسبة لي، كان تحدياً جسدياً وعاطفياً وحتى روحياً. بالنسبة لها… شعرت أنها تغيرت أيضاً. أصبحت تاباتليت أكثر بعداً، وأكثر حذراً، وأكثر وعياً بهشاشتي. لا ألومها. أنا أفهم. الحب، عندما يرى الضعف، يمكن أن يتحول. لكن المسافة التي ترسخت كانت مؤلمة. بعد ثلاث سنوات من هذه الحادثة، رحلت تاباتليت. حملت معها الحنان الذي كان يجعل جروحي أكثر احتمالاً. بقيت مع ندوبي، وأطفالي، وفراغ لا يمكن لأي وجود أن يملأه.",
-        "فقدت ذراعاً، لكن ليس زخمي. دفنت أحباءً، لكن ليس أملي. عشت المنفى، والإذلال، و\"عُد غداً\"، والنظرات التي تحكم عليك قبل أن تتكلم. لكنني كنت أتحدث بالفعل قبل أن ينظروا إلي. ليست حياة ناجٍ، بل حياة مبدع."
-      ]
-    },
-    {
-      "numero": 6,
-      "titre": "حبيبة، النسيم الذي يداوي",
-      "contenu": [
-        "ثم جاءت حبيبة. لم تأت كنار أو قوة مفروضة. جاءت كنسمة لطيفة تتسلل إلى أعمق الجروح. رأت ندوبي. رأت ذراعي المفقود. رأت آلامي وجروحي، ولم تهرب منها. معها، اكتشفت معنى أن تكون مدعوماً دون شروط. لم تكن تعد بالزواج، ولا تضمن عالماً مثالياً. كانت تعد بحضور، وثبات، وحب صادق وصامت. بالنسبة لي، كان ذلك يساوي كل شيء.",
-        "داوت حبيبة جروحي بلطف. علمتني أن الحب لا يقاس بالتملك أو بالشرعية الاجتماعية. إنه يقاس بالاهتمام، والصبر، والدعم الذي نقدمه لمن سقط، لمن تعب، لمن تحطم. حبيبة هي الصدى الحلو لصمت يتحدث."
-      ]
-    },
-    {
-      "numero": 7,
-      "titre": "الإيمان، دليل في الليالي المظلمة",
-      "contenu": [
-        "أرشدني إيماني في أظلم الليالي. علمني أن الألم لا يدمر، بل يحول. وأن الجروح ليست نهايات، بل بدايات. وأن الخسارة ليست لعنة، بل مادة لبناء إرث. أدركت أن الحياة لم تأخذ مني كل شيء عبثاً. كل جرح، كل خسارة، كل غياب، كل حب محظور… كل ذلك كان في الواقع مادة لبناء شيء أعظم.",
-        "ذراعي المفقود، والنظارات المليئة بالشفقة أو الحكم، رحيل تاباتليت… كل ذلك أصبح قوة صامتة، محركاً يدفعني للإبداع والترجمة والنقل. كل لغة تعلمتها أثناء عبوري البلدان أصبحت جسراً. كل أغنية محظورة، كل لحن كتبته سراً أصبح ممراً بين عالمي وعالم الآخرين. كل تجربة مؤلمة أصبحت درساً يمكنني مشاركته، ورسالة يمكنني نقلها، وذاكرة يمكنني حمايتها.",
-        "أؤمن بالقدر، لكن ليس بالصدفة. أؤمن بالله، لكن لا أستدعيه كعذر: أستدعيه كمصدر للشجاعة. في دفاتري، أحلام بنسخ ثلاث: واحدة لي، وواحدة لأطفالي، وواحدة للأطفال الذين لن أعرفهم أبداً، لكنني أحميهم بالفعل بأعمالي."
-      ]
-    },
-    {
-      "numero": 8,
-      "titre": "حمدين اليوم",
-      "contenu": [
-        "اليوم، أنا حمدين. أنا رجل محطم وكامل في آن واحد. رجل أحب، وخسر، وبكى، ونجا، وأبدع. رجل يعلم أن القوة الحقيقية تكمن في القدرة على النهوض، والنقل، والاستمرار رغم كل شيء. كل فصل من حياتي — إلفي، تاباتليت، حبيبة، جروحي، أطفالي، لغاتي، موسيقاي، إيماني — لم يكن أبداً سلسلة من الصدف. كان طريقاً. طريقاً علمني أن الحياة، بكل محنها، يمكن أن تصبح عملاً، ورسالة، وإرثاً.",
-        "أنا صحراوي في الروح، عالمي في الرؤية، متواضع في اللحظة، وعملاق في التاريخ. لست بطلاً أسطورياً. أنا حقيقي. رجل عرف الغبار والشرف، وصفحات القدر واحتفالات الخفي. أكتب بلغة JavaScript كما أكتب الشعر، وأبرمج البوتات كما يبرمج الآخرون الأكاذيب، وأخترع أدوات لكي يتمكن حتى المنسيون من التحدث بلغتهم — ويُفهموا. يمكن إنقاذ ثقافة بسطر من كود، ببيت شعر، بصوت."
-      ]
-    },
-    {
-      "numero": 9,
-      "titre": "الرحلة مستمرة",
-      "contenu": [
-        "وهذا المجلد الأول ليس سوى جزء من الحكاية. الريح تستمر في الهبوب، والكثبان تستمر في التغير، وما زالت هناك قصص لتُكتب، وأغانٍ لتُلحن، وجسور لتبنى. الرحلة لم تنته. الجزء التالي من حياتي، بتحدياته، وحبه، واكتشافاته، ومحنته، ينتظر أن يُروى. ليست حياة أعيشها. إنها أسطورة قيد الكتابة.",
-        "فاستعد، لأن هذه ليست تكملة… إنه صعود. سيسمع هذا العالم صوتي. ليس لأنني أصرخ بأعلى صوت، بل لأن حقيقتي تزن أكثر من كل النفاق مجتمعاً. حمدين هو ذلك الصامت الذي لا يسمعه الأقوياء، لكن أطفال الكثبان يعرفونه في نبض قلوبهم."
-      ]
-    }
-  ],
-  "conclusion": {
-    "titre": "خاتمة – الكثبان لا تموت أبداً",
-    "contenu": [
-      "هذا المجلد الأول يُغلق كنَفَس على الصحراء. لكن الكثبان لا تموت أبداً؛ إنها تتحرك، وتتغير، وكل حبة رمل تحمل قصة. حمدين يواصل المشي، والحب، والترجمة، والغناء في الظل. الطريق طويل، لكنه يعرف الآن أن كل ندب هو نور يرشد أولئك الذين سيأتون من بعده."
+    "bibliographie": [
+      "Articles by Mohamed Maïga in Jeune Afrique and Afrique Asie (1977-1983)",
+      "Testimonies about Thomas Sankara and the Burkinabè revolution",
+      "Archives of the Maison de la Presse in Ouagadougou",
+      "Mohamed Maïga Association (www.association-mohamed-maiga.org)"
     ]
   },
-  "bibliographie": []
-}
-]  
+  {
+    "id": 17,
+    "titre": "Morou of Karma: A Descendant of Askia Daoud, Figure of Anti-Colonial Resistance",
+    "auteur": "Collective (based on Abdulhasieb Elsharief, aka Ko zeeni)",
+    "sous_titre": "The Karma‑Boubon Insurrection (1905‑1906)",
+    "annee": "2024",
+    "pages": 4,
+    "type": "histoire",
+    "langue": "English",
+    "categorie": "Colonial History / Resistance",
+    "description": "Portrait of Morou (Oumarou), chief of the canton of Karma in Niger, descendant of the Songhai emperor Askia Daoud. His humiliation by the French colonial administration in 1905, his open revolt in 1906 and the brutal repression of his village.",
+    "couverture": "data/images/livres/Morou de Karma au crépuscule.png",
+    "illustrations": [],
+    "chapitres": [
+      {
+        "numero": 1,
+        "titre": "Morou, chief of the canton of Karma",
+        "contenu": [
+          "Morou (or Oumarou) stands out as one of the most prominent figures of local resistance in the Songhai region of Niger at the beginning of the 20th century. He was the chief of the canton of Karma, a strategic area along the Niger River that was an important crossroads for local communities.",
+          "It is said that Morou descends from Askia Daoud, one of the notable rulers of the Songhai Empire, which gives his resistance a deeper historical dimension, linking the present struggle to the heritage of the Songhai state."
+        ]
+      },
+      {
+        "numero": 2,
+        "titre": "The humiliation of 1905",
+        "contenu": [
+          "As French colonial control intensified, heavy burdens weighed on the population: forced taxes and the obligation to supply provisions to the colonial troops. Morou and his people increasingly resisted these measures.",
+          "Tensions reached their peak in 1905 when he was falsely accused of refusing to provide food to French soldiers. As punishment, he was subjected to a humiliating ordeal: forced to walk barefoot a long distance to Niamey, carrying a goatskin filled with water in front of the colonial troops."
+        ]
+      },
+      {
+        "numero": 3,
+        "titre": "The open revolt of 1906",
+        "contenu": [
+          "This incident marked a turning point. After his release, Morou openly defied colonial authority by refusing to pay taxes and began organizing resistance against the French.",
+          "In March 1906, he led an uprising in the Karma‑Boubon region, expressing the population's rejection of colonial domination."
+        ]
+      },
+      {
+        "numero": 4,
+        "titre": "Colonial repression",
+        "contenu": [
+          "The colonial authorities reacted harshly to this challenge: in 1906, they burned the village of Boubon in an attempt to quell the insurrection and intimidate the population.",
+          "Despite this repression, the memory of Morou and his resistance remains alive, a symbol of the struggle against colonial oppression in the Songhai region."
+        ]
+      }
+    ],
+    "conclusion": {
+      "titre": "A legacy of resistance",
+      "contenu": [
+        "The story of Morou of Karma illustrates how pre-colonial imperial legacies (Askia Daoud) fueled local resistance to colonization. His public humiliation and then his armed revolt left their mark, and the destruction of Boubon did not erase his memory. Today, he is recognized as one of the first chiefs to defy the colonial order in Niger."
+      ]
+    },
+    "bibliographie": [
+      "French colonial archives (Niger, Niamey district, 1905‑1906)",
+      "Oral works and local traditions collected by Abdulhasieb Elsharief (Ko zeeni)",
+      "Studies on the Songhai Empire and Askia Daoud"
+    ]
+  },
+  {
+    "id": 18,
+    "titre": "Hamadine – The Dunes of My Life",
+    "auteur": "Hamadine AG MOCTAR",
+    "sous_titre": "Between Wounds and Light (Volume 1)",
+    "annee": "2025",
+    "pages": 14,
+    "type": "autobiographie",
+    "langue": "English",
+    "categorie": "Literature / Testimony",
+    "description": "Intimate story of a man between forbidden love, irreversible losses and resilience. Born in the desert, Hamadine tells his childhood, his travels, his loves (Elvie, Tabalit, Habiba), the loss of his arm, and his faith that guided him. A path of scars turned into light.",
+    "couverture": "data/images/livres/Hamadine sur les dunes sous les étoiles.png",
+    "illustrations": [],
+    "chapitres": [
+      {
+        "numero": 1,
+        "titre": "Where the sand dances with the wind",
+        "contenu": [
+          "Hamadine is not just a first name. It is a warm desert wind that rises when everything seems frozen. It is a pen sharpened like a sword, a translator of silence, an interpreter of the heart, a poet of exile, a coder of hope. I was born where the sand dances with the wind and where the stars are the only reliable lights. My name is Hamadine, and it is no coincidence: it is a breath, a memory, a call.",
+          "I was born in a world where everything is built and destroyed at the same time, where every grain of sand tells a story of survival and resistance. My childhood was not easy. The days seemed endless under a relentless sun, and the freezing nights invited fragile dreams and whispers. But there was always my mother, Rose, who spoke gently and firmly at the same time. Her stories were bridges between the past and what would become my future. She told me about the ancestors, the roads they traveled, the promises left in the sand, and the weight of words passed down from generation to generation. I drank in each of her words, fascinated and silent, and I already understood that sometimes the silence of a people is worth more than a thousand cries.",
+          "I grew up between the unspoken and my mother's songs, and I learned very early that sometimes the silence of a people is worth more than a thousand TV screams. I remember the first steps I took alone, through the dust and dunes. I learned to observe the world like an open book: the movement of animals, the rustling of the wind, the behavior of men. Everything had meaning. I discovered that the world would not wait for me to exist. Every gust of wind, every storm, every difficulty spoke to me of a lesson I had to learn, often before I was ready.",
+          "I grew up with this certainty: the voice counts more than silence, but silence can be more powerful than a thousand voices. I understood that I had to learn to listen, to observe, to absorb before speaking. Every word can change a life or break another. So I walked on burning lands, carrying my language as a weapon and my people as a flag. I loved, lost, rebuilt, and sometimes even… forgot to live in order to survive. But I remained standing. Not out of pride. Out of necessity."
+        ]
+      },
+      {
+        "numero": 2,
+        "titre": "The school of life",
+        "contenu": [
+          "I did not finish my studies. Not out of laziness, not out of lack of intelligence, but because the world I was crossing was already shaping me in its own way. In the dust, in overloaded buses, in suspicious glances at borders, in waiting dormitories, in silences heavy as judgments… there, I was learning. Not with diplomas, but with realities. Every country I crossed became a teacher. Every language I heard became a key. And I opened the doors.",
+          "I learned French in administrations, Arabic in mosques, Hausa in markets, English on the roads of hope, Tadaksahak in my mother's heart. I became an interpreter of life, a translator of emotions that cannot be expressed, a carrier of meaning between worlds. I do not seek to seduce, I seek to serve. Serve the memory of my people, serve the peoples we forget, serve God — not to be seen, but to be just.",
+          "And then there was music. Forbidden, among us. But it saved me. It spoke to me when humans no longer did. It listened to me when borders closed their arms to me. It carried my silences, my screams, my prayers. I sang in secret. I wrote my pains in the shadows. And one day, I understood that even if the world forbade me to sing, I could write songs that even silence would listen to. I knew camps, waiting, administrative glances that scan your name without ever seeing your soul. But I refused to be a number. I chose to be a voice.",
+          "When I translate, I don't just translate sentences. I translate worlds, silences, what even languages dare not say. Between two dialects, I weave peace. Between two cultures, I build a bridge called empathy. And when I write… it is an act of resistance. Every word becomes a prayer, every rhyme a sewn scar. I do not write to be read. I write so that we remember."
+        ]
+      },
+      {
+        "numero": 3,
+        "titre": "Elvie, forbidden love",
+        "contenu": [
+          "Before Tabalit and Habiba, there was Elvie. She came into my life like a warm wind on the dunes. She was young, lively, luminous, and everything about her spoke to me of a world I had never dared to touch. I did not yet know what love could be, but she taught me, intensely, brutally, sincerely. We lived a love forbidden by many: cultural differences, opposing families, the distance that separated us. But we did not want to run away. Every moment with her was a whole world, every glance a silent promise, every smile an evidence.",
+          "And then… life struck. She carried a child, but the pressure of others, the impossibility of our situation, forced her to make a terrible choice. That choice broke me as much as it broke her. I left Benin, my heart in pieces, carrying with me memories that no one could understand. Elvie rebuilt herself, remade her life, had her children, but me… I remained marked. Not by hatred or regret, but by the strength of what we had lived. She taught me that love can be both luminous and destructive, tender and cruel, and that sometimes, loving deeply means accepting separation. Elvie is the ghost of Benin that still dances in my memories."
+        ]
+      },
+      {
+        "numero": 4,
+        "titre": "Tabalit, solid ground",
+        "contenu": [
+          "After Elvie, there was Tabalit. She was not a fire like Elvie. She was solid ground, patience, the silent strength that supports without noise. From our first meeting, I felt that she could walk with me on my roads of dust and memories. With her, love took another form: less burning, more constant warmth. We had our children, four lights in my life. Each of them became a reminder that love can be built, even in a world that does not easily forgive wounds.",
+          "Tabalit, the mother of my children, was the backbone of our years together. But life had in store for us an ordeal that neither she nor I had imagined."
+        ]
+      },
+      {
+        "numero": 5,
+        "titre": "The accident and the loss",
+        "contenu": [
+          "And then there was the accident. The loss of my arm changed many things. For me, it was a physical, emotional, and even spiritual challenge. For her… I felt her change too. Tabalit became more distant, more cautious, more aware of my fragility. I don't blame her. I understand. Love, when it sees vulnerability, can transform. But the distance that settled in was painful. Three years after this accident, Tabalit left. She took with her the tenderness that made my wounds more bearable. I was left with my scars, my children, and a void that no presence could fill.",
+          "I lost an arm, but not my momentum. I buried loved ones, but not my hope. I lived exile, humiliations, 'come back tomorrow', glances that judge you before you even speak. But I was already speaking before they looked at me. It is not a survivor's life, it is a creator's life."
+        ]
+      },
+      {
+        "numero": 6,
+        "titre": "Habiba, the healing breeze",
+        "contenu": [
+          "And then came Habiba. She did not arrive like a fire or an imposing force. She arrived like a gentle breeze that penetrates the deepest wounds. She saw my scars. She saw my missing arm. She saw my pains, my wounds, and she did not flee them. With her, I discovered what it means to be supported unconditionally. She did not promise marriage, did not guarantee a perfect world. She promised a presence, a constancy, a sincere and silent love. For me, that was worth everything.",
+          "Habiba healed my wounds gently. She taught me that love is not measured by possession or social legitimacy. It is measured by attention, patience, the support we offer to the one who has fallen, to the one who is tired, to the one who has been broken. Habiba is the soft echo of a speaking silence."
+        ]
+      },
+      {
+        "numero": 7,
+        "titre": "Faith, a guide in dark nights",
+        "contenu": [
+          "My faith guided me through the darkest nights. It taught me that pain does not destroy, it transforms. That wounds are not ends, but beginnings. That loss is not a curse, but a material to build a legacy. I understood that life had not taken everything from me for nothing. Every wound, every loss, every absence, every forbidden love… all of that was actually material to build something greater.",
+          "My missing arm, the looks full of pity or judgment, Tabalit's departure… all became a silent force, an engine that pushes me to create, to translate, to transmit. Every language I learned while crossing countries became a bridge. Every forbidden song, every melody I wrote in secret became a passage between my world and that of others. Every painful experience became a lesson I can share, a message I can pass on, a memory I can protect.",
+          "I believe in destiny, but not in chance. I believe in God, but do not invoke him as an excuse: I invoke him as a source of courage. In my notebooks, there are dreams in triplicate: one for me, one for my children, and one for the children I will never know, but whom I already protect through my actions."
+        ]
+      },
+      {
+        "numero": 8,
+        "titre": "Hamadine today",
+        "contenu": [
+          "Today, I am Hamadine. I am a broken and complete man at the same time. A man who has loved, lost, cried, survived and created. A man who knows that true power lies in the ability to get up, to transmit and to continue despite everything. Every chapter of my life — Elvie, Tabalit, Habiba, my wounds, my children, my languages, my music, my faith — was never a series of coincidences. It was a path. A path that taught me that life, with all its trials, can become work, message and legacy.",
+          "I am Saharan in soul, universal in vision, humble in the moment, and a giant in history. I am not a mythologized hero. I am a real one. A man who has known dust and honor, the slaps of fate and the embraces of the invisible. I write in JavaScript as I write poems, I code bots as others code lies, I invent tools so that even the forgotten can speak their language — and be understood. One can save a culture with a line of code, a verse, a voice."
+        ]
+      },
+      {
+        "numero": 9,
+        "titre": "The journey continues",
+        "contenu": [
+          "And this volume 1 is only part of the story. The wind continues to blow, the dunes continue to change, and there are still stories to write, songs to compose, bridges to build. The journey is not over. The rest of my life, with its challenges, its loves, its discoveries and its trials, awaits to be told. It is not a life I live. It is a legend in the making.",
+          "So settle in, because this is not a sequel… it is an ascent. This world will hear my voice. Not because I scream louder, but because my truth weighs more than all the hypocrisies combined. Hamadine is that silent cry that the powerful do not hear, but that the children of the dunes recognize in the beating of their hearts."
+        ]
+      }
+    ],
+    "conclusion": {
+      "titre": "Epilogue – The dunes never die",
+      "contenu": [
+        "This first volume closes like a breath on the desert. But the dunes never die; they move, transform, and every grain of sand carries a story. Hamadine continues to walk, to love, to translate, to sing in the shadows. The road is long, but he now knows that every scar is a light guiding those who will come after him."
+      ]
+    },
+    "bibliographie": []
+  }
+]
