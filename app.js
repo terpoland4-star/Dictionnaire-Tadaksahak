@@ -1,12 +1,12 @@
 // ==============================
 // APPLICATION TADAKSAHAK LEARNING
-// VERSION MULTILINGUE + BOT AVEC BASE DE CONNAISSANCES + THÈMES
+// VERSION COMPLÈTE (PWA, QUIZ, TIMELINE, CARTE, RECHERCHE, THÈMES, MOT DU JOUR, PARTAGE, TABLEAU DE BORD)
 // ==============================
 
-console.log("🚀 Démarrage de l'application multilingue...");
+console.log("🚀 Démarrage de l'application complète...");
 
 // ------------------------------
-// TRADUCTIONS (i18n)
+// TRADUCTIONS (i18n) - Version étendue
 // ------------------------------
 const i18n = {
   fr: {
@@ -21,8 +21,12 @@ const i18n = {
     nav_videos: "🎥 Vidéos",
     nav_books: "📚 Livres",
     nav_reports: "📄 Rapports",
-    nav_news: "📰 Actualités",
+    nav_actualites: "📰 Actualités",
     nav_quiz: "❓ Quiz",
+    nav_timeline: "📅 Ligne du temps",
+    nav_map: "🗺️ Carte",
+    nav_search: "🔍 Recherche livres",
+    nav_dashboard: "📊 Tableau de bord",
     welcome_title: "Bienvenue",
     welcome_subtitle: "Une plateforme dédiée à la langue et à la culture Tadaksahak.",
     go_dico: "📖 Accéder au dictionnaire",
@@ -58,14 +62,30 @@ const i18n = {
     news_title: "📰 Actualités",
     news_coming: "📰 Restez connectés ! Les actualités arrivent prochainement.",
     quiz_title: "❓ Quiz Culturel",
-    quiz_coming: "🎯 Testez vos connaissances sur la culture Tadaksahak. Bientôt disponible !",
-    bot_greeting: "👋 Salam aleikum ! Je suis Hamadine, gardien de la langue Tadaksahak et des savoirs Idaksahak. Que souhaitez-vous explorer aujourd'hui ?",
+    quiz_start: "Commencer le quiz",
+    quiz_next: "Question suivante",
+    quiz_score: "Votre score",
+    quiz_restart: "Recommencer",
+    timeline_title: "📅 Ligne du temps historique",
+    map_title: "🗺️ Carte des zones Idaksahak",
+    search_books_title: "🔍 Recherche dans les livres",
+    search_placeholder: "Rechercher un mot ou une phrase...",
+    search_results: "Résultats",
+    dashboard_title: "📊 Tableau de bord",
+    dashboard_history: "Historique des mots",
+    dashboard_favorites: "Favoris",
+    dashboard_quiz_progress: "Progression des quiz",
+    word_of_day: "🌟 Mot du jour",
+    share: "Partager",
+    add_favorite: "Ajouter aux favoris",
+    remove_favorite: "Retirer des favoris",
+    bot_greeting: "👋 Salam aleikum ! Je suis Hamadine, gardien de la langue Tadaksahak et des savoirs Idaksahak.",
     bot_thanks: "🙏 De rien ! La sagesse se partage.",
-    bot_dico: "📖 Rendez-vous dans la section Dictionnaire. Vous pouvez :\n• Taper un mot dans la barre de recherche\n• Parcourir l'index alphabétique\n• Écouter la prononciation (quand disponible)\n• Chercher en français ou en anglais\n\n💡 Essayez de taper un mot comme « Báy » ou « Yiddár » !",
-    bot_books: "📚 La bibliothèque contient plusieurs ouvrages. Posez-moi une question précise sur leur contenu !",
-    bot_audio: "🎵 La section Audio proposera bientôt des chants traditionnels Idaksahak, des poésies tamasheq et des enregistrements linguistiques.",
-    bot_help: "🤖 Ce que je sais faire :\n\n📖 Dictionnaire → Chercher un mot, index alphabétique\n📚 Livres → Consulter les ouvrages, poser des questions\n🎵 Audio → Chants et musiques (bientôt)\n💬 Questions culturelles → Histoire, traditions, langue\n\n🔍 Exemples :\n• « Que disent les Idaksahak d'eux-mêmes ? »\n• « Quelles sont les causes des tourments touaregs ? »\n• « Que veut dire Báy en français ? »\n• « Livres »",
-    bot_default: "🤔 Je n'ai pas bien compris votre demande.\n\n🔍 Essayez :\n• « dictionnaire » ou un mot comme « Báy »\n• « livres » pour voir les ouvrages\n• Une question précise sur un livre\n• « aide » pour voir toutes mes capacités"
+    bot_dico: "📖 Rendez-vous dans la section Dictionnaire.",
+    bot_books: "📚 La bibliothèque contient plusieurs ouvrages.",
+    bot_audio: "🎵 Section Audio à venir.",
+    bot_help: "🤖 Ce que je sais faire :\n📖 Dictionnaire\n📚 Livres\n🎵 Audio\n💬 Questions culturelles",
+    bot_default: "🤔 Je n'ai pas bien compris. Essayez « aide »."
   },
   ar: {
     loading: "جاري تحميل التطبيق...",
@@ -79,8 +99,12 @@ const i18n = {
     nav_videos: "🎥 الفيديوهات",
     nav_books: "📚 الكتب",
     nav_reports: "📄 التقارير",
-    nav_news: "📰 الأخبار",
+    nav_actualites: "📰 الأخبار",
     nav_quiz: "❓ اختبار",
+    nav_timeline: "📅 الخط الزمني",
+    nav_map: "🗺️ الخريطة",
+    nav_search: "🔍 بحث في الكتب",
+    nav_dashboard: "📊 لوحة التحكم",
     welcome_title: "مرحبًا",
     welcome_subtitle: "منصة مخصصة للغة والثقافة التدكساهقية.",
     go_dico: "📖 الذهاب إلى القاموس",
@@ -116,14 +140,30 @@ const i18n = {
     news_title: "📰 أخبار",
     news_coming: "📰 تابعونا! الأخبار قادمة قريبًا.",
     quiz_title: "❓ اختبار ثقافي",
-    quiz_coming: "🎯 اختبر معرفتك بثقافة التدكساهق. قريبًا!",
-    bot_greeting: "👋 سلام عليكم! أنا حمدين، حارس لغة تدكساهق ومعارف إدكساهق. ماذا تريد استكشاف اليوم؟",
-    bot_thanks: "🙏 عفواً! الحكمة تُشارك.",
-    bot_dico: "📖 توجه إلى قسم القاموس. يمكنك:\n• كتابة كلمة في شريط البحث\n• تصفح الفهرس الأبجدي\n• الاستماع إلى النطق (عند توفره)\n• البحث بالفرنسية أو الإنجليزية\n\n💡 جرب كتابة كلمة مثل « Báy » أو « Yiddár »!",
-    bot_books: "📚 تحتوي المكتبة على عدة كتب. اسألني سؤالاً محدداً عن محتواها!",
-    bot_audio: "🎵 سيقدم قسم الصوتيات قريبًا أغاني تقليدية إدكساهق، وشعر تماشق، وتسجيلات لغوية.",
-    bot_help: "🤖 ما يمكنني فعله:\n\n📖 القاموس → بحث عن كلمة، فهرس أبجدي\n📚 الكتب → الاطلاع على الكتب، طرح أسئلة\n🎵 الصوتيات → أغاني وموسيقى (قريبًا)\n💬 أسئلة ثقافية → تاريخ، تقاليد، لغة\n\n🔍 أمثلة:\n• « ماذا يقول الإدكساهق عن أنفسهم؟ »\n• « ما هي أسباب عذابات الطوارق؟ »\n• « ماذا تعني Báy بالفرنسية؟ »\n• « كتب »",
-    bot_default: "🤔 لم أفهم طلبك جيدًا.\n\n🔍 جرب:\n• « قاموس » أو كلمة مثل « Báy »\n• « كتب » لعرض الكتب\n• سؤال محدد عن كتاب\n• « مساعدة » لرؤية كل قدراتي"
+    quiz_start: "ابدأ الاختبار",
+    quiz_next: "السؤال التالي",
+    quiz_score: "نتيجتك",
+    quiz_restart: "إعادة المحاولة",
+    timeline_title: "📅 الخط الزمني التاريخي",
+    map_title: "🗺️ خريطة مناطق إدكساهق",
+    search_books_title: "🔍 بحث في الكتب",
+    search_placeholder: "ابحث عن كلمة أو عبارة...",
+    search_results: "النتائج",
+    dashboard_title: "📊 لوحة التحكم",
+    dashboard_history: "الكلمات المبحوثة",
+    dashboard_favorites: "المفضلة",
+    dashboard_quiz_progress: "تقدم الاختبارات",
+    word_of_day: "🌟 كلمة اليوم",
+    share: "مشاركة",
+    add_favorite: "أضف إلى المفضلة",
+    remove_favorite: "إزالة من المفضلة",
+    bot_greeting: "👋 سلام عليكم! أنا حمدين، حارس لغة تدكساهق.",
+    bot_thanks: "🙏 عفواً!",
+    bot_dico: "📖 توجه إلى قسم القاموس.",
+    bot_books: "📚 تحتوي المكتبة على عدة كتب.",
+    bot_audio: "🎵 قسم الصوتيات قريبًا.",
+    bot_help: "🤖 ما يمكنني فعله:\n📖 القاموس\n📚 الكتب\n🎵 الصوتيات\n💬 أسئلة ثقافية",
+    bot_default: "🤔 لم أفهم. جرب « مساعدة »."
   },
   en: {
     loading: "Loading application...",
@@ -137,8 +177,12 @@ const i18n = {
     nav_videos: "🎥 Videos",
     nav_books: "📚 Books",
     nav_reports: "📄 Reports",
-    nav_news: "📰 News",
+    nav_actualites: "📰 News",
     nav_quiz: "❓ Quiz",
+    nav_timeline: "📅 Timeline",
+    nav_map: "🗺️ Map",
+    nav_search: "🔍 Search books",
+    nav_dashboard: "📊 Dashboard",
     welcome_title: "Welcome",
     welcome_subtitle: "A platform dedicated to the Tadaksahak language and culture.",
     go_dico: "📖 Go to dictionary",
@@ -174,27 +218,48 @@ const i18n = {
     news_title: "📰 News",
     news_coming: "📰 Stay tuned! News coming soon.",
     quiz_title: "❓ Cultural Quiz",
-    quiz_coming: "🎯 Test your knowledge of Tadaksahak culture. Coming soon!",
-    bot_greeting: "👋 Salam aleikum! I am Hamadine, guardian of the Tadaksahak language and Idaksahak knowledge. What would you like to explore today?",
-    bot_thanks: "🙏 You're welcome! Wisdom is meant to be shared.",
-    bot_dico: "📖 Go to the Dictionary section. You can:\n• Type a word in the search bar\n• Browse the alphabetical index\n• Listen to pronunciation (when available)\n• Search in French or English\n\n💡 Try typing a word like 'Báy' or 'Yiddár'!",
-    bot_books: "📚 The library contains several books. Ask me a specific question about their content!",
-    bot_audio: "🎵 The Audio section will soon feature traditional Idaksahak songs, Tamasheq poetry, and linguistic recordings.",
-    bot_help: "🤖 What I can do:\n\n📖 Dictionary → Search for a word, alphabetical index\n📚 Books → Browse books, ask questions\n🎵 Audio → Songs and music (soon)\n💬 Cultural questions → History, traditions, language\n\n🔍 Examples:\n• 'What do the Idaksahak say about themselves?'\n• 'What are the causes of Tuareg torments?'\n• 'What does Báy mean in English?'\n• 'Books'",
-    bot_default: "🤔 I didn't quite understand your request.\n\n🔍 Try:\n• 'dictionary' or a word like 'Báy'\n• 'books' to see the books\n• A specific question about a book\n• 'help' to see all my capabilities"
+    quiz_start: "Start quiz",
+    quiz_next: "Next question",
+    quiz_score: "Your score",
+    quiz_restart: "Restart",
+    timeline_title: "📅 Historical Timeline",
+    map_title: "🗺️ Map of Idaksahak areas",
+    search_books_title: "🔍 Search in books",
+    search_placeholder: "Search for a word or phrase...",
+    search_results: "Results",
+    dashboard_title: "📊 Dashboard",
+    dashboard_history: "Word history",
+    dashboard_favorites: "Favorites",
+    dashboard_quiz_progress: "Quiz progress",
+    word_of_day: "🌟 Word of the day",
+    share: "Share",
+    add_favorite: "Add to favorites",
+    remove_favorite: "Remove from favorites",
+    bot_greeting: "👋 Salam aleikum! I am Hamadine, guardian of Tadaksahak.",
+    bot_thanks: "🙏 You're welcome!",
+    bot_dico: "📖 Go to the Dictionary section.",
+    bot_books: "📚 The library contains several books.",
+    bot_audio: "🎵 Audio section coming soon.",
+    bot_help: "🤖 What I can do:\n📖 Dictionary\n📚 Books\n🎵 Audio\n💬 Cultural questions",
+    bot_default: "🤔 I didn't understand. Try 'help'."
   }
 };
 
+// ------------------------------
+// VARIABLES GLOBALES
+// ------------------------------
 let currentLanguage = localStorage.getItem('app_language') || 'fr';
 let vocabulaire = [];
 let motActuel = null;
 let historique = [];
-let albumsAudio = [];
+let favoris = [];
 let motsListe = [];
 let currentIndex = -1;
-window.livresData = [];
-window.histoireData = {};
-let livresConnaissance = null; // sera chargé depuis data/livres_connaissance.json
+let livresConnaissance = null;
+let quizData = null;
+let currentQuiz = { questions: [], currentIndex: 0, score: 0, lang: 'fr' };
+let timelineData = null;
+let mapInitialized = false;
 
 // Éléments DOM
 const searchBar = document.getElementById("searchBar");
@@ -208,16 +273,18 @@ const btnPrev = document.getElementById("btnPrev");
 const btnNext = document.getElementById("btnNext");
 const compteurMot = document.getElementById("compteurMot");
 
-// Galerie photos (version trilingue)
+// ------------------------------
+// GALERIE PHOTOS (trilingue)
+// ------------------------------
 const imagesGalerie = [
   {
     fichier: "data/images/livres/chef_idoguiritane_1.jpg",
     titre_fr: "Chef Idoguiritane à Tin Abaw",
     titre_ar: "الشيخ إيدوغيريتان في تين أبا",
     titre_en: "Chief Idoguiritane in Tin Abaw",
-    legende_fr: "Portrait du chef historique de la fraction Idoguiritane. Photo Charles Grémont, années 1990.",
-    legende_ar: "صورة للشيخ التاريخي لفصيلة إيدوغيريتان. تصوير شارل غريمون، التسعينيات.",
-    legende_en: "Portrait of the historical chief of the Idoguiritane fraction. Photo Charles Grémont, 1990s.",
+    legende_fr: "Portrait du chef historique de la fraction Idoguiritane.",
+    legende_ar: "صورة للشيخ التاريخي لفصيلة إيدوغيريتان.",
+    legende_en: "Portrait of the historical chief of the Idoguiritane fraction.",
     credit: "© Charles Grémont"
   },
   {
@@ -225,9 +292,9 @@ const imagesGalerie = [
     titre_fr: "Réunion traditionnelle à Tin Abaw",
     titre_ar: "اجتماع تقليدي في تين أبا",
     titre_en: "Traditional meeting in Tin Abaw",
-    legende_fr: "Le chef Idoguiritane entouré de notables lors d'une assemblée coutumière.",
-    legende_ar: "الشيخ إيدوغيريتان وحوله الأعيان خلال مجلس عرفي.",
-    legende_en: "Chief Idoguiritane surrounded by notables during a customary assembly.",
+    legende_fr: "Le chef entouré de notables.",
+    legende_ar: "الشيخ وحوله الأعيان.",
+    legende_en: "The chief surrounded by notables.",
     credit: "© Charles Grémont"
   },
   {
@@ -235,9 +302,9 @@ const imagesGalerie = [
     titre_fr: "Le chef et ses conseillers",
     titre_ar: "الشيخ ومستشاروه",
     titre_en: "The chief and his advisors",
-    legende_fr: "Moment de discussion autour des affaires de la communauté.",
-    legende_ar: "لحظة نقاش حول شؤون المجتمع.",
-    legende_en: "Discussion moment about community affairs.",
+    legende_fr: "Discussion des affaires de la communauté.",
+    legende_ar: "مناقشة شؤون المجتمع.",
+    legende_en: "Discussing community affairs.",
     credit: "© Charles Grémont"
   },
   {
@@ -245,9 +312,9 @@ const imagesGalerie = [
     titre_fr: "Jeune combattant Idaksahak (1994)",
     titre_ar: "مقاتل شاب إدكساهق (١٩٩٤)",
     titre_en: "Young Idaksahak fighter (1994)",
-    legende_fr: "Portrait d’un jeune homme armé lors de la rébellion des années 1990, nord de Ménaka.",
-    legende_ar: "صورة لشاب مسلح أثناء تمرد التسعينيات، شمال مناكا.",
-    legende_en: "Portrait of an armed young man during the 1990s rebellion, north of Ménaka.",
+    legende_fr: "Rébellion des années 1990, nord de Ménaka.",
+    legende_ar: "تمرد التسعينيات، شمال مناكا.",
+    legende_en: "1990s rebellion, north of Ménaka.",
     credit: "© Charles Grémont"
   },
   {
@@ -255,10 +322,10 @@ const imagesGalerie = [
     titre_fr: "Carte de la région des Idaksahak",
     titre_ar: "خريطة منطقة الإدكساهق",
     titre_en: "Map of the Idaksahak region",
-    legende_fr: "Localisation des Idaksahak dans le nord-est du Mali (Ménaka, Gao).",
-    legende_ar: "موقع الإدكساهق في شمال شرق مالي (منطقة مناكا وغاو).",
-    legende_en: "Location of the Idaksahak in north-eastern Mali (Ménaka, Gao).",
-    credit: "Source : Charles Grémont"
+    legende_fr: "Localisation dans le nord-est du Mali.",
+    legende_ar: "الموقع في شمال شرق مالي.",
+    legende_en: "Location in north-eastern Mali.",
+    credit: "Charles Grémont"
   },
   {
     fichier: "data/images/livres/idaksahak_square.png",
@@ -272,9 +339,9 @@ const imagesGalerie = [
   }
 ];
 
-// ==============================
+// ------------------------------
 // UTILITAIRES
-// ==============================
+// ------------------------------
 function escapeHtml(str) {
   if (!str) return '';
   return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
@@ -311,13 +378,50 @@ function showToast(message, type = "info") {
 function showLoader() { document.getElementById("loadingOverlay").hidden = false; }
 function hideLoader() { document.getElementById("loadingOverlay").hidden = true; }
 
-// ==============================
-// GESTION DU THÈME (DARK/LIGHT/SEPIA)
-// ==============================
+// ------------------------------
+// THÈMES PERSONNALISABLES (police, taille, contraste)
+// ------------------------------
+function applyThemeSettings() {
+  const fontFamily = localStorage.getItem('app_font_family') || 'Inter';
+  const fontSize = localStorage.getItem('app_font_size') || '100';
+  const highContrast = localStorage.getItem('app_high_contrast') === 'true';
+  document.body.style.fontFamily = fontFamily === 'serif' ? 'Georgia, serif' : (fontFamily === 'mono' ? 'Courier New, monospace' : 'Inter, sans-serif');
+  document.body.style.fontSize = `${fontSize}%`;
+  if (highContrast) {
+    document.body.classList.add('high-contrast');
+  } else {
+    document.body.classList.remove('high-contrast');
+  }
+}
+
+function initThemeSettings() {
+  const fontSelect = document.getElementById('fontFamilySelect');
+  const sizeSelect = document.getElementById('fontSizeSelect');
+  const contrastCheck = document.getElementById('highContrastCheck');
+  if (fontSelect) fontSelect.value = localStorage.getItem('app_font_family') || 'sans';
+  if (sizeSelect) sizeSelect.value = localStorage.getItem('app_font_size') || '100';
+  if (contrastCheck) contrastCheck.checked = localStorage.getItem('app_high_contrast') === 'true';
+  fontSelect?.addEventListener('change', (e) => {
+    localStorage.setItem('app_font_family', e.target.value);
+    applyThemeSettings();
+  });
+  sizeSelect?.addEventListener('change', (e) => {
+    localStorage.setItem('app_font_size', e.target.value);
+    applyThemeSettings();
+  });
+  contrastCheck?.addEventListener('change', (e) => {
+    localStorage.setItem('app_high_contrast', e.target.checked);
+    applyThemeSettings();
+  });
+  applyThemeSettings();
+}
+
+// ------------------------------
+// THÈMES CLAIR/SOMBRE/SEPIA (déjà existants)
+// ------------------------------
 function setTheme(theme) {
-  const body = document.body;
-  body.classList.remove('dark', 'light', 'sepia');
-  body.classList.add(theme);
+  document.body.classList.remove('dark', 'light', 'sepia');
+  document.body.classList.add(theme);
   localStorage.setItem('app_theme', theme);
 }
 
@@ -329,13 +433,12 @@ function initTheme() {
   document.getElementById('themeSepia')?.addEventListener('click', () => setTheme('sepia'));
 }
 
-// ==============================
-// GESTION DE LA LANGUE (GLOBALE)
-// ==============================
+// ------------------------------
+// GESTION DE LA LANGUE
+// ------------------------------
 function setLanguage(lang) {
   currentLanguage = lang;
   localStorage.setItem('app_language', lang);
-  
   const html = document.documentElement;
   html.setAttribute('lang', lang === 'ar' ? 'ar' : (lang === 'en' ? 'en' : 'fr'));
   html.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
@@ -356,16 +459,22 @@ function setLanguage(lang) {
     }
   });
   
-  if (searchBar) searchBar.placeholder = (lang === 'fr' ? "Rechercher un mot…" : (lang === 'ar' ? "ابحث عن كلمة…" : "Search for a word…"));
+  if (searchBar) searchBar.placeholder = i18n[lang].search_placeholder || "Rechercher un mot…";
   const chatInput = document.getElementById("chatInput");
-  if (chatInput) chatInput.placeholder = (lang === 'fr' ? "Écrivez votre message..." : (lang === 'ar' ? "اكتب رسالتك..." : "Write your message..."));
+  if (chatInput) chatInput.placeholder = i18n[lang].send || "Écrivez votre message...";
   const rechercheLivres = document.getElementById("rechercheLivres");
-  if (rechercheLivres) rechercheLivres.placeholder = (lang === 'fr' ? "Rechercher un livre..." : (lang === 'ar' ? "ابحث عن كتاب..." : "Search for a book..."));
+  if (rechercheLivres) rechercheLivres.placeholder = i18n[lang].search_placeholder || "Rechercher un livre...";
   
+  // Recharger les sections dynamiques
   if (document.getElementById("livres") && !document.getElementById("livres").hidden) afficherLivres();
   if (document.getElementById("photos") && !document.getElementById("photos").hidden) afficherPhotos();
+  if (document.getElementById("quiz") && !document.getElementById("quiz").hidden && quizData) chargerQuiz();
+  if (document.getElementById("timeline") && !document.getElementById("timeline").hidden && timelineData) afficherTimeline();
+  if (document.getElementById("map") && !document.getElementById("map").hidden && mapInitialized) initialiserCarte();
+  if (document.getElementById("dashboard") && !document.getElementById("dashboard").hidden) afficherDashboard();
   if (motActuel) afficherMot(motActuel);
   updateChatSuggestions();
+  afficherMotDuJour();
   
   document.querySelectorAll('.lang-flag').forEach(btn => {
     if (btn.dataset.lang === lang) btn.classList.add('active');
@@ -382,19 +491,12 @@ function updateChatSuggestions() {
   }
 }
 
-// ==============================
-// BOT AVEC BASE DE CONNAISSANCES (LIVRES)
-// ==============================
-function contientInsulte(texte) { return false; } // à implémenter si besoin
-function reponsePolieInsulte() { return i18n[currentLanguage].bot_greeting; }
-function contientArabe(texte) { return /[\u0600-\u06FF]/.test(texte); }
-
+// ------------------------------
+// BOT (avec recherche dans livres)
+// ------------------------------
 function extraireMotsCles(question) {
   const stopWords = ['le','la','les','un','une','de','du','des','et','ou','mais','donc','car','pour','dans','avec','sans','par','sur','sous','que','qui','quoi','dont','où','comment','pourquoi','est','sont','être','avoir','faire'];
-  const mots = question.toLowerCase()
-    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-    .replace(/[?;:!,.']/g, '')
-    .split(/\s+/);
+  const mots = question.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[?;:!,.']/g, '').split(/\s+/);
   return mots.filter(m => m.length > 2 && !stopWords.includes(m));
 }
 
@@ -411,45 +513,24 @@ function chercherDansLivres(question) {
         if (motsClesChunk.some(mc => mc.includes(mot) || mot.includes(mc))) score += 2;
         if (chunk.texte.toLowerCase().includes(mot)) score += 1;
       }
-      if (score > 0) {
-        resultats.push({
-          livre: livre.titre,
-          auteur: livre.auteur,
-          chapitre: chunk.chapitre,
-          titre: chunk.titre,
-          texte: chunk.texte,
-          score: score
-        });
-      }
+      if (score > 0) resultats.push({ livre: livre.titre, auteur: livre.auteur, chapitre: chunk.chapitre, titre: chunk.titre, texte: chunk.texte, score });
     }
   }
-  if (resultats.length === 0) return null;
+  if (!resultats.length) return null;
   resultats.sort((a,b) => b.score - a.score);
   return resultats[0];
 }
 
 function reponseBot(txt) {
   const clean = txt.toLowerCase().trim();
-  if (clean.includes("bonjour") || clean.includes("salut") || clean.includes("hello") || clean.includes("salam"))
-    return i18n[currentLanguage].bot_greeting;
-  if (clean.includes("merci") || clean.includes("thanks") || clean.includes("شكرا"))
-    return i18n[currentLanguage].bot_thanks;
-  if (clean.includes("dictionnaire") || clean.includes("dico") || clean.includes("mot") || clean.includes("قاموس"))
-    return i18n[currentLanguage].bot_dico;
-  if (clean.includes("audio") || clean.includes("musique"))
-    return i18n[currentLanguage].bot_audio;
-  if (clean.includes("aide") || clean.includes("help") || clean.includes("مساعدة"))
-    return i18n[currentLanguage].bot_help;
-  
-  // Recherche dans les livres
+  if (clean.includes("bonjour") || clean.includes("salut") || clean.includes("hello") || clean.includes("salam")) return i18n[currentLanguage].bot_greeting;
+  if (clean.includes("merci") || clean.includes("thanks") || clean.includes("شكرا")) return i18n[currentLanguage].bot_thanks;
+  if (clean.includes("dictionnaire") || clean.includes("dico") || clean.includes("mot") || clean.includes("قاموس")) return i18n[currentLanguage].bot_dico;
+  if (clean.includes("audio") || clean.includes("musique")) return i18n[currentLanguage].bot_audio;
+  if (clean.includes("aide") || clean.includes("help") || clean.includes("مساعدة")) return i18n[currentLanguage].bot_help;
   const resultatLivre = chercherDansLivres(txt);
-  if (resultatLivre) {
-    return `📖 D'après « ${resultatLivre.livre} » (${resultatLivre.auteur}), chapitre ${resultatLivre.chapitre} — « ${resultatLivre.titre} » :\n\n“${resultatLivre.texte}”\n\n💡 Posez-moi d'autres questions sur ce livre !`;
-  }
-  
-  if (clean.includes("livre") || clean.includes("bibliothèque") || clean.includes("كتاب"))
-    return i18n[currentLanguage].bot_books;
-  
+  if (resultatLivre) return `📖 D'après « ${resultatLivre.livre} » (${resultatLivre.auteur}), chapitre ${resultatLivre.chapitre} — « ${resultatLivre.titre} » :\n\n“${resultatLivre.texte}”\n\n💡 Posez-moi d'autres questions sur ce livre !`;
+  if (clean.includes("livre") || clean.includes("bibliothèque") || clean.includes("كتاب")) return i18n[currentLanguage].bot_books;
   return i18n[currentLanguage].bot_default;
 }
 
@@ -477,9 +558,9 @@ function traiterSaisie() {
   }, 400);
 }
 
-// ==============================
+// ------------------------------
 // DICTIONNAIRE
-// ==============================
+// ------------------------------
 async function chargerDictionnaire() {
   showLoader();
   try {
@@ -513,7 +594,15 @@ function afficherMot(item) {
     else if (currentLanguage === "en" && item.en) def = item.en;
     else if (item.fr) def = item.fr;
     else def = "Définition non disponible";
-    defElem.innerHTML = `<p><strong>📂 Catégorie :</strong> ${item.cat || "Général"}</p><p><strong>${currentLanguage.toUpperCase()} :</strong> ${escapeHtml(def)}</p>`;
+    defElem.innerHTML = `<p><strong>📂 Catégorie :</strong> ${item.cat || "Général"}</p><p><strong>${currentLanguage.toUpperCase()} :</strong> ${escapeHtml(def)}</p>
+      <div style="margin-top: 1rem; display: flex; gap: 0.5rem; justify-content: center;">
+        <button class="btn-small" id="shareWordBtn">📤 ${i18n[currentLanguage].share}</button>
+        <button class="btn-small" id="favoriteWordBtn">⭐ ${favoris.includes(item.mot) ? i18n[currentLanguage].remove_favorite : i18n[currentLanguage].add_favorite}</button>
+      </div>`;
+    setTimeout(() => {
+      document.getElementById("shareWordBtn")?.addEventListener("click", () => partagerMot(item));
+      document.getElementById("favoriteWordBtn")?.addEventListener("click", () => basculerFavori(item));
+    }, 50);
   }
   if (audioElem && item.audio) {
     audioElem.src = `audio/${item.audio}`;
@@ -614,7 +703,7 @@ function ajouterHistorique(mot) {
   historique = JSON.parse(localStorage.getItem("historiqueTadakssahak")) || [];
   historique = historique.filter(m => m !== mot);
   historique.unshift(mot);
-  if (historique.length > 10) historique.pop();
+  if (historique.length > 20) historique.pop();
   localStorage.setItem("historiqueTadakssahak", JSON.stringify(historique));
   afficherHistorique();
 }
@@ -638,9 +727,266 @@ function afficherHistorique() {
   }
 }
 
-// ==============================
-// LIVRES (multilingue via filtrage par langue)
-// ==============================
+function chargerHistorique() {
+  historique = JSON.parse(localStorage.getItem("historiqueTadakssahak")) || [];
+  afficherHistorique();
+}
+
+// ------------------------------
+// FAVORIS
+// ------------------------------
+function chargerFavoris() {
+  favoris = JSON.parse(localStorage.getItem("favorisTadakssahak")) || [];
+}
+
+function sauvegarderFavoris() {
+  localStorage.setItem("favorisTadakssahak", JSON.stringify(favoris));
+}
+
+function basculerFavori(item) {
+  if (favoris.includes(item.mot)) {
+    favoris = favoris.filter(m => m !== item.mot);
+    showToast(i18n[currentLanguage].remove_favorite, "info");
+  } else {
+    favoris.push(item.mot);
+    showToast(i18n[currentLanguage].add_favorite, "success");
+  }
+  sauvegarderFavoris();
+  if (motActuel === item) afficherMot(item); // rafraîchir le bouton
+  if (document.getElementById("dashboard") && !document.getElementById("dashboard").hidden) afficherDashboard();
+}
+
+// ------------------------------
+// PARTAGE SOCIAL
+// ------------------------------
+function partagerMot(item) {
+  const text = `${item.mot} : ${currentLanguage === 'fr' ? item.fr : (currentLanguage === 'en' ? item.en : item.fr)}`;
+  if (navigator.share) {
+    navigator.share({ title: 'Mot Tadaksahak', text: text, url: window.location.href }).catch(() => {});
+  } else {
+    navigator.clipboard.writeText(text);
+    showToast("📋 Copié dans le presse-papier", "success");
+  }
+}
+
+// ------------------------------
+// MOT DU JOUR
+// ------------------------------
+function getWordOfDay() {
+  if (!vocabulaire.length) return null;
+  const today = new Date().toISOString().slice(0,10);
+  let stored = localStorage.getItem('word_of_day');
+  if (stored && JSON.parse(stored).date === today) return JSON.parse(stored).word;
+  const randomIndex = Math.floor(Math.random() * vocabulaire.length);
+  const word = vocabulaire[randomIndex];
+  localStorage.setItem('word_of_day', JSON.stringify({ date: today, word: word.mot }));
+  return word.mot;
+}
+
+function afficherMotDuJour() {
+  const container = document.getElementById("wordOfDayContainer");
+  if (!container) return;
+  const mot = getWordOfDay();
+  if (!mot) return;
+  const item = vocabulaire.find(v => v.mot === mot);
+  if (!item) return;
+  let definition = currentLanguage === 'fr' ? item.fr : (currentLanguage === 'en' ? item.en : item.fr);
+  container.innerHTML = `<strong>${i18n[currentLanguage].word_of_day}</strong> : ${escapeHtml(mot)} — ${escapeHtml(definition)}`;
+}
+
+function requestNotificationPermission() {
+  if ('Notification' in navigator && Notification.permission === 'default') {
+    Notification.requestPermission();
+  }
+}
+
+function showWordNotification() {
+  if ('Notification' in navigator && Notification.permission === 'granted') {
+    const mot = getWordOfDay();
+    if (mot) new Notification(`📖 Mot du jour : ${mot}`);
+  }
+}
+
+// ------------------------------
+// QUIZ INTERACTIF MULTILINGUE
+// ------------------------------
+async function chargerQuiz() {
+  try {
+    const response = await fetch('data/quiz.json');
+    if (!response.ok) throw new Error();
+    quizData = await response.json();
+  } catch(e) {
+    console.warn("Quiz non disponible");
+    quizData = { fr: [{ question: "Exemple ?", options: ["A","B","C"], reponse: 0 }] };
+  }
+  // Ne pas afficher automatiquement, attendre que l'utilisateur clique sur démarrer
+  const container = document.getElementById("quizContainer");
+  if (container) container.innerHTML = `<button id="startQuizBtn" class="btn">${i18n[currentLanguage].quiz_start}</button>`;
+  document.getElementById("startQuizBtn")?.addEventListener("click", () => demarrerQuiz());
+}
+
+function demarrerQuiz() {
+  const lang = currentLanguage;
+  if (!quizData || !quizData[lang]) return;
+  currentQuiz = {
+    questions: quizData[lang],
+    currentIndex: 0,
+    score: 0,
+    lang: lang
+  };
+  afficherQuestionQuiz();
+}
+
+function afficherQuestionQuiz() {
+  const container = document.getElementById("quizContainer");
+  if (!container) return;
+  const q = currentQuiz.questions[currentQuiz.currentIndex];
+  if (!q) return terminerQuiz();
+  let html = `<div class="quiz-question"><p><strong>${escapeHtml(q.question)}</strong></p><div class="quiz-options">`;
+  q.options.forEach((opt, idx) => {
+    html += `<button class="quiz-option" data-opt="${idx}">${escapeHtml(opt)}</button>`;
+  });
+  html += `</div><div class="quiz-progress">Question ${currentQuiz.currentIndex+1}/${currentQuiz.questions.length}</div></div>`;
+  container.innerHTML = html;
+  document.querySelectorAll('.quiz-option').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const selected = parseInt(e.currentTarget.dataset.opt);
+      if (selected === q.reponse) currentQuiz.score++;
+      currentQuiz.currentIndex++;
+      afficherQuestionQuiz();
+    });
+  });
+}
+
+function terminerQuiz() {
+  const container = document.getElementById("quizContainer");
+  const percent = (currentQuiz.score / currentQuiz.questions.length) * 100;
+  let message = `${i18n[currentLanguage].quiz_score} : ${currentQuiz.score}/${currentQuiz.questions.length} (${Math.round(percent)}%)`;
+  // Sauvegarder progression
+  let progress = JSON.parse(localStorage.getItem("quizProgress")) || {};
+  progress[currentQuiz.lang] = { score: currentQuiz.score, total: currentQuiz.questions.length, date: new Date().toISOString() };
+  localStorage.setItem("quizProgress", JSON.stringify(progress));
+  container.innerHTML = `<p>${message}</p><button id="restartQuizBtn" class="btn">${i18n[currentLanguage].quiz_restart}</button>`;
+  document.getElementById("restartQuizBtn")?.addEventListener("click", () => demarrerQuiz());
+  if (document.getElementById("dashboard") && !document.getElementById("dashboard").hidden) afficherDashboard();
+}
+
+// ------------------------------
+// LIGNE DU TEMPS (TIMELINE)
+// ------------------------------
+async function chargerTimeline() {
+  try {
+    const response = await fetch('data/timeline.json');
+    if (!response.ok) throw new Error();
+    timelineData = await response.json();
+  } catch(e) {
+    timelineData = [];
+  }
+}
+
+function afficherTimeline() {
+  const container = document.getElementById("timelineContainer");
+  if (!container || !timelineData) return;
+  const events = timelineData.filter(e => e.lang === currentLanguage);
+  if (!events.length) { container.innerHTML = "<p>Aucun événement</p>"; return; }
+  let html = `<div class="timeline">`;
+  events.forEach(event => {
+    html += `<div class="timeline-item"><div class="timeline-date">${event.date}</div><div class="timeline-content"><h4>${escapeHtml(event.title)}</h4><p>${escapeHtml(event.description)}</p>${event.image ? `<img src="${event.image}" alt="" style="max-width:100%; border-radius:8px; margin-top:0.5rem;">` : ''}</div></div>`;
+  });
+  html += `</div>`;
+  container.innerHTML = html;
+}
+
+// ------------------------------
+// CARTE GÉOGRAPHIQUE (Leaflet)
+// ------------------------------
+function initialiserCarte() {
+  const container = document.getElementById("mapContainer");
+  if (!container) return;
+  if (mapInitialized) return;
+  // Charger Leaflet dynamiquement
+  if (typeof L === 'undefined') {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+    document.head.appendChild(link);
+    const script = document.createElement('script');
+    script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    script.onload = () => { creerCarte(); };
+    document.head.appendChild(script);
+  } else {
+    creerCarte();
+  }
+}
+
+function creerCarte() {
+  const container = document.getElementById("mapContainer");
+  if (!container) return;
+  const map = L.map('mapContainer').setView([16.0, 0.0], 6);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>' }).addTo(map);
+  const points = [
+    { lat: 15.9167, lon: 2.4167, name_fr: "Ménaka", name_ar: "ميناكا", name_en: "Ménaka" },
+    { lat: 16.2667, lon: -0.05, name_fr: "Gao", name_ar: "غاو", name_en: "Gao" },
+    { lat: 15.7167, lon: 0.9167, name_fr: "Talatayt", name_ar: "تالاتايت", name_en: "Talatayt" }
+  ];
+  points.forEach(p => {
+    let name = currentLanguage === 'fr' ? p.name_fr : (currentLanguage === 'ar' ? p.name_ar : p.name_en);
+    L.marker([p.lat, p.lon]).addTo(map).bindPopup(name);
+  });
+  mapInitialized = true;
+}
+
+// ------------------------------
+// RECHERCHE PLEIN TEXTE DANS LES LIVRES
+// ------------------------------
+function rechercherPleinTexte() {
+  const query = document.getElementById("searchBooksInput")?.value.trim();
+  const container = document.getElementById("searchBooksResults");
+  if (!query || !livresConnaissance) { if(container) container.innerHTML = ""; return; }
+  const mots = query.toLowerCase().split(/\s+/);
+  const results = [];
+  for (const livre of livresConnaissance.livres) {
+    for (const chunk of livre.chunks) {
+      let match = true;
+      for (const mot of mots) {
+        if (!chunk.texte.toLowerCase().includes(mot)) { match = false; break; }
+      }
+      if (match) results.push({ livre: livre.titre, auteur: livre.auteur, chapitre: chunk.chapitre, titre: chunk.titre, texte: chunk.texte });
+    }
+  }
+  if (!container) return;
+  if (!results.length) { container.innerHTML = "<p>Aucun résultat</p>"; return; }
+  let html = `<h3>${i18n[currentLanguage].search_results} (${results.length})</h3>`;
+  results.forEach(r => {
+    let texteApercu = r.texte.substring(0, 300);
+    let regex = new RegExp(`(${mots.join('|')})`, 'gi');
+    texteApercu = texteApercu.replace(regex, '<mark>$1</mark>');
+    html += `<div class="search-result"><strong>${escapeHtml(r.livre)}</strong> (${escapeHtml(r.auteur)}), ch.${r.chapitre} : ${escapeHtml(r.titre)}<p>${texteApercu}...</p></div>`;
+  });
+  container.innerHTML = html;
+}
+
+// ------------------------------
+// TABLEAU DE BORD
+// ------------------------------
+function afficherDashboard() {
+  const container = document.getElementById("dashboardContainer");
+  if (!container) return;
+  let html = `<h3>${i18n[currentLanguage].dashboard_history}</h3><ul>`;
+  historique.slice(0,10).forEach(m => { html += `<li>${escapeHtml(m)}</li>`; });
+  html += `</ul><h3>${i18n[currentLanguage].dashboard_favorites}</h3><ul>`;
+  favoris.forEach(m => { html += `<li>${escapeHtml(m)}</li>`; });
+  html += `</ul><h3>${i18n[currentLanguage].dashboard_quiz_progress}</h3>`;
+  const progress = JSON.parse(localStorage.getItem("quizProgress")) || {};
+  for (let lang in progress) {
+    html += `<p>${lang.toUpperCase()} : ${progress[lang].score}/${progress[lang].total}</p>`;
+  }
+  container.innerHTML = html;
+}
+
+// ------------------------------
+// LIVRES (multilingue)
+// ------------------------------
 async function afficherLivres() {
   const cont = document.getElementById("livresContainer");
   if (!cont) return;
@@ -649,15 +995,9 @@ async function afficherLivres() {
     const response = await fetch('data/livres.json');
     if (!response.ok) throw new Error();
     const allLivres = await response.json();
-    let langueCible = "";
-    if (currentLanguage === "fr") langueCible = "Français";
-    else if (currentLanguage === "ar") langueCible = "Arabe";
-    else langueCible = "English";
+    let langueCible = currentLanguage === "fr" ? "Français" : (currentLanguage === "ar" ? "Arabe" : "English");
     const livres = allLivres.filter(l => l.langue === langueCible);
-    if (!livres.length) {
-      cont.innerHTML = `<p class="info-message">📚 Aucun livre dans cette langue.</p>`;
-      return;
-    }
+    if (!livres.length) { cont.innerHTML = `<p class="info-message">📚 Aucun livre dans cette langue.</p>`; return; }
     cont.innerHTML = livres.map(livre => `
       <div class="livre-card">
         ${livre.couverture ? `<div class="livre-cover"><img src="${escapeHtml(livre.couverture)}" alt="Couverture" loading="lazy" style="width:100%; border-radius:8px;"></div>` : ''}
@@ -668,67 +1008,61 @@ async function afficherLivres() {
         <div class="livre-actions"><a href="livre-viewer.html?id=${livre.id}" class="btn-small" target="_blank">📖 Lire l'ouvrage</a></div>
       </div>
     `).join('');
-  } catch(e) {
-    cont.innerHTML = `<p class="error-message">❌ Erreur chargement livres.</p>`;
-  }
+  } catch(e) { cont.innerHTML = `<p class="error-message">❌ Erreur chargement livres.</p>`; }
 }
 
-// ==============================
-// PHOTOS (multilingue)
-// ==============================
+// ------------------------------
+// PHOTOS
+// ------------------------------
 function afficherPhotos() {
   const container = document.getElementById("photosContainer");
   if (!container) return;
-  let html = `<div class="album-header"><h3>📷 Album : Photos historiques</h3><p>Clichés de Charles Grémont et archives communautaires.</p></div><div class="galerie-grid">`;
+  let html = `<div class="album-header"><h3>📷 Album : Photos historiques</h3><p>Clichés de Charles Grémont</p></div><div class="galerie-grid">`;
   imagesGalerie.forEach(img => {
     let titre = "", legende = "";
     if (currentLanguage === "fr") { titre = img.titre_fr; legende = img.legende_fr; }
     else if (currentLanguage === "ar") { titre = img.titre_ar; legende = img.legende_ar; }
     else { titre = img.titre_en; legende = img.legende_en; }
-    html += `
-      <div class="galerie-item">
-        <img src="${escapeHtml(img.fichier)}" alt="${escapeHtml(titre)}" loading="lazy">
-        <div class="galerie-caption">
-          <strong>${escapeHtml(titre)}</strong>
-          <p class="legende">${escapeHtml(legende)}</p>
-          <small class="credit">${escapeHtml(img.credit)}</small>
-        </div>
-      </div>
-    `;
+    html += `<div class="galerie-item"><img src="${escapeHtml(img.fichier)}" alt="${escapeHtml(titre)}" loading="lazy"><div class="galerie-caption"><strong>${escapeHtml(titre)}</strong><p class="legende">${escapeHtml(legende)}</p><small class="credit">${escapeHtml(img.credit)}</small></div></div>`;
   });
   html += `</div>`;
   container.innerHTML = html;
 }
 
-// ==============================
-// AUTRES SECTIONS
-// ==============================
+// ------------------------------
+// AUTRES SECTIONS (audio, vidéos)
+// ------------------------------
 function genererAlbumsAudio() {
   const conteneur = document.getElementById("audioContainer");
   if (conteneur) conteneur.innerHTML = "<p class='info-message'>🎵 Pistes audio à venir prochainement...</p>";
 }
 function genererVideos() { /* à implémenter */ }
 
-// ==============================
-// CHARGEMENT DE LA BASE DE CONNAISSANCES
-// ==============================
+// ------------------------------
+// CHARGEMENT BASE DE CONNAISSANCES
+// ------------------------------
 async function chargerLivresConnaissance() {
   try {
     const response = await fetch('data/livres_connaissance.json');
     if (response.ok) {
       livresConnaissance = await response.json();
       console.log('📚 Base de connaissances chargée');
-    } else {
-      console.warn('⚠️ Fichier livres_connaissance.json non trouvé');
-    }
-  } catch(e) {
-    console.warn('⚠️ Impossible de charger la base de connaissances', e);
+    } else console.warn('livres_connaissance.json non trouvé');
+  } catch(e) { console.warn(e); }
+}
+
+// ------------------------------
+// SERVICE WORKER (PWA)
+// ------------------------------
+function registerServiceWorker() {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js').then(reg => console.log('SW enregistré', reg)).catch(err => console.warn('SW échec', err));
   }
 }
 
-// ==============================
+// ------------------------------
 // NAVIGATION ENTRE SECTIONS
-// ==============================
+// ------------------------------
 function initNavigation() {
   if (!sectionSelector) return;
   const sections = document.querySelectorAll("main > section");
@@ -739,6 +1073,11 @@ function initNavigation() {
     if (id === "audio") genererAlbumsAudio();
     if (id === "photos") afficherPhotos();
     if (id === "videos") genererVideos();
+    if (id === "quiz") chargerQuiz();
+    if (id === "timeline") afficherTimeline();
+    if (id === "map") initialiserCarte();
+    if (id === "search") rechercherPleinTexte();
+    if (id === "dashboard") afficherDashboard();
   }
   sectionSelector.addEventListener("change", (e) => showSection(e.target.value));
   const savedSection = localStorage.getItem("tadaksahak_active_section");
@@ -747,32 +1086,38 @@ function initNavigation() {
   showSection(defaultSection);
 }
 
-// ==============================
+// ------------------------------
 // INITIALISATION PRINCIPALE
-// ==============================
+// ------------------------------
 async function initialiserApplication() {
   initTheme();
+  initThemeSettings();
   initNavigation();
   await chargerDictionnaire();
   await chargerLivresConnaissance();
+  await chargerTimeline();
   chargerHistorique();
+  chargerFavoris();
   genererAlbumsAudio();
+  registerServiceWorker();
+  requestNotificationPermission();
+  showWordNotification();
+  afficherMotDuJour();
+  setInterval(() => afficherMotDuJour(), 3600000); // rafraîchir chaque heure
   
   document.getElementById("btnEnvoyer")?.addEventListener("click", traiterSaisie);
   document.getElementById("chatInput")?.addEventListener("keypress", e => e.key === "Enter" && traiterSaisie());
   btnPrev?.addEventListener("click", navigationPrecedent);
   btnNext?.addEventListener("click", navigationSuivant);
-  document.getElementById("btnGoDico")?.addEventListener("click", () => {
-    if (sectionSelector) { sectionSelector.value = "dictionnaire"; sectionSelector.dispatchEvent(new Event("change")); }
-  });
-  document.getElementById("toggleChatBot")?.addEventListener("click", () => {
-    if (sectionSelector) { sectionSelector.value = "chat"; sectionSelector.dispatchEvent(new Event("change")); }
-  });
+  document.getElementById("btnGoDico")?.addEventListener("click", () => { if (sectionSelector) { sectionSelector.value = "dictionnaire"; sectionSelector.dispatchEvent(new Event("change")); } });
+  document.getElementById("toggleChatBot")?.addEventListener("click", () => { if (sectionSelector) { sectionSelector.value = "chat"; sectionSelector.dispatchEvent(new Event("change")); } });
   
-  document.querySelectorAll('.lang-flag').forEach(btn => {
-    btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
-  });
+  document.querySelectorAll('.lang-flag').forEach(btn => { btn.addEventListener('click', () => setLanguage(btn.dataset.lang)); });
   setLanguage(currentLanguage);
+  
+  // Recherche livres
+  const searchBooksInput = document.getElementById("searchBooksInput");
+  if (searchBooksInput) searchBooksInput.addEventListener("input", () => rechercherPleinTexte());
   
   console.log("✅ Application prête !");
 }
