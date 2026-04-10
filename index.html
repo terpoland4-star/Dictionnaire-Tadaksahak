@@ -1,75 +1,40 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" dir="ltr">
 <head>
-  <!-- =========================
-       MÉTADONNÉES
-  ========================== -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Tadaksahak Learning – Dictionnaire Multilingue</title>
-
   <meta name="description" content="Dictionnaire Tadaksahak multilingue, culture, histoire, médias et mémoire vivante Idaksahak.">
   <meta name="author" content="Hamadine Ag Moctar">
   <meta name="theme-color" content="#005fa3">
-  
-  <!-- SEO -->
   <meta name="keywords" content="Tadaksahak, Idaksahak, dictionnaire, langue, culture, Afrique">
   <meta name="robots" content="index, follow">
-  
-  <!-- Open Graph -->
   <meta property="og:title" content="Tadaksahak Learning">
   <meta property="og:description" content="Dictionnaire et culture Tadaksahak">
   <meta property="og:image" content="images/idaksahak_square.png">
-  <meta property="og:type" content="website">
-
-  <!-- PWA -->
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="images/idaksahak_round.png" type="image/png">
   <link rel="apple-touch-icon" href="images/idaksahak_round.png">
-  
-  <!-- Préchargement critiques -->
   <link rel="preload" href="style.css" as="style">
   <link rel="preload" href="images/idaksahak_round.png" as="image">
-
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
-
-  <!-- Préconnexion (perf) -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-
-  <!-- Sécurité de base -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="format-detection" content="telephone=no">
 </head>
-
 <body>
 
-<!-- =========================
-     SKIP LINK (Accessibilité)
-========================== -->
 <a href="#main-content" class="skip-link">Aller au contenu principal</a>
 
-<!-- =========================
-     NOSCRIPT
-========================== -->
 <noscript>
-  <div class="js-warning" role="alert">
-    ⚠️ JavaScript est nécessaire pour utiliser l'application.
-  </div>
+  <div class="js-warning" role="alert">⚠️ JavaScript est nécessaire pour utiliser l'application.</div>
 </noscript>
 
-<!-- =========================
-     LOADER
-========================== -->
 <div id="loadingOverlay" class="loading-overlay" hidden>
   <div class="spinner"></div>
-  <p>Chargement de l'application...</p>
+  <p data-i18n="loading">Chargement de l'application...</p>
 </div>
 
-<!-- =========================
-     HEADER
-========================== -->
 <header class="site-header">
   <div class="header-container">
     <img src="images/idaksahak_round.png"
@@ -78,274 +43,195 @@
          width="60"
          height="60"
          loading="eager">
-
     <div class="header-text">
       <h1>Tadaksahak Learning</h1>
-      <p class="subtitle">
-        Langue, culture et mémoire vivante du peuple Idaksahak
-      </p>
+      <p class="subtitle" data-i18n="subtitle">Langue, culture et mémoire vivante du peuple Idaksahak</p>
     </div>
   </div>
 
-  <!-- NAVIGATION -->
+  <!-- Sélecteur de langue global -->
+  <div class="lang-selector">
+    <button data-lang="fr" class="lang-flag" aria-label="Français">🇫🇷</button>
+    <button data-lang="ar" class="lang-flag" aria-label="العربية">🇸🇦</button>
+    <button data-lang="en" class="lang-flag" aria-label="English">🇬🇧</button>
+  </div>
+
   <nav class="main-nav" aria-label="Navigation principale">
-    <label for="sectionSelector" class="visually-hidden">Choisir une section</label>
-    <select id="sectionSelector" aria-label="Choisir une section">
-      <option value="accueil">🏠 Accueil</option>
-      <option value="dictionnaire">📖 Dictionnaire</option>
-      <option value="chat">💬 Chat Bot</option>
-      <option value="audio">🎧 Audio</option>
-      <option value="photos">🖼️ Photos</option>
-      <option value="videos">🎥 Vidéos</option>
-      <option value="livres">📚 Livres</option>
-      <option value="rapports">📄 Rapports</option>
-      <option value="actualites">📰 Actualités</option>
-      <option value="quiz">❓ Quiz</option>
+    <label for="sectionSelector" class="visually-hidden" data-i18n="choose_section">Choisir une section</label>
+    <select id="sectionSelector" aria-label="Section">
+      <option value="accueil" data-i18n="nav_home">🏠 Accueil</option>
+      <option value="dictionnaire" data-i18n="nav_dictionary">📖 Dictionnaire</option>
+      <option value="chat" data-i18n="nav_chat">💬 Chat Bot</option>
+      <option value="audio" data-i18n="nav_audio">🎧 Audio</option>
+      <option value="photos" data-i18n="nav_photos">🖼️ Photos</option>
+      <option value="videos" data-i18n="nav_videos">🎥 Vidéos</option>
+      <option value="livres" data-i18n="nav_books">📚 Livres</option>
+      <option value="rapports" data-i18n="nav_reports">📄 Rapports</option>
+      <option value="actualites" data-i18n="nav_news">📰 Actualités</option>
+      <option value="quiz" data-i18n="nav_quiz">❓ Quiz</option>
     </select>
   </nav>
 </header>
 
-<!-- =========================
-     MAIN
-========================== -->
 <main id="main-content">
 
-<!-- =========================
-     ACCUEIL
-========================== -->
+<!-- ACCUEIL -->
 <section id="accueil" class="onglet-contenu" aria-labelledby="accueil-title">
   <div class="hero">
-    <h2 id="accueil-title">Bienvenue</h2>
-    <p>Une plateforme dédiée à la langue et à la culture Tadaksahak.</p>
-
-    <button id="btnGoDico" class="btn btn-primary">
-      📖 Accéder au dictionnaire
-    </button>
+    <h2 id="accueil-title" data-i18n="welcome_title">Bienvenue</h2>
+    <p data-i18n="welcome_subtitle">Une plateforme dédiée à la langue et à la culture Tadaksahak.</p>
+    <button id="btnGoDico" class="btn btn-primary" data-i18n="go_dico">📖 Accéder au dictionnaire</button>
   </div>
 
   <div class="bio-container">
     <img src="images/hamadine_bio.jpg"
-         alt="Hamadine Ag Moctar - Interprète et développeur"
+         alt="Hamadine Ag Moctar"
          class="bio-photo"
          loading="lazy"
          width="150"
          height="150"
          onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22150%22 height=%22150%22%3E%3Crect width=%22150%22 height=%22150%22 fill=%22%23333%22/%3E%3Ctext x=%2250%22 y=%2275%22 fill=%22%23fff%22%3EHamadine%3C/text%3E%3C/svg%3E'">
-
     <div class="bio-text">
       <p><strong>Hamadine Ag Moctar</strong></p>
-      <p>Interprète, développeur et gardien de la mémoire culturelle.</p>
-      <p><em>Une mission : connecter nos mondes.</em></p>
+      <p data-i18n="bio_text1">Interprète, développeur et gardien de la mémoire culturelle.</p>
+      <p><em data-i18n="bio_text2">Une mission : connecter nos mondes.</em></p>
     </div>
   </div>
-  
-  <!-- Statistiques rapides -->
+
   <div class="stats-container" id="statsContainer" hidden>
     <div class="stat-card">
       <span class="stat-number" id="statMots">0</span>
-      <span class="stat-label">mots</span>
+      <span class="stat-label" data-i18n="stat_words">mots</span>
     </div>
     <div class="stat-card">
       <span class="stat-number" id="statAudios">0</span>
-      <span class="stat-label">audios</span>
+      <span class="stat-label" data-i18n="stat_audios">audios</span>
     </div>
     <div class="stat-card">
       <span class="stat-number" id="statLivres">0</span>
-      <span class="stat-label">livres</span>
+      <span class="stat-label" data-i18n="stat_books">livres</span>
     </div>
   </div>
 </section>
 
-<!-- =========================
-     DICTIONNAIRE
-========================== -->
+<!-- DICTIONNAIRE -->
 <section id="dictionnaire" class="onglet-contenu" aria-labelledby="dico-title" hidden>
-  <h2 id="dico-title">📖 Dictionnaire Tadaksahak</h2>
+  <h2 id="dico-title" data-i18n="dictionary_title">📖 Dictionnaire Tadaksahak</h2>
 
   <div class="search-section">
     <div class="search-wrapper">
-      <input id="searchBar"
-             type="search"
-             placeholder="Rechercher un mot…"
-             autocomplete="off"
-             aria-label="Rechercher un mot">
+      <input id="searchBar" type="search" placeholder="Rechercher un mot…" autocomplete="off" aria-label="Rechercher">
       <button id="clearSearch" class="clear-search" aria-label="Effacer" hidden>✖</button>
     </div>
     <ul id="suggestions" class="suggestions-list" role="listbox"></ul>
   </div>
 
-  <!-- Bloc fiche mot -->
   <div class="result-section">
     <div id="ficheMot">
       <h2 id="motTexte">—</h2>
       <div id="definition">—</div>
-      
-      <audio id="audioLecteur" controls hidden preload="none">
-        Votre navigateur ne supporte pas l'audio.
-      </audio>
-
+      <audio id="audioLecteur" controls hidden preload="none">Votre navigateur ne supporte pas l'audio.</audio>
       <div class="navigation-mots">
-        <button id="btnPrev" class="nav-btn" aria-label="Mot précédent" disabled>⬅️ Précédent</button>
+        <button id="btnPrev" class="nav-btn" disabled data-i18n="prev">⬅️ Précédent</button>
         <span id="compteurMot" class="compteur">0 / 0</span>
-        <button id="btnNext" class="nav-btn" aria-label="Mot suivant" disabled>Suivant ➡️</button>
+        <button id="btnNext" class="nav-btn" disabled data-i18n="next">Suivant ➡️</button>
       </div>
-    </div>
-
-    <div class="lang-switch" role="group" aria-label="Langue de la définition">
-      <button data-lang="fr" class="lang-btn active" aria-pressed="true">🇫🇷 Français</button>
-      <button data-lang="en" class="lang-btn" aria-pressed="false">🇬🇧 English</button>
     </div>
   </div>
 
-  <!-- Index alphabétique -->
   <div class="alphabet-section">
-    <h3>Index alphabétique</h3>
+    <h3 data-i18n="alphabet_index">Index alphabétique</h3>
     <div id="alphabetIndex" class="alphabet-buttons" role="group" aria-label="Lettres alphabétiques"></div>
     <div id="wordList" class="word-list" role="list" aria-label="Liste des mots"></div>
   </div>
 </section>
 
-<!-- =========================
-     CHAT
-========================== -->
+<!-- CHAT -->
 <section id="chat" class="onglet-contenu" aria-labelledby="chat-title" hidden>
-  <h2 id="chat-title">💬 Chat Bot Hamadine</h2>
-  
+  <h2 id="chat-title" data-i18n="chat_title">💬 Chat Bot Hamadine</h2>
   <div class="chat-container">
     <div id="chatWindow" class="chatbox" role="log" aria-live="polite">
       <div class="message bot">
-        <strong>🤖 Hamadine :</strong> Bonjour ! Je suis votre guide. Que souhaitez-vous apprendre ?
+        <strong>🤖 Hamadine :</strong> <span data-i18n="chat_welcome_msg">Bonjour ! Je suis votre guide. Que souhaitez-vous apprendre ?</span>
       </div>
     </div>
-
     <div class="chat-input">
-      <input id="chatInput" 
-             type="text" 
-             placeholder="Écrivez votre message..." 
-             aria-label="Message"
-             autocomplete="off">
-      <button id="btnEnvoyer" class="btn-send">Envoyer 📤</button>
+      <input id="chatInput" type="text" placeholder="Écrivez votre message..." aria-label="Message" autocomplete="off">
+      <button id="btnEnvoyer" class="btn-send" data-i18n="send">Envoyer 📤</button>
     </div>
-    
     <div class="chat-suggestions">
-      <button class="chat-suggestion">📖 Mot Tadaksahak</button>
-      <button class="chat-suggestion">📚 Histoire</button>
-      <button class="chat-suggestion">🎵 Culture</button>
+      <button class="chat-suggestion" data-i18n="sugg_word">📖 Mot Tadaksahak</button>
+      <button class="chat-suggestion" data-i18n="sugg_history">📚 Histoire</button>
+      <button class="chat-suggestion" data-i18n="sugg_culture">🎵 Culture</button>
     </div>
   </div>
 </section>
 
-<!-- =========================
-     AUDIO
-========================== -->
+<!-- AUDIO -->
 <section id="audio" class="onglet-contenu" aria-labelledby="audio-title" hidden>
-  <h2 id="audio-title">🎧 Albums Audio</h2>
+  <h2 id="audio-title" data-i18n="audio_title">🎧 Albums Audio</h2>
   <div id="audioContainer" class="audio-grid"></div>
 </section>
 
-<!-- =========================
-     PHOTOS
-========================== -->
+<!-- PHOTOS -->
 <section id="photos" class="onglet-contenu" aria-labelledby="photos-title" hidden>
-  <h2 id="photos-title">🖼️ Galerie Photos</h2>
-  <div id="photosContainer" class="grid">
-    <p class="info-message">📸 Galerie photo en préparation...</p>
-  </div>
+  <h2 id="photos-title" data-i18n="photos_title">🖼️ Galerie Photos</h2>
+  <div id="photosContainer" class="grid"></div>
 </section>
 
-<!-- =========================
-     VIDEOS
-========================== -->
+<!-- VIDEOS -->
 <section id="videos" class="onglet-contenu" aria-labelledby="videos-title" hidden>
-  <h2 id="videos-title">🎥 Vidéos</h2>
-
+  <h2 id="videos-title" data-i18n="videos_title">🎥 Vidéos</h2>
   <div class="filters">
-    <label for="filtreVideos">Trier par :</label>
+    <label for="filtreVideos" data-i18n="sort_by">Trier par :</label>
     <select id="filtreVideos" aria-label="Filtrer les vidéos">
-      <option value="nouveau">📅 Plus récentes</option>
-      <option value="ancien">📅 Plus anciennes</option>
+      <option value="nouveau" data-i18n="sort_new">📅 Plus récentes</option>
+      <option value="ancien" data-i18n="sort_old">📅 Plus anciennes</option>
     </select>
   </div>
-
-  <div id="videosContainer" class="grid">
-    <p class="info-message">🎬 Vidéos à venir...</p>
-  </div>
+  <div id="videosContainer" class="grid"></div>
 </section>
 
-<!-- =========================
-     LIVRES (VERSION CORRIGÉE - 2 LIVRES)
-========================== -->
+<!-- LIVRES -->
 <section id="livres" class="onglet-contenu" aria-labelledby="livres-title" hidden>
-  <h2 id="livres-title">📚 Bibliothèque</h2>
-
+  <h2 id="livres-title" data-i18n="books_title">📚 Bibliothèque</h2>
   <div class="filters">
-    <input id="rechercheLivres" 
-           type="search" 
-           placeholder="Rechercher un livre..."
-           aria-label="Rechercher">
-    
+    <input id="rechercheLivres" type="search" placeholder="Rechercher un livre..." aria-label="Rechercher">
     <select id="selectThemeLivres" aria-label="Thème">
-      <option value="">📚 Tous les thèmes</option>
-      <option value="linguistique">🔤 Linguistique</option>
-      <option value="histoire">📖 Histoire</option>
-      <option value="culture">🎭 Culture</option>
-      <option value="politique">🏛️ Politique</option>
+      <option value="" data-i18n="all_themes">📚 Tous les thèmes</option>
+      <option value="linguistique" data-i18n="theme_linguistics">🔤 Linguistique</option>
+      <option value="histoire" data-i18n="theme_history">📖 Histoire</option>
+      <option value="culture" data-i18n="theme_culture">🎭 Culture</option>
+      <option value="politique" data-i18n="theme_politics">🏛️ Politique</option>
     </select>
   </div>
- <!-- Container pour les autres livres (données JSON dynamiques) -->
   <div id="livresContainer" class="books-grid"></div>
 </section>
 
-<!-- =========================
-     RAPPORTS
-========================== -->
+<!-- RAPPORTS -->
 <section id="rapports" class="onglet-contenu" aria-labelledby="rapports-title" hidden>
-  <h2 id="rapports-title">📄 Rapports et Documents</h2>
-  <div class="coming-soon">
-    <p>📑 Rapports culturels, linguistiques et communautaires bientôt disponibles.</p>
-  </div>
+  <h2 id="rapports-title" data-i18n="reports_title">📄 Rapports et Documents</h2>
+  <div class="coming-soon"><p data-i18n="reports_coming">📑 Rapports culturels, linguistiques et communautaires bientôt disponibles.</p></div>
 </section>
 
-<!-- =========================
-     ACTUALITÉS
-========================== -->
+<!-- ACTUALITÉS -->
 <section id="actualites" class="onglet-contenu" aria-labelledby="actualites-title" hidden>
-  <h2 id="actualites-title">📰 Actualités</h2>
-  <div class="coming-soon">
-    <p>📰 Restez connectés ! Les actualités arrivent prochainement.</p>
-  </div>
+  <h2 id="actualites-title" data-i18n="news_title">📰 Actualités</h2>
+  <div class="coming-soon"><p data-i18n="news_coming">📰 Restez connectés ! Les actualités arrivent prochainement.</p></div>
 </section>
 
-<!-- =========================
-     QUIZ
-========================== -->
+<!-- QUIZ -->
 <section id="quiz" class="onglet-contenu" aria-labelledby="quiz-title" hidden>
-  <h2 id="quiz-title">❓ Quiz Culturel</h2>
-  <div class="coming-soon">
-    <p>🎯 Testez vos connaissances sur la culture Tadaksahak. Bientôt disponible !</p>
-  </div>
+  <h2 id="quiz-title" data-i18n="quiz_title">❓ Quiz Culturel</h2>
+  <div class="coming-soon"><p data-i18n="quiz_coming">🎯 Testez vos connaissances sur la culture Tadaksahak. Bientôt disponible !</p></div>
 </section>
 
 </main>
 
-<!-- =========================
-     CHAT FLOTTANT
-========================== -->
-<button id="toggleChatBot"
-        class="floating-chat-btn"
-        aria-label="Ouvrir le chat bot"
-        title="Assistant Hamadine">
-  💬
-</button>
+<button id="toggleChatBot" class="floating-chat-btn" aria-label="Ouvrir le chat bot" title="Assistant Hamadine">💬</button>
 
-<!-- =========================
-     TOAST NOTIFICATIONS
-========================== -->
 <div id="toast" class="toast" role="alert" aria-live="assertive" hidden></div>
 
-<!-- =========================
-     FOOTER CORRIGÉ
-========================== -->
 <footer class="site-footer">
   <div class="footer-content">
     <p>&copy; 2024 Tadaksahak Learning - Hamadine Ag Moctar</p>
@@ -353,8 +239,6 @@
   </div>
 </footer>
 
-<!-- Application principale -->
 <script src="app.js"></script>
-
 </body>
 </html>
