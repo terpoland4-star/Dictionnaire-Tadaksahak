@@ -375,8 +375,14 @@ function showToast(message, type = "info") {
   setTimeout(() => { toast.hidden = true; }, 3000);
 }
 
-function showLoader() { document.getElementById("loadingOverlay").hidden = false; }
-function hideLoader() { document.getElementById("loadingOverlay").hidden = true; }
+function showLoader() { 
+  const loader = document.getElementById("loadingOverlay");
+  if (loader) loader.hidden = false;
+}
+function hideLoader() { 
+  const loader = document.getElementById("loadingOverlay");
+  if (loader) loader.hidden = true;
+}
 
 // ------------------------------
 // THÈMES PERSONNALISABLES (police, taille, contraste)
@@ -568,12 +574,15 @@ async function chargerDictionnaire() {
     if (!response.ok) throw new Error();
     vocabulaire = await response.json();
   } catch(e) {
+    console.warn("Erreur chargement dictionnaire, utilisation fallback", e);
     vocabulaire = [{ mot: "Báy", cat: "vt.", fr: "Pouvoir (faire)", en: "Able, to be" }];
   }
   motsListe = vocabulaire.map((item, idx) => ({ ...item, index: idx }));
   if (vocabulaire.length) {
-    document.getElementById("statMots").textContent = vocabulaire.length;
-    document.getElementById("statsContainer").hidden = false;
+    const statMots = document.getElementById("statMots");
+    if (statMots) statMots.textContent = vocabulaire.length;
+    const statsContainer = document.getElementById("statsContainer");
+    if (statsContainer) statsContainer.hidden = false;
     construireIndexAlphabet();
     if (vocabulaire[0]) afficherMot(vocabulaire[0]);
   }
@@ -816,7 +825,7 @@ async function chargerQuiz() {
     if (!response.ok) throw new Error();
     quizData = await response.json();
   } catch(e) {
-    console.warn("Quiz non disponible");
+    console.warn("Quiz non disponible, utilisation fallback", e);
     quizData = { fr: [{ question: "Exemple ?", options: ["A","B","C"], reponse: 0 }] };
   }
   const container = document.getElementById("quizContainer");
@@ -878,6 +887,7 @@ async function chargerTimeline() {
     if (!response.ok) throw new Error();
     timelineData = await response.json();
   } catch(e) {
+    console.warn("Timeline non disponible", e);
     timelineData = [];
   }
 }
@@ -1005,7 +1015,10 @@ async function afficherLivres() {
         <div class="livre-actions"><a href="livre-viewer.html?id=${livre.id}" class="btn-small" target="_blank">📖 Lire l'ouvrage</a></div>
       </div>
     `).join('');
-  } catch(e) { cont.innerHTML = `<p class="error-message">❌ Erreur chargement livres.</p>`; }
+  } catch(e) { 
+    console.error("Erreur chargement livres", e);
+    cont.innerHTML = `<p class="error-message">❌ Erreur chargement livres.</p>`; 
+  }
 }
 
 // ------------------------------
@@ -1044,8 +1057,14 @@ async function chargerLivresConnaissance() {
     if (response.ok) {
       livresConnaissance = await response.json();
       console.log('📚 Base de connaissances chargée');
-    } else console.warn('livres_connaissance.json non trouvé');
-  } catch(e) { console.warn(e); }
+    } else {
+      console.warn('livres_connaissance.json non trouvé');
+      livresConnaissance = { livres: [] };
+    }
+  } catch(e) { 
+    console.warn(e);
+    livresConnaissance = { livres: [] };
+  }
 }
 
 // ------------------------------
@@ -1053,7 +1072,6 @@ async function chargerLivresConnaissance() {
 // ------------------------------
 function registerServiceWorker() {
   if ('serviceWorker' in navigator) {
-    // Utiliser le chemin absolu avec le sous-dossier
     const swUrl = '/Dictionnaire-Tadaksahak/sw.js';
     fetch(swUrl, { method: 'HEAD' })
       .then(response => {
@@ -1096,38 +1114,50 @@ function initNavigation() {
 }
 
 // ------------------------------
-// INITIALISATION PRINCIPALE
+// INITIALISATION PRINCIPALE (avec gestion des erreurs et finally)
 // ------------------------------
 async function initialiserApplication() {
-  initTheme();
-  initThemeSettings();
-  initNavigation();
-  await chargerDictionnaire();
-  await chargerLivresConnaissance();
-  await chargerTimeline();
-  chargerHistorique();
-  chargerFavoris();
-  genererAlbumsAudio();
-  registerServiceWorker();
-  requestNotificationPermission();
-  showWordNotification();
-  afficherMotDuJour();
-  setInterval(() => afficherMotDuJour(), 3600000);
-  
-  document.getElementById("btnEnvoyer")?.addEventListener("click", traiterSaisie);
-  document.getElementById("chatInput")?.addEventListener("keypress", e => e.key === "Enter" && traiterSaisie());
-  btnPrev?.addEventListener("click", navigationPrecedent);
-  btnNext?.addEventListener("click", navigationSuivant);
-  document.getElementById("btnGoDico")?.addEventListener("click", () => { if (sectionSelector) { sectionSelector.value = "dictionnaire"; sectionSelector.dispatchEvent(new Event("change")); } });
-  document.getElementById("toggleChatBot")?.addEventListener("click", () => { if (sectionSelector) { sectionSelector.value = "chat"; sectionSelector.dispatchEvent(new Event("change")); } });
-  
-  document.querySelectorAll('.lang-flag').forEach(btn => { btn.addEventListener('click', () => setLanguage(btn.dataset.lang)); });
-  setLanguage(currentLanguage);
-  
-  const searchBooksInput = document.getElementById("searchBooksInput");
-  if (searchBooksInput) searchBooksInput.addEventListener("input", () => rechercherPleinTexte());
-  
-  console.log("✅ Application prête !");
+  try {
+    initTheme();
+    initThemeSettings();
+    initNavigation();
+    
+    // Chargement des données (avec gestion d'erreur interne à chaque fonction)
+    await chargerDictionnaire();
+    await chargerLivresConnaissance();
+    await chargerTimeline();
+    
+    chargerHistorique();
+    chargerFavoris();
+    genererAlbumsAudio();
+    registerServiceWorker();
+    requestNotificationPermission();
+    showWordNotification();
+    afficherMotDuJour();
+    setInterval(() => afficherMotDuJour(), 3600000);
+    
+    document.getElementById("btnEnvoyer")?.addEventListener("click", traiterSaisie);
+    document.getElementById("chatInput")?.addEventListener("keypress", e => e.key === "Enter" && traiterSaisie());
+    btnPrev?.addEventListener("click", navigationPrecedent);
+    btnNext?.addEventListener("click", navigationSuivant);
+    document.getElementById("btnGoDico")?.addEventListener("click", () => { if (sectionSelector) { sectionSelector.value = "dictionnaire"; sectionSelector.dispatchEvent(new Event("change")); } });
+    document.getElementById("toggleChatBot")?.addEventListener("click", () => { if (sectionSelector) { sectionSelector.value = "chat"; sectionSelector.dispatchEvent(new Event("change")); } });
+    
+    document.querySelectorAll('.lang-flag').forEach(btn => { btn.addEventListener('click', () => setLanguage(btn.dataset.lang)); });
+    setLanguage(currentLanguage);
+    
+    const searchBooksInput = document.getElementById("searchBooksInput");
+    if (searchBooksInput) searchBooksInput.addEventListener("input", () => rechercherPleinTexte());
+    
+    console.log("✅ Application prête !");
+  } catch (error) {
+    console.error("Erreur critique lors de l'initialisation :", error);
+    showToast("Erreur de chargement, vérifiez la console", "error");
+  } finally {
+    // Force la disparition du loader quoi qu'il arrive
+    hideLoader();
+  }
 }
 
+// Démarrage
 initialiserApplication();
