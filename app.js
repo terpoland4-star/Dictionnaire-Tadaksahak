@@ -1,6 +1,6 @@
 // ==============================
 // APPLICATION TADAKSAHAK LEARNING
-// VERSION CORRIGÉE (loader forcé)
+// VERSION FINALE (loader forcé)
 // ==============================
 
 console.log("🚀 Démarrage de l'application complète...");
@@ -375,15 +375,27 @@ function showToast(message, type = "info") {
   setTimeout(() => { toast.hidden = true; }, 3000);
 }
 
-function showLoader() { 
+// Affiche le loader
+function showLoader() {
   const loader = document.getElementById("loadingOverlay");
-  if (loader) loader.hidden = false;
+  if (loader) {
+    loader.hidden = false;
+    loader.style.display = 'flex';
+  }
 }
-function hideLoader() { 
+
+// Cache le loader de manière définitive
+function hideLoader() {
   const loader = document.getElementById("loadingOverlay");
   if (loader) {
     loader.hidden = true;
-    loader.style.display = 'none'; // Force le masquage
+    loader.style.display = 'none';
+    // Supprimer du DOM après 200ms pour libérer la mémoire
+    setTimeout(() => {
+      if (loader && loader.parentNode) loader.remove();
+    }, 200);
+  } else {
+    console.warn("Loader introuvable, mais on continue");
   }
 }
 
@@ -1118,6 +1130,9 @@ function initNavigation() {
 // INITIALISATION PRINCIPALE (avec gestion des erreurs et finally)
 // ------------------------------
 async function initialiserApplication() {
+  // Afficher le loader au tout début
+  showLoader();
+  
   try {
     initTheme();
     initThemeSettings();
@@ -1157,8 +1172,10 @@ async function initialiserApplication() {
   } finally {
     // Force la disparition du loader quoi qu'il arrive
     hideLoader();
-    // Sécurité supplémentaire : masquer après 500ms au cas où
+    // Sécurité supplémentaire : masquer après 500ms au cas où le DOM n'était pas prêt
     setTimeout(hideLoader, 500);
+    // Ultime secours : masquer après 2 secondes
+    setTimeout(hideLoader, 2000);
   }
 }
 
