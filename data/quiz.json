@@ -1,0 +1,248 @@
+{
+  "fr": [
+    {
+      "question": "Que signifie le mot « Tadaksahak » ?",
+      "options": ["Langue des Idaksahak", "Peuple touareg", "Région du Mali", "Danse traditionnelle"],
+      "reponse": 0
+    },
+    {
+      "question": "Où vivent principalement les Idaksahak ?",
+      "options": ["Tombouctou et Kidal", "Ménaka et Gao", "Bamako et Ségou", "Kayes et Sikasso"],
+      "reponse": 1
+    },
+    {
+      "question": "Quelle langue les Idaksahak parlent-ils ?",
+      "options": ["Tamasheq pur", "Tadaksahak (mélange tamasheq-songhay)", "Bambara", "Sonrhaï uniquement"],
+      "reponse": 1
+    },
+    {
+      "question": "Quel événement de 1990 marque un tournant pour les Idaksahak ?",
+      "options": ["La création du MNLA", "La rébellion armée contre l'État malien", "L'indépendance du Mali", "L'arrivée des colons français"],
+      "reponse": 1
+    },
+    {
+      "question": "Qui est l'auteur du livre « L'émancipation politique des Idaksahak » ?",
+      "options": ["Hamadine Ag Moctar", "Charles Grémont", "Thomas Sankara", "Moussa Ag Acharatouman"],
+      "reponse": 1
+    },
+    {
+      "question": "Quelle est la signification du logo Idaksahak (homme lisant, épée, dromadaires) ?",
+      "options": ["Puissance militaire", "Économie, religion et défense", "Nomadisme seulement", "Agriculture"],
+      "reponse": 1
+    },
+    {
+      "question": "En quelle année a été créé le Mouvement pour le salut de l'Azawad (MSA) ?",
+      "options": ["2012", "2014", "2016", "2018"],
+      "reponse": 2
+    },
+    {
+      "question": "Quel est le nom du chef historique de la fraction Idoguiritane ?",
+      "options": ["Ayouba", "Mohamed Maïga", "Morou", "Askia Daoud"],
+      "reponse": 0
+    },
+    {
+      "question": "Quelle est la particularité de la langue tadaksahak ?",
+      "options": ["Elle n'a pas de pronoms féminins", "Elle est purement arabe", "Elle utilise l'alphabet cyrillique", "C'est une langue tonale"],
+      "reponse": 0
+    },
+    {
+      "question": "Quel est le rôle traditionnel des Idaksahak vis-à-vis des Imajeghen ?",
+      "options": ["Ils étaient les guerriers dominants", "Ils étaient un groupe subalterne et pacifique", "Ils étaient les commerçants", "Ils étaient les agriculteurs"],
+      "reponse": 1
+    },
+    {
+      "question": "Qui était Mohamed Maïga ?",
+      "options": ["Un chef de guerre", "Un journaliste ami de Thomas Sankara", "Un poète touareg", "Un sultan songhaï"],
+      "reponse": 1
+    },
+    {
+      "question": "Que signifie « Imajeghen » ?",
+      "options": ["Les érudits", "Les guerriers dominants chez les Touaregs", "Les femmes touarègues", "Les musiciens"],
+      "reponse": 1
+    },
+    {
+      "question": "Quel empire précolonial est associé à Askia Daoud ?",
+      "options": ["Empire du Ghana", "Empire du Mali", "Empire songhaï", "Empire peul"],
+      "reponse": 2
+    },
+    {
+      "question": "Quelle année a eu lieu l'humiliation de Morou de Karma par les colons français ?",
+      "options": ["1905", "1914", "1898", "1920"],
+      "reponse": 0
+    },
+    {
+      "question": "Quel est le nom du président burkinabè ami de Mohamed Maïga ?",
+      "options": ["Blaise Compaoré", "Thomas Sankara", "Moussa Traoré", "Alpha Oumar Konaré"],
+      "reponse": 1
+    },
+    {
+      "question": "Quel est le principal défi contemporain des Touaregs maliens selon le livre « Les Périls d'une Époque Touarègue » ?",
+      "options": ["La sécheresse", "La marginalisation et les conflits armés", "Le manque de pétrole", "L'analphabétisme"],
+      "reponse": 1
+    }
+  ],
+  "ar": [
+    {
+      "question": "ماذا تعني كلمة « تدكساهق »؟",
+      "options": ["لغة الإدكساهق", "شعب الطوارق", "منطقة في مالي", "رقصة تقليدية"],
+      "reponse": 0
+    },
+    {
+      "question": "أين يعيش الإدكساهق بشكل أساسي؟",
+      "options": ["تمبكتو وكيدال", "ميناكا وغاو", "باماكو وسيغو", "كايس وسيكاسو"],
+      "reponse": 1
+    },
+    {
+      "question": "ما هي اللغة التي يتحدث بها الإدكساهق؟",
+      "options": ["تماشق خالص", "تدكساهق (خليط من تماشق وسونراي)", "بامبارا", "سونراي فقط"],
+      "reponse": 1
+    },
+    {
+      "question": "أي حدث في 1990 مثل نقطة تحول للإدكساهق؟",
+      "options": ["إنشاء MNLA", "التمرد المسلح ضد الدولة المالية", "استقلال مالي", "وصول المستعمرين الفرنسيين"],
+      "reponse": 1
+    },
+    {
+      "question": "من هو مؤلف كتاب « التحرر السياسي للإدكساهق »؟",
+      "options": ["حمدين أغ مكتار", "شارل غريمون", "توماس سانكارا", "موسى أغ أشاراتومان"],
+      "reponse": 1
+    },
+    {
+      "question": "ما هي دلالات شعار الإدكساهق (رجل يقرأ، سيف، جمال)؟",
+      "options": ["قوة عسكرية", "اقتصاد، دين ودفاع", "ترحال فقط", "زراعة"],
+      "reponse": 1
+    },
+    {
+      "question": "في أي عام تأسست حركة إنقاذ أزواد (MSA)؟",
+      "options": ["2012", "2014", "2016", "2018"],
+      "reponse": 2
+    },
+    {
+      "question": "ما اسم الشيخ التاريخي لفصيلة إيدوغيريتان؟",
+      "options": ["أيوبا", "محمد مايغا", "مورو", "أسكيا داود"],
+      "reponse": 0
+    },
+    {
+      "question": "ما هي خصوصية لغة تدكساهق؟",
+      "options": ["لا تستخدم ضمائر المؤنث", "عربية خالصة", "تستخدم الأبجدية السيريلية", "لغة نغمية"],
+      "reponse": 0
+    },
+    {
+      "question": "ما هو الدور التقليدي للإدكساهق تجاه إماجيغن؟",
+      "options": ["كانوا المحاربين المسيطرين", "كانوا مجموعة تابعة وسلمية", "كانوا التجار", "كانوا المزارعين"],
+      "reponse": 1
+    },
+    {
+      "question": "من هو محمد مايغا؟",
+      "options": ["قائد حرب", "صحفي صديق لتوماس سانكارا", "شاعر طوارق", "سلطان سونغهاي"],
+      "reponse": 1
+    },
+    {
+      "question": "ماذا تعني « إماجيغن »؟",
+      "options": ["العلماء", "المحاربون المسيطرون لدى الطوارق", "نساء الطوارق", "الموسيقيون"],
+      "reponse": 1
+    },
+    {
+      "question": "أي إمبراطورية قبل استعمارية ارتبطت بأسكيا داود؟",
+      "options": ["إمبراطورية غانا", "إمبراطورية مالي", "إمبراطورية سونغهاي", "إمبراطورية الفولاني"],
+      "reponse": 2
+    },
+    {
+      "question": "في أي عام وقع إذلال مورو أوف كارما على يد المستعمرين الفرنسيين؟",
+      "options": ["1905", "1914", "1898", "1920"],
+      "reponse": 0
+    },
+    {
+      "question": "ما اسم الرئيس البوركينابي صديق محمد مايغا؟",
+      "options": ["بليز كومباوري", "توماس سانكارا", "موسى تراوري", "ألفا عمر كوناري"],
+      "reponse": 1
+    },
+    {
+      "question": "ما هو التحدي الرئيسي المعاصر لطوارق مالي حسب كتاب « مخاطر عصر طوارق في مالي »؟",
+      "options": ["الجفاف", "التهميش والصراعات المسلحة", "نقص النفط", "الأمية"],
+      "reponse": 1
+    }
+  ],
+  "en": [
+    {
+      "question": "What does the word 'Tadaksahak' mean?",
+      "options": ["Language of the Idaksahak", "Tuareg people", "Region of Mali", "Traditional dance"],
+      "reponse": 0
+    },
+    {
+      "question": "Where do the Idaksahak mainly live?",
+      "options": ["Timbuktu and Kidal", "Ménaka and Gao", "Bamako and Ségou", "Kayes and Sikasso"],
+      "reponse": 1
+    },
+    {
+      "question": "What language do the Idaksahak speak?",
+      "options": ["Pure Tamasheq", "Tadaksahak (Tamasheq-Songhay mix)", "Bambara", "Songhay only"],
+      "reponse": 1
+    },
+    {
+      "question": "Which 1990 event marked a turning point for the Idaksahak?",
+      "options": ["Creation of MNLA", "Armed rebellion against the Malian state", "Independence of Mali", "Arrival of French colonists"],
+      "reponse": 1
+    },
+    {
+      "question": "Who wrote 'The Political Emancipation of the Idaksahak'?",
+      "options": ["Hamadine Ag Moctar", "Charles Grémont", "Thomas Sankara", "Moussa Ag Acharatouman"],
+      "reponse": 1
+    },
+    {
+      "question": "What does the Idaksahak logo (reading man, sword, camels) symbolize?",
+      "options": ["Military power", "Economy, religion and defense", "Only nomadism", "Agriculture"],
+      "reponse": 1
+    },
+    {
+      "question": "In which year was the Movement for the Salvation of Azawad (MSA) created?",
+      "options": ["2012", "2014", "2016", "2018"],
+      "reponse": 2
+    },
+    {
+      "question": "What is the name of the historical chief of the Idoguiritane fraction?",
+      "options": ["Ayouba", "Mohamed Maïga", "Morou", "Askia Daoud"],
+      "reponse": 0
+    },
+    {
+      "question": "What is special about the Tadaksahak language?",
+      "options": ["It has no feminine pronouns", "It is purely Arabic", "It uses Cyrillic alphabet", "It is a tonal language"],
+      "reponse": 0
+    },
+    {
+      "question": "What was the traditional role of the Idaksahak towards the Imajeghen?",
+      "options": ["They were the dominant warriors", "They were a subordinate and peaceful group", "They were the traders", "They were the farmers"],
+      "reponse": 1
+    },
+    {
+      "question": "Who was Mohamed Maïga?",
+      "options": ["A war chief", "A journalist and friend of Thomas Sankara", "A Tuareg poet", "A Songhai sultan"],
+      "reponse": 1
+    },
+    {
+      "question": "What does 'Imajeghen' mean?",
+      "options": ["The scholars", "The dominant warrior class among the Tuaregs", "Tuareg women", "Musicians"],
+      "reponse": 1
+    },
+    {
+      "question": "Which precolonial empire is associated with Askia Daoud?",
+      "options": ["Ghana Empire", "Mali Empire", "Songhai Empire", "Fulani Empire"],
+      "reponse": 2
+    },
+    {
+      "question": "In which year did the humiliation of Morou of Karma by French colonists take place?",
+      "options": ["1905", "1914", "1898", "1920"],
+      "reponse": 0
+    },
+    {
+      "question": "Who was the Burkinabè president and friend of Mohamed Maïga?",
+      "options": ["Blaise Compaoré", "Thomas Sankara", "Moussa Traoré", "Alpha Oumar Konaré"],
+      "reponse": 1
+    },
+    {
+      "question": "What is the main contemporary challenge of Malian Tuaregs according to 'The Perils of a Tuareg Era in Mali'?",
+      "options": ["Drought", "Marginalization and armed conflicts", "Lack of oil", "Illiteracy"],
+      "reponse": 1
+    }
+  ]
+}
