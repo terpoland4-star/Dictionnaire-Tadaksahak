@@ -987,3 +987,189 @@ body.high-contrast .word-of-day {
   body { background: white; color: black; }
   .onglet-contenu { page-break-inside: avoid; }
 }
+
+/* ============================================
+   STYLES POUR L'ARTICLE DE PRÉSENTATION
+   Idaksahak : entre mythes, histoire et résilience
+   ============================================ */
+
+.article-preview {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin: 30px auto;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+body.dark .article-preview {
+    background: #2d2d2d;
+    color: #e0e0e0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+body.sepia .article-preview {
+    background: #faf0e1;
+    color: #5b4636;
+}
+
+.preview-header {
+    padding: 30px 35px 20px 35px;
+    border-bottom: 2px solid #c44536;
+}
+
+.preview-categorie {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #c44536;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.preview-title {
+    font-size: 28px;
+    color: #2c3e2f;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+body.dark .preview-title {
+    color: #d4c9b8;
+}
+
+.preview-sous-titre {
+    font-size: 17px;
+    color: #4a627a;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+body.dark .preview-sous-titre {
+    color: #b0a88a;
+}
+
+.preview-meta {
+    font-size: 13px;
+    color: #6c7e8f;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 12px;
+    border-top: 1px solid #e2e8f0;
+}
+
+body.dark .preview-meta {
+    color: #9a8c6f;
+    border-top-color: #4a4a4a;
+}
+
+.preview-resume {
+    background: #f8f5f0;
+    padding: 20px 35px;
+    margin: 0 35px 25px 35px;
+    border-left: 5px solid #c44536;
+    border-radius: 0 12px 12px 0;
+    font-size: 15px;
+}
+
+body.dark .preview-resume {
+    background: #3a3a3a;
+}
+
+.preview-content {
+    padding: 0 35px;
+}
+
+.preview-section {
+    margin-bottom: 28px;
+}
+
+.preview-section h3 {
+    font-size: 20px;
+    color: #2c3e2f;
+    margin-bottom: 12px;
+    font-weight: 600;
+    border-left: 4px solid #c44536;
+    padding-left: 15px;
+}
+
+body.dark .preview-section h3 {
+    color: #d4c9b8;
+}
+
+.preview-section p {
+    font-size: 16px;
+    line-height: 1.7;
+    text-align: justify;
+    margin-bottom: 0;
+}
+
+.preview-footer {
+    padding: 20px 35px 35px 35px;
+    border-top: 1px solid #e2e8f0;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+body.dark .preview-footer {
+    border-top-color: #4a4a4a;
+}
+
+.preview-signature {
+    font-size: 14px;
+    font-style: italic;
+    color: #4a627a;
+}
+
+body.dark .preview-signature {
+    color: #b0a88a;
+}
+
+.btn-lire-suite {
+    background: #c44536;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.btn-lire-suite:hover {
+    background: #a03428;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(196, 69, 54, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .preview-header {
+        padding: 20px 20px 15px 20px;
+    }
+    .preview-resume {
+        margin: 0 20px 20px 20px;
+        padding: 15px 20px;
+    }
+    .preview-content {
+        padding: 0 20px;
+    }
+    .preview-footer {
+        padding: 20px 20px 30px 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+    .preview-title {
+        font-size: 22px;
+    }
+    .preview-section h3 {
+        font-size: 18px;
+    }
+}
