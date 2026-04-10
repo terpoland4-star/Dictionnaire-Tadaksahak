@@ -1,6 +1,6 @@
 // ==============================
 // APPLICATION TADAKSAHAK LEARNING
-// VERSION COMPLÈTE (PWA, QUIZ, TIMELINE, CARTE, RECHERCHE, THÈMES, MOT DU JOUR, PARTAGE, TABLEAU DE BORD)
+// VERSION CORRIGÉE (loader forcé)
 // ==============================
 
 console.log("🚀 Démarrage de l'application complète...");
@@ -381,7 +381,10 @@ function showLoader() {
 }
 function hideLoader() { 
   const loader = document.getElementById("loadingOverlay");
-  if (loader) loader.hidden = true;
+  if (loader) {
+    loader.hidden = true;
+    loader.style.display = 'none'; // Force le masquage
+  }
 }
 
 // ------------------------------
@@ -568,7 +571,6 @@ function traiterSaisie() {
 // DICTIONNAIRE
 // ------------------------------
 async function chargerDictionnaire() {
-  showLoader();
   try {
     const response = await fetch('data/mots.json');
     if (!response.ok) throw new Error();
@@ -586,7 +588,6 @@ async function chargerDictionnaire() {
     construireIndexAlphabet();
     if (vocabulaire[0]) afficherMot(vocabulaire[0]);
   }
-  hideLoader();
 }
 
 function afficherMot(item) {
@@ -1156,6 +1157,8 @@ async function initialiserApplication() {
   } finally {
     // Force la disparition du loader quoi qu'il arrive
     hideLoader();
+    // Sécurité supplémentaire : masquer après 500ms au cas où
+    setTimeout(hideLoader, 500);
   }
 }
 
