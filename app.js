@@ -417,7 +417,7 @@ function initThemeSettings() {
 }
 
 // ------------------------------
-// THÈMES CLAIR/SOMBRE/SEPIA (déjà existants)
+// THÈMES CLAIR/SOMBRE/SEPIA
 // ------------------------------
 function setTheme(theme) {
   document.body.classList.remove('dark', 'light', 'sepia');
@@ -752,7 +752,7 @@ function basculerFavori(item) {
     showToast(i18n[currentLanguage].add_favorite, "success");
   }
   sauvegarderFavoris();
-  if (motActuel === item) afficherMot(item); // rafraîchir le bouton
+  if (motActuel === item) afficherMot(item);
   if (document.getElementById("dashboard") && !document.getElementById("dashboard").hidden) afficherDashboard();
 }
 
@@ -819,7 +819,6 @@ async function chargerQuiz() {
     console.warn("Quiz non disponible");
     quizData = { fr: [{ question: "Exemple ?", options: ["A","B","C"], reponse: 0 }] };
   }
-  // Ne pas afficher automatiquement, attendre que l'utilisateur clique sur démarrer
   const container = document.getElementById("quizContainer");
   if (container) container.innerHTML = `<button id="startQuizBtn" class="btn">${i18n[currentLanguage].quiz_start}</button>`;
   document.getElementById("startQuizBtn")?.addEventListener("click", () => demarrerQuiz());
@@ -862,7 +861,6 @@ function terminerQuiz() {
   const container = document.getElementById("quizContainer");
   const percent = (currentQuiz.score / currentQuiz.questions.length) * 100;
   let message = `${i18n[currentLanguage].quiz_score} : ${currentQuiz.score}/${currentQuiz.questions.length} (${Math.round(percent)}%)`;
-  // Sauvegarder progression
   let progress = JSON.parse(localStorage.getItem("quizProgress")) || {};
   progress[currentQuiz.lang] = { score: currentQuiz.score, total: currentQuiz.questions.length, date: new Date().toISOString() };
   localStorage.setItem("quizProgress", JSON.stringify(progress));
@@ -904,7 +902,6 @@ function initialiserCarte() {
   const container = document.getElementById("mapContainer");
   if (!container) return;
   if (mapInitialized) return;
-  // Charger Leaflet dynamiquement
   if (typeof L === 'undefined') {
     const link = document.createElement('link');
     link.rel = 'stylesheet';
@@ -1052,11 +1049,23 @@ async function chargerLivresConnaissance() {
 }
 
 // ------------------------------
-// SERVICE WORKER (PWA)
+// SERVICE WORKER (PWA) - CORRIGÉ
 // ------------------------------
 function registerServiceWorker() {
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js').then(reg => console.log('SW enregistré', reg)).catch(err => console.warn('SW échec', err));
+    // Utiliser le chemin absolu avec le sous-dossier
+    const swUrl = '/Dictionnaire-Tadaksahak/sw.js';
+    fetch(swUrl, { method: 'HEAD' })
+      .then(response => {
+        if (response.ok) {
+          navigator.serviceWorker.register(swUrl)
+            .then(reg => console.log('SW enregistré', reg))
+            .catch(err => console.warn('SW échec', err));
+        } else {
+          console.log('SW non trouvé (404), enregistrement ignoré');
+        }
+      })
+      .catch(() => console.log('Impossible de vérifier sw.js'));
   }
 }
 
@@ -1103,7 +1112,7 @@ async function initialiserApplication() {
   requestNotificationPermission();
   showWordNotification();
   afficherMotDuJour();
-  setInterval(() => afficherMotDuJour(), 3600000); // rafraîchir chaque heure
+  setInterval(() => afficherMotDuJour(), 3600000);
   
   document.getElementById("btnEnvoyer")?.addEventListener("click", traiterSaisie);
   document.getElementById("chatInput")?.addEventListener("keypress", e => e.key === "Enter" && traiterSaisie());
@@ -1115,7 +1124,6 @@ async function initialiserApplication() {
   document.querySelectorAll('.lang-flag').forEach(btn => { btn.addEventListener('click', () => setLanguage(btn.dataset.lang)); });
   setLanguage(currentLanguage);
   
-  // Recherche livres
   const searchBooksInput = document.getElementById("searchBooksInput");
   if (searchBooksInput) searchBooksInput.addEventListener("input", () => rechercherPleinTexte());
   
