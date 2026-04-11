@@ -614,6 +614,7 @@ function afficherMot(item) {
     let def = "";
     if (currentLanguage === "fr" && item.fr) def = item.fr;
     else if (currentLanguage === "en" && item.en) def = item.en;
+    else if (currentLanguage === "ar" && item.ar) def = item.ar;
     else if (item.fr) def = item.fr;
     else def = "Définition non disponible";
     defElem.innerHTML = `<p><strong>📂 Catégorie :</strong> ${item.cat || "Général"}</p><p><strong>${currentLanguage.toUpperCase()} :</strong> ${escapeHtml(def)}</p>
