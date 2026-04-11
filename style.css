@@ -1173,3 +1173,145 @@ body.dark .preview-signature {
         font-size: 18px;
     }
 }
+/* =========================
+   RAPPORTS & DOCUMENTS
+   ========================= */
+
+.rapports-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.rapport-card {
+  background: linear-gradient(180deg, var(--bg-light), var(--bg-card));
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.2rem;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.rapport-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--accent);
+}
+
+.rapport-type {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--accent);
+  background: rgba(51, 204, 255, 0.15);
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  margin-bottom: 0.8rem;
+  width: fit-content;
+}
+
+.rapport-titre {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.rapport-auteur {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.rapport-meta {
+  font-size: 0.75rem;
+  color: var(--primary);
+  margin-bottom: 0.8rem;
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.rapport-desc {
+  font-size: 0.85rem;
+  color: var(--text);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.rapport-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.rapport-actions .btn-small {
+  flex: 1;
+  padding: 0.5rem 0.8rem;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.8rem;
+  transition: all var(--transition);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.rapport-actions .btn-small:hover {
+  background: var(--hover);
+  transform: translateY(-2px);
+}
+
+/* Badge PDF en arrière-plan */
+.rapport-card::before {
+  content: "📄";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+/* Version RTL (arabe) */
+html[dir="rtl"] .rapport-card::before {
+  right: auto;
+  left: 10px;
+}
+
+html[dir="rtl"] .rapport-type {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+html[dir="rtl"] .rapport-actions {
+  flex-direction: row-reverse;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .rapports-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .rapport-card {
+    padding: 1rem;
+  }
+  
+  .rapport-titre {
+    font-size: 1rem;
+  }
+}
