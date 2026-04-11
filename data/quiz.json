@@ -36,9 +36,9 @@
       "reponse": 2
     },
     {
-      "question": "Quel est le nom du chef historique de la fraction Idoguiritane ?",
-      "options": ["Ayouba", "Mohamed Maïga", "Morou", "Askia Daoud"],
-      "reponse": 0
+      "question": "Quel est le nom du chef historique de la fraction Idoguiritane photographié par Charles Grémont à Tin Abaw ?",
+      "options": ["Ayouba", "Madit AG Ablil", "Morou", "Askia Daoud"],
+      "reponse": 1
     },
     {
       "question": "Quelle est la particularité de la langue tadaksahak ?",
@@ -118,9 +118,9 @@
       "reponse": 2
     },
     {
-      "question": "ما اسم الشيخ التاريخي لفصيلة إيدوغيريتان؟",
-      "options": ["أيوبا", "محمد مايغا", "مورو", "أسكيا داود"],
-      "reponse": 0
+      "question": "ما اسم الشيخ التاريخي لفصيلة إيدوغيريتان الذي صوره شارل غريمون في تين أبا؟",
+      "options": ["أيوبا", "ماديت أغ أبليل", "مورو", "أسكيا داود"],
+      "reponse": 1
     },
     {
       "question": "ما هي خصوصية لغة تدكساهق؟",
@@ -200,9 +200,9 @@
       "reponse": 2
     },
     {
-      "question": "What is the name of the historical chief of the Idoguiritane fraction?",
-      "options": ["Ayouba", "Mohamed Maïga", "Morou", "Askia Daoud"],
-      "reponse": 0
+      "question": "What is the name of the historical chief of the Idoguiritane fraction photographed by Charles Grémont in Tin Abaw?",
+      "options": ["Ayouba", "Madit AG Ablil", "Morou", "Askia Daoud"],
+      "reponse": 1
     },
     {
       "question": "What is special about the Tadaksahak language?",
