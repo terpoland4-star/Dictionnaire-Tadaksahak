@@ -617,7 +617,22 @@ function afficherMot(item) {
     else if (currentLanguage === "ar" && item.ar) def = item.ar;
     else if (item.fr) def = item.fr;
     else def = "Définition non disponible";
-    defElem.innerHTML = `<p><strong>📂 Catégorie :</strong> ${item.cat || "Général"}</p><p><strong>${currentLanguage.toUpperCase()} :</strong> ${escapeHtml(def)}</p>
+    
+    // Traduction du label "Catégorie" et de "Général" par défaut
+    let categorieLabel = "";
+    let defaultCat = "";
+    if (currentLanguage === "fr") {
+      categorieLabel = "Catégorie :";
+      defaultCat = "Général";
+    } else if (currentLanguage === "en") {
+      categorieLabel = "Category:";
+      defaultCat = "General";
+    } else if (currentLanguage === "ar") {
+      categorieLabel = "الفئة:";
+      defaultCat = "عام";
+    }
+    
+    defElem.innerHTML = `<p><strong>📂 ${categorieLabel}</strong> ${item.cat || defaultCat}</p><p><strong>${currentLanguage.toUpperCase()} :</strong> ${escapeHtml(def)}</p>
       <div style="margin-top: 1rem; display: flex; gap: 0.5rem; justify-content: center;">
         <button class="btn-small" id="shareWordBtn">📤 ${i18n[currentLanguage].share}</button>
         <button class="btn-small" id="favoriteWordBtn">⭐ ${favoris.includes(item.mot) ? i18n[currentLanguage].remove_favorite : i18n[currentLanguage].add_favorite}</button>
