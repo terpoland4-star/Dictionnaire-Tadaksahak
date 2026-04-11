@@ -339,42 +339,6 @@ const imagesGalerie = [
   }
 ];
 
-// ==============================
-// DONNÉES DES RAPPORTS (PDF)
-// ==============================
-const rapportsData = [
-  {
-    id: "r1",
-    titre: "Rapport d'une enquête sociolinguistique à Gao",
-    auteur: "Phil Davison, Niels Christiansen, Regula Christiansen",
-    annee: "1992",
-    type: "rapport",
-    categorie: "Sociolinguistique",
-    description: "Enquête préliminaire sur le tamasheq, le songoy et le dausahaq (tadaksahak) à Gao. Analyse de l'intercompréhension, des attitudes linguistiques, et recommandations pour l'alphabétisation.",
-    fichier: "data/pdfs/silesr2017_001.pdf"
-  },
-  {
-    id: "r2",
-    titre: "Some verb morphology features of Tadaksahak",
-    auteur: "Niels Christiansen, Regula Christiansen",
-    annee: "2002",
-    type: "article",
-    categorie: "Linguistique",
-    description: "Étude comparative des systèmes verbaux du songhay (Gao), du tamasheq et du tadaksahak. Analyse des mécanismes de dérivation verbale (causatif, passif, réfléchi, réciproque).",
-    fichier: "data/pdfs/silewp2003_003.pdf"
-  },
-  {
-    id: "r3",
-    titre: "Relativization in Tadaksahak",
-    auteur: "Regula Christiansen, Stephen H. Levinson",
-    annee: "2003",
-    type: "article",
-    categorie: "Syntaxe",
-    description: "Étude détaillée des stratégies de relativisation en tadaksahak (pronom relatif, stratégie zéro, stratégie sa). Analyse des relations grammaticales pouvant être relativisées.",
-    fichier: "data/pdfs/silewp2002_005.pdf"
-  }
-];
-
 // ------------------------------
 // UTILITAIRES
 // ------------------------------
@@ -1053,7 +1017,7 @@ function afficherDashboard() {
 }
 
 // ------------------------------
-// LIVRES (multilingue)
+// LIVRES (multilingue) - Exclut les rapports
 // ------------------------------
 async function afficherLivres() {
   const cont = document.getElementById("livresContainer");
@@ -1064,7 +1028,8 @@ async function afficherLivres() {
     if (!response.ok) throw new Error();
     const allLivres = await response.json();
     let langueCible = currentLanguage === "fr" ? "Français" : (currentLanguage === "ar" ? "Arabe" : "English");
-    const livres = allLivres.filter(l => l.langue === langueCible);
+    // Exclure les rapports (type === "rapport")
+    const livres = allLivres.filter(l => l.langue === langueCible && l.type !== "rapport");
     if (!livres.length) { cont.innerHTML = `<p class="info-message">📚 Aucun livre dans cette langue.</p>`; return; }
     cont.innerHTML = livres.map(livre => `
       <div class="livre-card">
@@ -1101,34 +1066,42 @@ function afficherPhotos() {
 }
 
 // ------------------------------
-// RAPPORTS (NOUVEAU)
+// RAPPORTS (depuis livres.json, type: "rapport")
 // ------------------------------
 function afficherRapports() {
   const container = document.getElementById("rapportsContainer");
   if (!container) return;
   
-  if (!rapportsData || rapportsData.length === 0) {
-    container.innerHTML = `<p class="info-message">📄 Aucun rapport disponible pour le moment.</p>`;
-    return;
-  }
+  container.innerHTML = `<div class="loading-books">📄 Chargement des rapports...</div>`;
   
-  let html = `<div class="rapports-grid">`;
-  rapportsData.forEach(rapport => {
-    html += `
-      <div class="rapport-card">
-        <div class="rapport-type">${rapport.type === 'rapport' ? '📄 RAPPORT' : '📑 ARTICLE'}</div>
-        <h3 class="rapport-titre">${escapeHtml(rapport.titre)}</h3>
-        <div class="rapport-auteur">✍️ ${escapeHtml(rapport.auteur)}</div>
-        <div class="rapport-meta">📅 ${rapport.annee} • 🏷️ ${escapeHtml(rapport.categorie)}</div>
-        <div class="rapport-desc">${escapeHtml(rapport.description)}</div>
-        <div class="rapport-actions">
-          <a href="${escapeHtml(rapport.fichier)}" class="btn-small" target="_blank" rel="noopener noreferrer">📖 Lire le rapport (PDF)</a>
+  fetch('data/livres.json')
+    .then(response => response.json())
+    .then(allLivres => {
+      let langueCible = currentLanguage === "fr" ? "Français" : (currentLanguage === "ar" ? "Arabe" : "English");
+      const rapports = allLivres.filter(l => l.type === "rapport" && l.langue === langueCible);
+      
+      if (!rapports.length) {
+        container.innerHTML = `<p class="info-message">📄 Aucun rapport dans cette langue.</p>`;
+        return;
+      }
+      
+      container.innerHTML = `<div class="rapports-grid">` + rapports.map(rapport => `
+        <div class="rapport-card">
+          <div class="rapport-type">📄 RAPPORT</div>
+          <h3 class="rapport-titre">${escapeHtml(rapport.titre)}</h3>
+          <div class="rapport-auteur">✍️ ${escapeHtml(rapport.auteur)}</div>
+          <div class="rapport-meta">📅 ${rapport.annee || '?'} • 🏷️ ${escapeHtml(rapport.categorie || 'Linguistique')}</div>
+          <div class="rapport-desc">${escapeHtml(rapport.description || '')}</div>
+          <div class="rapport-actions">
+            <a href="livre-viewer.html?id=${rapport.id}" class="btn-small" target="_blank">📖 Lire le rapport</a>
+          </div>
         </div>
-      </div>
-    `;
-  });
-  html += `</div>`;
-  container.innerHTML = html;
+      `).join('') + `</div>`;
+    })
+    .catch(e => {
+      console.error("Erreur chargement rapports", e);
+      container.innerHTML = `<p class="error-message">❌ Erreur de chargement des rapports.</p>`;
+    });
 }
 
 // ------------------------------
@@ -1197,7 +1170,7 @@ function initNavigation() {
     if (id === "map") initialiserCarte();
     if (id === "search") rechercherPleinTexte();
     if (id === "dashboard") afficherDashboard();
-    if (id === "rapports") afficherRapports(); // NOUVEAU
+    if (id === "rapports") afficherRapports();
   }
   sectionSelector.addEventListener("change", (e) => showSection(e.target.value));
   const savedSection = localStorage.getItem("tadaksahak_active_section");
