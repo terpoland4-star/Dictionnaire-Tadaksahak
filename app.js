@@ -52,15 +52,15 @@ const i18n = {
     sort_new: "📅 Plus récentes",
     sort_old: "📅 Plus anciennes",
     books_title: "📚 Bibliothèque",
+    reports_title: "📄 Rapports et Documents",
+    reports_coming: "📑 Rapports culturels, linguistiques et communautaires bientôt disponibles.",
     all_themes: "📚 Tous les thèmes",
     theme_linguistics: "🔤 Linguistique",
     theme_history: "📖 Histoire",
     theme_culture: "🎭 Culture",
     theme_politics: "🏛️ Politique",
-    reports_title: "📄 Rapports et Documents",
-    reports_coming: "📑 Rapports culturels, linguistiques et communautaires bientôt disponibles.",
     news_title: "📰 Actualités",
-    news_coming: "📰 Restez connectés ! Les actualités arrivent prochainement.",
+    news_coming: "📰 Restez connectés !",
     quiz_title: "❓ Quiz Culturel",
     quiz_start: "Commencer le quiz",
     quiz_next: "Question suivante",
@@ -130,13 +130,13 @@ const i18n = {
     sort_new: "📅 الأحدث",
     sort_old: "📅 الأقدم",
     books_title: "📚 المكتبة",
+    reports_title: "📄 التقارير والوثائق",
+    reports_coming: "📑 تقارير ثقافية ولغوية ومجتمعية قريبًا.",
     all_themes: "📚 جميع المواضيع",
     theme_linguistics: "🔤 لغويات",
     theme_history: "📖 تاريخ",
     theme_culture: "🎭 ثقافة",
     theme_politics: "🏛️ سياسة",
-    reports_title: "📄 تقارير ووثائق",
-    reports_coming: "📑 تقارير ثقافية ولغوية ومجتمعية قريبًا.",
     news_title: "📰 أخبار",
     news_coming: "📰 تابعونا! الأخبار قادمة قريبًا.",
     quiz_title: "❓ اختبار ثقافي",
@@ -208,13 +208,13 @@ const i18n = {
     sort_new: "📅 Newest",
     sort_old: "📅 Oldest",
     books_title: "📚 Library",
+    reports_title: "📄 Reports and Documents",
+    reports_coming: "📑 Cultural, linguistic and community reports coming soon.",
     all_themes: "📚 All themes",
     theme_linguistics: "🔤 Linguistics",
     theme_history: "📖 History",
     theme_culture: "🎭 Culture",
     theme_politics: "🏛️ Politics",
-    reports_title: "📄 Reports and Documents",
-    reports_coming: "📑 Cultural, linguistic and community reports coming soon.",
     news_title: "📰 News",
     news_coming: "📰 Stay tuned! News coming soon.",
     quiz_title: "❓ Cultural Quiz",
@@ -339,6 +339,42 @@ const imagesGalerie = [
   }
 ];
 
+// ==============================
+// DONNÉES DES RAPPORTS (PDF)
+// ==============================
+const rapportsData = [
+  {
+    id: "r1",
+    titre: "Rapport d'une enquête sociolinguistique à Gao",
+    auteur: "Phil Davison, Niels Christiansen, Regula Christiansen",
+    annee: "1992",
+    type: "rapport",
+    categorie: "Sociolinguistique",
+    description: "Enquête préliminaire sur le tamasheq, le songoy et le dausahaq (tadaksahak) à Gao. Analyse de l'intercompréhension, des attitudes linguistiques, et recommandations pour l'alphabétisation.",
+    fichier: "data/pdfs/silesr2017_001.pdf"
+  },
+  {
+    id: "r2",
+    titre: "Some verb morphology features of Tadaksahak",
+    auteur: "Niels Christiansen, Regula Christiansen",
+    annee: "2002",
+    type: "article",
+    categorie: "Linguistique",
+    description: "Étude comparative des systèmes verbaux du songhay (Gao), du tamasheq et du tadaksahak. Analyse des mécanismes de dérivation verbale (causatif, passif, réfléchi, réciproque).",
+    fichier: "data/pdfs/silewp2003_003.pdf"
+  },
+  {
+    id: "r3",
+    titre: "Relativization in Tadaksahak",
+    auteur: "Regula Christiansen, Stephen H. Levinson",
+    annee: "2003",
+    type: "article",
+    categorie: "Syntaxe",
+    description: "Étude détaillée des stratégies de relativisation en tadaksahak (pronom relatif, stratégie zéro, stratégie sa). Analyse des relations grammaticales pouvant être relativisées.",
+    fichier: "data/pdfs/silewp2002_005.pdf"
+  }
+];
+
 // ------------------------------
 // UTILITAIRES
 // ------------------------------
@@ -375,7 +411,6 @@ function showToast(message, type = "info") {
   setTimeout(() => { toast.hidden = true; }, 3000);
 }
 
-// Affiche le loader
 function showLoader() {
   const loader = document.getElementById("loadingOverlay");
   if (loader) {
@@ -384,13 +419,11 @@ function showLoader() {
   }
 }
 
-// Cache le loader de manière définitive
 function hideLoader() {
   const loader = document.getElementById("loadingOverlay");
   if (loader) {
     loader.hidden = true;
     loader.style.display = 'none';
-    // Supprimer du DOM après 200ms pour libérer la mémoire
     setTimeout(() => {
       if (loader && loader.parentNode) loader.remove();
     }, 200);
@@ -400,10 +433,10 @@ function hideLoader() {
 }
 
 // ------------------------------
-// THÈMES PERSONNALISABLES (police, taille, contraste)
+// THÈMES PERSONNALISABLES
 // ------------------------------
 function applyThemeSettings() {
-  const fontFamily = localStorage.getItem('app_font_family') || 'Inter';
+  const fontFamily = localStorage.getItem('app_font_family') || 'sans';
   const fontSize = localStorage.getItem('app_font_size') || '100';
   const highContrast = localStorage.getItem('app_high_contrast') === 'true';
   document.body.style.fontFamily = fontFamily === 'serif' ? 'Georgia, serif' : (fontFamily === 'mono' ? 'Courier New, monospace' : 'Inter, sans-serif');
@@ -486,13 +519,13 @@ function setLanguage(lang) {
   const rechercheLivres = document.getElementById("rechercheLivres");
   if (rechercheLivres) rechercheLivres.placeholder = i18n[lang].search_placeholder || "Rechercher un livre...";
   
-  // Recharger les sections dynamiques
   if (document.getElementById("livres") && !document.getElementById("livres").hidden) afficherLivres();
   if (document.getElementById("photos") && !document.getElementById("photos").hidden) afficherPhotos();
   if (document.getElementById("quiz") && !document.getElementById("quiz").hidden && quizData) chargerQuiz();
   if (document.getElementById("timeline") && !document.getElementById("timeline").hidden && timelineData) afficherTimeline();
   if (document.getElementById("map") && !document.getElementById("map").hidden && mapInitialized) initialiserCarte();
   if (document.getElementById("dashboard") && !document.getElementById("dashboard").hidden) afficherDashboard();
+  if (document.getElementById("rapports") && !document.getElementById("rapports").hidden) afficherRapports();
   if (motActuel) afficherMot(motActuel);
   updateChatSuggestions();
   afficherMotDuJour();
@@ -618,7 +651,6 @@ function afficherMot(item) {
     else if (item.fr) def = item.fr;
     else def = "Définition non disponible";
     
-    // Traduction du label "Catégorie" et de "Général" par défaut
     let categorieLabel = "";
     let defaultCat = "";
     if (currentLanguage === "fr") {
@@ -846,7 +878,7 @@ function showWordNotification() {
 }
 
 // ------------------------------
-// QUIZ INTERACTIF MULTILINGUE
+// QUIZ
 // ------------------------------
 async function chargerQuiz() {
   try {
@@ -908,7 +940,7 @@ function terminerQuiz() {
 }
 
 // ------------------------------
-// LIGNE DU TEMPS (TIMELINE)
+// TIMELINE
 // ------------------------------
 async function chargerTimeline() {
   try {
@@ -935,7 +967,7 @@ function afficherTimeline() {
 }
 
 // ------------------------------
-// CARTE GÉOGRAPHIQUE (Leaflet)
+// CARTE
 // ------------------------------
 function initialiserCarte() {
   const container = document.getElementById("mapContainer");
@@ -973,7 +1005,7 @@ function creerCarte() {
 }
 
 // ------------------------------
-// RECHERCHE PLEIN TEXTE DANS LES LIVRES
+// RECHERCHE PLEIN TEXTE
 // ------------------------------
 function rechercherPleinTexte() {
   const query = document.getElementById("searchBooksInput")?.value.trim();
@@ -1069,7 +1101,38 @@ function afficherPhotos() {
 }
 
 // ------------------------------
-// AUTRES SECTIONS (audio, vidéos)
+// RAPPORTS (NOUVEAU)
+// ------------------------------
+function afficherRapports() {
+  const container = document.getElementById("rapportsContainer");
+  if (!container) return;
+  
+  if (!rapportsData || rapportsData.length === 0) {
+    container.innerHTML = `<p class="info-message">📄 Aucun rapport disponible pour le moment.</p>`;
+    return;
+  }
+  
+  let html = `<div class="rapports-grid">`;
+  rapportsData.forEach(rapport => {
+    html += `
+      <div class="rapport-card">
+        <div class="rapport-type">${rapport.type === 'rapport' ? '📄 RAPPORT' : '📑 ARTICLE'}</div>
+        <h3 class="rapport-titre">${escapeHtml(rapport.titre)}</h3>
+        <div class="rapport-auteur">✍️ ${escapeHtml(rapport.auteur)}</div>
+        <div class="rapport-meta">📅 ${rapport.annee} • 🏷️ ${escapeHtml(rapport.categorie)}</div>
+        <div class="rapport-desc">${escapeHtml(rapport.description)}</div>
+        <div class="rapport-actions">
+          <a href="${escapeHtml(rapport.fichier)}" class="btn-small" target="_blank" rel="noopener noreferrer">📖 Lire le rapport (PDF)</a>
+        </div>
+      </div>
+    `;
+  });
+  html += `</div>`;
+  container.innerHTML = html;
+}
+
+// ------------------------------
+// AUTRES SECTIONS
 // ------------------------------
 function genererAlbumsAudio() {
   const conteneur = document.getElementById("audioContainer");
@@ -1097,7 +1160,7 @@ async function chargerLivresConnaissance() {
 }
 
 // ------------------------------
-// SERVICE WORKER (PWA) - CORRIGÉ
+// SERVICE WORKER (PWA)
 // ------------------------------
 function registerServiceWorker() {
   if ('serviceWorker' in navigator) {
@@ -1134,6 +1197,7 @@ function initNavigation() {
     if (id === "map") initialiserCarte();
     if (id === "search") rechercherPleinTexte();
     if (id === "dashboard") afficherDashboard();
+    if (id === "rapports") afficherRapports(); // NOUVEAU
   }
   sectionSelector.addEventListener("change", (e) => showSection(e.target.value));
   const savedSection = localStorage.getItem("tadaksahak_active_section");
@@ -1143,10 +1207,9 @@ function initNavigation() {
 }
 
 // ------------------------------
-// INITIALISATION PRINCIPALE (avec gestion des erreurs et finally)
+// INITIALISATION PRINCIPALE
 // ------------------------------
 async function initialiserApplication() {
-  // Afficher le loader au tout début
   showLoader();
   
   try {
@@ -1154,7 +1217,6 @@ async function initialiserApplication() {
     initThemeSettings();
     initNavigation();
     
-    // Chargement des données (avec gestion d'erreur interne à chaque fonction)
     await chargerDictionnaire();
     await chargerLivresConnaissance();
     await chargerTimeline();
@@ -1186,14 +1248,10 @@ async function initialiserApplication() {
     console.error("Erreur critique lors de l'initialisation :", error);
     showToast("Erreur de chargement, vérifiez la console", "error");
   } finally {
-    // Force la disparition du loader quoi qu'il arrive
     hideLoader();
-    // Sécurité supplémentaire : masquer après 500ms au cas où le DOM n'était pas prêt
     setTimeout(hideLoader, 500);
-    // Ultime secours : masquer après 2 secondes
     setTimeout(hideLoader, 2000);
   }
 }
 
-// Démarrage
 initialiserApplication();
