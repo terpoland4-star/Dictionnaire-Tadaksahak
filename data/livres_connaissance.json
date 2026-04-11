@@ -9,6 +9,7 @@
           "id": 1,
           "chapitre": 1,
           "titre": "L'émancipation politique au commencement de la tribu ?",
+          "sous_titre": "Réflexion sur la notion de tribu",
           "texte": "Ce texte propose d'interroger le lien entre l'émancipation politique d'un groupe social, des pasteurs-nomades du nord-est du Mali qui portent le nom de Idaksahak, et la reconnaissance de ce groupe en tant que tribu.",
           "mots_cles": ["émancipation", "politique", "tribu", "Idaksahak", "groupe social", "reconnaissance", "pasteurs", "nomades", "nord-est", "Mali"]
         },
@@ -16,92 +17,273 @@
           "id": 2,
           "chapitre": 1,
           "titre": "L'émancipation politique au commencement de la tribu ?",
-          "texte": "Les Idaksahak, groupe de pasteurs-nomades évoluant dans les régions de Ménaka et Gao, se distinguent de leurs voisins proches par la singularité de leur langue, en forme de sabir, empruntant des mots à la langue tamasheq, à la langue songhay.",
-          "mots_cles": ["Idaksahak", "pasteurs", "nomades", "Ménaka", "Gao", "langue", "sabir", "tamasheq", "songhay", "voisins"]
+          "sous_titre": "Réflexion sur la notion de tribu",
+          "texte": "Si après la reconnaissance d'un nom, d'un 'emblème onomastique', l'on retient, comme le propose Yazid Ben Hounet, l'existence d'un ordre politique autonome comme l'un des critères fondamentaux de ce que serait une tribu, une question se pose.",
+          "mots_cles": ["Yazid Ben Hounet", "ordre politique", "autonome", "critères", "tribu", "emblème", "onomastique"]
         },
         {
           "id": 3,
-          "chapitre": 2,
-          "titre": "Les Idaksahak par eux-mêmes",
-          "texte": "Nous sommes une tawset. C'est cela notre catégorie, c'est ce que l'on dit. En français, on peut dire le 'peuple Dawsahaq' comme on dit le 'peuple Kel Tamasheq'.",
-          "mots_cles": ["tawset", "peuple", "Dawsahaq", "Kel Tamasheq", "identité", "catégorie", "communauté"]
+          "chapitre": 1,
+          "titre": "L'émancipation politique au commencement de la tribu ?",
+          "sous_titre": "Réflexion sur la notion de tribu",
+          "texte": "Un groupe subalterne qui serait soumis à l'autorité (ou dépendant) d'un autre groupe pourrait-il être reconnu en tant que tribu ?",
+          "mots_cles": ["subalterne", "autorité", "dépendant", "reconnu", "tribu", "groupe"]
         },
         {
           "id": 4,
-          "chapitre": 3,
-          "titre": "Que disent les Idaksahak de ce qu'ils sont aujourd'hui ?",
-          "texte": "Idaksahak, une communauté riche économiquement et instruite religieusement. Idaksahak, une communauté touarègue qui parle tadaksahak différent du tamashek.",
-          "mots_cles": ["Idaksahak", "riche", "économie", "instruite", "religion", "touareg", "tadaksahak", "tamashek", "communauté"]
+          "chapitre": 1,
+          "titre": "L'émancipation politique au commencement de la tribu ?",
+          "sous_titre": "Réflexion sur la notion de tribu",
+          "texte": "Au-delà des références généalogiques, de la question du nom ou encore des notions d'alliance et de solidarité, c'est la question de l'autonomie politique qui sera mise en avant pour réinterroger la notion de tribu.",
+          "mots_cles": ["généalogiques", "alliance", "solidarité", "autonomie", "politique", "tribu"]
         },
         {
           "id": 5,
-          "chapitre": 4,
-          "titre": "L'image d'un groupe subalterne et pacifique",
-          "texte": "Pour moi, ce qui nous caractérise, de tout le temps, c'est que nous sommes un peuple de paix, qui s'occupe uniquement de la religion et de l'élevage. Nous ne nous mêlons pas d'autres choses.",
-          "mots_cles": ["paix", "pacifique", "religion", "élevage", "non-violence", "subalterne", "peuple", "caractérise"]
+          "chapitre": 1,
+          "titre": "L'émancipation politique au commencement de la tribu ?",
+          "sous_titre": "Réflexion sur la notion de tribu",
+          "texte": "Les configurations sociales et politiques au Sahara ont très souvent été présentées sous la forme d'agrégations de tribus, reliées les unes aux autres par des rapports complexes et fortement hiérarchisés.",
+          "mots_cles": ["configurations", "sociales", "politiques", "Sahara", "agrégations", "tribus", "rapports", "complexes", "hiérarchisés"]
         },
         {
           "id": 6,
-          "chapitre": 5,
-          "titre": "Nous avons troqué nos chèvres contre des Kalachnikov !",
-          "texte": "L'épée qui figure aujourd'hui symboliquement sur leur logo de présentation renvoie à une histoire très récente. Les Idaksahak ne semblaient pas avoir réellement porté des armes de guerre par le passé.",
-          "mots_cles": ["épée", "logo", "armes", "guerre", "histoire", "Idaksahak", "Kalachnikov", "récent"]
+          "chapitre": 1,
+          "titre": "L'émancipation politique au commencement de la tribu ?",
+          "sous_titre": "Réflexion sur la notion de tribu",
+          "texte": "Derrière l'adjectif 'complexes' se cachent toujours des histoires singulières, où l'ordre hiérarchique au sein et entre les groupes sociaux n'est jamais stable.",
+          "mots_cles": ["complexes", "histoires", "singulières", "ordre", "hiérarchique", "groupes", "sociaux", "stable"]
         },
         {
           "id": 7,
-          "chapitre": 6,
-          "titre": "Des armes pour se défendre",
-          "texte": "En 1963-1964, des Idaksahak se font remarquer dans un épisode guerrier. Leur engagement aux côtés des Kel Adagh insurgés marque le premier acte d'une relation conflictuelle avec le pouvoir central malien.",
-          "mots_cles": ["1963", "1964", "révolte", "Kel Adagh", "conflit", "pouvoir central", "Mali", "armes", "défense"]
+          "chapitre": 1,
+          "titre": "L'émancipation politique au commencement de la tribu ?",
+          "sous_titre": "Réflexion sur la notion de tribu",
+          "texte": "Les rapports de forces, qui déterminent la place et le rôle des uns par rapport aux autres, sont sans cesse réajustés, parfois renversés, à la faveur de nouvelles revendications contre l'ordre (pré)établi.",
+          "mots_cles": ["rapports", "forces", "place", "rôle", "réajustés", "renversés", "revendications", "ordre"]
         },
         {
           "id": 8,
-          "chapitre": 7,
-          "titre": "La rébellion des années 1990 et ses limites",
-          "texte": "L'engagement de plusieurs centaines d'Idaksahak, les armes à la main, dans la rébellion de 1990 marque une première marche dans le processus d'émancipation de ce groupe.",
-          "mots_cles": ["1990", "rébellion", "armes", "émancipation", "Idaksahak", "engagement", "centaines"]
+          "chapitre": 1,
+          "titre": "L'émancipation politique au commencement de la tribu ?",
+          "sous_titre": "Réflexion sur la notion de tribu",
+          "texte": "Les rapports sociaux, économiques et politiques qui fondent les tribus, les font émerger, perdurer ou disparaître, sont en recomposition permanente.",
+          "mots_cles": ["rapports", "sociaux", "économiques", "politiques", "tribus", "émerger", "perdurer", "disparaître", "recomposition"]
         },
         {
           "id": 9,
-          "chapitre": 8,
-          "titre": "La confrontation de 1994",
-          "texte": "Cet épisode de 1994 est historique ! C'est la première fois que nous avons délogé notre tête de sous le pied des Imajeghen. Avant cela, nos biens étaient leurs biens.",
-          "mots_cles": ["1994", "Imajeghen", "conflit", "Idaksahak", "émancipation", "historique", "biens", "suzerains"]
+          "chapitre": 1,
+          "titre": "L'émancipation politique au commencement de la tribu ?",
+          "sous_titre": "Réflexion sur la notion de tribu",
+          "texte": "Les Idaksahak, groupe de pasteurs-nomades évoluant dans les régions de Ménaka et Gao (au nord-est du Mali), se distinguent de leurs voisins proches par la singularité de leur langue.",
+          "mots_cles": ["Idaksahak", "pasteurs", "nomades", "Ménaka", "Gao", "nord-est", "Mali", "langue", "singularité"]
         },
         {
           "id": 10,
-          "chapitre": 9,
-          "titre": "Une visibilité politique acquise par les armes",
-          "texte": "À partir des années 2010, les Idaksahak ont exprimé leur force guerrière et des revendications politiques, tant au niveau régional, que national, voire international.",
-          "mots_cles": ["2010", "Idaksahak", "guerrier", "revendications", "politique", "régional", "national", "international", "visibilité"]
+          "chapitre": 1,
+          "titre": "L'émancipation politique au commencement de la tribu ?",
+          "sous_titre": "Réflexion sur la notion de tribu",
+          "texte": "Leur langue est en forme de sabir, empruntant des mots à la langue tamasheq, à la langue songhay, quelques-uns aussi au français et même à l'anglais.",
+          "mots_cles": ["langue", "sabir", "tamasheq", "songhay", "français", "anglais", "emprunts"]
         },
         {
           "id": 11,
-          "chapitre": 10,
-          "titre": "Affirmation militaire face aux Imajeghen",
-          "texte": "Les années 1990 ouvrent une nouvelle ère avec l'engagement de plus de 2000 combattants, mais le gain politique restait faible. Les postes à responsabilité restaient dévolus aux autres.",
-          "mots_cles": ["1990", "combattants", "2000", "Imajeghen", "postes", "responsabilité", "élus", "ministres"]
+          "chapitre": 1,
+          "titre": "L'émancipation politique au commencement de la tribu ?",
+          "sous_titre": "Réflexion sur la notion de tribu",
+          "texte": "La plupart d'entre eux parle parfaitement la langue tamasheq, mais dans des réunions publiques, de plus en plus d'orateurs tiennent à s'exprimer dans leur langue, la tadaksahak.",
+          "mots_cles": ["tamasheq", "tadaksahak", "réunions", "publiques", "orateurs", "langue"]
         },
         {
           "id": 12,
-          "chapitre": 11,
-          "titre": "Le Mouvement pour le salut de l'Azawad (MSA)",
-          "texte": "En 2016, création du Mouvement pour le salut de l'Azawad (MSA) par Moussa Ag Acharatouman, l'un des fondateurs du Mouvement national de l'Azawad (MNA).",
-          "mots_cles": ["MSA", "MNA", "2016", "Azawad", "Moussa Ag Acharatouman", "indépendance", "salut"]
+          "chapitre": 1,
+          "titre": "L'émancipation politique au commencement de la tribu ?",
+          "sous_titre": "Réflexion sur la notion de tribu",
+          "texte": "Dans la région de Ménaka, les Idaksahak sont les plus nombreux et les plus riches économiquement, mais n'ont jamais véritablement occupé le devant de la scène politique.",
+          "mots_cles": ["Ménaka", "Idaksahak", "nombreux", "riches", "économiquement", "scène", "politique"]
         },
         {
           "id": 13,
-          "chapitre": 12,
-          "titre": "Des jeunes Idaksahak dans le djihadisme",
-          "texte": "Une partie de la jeunesse des Idaksahak a adhéré à la proposition djihadiste, à travers le MUJAO, AQMI et l'État islamique au Grand Sahara (EIGS).",
-          "mots_cles": ["djihad", "MUJAO", "AQMI", "EIGS", "Idaksahak", "jeunesse", "islamique", "Grand Sahara"]
+          "chapitre": 1,
+          "titre": "L'émancipation politique au commencement de la tribu ?",
+          "sous_titre": "Réflexion sur la notion de tribu",
+          "texte": "Depuis la rébellion touarègue des années 1990 et plus encore depuis 2012, les Idaksahak émergent sur la scène politique locale et sous-régionale.",
+          "mots_cles": ["rébellion", "touarègue", "1990", "2012", "Idaksahak", "émergent", "scène", "politique"]
         },
         {
           "id": 14,
-          "chapitre": "conclusion",
-          "titre": "Un ordre politique autonome ?",
-          "texte": "L'existence ou non d'un ordre politique autonome, avec ses forces de contradiction internes, est une question féconde pour réinterroger la notion de tribu au Sahara au XXIe siècle.",
-          "mots_cles": ["ordre politique", "autonomie", "tribu", "Sahara", "XXIe siècle", "contradictions"]
+          "chapitre": 1,
+          "titre": "L'émancipation politique au commencement de la tribu ?",
+          "sous_titre": "Réflexion sur la notion de tribu",
+          "texte": "Ils revendiquent désormais des places de pouvoir qu'ils n'ont jamais occupées, parce qu'ils ne les avaient jamais véritablement cherchées auparavant.",
+          "mots_cles": ["revendiquent", "pouvoir", "occupées", "cherchées", "Idaksahak"]
+        },
+        {
+          "id": 15,
+          "chapitre": 2,
+          "titre": "Les Idaksahak par eux-mêmes",
+          "texte": "Comment les Idaksahak se définissent-ils ? Quels termes utilisent-ils, dans leur propre langue (tadaksahak), pour dire ce qu'ils sont ?",
+          "mots_cles": ["Idaksahak", "définissent", "termes", "tadaksahak", "langue"]
+        },
+        {
+          "id": 16,
+          "chapitre": 2,
+          "titre": "Les Idaksahak par eux-mêmes",
+          "texte": "Nous sommes une tawset. C'est cela notre catégorie, c'est ce que l'on dit. En français, on peut dire le 'peuple Dawsahaq' comme on dit le 'peuple Kel Tamasheq'.",
+          "mots_cles": ["tawset", "catégorie", "peuple", "Dawsahaq", "Kel Tamasheq", "identité"]
+        },
+        {
+          "id": 17,
+          "chapitre": 2,
+          "titre": "Les Idaksahak par eux-mêmes",
+          "texte": "Nous utilisons aussi le mot communauté. 'La communauté Idaksahak', c'est ce que nous utilisons dans nos communiqués.",
+          "mots_cles": ["communauté", "Idaksahak", "communiqués", "terme"]
+        },
+        {
+          "id": 18,
+          "chapitre": 2,
+          "titre": "Les Idaksahak par eux-mêmes",
+          "texte": "Peuple, communauté, tribu… ces termes de la langue française sont tour à tour mobilisés par les Idaksahak sans véritable effort de définition.",
+          "mots_cles": ["peuple", "communauté", "tribu", "termes", "français", "Idaksahak"]
+        },
+        {
+          "id": 19,
+          "chapitre": 2,
+          "titre": "Les Idaksahak par eux-mêmes",
+          "texte": "Comme les auteurs scientifiques, les premiers intéressés oscillent à trouver les bons mots pour dire ce qu'ils sont.",
+          "mots_cles": ["auteurs", "scientifiques", "oscillent", "mots", "définition"]
+        },
+        {
+          "id": 20,
+          "chapitre": 2,
+          "titre": "Les Idaksahak par eux-mêmes",
+          "texte": "Au Sahara et au Sahel, le statut et le rang que les groupes sociaux cherchent à maintenir, ou à conquérir, tiennent pour une large part à la place qu'ils revendiquent dans l'histoire.",
+          "mots_cles": ["Sahara", "Sahel", "statut", "rang", "groupes", "sociaux", "histoire", "revendiquent"]
+        },
+        {
+          "id": 21,
+          "chapitre": 2,
+          "titre": "Les Idaksahak par eux-mêmes",
+          "texte": "L'appellation 'IDAKSAHAK' provient certainement d'une contraction du mot IDD-AGG ISHAK.",
+          "mots_cles": ["IDAKSAHAK", "IDD-AGG", "ISHAK", "contraction", "étymologie"]
+        },
+        {
+          "id": 22,
+          "chapitre": 3,
+          "titre": "Que disent les Idaksahak de ce qu'ils sont aujourd'hui ?",
+          "texte": "Idaksahak, une communauté riche économiquement et instruite religieusement. Idaksahak, une communauté touarègue qui parle tadaksahak différent du tamashek.",
+          "mots_cles": ["Idaksahak", "riche", "économie", "instruite", "religion", "touareg", "tadaksahak", "tamashek"]
+        },
+        {
+          "id": 23,
+          "chapitre": 3,
+          "titre": "Que disent les Idaksahak de ce qu'ils sont aujourd'hui ?",
+          "texte": "Le logo qui orne le site internet Idaksahak montre un homme assis lisant, une épée blanche, et deux dromadaires adultes avec leur petit.",
+          "mots_cles": ["logo", "homme", "lisant", "épée", "dromadaires", "site", "internet"]
+        },
+        {
+          "id": 24,
+          "chapitre": 3,
+          "titre": "Que disent les Idaksahak de ce qu'ils sont aujourd'hui ?",
+          "texte": "L'image d'eux-mêmes que les Idaksahak ont choisi de diffuser au monde réunit toutes les qualités : richesse économique (élevage camelin), instruction religieuse et maniement des armes.",
+          "mots_cles": ["image", "diffuser", "qualités", "richesse", "élevage", "camelin", "instruction", "religieuse", "armes"]
+        },
+        {
+          "id": 25,
+          "chapitre": 3,
+          "titre": "Que disent les Idaksahak de ce qu'ils sont aujourd'hui ?",
+          "texte": "La communauté Idaksahak est l'une des grandes tribus du Nord Mali. Elle est estimée à cent mille âmes.",
+          "mots_cles": ["communauté", "Idaksahak", "grandes", "tribus", "Nord", "Mali", "cent mille"]
+        },
+        {
+          "id": 26,
+          "chapitre": 4,
+          "titre": "L'image d'un groupe subalterne et pacifique",
+          "texte": "Pour moi, ce qui nous caractérise, de tout le temps, c'est que nous sommes un peuple de paix, qui s'occupe uniquement de la religion et de l'élevage.",
+          "mots_cles": ["paix", "pacifique", "religion", "élevage", "caractérise", "peuple"]
+        },
+        {
+          "id": 27,
+          "chapitre": 4,
+          "titre": "L'image d'un groupe subalterne et pacifique",
+          "texte": "Nous ne participions pas à des guerres, ni à des razzias, ni au banditisme. Nous ne participions à rien de tout ça.",
+          "mots_cles": ["guerres", "razzias", "banditisme", "non-violence", "pacifique"]
+        },
+        {
+          "id": 28,
+          "chapitre": 4,
+          "titre": "L'image d'un groupe subalterne et pacifique",
+          "texte": "Les IDAKSAHK, peuple pacifique, ne répondaient pas à l'agression, même très intentionnée, sauf en cas d'humiliation à dessein ou de provocation évidente.",
+          "mots_cles": ["IDAKSAHK", "pacifique", "agression", "humiliation", "provocation"]
+        },
+        {
+          "id": 29,
+          "chapitre": 5,
+          "titre": "Nous avons troqué nos chèvres contre des Kalachnikov !",
+          "texte": "Pour la plupart de leurs voisins, les Idaksahak demeurent un groupe subalterne, toujours sous l'influence de ceux qui furent les leaders politiques et guerriers de la Boucle du Niger : les Iwellemmedan.",
+          "mots_cles": ["Idaksahak", "subalterne", "Iwellemmedan", "leaders", "politiques", "guerriers", "Boucle du Niger"]
+        },
+        {
+          "id": 30,
+          "chapitre": 5,
+          "titre": "Nous avons troqué nos chèvres contre des Kalachnikov !",
+          "texte": "L'épée qui figure aujourd'hui symboliquement sur leur logo de présentation renvoie donc à une histoire très récente.",
+          "mots_cles": ["épée", "logo", "symbolique", "histoire", "récente"]
+        },
+        {
+          "id": 31,
+          "chapitre": 6,
+          "titre": "Des armes pour se défendre",
+          "texte": "Ce n'est qu'après l'Indépendance du Mali, en 1963-1964, que des Idaksahak se font remarquer dans un épisode guerrier.",
+          "mots_cles": ["Indépendance", "Mali", "1963", "1964", "Idaksahak", "guerrier"]
+        },
+        {
+          "id": 32,
+          "chapitre": 6,
+          "titre": "Des armes pour se défendre",
+          "texte": "Deux Idaksahak, Ilias et Younes, fils d'Ayouba, ont participé à la révolte menée dans l'Adagh des Ifoghas.",
+          "mots_cles": ["Ilias", "Younes", "Ayouba", "révolte", "Adagh des Ifoghas"]
+        },
+        {
+          "id": 33,
+          "chapitre": 7,
+          "titre": "La rébellion des années 1990 et ses limites",
+          "texte": "L'engagement de plusieurs centaines d'Idaksahak, les armes à la main, dans la rébellion de 1990 marque une première marche dans le processus d'émancipation de ce groupe.",
+          "mots_cles": ["1990", "rébellion", "armes", "émancipation", "Idaksahak", "centaines"]
+        },
+        {
+          "id": 34,
+          "chapitre": 8,
+          "titre": "La confrontation de 1994",
+          "texte": "Cet épisode de 1994 est historique ! C'est la première fois que nous avons délogé notre tête de sous le pied des Imajeghen.",
+          "mots_cles": ["1994", "Imajeghen", "historique", "délogé", "émancipation"]
+        },
+        {
+          "id": 35,
+          "chapitre": 9,
+          "titre": "Une visibilité politique acquise par les armes",
+          "texte": "À partir des années 2010, les Idaksahak ont exprimé leur force guerrière et des revendications politiques, tant au niveau régional, que national, voire international.",
+          "mots_cles": ["2010", "Idaksahak", "force guerrière", "revendications", "politiques", "régional", "national", "international"]
+        },
+        {
+          "id": 36,
+          "chapitre": 10,
+          "titre": "Affirmation militaire face aux Imajeghen",
+          "texte": "Les années 1990 ouvrent une nouvelle ère avec l'engagement de peut-être plus de 2000 combattants, mais le gain politique restait encore assez faible.",
+          "mots_cles": ["1990", "2000", "combattants", "gain politique", "Imajeghen"]
+        },
+        {
+          "id": 37,
+          "chapitre": 11,
+          "titre": "Le Mouvement pour le salut de l'Azawad (MSA)",
+          "texte": "En 2016, création du Mouvement pour le salut de l'Azawad (MSA) par Moussa Ag Acharatouman, l'un des fondateurs du Mouvement national de l'Azawad (MNA).",
+          "mots_cles": ["MSA", "MNA", "2016", "Moussa Ag Acharatouman", "Azawad"]
+        },
+        {
+          "id": 38,
+          "chapitre": 12,
+          "titre": "Des jeunes Idaksahak dans le djihadisme",
+          "texte": "Une partie de la jeunesse des Idaksahak a adhéré à la proposition djihadiste, à travers le MUJAO, AQMI et l'État islamique au Grand Sahara (EIGS).",
+          "mots_cles": ["djihad", "MUJAO", "AQMI", "EIGS", "Idaksahak", "jeunesse"]
         }
       ]
     },
@@ -114,71 +296,288 @@
           "id": 101,
           "chapitre": 1,
           "titre": "Les causes profondes des tourments",
-          "texte": "Les causes profondes des tourments de l'époque touarègue au Mali sont multiples : marginalisation, conflits liés aux ressources naturelles, revendications identitaires, influence des conflits régionaux et facteurs socio-économiques.",
-          "mots_cles": ["causes", "tourments", "marginalisation", "ressources naturelles", "identité", "conflits régionaux", "socio-économiques"]
+          "texte": "Les causes profondes des tourments de l'époque touarègue au Mali sont multiples : marginalisation, conflits liés aux ressources naturelles, revendications identitaires.",
+          "mots_cles": ["causes", "tourments", "marginalisation", "ressources naturelles", "identité"]
         },
         {
           "id": 102,
-          "chapitre": 2,
-          "titre": "L'héritage ancestral et les luttes pour l'autonomie",
-          "texte": "Les Touaregs, appelés les 'hommes bleus', ont une histoire millénaire dans la région du Sahel. Ils revendiquent leur droit à l'autodétermination, à une participation politique équitable et à la préservation de leur patrimoine culturel.",
-          "mots_cles": ["hommes bleus", "Touaregs", "Sahel", "autodétermination", "patrimoine", "culturel", "millénaire"]
+          "chapitre": 1,
+          "titre": "Les causes profondes des tourments",
+          "texte": "Les divisions ethniques et les rivalités entre les différentes communautés maliennes compliquent la résolution pacifique des conflits.",
+          "mots_cles": ["divisions", "ethniques", "rivalités", "communautés", "conflits"]
         },
         {
           "id": 103,
-          "chapitre": 3,
-          "titre": "Les ravages de la guerre",
-          "texte": "Les témoignages décrivent les horreurs de la violence : attaques sanglantes, bombardements, pillages, déplacements forcés, pertes humaines et traumatismes durables.",
-          "mots_cles": ["guerre", "violence", "attaques", "bombardements", "pillages", "déplacements", "traumatismes", "pertes humaines"]
+          "chapitre": 2,
+          "titre": "L'héritage ancestral et les luttes pour l'autonomie",
+          "texte": "Les Touaregs, également appelés les 'hommes bleus' en raison de leurs vêtements traditionnels, ont une histoire millénaire dans la région du Sahel.",
+          "mots_cles": ["hommes bleus", "Touaregs", "Sahel", "millénaire", "vêtements", "traditionnels"]
         },
         {
           "id": 104,
-          "chapitre": 4,
-          "titre": "Patrimoine en péril",
-          "texte": "Les sites historiques touaregs (mausolées, palais, mosquées anciennes, gravures rupestres) ont été victimes de pillages, de vandalisme et de trafic d'antiquités.",
-          "mots_cles": ["patrimoine", "sites historiques", "mausolées", "pillages", "trafic", "antiquités", "vandalisme"]
+          "chapitre": 2,
+          "titre": "L'héritage ancestral et les luttes pour l'autonomie",
+          "texte": "Leur mode de vie nomade, leur connaissance intime du désert et leur aptitude à naviguer à travers les vastes étendues arides en font des gardiens précieux de cet écosystème unique.",
+          "mots_cles": ["nomade", "désert", "naviguer", "étendues", "arides", "gardiens", "écosystème"]
         },
         {
           "id": 105,
-          "chapitre": 5,
-          "titre": "Le combat pour l'autonomie",
-          "texte": "Les Touaregs maliens ont longtemps revendiqué une plus grande autonomie dans la gestion de leurs affaires internes, à travers des mouvements comme le MNLA et le HCUA.",
-          "mots_cles": ["autonomie", "MNLA", "HCUA", "revendications", "Touaregs", "Mali", "gestion interne"]
+          "chapitre": 2,
+          "titre": "L'héritage ancestral et les luttes pour l'autonomie",
+          "texte": "Ils ont revendiqué leur droit à l'autodétermination, à une participation politique équitable et à la préservation de leur patrimoine culturel.",
+          "mots_cles": ["autodétermination", "participation", "politique", "patrimoine", "culturel"]
         },
         {
           "id": 106,
-          "chapitre": 6,
-          "titre": "De la paix fragile à l'escalade des violences",
-          "texte": "La période de paix fragile a été suivie par une escalade des violences due aux revendications non satisfaites, aux rivalités politiques et aux tensions ethniques.",
-          "mots_cles": ["paix", "violence", "revendications", "rivalités politiques", "tensions ethniques", "escalade"]
+          "chapitre": 3,
+          "titre": "Les ravages de la guerre",
+          "texte": "Les témoignages décrivent les horreurs de la violence : attaques sanglantes, bombardements, pillages, déplacements forcés.",
+          "mots_cles": ["témoignages", "violence", "attaques", "bombardements", "pillages", "déplacements"]
         },
         {
           "id": 107,
-          "chapitre": 7,
-          "titre": "En quête d'identité",
-          "texte": "Les Touaregs maliens sont fiers de leur héritage culturel : langue, musique, danse, artisanat. Ils cherchent un équilibre entre traditions séculaires et aspirations contemporaines.",
-          "mots_cles": ["identité", "culture", "langue", "musique", "danse", "artisanat", "traditions", "aspirations"]
+          "chapitre": 3,
+          "titre": "Les ravages de la guerre",
+          "texte": "Des familles entières ont été contraintes de fuir leurs maisons, abandonnant leurs biens et leur terre ancestrale pour échapper à la violence.",
+          "mots_cles": ["familles", "fuir", "maisons", "biens", "terre", "ancestrale", "violence"]
         },
         {
           "id": 108,
-          "chapitre": 8,
-          "titre": "Les femmes touarègues du Mali",
-          "texte": "Les femmes touarègues sont les gardiennes des traditions. Elles jouent un rôle vital dans la résilience communautaire, l'éducation, la santé, l'agriculture et le commerce.",
-          "mots_cles": ["femmes", "touarègues", "traditions", "résilience", "éducation", "santé", "agriculture", "commerce"]
+          "chapitre": 4,
+          "titre": "Patrimoine en péril",
+          "texte": "Les sites historiques touaregs comprennent des mausolées, des palais, des mosquées anciennes, des gravures rupestres.",
+          "mots_cles": ["sites", "historiques", "mausolées", "palais", "mosquées", "gravures", "rupestres"]
         },
         {
           "id": 109,
-          "chapitre": 9,
-          "titre": "Ressources naturelles et enjeux géopolitiques",
-          "texte": "Les territoires touaregs regorgent de ressources naturelles : pétrole, gaz, uranium, or. L'accès et le contrôle de ces ressources sont marqués par des enjeux géopolitiques.",
-          "mots_cles": ["ressources naturelles", "pétrole", "gaz", "uranium", "or", "géopolitique", "conflits", "contrôle"]
+          "chapitre": 4,
+          "titre": "Patrimoine en péril",
+          "texte": "Durant les périodes de conflit, les sites historiques sont souvent la cible de pillages organisés et de trafic d'antiquités.",
+          "mots_cles": ["conflit", "pillages", "trafic", "antiquités", "sites"]
         },
         {
           "id": 110,
+          "chapitre": 5,
+          "titre": "Le combat pour l'autonomie",
+          "texte": "Les Touaregs maliens ont longtemps revendiqué une plus grande autonomie dans la gestion de leurs affaires internes.",
+          "mots_cles": ["autonomie", "gestion", "affaires", "internes", "Touaregs"]
+        },
+        {
+          "id": 111,
+          "chapitre": 5,
+          "titre": "Le combat pour l'autonomie",
+          "texte": "Des mouvements politiques comme le Mouvement national de libération de l'Azawad (MNLA) et le Haut Conseil pour l'unité de l'Azawad (HCUA) ont marqué l'histoire.",
+          "mots_cles": ["MNLA", "HCUA", "Azawad", "mouvements", "politiques"]
+        },
+        {
+          "id": 112,
+          "chapitre": 6,
+          "titre": "De la paix fragile à l'escalade des violences",
+          "texte": "La période de paix fragile a été suivie par une escalade des violences due aux revendications non satisfaites, aux rivalités politiques et aux tensions ethniques.",
+          "mots_cles": ["paix", "violence", "revendications", "rivalités", "tensions", "ethniques"]
+        },
+        {
+          "id": 113,
+          "chapitre": 7,
+          "titre": "En quête d'identité",
+          "texte": "Les Touaregs maliens sont fiers de leur riche héritage culturel, ancré dans des traditions séculaires.",
+          "mots_cles": ["héritage", "culturel", "traditions", "séculaires", "fiers"]
+        },
+        {
+          "id": 114,
+          "chapitre": 7,
+          "titre": "En quête d'identité",
+          "texte": "L'avènement des nouvelles technologies de communication, l'accès à l'éducation et les échanges culturels peuvent engendrer des changements et des adaptations.",
+          "mots_cles": ["technologies", "communication", "éducation", "échanges", "culturels"]
+        },
+        {
+          "id": 115,
+          "chapitre": 8,
+          "titre": "Les femmes touarègues du Mali",
+          "texte": "Les femmes touarègues sont les gardiennes des traditions et de la culture de leur communauté.",
+          "mots_cles": ["femmes", "touarègues", "gardiennes", "traditions", "culture"]
+        },
+        {
+          "id": 116,
+          "chapitre": 8,
+          "titre": "Les femmes touarègues du Mali",
+          "texte": "Elles sont actives dans des domaines tels que l'éducation, la santé, l'agriculture, l'élevage et le commerce.",
+          "mots_cles": ["éducation", "santé", "agriculture", "élevage", "commerce"]
+        },
+        {
+          "id": 117,
+          "chapitre": 9,
+          "titre": "Ressources naturelles et enjeux géopolitiques",
+          "texte": "Les territoires touaregs regorgent de ressources naturelles précieuses : pétrole, gaz, uranium, or.",
+          "mots_cles": ["ressources", "naturelles", "pétrole", "gaz", "uranium", "or"]
+        },
+        {
+          "id": 118,
+          "chapitre": 9,
+          "titre": "Ressources naturelles et enjeux géopolitiques",
+          "texte": "L'accès et le contrôle des ressources naturelles sont souvent marqués par des enjeux géopolitiques et des conflits d'intérêts.",
+          "mots_cles": ["accès", "contrôle", "géopolitiques", "conflits", "intérêts"]
+        },
+        {
+          "id": 119,
           "chapitre": 10,
           "titre": "Vers un avenir incertain",
-          "texte": "L'avenir des Touaregs au Mali repose sur la paix durable, le développement socio-économique, une gouvernance inclusive et la reconnaissance de leur identité culturelle.",
-          "mots_cles": ["avenir", "paix", "développement", "gouvernance", "identité", "reconnaissance", "inclusive"]
+          "texte": "L'avenir des Touaregs au Mali est étroitement lié au développement socio-économique et à une gouvernance inclusive.",
+          "mots_cles": ["avenir", "développement", "socio-économique", "gouvernance", "inclusive"]
+        },
+        {
+          "id": 120,
+          "chapitre": 10,
+          "titre": "Vers un avenir incertain",
+          "texte": "Un aspect crucial est la reconnaissance de leur identité culturelle, linguistique et historique.",
+          "mots_cles": ["reconnaissance", "identité", "culturelle", "linguistique", "historique"]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titre": "Contribution à la connaissance de la communauté Idaksahak (Cas de Ménaka et Talatayt)",
+      "auteur": "Ahmed-Mohamed AG GUIDI",
+      "chunks": [
+        {
+          "id": 201,
+          "chapitre": 1,
+          "titre": "Le mot IDAKSAHAK",
+          "texte": "L'appellation 'IDAKSAHAK' provient certainement d'une contraction du mot IDD-AGG ISHAK.",
+          "mots_cles": ["IDAKSAHAK", "IDD-AGG", "ISHAK", "contraction", "étymologie"]
+        },
+        {
+          "id": 202,
+          "chapitre": 1,
+          "titre": "Le mot IDAKSAHAK",
+          "texte": "Les communautés voisines les nomment DAW-SAHAK ou DAW-ISHAK, selon la prononciation du terme 'ISHAK'.",
+          "mots_cles": ["DAW-SAHAK", "DAW-ISHAK", "prononciation", "voisins"]
+        },
+        {
+          "id": 203,
+          "chapitre": 1,
+          "titre": "Le mot IDAKSAHAK",
+          "texte": "ISHAK est un nom propre dont la connotation est plutôt de langue Sonrhaï, référence au roi ISHAK I empereur Songhoï du Moyen Âge.",
+          "mots_cles": ["ISHAK", "Sonrhaï", "ISHAK I", "Songhoï", "Moyen Âge"]
+        },
+        {
+          "id": 204,
+          "chapitre": 1,
+          "titre": "Le mot IDAKSAHAK",
+          "texte": "Les IDAKSAHAK ne peuvent déformer le nom d'un ancêtre dont ils se réclament, car leur dialecte est 'Fous ha', une bonne prononciation des lettres de l'alphabet arabe.",
+          "mots_cles": ["ancêtre", "Fous ha", "prononciation", "alphabet", "arabe"]
+        },
+        {
+          "id": 205,
+          "chapitre": 2,
+          "titre": "L'origine",
+          "texte": "Les IDAKSAHAK et les DIARMA selon BOUBOU HAMA sont les descendants de deux frères.",
+          "mots_cles": ["IDAKSAHAK", "DIARMA", "BOUBOU HAMA", "descendants", "frères"]
+        },
+        {
+          "id": 206,
+          "chapitre": 2,
+          "titre": "L'origine",
+          "texte": "Certains IDAKSAHAK reconnaissent leur affiliation aux GOUDALA ou leur parenté avec les IGDALANE et se réclament descendants de Fatimat fille du prophète.",
+          "mots_cles": ["GOUDALA", "IGDALANE", "Fatimat", "prophète", "descendants"]
+        },
+        {
+          "id": 207,
+          "chapitre": 2,
+          "titre": "L'origine",
+          "texte": "Ils se rattachent à un certain AÏTA (Mohamed Elmoctar) qui aurait épousé une femme du milieu et procréé des descendants.",
+          "mots_cles": ["AÏTA", "Mohamed Elmoctar", "descendants", "mariage"]
+        },
+        {
+          "id": 208,
+          "chapitre": 2,
+          "titre": "L'origine",
+          "texte": "La communauté IDAKSAHAK compte plusieurs fractions et près de 400 000 âmes en tout.",
+          "mots_cles": ["fractions", "400 000", "âmes", "population"]
+        },
+        {
+          "id": 209,
+          "chapitre": 3,
+          "titre": "Le dialecte",
+          "texte": "Les IDAKSAHAK ne parlent pas la langue Tamasheq qu'ils ne comprennent nullement.",
+          "mots_cles": ["Tamasheq", "compréhension", "langue"]
+        },
+        {
+          "id": 210,
+          "chapitre": 3,
+          "titre": "Le dialecte",
+          "texte": "La langue Tadaksahak se distingue par sa syntaxe purement sonrhaï, comme celui des IGDALANE.",
+          "mots_cles": ["Tadaksahak", "syntaxe", "sonrhaï", "IGDALANE"]
+        },
+        {
+          "id": 211,
+          "chapitre": 3,
+          "titre": "Le dialecte",
+          "texte": "Le TADAKSAHAK est un sabir, un mélange entre Sonrhaï de Tombouctou et Tamasheq Iwillimiden.",
+          "mots_cles": ["sabir", "Sonrhaï", "Tombouctou", "Tamasheq", "Iwillimiden"]
+        },
+        {
+          "id": 212,
+          "chapitre": 4,
+          "titre": "Terroirs d'habitation",
+          "texte": "Aujourd'hui, les terroirs d'attache des IDAKSAHAK sont très éloignés de Tombouctou.",
+          "mots_cles": ["terroirs", "attache", "éloignés", "Tombouctou"]
+        },
+        {
+          "id": 213,
+          "chapitre": 4,
+          "titre": "Terroirs d'habitation",
+          "texte": "AHMAD BABA de Tombouctou est un 'AGDAKSAHAK', un 'AGDAL' et non un Sonrhaï ou un arabe.",
+          "mots_cles": ["AHMAD BABA", "AGDAKSAHAK", "AGDAL", "Tombouctou"]
+        },
+        {
+          "id": 214,
+          "chapitre": 5,
+          "titre": "La vie active",
+          "texte": "La tribu IDAKSAHAK cohabite surtout avec les Kel Tamasheq dans la zone exondée au sud de Kidal.",
+          "mots_cles": ["cohabite", "Kel Tamasheq", "Kidal", "exondée"]
+        },
+        {
+          "id": 215,
+          "chapitre": 5,
+          "titre": "La vie active",
+          "texte": "Ils partagent avec les populations de la vallée du fleuve Niger les marchés céréaliers, les marchés à bétail et les zones de pacages.",
+          "mots_cles": ["marchés", "céréaliers", "bétail", "pacages", "fleuve Niger"]
+        },
+        {
+          "id": 216,
+          "chapitre": 6,
+          "titre": "La cohabitation",
+          "texte": "Les IDAKSAHAK vivent en bon voisinage avec les Kel Tamasheq dans la zone exondée.",
+          "mots_cles": ["voisinage", "Kel Tamasheq", "exondée"]
+        },
+        {
+          "id": 217,
+          "chapitre": 6,
+          "titre": "La cohabitation",
+          "texte": "Les richesses des IDAKSAHAK ont toujours été convoitées par leurs voisins.",
+          "mots_cles": ["richesses", "convoitées", "voisins"]
+        },
+        {
+          "id": 218,
+          "chapitre": 7,
+          "titre": "La hiérarchie",
+          "texte": "Les groupes dominants sont très hiérarchisés : les KEL IKIMED Iwillimiden et les Iforas de l'Adrar.",
+          "mots_cles": ["hiérarchisés", "KEL IKIMED", "Iwillimiden", "Iforas", "Adrar"]
+        },
+        {
+          "id": 219,
+          "chapitre": 7,
+          "titre": "La hiérarchie",
+          "texte": "Dans la hiérarchie des Kel Tamasheq, on ne trouve pas de place pour les IDAKSAHAK.",
+          "mots_cles": ["hiérarchie", "Kel Tamasheq", "IDAKSAHAK", "place"]
+        },
+        {
+          "id": 220,
+          "chapitre": 8,
+          "titre": "Le statut et le rôle des Idaksahak",
+          "texte": "Aujourd'hui, les IDAKSAHAK gardent en mémoire un passé récent d'assujettissement politique et idéologique.",
+          "mots_cles": ["mémoire", "assujettissement", "politique", "idéologique"]
         }
       ]
     },
@@ -188,39 +587,88 @@
       "auteur": "Collectif",
       "chunks": [
         {
-          "id": 201,
+          "id": 301,
           "chapitre": 1,
           "titre": "Jeunesse et formation",
-          "texte": "Mohamed Maïga est né le 20 août 1950 à Ansongo, au Mali. Il a grandi entre l'ethnie peule de sa mère et le milieu songhaï de son père. Il a étudié le journalisme à Strasbourg, Dakar, Montréal et Paris.",
-          "mots_cles": ["Mohamed Maïga", "Ansongo", "1950", "peule", "songhaï", "journalisme", "Strasbourg", "Dakar", "Montréal", "Paris"]
+          "texte": "Mohamed Maïga est né le 20 août 1950 à Ansongo, une petite ville située à une centaine de kilomètres de Gao.",
+          "mots_cles": ["Mohamed Maïga", "Ansongo", "1950", "Gao", "naissance"]
         },
         {
-          "id": 202,
+          "id": 302,
+          "chapitre": 1,
+          "titre": "Jeunesse et formation",
+          "texte": "Il a grandi dans une famille nombreuse, entre l'ethnie Peule nomade de sa mère et le milieu sédentaire Songhaï de son père.",
+          "mots_cles": ["famille", "Peule", "nomade", "Songhaï", "sédentaire"]
+        },
+        {
+          "id": 303,
+          "chapitre": 1,
+          "titre": "Jeunesse et formation",
+          "texte": "Après son baccalauréat en 1969, il a étudié au Centre Universitaire d'Enseignement du Journalisme (CUEJ) de Strasbourg.",
+          "mots_cles": ["baccalauréat", "1969", "CUEJ", "Strasbourg", "journalisme"]
+        },
+        {
+          "id": 304,
+          "chapitre": 1,
+          "titre": "Jeunesse et formation",
+          "texte": "Il a poursuivi ses études au CESTI à Dakar, au Canada, et à l'Institut Français de Presse (IFP) à l'Université Panthéon-Assas.",
+          "mots_cles": ["CESTI", "Dakar", "Canada", "IFP", "Panthéon-Assas"]
+        },
+        {
+          "id": 305,
           "chapitre": 2,
           "titre": "Carrière journalistique",
-          "texte": "En 1977, il est embauché par Jeune Afrique, puis écrit pour Afrique Asie. Sa plume engagée attire l'attention des populations et des jeunes politisés.",
-          "mots_cles": ["Jeune Afrique", "Afrique Asie", "journaliste", "engagé", "1977", "populations", "jeunes"]
+          "texte": "En 1977, Mohamed Maïga est embauché par Jeune Afrique, aux côtés de collègues comme Amin Maalouf et François Soudan.",
+          "mots_cles": ["1977", "Jeune Afrique", "Amin Maalouf", "François Soudan"]
         },
         {
-          "id": 203,
+          "id": 306,
+          "chapitre": 2,
+          "titre": "Carrière journalistique",
+          "texte": "Au début des années 80, il écrit pour Afrique Asie, bimensuel considéré comme le plus à gauche des médias panafricains.",
+          "mots_cles": ["1980", "Afrique Asie", "gauche", "panafricain"]
+        },
+        {
+          "id": 307,
           "chapitre": 3,
           "titre": "Rencontre avec Thomas Sankara",
-          "texte": "Il rencontre Thomas Sankara en Haute-Volta, lui consacre de grands entretiens exclusifs, contribuant à sa légitimisation auprès de la gauche burkinabè.",
-          "mots_cles": ["Thomas Sankara", "Haute-Volta", "Burkina Faso", "entretiens", "gauche", "légitimisation"]
+          "texte": "Maïga voit en Thomas Sankara une promesse de changement et lui consacre de grands entretiens exclusifs.",
+          "mots_cles": ["Thomas Sankara", "promesse", "changement", "entretiens"]
         },
         {
-          "id": 204,
+          "id": 308,
+          "chapitre": 3,
+          "titre": "Rencontre avec Thomas Sankara",
+          "texte": "Ses articles et entretiens à Afrique-Asie contribueront à faire connaître Sankara à l'étranger.",
+          "mots_cles": ["articles", "Afrique-Asie", "Sankara", "étranger"]
+        },
+        {
+          "id": 309,
           "chapitre": 4,
           "titre": "Circonstances du décès",
-          "texte": "Il meurt le 1er janvier 1984 à Ouagadougou dans des circonstances troubles. L'autopsie conclut à un empoisonnement. Les motifs restent inconnus.",
-          "mots_cles": ["mort", "1984", "Ouagadougou", "empoisonnement", "circonstances troubles", "mystère"]
+          "texte": "Il meurt le 1er janvier 1984 à Ouagadougou dans des circonstances troubles. L'autopsie conclut à un empoisonnement.",
+          "mots_cles": ["1984", "Ouagadougou", "mort", "empoisonnement", "circonstances"]
         },
         {
-          "id": 205,
+          "id": 310,
           "chapitre": 5,
           "titre": "Héritage et hommages",
-          "texte": "Il reçoit des obsèques nationales, décoré commandeur de l'Ordre national du Mérite par Sankara. La Maison de la Presse de Ouagadougou porte son nom.",
-          "mots_cles": ["obsèques nationales", "commandeur", "Ordre national du Mérite", "Maison de la Presse", "hommage"]
+          "texte": "Sankara le décore à titre posthume Commandeur de l'Ordre National du Mérite.",
+          "mots_cles": ["Sankara", "posthume", "Commandeur", "Ordre National du Mérite"]
+        },
+        {
+          "id": 311,
+          "chapitre": 5,
+          "titre": "Héritage et hommages",
+          "texte": "La Maison de la Presse à Ouagadougou est baptisée en son honneur.",
+          "mots_cles": ["Maison de la Presse", "Ouagadougou", "honneur"]
+        },
+        {
+          "id": 312,
+          "chapitre": 5,
+          "titre": "Héritage et hommages",
+          "texte": "L'Association Mohamed Maïga est lancée le 1er janvier 2024, quarante ans après son décès.",
+          "mots_cles": ["Association Mohamed Maïga", "2024", "quarante ans"]
         }
       ]
     },
@@ -230,32 +678,39 @@
       "auteur": "Collectif (d'après Abdulhasieb Elsharief)",
       "chunks": [
         {
-          "id": 301,
+          "id": 401,
           "chapitre": 1,
           "titre": "Morou, chef du canton de Karma",
-          "texte": "Morou (Oumarou) est chef du canton de Karma au Niger, descendant de l'empereur songhaï Askia Daoud.",
-          "mots_cles": ["Morou", "Oumarou", "Karma", "Niger", "Askia Daoud", "Songhaï", "chef"]
+          "texte": "Morou (ou Oumarou) est le chef du canton de Karma, une zone stratégique le long du fleuve Niger.",
+          "mots_cles": ["Morou", "Oumarou", "Karma", "fleuve Niger"]
         },
         {
-          "id": 302,
+          "id": 402,
+          "chapitre": 1,
+          "titre": "Morou, chef du canton de Karma",
+          "texte": "Il est dit que Morou descend d'Askia Daoud, l'un des souverains notables de l'Empire songhaï.",
+          "mots_cles": ["Askia Daoud", "Empire songhaï", "descendant"]
+        },
+        {
+          "id": 403,
           "chapitre": 2,
           "titre": "L'humiliation de 1905",
-          "texte": "En 1905, accusé de refuser de fournir de la nourriture aux soldats français, il est forcé de marcher pieds nus jusqu'à Niamey, portant une peau de chèvre remplie d'eau.",
-          "mots_cles": ["1905", "humiliation", "soldats français", "Niamey", "peau de chèvre", "marche forcée"]
+          "texte": "En 1905, accusé de refuser de fournir de la nourriture aux soldats français, il est forcé de marcher pieds nus jusqu'à Niamey.",
+          "mots_cles": ["1905", "soldats français", "Niamey", "humiliation"]
         },
         {
-          "id": 303,
+          "id": 404,
           "chapitre": 3,
           "titre": "La révolte ouverte de 1906",
-          "texte": "En mars 1906, il mène un soulèvement à Karma-Boubon, refusant de payer les impôts et défiant l'autorité coloniale.",
-          "mots_cles": ["1906", "révolte", "Karma", "Boubon", "impôts", "défi", "colonial"]
+          "texte": "En mars 1906, il mène un soulèvement dans la région de Karma-Boubon, refusant de payer les impôts.",
+          "mots_cles": ["1906", "Karma", "Boubon", "soulèvement", "impôts"]
         },
         {
-          "id": 304,
+          "id": 405,
           "chapitre": 4,
           "titre": "La répression coloniale",
-          "texte": "En représailles, les autorités coloniales brûlent le village de Boubon pour étouffer l'insurrection.",
-          "mots_cles": ["répression", "Boubon", "brûlé", "incendie", "colonial", "représailles"]
+          "texte": "Les autorités coloniales brûlent le village de Boubon en 1906 pour étouffer l'insurrection.",
+          "mots_cles": ["Boubon", "1906", "brûlent", "répression", "colonial"]
         }
       ]
     },
@@ -265,67 +720,88 @@
       "auteur": "Hamadine AG MOCTAR",
       "chunks": [
         {
-          "id": 401,
+          "id": 501,
           "chapitre": 1,
           "titre": "Là où le sable danse avec le vent",
-          "texte": "Je suis né là où le sable danse avec le vent, où les étoiles sont les seules lumières fiables. Ma mère Rose m'a transmis les histoires des ancêtres.",
-          "mots_cles": ["Hamadine", "désert", "sable", "vent", "étoiles", "mère", "Rose", "ancêtres"]
+          "texte": "Je suis né là où le sable danse avec le vent et où les étoiles sont les seules lumières fiables.",
+          "mots_cles": ["sable", "vent", "étoiles", "naissance", "désert"]
         },
         {
-          "id": 402,
+          "id": 502,
+          "chapitre": 1,
+          "titre": "Là où le sable danse avec le vent",
+          "texte": "Ma mère Rose parlait avec douceur et fermeté, ses histoires étaient des ponts entre le passé et mon futur.",
+          "mots_cles": ["mère", "Rose", "histoires", "passé", "futur"]
+        },
+        {
+          "id": 503,
           "chapitre": 2,
           "titre": "L'école de la vie",
-          "texte": "Je n'ai pas terminé mes études, mais j'ai appris le français, l'arabe, le haoussa, l'anglais, le tadaksahak. Je suis devenu interprète et traducteur.",
-          "mots_cles": ["études", "français", "arabe", "haoussa", "anglais", "tadaksahak", "interprète", "traducteur"]
+          "texte": "Je n'ai pas terminé mes études. Le monde que je traversais me formait déjà à sa manière.",
+          "mots_cles": ["études", "monde", "formation", "vie"]
         },
         {
-          "id": 403,
+          "id": 504,
+          "chapitre": 2,
+          "titre": "L'école de la vie",
+          "texte": "J'ai appris le français dans les administrations, l'arabe dans les mosquées, le haoussa dans les marchés.",
+          "mots_cles": ["français", "arabe", "haoussa", "langues"]
+        },
+        {
+          "id": 505,
+          "chapitre": 2,
+          "titre": "L'école de la vie",
+          "texte": "Je suis devenu interprète de la vie, traducteur des émotions qu'on ne sait pas dire.",
+          "mots_cles": ["interprète", "traducteur", "émotions"]
+        },
+        {
+          "id": 506,
           "chapitre": 3,
           "titre": "Elvie, l'amour interdit",
-          "texte": "J'ai aimé Elvie au Bénin. Notre amour était interdit par les différences culturelles. Elle a porté un enfant mais la pression l'a forcée à un choix terrible.",
-          "mots_cles": ["Elvie", "Bénin", "amour", "interdit", "différences culturelles", "enfant", "choix"]
+          "texte": "Elvie est entrée dans ma vie comme un vent chaud sur les dunes. Nous avons vécu un amour interdit.",
+          "mots_cles": ["Elvie", "amour", "interdit", "dunes"]
         },
         {
-          "id": 404,
+          "id": 507,
           "chapitre": 4,
           "titre": "Tabalit, la terre ferme",
-          "texte": "Après Elvie, j'ai rencontré Tabalit. Elle était patience et force silencieuse. Nous avons eu quatre enfants.",
-          "mots_cles": ["Tabalit", "patience", "force", "enfants", "quatre"]
+          "texte": "Tabalit était la terre ferme, la patience, la force silencieuse. Nous avons eu quatre enfants.",
+          "mots_cles": ["Tabalit", "patience", "force", "enfants"]
         },
         {
-          "id": 405,
+          "id": 508,
           "chapitre": 5,
           "titre": "L'accident et la perte",
-          "texte": "Un accident m'a fait perdre mon bras. Tabalit est devenue distante et est partie trois ans après.",
-          "mots_cles": ["accident", "perte", "bras", "Tabalit", "départ", "trois ans"]
+          "texte": "La perte de mon bras a changé beaucoup de choses. Tabalit est partie trois ans après.",
+          "mots_cles": ["accident", "perte", "bras", "départ"]
         },
         {
-          "id": 406,
+          "id": 509,
           "chapitre": 6,
           "titre": "Habiba, la brise qui soigne",
-          "texte": "Habiba est arrivée comme une brise douce. Elle a vu mes cicatrices et ne les a pas fuies. Elle m'a soutenu sans conditions.",
-          "mots_cles": ["Habiba", "brise", "soigne", "cicatrices", "soutien", "inconditionnel"]
+          "texte": "Habiba est arrivée comme une brise douce. Elle a vu mes cicatrices et ne les a pas fuies.",
+          "mots_cles": ["Habiba", "brise", "cicatrices", "soin"]
         },
         {
-          "id": 407,
+          "id": 510,
           "chapitre": 7,
           "titre": "La foi, guide dans les nuits sombres",
-          "texte": "Ma foi m'a appris que la douleur transforme, que les blessures sont des commencements. Chaque perte est un matériau pour bâtir un héritage.",
-          "mots_cles": ["foi", "guide", "douleur", "blessures", "héritage", "transformation"]
+          "texte": "Ma foi m'a appris que la douleur ne détruit pas, elle transforme. Les blessures sont des commencements.",
+          "mots_cles": ["foi", "douleur", "blessures", "transforme"]
         },
         {
-          "id": 408,
+          "id": 511,
           "chapitre": 8,
           "titre": "Hamadine aujourd'hui",
-          "texte": "Je suis un homme brisé et complet. Je code en JavaScript, j'écris des poèmes, je crée des outils pour que les oubliés puissent parler leur langue.",
-          "mots_cles": ["Hamadine", "JavaScript", "poèmes", "outils", "langue", "oubliés"]
+          "texte": "Je suis un homme brisé et complet. Je code en JavaScript, j'écris des poèmes, je crée des outils.",
+          "mots_cles": ["JavaScript", "poèmes", "outils", "développeur"]
         },
         {
-          "id": 409,
+          "id": 512,
           "chapitre": 9,
           "titre": "Le voyage continue",
-          "texte": "Ce volume 1 n'est qu'une partie du récit. Le voyage continue, avec ses défis, ses amours, ses découvertes.",
-          "mots_cles": ["voyage", "continue", "défis", "amours", "découvertes", "volume 1"]
+          "texte": "Ce volume 1 n'est qu'une partie du récit. Le vent continue de souffler, les dunes continuent de changer.",
+          "mots_cles": ["volume 1", "récit", "vent", "dunes", "continuent"]
         }
       ]
     }
