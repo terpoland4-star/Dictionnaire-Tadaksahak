@@ -2579,5 +2579,767 @@
     ],
     "conclusion": null,
     "bibliographie": []
+  },
+  {
+    "id": 22,
+    "titre": "Quelques traits de morphologie verbale du tadaksahak",
+    "auteur": "Niels Christiansen et Regula Christiansen",
+    "sous_titre": "Berbère ou songhay, telle est la question",
+    "annee": "2002",
+    "pages": 14,
+    "type": "linguistique",
+    "langue": "Français",
+    "categorie": "Linguistique / Langue tadaksahak",
+    "description": "Étude comparative des systèmes verbaux du songhay (Gao), du tamasheq et du tadaksahak. Analyse des mécanismes de dérivation verbale (causatif, passif, réfléchi, réciproque) et de la supplétion des racines d’origine songhay par des racines berbères. Avec un appendice listant les verbes concernés.",
+    "couverture": "",
+    "illustrations": [],
+    "chapitres": [
+      {
+        "numero": 1,
+        "titre": "Introduction",
+        "contenu": [
+          "Having been described as 'language mixte' (Lacroix 1971), this language presents features of Songhay and Berber languages. The observations discussed in this paper deal with the way voice changes are handled. In particular, it shows how the causative is formed. The causative morpheme S(V)- is of Berber origin and prefixed to the verb root as in Berber languages, whereas Songhay suffixes the causative morpheme that is of a very different form (- andi). But only verb roots that are also etymologically from Berber can take the morpheme in Tadaksahak. All roots that are cognates with Songhay are replaced with a Berber root with the same meaning, when causativized, changed to passive voice, or made reflexive or reciprocal.",
+          "Pierre-Francis Lacroix was the first to mention Tadaksahak in literature, together with related languages. They were referred to as 'mixed languages' ('langues mixtes'), because of the evidence of strong influence from Songhay as well as from Tamasheq (Lacroix 1968).",
+          "In his extensive study of Songhay languages, Robert Nicolai puts Tadaksahak in the group of Northern Songhay (Nicolai 1981:25, 'Songhay septentrional'). Together with Tihisht, Tadaksahak forms the 'nomadic' subgroup. As a part of the Songhay language group, Tadaksahak is placed in the Nilo-Saharan language family. Our observations among some of these Northern Songhay languages would indicate that Tadaksahak is the language most influenced by Tamasheq (and furthermore, on a phonemic and lexical level, by religious Arabic)."
+        ]
+      },
+      {
+        "numero": 2,
+        "titre": "Phonèmes",
+        "contenu": [
+          "The examples presented here are given phonemically according to the interpretation documented in our description of the Tadaksahak phonology (Christiansen 2000, manuscript). Vowels: i, e, a, o, u all contrasting in length.",
+          "Consonants: labial: b, f, m, p; alveolar: t, d, n, r, l, s, z; (pharyngeal): t, d; palatal: c, j, y, n; velar: k, g, x, h, w; uvaral: q; glottal: h. This corresponds with IPA with the exception of the following signs: Pharyngealization is marked with a dot underneath the sign: /t/, /d/... The alveo-palatal affricates are represented by one sign [t] = /c/, [dʒ] = /j/. The palatal approximant [j] is represented as /y/, the alveolar flap [r] shows as /r/ and the uvaral unvoiced [h] is represented as /h/."
+        ]
+      },
+      {
+        "numero": 3,
+        "titre": "Système verbal du songhay (Gao)",
+        "contenu": [
+          "Conjugation: A series of auxiliaries are inflected for tense, aspect, and mode. Preceding the TAM marker is the pronoun or nominal holding the function of subject. All derivations are suffixed as the following formula shows: NP/pron TAM verb(-derivator).",
+          "Causative and other voice changing devices: Many Songhay verbs accept the suffix -andi which makes the causative of intransitive verbs (and a few transitives), and the factive of verbs of adjectival quality. Exemples: ben 'finish' → ben-andi 'cause to end'; too 'arrive' → too-ndi 'deliver'.",
+          "Compound reflexives are formed with the word 'head' without definite and plural suffixes. Exemple: Faatuma nda Aysa ga (ngi bog) jumay 'Faatuma and Aysa wash themselves'."
+        ]
+      },
+      {
+        "numero": 4,
+        "titre": "Système verbal du tamasheq",
+        "contenu": [
+          "Conjugation in Tamasheq is rather complex. The example of the 'past completed aspect' serves as an illustration: ektabay 'I wrote', tektabad 'you (2s) wrote', iktab 'he wrote', tektab 'she wrote', naktab 'we wrote', tektabam 'you (2p/m) wrote', tektabmat 'you (2p/f) wrote', ektaban 'they (3p/m) wrote', ektabnat 'they (3p/f) wrote'.",
+          "Causative and other voice changing devices: causative: se-ktab 'make write'; passive: towe-ktab 'be written'; reciprocal/reflexive: na-ktab 'write to each other'."
+        ]
+      },
+      {
+        "numero": 5,
+        "titre": "Système verbal du tadaksahak",
+        "contenu": [
+          "Conjugation: Different from Songhay, Tadaksahak always has a subject clitic even if the noun phrase is also present. The TAM markers precede the verb stem and consist of a consonant with a possible vowel: C(V)-. All unbound verb roots begin with a consonant. The unit /clitic+TAM+verb.stem/ has in general only one stressed syllable. Formula: (NP) pron.clitic-TAM-(derivator)-verb.",
+          "Causative and other voice changing devices: In Tadaksahak the voice changing morphemes are prefixed to the verb root. This behaviour follows the pattern of Berber languages. Voice changing morphemes: Passive: t(e)-, tuw(a)-; Causative: S(V)- (copies any sibilant present in the verb root, default /s/); Reciprocal/Reflexive: ne-, me-, nem- (distinction inconsistent).",
+          "Verb roots beginning with a consonant other than 'y-': Exemple: Songhay kati 'to stumble' → Tadaksahak gertetef 'to stumble', ne-gertetef 'to stumble (reflexive)', se-gertetef 'to make stumble'.",
+          "Verb roots beginning with 'y-': The initial consonant 'y-' is dropped in favor of the consonant of the voice changing prefix. Exemple: Songhay denji 'to glue' → Tadaksahak yidger 'to be glued', sedger 'to glue', medger 'to be glued together', semedger 'to glue together'.",
+          "Verb roots using suppletion when the voice is changed: This second verb class is comparatively small but consists of the most frequently used verbs in daily life. These roots are etymologically Songhay and do not allow the morphemes used by the above two subclasses. Suppletion is the strategy used: a root from Berber is replacing the base root. This replacement is always a bound root; it is not found in the language without a voice changing or other derivational affix.",
+          "Exemples: Songhay dumbu 'to cut' → Tadaksahak dumbu 'to cut, to slaughter', causative zegzem 'to have slaughtered', passive tegzem 'to be slaughtered'; Songhay naa 'to eat' → Tadaksahak na 'to eat', causative jikja 'to make eat, to feed', passive tekja 'to be eaten, to be edible'; Songhay wii 'to kill' → Tadaksahak wi 'to kill', causative sasuwanqa 'to make kill', passive tuwanqa 'to be killed', reciprocal nemanqa 'to beat each other', causative-reciprocal senemanqa 'to cause to beat each other'."
+        ]
+      },
+      {
+        "numero": 6,
+        "titre": "Appendice – Liste des verbes à supplétion",
+        "contenu": [
+          "1. One argument verbs (verbes à un argument) : be big: bersemger; be close: man zeheznemheez; cry: hew selhail; be dry: qoq segerig; eat enough: kungusiwente; fall: kanjederodda; fly: sot sesegedag; get up: tunusunkuren; go down: zumbo zezebet; leave: koy seglag; depart: hunus efelef; be placed: keni jinja; run: zuru zezela; sit: gora jayam; spend the day: hoyay sekla; stop: kay sebbed; suckle: lekamkam senkesen; be upright: kay soqta; walk: dida zizu.",
+          "2. Two argument verbs (verbes à deux arguments) : bring: zawji jiwi; call somebody: cew seyrettu; climb/ride: kedi suwunte; cut/slaughter: dumbu zegzem; do: jiga tega; drink: nin jiju; eat: na jikja; fight (also verbally): zog sek(e)nest; gather (food): haba sefred; give: na sekfa; enter in: huru zuguz; hear: mo selatuwes; hit: kar juwut; jump over: sot seseged; kill: wi sasuwanqa; know: bay jijin; lead pulling: gungu sisilwi; leave alone: dis tuwiya; look at: hasi suswud; look for: hurru segmi; love/want: baya jeratu; read/study: qaran seseqra; say: ci sesuwantu; see: guna sekna; steal: zay jijukor.",
+          "3. Two argument verbs also used in an intransitive form (verbes à deux arguments aussi employés de façon intransitive) : swallow: gonzelmez; take: dinizubu; take out: kawjuku; tell: hare mal; break (leg): digdigzerzad; break (thing): baq zerza; construct: cen sekre; cook: hina sesenja; dig: fas zeyez; dress: dabsil sadabi; fill: ton setker; pour: dudu sesenjel; reach: taw suwud; sew: tatab zezmi; throw out: mun sesenjel; tie up: haw suwaqan."
+        ]
+      },
+      {
+        "numero": 7,
+        "titre": "Conclusion",
+        "contenu": [
+          "To summarize we can recall the facts: The causative morpheme used in Tadaksahak is of Berber origin and prefixed to the verb root as in Berber languages. The same is true for the morphemes of passive voice, reflexive, and reciprocal. Only verb roots that are also etymologically from Berber can take these morphemes in Tadaksahak. Yet many verbs used frequently in daily life are of Songhay origin and do not allow derivation. Such verbs are supplanted with a root of Berber origin when they get derived and are then taking the regular morphemes. Tadaksahak has developed strategies in a unique way to deal with the two very different linguistic systems which influenced this language."
+        ]
+      }
+    ],
+    "conclusion": null,
+    "bibliographie": [
+      "Ali, Alalou, and Patrick Farrell. 1993. 'Argument structure and causativization in Tamazight Berber.' Journal of African Languages and Linguistics 14:155–186.",
+      "Heath, Jeffrey. 1999. A grammar of Koyraboro (Koroboro) Senni. Westafrikanische Studien, Frankfurter Beiträge zur Sprach- und Kulturgeschichte. Rüdiger Köppe Verlag: Köln.",
+      "Lacroix, Pierre-Francis. 1971. 'L'ensemble Songhay-jerma: problèmes et thèmes de travail.' In Acte du 8ème Congrès de la SLAO, Annales de l'Université d'Abidjan. Série H, Fascicule hors série. Abidjan, 87–100.",
+      "Nicolai, Robert. 1981. Les dialectes du Songhay. Contribution à l'étude des changements linguistiques. SELAF (Bibliothèque 85-86) Paris.",
+      "Prasse, Karl-G., Ghoubeida Alojaly, et Ghabdouane Mohamed. 1998. Lexique Touareg - Français, Deuxième édition revue et augmentée. Museum Tusculanum Press, University of Copenhagen.",
+      "Rueck, Michael J., and Niels Christiansen. 1999. 'Northern Songhay Languages in Mali and Niger, A Sociolinguistic Survey.' In Proceedings of the 7th Nilo-Saharan Linguistics Colloquium, Vienna.",
+      "Stauffer, Daniel Ray. 1997. Essential elements of Songhay grammar. MA thesis. Arlington: University of Texas.",
+      "Tilmatine, Mohamed. 1991. 'Tabelbala: Eine Songhaysprachinsel in der algerischen Sahara.' In Afrikanistische Arbeitspapiere, Sondernummer. Berlin: Freie Universität."
+    ]
+  },
+  {
+    "id": 23,
+    "titre": "Some verb morphology features of Tadaksahak",
+    "auteur": "Niels Christiansen and Regula Christiansen",
+    "sous_titre": "Berber or Songhay, this is the question",
+    "annee": "2002",
+    "pages": 14,
+    "type": "linguistics",
+    "langue": "English",
+    "categorie": "Linguistics / Tadaksahak language",
+    "description": "Comparative study of the verbal systems of Songhay (Gao), Tamasheq and Tadaksahak. Analysis of verbal derivation mechanisms (causative, passive, reflexive, reciprocal) and suppletion of Songhay-origin roots with Berber roots. Includes an appendix listing the verbs concerned.",
+    "couverture": "",
+    "illustrations": [],
+    "chapitres": [
+      {
+        "numero": 1,
+        "titre": "Introduction",
+        "contenu": [
+          "Having been described as 'language mixte' (Lacroix 1971), this language presents features of Songhay and Berber languages. The observations discussed in this paper deal with the way voice changes are handled. In particular, it shows how the causative is formed. The causative morpheme S(V)- is of Berber origin and prefixed to the verb root as in Berber languages, whereas Songhay suffixes the causative morpheme that is of a very different form (- andi). But only verb roots that are also etymologically from Berber can take the morpheme in Tadaksahak. All roots that are cognates with Songhay are replaced with a Berber root with the same meaning, when causativized, changed to passive voice, or made reflexive or reciprocal.",
+          "Pierre-Francis Lacroix was the first to mention Tadaksahak in literature, together with related languages. They were referred to as 'mixed languages' ('langues mixtes'), because of the evidence of strong influence from Songhay as well as from Tamasheq (Lacroix 1968).",
+          "In his extensive study of Songhay languages, Robert Nicolai puts Tadaksahak in the group of Northern Songhay (Nicolai 1981:25, 'Songhay septentrional'). Together with Tihisht, Tadaksahak forms the 'nomadic' subgroup. As a part of the Songhay language group, Tadaksahak is placed in the Nilo-Saharan language family. Our observations among some of these Northern Songhay languages would indicate that Tadaksahak is the language most influenced by Tamasheq (and furthermore, on a phonemic and lexical level, by religious Arabic)."
+        ]
+      },
+      {
+        "numero": 2,
+        "titre": "Phonemes",
+        "contenu": [
+          "The examples presented here are given phonemically according to the interpretation documented in our description of the Tadaksahak phonology (Christiansen 2000, manuscript). Vowels: i, e, a, o, u all contrasting in length.",
+          "Consonants: labial: b, f, m, p; alveolar: t, d, n, r, l, s, z; (pharyngeal): t, d; palatal: c, j, y, n; velar: k, g, x, h, w; uvaral: q; glottal: h. This corresponds with IPA with the exception of the following signs: Pharyngealization is marked with a dot underneath the sign: /t/, /d/... The alveo-palatal affricates are represented by one sign [t] = /c/, [dʒ] = /j/. The palatal approximant [j] is represented as /y/, the alveolar flap [r] shows as /r/ and the uvaral unvoiced [h] is represented as /h/."
+        ]
+      },
+      {
+        "numero": 3,
+        "titre": "Verbal system of Songhay (Gao)",
+        "contenu": [
+          "Conjugation: A series of auxiliaries are inflected for tense, aspect, and mode. Preceding the TAM marker is the pronoun or nominal holding the function of subject. All derivations are suffixed as the following formula shows: NP/pron TAM verb(-derivator).",
+          "Causative and other voice changing devices: Many Songhay verbs accept the suffix -andi which makes the causative of intransitive verbs (and a few transitives), and the factive of verbs of adjectival quality. Examples: ben 'finish' → ben-andi 'cause to end'; too 'arrive' → too-ndi 'deliver'.",
+          "Compound reflexives are formed with the word 'head' without definite and plural suffixes. Example: Faatuma nda Aysa ga (ngi bog) jumay 'Faatuma and Aysa wash themselves'."
+        ]
+      },
+      {
+        "numero": 4,
+        "titre": "Verbal system of Tamasheq",
+        "contenu": [
+          "Conjugation in Tamasheq is rather complex. The example of the 'past completed aspect' serves as an illustration: ektabay 'I wrote', tektabad 'you (2s) wrote', iktab 'he wrote', tektab 'she wrote', naktab 'we wrote', tektabam 'you (2p/m) wrote', tektabmat 'you (2p/f) wrote', ektaban 'they (3p/m) wrote', ektabnat 'they (3p/f) wrote'.",
+          "Causative and other voice changing devices: causative: se-ktab 'make write'; passive: towe-ktab 'be written'; reciprocal/reflexive: na-ktab 'write to each other'."
+        ]
+      },
+      {
+        "numero": 5,
+        "titre": "Verbal system of Tadaksahak",
+        "contenu": [
+          "Conjugation: Different from Songhay, Tadaksahak always has a subject clitic even if the noun phrase is also present. The TAM markers precede the verb stem and consist of a consonant with a possible vowel: C(V)-. All unbound verb roots begin with a consonant. The unit /clitic+TAM+verb.stem/ has in general only one stressed syllable. Formula: (NP) pron.clitic-TAM-(derivator)-verb.",
+          "Causative and other voice changing devices: In Tadaksahak the voice changing morphemes are prefixed to the verb root. This behaviour follows the pattern of Berber languages. Voice changing morphemes: Passive: t(e)-, tuw(a)-; Causative: S(V)- (copies any sibilant present in the verb root, default /s/); Reciprocal/Reflexive: ne-, me-, nem- (distinction inconsistent).",
+          "Verb roots beginning with a consonant other than 'y-': Example: Songhay kati 'to stumble' → Tadaksahak gertetef 'to stumble', ne-gertetef 'to stumble (reflexive)', se-gertetef 'to make stumble'.",
+          "Verb roots beginning with 'y-': The initial consonant 'y-' is dropped in favor of the consonant of the voice changing prefix. Example: Songhay denji 'to glue' → Tadaksahak yidger 'to be glued', sedger 'to glue', medger 'to be glued together', semedger 'to glue together'.",
+          "Verb roots using suppletion when the voice is changed: This second verb class is comparatively small but consists of the most frequently used verbs in daily life. These roots are etymologically Songhay and do not allow the morphemes used by the above two subclasses. Suppletion is the strategy used: a root from Berber is replacing the base root. This replacement is always a bound root; it is not found in the language without a voice changing or other derivational affix.",
+          "Examples: Songhay dumbu 'to cut' → Tadaksahak dumbu 'to cut, to slaughter', causative zegzem 'to have slaughtered', passive tegzem 'to be slaughtered'; Songhay naa 'to eat' → Tadaksahak na 'to eat', causative jikja 'to make eat, to feed', passive tekja 'to be eaten, to be edible'; Songhay wii 'to kill' → Tadaksahak wi 'to kill', causative sasuwanqa 'to make kill', passive tuwanqa 'to be killed', reciprocal nemanqa 'to beat each other', causative-reciprocal senemanqa 'to cause to beat each other'."
+        ]
+      },
+      {
+        "numero": 6,
+        "titre": "Appendix – List of suppletive verbs",
+        "contenu": [
+          "1. One argument verbs: be big: bersemger; be close: man zeheznemheez; cry: hew selhail; be dry: qoq segerig; eat enough: kungusiwente; fall: kanjederodda; fly: sot sesegedag; get up: tunusunkuren; go down: zumbo zezebet; leave: koy seglag; depart: hunus efelef; be placed: keni jinja; run: zuru zezela; sit: gora jayam; spend the day: hoyay sekla; stop: kay sebbed; suckle: lekamkam senkesen; be upright: kay soqta; walk: dida zizu.",
+          "2. Two argument verbs: bring: zawji jiwi; call somebody: cew seyrettu; climb/ride: kedi suwunte; cut/slaughter: dumbu zegzem; do: jiga tega; drink: nin jiju; eat: na jikja; fight (also verbally): zog sek(e)nest; gather (food): haba sefred; give: na sekfa; enter in: huru zuguz; hear: mo selatuwes; hit: kar juwut; jump over: sot seseged; kill: wi sasuwanqa; know: bay jijin; lead pulling: gungu sisilwi; leave alone: dis tuwiya; look at: hasi suswud; look for: hurru segmi; love/want: baya jeratu; read/study: qaran seseqra; say: ci sesuwantu; see: guna sekna; steal: zay jijukor.",
+          "3. Two argument verbs also used in an intransitive form: swallow: gonzelmez; take: dinizubu; take out: kawjuku; tell: hare mal; break (leg): digdigzerzad; break (thing): baq zerza; construct: cen sekre; cook: hina sesenja; dig: fas zeyez; dress: dabsil sadabi; fill: ton setker; pour: dudu sesenjel; reach: taw suwud; sew: tatab zezmi; throw out: mun sesenjel; tie up: haw suwaqan."
+        ]
+      },
+      {
+        "numero": 7,
+        "titre": "Conclusion",
+        "contenu": [
+          "To summarize we can recall the facts: The causative morpheme used in Tadaksahak is of Berber origin and prefixed to the verb root as in Berber languages. The same is true for the morphemes of passive voice, reflexive, and reciprocal. Only verb roots that are also etymologically from Berber can take these morphemes in Tadaksahak. Yet many verbs used frequently in daily life are of Songhay origin and do not allow derivation. Such verbs are supplanted with a root of Berber origin when they get derived and are then taking the regular morphemes. Tadaksahak has developed strategies in a unique way to deal with the two very different linguistic systems which influenced this language."
+        ]
+      }
+    ],
+    "conclusion": null,
+    "bibliographie": [
+      "Ali, Alalou, and Patrick Farrell. 1993. 'Argument structure and causativization in Tamazight Berber.' Journal of African Languages and Linguistics 14:155–186.",
+      "Heath, Jeffrey. 1999. A grammar of Koyraboro (Koroboro) Senni. Westafrikanische Studien, Frankfurter Beiträge zur Sprach- und Kulturgeschichte. Rüdiger Köppe Verlag: Köln.",
+      "Lacroix, Pierre-Francis. 1971. 'L'ensemble Songhay-jerma: problèmes et thèmes de travail.' In Acte du 8ème Congrès de la SLAO, Annales de l'Université d'Abidjan. Série H, Fascicule hors série. Abidjan, 87–100.",
+      "Nicolai, Robert. 1981. Les dialectes du Songhay. Contribution à l'étude des changements linguistiques. SELAF (Bibliothèque 85-86) Paris.",
+      "Prasse, Karl-G., Ghoubeida Alojaly, et Ghabdouane Mohamed. 1998. Lexique Touareg - Français, Deuxième édition revue et augmentée. Museum Tusculanum Press, University of Copenhagen.",
+      "Rueck, Michael J., and Niels Christiansen. 1999. 'Northern Songhay Languages in Mali and Niger, A Sociolinguistic Survey.' In Proceedings of the 7th Nilo-Saharan Linguistics Colloquium, Vienna.",
+      "Stauffer, Daniel Ray. 1997. Essential elements of Songhay grammar. MA thesis. Arlington: University of Texas.",
+      "Tilmatine, Mohamed. 1991. 'Tabelbala: Eine Songhaysprachinsel in der algerischen Sahara.' In Afrikanistische Arbeitspapiere, Sondernummer. Berlin: Freie Universität."
+    ]
+  },
+  {
+    "id": 24,
+    "titre": "بعض ملامح الصرف الفعلي في لغة تدكساهق",
+    "auteur": "نيلز كريستيانسن وريجولا كريستيانسن",
+    "sous_titre": "أمازيغية أم سنغاي، هذا هو السؤال",
+    "annee": "2002",
+    "pages": 14,
+    "type": "لغويات",
+    "langue": "Arabe",
+    "categorie": "لغويات / لغة تدكساهق",
+    "description": "دراسة مقارنة للأنظمة الفعلية في لغات السونغاي (غاو) والتماشق والتدكساهق. تحليل آليات الاشتقاق الفعلي (السببية، المبني للمجهول، الانعكاسية، المتبادلة) والإحلال الجذري للأصول السنغاوية بأصول أمازيغية. يتضمن ملحقاً بقائمة الأفعال المعنية.",
+    "credit_traduction": "تمت ترجمة هذا الكتاب من الفرنسية إلى العربية بواسطة حمدين أغ مكتار، الرئيس التنفيذي لشركة HAM Global Words.",
+    "couverture": "",
+    "illustrations": [],
+    "chapitres": [
+      {
+        "numero": 1,
+        "titre": "مقدمة",
+        "contenu": [
+          "بعد أن وُصفت بأنها 'لغة مختلطة' (لاكروا 1971)، تقدم هذه اللغة سمات من لغات السونغاي والأمازيغية. تتناول الملاحظات التي نوقشت في هذه الورقة كيفية التعامل مع تغيير الصوت (المبني للمجهول، السببية، إلخ). ويبين بشكل خاص كيف يتشكل السببية. المورفيم السببي S(V)- هو من أصل أمازيغي ويسبق الجذر الفعلي كما في اللغات الأمازيغية، بينما تلحق السونغاي مورفيم سببي ذا شكل مختلف تماماً (- andi). ولكن فقط الجذور الفعلية التي هي أيضاً من أصل أمازيغي يمكن أن تأخذ هذا المورفيم في التدكساهق. يتم استبدال جميع الجذور المشتركة مع السونغاي بجذر أمازيغي له نفس المعنى، عند تحويلها إلى سبب، أو تغييرها إلى المبني للمجهول، أو جعلها منعكسة أو متبادلة.",
+          "كان بيير فرانسيس لاكروا أول من ذكر تدكساهق في الأدبيات، إلى جانب اللغات ذات الصلة. يشار إليها باسم 'اللغات المختلطة' ('langues mixtes')، بسبب الأدلة على التأثير القوي من السونغاي وكذلك من التماشق (لاكروا 1968).",
+          "في دراسته الموسعة للغات السونغاي، يضع روبرت نيكولاي تدكساهق في مجموعة السونغاي الشمالية (نيكولاي 1981:25). تشكل تدكساهق، مع تهيشت، المجموعة الفرعية 'البدوية'. كجزء من مجموعة لغات السونغاي، توضع تدكساهق في عائلة اللغات النيلية الصحراوية. تشير ملاحظاتنا بين بعض لغات السونغاي الشمالية هذه إلى أن تدكساهق هي اللغة الأكثر تأثراً بالتماشق (وعلاوة على ذلك، على المستوى الصوتي والمعجمي، بالعربية الدينية)."
+        ]
+      },
+      {
+        "numero": 2,
+        "titre": "الصوتيات",
+        "contenu": [
+          "الأمثلة المقدمة هنا تُعطى صوتياً وفقاً للتفسير الموثق في وصفنا لصوتيات تدكساهق (كريستيانسن 2000، مخطوطة). الحروف الصوتية (المتحركة): i, e, a, o, u كلها متباينة الطول.",
+          "الحروف الساكنة (الصوامت): شفوية: b, f, m, p; لثوية: t, d, n, r, l, s, z; (بلعومية): t, d; حنكية: c, j, y, n; طبقة: k, g, x, h, w; لهوية: q; مزمارية: h. هذا يتوافق مع الأبجدية الصوتية الدولية باستثناء العلامات التالية: يتم تمييز التفخيم بنقطة أسفل الحرف: /t/, /d/... يتم تمثيل المزجي الحنكي اللثوي بحرف واحد [t] = /c/، [dʒ] = /j/. يتم تمثيل الحرف التقريبي الحنكي [j] كـ /y/، والرفرف السنخي [r] يظهر كـ /r/، والاحتكاكي اللهوي [h] يمثل كـ /h/."
+        ]
+      },
+      {
+        "numero": 3,
+        "titre": "النظام الفعل في السونغاي (غاو)",
+        "contenu": [
+          "التصريف: سلسلة من الأفعال المساعدة يتم تصريفها حسب الزمن والجانح والنمط. يسبق علامة TAM الضمير أو الاسم الذي يحمل وظيفة الفاعل. جميع الاشتقاقات تلحق كما تظهر الصيغة التالية: NP/pron TAM فعل(-مشتق).",
+          "السببية وأجهزة تغيير الصوت الأخرى: العديد من أفعال السونغاي تقبل اللاحقة -andi التي تجعل السببية من الأفعال اللازمة (وقليل من المتعدية)، والفعلية من أفعال الصفة. أمثلة: ben 'ينتهي' → ben-andi 'يسبب النهاية'; too 'يصل' → too-ndi 'يسلم'.",
+          "تتشكل المنعكسات المركبة بكلمة 'رأس' دون لواحق المعرفة والجمع. مثال: Faatuma nda Aysa ga (ngi bog) jumay 'فاتوما وعائشة تغسلان نفسيهما'."
+        ]
+      },
+      {
+        "numero": 4,
+        "titre": "النظام الفعل في التماشق",
+        "contenu": [
+          "التصريف في التماشق معقد إلى حد ما. مثال 'الجانح الماضي المكتمل' يخدم كتوضيح: ektabay 'أنا كتبت', tektabad 'أنت (مفرد مذكر) كتبت', iktab 'هو كتب', tektab 'هي كتبت', naktab 'نحن كتبنا', tektabam 'أنتم (جمع مذكر) كتبتم', tektabmat 'أنتن (جمع مؤنث) كتبتن', ektaban 'هم (جمع مذكر) كتبوا', ektabnat 'هن (جمع مؤنث) كتبن'.",
+          "السببية وأجهزة تغيير الصوت الأخرى: السببية: se-ktab 'يجعل يكتب'; المبني للمجهول: towe-ktab 'يُكتب'; المتبادل/المنعكس: na-ktab 'يكتب لبعضهما البعض'."
+        ]
+      },
+      {
+        "numero": 5,
+        "titre": "النظام الفعل في التدكساهق",
+        "contenu": [
+          "التصريف: على عكس السونغاي، تحتوي التدكساهق دائماً على لاصق فاعل حتى إذا كانت العبارة الاسمية موجودة أيضاً. علامات TAM تسبق ساق الفعل وتتكون من حرف ساكن مع حرف متحرك محتمل: C(V)-. جميع جذور الأفعال غير المقيدة تبدأ بحرف ساكن. الوحدة /clitic+TAM+verb.stem/ لها بشكل عام مقطع واحد فقط مشدد. الصيغة: (NP) pron.clitic-TAM-(derivator)-verb.",
+          "السببية وأجهزة تغيير الصوت الأخرى: في التدكساهق، يتم إضافة مورفيمات تغيير الصوت إلى الجذر الفعلي. هذا السلوك يتبع نمط اللغات الأمازيغية. مورفيمات تغيير الصوت: المبني للمجهول: t(e)-, tuw(a)-; السببية: S(V)- (ينسخ أي صوت صفير موجود في الجذر الفعلي، الافتراضي /s/); المتبادل/المنعكس: ne-, me-, nem- (التمييز غير متسق).",
+          "الجذور الفعلية التي تبدأ بحرف ساكن غير 'y-': مثال: سنغاي kati 'يتعثر' → تدكساهق gertetef 'يتعثر', ne-gertetef 'يتعثر (منعكس)', se-gertetef 'يجعل يتعثر'.",
+          "الجذور الفعلية التي تبدأ بـ 'y-': يتم إسقاط الحرف الساكن الأول 'y-' لصالح الحرف الساكن لبادئة تغيير الصوت. مثال: سنغاي denji 'يلصق' → تدكساهق yidger 'يكون ملصقاً', sedger 'يلصق', medger 'يكون ملصقاً معاً', semedger 'يلصق معاً'.",
+          "الجذور الفعلية التي تستخدم الإحلال (الاستبدال) عند تغيير الصوت: فئة الفعل الثانية هذه صغيرة نسبياً ولكنها تتكون من الأفعال الأكثر استخداماً في الحياة اليومية. هذه الجذور هي من أصل سنغاي ولا تسمح بالمورفيمات التي تستخدمها الفئتان الفرعيتان أعلاه. الإحلال هو الاستراتيجية المستخدمة: يتم استبدال الجذر الأساسي بجذر من أصل أمازيغي. هذا الاستبدال هو دائماً جذر مقيد؛ لا يوجد في اللغة بدون مورفيم تغيير صوت أو مورفيم اشتقاقي آخر.",
+          "أمثلة: سنغاي dumbu 'يقطع' → تدكساهق dumbu 'يقطع، يذبح', السببية zegzem 'يذبح (يجعل يذبح)', المبني للمجهول tegzem 'يُذبح'; سنغاي naa 'يأكل' → تدكساهق na 'يأكل', السببية jikja 'يجعل يأكل، يطعم', المبني للمجهول tekja 'يؤكل، صالح للأكل'; سنغاي wii 'يقتل' → تدكساهق wi 'يقتل', السببية sasuwanqa 'يجعل يقتل', المبني للمجهول tuwanqa 'يُقتل', المتبادل nemanqa 'يضربون بعضهم البعض', السببية المتبادلة senemanqa 'يجعلهم يضربون بعضهم البعض'."
+        ]
+      },
+      {
+        "numero": 6,
+        "titre": "الملحق – قائمة الأفعال ذات الإحلال",
+        "contenu": [
+          "1. أفعال ذات حجة واحدة: يكون كبيراً: bersemger; يكون قريباً: man zeheznemheez; يبكي: hew selhail; يكون جافاً: qoq segerig; يأكل حتى الشبع: kungusiwente; يسقط: kanjederodda; يطير: sot sesegedag; ينهض: tunusunkuren; ينزل: zumbo zezebet; يغادر: koy seglag; يرحل: hunus efelef; يوضع: keni jinja; يركض: zuru zezela; يجلس: gora jayam; يقضي النهار: hoyay sekla; يتوقف: kay sebbed; يرضع: lekamkam senkesen; يكون قائماً: kay soqta; يمشي: dida zizu.",
+          "2. أفعال ذات حجتين: يجلب: zawji jiwi; ينادي شخصاً: cew seyrettu; يركب: kedi suwunte; يقطع/يذبح: dumbu zegzem; يفعل: jiga tega; يشرب: nin jiju; يأكل: na jikja; يتشاجر: zog sek(e)nest; يجمع (طعاماً): haba sefred; يعطي: na sekfa; يدخل: huru zuguz; يسمع: mo selatuwes; يضرب: kar juwut; يقفز فوق: sot seseged; يقتل: wi sasuwanqa; يعرف: bay jijin; يقود (جذباً): gungu sisilwi; يترك وشأنه: dis tuwiya; ينظر إلى: hasi suswud; يبحث عن: hurru segmi; يحب/يريد: baya jeratu; يقرأ/يدرس: qaran seseqra; يقول: ci sesuwantu; يرى: guna sekna; يسرق: zay jijukor.",
+          "3. أفعال ذات حجتين تستخدم أيضاً في شكل لازم: يبتلع: gonzelmez; يأخذ: dinizubu; يخرج: kawjuku; يخبر: hare mal; يكسر (رجلاً): digdigzerzad; يكسر (شيئاً): baq zerza; يبني: cen sekre; يطبخ: hina sesenja; يحفر: fas zeyez; يلبس: dabsil sadabi; يملأ: ton setker; يصب: dudu sesenjel; يصل: taw suwud; يخيط: tatab zezmi; يرمي: mun sesenjel; يربط: haw suwaqan."
+        ]
+      },
+      {
+        "numero": 7,
+        "titre": "الاستنتاج",
+        "contenu": [
+          "لتلخيص يمكننا تذكر الحقائق: المورفيم السببي المستخدم في التدكساهق هو من أصل أمازيغي ويسبق الجذر الفعلي كما في اللغات الأمازيغية. الأمر نفسه ينطبق على مورفيمات المبني للمجهول والمنعكس والمتبادل. فقط الجذور الفعلية التي هي أيضاً من أصل أمازيغي يمكنها أخذ هذه المورفيمات في التدكساهق. ومع ذلك، فإن العديد من الأفعال المستخدمة بشكل متكرر في الحياة اليومية هي من أصل سنغاي ولا تسمح بالاشتقاق. يتم استبدال هذه الأفعال بجذر من أصل أمازيغي عندما يتم اشتقاقها ثم تأخذ المورفيمات العادية. لقد طورت التدكساهق استراتيجيات بطريقة فريدة للتعامل مع النظامين اللغويين المختلفين للغاية اللذين أثروا على هذه اللغة."
+        ]
+      }
+    ],
+    "conclusion": null,
+    "bibliographie": [
+      "Ali, Alalou, and Patrick Farrell. 1993. 'Argument structure and causativization in Tamazight Berber.' Journal of African Languages and Linguistics 14:155–186.",
+      "Heath, Jeffrey. 1999. A grammar of Koyraboro (Koroboro) Senni. Westafrikanische Studien, Frankfurter Beiträge zur Sprach- und Kulturgeschichte. Rüdiger Köppe Verlag: Köln.",
+      "Lacroix, Pierre-Francis. 1971. 'L'ensemble Songhay-jerma: problèmes et thèmes de travail.' In Acte du 8ème Congrès de la SLAO, Annales de l'Université d'Abidjan. Série H, Fascicule hors série. Abidjan, 87–100.",
+      "Nicolai, Robert. 1981. Les dialectes du Songhay. Contribution à l'étude des changements linguistiques. SELAF (Bibliothèque 85-86) Paris.",
+      "Prasse, Karl-G., Ghoubeida Alojaly, et Ghabdouane Mohamed. 1998. Lexique Touareg - Français, Deuxième édition revue et augmentée. Museum Tusculanum Press, University of Copenhagen.",
+      "Rueck, Michael J., and Niels Christiansen. 1999. 'Northern Songhay Languages in Mali and Niger, A Sociolinguistic Survey.' In Proceedings of the 7th Nilo-Saharan Linguistics Colloquium, Vienna.",
+      "Stauffer, Daniel Ray. 1997. Essential elements of Songhay grammar. MA thesis. Arlington: University of Texas.",
+      "Tilmatine, Mohamed. 1991. 'Tabelbala: Eine Songhaysprachinsel in der algerischen Sahara.' In Afrikanistische Arbeitspapiere, Sondernummer. Berlin: Freie Universität."
+    ]
+  },
+  {
+    "id": 25,
+    "titre": "La relativisation en tadaksahak",
+    "auteur": "Regula Christiansen et Stephen H. Levinson",
+    "sous_titre": "Stratégies de relativisation dans une langue songhay septentrionale",
+    "annee": "2003",
+    "pages": 17,
+    "type": "linguistique",
+    "langue": "Français",
+    "categorie": "Linguistique / Syntaxe",
+    "description": "Étude détaillée des stratégies de relativisation en tadaksahak (songhay septentrional). Analyse des trois stratégies (pronom relatif, stratégie zéro, et stratégie en sa), des relations grammaticales pouvant être relativisées, et des distinctions entre relatives restrictives et non restrictives.",
+    "couverture": "",
+    "illustrations": [],
+    "chapitres": [
+      {
+        "numero": 1,
+        "titre": "Introduction",
+        "contenu": [
+          "Three distinct relativization strategies are used in Tadaksahak: a relative pronoun strategy, a gap strategy, and one that uses the morpheme sa (hereafter, the sa- strategy). One parameter that distinguishes these strategies is whether the relative clause is restrictive (relative pronoun and gap strategies) or nonrestrictive (sa- strategy); this difference is reviewed in section 1. The parameter that usually distinguishes the two restrictive strategies is whether the referent of the head noun is definite (relative pronoun—sec. 3.1) or indefinite (gap strategy—sec. 3.2). Section 4 is devoted to the sa- strategy. The paper also discusses which grammatical relations can be relativized by each strategy (sec. 2), and some motivations for left- dislocating nominal constituents that contain referents (sec. 5).",
+          "Tadaksahak est une langue SVO et, conformément à cela, la proposition relative suit le nom tête, quelle que soit la stratégie de relativisation utilisée. Parce que la proposition relative apparaît presque toujours après le nom tête, elle se trouve souvent au milieu de la proposition principale.",
+          "Trois stratégies de relativisation sont employées en tadaksahak : (1) la stratégie du pronom relatif, (2) la stratégie zéro (absence de marquage), et (3) la stratégie avec sa. Le morphème sa n'introduit que des propositions relatives non restrictives (sous réserve d'une condition spécifique) ; cette stratégie est traitée dans la section 4. Les deux autres stratégies, pronom relatif et zéro, encodent des propositions relatives restrictives ; elles sont discutées dans la section 3."
+        ]
+      },
+      {
+        "numero": 2,
+        "titre": "Stratégies de relativisation",
+        "contenu": [
+          "La stratégie du pronom relatif : Le pronom s'accorde en nombre avec le nom qu'il modifie. La forme singulière du pronom est ayo. Exemple : 'Le forgeron a frotté le bracelet qui est en argent.' La forme plurielle du pronom est ayondo (ou endayo). Exemple : 'Qui sont les cavaliers à chameaux qui sont descendus chez Rhali ?'",
+          "La stratégie zéro (absence de marquage) : Exemple : '...elle (la lionne) a trouvé de la viande qui se trouvait à côté des petits.'",
+          "La stratégie avec sa : Exemple : 'Il salue sa mère, dont le nom est Aminata.'"
+        ]
+      },
+      {
+        "numero": 3,
+        "titre": "Relations grammaticales pouvant être relativisées",
+        "contenu": [
+          "Cette section examine les relations grammaticales qui peuvent être relativisées par chacune des stratégies présentées. Keenan et Comrie (1977) observent que toute stratégie de relativisation donnée permettra la relativisation dans un segment continu de la 'hiérarchie d'accessibilité' suivante : sujet → objet direct → objet indirect → oblique → possesseur.",
+          "Sujet : Lorsqu'un sujet est relativisé dans la stratégie du pronom relatif, le pronom prend la place du clitique sujet dans la proposition relative. Exemple : 'Trouve-moi la personne qui est arrivée ici !'",
+          "Objet direct : Lorsque l'objet direct est relativisé dans d'autres langues songhay, un pronom résomptif occupe la place du constituant relativisé dans la proposition relative. Aucun pronom de ce type n'est utilisé en tadaksahak. Exemple : 'Le travail que j'ai pour toi est terminé.'",
+          "Objets obliques (y compris les objets indirects) : Les objets obliques sont caractérisés par la présence d'une postposition qui indique la relation du constituant avec le verbe. Lorsque ces constituants sont relativisés, la postposition est antéposée. Dans la stratégie du pronom relatif, elle apparaît immédiatement après le pronom relatif. Dans la stratégie zéro, elle apparaît immédiatement après le nom tête modifié par la proposition relative. Exemple : 'Je suis retourné à l'endroit où ils vivent.'",
+          "Possesseur : La seule stratégie attestée dans nos textes pour relativiser les possesseurs utilise le morphème sa. Exemple : 'J'ai vu un fantôme, dans les yeux duquel brûlait du feu.'"
+        ]
+      },
+      {
+        "numero": 4,
+        "titre": "Propositions relatives restrictives",
+        "contenu": [
+          "Le tadaksahak contraste à la fois avec les langues songhay apparentées et avec les langues berbères en employant deux stratégies restrictives. Les autres langues songhay ont une seule stratégie restrictive, utilisant le relativiseur ka(q), tandis que les langues berbères utilisent la stratégie zéro. L'existence de deux stratégies en tadaksahak reflète le fait que la langue ne marque pas la définitude sur les nominaux comme les autres langues songhay, mais a parfois besoin de transmettre cet attribut.",
+          "Selon Givón (1984:399), les nominaux définis 'ont une identité référentielle unique', tandis que les locuteurs codent un nominal référentiel comme indéfini 's'ils pensent qu'ils ne sont pas en droit de supposer que l'auditeur peut... lui attribuer une identité référentielle unique.'",
+          "Stratégie du pronom relatif et entités définies : Typiquement, lorsqu'une entité a déjà été introduite dans une histoire et peut donc se voir attribuer une identité référentielle unique, toute référence ultérieure qui implique une proposition relative utilise la stratégie du pronom relatif. Exemple : 'La personne qui était assise sur le chameau est descendue.'",
+          "Stratégie zéro et entités indéfinies : Généralement, lorsqu'une entité est indéfinie, toute référence à celle-ci qui implique une proposition relative utilise la stratégie zéro. Exemple : '...jusqu'à ce qu'il arrive chez une vieille femme qui vivait dans des terriers de chats sauvages.'",
+          "Relatives sans tête : Les propositions relatives sans tête utilisent la stratégie du pronom relatif, et leur référent est généralement défini. Exemple : 'Il a atteint leurs vaches, a pris celle qui était pleine...'"
+        ]
+      },
+      {
+        "numero": 5,
+        "titre": "Propositions relatives non restrictives",
+        "contenu": [
+          "Le morphème sa est typiquement utilisé pour marquer les propositions relatives non restrictives ; c'est-à-dire des clauses qui ajoutent de nouvelles informations sur une entité déjà identifiée. De telles clauses pourraient se suffire à elles-mêmes en tant que propositions indépendantes, si elles n'étaient pas attachées à la clause précédente par sa.",
+          "Les propositions relatives non restrictives apparaissent souvent au début des histoires en tadaksahak pour donner des informations supplémentaires sur un participant majeur. La relation grammaticale la plus fréquemment relativisée est l'objet direct, bien que le sujet des verbes intransitifs et transitifs puisse également être relativisé, de même que le possesseur.",
+          "Exemple : 'Il a épousé une certaine femme, qui (une fois mariés) avait l'habitude de manger sept chameaux par jour.'",
+          "Exemple : 'J'ai vu un fantôme qui fait peur, dans les yeux duquel brûlait du feu.'"
+        ]
+      },
+      {
+        "numero": 6,
+        "titre": "Dislocation à gauche des constituants nominaux contenant des propositions relatives",
+        "contenu": [
+          "Cette section illustre les occasions où le tadaksahak disloque à gauche des constituants nominaux qui contiennent des propositions relatives. Cela arrive pour plusieurs raisons : parce que le constituant est complexe, parce que la relativisation du possesseur n'est apparemment pas une option dans les propositions relatives restrictives, et parce que le locuteur souhaite donner une importance supplémentaire à un constituant focal.",
+          "Les constituants nominaux disloqués à gauche en tadaksahak ont deux caractéristiques : 1. Ils sont placés au début d'une clause ou d'une phrase. 2. Une trace pronominale corrélative occupe la place où le constituant se produirait normalement.",
+          "Exemple : 'Cet homme qu'il accompagnait, dont le nom est Niels, je lui ai dit : ...'",
+          "Exemple : 'Quelqu'un qui travaille beaucoup, ses mains sont rudes.'",
+          "Exemple : 'Un cheval qui a de l'endurance, c'est CELUI-CI qui est noble.'"
+        ]
+      }
+    ],
+    "conclusion": {
+      "titre": "Résumé",
+      "contenu": [
+        "Le tadaksahak possède des marqueurs distincts pour les propositions relatives non restrictives et restrictives. Les propositions relatives non restrictives sont caractérisées par la présence du morphème sa, introduisant une clause qui serait autrement indépendante. Deux stratégies sont disponibles pour les propositions relatives restrictives. La stratégie du pronom relatif est utilisée si le nom tête est défini. La stratégie zéro est principalement utilisée lorsque le nom tête est indéfini. Cependant, ho 'cette chose' et ne 'lieu' ne suivent pas cette règle ; la stratégie du pronom relatif n'est jamais utilisée avec eux. Les motivations pour la dislocation à gauche des propositions relatives incluent la complexité du constituant concerné, le désir de relativiser le possesseur d'une proposition relative restrictive, et le désir de donner une importance supplémentaire à un constituant focal."
+      ]
+    },
+    "bibliographie": [
+      "Comrie, Bernard. 1989. Language universals and linguistic typology. Chicago: University of Chicago Press.",
+      "Fox, Barbara A. 1987. The noun phrase accessibility hierarchy revisited. Language 63:856-870.",
+      "Gensler, Orin. forthcoming. Adpositional relative clauses and Focus fronting in Songhay and Berber. Eighth Nilo-Saharan Linguistics Colloquium 2001, Hamburg.",
+      "Givón, Talmy. 1984. Syntax: A functional-typological introduction (volume 1). Philadelphia: Benjamins.",
+      "Heath, Jeffrey. 1999. A grammar of Koyraboro (Koroboro) Senni, the Songhay of Gao, Mali. Köln: Rüdiger Köppe Verlag.",
+      "Keenan, Edward, and Bernard Comrie. 1977. NP accessibility and universal grammar. Linguistic Inquiry 8:63-100.",
+      "Payne, Thomas E. 1997. Describing morphosyntax: A guide for field linguists. Cambridge: University Press."
+    ]
+  },
+  {
+    "id": 26,
+    "titre": "Relativization in Tadaksahak",
+    "auteur": "Regula Christiansen and Stephen H. Levinson",
+    "sous_titre": "Relativization strategies in a Northern Songhay language",
+    "annee": "2003",
+    "pages": 17,
+    "type": "linguistics",
+    "langue": "English",
+    "categorie": "Linguistics / Syntax",
+    "description": "Detailed study of relativization strategies in Tadaksahak (Northern Songhay). Analysis of three strategies (relative pronoun, gap strategy, and sa-strategy), the grammatical relations that can be relativized, and the distinctions between restrictive and non-restrictive relative clauses.",
+    "couverture": "",
+    "illustrations": [],
+    "chapitres": [
+      {
+        "numero": 1,
+        "titre": "Introduction",
+        "contenu": [
+          "Three distinct relativization strategies are used in Tadaksahak: a relative pronoun strategy, a gap strategy, and one that uses the morpheme sa (hereafter, the sa- strategy). One parameter that distinguishes these strategies is whether the relative clause is restrictive (relative pronoun and gap strategies) or nonrestrictive (sa- strategy); this difference is reviewed in section 1. The parameter that usually distinguishes the two restrictive strategies is whether the referent of the head noun is definite (relative pronoun—sec. 3.1) or indefinite (gap strategy—sec. 3.2). Section 4 is devoted to the sa- strategy. The paper also discusses which grammatical relations can be relativized by each strategy (sec. 2), and some motivations for left- dislocating nominal constituents that contain referents (sec. 5).",
+          "Tadaksahak is an SVO language and, consistent with this, the relative clause follows the head, whatever relativization strategy is used. Because the relative clause nearly always appears in the head, it is often found in the middle of the main clause.",
+          "Three relativization strategies are employed in Tadakashak: (1) the relative pronoun strategy, (2) the gap strategy (i.e., no marking), and (3) with the sa- strategy. The morpheme sa only introduces nonrestrictive relative clauses (provided a specific condition is met); this strategy is treated in section 4. The two other strategies, relative pronoun and gap, encode restrictive relative clauses; they are discussed in section 3."
+        ]
+      },
+      {
+        "numero": 2,
+        "titre": "Relativization strategies",
+        "contenu": [
+          "The relative pronoun strategy: The pronoun agrees in number with the noun it modifies. The singular form of the pronoun is ayo. Example: 'The blacksmith rubbed the bracelet that is made of silver.' The plural form of the pronoun is ayondo (or endayo). Example: 'Who are the camel riders who dismounted at Rhali's (place)?'",
+          "The gap strategy (no marking): Example: '...she (the lioness) found meat that was lying next to the cubs.'",
+          "The sa- strategy: Example: 'He greets his mother, whose name is Aminata.'"
+        ]
+      },
+      {
+        "numero": 3,
+        "titre": "Grammatical relations that can be relativized",
+        "contenu": [
+          "This section considers the grammatical relations that can be relativized by each of the strategies presented. Keenan and Comrie (1977) observe that any given relative-clause strategy will allow relativization in a continuous segment of the following 'Accessibility Hierarchy': subject → direct object → indirect object → oblique → possessor.",
+          "Subject: When a subject is relativized in the relative pronoun strategy, the pronoun takes the place of the subject clitic in the relative clause. Example: 'Get me the person who arrived here!'",
+          "Direct object: When the direct object is relativized in other Songhay languages, a resumptive pronoun occupies the place of the relativized constituent in the relative clause. No such pronoun is used in Tadaksahak. Example: 'The work I have for you is finished.'",
+          "Oblique objects (including indirect objects): Oblique objects are characterized by the presence of a postposition that indicates the relation of the constituent to the verb. When such constituents are relativized, the postposition is fronted. In the relative pronoun strategy, it occurs immediately after the relative pronoun. In the gap strategy, it occurs immediately after the head noun that is modified by the relative clause. Example: 'He returned to the place where they live.'",
+          "Possessor: The only strategy attested in our texts to relativize possessors uses the morpheme sa. Example: 'I saw a phantom, in whose eyes fire was burning.'"
+        ]
+      },
+      {
+        "numero": 4,
+        "titre": "Restrictive relative clauses",
+        "contenu": [
+          "Tadaksahak contrasts both with related Songhay languages and with Berber languages in employing two restrictive strategies. Other Songhay languages have a single restrictive strategy, using the relativizer ka(q), while Berber languages use the gap strategy. The existence of two strategies in Tadaksahak reflects the fact that the language does not mark definiteness on nominals like other Songhay languages, yet sometimes needs to convey this attribute.",
+          "According to Givón (1984:399), definite nominals 'have unique referential identity,' whereas speakers code a referential nominal as indefinite 'if they think that they are not entitled to assume that the hearer can...assign it unique referential identity.'",
+          "The relative pronoun strategy and definite entities: Typically, when an entity has been previously introduced to a story and so can be assigned unique referential identity, any subsequent reference to it that involves a relative clause involves the relative pronoun strategy. Example: 'The person who sat on the camel dismounted.'",
+          "The gap strategy and indefinite entities: Typically, when an entity is indefinite, any reference to it that involves a relative clause uses the gap strategy. Example: '...until he arrived at an old woman's who was (lived) in wildcats' burrows.'",
+          "Headless relative clauses: Headless relative clauses use the relative pronoun strategy, and their referent is usually definite. Example: 'He reached their cows, took the one that was pregnant...'"
+        ]
+      },
+      {
+        "numero": 5,
+        "titre": "Nonrestrictive relative clauses",
+        "contenu": [
+          "The morpheme sa is typically used to mark nonrestrictive relative clauses; i.e., clauses that add new information about an already identified entity. Such clauses could stand by themselves as independent clauses, were they not attached to the previous clause by sa.",
+          "Nonrestrictive relative clauses often occur at the beginning of Tadaksahak stories to give additional information about a major participant. The grammatical relation that is most frequently relativized is the direct object, though the subject of both intransitive and transitive verbs may also be relativized, as may the possessor.",
+          "Example: 'He married a certain woman, who (once they were married) used to eat seven camels a day.'",
+          "Example: 'I saw a phantom that causes fear, in whose eyes fire was burning.'"
+        ]
+      },
+      {
+        "numero": 6,
+        "titre": "Left-dislocation of nominal constituents containing relative clauses",
+        "contenu": [
+          "This section illustrates occasions when Tadaksahak left- dislocates nominal constituents that contain relative clauses. This happens for a number of reasons: because the constituent is complex, because relativization of the possessor is apparently not an option in restrictive relative clauses, and because the speaker wishes to give extra prominence to a focal constituent.",
+          "Left- dislocated nominal constituents in Tadaksahak have two characteristics: 1. They are placed at the beginning of a clause or sentence. 2. A correlative pronominal trace occupies the place where the constituent would normally occur.",
+          "Example: 'This man whom he accompanied, whose name is Niels, I said to him: ...'",
+          "Example: 'Somebody who works a lot, his hands are rough.'",
+          "Example: 'A horse that has endurance, it's THIS ONE that is noble.'"
+        ]
+      }
+    ],
+    "conclusion": {
+      "titre": "Summary",
+      "contenu": [
+        "Tadaksahak has distinct markers for nonrestrictive and restrictive relative clauses. Nonrestrictive relative clauses are characterized by the presence of the morpheme sa, introducing a clause which would otherwise be independent. Two strategies are available for restrictive relative clauses. The relative pronoun strategy is used if the head noun is definite. The gap strategy is mostly used when the head noun is indefinite. However, ho 'this thing' and ne 'place' do not follow this rule; the relative pronoun strategy is never used with them. Motivations for left- dislocating relative clauses include the complexity of the constituent concerned, the desire to relativize the possessor of a restrictive relative clause, and the desire to give extra prominence to a focal constituent."
+      ]
+    },
+    "bibliographie": [
+      "Comrie, Bernard. 1989. Language universals and linguistic typology. Chicago: University of Chicago Press.",
+      "Fox, Barbara A. 1987. The noun phrase accessibility hierarchy revisited. Language 63:856-870.",
+      "Gensler, Orin. forthcoming. Adpositional relative clauses and Focus fronting in Songhay and Berber. Eighth Nilo-Saharan Linguistics Colloquium 2001, Hamburg.",
+      "Givón, Talmy. 1984. Syntax: A functional-typological introduction (volume 1). Philadelphia: Benjamins.",
+      "Heath, Jeffrey. 1999. A grammar of Koyraboro (Koroboro) Senni, the Songhay of Gao, Mali. Köln: Rüdiger Köppe Verlag.",
+      "Keenan, Edward, and Bernard Comrie. 1977. NP accessibility and universal grammar. Linguistic Inquiry 8:63-100.",
+      "Payne, Thomas E. 1997. Describing morphosyntax: A guide for field linguists. Cambridge: University Press."
+    ]
+  },
+  {
+    "id": 27,
+    "titre": "الصلة في لغة تدكساهق",
+    "auteur": "ريجولا كريستيانسن وستيفن إتش ليفينسون",
+    "sous_titre": "استراتيجيات الصلة في لغة سنغاي شمالية",
+    "annee": "2003",
+    "pages": 17,
+    "type": "لغويات",
+    "langue": "Arabe",
+    "categorie": "لغويات / نحو",
+    "description": "دراسة مفصلة لاستراتيجيات الصلة في لغة تدكساهق (سونغاي شمالية). تحليل ثلاث استراتيجيات (ضمير الصلة، استراتيجية الفجوة، واستراتيجية sa)، والعلاقات النحوية التي يمكن ربطها، والتمييز بين جمل الصلة المحددة وغير المحددة.",
+    "credit_traduction": "تمت ترجمة هذا الكتاب من الفرنسية إلى العربية بواسطة حمدين أغ مكتار، الرئيس التنفيذي لشركة HAM Global Words.",
+    "couverture": "",
+    "illustrations": [],
+    "chapitres": [
+      {
+        "numero": 1,
+        "titre": "مقدمة",
+        "contenu": [
+          "تستخدم ثلاث استراتيجيات متميزة للصلة في لغة تدكساهق: استراتيجية ضمير الصلة، واستراتيجية الفجوة، واستراتيجية تستخدم المورفيم sa (يشار إليها فيما يلي باستراتيجية sa). أحد المعايير التي تميز هذه الاستراتيجيات هو ما إذا كانت جملة الصلة محددة (استراتيجيات ضمير الصلة والفجوة) أم غير محددة (استراتيجية sa)؛ يتم استعراض هذا الاختلاف في القسم 1. المعيار الذي يميز عادة بين الاستراتيجيتين المحددتين هو ما إذا كان مرجع الاسم الرئيسي معرفاً (ضمير الصلة - القسم 3.1) أم نكرة (استراتيجية الفجوة - القسم 3.2). القسم 4 مخصص لاستراتيجية sa. تناقش الورقة أيضاً العلاقات النحوية التي يمكن ربطها بواسطة كل استراتيجية (القسم 2)، وبعض الدوافع لإزاحة التراكيب الاسمية التي تحتوي على مراجع إلى اليسار (القسم 5).",
+          "لغة تدكساهق هي لغة SVO، وتماشياً مع ذلك، تتبع جملة الصلة الاسم الرئيسي، مهما كانت استراتيجية الصلة المستخدمة. لأن جملة الصلة تظهر دائماً تقريباً بعد الاسم الرئيسي، غالباً ما توجد في منتصف الجملة الرئيسية.",
+          "تُستخدم ثلاث استراتيجيات للصلة في لغة تدكساهق: (1) استراتيجية ضمير الصلة، (2) استراتيجية الفجوة (أي بدون علامة)، و (3) استراتيجية sa. المورفيم sa يقدم فقط جمل الصلة غير المحددة (بشرط توفر شرط محدد)؛ هذه الاستراتيجية تعالج في القسم 4. الاستراتيجيتان الأخريان، ضمير الصلة والفجوة، ترمزان جمل الصلة المحددة؛ تناقشان في القسم 3."
+        ]
+      },
+      {
+        "numero": 2,
+        "titre": "استراتيجيات الصلة",
+        "contenu": [
+          "استراتيجية ضمير الصلة: يتطابق الضمير في العدد مع الاسم الذي يعدله. صيغة المفرد للضمير هي ayo. مثال: 'الحداد حك السوار الذي من فضة.' صيغة الجمع للضمير هي ayondo (أو endayo). مثال: 'من هم راكبو الجمال الذين نزلوا عند رهالي؟'",
+          "استراتيجية الفجوة (بدون علامة): مثال: '...وجدت (اللبوة) لحماً كان موضوعاً بجانب الصغار.'",
+          "استراتيجية sa: مثال: 'يحيا أمه، التي اسمها أميناتا.'"
+        ]
+      },
+      {
+        "numero": 3,
+        "titre": "العلاقات النحوية التي يمكن ربطها",
+        "contenu": [
+          "ينظر هذا القسم في العلاقات النحوية التي يمكن ربطها بواسطة كل من الاستراتيجيات المقدمة. يلاحظ كينان وكومري (1977) أن أي استراتيجية معينة لجمل الصلة ستسمح بالربط في جزء مستمر من 'التسلسل الهرمي لإمكانية الوصول' التالي: الفاعل ← المفعول به المباشر ← المفعول به غير المباشر ← المفعول به بحرف جر ← المضاف إليه.",
+          "الفاعل: عندما يتم ربط الفاعل في استراتيجية ضمير الصلة، يحل الضمير محل لاصق الفاعل في جملة الصلة. مثال: 'أحضر لي الشخص الذي وصل إلى هنا!'",
+          "المفعول به المباشر: عندما يتم ربط المفعول به المباشر في لغات سنغاي الأخرى، يحل ضمير استئنافي مكان العنصر المرتبط في جملة الصلة. لا يستخدم أي ضمير من هذا القبيل في تدكساهق. مثال: 'العمل الذي لدي من أجلك قد انتهى.'",
+          "المفعول به بحرف جر (بما في ذلك المفعول به غير المباشر): تتميز المفعولات بحرف جر بوجود حرف جر يبين علاقة العنصر بالفعل. عندما يتم ربط هذه العناصر، يتم تقديم حرف الجر. في استراتيجية ضمير الصلة، يظهر مباشرة بعد ضمير الصلة. في استراتيجية الفجوة، يظهر مباشرة بعد الاسم الرئيسي المعدل بواسطة جملة الصلة. مثال: 'لقد عاد إلى المكان الذي يعيشون فيه.'",
+          "المضاف إليه: الاستراتيجية الوحيدة المؤكدة في نصوصنا لربط المضاف إليه تستخدم المورفيم sa. مثال: 'رأيت شبحاً، في عينيه كانت نار تشتعل.'"
+        ]
+      },
+      {
+        "numero": 4,
+        "titre": "جمل الصلة المحددة",
+        "contenu": [
+          "تتناقض لغة تدكساهق مع لغات سنغاي ذات الصلة ومع اللغات الأمازيغية في استخدام استراتيجيتين محددتين. لغات سنغاي الأخرى لديها استراتيجية محددة واحدة، باستخدام أداة الصلة ka(q)، بينما تستخدم اللغات الأمازيغية استراتيجية الفجوة. يعكس وجود استراتيجيتين في تدكساهق حقيقة أن اللغة لا تضع علامة تعريف على الأسماء مثل لغات سنغاي الأخرى، لكنها تحتاج أحياناً إلى نقل هذه الصفة.",
+          "وفقاً لـ Givón (1984:399)، فإن الأسماء المعرفة 'لها هوية مرجعية فريدة'، بينما يرمز المتحدثون إلى الاسم المرجعي على أنه نكرة 'إذا كانوا يعتقدون أنهم ليسوا مخولين بافتراض أن السامع يمكنه... أن يعينه هوية مرجعية فريدة.'",
+          "استراتيجية ضمير الصلة والكيانات المعرفة: عادة، عندما تم تقديم كيان مسبقاً في قصة وبالتالي يمكن تعيين هوية مرجعية فريدة له، فإن أي إشارة لاحقة تتضمن جملة صلة تستخدم استراتيجية ضمير الصلة. مثال: 'الشخص الذي كان جالساً على الجمل نزل.'",
+          "استراتيجية الفجوة والكيانات النكرة: عادة، عندما يكون الكيان نكرة، فإن أي إشارة إليه تتضمن جملة صلة تستخدم استراتيجية الفجوة. مثال: '...حتى وصل إلى عجوز كانت تعيش في جحور القطط البرية.'",
+          "جمل الصلة بدون رأس: تستخدم جمل الصلة بدون رأس استراتيجية ضمير الصلة، ومرجعها عادة ما يكون معرفاً. مثال: 'وصل إلى أبقارهم، أخذ التي كانت حاملاً...'"
+        ]
+      },
+      {
+        "numero": 5,
+        "titre": "جمل الصلة غير المحددة",
+        "contenu": [
+          "يستخدم المورفيم sa عادة لتمييز جمل الصلة غير المحددة؛ أي الجمل التي تضيف معلومات جديدة عن كيان تم تحديده بالفعل. يمكن لهذه الجمل أن تقف بمفردها كجمل مستقلة، لولا أنها مرتبطة بالجملة السابقة بواسطة sa.",
+          "تظهر جمل الصلة غير المحددة غالباً في بداية قصص تدكساهق لإعطاء معلومات إضافية عن مشارك رئيسي. العلاقة النحوية الأكثر شيوعاً في الربط هي المفعول به المباشر، على الرغم من أنه يمكن أيضاً ربط فاعل الأفعال اللازمة والمتعدية، وكذلك المضاف إليه.",
+          "مثال: 'تزوج امرأة معينة، والتي (بمجرد زواجهما) كانت تأكل سبعة جمال في اليوم.'",
+          "مثال: 'رأيت شبحاً يسبب الخوف، في عينيه كانت نار تشتعل.'"
+        ]
+      },
+      {
+        "numero": 6,
+        "titre": "إزاحة التراكيب الاسمية التي تحتوي على جمل صلة إلى اليسار",
+        "contenu": [
+          "يوضح هذا القسم الحالات التي تزيح فيها لغة تدكساهق التراكيب الاسمية التي تحتوي على جمل صلة إلى اليسار. يحدث هذا لعدة أسباب: لأن التركيب معقد، لأن ربط المضاف إليه ليس خياراً على ما يبدو في جمل الصلة المحددة، ولأن المتحدث يرغب في إعطاء بروز إضافي لعنصر بؤري.",
+          "للكيانات الاسمية المزاحة إلى اليسار في تدكساهق خاصيتان: 1. توضع في بداية جملة أو عبارة. 2. أثر ضميري رابط يحتل المكان الذي كان سيحدث فيه التركيب عادة.",
+          "مثال: 'هذا الرجل الذي رافقه، الذي اسمه نيلز، قلت له: ...'",
+          "مثال: 'شخص يعمل كثيراً، يداه خشنتان.'",
+          "مثال: 'الحصان الذي لديه قدرة على التحمل، هذا هو النبيل.'"
+        ]
+      }
+    ],
+    "conclusion": {
+      "titre": "ملخص",
+      "contenu": [
+        "تمتلك لغة تدكساهق علامات مميزة لجمل الصلة غير المحددة والمحددة. تتميز جمل الصلة غير المحددة بوجود المورفيم sa، الذي يقدم جملة كانت ستكون مستقلة لولا ذلك. هناك استراتيجيتان متاحتان لجمل الصلة المحددة. تُستخدم استراتيجية ضمير الصلة إذا كان الاسم الرئيسي معرفاً. تُستخدم استراتيجية الفجوة في الغالب عندما يكون الاسم الرئيسي نكرة. ومع ذلك، فإن ho 'هذا الشيء' و ne 'مكان' لا يتبعان هذه القاعدة؛ لا تُستخدم استراتيجية ضمير الصلة أبداً معهما. تشمل دوافع إزاحة جمل الصلة إلى اليسار تعقيد التركيب المعني، والرغبة في ربط المضاف إليه في جملة صلة محددة، والرغبة في إعطاء بروز إضافي لعنصر بؤري."
+      ]
+    },
+    "bibliographie": [
+      "Comrie, Bernard. 1989. Language universals and linguistic typology. Chicago: University of Chicago Press.",
+      "Fox, Barbara A. 1987. The noun phrase accessibility hierarchy revisited. Language 63:856-870.",
+      "Gensler, Orin. forthcoming. Adpositional relative clauses and Focus fronting in Songhay and Berber. Eighth Nilo-Saharan Linguistics Colloquium 2001, Hamburg.",
+      "Givón, Talmy. 1984. Syntax: A functional-typological introduction (volume 1). Philadelphia: Benjamins.",
+      "Heath, Jeffrey. 1999. A grammar of Koyraboro (Koroboro) Senni, the Songhay of Gao, Mali. Köln: Rüdiger Köppe Verlag.",
+      "Keenan, Edward, and Bernard Comrie. 1977. NP accessibility and universal grammar. Linguistic Inquiry 8:63-100.",
+      "Payne, Thomas E. 1997. Describing morphosyntax: A guide for field linguists. Cambridge: University Press."
+    ]
+  },
+  {
+    "id": 28,
+    "titre": "Rapport d'une enquête sociolinguistique à Gao",
+    "auteur": "Phil Davison, Niels Christiansen et Regula Christiansen",
+    "sous_titre": "Enquête préliminaire sur le tamasheq, le songoy et le dausahaq (tadaksahak)",
+    "annee": "1992",
+    "pages": 18,
+    "type": "linguistique",
+    "langue": "Français",
+    "categorie": "Linguistique / Sociolinguistique",
+    "description": "Rapport d'enquête sociolinguistique menée à Gao (Mali) en 1992 sur trois langues : tamasheq, songoy et dausahaq (tadaksahak). Analyse de l'intercompréhension, des attitudes linguistiques, et recommandations pour l'alphabétisation et la traduction biblique.",
+    "couverture": "",
+    "illustrations": [],
+    "chapitres": [
+      {
+        "numero": 1,
+        "titre": "Introduction",
+        "contenu": [
+          "L'équipe qui s'est rendue à Gao entre le 29 janvier et le 8 février se composait de Phil Davison, de Niels et Regula Christiansen, tous membres de la SIL. Cependant, le travail n'aurait pas abouti sans l'aide considérable de bon nombre d'autres personnes : nous tenons aussi à remercier l'équipe de « la Vision Mondiale » à Gao ainsi que les missionnaires de l'église évangélique baptiste. De plus, les représentants locaux de la DNAFLA pour le songoy et le tamasheq se sont montrés indispensables dans les rôles d'interprètes et d'agents de liaison.",
+          "Notre but général, en nous rendant à Gao, était d'élargir nos connaissances sur le tamasheq, le songoy et éventuellement le dausahaq. Ce travail n'est aucunement censé être un rapport définitif sur ces langues : nous sommes conscients du travail qu'il reste à faire avant d'arriver à un tel point. Nous espérons pourtant que nos efforts constitueront un avancement, si petit soit-il, dans les recherches, et surtout une aide à ces peuples dans le développement de leurs langues."
+        ]
+      },
+      {
+        "numero": 2,
+        "titre": "Tamasheq",
+        "contenu": [
+          "Introduction : Une équipe de la SIL voulant dans un proche avenir travailler parmi les Kel-Tamasheqs, nous nous sommes donnés pour but de clarifier la situation d'intercompréhension entre les parlers tamasheqs de la population tamasheq qui se situe autour de Gao. Un but secondaire était d'établir la viabilité de Gao comme lieu de travail pour cette équipe.",
+          "Résultats : Alors que les enquêtes parlent de deux parlers tamasheqs (kidal, 13, et gourma-rharous, 4, avec un que nous ne pouvons localiser), les réponses quant à l'intercompréhension montrent une unanimité évidente. Il est clair que le parler considéré comme le plus éloigné est celui de Tahoua (au Niger) : pour 8 personnes interrogées, il y aurait peu de compréhension possible avec un Tamasheq de Tahoua, pour 8, il n'y en aurait pas du tout.",
+          "Ménaka : Les réponses à propos du parler de Ménaka sont plus ambiguës : 7 n'ont pas mentionné de difficultés d'intercompréhension, 8 pourraient communiquer mais avec certains problèmes, et une personne a trouvé qu'il n'y aurait pas de compréhension possible.",
+          "Conclusions : Il nous semble qu'il n'y a pas de raisons valables de choisir un parler autre que celui de la DNAFLA, à savoir le Kidal, et qu'une traduction en Kidal pourrait être bien comprise par tous les locuteurs du tamashéq au Mali, à l'exception de ceux de Ménaka. Ces derniers pourraient éventuellement bénéficier du travail déjà en cours en tahoua, qui est généralement compris par les Tawellemmet de Ménaka."
+        ]
+      },
+      {
+        "numero": 3,
+        "titre": "Songoy",
+        "contenu": [
+          "Introduction : La DNAFLA, ayant choisi le parler de Gao comme « songoy officiel », entretient un poste de programmes d'alphabétisation fonctionnel à Gao. Il existe plusieurs documents écrits dans ce parler : syllabaire, livre de calcul, 7 brochures traitant de différents sujets (hygiène, agriculture, élevage, etc.).",
+          "Résultats - Intercompréhension : Les différents parlers songoy de Djenné, Tombouctou, Tillabéry et Niamey ne semblent pas causer trop de difficultés d'intercompréhension. C'est autrement pour le parler de Hombori : il n'est pas du tout compris par 4 locuteurs, et la grande majorité des autres (11) attestent des difficultés considérables de compréhension.",
+          "Alphabétisation : Mis devant le choix d'apprendre à lire et à écrire dans leur propre langue ou dans une autre langue africaine, la grande majorité (15/20) a penché pour le songoy. Le deuxième choix pour un parler songoy d'alphabétisation serait le tombouctou (9 personnes), ou même le hombori (5).",
+          "Conclusions : Sachant que la DNAFLA a choisi le parler de Gao, qu'elle a déjà produit de la littérature en ce parler, et compte tenu des résultats de notre enquête, nous ne voyons pas de raison d'aller à l'encontre du choix de l'administration malienne. Gao serait en quelque sorte un point central pour les locuteurs de Tombouctou et des parlers du Niger."
+        ]
+      },
+      {
+        "numero": 4,
+        "titre": "Dausahaq (Tadaksahak)",
+        "contenu": [
+          "Arrière-plan : Selon nos projets d'enquête pour le Mali, les domaines du dausahaq qui restent à éclairer sont ceux du bilinguisme et de l'unité de la langue. Il s'agit premièrement de déterminer si la littérature en songoy ou en tamashaq répondrait aux besoins des locuteurs du dausahaq, et, si non, si le dausahaq nécessiterait une ou plusieurs littératures.",
+          "La situation linguistique : Les locuteurs du dausahaq habitent parmi les Tamashaqs, autour de Ménaka dans les cercles de Ménaka et d'Ansongo. Les deux groupes sont généralement considérés comme faisant partie de la même société, mais jusqu'à 40% ont le dausahaq comme première langue. Auparavant, les Dausahaqs étaient les vassaux des Tamashaqs, et ces derniers gardent un certain mépris à leur égard jusqu'à aujourd'hui.",
+          "Mots apparentés : Un tableau comparatif montre que le dausahaq est une langue distincte du songoy et du tamasheq. Quatre parlers dausahaq sont comparés avec trois dialectes songoy et avec le tamasheq d'un de ces quatre villages.",
+          "Sortie à Gao, fév. 92 : Notre interlocuteur principal a indiqué deux dialectes, l'un se parlant autour de Telataye, au nord-ouest de Ménaka, et l'autre autour d'Anderamboukane, à la frontière du Niger, au sud-est. Le degré d'intercompréhension serait très élevé. Il a aussi prétendu que la domination des Tamasheqs est un phénomène de récente date, et qu'il n'y a pas d'ancêtre commun pour les deux peuples : ainsi les Dausahaqs se sentent à part.",
+          "Nous avons été frappés, lors de cette discussion, par leur fierté à l'égard de leur langue. Nous proposons donc de continuer la recherche sur cette langue autant que possible afin de trouver des réponses aux questions qui restent, et de laisser ouverte la possibilité d'une éventuelle intervention de la SIL."
+        ]
+      }
+    ],
+    "conclusion": null,
+    "bibliographie": [
+      "Benítez-Torres, Carlos M. 2009. Inflectional vs. derivational morphology in Tagdal: A mixed language. In Selected proceedings of the 38th annual conference on African linguistics.",
+      "Blench, Roger. 2014. The linguistic prehistory of the Sahara. Paper presented at the conference, The Trans-Sahara project.",
+      "Christiansen, Niels, and Regula Christiansen. 2007. Tadaksahak verb morphology with reference to Berber and Songhay origins. In Advances in Nilo-Saharan Linguistics.",
+      "Christiansen, Regula. 2009. Une courte étude lexicologique du tadaksahak, langue songhay septentrional (Mali). In Berber Studies Volume 25.",
+      "Christiansen, Regula. 2010. A grammar of Tadaksahak, a Berberised Songhay language (Mali). Berber Studies Volume 31. Cologne: Rudiger Köppe Verlag.",
+      "Glover, Maurice. 1989. A Dialect Survey in the Ménaka Area. (rapport)",
+      "Harrison, Byron, Annette Harrison, Michael J. Rueck. 1999. Southern Songhay speech varieties in Niger: A sociolinguistic survey. SIL Electronic Survey Report 1999-004.",
+      "Heath, Jeffrey. 1998. A grammar of Koyra Chiini: The Songhay of Timbuktu. Walter de Gruyter.",
+      "Heath, Jeffrey. 1999. Grammar of Koyraboro Senni (Songhay of Gao). Cologne: Rüdiger Koeppe Verlag.",
+      "Heath, Jeffrey. 2005. A grammar of Tamashek (Tuareg of Mali). Berlin: Mouton de Gruyter.",
+      "Rueck, Michael J., and Niels Christiansen. 1999. Northern Songhay languages in Mali and Niger: A sociolinguistic survey. SIL Electronic Survey Report 1999-008.",
+      "Souag, Lameen. 2013. The subclassification of Songhay and its historical implications. Journal of African Languages and Linguistics 33(2):181-213.",
+      "Stauffer, Daniel Ray. 1997. Essential elements of Songhai Grammar. M.A. thesis, University of Texas at Arlington.",
+      "Warren-Rothlin, Andrew. 2009. Script choice, politics, and Bible agencies in West Africa. Bible Translator 60.1:50-66."
+    ]
+  },
+  {
+    "id": 29,
+    "titre": "Report of a sociolinguistic survey in Gao",
+    "auteur": "Phil Davison, Niels Christiansen and Regula Christiansen",
+    "sous_titre": "Preliminary survey of Tamasheq, Songoy and Dausahaq (Tadaksahak)",
+    "annee": "1992",
+    "pages": 18,
+    "type": "linguistics",
+    "langue": "English",
+    "categorie": "Linguistics / Sociolinguistics",
+    "description": "Report of a sociolinguistic survey carried out in Gao (Mali) in 1992 on three languages: Tamasheq, Songoy and Dausahaq (Tadaksahak). Analysis of mutual intelligibility, language attitudes, and recommendations for literacy and Bible translation.",
+    "couverture": "",
+    "illustrations": [],
+    "chapitres": [
+      {
+        "numero": 1,
+        "titre": "Introduction",
+        "contenu": [
+          "The team that went to Gao between January 29 and February 8 consisted of Phil Davison, Niels and Regula Christiansen, all members of SIL. However, the work would not have been completed without the considerable help of many other people: we would also like to thank the 'World Vision' team in Gao as well as the missionaries of the Evangelical Baptist Church. In addition, the local DNAFLA representatives for Songoy and Tamasheq were indispensable as interpreters and liaison agents.",
+          "Our general goal in going to Gao was to expand our knowledge of Tamasheq, Songoy and possibly Dausahaq. This work is by no means intended to be a definitive report on these languages: we are aware of the work that remains to be done before reaching such a point. We hope, however, that our efforts will constitute an advance, however small, in research, and above all an aid to these peoples in the development of their languages."
+        ]
+      },
+      {
+        "numero": 2,
+        "titre": "Tamasheq",
+        "contenu": [
+          "Introduction: As an SIL team wanted to work among the Kel-Tamasheqs in the near future, we set ourselves the goal of clarifying the situation of mutual intelligibility between the Tamasheq varieties of the Tamasheq population around Gao. A secondary goal was to establish the viability of Gao as a workplace for this team.",
+          "Results: While the surveys mention two Tamasheq varieties (Kidal, 13, and Gourma-Rharous, 4, with one we cannot locate), the responses regarding mutual intelligibility show clear unanimity. It is clear that the variety considered the most distant is that of Tahoua (in Niger): for 8 respondents, there would be little possible understanding with a Tamasheq from Tahoua, for 8, there would be none at all.",
+          "Ménaka: Responses regarding the Ménaka variety are more ambiguous: 7 mentioned no difficulties in mutual intelligibility, 8 could communicate but with some problems, and one person thought there would be no possible understanding.",
+          "Conclusions: It seems to us that there is no valid reason to choose a variety other than that of DNAFLA, namely Kidal, and that a translation into Kidal could be well understood by all Tamasheq speakers in Mali, except those from Ménaka. The latter could possibly benefit from the work already underway in Tahoua, which is generally understood by the Tawellemmet of Ménaka."
+        ]
+      },
+      {
+        "numero": 3,
+        "titre": "Songoy",
+        "contenu": [
+          "Introduction: DNAFLA, having chosen the Gao variety as 'official Songoy', maintains a functional literacy program position in Gao. There are several written documents in this variety: a reading and writing primer, a math book, 7 brochures on various subjects (hygiene, agriculture, livestock, etc.).",
+          "Results - Mutual intelligibility: The different Songoy varieties of Djenné, Timbuktu, Tillabéry and Niamey do not seem to cause too many difficulties in mutual intelligibility. It is different for the Hombori variety: it is not understood at all by 4 speakers, and the great majority of others (11) attest to considerable comprehension difficulties.",
+          "Literacy: When faced with the choice of learning to read and write in their own language or in another African language, the great majority (15/20) chose Songoy. The second choice for a Songoy literacy variety would be Timbuktu (9 people), or even Hombori (5).",
+          "Conclusions: Knowing that DNAFLA has chosen the Gao variety, that it has already produced literature in this variety, and given the results of our survey, we see no reason to go against the choice of the Malian administration. Gao would be somewhat of a central point for speakers from Timbuktu and the Niger varieties."
+        ]
+      },
+      {
+        "numero": 4,
+        "titre": "Dausahaq (Tadaksahak)",
+        "contenu": [
+          "Background: According to our survey plans for Mali, the areas of Dausahaq that remain to be clarified are those of bilingualism and language unity. The first question is to determine whether literature in Songoy or Tamasheq would meet the needs of Dausahaq speakers, and if not, whether Dausahaq would require one or more literatures.",
+          "Linguistic situation: Dausahaq speakers live among the Tamasheqs, around Ménaka in the Ménaka and Ansongo districts. The two groups are generally considered to be part of the same society, but up to 40% have Dausahaq as their first language. Previously, the Dausahaqs were vassals of the Tamasheqs, and the latter still hold a certain contempt for them today.",
+          "Cognate words: A comparative table shows that Dausahaq is a distinct language from Songoy and Tamasheq. Four Dausahaq varieties are compared with three Songoy dialects and with the Tamasheq of one of these four villages.",
+          "Trip to Gao, Feb. 92: Our main interlocutor indicated two dialects, one spoken around Telataye, northwest of Ménaka, and the other around Anderamboukane, on the Niger border, to the southeast. The degree of mutual intelligibility would be very high. He also claimed that the domination of the Tamasheqs is a recent phenomenon, and that there is no common ancestor for the two peoples: thus the Dausahaqs feel separate.",
+          "We were struck during this discussion by their pride in their language. We therefore propose to continue research on this language as much as possible in order to find answers to the remaining questions, and to leave open the possibility of future SIL involvement."
+        ]
+      }
+    ],
+    "conclusion": null,
+    "bibliographie": [
+      "Benítez-Torres, Carlos M. 2009. Inflectional vs. derivational morphology in Tagdal: A mixed language. In Selected proceedings of the 38th annual conference on African linguistics.",
+      "Blench, Roger. 2014. The linguistic prehistory of the Sahara. Paper presented at the conference, The Trans-Sahara project.",
+      "Christiansen, Niels, and Regula Christiansen. 2007. Tadaksahak verb morphology with reference to Berber and Songhay origins. In Advances in Nilo-Saharan Linguistics.",
+      "Christiansen, Regula. 2009. Une courte étude lexicologique du tadaksahak, langue songhay septentrional (Mali). In Berber Studies Volume 25.",
+      "Christiansen, Regula. 2010. A grammar of Tadaksahak, a Berberised Songhay language (Mali). Berber Studies Volume 31. Cologne: Rudiger Köppe Verlag.",
+      "Glover, Maurice. 1989. A Dialect Survey in the Ménaka Area. (report)",
+      "Harrison, Byron, Annette Harrison, Michael J. Rueck. 1999. Southern Songhay speech varieties in Niger: A sociolinguistic survey. SIL Electronic Survey Report 1999-004.",
+      "Heath, Jeffrey. 1998. A grammar of Koyra Chiini: The Songhay of Timbuktu. Walter de Gruyter.",
+      "Heath, Jeffrey. 1999. Grammar of Koyraboro Senni (Songhay of Gao). Cologne: Rüdiger Koeppe Verlag.",
+      "Heath, Jeffrey. 2005. A grammar of Tamashek (Tuareg of Mali). Berlin: Mouton de Gruyter.",
+      "Rueck, Michael J., and Niels Christiansen. 1999. Northern Songhay languages in Mali and Niger: A sociolinguistic survey. SIL Electronic Survey Report 1999-008.",
+      "Souag, Lameen. 2013. The subclassification of Songhay and its historical implications. Journal of African Languages and Linguistics 33(2):181-213.",
+      "Stauffer, Daniel Ray. 1997. Essential elements of Songhai Grammar. M.A. thesis, University of Texas at Arlington.",
+      "Warren-Rothlin, Andrew. 2009. Script choice, politics, and Bible agencies in West Africa. Bible Translator 60.1:50-66."
+    ]
+  },
+  {
+    "id": 30,
+    "titre": "تقرير مسح لغوي اجتماعي في غاو",
+    "auteur": "فيل ديفيسون، نيلز كريستيانسن وريجولا كريستيانسن",
+    "sous_titre": "مسح أولي للغة تماشق وسونغوي ودوصاحق (تدكساهق)",
+    "annee": "1992",
+    "pages": 18,
+    "type": "لغويات",
+    "langue": "Arabe",
+    "categorie": "لغويات / لغويات اجتماعية",
+    "description": "تقرير مسح لغوي اجتماعي أجري في غاو (مالي) عام 1992 حول ثلاث لغات: تماشق، سونغوي ودوصاحق (تدكساهق). تحليل التفاهم المتبادل، والمواقف اللغوية، وتوصيات لمحو الأمية وترجمة الكتاب المقدس.",
+    "credit_traduction": "تمت ترجمة هذا الكتاب من الفرنسية إلى العربية بواسطة حمدين أغ مكتار، الرئيس التنفيذي لشركة HAM Global Words.",
+    "couverture": "",
+    "illustrations": [],
+    "chapitres": [
+      {
+        "numero": 1,
+        "titre": "مقدمة",
+        "contenu": [
+          "تألف الفريق الذي ذهب إلى غاو بين 29 يناير و8 فبراير من فيل ديفيسون ونيلز وريجولا كريستيانسن، جميعهم أعضاء في SIL. ومع ذلك، لم يكن العمل ليتم دون مساعدة كبيرة من العديد من الأشخاص الآخرين: نود أيضاً أن نشكر فريق 'الرؤية العالمية' في غاو وكذلك المبشرين من الكنيسة المعمدانية الإنجيلية. بالإضافة إلى ذلك، كان الممثلون المحليون لـ DNAFLA للسونغوي والتماشق لا غنى عنهم كمترجمين فوريين ووسطاء اتصال.",
+          "كان هدفنا العام من الذهاب إلى غاو هو توسيع معرفتنا بلغات التماشق والسونغوي وربما الدوصاحق. هذا العمل ليس بأي حال من الأحوال تقريراً نهائياً عن هذه اللغات: نحن ندرك العمل المتبقي قبل الوصول إلى هذه النقطة. نأمل مع ذلك أن تشكل جهودنا تقدماً، مهما كان صغيراً، في البحث، وفوق كل شيء مساعدة لهذه الشعوب في تطوير لغاتهم."
+        ]
+      },
+      {
+        "numero": 2,
+        "titre": "لغة تماشق",
+        "contenu": [
+          "مقدمة: نظراً لأن فريقاً من SIL أراد العمل بين شعب كل تماشق في المستقبل القريب، وضعنا لأنفسنا هدف توضيح حالة التفاهم المتبادل بين لهجات تماشق للسكان حول غاو. كان الهدف الثانوي هو تحديد جدوى غاو كمكان عمل لهذا الفريق.",
+          "النتائج: بينما تذكر المسوحات لهجتين من تماشق (كيدال، 13، وغورما-راروس، 4، مع واحدة لا يمكننا تحديد موقعها)، تظهر الردود المتعلقة بالتفاهم المتبادل إجماعاً واضحاً. من الواضح أن اللهجة التي تعتبر الأبعد هي تلك الخاصة بتاهوا (في النيجر): بالنسبة لـ 8 أشخاص تمت مقابلتهم، سيكون هناك فهم قليل ممكن مع تماشق من تاهوا، وبالنسبة لـ 8، لن يكون هناك أي فهم على الإطلاق.",
+          "ميناكا: الردود المتعلقة بلهجة ميناكا أكثر غموضاً: 7 لم يذكروا صعوبات في التفاهم المتبادل، و8 يمكنهم التواصل ولكن مع بعض المشاكل، ورأى شخص واحد أنه لن يكون هناك فهم ممكن.",
+          "الاستنتاجات: يبدو لنا أنه لا يوجد سبب وجيه لاختيار لهجة غير لهجة DNAFLA، وهي كيدال، وأن الترجمة إلى كيدال يمكن أن يفهمها جيداً جميع متحدثي تماشق في مالي، باستثناء أولئك من ميناكا. يمكن لهؤلاء الأخيرين الاستفادة من العمل الجاري بالفعل في تاهوا، والذي يفهمه بشكل عام تاوالميت في ميناكا."
+        ]
+      },
+      {
+        "numero": 3,
+        "titre": "لغة سونغوي",
+        "contenu": [
+          "مقدمة: اختارت DNAFLA لهجة غاو كلغة 'سونغوي رسمية'، وتحتفظ بموقع لبرامج محو الأمية الوظيفية في غاو. هناك عدة وثائق مكتوبة بهذه اللهجة: كتاب تمهيدي للقراءة والكتابة، كتاب حساب، 7 كتيبات حول مواضيع مختلفة (النظافة، الزراعة، تربية الماشية، إلخ).",
+          "النتائج - التفاهم المتبادل: لا يبدو أن لهجات سونغوي المختلفة في جيني وتمبكتو وتيلابيري ونيامي تسبب صعوبات كبيرة في التفاهم المتبادل. الأمر مختلف بالنسبة لهجة هومبوري: فهي غير مفهومة على الإطلاق من قبل 4 متحدثين، ويعترف الغالبية العظمى من الآخرين (11) بصعوبات كبيرة في الفهم.",
+          "محو الأمية: عندما واجهوا خيار تعلم القراءة والكتابة بلغتهم الخاصة أو بلغة أفريقية أخرى، فضلت الغالبية العظمى (15/20) السونغوي. سيكون الخيار الثاني للهجة السونغوي لمحو الأمية هو تمبكتو (9 أشخاص)، أو حتى هومبوري (5).",
+          "الاستنتاجات: نظراً لأن DNAFLA اختارت لهجة غاو، وأنها أنتجت بالفعل أدباً بهذه اللهجة، ونظراً لنتائج مسحنا، فإننا نرى سبباً للذهاب ضد اختيار الإدارة المالية. ستكون غاو إلى حد ما نقطة مركزية للمتحدثين من تمبكتو ولهجات النيجر."
+        ]
+      },
+      {
+        "numero": 4,
+        "titre": "دوصاحق (تدكساهق)",
+        "contenu": [
+          "الخلفية: وفقاً لخطط المسح الخاصة بنا لمالي، فإن مجالات الدوصاحق التي لا تزال بحاجة إلى توضيح هي مجالات ثنائية اللغة ووحدة اللغة. السؤال الأول هو تحديد ما إذا كانت الأدبيات بالسونغوي أو التماشق ستلبي احتياجات متحدثي الدوصاحق، وإذا لم يكن الأمر كذلك، فهل يتطلب الدوصاحق أدباً واحداً أم عدة آداب.",
+          "الوضع اللغوي: يعيش متحدثو الدوصاحق بين التماشق، حول ميناكا في دوائر ميناكا وأنسونغو. تعتبر المجموعتان عموماً جزءاً من نفس المجتمع، ولكن ما يصل إلى 40% لديهم الدوصاحق كلغة أولى. في السابق، كان الدوصاحق تابعين للتماشق، ولا يزال الأخيرون يحملون بعض الازدراء تجاههم حتى اليوم.",
+          "الكلمات المتشابهة: يظهر جدول مقارن أن الدوصاحق لغة متميزة عن السونغوي والتماشق. تمت مقارنة أربع لهجات دوصاحق مع ثلاث لهجات سونغوي ومع تماشق إحدى هذه القرى الأربع.",
+          "رحلة إلى غاو، فبراير 92: أشار محاورنا الرئيسي إلى لهجتين، واحدة تتحدث حول تيلاتاي، شمال غرب ميناكا، والأخرى حول أندرامبوكان، على حدود النيجر، إلى الجنوب الشرقي. ستكون درجة التفاهم المتبادل عالية جداً. كما ادعى أن هيمنة التماشق هي ظاهرة حديثة، وأنه لا يوجد سلف مشترك للشعبين: وبالتالي فإن الدوصاحق يشعرون بالانفصال.",
+          "لقد أذهلنا خلال هذه المناقشة فخرهم بلغتهم. لذلك نقترح مواصلة البحث في هذه اللغة قدر الإمكان من أجل العثور على إجابات للأسئلة المتبقية، وترك إمكانية تدخل SIL في المستقبل مفتوحة."
+        ]
+      }
+    ],
+    "conclusion": null,
+    "bibliographie": [
+      "Benítez-Torres, Carlos M. 2009. Inflectional vs. derivational morphology in Tagdal: A mixed language. In Selected proceedings of the 38th annual conference on African linguistics.",
+      "Blench, Roger. 2014. The linguistic prehistory of the Sahara. Paper presented at the conference, The Trans-Sahara project.",
+      "Christiansen, Niels, and Regula Christiansen. 2007. Tadaksahak verb morphology with reference to Berber and Songhay origins. In Advances in Nilo-Saharan Linguistics.",
+      "Christiansen, Regula. 2009. Une courte étude lexicologique du tadaksahak, langue songhay septentrional (Mali). In Berber Studies Volume 25.",
+      "Christiansen, Regula. 2010. A grammar of Tadaksahak, a Berberised Songhay language (Mali). Berber Studies Volume 31. Cologne: Rudiger Köppe Verlag.",
+      "Glover, Maurice. 1989. A Dialect Survey in the Ménaka Area. (تقرير)",
+      "Harrison, Byron, Annette Harrison, Michael J. Rueck. 1999. Southern Songhay speech varieties in Niger: A sociolinguistic survey. SIL Electronic Survey Report 1999-004.",
+      "Heath, Jeffrey. 1998. A grammar of Koyra Chiini: The Songhay of Timbuktu. Walter de Gruyter.",
+      "Heath, Jeffrey. 1999. Grammar of Koyraboro Senni (Songhay of Gao). Cologne: Rüdiger Koeppe Verlag.",
+      "Heath, Jeffrey. 2005. A grammar of Tamashek (Tuareg of Mali). Berlin: Mouton de Gruyter.",
+      "Rueck, Michael J., and Niels Christiansen. 1999. Northern Songhay languages in Mali and Niger: A sociolinguistic survey. SIL Electronic Survey Report 1999-008.",
+      "Souag, Lameen. 2013. The subclassification of Songhay and its historical implications. Journal of African Languages and Linguistics 33(2):181-213.",
+      "Stauffer, Daniel Ray. 1997. Essential elements of Songhai Grammar. M.A. thesis, University of Texas at Arlington.",
+      "Warren-Rothlin, Andrew. 2009. Script choice, politics, and Bible agencies in West Africa. Bible Translator 60.1:50-66."
+    ]
   }
 ]
