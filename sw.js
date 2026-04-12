@@ -2,15 +2,13 @@
 // SERVICE WORKER - Tadaksahak Learning v8
 // Version avec mise à jour auto et installation après 3 visites
 // Stratégie mixte : cache vs réseau
+// INCLUT : Propositions relatives (Christiansen & Levinsohn 2003)
 // ============================================
 
 const CACHE_NAME = 'tadaksahak-v8';
 const STATIC_CACHE = 'tadaksahak-static-v8';
 const DATA_CACHE = 'tadaksahak-data-v8';
 const MEDIA_CACHE = 'tadaksahak-media-v8';
-
-// Compteur de visites (stocké dans IndexedDB ou localStorage via client)
-let visitCount = 0;
 
 // ============================================
 // FICHIERS STATIQUES (Cache First)
@@ -39,6 +37,7 @@ const externalUrls = [
 
 // ============================================
 // FICHIERS DE DONNÉES JSON (Network First)
+// INCLUT relatives.json (NOUVEAU)
 // ============================================
 const dataUrls = [
   './data/mots.json',
@@ -47,6 +46,7 @@ const dataUrls = [
   './data/quiz.json',
   './data/timeline.json',
   './data/grammaire.json',
+  './data/relatives.json',      // NOUVEAU : propositions relatives
   './data/conte.json',
   './data/emission.json',
   './data/themes.json',
@@ -58,12 +58,13 @@ const dataUrls = [
 // EXTENSIONS D'IMAGES (Stale-While-Revalidate)
 // ============================================
 const imageExtensions = /\.(jpg|jpeg|png|gif|webp|svg|ico)$/i;
+const audioExtensions = /\.(mp3|wav|ogg|m4a|flac)$/i;
 
 // ============================================
 // INSTALLATION - Cache des fichiers statiques
 // ============================================
 self.addEventListener('install', event => {
-  console.log('📦 SW: Installation v8 - Tadaksahak Learning');
+  console.log('📦 SW: Installation v8 - Tadaksahak Learning (avec relatives)');
   
   event.waitUntil(
     (async () => {
@@ -110,6 +111,12 @@ self.addEventListener('fetch', event => {
     return;
   }
   
+  // IGNORER les requêtes vers les analytics et tracking
+  if (pathname.includes('analytics') || pathname.includes('tracking')) {
+    event.respondWith(fetch(request));
+    return;
+  }
+  
   // ---- STRATÉGIE 1 : Données JSON (Network First) ----
   if (dataUrls.some(dataUrl => pathname === dataUrl || pathname.endsWith(dataUrl))) {
     event.respondWith(
@@ -130,9 +137,27 @@ self.addEventListener('fetch', event => {
             console.log(`📀 Données depuis cache: ${pathname}`);
             return cached;
           }
+          // Fallback pour relatives.json
+          if (pathname.includes('relatives.json')) {
+            return new Response(JSON.stringify({
+              strategies: [
+                { marqueur: "ayo", usage_fr: "Pronom relatif (singulier, nom défini, restrictif)", exemples: [] },
+                { marqueur: "∅", usage_fr: "Gap strategy (nom indéfini, restrictif)", exemples: [] },
+                { marqueur: "sa", usage_fr: "Non-restrictif (information supplémentaire)", exemples: [] }
+              ],
+              accessibilite: true,
+              exceptions: {}
+            }), { headers: { 'Content-Type': 'application/json' } });
+          }
+          // Fallback pour mots.json
           if (pathname.includes('mots.json')) {
             return new Response(JSON.stringify([
-              { mot: "Báy", cat: "vt.", fr: "Pouvoir (faire)", ar: "قدر على (فعل)", en: "Able, to be" }
+              { mot: "Báy", cat: "vt.", fr: "Pouvoir (faire)", ar: "قدر على (فعل)", en: "Able, to be" },
+              { mot: "Yiddár", cat: "vi.", fr: "Être en vie", ar: "يكون حياً", en: "Alive, to be" },
+              { mot: "Káamil", cat: "quantifier", fr: "Tout", ar: "كل", en: "All" },
+              { mot: "ayo", cat: "pron.", fr: "qui, que (pronom relatif singulier)", ar: "الذي، التي", en: "who, which, that" },
+              { mot: "ayondo", cat: "pron.", fr: "qui, que (pronom relatif pluriel)", ar: "الذين، اللواتي", en: "who, which, that (pl)" },
+              { mot: "sa", cat: "conj.", fr: "qui, que (relative non-restrictive)", ar: "الذي، التي", en: "who, which, that (non-restrictive)" }
             ]), { headers: { 'Content-Type': 'application/json' } });
           }
           return new Response(JSON.stringify({ error: 'Hors-ligne', message: 'Données non disponibles' }), {
@@ -160,6 +185,7 @@ self.addEventListener('fetch', event => {
           .catch(() => null);
         
         if (cachedResponse) {
+          // Mise à jour en arrière-plan
           fetchPromise.then(networkResponse => {
             if (networkResponse && cachedResponse !== networkResponse) {
               console.log(`🖼️ Image mise à jour: ${pathname}`);
@@ -171,6 +197,7 @@ self.addEventListener('fetch', event => {
         const networkResponse = await fetchPromise;
         if (networkResponse) return networkResponse;
         
+        // Fallback: image par défaut
         return caches.match('./images/idaksahak_round.png');
       })()
     );
@@ -178,7 +205,7 @@ self.addEventListener('fetch', event => {
   }
   
   // ---- STRATÉGIE 3 : Fichiers audio (Network First avec fallback) ----
-  if (pathname.includes('/audio/') || pathname.match(/\.(mp3|wav|ogg|m4a)$/i)) {
+  if (audioExtensions.test(pathname) || pathname.includes('/audio/')) {
     event.respondWith(
       fetch(request)
         .then(response => {
@@ -197,7 +224,7 @@ self.addEventListener('fetch', event => {
             console.log(`🎵 Audio depuis cache: ${pathname}`);
             return cached;
           }
-          return new Response('Audio non disponible hors-ligne', { status: 404 });
+          return new Response('Audio non disponible hors-ligne', { status: 404, headers: { 'Content-Type': 'text/plain' } });
         })
     );
     return;
@@ -234,7 +261,18 @@ self.addEventListener('fetch', event => {
     return;
   }
   
-  // ---- STRATÉGIE 5 : Autres ressources (Network First) ----
+  // ---- STRATÉGIE 5 : Manifest et Webmanifest (Cache First) ----
+  if (pathname.includes('manifest') || pathname.includes('webmanifest')) {
+    event.respondWith(
+      caches.match(request).then(cached => {
+        if (cached) return cached;
+        return fetch(request);
+      })
+    );
+    return;
+  }
+  
+  // ---- STRATÉGIE 6 : Autres ressources (Network First) ----
   event.respondWith(
     fetch(request)
       .then(response => {
@@ -249,6 +287,11 @@ self.addEventListener('fetch', event => {
       .catch(async () => {
         const cached = await caches.match(request);
         if (cached) return cached;
+        
+        // Message personnalisé pour les APIs externes
+        if (url.origin !== self.location.origin) {
+          return new Response('Service externe non disponible hors-ligne', { status: 503 });
+        }
         return new Response('Ressource non disponible', { status: 404 });
       })
   );
@@ -258,7 +301,7 @@ self.addEventListener('fetch', event => {
 // ACTIVATION - Nettoyage des anciens caches
 // ============================================
 self.addEventListener('activate', event => {
-  console.log('🚀 SW: Activation v8 - Tadaksahak Learning');
+  console.log('🚀 SW: Activation v8 - Tadaksahak Learning (avec relatives)');
   
   event.waitUntil(
     (async () => {
@@ -275,6 +318,8 @@ self.addEventListener('activate', event => {
           return caches.delete(cache);
         })
       );
+      
+      console.log(`✅ Caches actifs: ${STATIC_CACHE}, ${DATA_CACHE}, ${MEDIA_CACHE}`);
       
       // Prendre le contrôle de toutes les pages
       const clients = await self.clients.matchAll({ type: 'window' });
@@ -294,6 +339,11 @@ self.addEventListener('message', event => {
   // Forcer la mise à jour (skipWaiting)
   if (event.data === 'skipWaiting') {
     self.skipWaiting();
+    event.waitUntil(
+      self.clients.claim().then(() => {
+        console.log('✅ SW: Mise à jour forcée');
+      })
+    );
   }
   
   // Vider tous les caches
@@ -314,20 +364,33 @@ self.addEventListener('message', event => {
   if (event.data === 'checkUpdate') {
     event.waitUntil(
       (async () => {
-        const registration = await self.registration;
-        await registration.update();
-        console.log('🔄 Vérification de mise à jour effectuée');
-        if (event.ports && event.ports[0]) {
-          event.ports[0].postMessage({ status: 'success', message: 'Mise à jour vérifiée' });
+        try {
+          const registration = await self.registration;
+          await registration.update();
+          console.log('🔄 Vérification de mise à jour effectuée');
+          if (event.ports && event.ports[0]) {
+            event.ports[0].postMessage({ status: 'success', message: 'Mise à jour vérifiée' });
+          }
+        } catch (err) {
+          console.error('Erreur vérification mise à jour:', err);
+          if (event.ports && event.ports[0]) {
+            event.ports[0].postMessage({ status: 'error', message: err.message });
+          }
         }
       })()
     );
   }
   
+  // Récupérer la version du cache
+  if (event.data === 'getVersion') {
+    if (event.ports && event.ports[0]) {
+      event.ports[0].postMessage({ version: CACHE_NAME });
+    }
+  }
+  
   // Incrémenter le compteur de visites (depuis le client)
   if (event.data && event.data.type === 'incrementVisit') {
-    // Le comptage est géré par le client, mais on peut stocker dans le SW si besoin
-    console.log('👁️ Visite comptabilisée');
+    console.log('👁️ Visite comptabilisée - SW notifié');
   }
 });
 
@@ -336,9 +399,15 @@ self.addEventListener('message', event => {
 // ============================================
 self.addEventListener('push', event => {
   if (event.data) {
-    const data = event.data.json();
+    let data;
+    try {
+      data = event.data.json();
+    } catch (e) {
+      data = { body: event.data.text() };
+    }
+    
     const options = {
-      body: data.body || 'Nouvelle mise à jour disponible ! Rafraîchissez la page.',
+      body: data.body || '✨ Nouvelle mise à jour disponible ! Rafraîchissez la page.',
       icon: './images/idaksahak_round.png',
       badge: './images/idaksahak_round.png',
       vibrate: [200, 100, 200],
@@ -346,16 +415,30 @@ self.addEventListener('push', event => {
       actions: [
         { action: 'refresh', title: '🔄 Rafraîchir' },
         { action: 'dismiss', title: '❌ Plus tard' }
-      ]
+      ],
+      tag: 'tadaksahak-update',
+      renotify: true
     };
     
     event.waitUntil(
-      self.registration.showNotification('Tadaksahak Learning - Mise à jour', options)
+      self.registration.showNotification('📚 Tadaksahak Learning - Mise à jour', options)
+    );
+  } else {
+    // Notification générique
+    event.waitUntil(
+      self.registration.showNotification('📚 Tadaksahak Learning', {
+        body: 'Nouveau contenu disponible !',
+        icon: './images/idaksahak_round.png',
+        badge: './images/idaksahak_round.png',
+        data: { url: './' }
+      })
     );
   }
 });
 
-// Notification d'installation proposée
+// ============================================
+// CLIC SUR NOTIFICATION
+// ============================================
 self.addEventListener('notificationclick', event => {
   event.notification.close();
   
@@ -365,6 +448,8 @@ self.addEventListener('notificationclick', event => {
         if (clientList.length > 0) {
           clientList[0].navigate(clientList[0].url);
           clientList[0].focus();
+        } else {
+          clients.openWindow('./');
         }
       })
     );
@@ -376,12 +461,51 @@ self.addEventListener('notificationclick', event => {
 });
 
 // ============================================
+// NOTIFICATION FERMÉE (pour analytics)
+// ============================================
+self.addEventListener('notificationclose', event => {
+  console.log('🔔 Notification fermée:', event.notification.tag);
+});
+
+// ============================================
+// SYNC EN ARRIÈRE-PLAN (Background Sync)
+// ============================================
+self.addEventListener('sync', event => {
+  if (event.tag === 'sync-data') {
+    console.log('🔄 Sync en arrière-plan déclenchée');
+    event.waitUntil(
+      (async () => {
+        // Tentative de mise à jour des données en arrière-plan
+        const cache = await caches.open(DATA_CACHE);
+        for (const dataUrl of dataUrls) {
+          try {
+            const response = await fetch(dataUrl, { cache: 'no-store' });
+            if (response && response.ok) {
+              await cache.put(dataUrl, response);
+              console.log(`✅ Sync: ${dataUrl} mis à jour`);
+            }
+          } catch (err) {
+            console.warn(`⚠️ Sync échouée pour ${dataUrl}:`, err);
+          }
+        }
+      })()
+    );
+  }
+});
+
+// ============================================
 // GESTION DES ERREURS GLOBALES
 // ============================================
 self.addEventListener('error', event => {
-  console.error('SW Error:', event.error);
+  console.error('❌ SW Error:', event.error);
 });
 
 self.addEventListener('unhandledrejection', event => {
-  console.warn('SW Unhandled Rejection:', event.reason);
+  console.warn('⚠️ SW Unhandled Rejection:', event.reason);
 });
+
+// ============================================
+// LOG DE DÉMARRAGE
+// ============================================
+console.log('✅ Service Worker Tadaksahak Learning v8 chargé');
+console.log('📚 Module des propositions relatives intégré (Christiansen & Levinsohn 2003)');
