@@ -1,0 +1,673 @@
+{
+  "id": "conte_chacal_phacochere",
+  "titre_fr": "Le chacal et le phacochère",
+  "titre_ar": "ابن آوى والخنزير الثؤلولي",
+  "titre_en": "The Jackal and the Warthog",
+  "type": "conte_populaire",
+  "source": "Christiansen-Bolli, R. (2010). A grammar of Tadaksahak. Leiden University.",
+  "narrateur": "Ajafa'a from Talatayt",
+  "transcription": "Mahamad ag Almaki from Infukaraytan",
+  "langue_originale": "Tadaksahak",
+  "date_enregistrement": "2010",
+  "personnages": [
+    { "nom_tad": "a-zubara", "nom_fr": "Phacochère", "nom_ar": "خنزير ثؤلولي", "nom_en": "Warthog" },
+    { "nom_tad": "intaynawt / abijii", "nom_fr": "Chacal", "nom_ar": "ابن آوى", "nom_en": "Jackal" },
+    { "nom_tad": "eelaw", "nom_fr": "Éléphant", "nom_ar": "فيل", "nom_en": "Elephant" }
+  ],
+  "resume_fr": "Un phacochère confie ses neuf enfants à un chacal pour qu'il leur apprenne le Coran. Mais le chacal les dévore un par un, ne laissant qu'un seul survivant. Il trompe ensuite le phacochère en lui faisant croire que l'éléphant est malade et a besoin de graisse de phacochère pour guérir. Le chacal manipule les animaux pour tuer le phacochère, mais finit par révéler sa fourberie.",
+  "resume_ar": "يئتمن خنزير ثؤلولي أطفاله التسعة على ابن آوى ليعلمهم القرآن. لكن ابن آوى يلتهمهم واحداً تلو الآخر، ولا يبقى سوى طفل واحد. ثم يخدع الخنزير بإيهامه أن الفيل مريض ويحتاج إلى شحم الخنزير للشفاء. يتلاعب ابن آوى بالحيوانات ليقتل الخنزير، لكنه في النهاية يكشف عن خبثه.",
+  "resume_en": "A warthog entrusts his nine children to a jackal to teach them the Quran. But the jackal devours them one by one, leaving only one survivor. He then tricks the warthog by pretending the elephant is sick and needs warthog fat to heal. The jackal manipulates the animals to kill the warthog, but finally reveals his deceit.",
+  "morale_fr": "Méfiez-vous de ceux qui se disent savants mais n'ont que leur propre intérêt en cœur.",
+  "morale_ar": "احذر من أولئك الذين يدعون العلم ولكن ليس في قلوبهم إلا مصلحتهم الذاتية.",
+  "morale_en": "Beware of those who claim to be scholars but only have their own interest at heart.",
+  "versets": [
+    {
+      "numero": 1,
+      "tadaksahak": "aywa kol(a) a-zubara a-mmay bar-en well",
+      "glose_fr": "Eh bien, le phacochère avait des enfants",
+      "glose_en": "Well, the warthog had children",
+      "traduction_fr": "Eh bien, le phacochère avait des enfants.",
+      "traduction_en": "Well, the warthog had children."
+    },
+    {
+      "numero": 2,
+      "tadaksahak": "a-huru he ssa-ss-ay(a) a-se n i",
+      "glose_fr": "Il cherchait quelqu'un pour les lui enseigner",
+      "glose_en": "He was looking for someone to teach them for him",
+      "traduction_fr": "Il cherchait quelqu'un pour les lui enseigner.",
+      "traduction_en": "He was looking for someone to teach them for him."
+    },
+    {
+      "numero": 3,
+      "tadaksahak": "ho senda har a-ggun(a) intaynawt",
+      "glose_fr": "Il fit cela jusqu'à ce qu'il voie un chacal",
+      "glose_en": "He did that until he saw a jackal",
+      "traduction_fr": "Il fit cela jusqu'à ce qu'il voie un chacal.",
+      "traduction_en": "He did that until he saw a jackal."
+    },
+    {
+      "numero": 4,
+      "tadaksahak": "intaynawt a-cc(i) aas(e)",
+      "glose_fr": "Le chacal lui dit",
+      "glose_en": "The jackal said to him",
+      "traduction_fr": "Le chacal lui dit :",
+      "traduction_en": "The jackal said to him:"
+    },
+    {
+      "numero": 5,
+      "tadaksahak": "yew aya-m-sa-ss-ayra ni-n bar-en",
+      "glose_fr": "Viens ! Je vais enseigner à tes enfants",
+      "glose_en": "Come! I will teach your children",
+      "traduction_fr": "Viens ! Je vais enseigner à tes enfants.",
+      "traduction_en": "Come! I will teach your children."
+    },
+    {
+      "numero": 6,
+      "tadaksahak": "ayay s(a) alfagi",
+      "glose_fr": "C'est moi le maître coranique !",
+      "glose_en": "It's me who is the Quran teacher!",
+      "traduction_fr": "C'est moi le maître coranique !",
+      "traduction_en": "It's me who is the Quran teacher!"
+    },
+    {
+      "numero": 7,
+      "tadaksahak": "a-ddin(i) ay-n bar-en",
+      "glose_fr": "Il prit ses enfants",
+      "glose_en": "He took his children",
+      "traduction_fr": "Il prit ses enfants.",
+      "traduction_en": "He took his children."
+    },
+    {
+      "numero": 8,
+      "tadaksahak": "ay-n bar-en ingi taas(a)",
+      "glose_fr": "Ses enfants, ils étaient neuf",
+      "glose_en": "His children, they were nine",
+      "traduction_fr": "Ses enfants étaient au nombre de neuf.",
+      "traduction_en": "His children were nine."
+    },
+    {
+      "numero": 9,
+      "tadaksahak": "a-nn(a)-i intaynawt se",
+      "glose_fr": "Il les donna au chacal",
+      "glose_en": "He gave them to the jackal",
+      "traduction_fr": "Il les donna au chacal.",
+      "traduction_en": "He gave them to the jackal."
+    },
+    {
+      "numero": 10,
+      "tadaksahak": "har a-b-sa-ss-ayr(a) a-se n i",
+      "glose_fr": "Afin qu'il les lui enseigne",
+      "glose_en": "So that he would teach them for him",
+      "traduction_fr": "Afin qu'il les lui enseigne.",
+      "traduction_en": "So that he would teach them for him."
+    },
+    {
+      "numero": 11,
+      "tadaksahak": "a-cc(i) a-b-sa-ss-ayr(a)-i",
+      "glose_fr": "Il pensait qu'il les enseignerait",
+      "glose_en": "He thought he would teach them",
+      "traduction_fr": "Il pensait qu'il les enseignerait.",
+      "traduction_en": "He thought he would teach them."
+    },
+    {
+      "numero": 12,
+      "tadaksahak": "da h(e) ayd(a) a-dda a-zubar(a) a-baara n(e) ayda",
+      "glose_fr": "Quand cela fut fait, le phacochère était à cet endroit",
+      "glose_en": "When this was done, the warthog was there",
+      "traduction_fr": "Quand cela fut fait, le phacochère était à cet endroit.",
+      "traduction_en": "When this was done, the warthog was there."
+    },
+    {
+      "numero": 13,
+      "tadaksahak": "har a-dd(a) i-wutay",
+      "glose_fr": "Jusqu'à ce qu'il passe des années",
+      "glose_en": "Until he had spent years",
+      "traduction_fr": "Jusqu'à ce qu'il passe des années.",
+      "traduction_en": "Until he had spent years."
+    },
+    {
+      "numero": 14,
+      "tadaksahak": "jinjin a-kkoy-kat",
+      "glose_fr": "Quand il vint pour la première fois",
+      "glose_en": "When he first came",
+      "traduction_fr": "Quand il vint pour la première fois.",
+      "traduction_en": "When he first came."
+    },
+    {
+      "numero": 15,
+      "tadaksahak": "a-cci a-b-fuggu-kat ay-n barr-en ka",
+      "glose_fr": "Il voulait voir ses enfants",
+      "glose_en": "He wanted to see his children",
+      "traduction_fr": "Il voulait voir ses enfants.",
+      "traduction_en": "He wanted to see his children."
+    },
+    {
+      "numero": 16,
+      "tadaksahak": "sa je intaynawt a-ggunakat anga",
+      "glose_fr": "Dès que le chacal le vit venir",
+      "glose_en": "As soon as the jackal saw him coming",
+      "traduction_fr": "Dès que le chacal le vit venir.",
+      "traduction_en": "As soon as the jackal saw him coming."
+    },
+    {
+      "numero": 17,
+      "tadaksahak": "intaynawt a-mmugus-an and(a) anga",
+      "glose_fr": "Le chacal alla à sa rencontre",
+      "glose_en": "The jackal went to meet him",
+      "traduction_fr": "Le chacal alla à sa rencontre.",
+      "traduction_en": "The jackal went to meet him."
+    },
+    {
+      "numero": 18,
+      "tadaksahak": "a-cc(i) aas(e) yeed-an barr-en be kahar i-ggunak nin i-ta-yixram i-m-wanjin ayay qaarán",
+      "glose_fr": "Il lui dit : « Éloigne-toi des enfants. Quand ils te verront, ils désobéiront, ils refuseront d'étudier pour moi. »",
+      "glose_en": "He said to him: 'Turn away from the children. When they see you, they will disobey, they will refuse to study for me.'",
+      "traduction_fr": "Il lui dit : « Éloigne-toi des enfants. Quand ils te verront, ils désobéiront, ils refuseront d'étudier pour moi. »",
+      "traduction_en": "He said to him: 'Turn away from the children. When they see you, they will disobey, they will refuse to study for me.'"
+    },
+    {
+      "numero": 19,
+      "tadaksahak": "a-ggung(i)-an aas-se bäarar fóo-da",
+      "glose_fr": "Il lui montra un seul enfant",
+      "glose_en": "He showed him one single child",
+      "traduction_fr": "Il lui montra un seul enfant.",
+      "traduction_en": "He showed him one single child."
+    },
+    {
+      "numero": 20,
+      "tadaksahak": "a-ggar bär-en da a-ffodana-goor(a) iika",
+      "glose_fr": "Il se trouva qu'un seul enfant restait d'eux",
+      "glose_en": "It was found that only one child remained of them",
+      "traduction_fr": "Il se trouva qu'un seul enfant restait d'eux.",
+      "traduction_en": "It was found that only one child remained of them."
+    },
+    {
+      "numero": 21,
+      "tadaksahak": "a-ggung(u)-an a- a",
+      "glose_fr": "Il le lui montra",
+      "glose_en": "He showed it to him",
+      "traduction_fr": "Il le lui montra.",
+      "traduction_en": "He showed it to him."
+    },
+    {
+      "numero": 22,
+      "tadaksahak": "a-ss-akn(a) a- a",
+      "glose_fr": "Il le lui fit voir",
+      "glose_en": "He made him see it",
+      "traduction_fr": "Il le lui fit voir.",
+      "traduction_en": "He made him see it."
+    },
+    {
+      "numero": 23,
+      "tadaksahak": "a-yye-kat and(a)-a",
+      "glose_fr": "Il revint avec lui",
+      "glose_en": "He came back with it",
+      "traduction_fr": "Il revint avec lui.",
+      "traduction_en": "He came back with it."
+    },
+    {
+      "numero": 24,
+      "tadaksahak": "a-yyed-an and(a)-a",
+      "glose_fr": "Il retourna avec lui",
+      "glose_en": "He returned with it",
+      "traduction_fr": "Il retourna avec lui.",
+      "traduction_en": "He returned with it."
+    },
+    {
+      "numero": 25,
+      "tadaksahak": "har a-dd(a) a- a-se n a-se s-akn-en taas a",
+      "glose_fr": "Jusqu'à ce qu'il le lui montre neuf fois",
+      "glose_en": "Until he had shown it to him nine times",
+      "traduction_fr": "Jusqu'à ce qu'il le lui montre neuf fois.",
+      "traduction_en": "Until he had shown it to him nine times."
+    },
+    {
+      "numero": 26,
+      "tadaksahak": "intaynawt anga da bär-en a-b-dumb(u)-i je (a)nd(a) a-ffod a-ffod-da a-b-n(a)-i har a-bbeen-i har a-ffodda d(a) a-sén(da)",
+      "glose_fr": "Quant au chacal, il avait simplement tué les enfants un par un et les avait mangés jusqu'à ce qu'ils soient finis, sauf ce seul.",
+      "glose_en": "As for the jackal, he had simply killed the children one by one and eaten them until they were finished, except for that only one.",
+      "traduction_fr": "Quant au chacal, il avait simplement tué les enfants un par un et les avait mangés jusqu'à ce qu'ils soient finis, sauf ce seul.",
+      "traduction_en": "As for the jackal, he had simply killed the children one by one and eaten them until they were finished, except for that only one."
+    },
+    {
+      "numero": 27,
+      "tadaksahak": "a-zubara a-yed",
+      "glose_fr": "Le phacochère revint",
+      "glose_en": "The warthog returned",
+      "traduction_fr": "Le phacochère revint.",
+      "traduction_en": "The warthog returned."
+    },
+    {
+      "numero": 28,
+      "tadaksahak": "a-cc(i) a-s(e) ni-m-d(a)-an a-wáty",
+      "glose_fr": "Il lui dit : « Attends un an. »",
+      "glose_en": "He said to him: 'Wait a year.'",
+      "traduction_fr": "Il lui dit : « Attends un an. »",
+      "traduction_en": "He said to him: 'Wait a year.'"
+    },
+    {
+      "numero": 29,
+      "tadaksahak": "har a-dd(a)-an a-wáty",
+      "glose_fr": "Quand il eut passé un an",
+      "glose_en": "When he had spent a year",
+      "traduction_fr": "Quand il eut passé un an.",
+      "traduction_en": "When he had spent a year."
+    },
+    {
+      "numero": 30,
+      "tadaksahak": "a-yyiles a-yye-kat anga",
+      "glose_fr": "Il revint à nouveau vers lui",
+      "glose_en": "He came again to him",
+      "traduction_fr": "Il revint à nouveau vers lui.",
+      "traduction_en": "He came again to him."
+    },
+    {
+      "numero": 31,
+      "tadaksahak": "a-ttén a-cc(i) áa-s(e)",
+      "glose_fr": "Il arriva et lui dit",
+      "glose_en": "He arrived and said to him",
+      "traduction_fr": "Il arriva et lui dit :",
+      "traduction_en": "He arrived and said to him:"
+    },
+    {
+      "numero": 32,
+      "tadaksahak": "bárr-en iyyiytom maffin aya-bbáaya s(a) ay-t-taw aaru fo báara nángo se har ni-m-d(a) áa-se a-sáafu",
+      "glose_fr": "« Les enfants ont fini leurs études, mais je veux aller voir un homme qui est là-bas, afin que tu le salues. »",
+      "glose_en": "'The children have finished their studies, but I want to go to a man who is over there so that you may greet him.'",
+      "traduction_fr": "« Les enfants ont fini leurs études, mais je veux aller voir un homme qui est là-bas, afin que tu le salues. »",
+      "traduction_en": "'The children have finished their studies, but I want to go to a man who is over there so that you may greet him.'"
+    },
+    {
+      "numero": 33,
+      "tadaksahak": "áaru ayo sé a-cc(i) áa-se ci na-á?",
+      "glose_fr": "« Cet homme, lui dit-il, qui est-ce ? »",
+      "glose_en": "'That man,' he said to him, 'who is it?'",
+      "traduction_fr": "« Cet homme, lui dit-il, qui est-ce ? »",
+      "traduction_en": "'That man,' he said to him, 'who is it?'"
+    },
+    {
+      "numero": 34,
+      "tadaksahak": "a-cc(i) áa-s(e) éelaw sa hé (a)-hínjin kuná",
+      "glose_fr": "Il lui dit : « C'est l'éléphant, il est très malade. »",
+      "glose_en": "He said to him: 'It's the elephant, he is very ill.'",
+      "traduction_fr": "Il lui dit : « C'est l'éléphant, il est très malade. »",
+      "traduction_en": "He said to him: 'It's the elephant, he is very ill.'"
+    },
+    {
+      "numero": 35,
+      "tadaksahak": "báarar ayó nn a-ffod(a) goorá záyri ayo sén(da) and(a) ay-n gá intáynawt a-ddumb(u) ánga a-nn(a)-a",
+      "glose_fr": "Le seul enfant qui restait, ce jour-là même, le chacal l'avait tué et mangé.",
+      "glose_en": "The only child that was left, that very day, the jackal had killed and eaten him.",
+      "traduction_fr": "Le seul enfant qui restait, ce jour-là même, le chacal l'avait tué et mangé.",
+      "traduction_en": "The only child that was left, that very day, the jackal had killed and eaten him."
+    },
+    {
+      "numero": 36,
+      "tadaksahak": "a-hang(a) énd(a) ánga n(e) áyda",
+      "glose_fr": "Il l'accompagna depuis cet endroit",
+      "glose_en": "He accompanied him from that place",
+      "traduction_fr": "Il l'accompagna depuis cet endroit.",
+      "traduction_en": "He accompanied him from that place."
+    },
+    {
+      "numero": 37,
+      "tadaksahak": "ho sénda har á-tten éelaw daw",
+      "glose_fr": "Il fit cela jusqu'à ce qu'il arrive chez l'éléphant",
+      "glose_en": "He did this until he arrived at the elephant's place",
+      "traduction_fr": "Il fit cela jusqu'à ce qu'il arrive chez l'éléphant.",
+      "traduction_en": "He did this until he arrived at the elephant's place."
+    },
+    {
+      "numero": 38,
+      "tadaksahak": "s(a) a-ggaar-á he (a)y(o)oda Massiiny a-ff-éxlak-kat ay-n i-múdar-an ka káamil i-bb-ékrom áa-daw",
+      "glose_fr": "Quand il le trouva, tout ce que Dieu a créé parmi ses animaux reposait chez lui.",
+      "glose_en": "When he found him, all that God created among his animals was resting at his place.",
+      "traduction_fr": "Quand il le trouva, tout ce que Dieu a créé parmi ses animaux reposait chez lui.",
+      "traduction_en": "When he found him, all that God created among his animals was resting at his place."
+    },
+    {
+      "numero": 39,
+      "tadaksahak": "i-cc(i) aas(e) ay-n saffari aya-bday-a",
+      "glose_fr": "Il leur dit : « Son médicament, je le connais. »",
+      "glose_en": "He said to them: 'His medicine, I know it.'",
+      "traduction_fr": "Il leur dit : « Son médicament, je le connais. »",
+      "traduction_en": "He said to them: 'His medicine, I know it.'"
+    },
+    {
+      "numero": 40,
+      "tadaksahak": "i-cc(i) aas(e) ci n(a) ay-n saffari?",
+      "glose_fr": "Ils lui dirent : « Quel est son médicament ? »",
+      "glose_en": "They said to him: 'What is his medicine?'",
+      "traduction_fr": "Ils lui dirent : « Quel est son médicament ? »",
+      "traduction_en": "They said to him: 'What is his medicine?'"
+    },
+    {
+      "numero": 41,
+      "tadaksahak": "a-cc(i) iis(e) a-sa-mmay saffari (a)nd-anga wiji",
+      "glose_fr": "Il leur dit : « Il n'y a pas de médicament si ce n'est... »",
+      "glose_en": "He said to them: 'There is no medicine except...'",
+      "traduction_fr": "Il leur dit : « Il n'y a pas de médicament si ce n'est... »",
+      "traduction_en": "He said to them: 'There is no medicine except...'"
+    },
+    {
+      "numero": 42,
+      "tadaksahak": "a-cc(i) iis(e) a-zubara n eejam an-ta-huur(u) ay-n t-i-nzar kor-korr-i",
+      "glose_fr": "Il leur dit : « La graisse chaude d'un phacochère qui entre dans sa trompe. »",
+      "glose_en": "He said to them: 'The hot fat of a warthog that enters his trunk.'",
+      "traduction_fr": "Il leur dit : « La graisse chaude d'un phacochère qui entre dans sa trompe. »",
+      "traduction_en": "He said to them: 'The hot fat of a warthog that enters his trunk.'"
+    },
+    {
+      "numero": 43,
+      "tadaksahak": "i-cc(i) aas(e) a-zubara za man ne k(a) ar-ta-kun(a)-a?",
+      "glose_fr": "Ils lui dirent : « Ce phacochère, où le trouverons-nous ? »",
+      "glose_en": "They said to him: 'So a warthog, where will we find it?'",
+      "traduction_fr": "Ils lui dirent : « Ce phacochère, où le trouverons-nous ? »",
+      "traduction_en": "They said to him: 'So a warthog, where will we find it?'"
+    },
+    {
+      "numero": 44,
+      "tadaksahak": "a-cc(i)ii-s(e) a-zubara lam aya-yyimmar-kat a-ffo f-kay nango ka marad-odda",
+      "glose_fr": "Il leur dit : « Grâce à Dieu, j'en ai amené un qui se tient là-bas maintenant. »",
+      "glose_en": "He said to them: 'Thanks to God, I brought one that stands over there now.'",
+      "traduction_fr": "Il leur dit : « Grâce à Dieu, j'en ai amené un qui se tient là-bas maintenant. »",
+      "traduction_en": "He said to them: 'Thanks to God, I brought one that stands over there now.'"
+    },
+    {
+      "numero": 45,
+      "tadaksahak": "aaru a-bbaya sa(a) a-ta-yiydar na ayo idd(a) a-bben ay-n barr-en a-ng(a)-i",
+      "glose_fr": "Il voulait trahir l'autre parce qu'il avait fini ses enfants et les avait mangés.",
+      "glose_en": "He wanted to betray the other one because he had finished his children and eaten them.",
+      "traduction_fr": "Il voulait trahir l'autre parce qu'il avait fini ses enfants et les avait mangés.",
+      "traduction_en": "He wanted to betray the other one because he had finished his children and eaten them."
+    },
+    {
+      "numero": 46,
+      "tadaksahak": "aywa i-cc(i) aas-e kun(a) aari se n anga!",
+      "glose_fr": "« Eh bien, lui dirent-ils, trouve-le pour nous ! »",
+      "glose_en": "'Well,' they said to him, 'get it for us!'",
+      "traduction_fr": "« Eh bien, lui dirent-ils, trouve-le pour nous ! »",
+      "traduction_en": "'Well,' they said to him, 'get it for us!'"
+    },
+    {
+      "numero": 47,
+      "tadaksahak": "a-yyizzar-an ii-s(e)",
+      "glose_fr": "Il partit devant eux",
+      "glose_en": "He went ahead of them",
+      "traduction_fr": "Il partit devant eux.",
+      "traduction_en": "He went ahead of them."
+    },
+    {
+      "numero": 48,
+      "tadaksahak": "a-zubara a-b-guna-kaat(-a) a-bb-azzar bor-en s(e)",
+      "glose_fr": "Le phacochère le vit venir devant les gens",
+      "glose_en": "The warthog saw him coming ahead of the people",
+      "traduction_fr": "Le phacochère le vit venir devant les gens.",
+      "traduction_en": "The warthog saw him coming ahead of the people."
+    },
+    {
+      "numero": 49,
+      "tadaksahak": "a-kkoy-kat i-mudar-an",
+      "glose_fr": "Il vint avec les animaux",
+      "glose_en": "He came with the animals",
+      "traduction_fr": "Il vint avec les animaux.",
+      "traduction_en": "He came with the animals."
+    },
+    {
+      "numero": 50,
+      "tadaksahak": "har j(e) i-mudar-an i-kkay-kat and(a) a-zubara",
+      "glose_fr": "Dès que les animaux s'arrêtèrent près du phacochère",
+      "glose_en": "As soon as the animals stopped next to the warthog",
+      "traduction_fr": "Dès que les animaux s'arrêtèrent près du phacochère.",
+      "traduction_en": "As soon as the animals stopped next to the warthog."
+    },
+    {
+      "numero": 51,
+      "tadaksahak": "i-ddini(i) ang(a) i-kkoy and(a)-a har i-taw",
+      "glose_fr": "Ils le prirent, partirent avec lui jusqu'à ce qu'ils arrivent",
+      "glose_en": "They took him, left with him until they arrived",
+      "traduction_fr": "Ils le prirent, partirent avec lui jusqu'à ce qu'ils arrivent.",
+      "traduction_en": "They took him, left with him until they arrived."
+    },
+    {
+      "numero": 52,
+      "tadaksahak": "i-ddumb(i)-a",
+      "glose_fr": "Ils le tuèrent",
+      "glose_en": "They killed him",
+      "traduction_fr": "Ils le tuèrent.",
+      "traduction_en": "They killed him."
+    },
+    {
+      "numero": 53,
+      "tadaksahak": "i-ddini(i) ay-n maan(i)",
+      "glose_fr": "Ils prirent sa graisse",
+      "glose_en": "They took his fat",
+      "traduction_fr": "Ils prirent sa graisse.",
+      "traduction_en": "They took his fat."
+    },
+    {
+      "numero": 54,
+      "tadaksahak": "i-kkos-kois-(a)",
+      "glose_fr": "Ils la coupèrent en morceaux",
+      "glose_en": "They cut it into pieces",
+      "traduction_fr": "Ils la coupèrent en morceaux.",
+      "traduction_en": "They cut it into pieces."
+    },
+    {
+      "numero": 55,
+      "tadaksahak": "i-dd(a) anga kussu ka",
+      "glose_fr": "Ils la mirent dans une marmite",
+      "glose_en": "They put it into a cooking pot",
+      "traduction_fr": "Ils la mirent dans une marmite.",
+      "traduction_en": "They put it into a cooking pot."
+    },
+    {
+      "numero": 56,
+      "tadaksahak": "ho senda har a-hinjin was",
+      "glose_fr": "Ils firent cela jusqu'à ce que cela bouille beaucoup",
+      "glose_en": "They did this until it was boiling very much",
+      "traduction_fr": "Ils firent cela jusqu'à ce que cela bouille beaucoup.",
+      "traduction_en": "They did this until it was boiling very much."
+    },
+    {
+      "numero": 57,
+      "tadaksahak": "aywa a-cc(i) i-se wa nn(a) ayay sa n a ayay na-b-d(a)-a ay-n t-i-nzar ka",
+      "glose_fr": "« Eh bien, leur dit-il, donnez-le moi ! C'est moi qui le mettrai dans sa trompe. »",
+      "glose_en": "'Well,' he said to them, 'give it to me! It's me who will put it into his trunk.'",
+      "traduction_fr": "« Eh bien, leur dit-il, donnez-le moi ! C'est moi qui le mettrai dans sa trompe. »",
+      "traduction_en": "'Well,' he said to them, 'give it to me! It's me who will put it into his trunk.'"
+    },
+    {
+      "numero": 58,
+      "tadaksahak": "i-nn(a) a-se n a",
+      "glose_fr": "Ils le lui donnèrent",
+      "glose_en": "They gave it to him",
+      "traduction_fr": "Ils le lui donnèrent.",
+      "traduction_en": "They gave it to him."
+    },
+    {
+      "numero": 59,
+      "tadaksahak": "a-yyiffan tugudu",
+      "glose_fr": "Il grimpa à un arbre",
+      "glose_en": "He climbed a tree",
+      "traduction_fr": "Il grimpa à un arbre.",
+      "traduction_en": "He climbed a tree."
+    },
+    {
+      "numero": 60,
+      "tadaksahak": "a-kkeedi tugudu n beena",
+      "glose_fr": "Il était en haut de l'arbre",
+      "glose_en": "He was up in the tree",
+      "traduction_fr": "Il était en haut de l'arbre.",
+      "traduction_en": "He was up in the tree."
+    },
+    {
+      "numero": 61,
+      "tadaksahak": "aywa a-cc(i) i-se wa ggadam a-b(e) andi kamil ande-mm-abdul a-be n(e) ayda je har ande-m-fugu a-ka ba fer ayay ay-n t-i-nzar",
+      "glose_fr": "« Eh bien, leur dit-il, étendez-vous sur lui, vous tous ! Entassez-vous simplement sur lui ici, afin que vous le regardiez d'en haut. Ouvrez-moi sa trompe ! »",
+      "glose_en": "'Well,' he said to them, 'lie down on him, all of you! Heap up on him here so that you look down on him. Open his trunk for me!'",
+      "traduction_fr": "« Eh bien, leur dit-il, étendez-vous sur lui, vous tous ! Entassez-vous simplement sur lui ici, afin que vous le regardiez d'en haut. Ouvrez-moi sa trompe ! »",
+      "traduction_en": "'Well,' he said to them, 'lie down on him, all of you! Heap up on him here so that you look down on him. Open his trunk for me!'"
+    },
+    {
+      "numero": 62,
+      "tadaksahak": "a-ddini maani hinjin korr(a)",
+      "glose_fr": "Il prit la graisse très chaude",
+      "glose_en": "He took the very hot fat",
+      "traduction_fr": "Il prit la graisse très chaude.",
+      "traduction_en": "He took the very hot fat."
+    },
+    {
+      "numero": 63,
+      "tadaksahak": "a-ddah(e) ooda",
+      "glose_fr": "Il fit cela",
+      "glose_en": "He did this",
+      "traduction_fr": "Il fit cela.",
+      "traduction_en": "He did this."
+    },
+    {
+      "numero": 64,
+      "tadaksahak": "a-ss-og(a)-a eelaw an t-i-nzar se",
+      "glose_fr": "Il l'approcha des narines de l'éléphant",
+      "glose_en": "He approached it to the nostrils of the elephant",
+      "traduction_fr": "Il l'approcha des narines de l'éléphant.",
+      "traduction_en": "He approached it to the nostrils of the elephant."
+    },
+    {
+      "numero": 65,
+      "tadaksahak": "a-mmun a-ka n a je",
+      "glose_fr": "Il le versa simplement dedans",
+      "glose_en": "He simply poured it into them",
+      "traduction_fr": "Il le versa simplement dedans.",
+      "traduction_en": "He simply poured it into them."
+    },
+    {
+      "numero": 66,
+      "tadaksahak": "eelaw korr(a) a-zzur(u) ay-n bangu ka marad-d(a) and(a) ay-n jinji",
+      "glose_fr": "Quant à l'éléphant, la chaleur courut immédiatement dans sa tête et sa gorge",
+      "glose_en": "As for the elephant, the heat immediately ran through his head and his throat",
+      "traduction_fr": "Quant à l'éléphant, la chaleur courut immédiatement dans sa tête et sa gorge.",
+      "traduction_en": "As for the elephant, the heat immediately ran through his head and his throat."
+    },
+    {
+      "numero": 67,
+      "tadaksahak": "eelaw a-ddah(e) ooda",
+      "glose_fr": "L'éléphant fit ceci :",
+      "glose_en": "The elephant did this:",
+      "traduction_fr": "L'éléphant fit ceci :",
+      "traduction_en": "The elephant did this:"
+    },
+    {
+      "numero": 68,
+      "tadaksahak": "a-ssuwa-and(a) ay-n kamb-en kad ay-n cay-en",
+      "glose_fr": "Il secoua ses bras et aussi ses jambes",
+      "glose_en": "He shook his arms and also his legs",
+      "traduction_fr": "Il secoua ses bras et aussi ses jambes.",
+      "traduction_en": "He shook his arms and also his legs."
+    },
+    {
+      "numero": 69,
+      "tadaksahak": "he (a)y(o)oda b-yaliy-yeli-a i-mudar-an ka",
+      "glose_fr": "Cela le fit tourner parmi les animaux",
+      "glose_en": "This made him turn around among the animals",
+      "traduction_fr": "Cela le fit tourner parmi les animaux.",
+      "traduction_en": "This made him turn around among the animals."
+    },
+    {
+      "numero": 70,
+      "tadaksahak": "kaamulllah(i) i-m-an i-hun(i)-i",
+      "glose_fr": "Tous les êtres moururent",
+      "glose_en": "All the beings died",
+      "traduction_fr": "Tous les êtres moururent.",
+      "traduction_en": "All the beings died."
+    },
+    {
+      "numero": 71,
+      "tadaksahak": "i-kkäs t-a-lagaz-an sén(da) ka",
+      "glose_fr": "Ils devinrent comme des melons là-bas",
+      "glose_en": "They became like melons there",
+      "traduction_fr": "Ils devinrent comme des melons là-bas.",
+      "traduction_en": "They became like melons there."
+    },
+    {
+      "numero": 72,
+      "tadaksahak": "a-bji a-ss-awel c-én a-ttärägga(t)-kat",
+      "glose_fr": "Le chacal étendit ses jambes et sauta en bas",
+      "glose_en": "The jackal stretched his legs and jumped down",
+      "traduction_fr": "Le chacal étendit ses jambes et sauta en bas.",
+      "traduction_en": "The jackal stretched his legs and jumped down."
+    },
+    {
+      "numero": 73,
+      "tadaksahak": "eelaw and(a) ay-n g(a) a-bbún",
+      "glose_fr": "L'éléphant lui-même était mort",
+      "glose_en": "The elephant himself was dead",
+      "traduction_fr": "L'éléphant lui-même était mort.",
+      "traduction_en": "The elephant himself was dead."
+    },
+    {
+      "numero": 74,
+      "tadaksahak": "a-bji a-mm-äntaz nä ayo k(a)",
+      "glose_fr": "Le chacal tira sur celui-ci",
+      "glose_en": "The jackal pulled on this one",
+      "traduction_fr": "Le chacal tira sur celui-ci.",
+      "traduction_en": "The jackal pulled on this one."
+    },
+    {
+      "numero": 75,
+      "tadaksahak": "a-m-ci y(a) aya-kkuna haamu zäröoda!",
+      "glose_fr": "Il dit : « Hé ! J'ai trouvé de la viande aujourd'hui ! »",
+      "glose_en": "He said: 'Hey! I found meat today!'",
+      "traduction_fr": "Il dit : « Hé ! J'ai trouvé de la viande aujourd'hui ! »",
+      "traduction_en": "He said: 'Hey! I found meat today!'"
+    },
+    {
+      "numero": 76,
+      "tadaksahak": "a-m-górgor a-mm-äntaz nä ayo k(a)",
+      "glose_fr": "Il rit, tira sur un autre",
+      "glose_en": "He laughed, pulled on another one",
+      "traduction_fr": "Il rit, tira sur un autre.",
+      "traduction_en": "He laughed, pulled on another one."
+    },
+    {
+      "numero": 77,
+      "tadaksahak": "a-m-ci y(a) aya-kkuna haamu zäröoda!",
+      "glose_fr": "Il dit : « Hé ! J'ai trouvé de la viande aujourd'hui ! »",
+      "glose_en": "He said: 'Hey! I found meat today!'",
+      "traduction_fr": "Il dit : « Hé ! J'ai trouvé de la viande aujourd'hui ! »",
+      "traduction_en": "He said: 'Hey! I found meat today!'"
+    },
+    {
+      "numero": 78,
+      "tadaksahak": "aya-b-górgor",
+      "glose_fr": "Je ris",
+      "glose_en": "I am laughing",
+      "traduction_fr": "Je ris.",
+      "traduction_en": "I am laughing."
+    },
+    {
+      "numero": 79,
+      "tadaksahak": "All(a) a-sö-sö-ss-aya ni-n bärr-en a-zübara",
+      "glose_fr": "Dieu n'enseigne pas à tes enfants, phacochère !",
+      "glose_en": "God is not teaching your children, warthog!",
+      "traduction_fr": "Dieu n'enseigne pas à tes enfants, phacochère !",
+      "traduction_en": "God is not teaching your children, warthog!"
+    },
+    {
+      "numero": 80,
+      "tadaksahak": "ho senda har je i-mudar-an ooda kaamil i-hun(u)-an senda k(a)",
+      "glose_fr": "Il en fut ainsi, tous ces animaux moururent là-bas",
+      "glose_en": "It was like that, all these animals died there",
+      "traduction_fr": "Il en fut ainsi, tous ces animaux moururent là-bas.",
+      "traduction_en": "It was like that, all these animals died there."
+    },
+    {
+      "numero": 81,
+      "tadaksahak": "a-dd(a) azzamán áng(a) a-bb-ée(d)-kat jé senda a-b-ná j(e) i-n haam-én a-b-górgor i-ka",
+      "glose_fr": "Pendant longtemps, il revint simplement là-bas, mangea leur viande et se moqua d'eux.",
+      "glose_en": "For a long time, he simply returned there, ate their meat and laughed about them.",
+      "traduction_fr": "Pendant longtemps, il revint simplement là-bas, mangea leur viande et se moqua d'eux.",
+      "traduction_en": "For a long time, he simply returned there, ate their meat and laughed about them."
+    }
+  ]
+}
