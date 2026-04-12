@@ -1,0 +1,91 @@
+{
+  "id": "couleurs",
+  "titre_fr": "🎨 Les couleurs",
+  "titre_en": "🎨 Colors",
+  "titre_ar": "🎨 الألوان",
+  "description_fr": "Les noms de couleurs en tadaksahak",
+  "description_en": "Color names in Tadaksahak",
+  "description_ar": "أسماء الألوان في التدكساهق",
+  "mots": [
+    {
+      "tad": "bíibi",
+      "fr": "noir",
+      "en": "black",
+      "ar": "أسود",
+      "verbe": "bíibi",
+      "nominalisation": "a-bíibi"
+    },
+    {
+      "tad": "kóoray",
+      "fr": "blanc",
+      "en": "white",
+      "ar": "أبيض",
+      "verbe": "kóoray",
+      "nominalisation": "a-kóoray"
+    },
+    {
+      "tad": "cidáy",
+      "fr": "rouge",
+      "en": "red",
+      "ar": "أحمر",
+      "verbe": "cidáy",
+      "nominalisation": "t-a-ciday-t"
+    },
+    {
+      "tad": "yaráy",
+      "fr": "jaune",
+      "en": "yellow",
+      "ar": "أصفر",
+      "verbe": "yaráy",
+      "nominalisation": "a-yaráy"
+    },
+    {
+      "tad": "dalat-an",
+      "fr": "bleu/vert",
+      "en": "blue/green",
+      "ar": "أزرق/أخضر",
+      "verbe": "dalat",
+      "nominalisation": "t-a-dalat-t"
+    },
+    {
+      "tad": "kadak-an",
+      "fr": "marron (couleur)",
+      "en": "brown (color)",
+      "ar": "بني",
+      "verbe": "kadak",
+      "nominalisation": "a-kadak"
+    },
+    {
+      "tad": "dabar-an",
+      "fr": "gris",
+      "en": "grey",
+      "ar": "رمادي",
+      "verbe": "dabar",
+      "nominalisation": "t-a-dabar-t"
+    },
+    {
+      "tad": "cawal-an",
+      "fr": "clair",
+      "en": "clear, light",
+      "ar": "فاتح",
+      "verbe": "cawal",
+      "nominalisation": "a-cawal"
+    },
+    {
+      "tad": "yibrar-an",
+      "fr": "laid, mauvais (couleur)",
+      "en": "ugly, bad (color)",
+      "ar": "قبيح، سيء (لون)",
+      "verbe": "yibrár",
+      "nominalisation": "a-yibrar"
+    },
+    {
+      "tad": "gin-giman",
+      "fr": "beau, bon (couleur)",
+      "en": "beautiful, good (color)",
+      "ar": "جميل، جيد (لون)",
+      "verbe": "gíman",
+      "nominalisation": "a-giman"
+    }
+  ]
+}
