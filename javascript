@@ -1,13 +1,14 @@
 // ==============================
 // APPLICATION TADAKSAHAK LEARNING
-// VERSION COMPLÈTE (avec dictionnaire enrichi, thèmes, flashcards, PWA, mises à jour auto)
-// Intégration des propositions relatives (Christiansen & Levinsohn 2003)
+// VERSION FUSIONNÉE - ULTIME
+// Avec dictionnaire enrichi, thèmes, flashcards, PWA, mises à jour auto
+// ET propositions relatives (Christiansen & Levinsohn 2003)
 // ==============================
 
-console.log("🚀 Démarrage de l'application complète...");
+console.log("🚀 Démarrage de l'application fusionnée...");
 
 // ------------------------------
-// TRADUCTIONS (i18n) - Version étendue
+// TRADUCTIONS (i18n) - Version étendue AVEC relatives
 // ------------------------------
 const i18n = {
   fr: {
@@ -298,7 +299,9 @@ const i18n = {
     bot_help: "🤖 What I can do:\n📖 Dictionary\n📚 Books\n📚 Grammar\n📖 Tales\n🎙️ Broadcasts\n🎵 Audio\n💬 Cultural questions",
     bot_default: "🤔 I didn't understand. Try 'help'."
   }
-};// ------------------------------
+};
+
+// ------------------------------
 // VARIABLES GLOBALES
 // ------------------------------
 let currentLanguage = localStorage.getItem('app_language') || 'fr';
@@ -581,7 +584,7 @@ function setLanguage(lang) {
   if (document.getElementById("dashboard") && !document.getElementById("dashboard").hidden) afficherDashboard();
   if (document.getElementById("rapports") && !document.getElementById("rapports").hidden) afficherRapports();
   if (document.getElementById("grammaire") && !document.getElementById("grammaire").hidden && grammaire) afficherGrammaire();
-  if (document.getElementById("relativesContainer") && !document.getElementById("relativesContainer").hidden && relativesData) afficherRelatives();
+  if (document.getElementById("relatives") && !document.getElementById("relatives").hidden && relativesData) afficherRelatives();
   if (document.getElementById("contes") && !document.getElementById("contes").hidden && contesData) afficherContes();
   if (document.getElementById("emissions") && !document.getElementById("emissions").hidden && emissionsData) afficherEmissions();
   if (document.getElementById("themes") && !document.getElementById("themes").hidden && themesData) afficherThemes();
@@ -603,8 +606,10 @@ function updateChatSuggestions() {
     btns[1].textContent = i18n[currentLanguage].sugg_history;
     btns[2].textContent = i18n[currentLanguage].sugg_culture;
   }
-}// ------------------------------
-// BOT (avec recherche dans livres et relatives)
+}
+
+// ------------------------------
+// BOT (avec recherche dans livres ET relatives)
 // ------------------------------
 function extraireMotsCles(question) {
   const stopWords = ['le','la','les','un','une','de','du','des','et','ou','mais','donc','car','pour','dans','avec','sans','par','sur','sous','que','qui','quoi','dont','où','comment','pourquoi','est','sont','être','avoir','faire'];
@@ -633,7 +638,7 @@ function chercherDansLivres(question) {
   return resultats[0];
 }
 
-// Fonction pour générer un exemple aléatoire de relative
+// NOUVEAU : Fonction pour générer un exemple aléatoire de relative
 function genererExempleRelative() {
   if (!relativesData || !relativesData.strategies) return null;
   const strategies = relativesData.strategies;
@@ -656,7 +661,7 @@ function genererExempleRelative() {
 function reponseBot(txt) {
   const clean = txt.toLowerCase().trim();
   
-  // --- RÈGLES POUR LES RELATIVES ---
+  // NOUVEAU : RÈGLES POUR LES RELATIVES
   if (clean.includes("relative") || clean.includes("proposition") || 
       (clean.includes("qui") && clean.includes("que")) ||
       clean.includes("ayo") || clean.includes("ayondo") || clean.includes("sa") ||
@@ -705,7 +710,7 @@ function reponseBot(txt) {
 📚 D'après Christiansen & Levinsohn (2003). Tapez "exemple relative" pour un exemple.`;
   }
   
-  // --- RÈGLES EXISTANTES ---
+  // RÈGLES EXISTANTES
   if (clean.includes("bonjour") || clean.includes("salut") || clean.includes("hello") || clean.includes("salam")) return i18n[currentLanguage].bot_greeting;
   if (clean.includes("merci") || clean.includes("thanks") || clean.includes("شكرا")) return i18n[currentLanguage].bot_thanks;
   if (clean.includes("dictionnaire") || clean.includes("dico") || clean.includes("mot") || clean.includes("قاموس")) return i18n[currentLanguage].bot_dico;
@@ -888,39 +893,49 @@ function chercher(queryRaw) {
 }
 
 if (searchBar) {
+  let debounceTimeout;
   searchBar.addEventListener("input", (e) => {
     const raw = e.target.value.trim();
     if (clearSearchBtn) clearSearchBtn.hidden = !raw;
     if (!suggestionsList) return;
-    suggestionsList.innerHTML = "";
-    suggestionsList.classList.remove("show");
-    if (!raw) return;
-    const resultats = chercher(raw);
-    if (!resultats.length) {
-      const li = document.createElement("li");
-      li.textContent = "🔍 Aucun résultat";
-      suggestionsList.appendChild(li);
-    } else {
-      resultats.forEach(item => {
+    
+    clearTimeout(debounceTimeout);
+    debounceTimeout = setTimeout(() => {
+      suggestionsList.innerHTML = "";
+      suggestionsList.classList.remove("show");
+      if (!raw) return;
+      
+      const resultats = chercher(raw);
+      if (!resultats.length) {
         const li = document.createElement("li");
-        let extraInfo = "";
-        if (currentLanguage === "fr" && item.fr) extraInfo = item.fr;
-        else if (currentLanguage === "en" && item.en) extraInfo = item.en;
-        else if (currentLanguage === "ar" && item.ar) extraInfo = item.ar;
-        else extraInfo = item.fr || item.en || "";
-        
-        li.innerHTML = `<strong>${escapeHtml(item.mot)}</strong> <span class="mot-cat">(${escapeHtml(item.cat || '')})</span><br><small>${escapeHtml(extraInfo.substring(0, 80))}${extraInfo.length > 80 ? '…' : ''}</small>`;
-        li.style.cursor = "pointer";
-        li.addEventListener("click", () => {
-          searchBar.value = item.mot;
-          suggestionsList.innerHTML = "";
-          suggestionsList.classList.remove("show");
-          afficherMot(item);
-        });
+        li.textContent = "🔍 Aucun résultat";
+        li.style.padding = "0.75rem";
+        li.style.color = "var(--text-muted)";
         suggestionsList.appendChild(li);
-      });
-    }
-    suggestionsList.classList.add("show");
+      } else {
+        resultats.forEach(item => {
+          const li = document.createElement("li");
+          let extraInfo = "";
+          if (currentLanguage === "fr" && item.fr) extraInfo = item.fr;
+          else if (currentLanguage === "en" && item.en) extraInfo = item.en;
+          else if (currentLanguage === "ar" && item.ar) extraInfo = item.ar;
+          else extraInfo = item.fr || item.en || "";
+          
+          li.innerHTML = `<strong>${escapeHtml(item.mot)}</strong> <span class="mot-cat">(${escapeHtml(item.cat || '')})</span><br><small>${escapeHtml(extraInfo.substring(0, 80))}${extraInfo.length > 80 ? '…' : ''}</small>`;
+          li.style.cursor = "pointer";
+          li.style.padding = "0.75rem";
+          li.style.borderBottom = "1px solid var(--border-color)";
+          li.addEventListener("click", () => {
+            searchBar.value = item.mot;
+            suggestionsList.innerHTML = "";
+            suggestionsList.classList.remove("show");
+            afficherMot(item);
+          });
+          suggestionsList.appendChild(li);
+        });
+      }
+      suggestionsList.classList.add("show");
+    }, 300);
   });
   if (clearSearchBtn) {
     clearSearchBtn.addEventListener("click", () => {
@@ -1064,8 +1079,10 @@ function showWordNotification() {
     const mot = getWordOfDay();
     if (mot) new Notification(`📖 Mot du jour : ${mot}`);
   }
-}// ------------------------------
-// GRAMMAIRE - Version corrigée avec onglets
+}
+
+// ------------------------------
+// GRAMMAIRE - Version corrigée AVEC onglets pour relatives
 // ------------------------------
 async function chargerGrammaire() {
   try {
@@ -1084,7 +1101,7 @@ function afficherGrammaire() {
   if (!container) return;
   
   if (!grammaire) {
-    container.innerHTML = `<p class="info-message">📚 Données grammaticales non disponibles.</p>`;
+    container.innerHTML = `<p class="info-message">📚 Données grammaticales non disponibles. <button onclick="chargerGrammaire()">Recharger</button></p>`;
     return;
   }
   
@@ -1093,6 +1110,8 @@ function afficherGrammaire() {
     sections = grammaire.sections;
   } else if (grammaire.causative_passive) {
     sections = [grammaire.causative_passive];
+  } else if (Array.isArray(grammaire)) {
+    sections = grammaire;
   } else {
     container.innerHTML = `<p class="info-message">📚 Structure de grammaire non reconnue.</p>`;
     console.error("Structure inconnue:", Object.keys(grammaire));
@@ -1199,7 +1218,7 @@ function afficherGrammaire() {
 }
 
 // ------------------------------
-// PROPOSITIONS RELATIVES
+// NOUVEAU : PROPOSITIONS RELATIVES (Christiansen & Levinsohn 2003)
 // ------------------------------
 async function chargerRelatives() {
   try {
@@ -1273,12 +1292,12 @@ async function afficherRelatives() {
           </thead>
           <tbody>
             <tr><td>Sujet</td><td>✅</td><td>✅</td><td>✅</td></tr>
-            <tr><td>Objet direct</td><td>✅</td><td>✅</td><td>✅</td></tr>
-            <tr><td>Objet indirect</td><td>✅</td><td>❌</td><td>❌</td></tr>
-            <tr><td>Oblique</td><td>✅</td><td>✅</td><td>❌</td></tr>
-            <tr><td>Possesseur</td><td>❌</td><td>❌</td><td>✅</td></tr>
+            <tr><td>Objet direct</td><td>✅</td><td>✅</tr><td>✅</tr>
+            <tr><td>Objet indirect</tr><td>✅</tr><td>❌</tr><td>❌</tr>
+            <tr><td>Oblique</tr><td>✅</tr><td>✅</tr><td>❌</tr>
+            <tr><td>Possesseur</tr><td>❌</tr><td>❌</tr><td>✅</tr>
           </tbody>
-        </table>
+        ~
         <p class="table-note">📚 D'après l'analyse du corpus de Christiansen & Levinsohn (2003)</p>
       </div>
     `;
@@ -1552,7 +1571,7 @@ function afficherThemes() {
 }
 
 // ------------------------------
-// FLASHCARDS (avec option relatives)
+// FLASHCARDS (AVEC option relatives)
 // ------------------------------
 function genererFlashcards() {
   const container = document.getElementById("flashcardsContainer");
@@ -1566,6 +1585,7 @@ function genererFlashcards() {
   } else if (theme === 'noms') {
     motsFiltres = motsFiltres.filter(m => m.cat === 'n.' || m.cat === 'npl.');
   } else if (theme === 'relatives' && relativesData) {
+    // NOUVEAU : Flashcards pour les propositions relatives
     motsFiltres = [];
     for (const strat of relativesData.strategies) {
       for (const ex of (strat.exemples || [])) {
@@ -1748,7 +1768,9 @@ function terminerQuiz() {
   container.innerHTML = `<p>${message}</p><button id="restartQuizBtn" class="btn">${i18n[currentLanguage].quiz_restart}</button>`;
   document.getElementById("restartQuizBtn")?.addEventListener("click", () => demarrerQuiz());
   if (document.getElementById("dashboard") && !document.getElementById("dashboard").hidden) afficherDashboard();
-}// ------------------------------
+}
+
+// ------------------------------
 // TIMELINE
 // ------------------------------
 async function chargerTimeline() {
@@ -1978,7 +2000,9 @@ async function chargerLivresConnaissance() {
     console.warn(e);
     livresConnaissance = { livres: [] };
   }
-}// ------------------------------
+}
+
+// ------------------------------
 // SERVICE WORKER (PWA) et améliorations
 // ------------------------------
 function registerServiceWorker() {
@@ -2258,7 +2282,7 @@ function initAutoUpdates() {
 }
 
 // ------------------------------
-// NAVIGATION ENTRE SECTIONS
+// NAVIGATION ENTRE SECTIONS (AVEC gestion des onglets grammaire/relatives)
 // ------------------------------
 function initNavigation() {
   if (!sectionSelector) return;
@@ -2266,6 +2290,25 @@ function initNavigation() {
   function showSection(id) {
     sections.forEach(sec => { sec.hidden = sec.id !== id; });
     localStorage.setItem("tadaksahak_active_section", id);
+    
+    // Gestion spécifique pour grammaire et relatives
+    if (id === "grammaire") {
+      const grammarContainer = document.getElementById("grammaireContainer");
+      const relativesContainer = document.getElementById("relativesContainer");
+      if (grammarContainer) grammarContainer.hidden = false;
+      if (relativesContainer) relativesContainer.hidden = true;
+      if (grammaire) afficherGrammaire();
+      else chargerGrammaire().then(() => afficherGrammaire());
+    }
+    if (id === "relatives") {
+      const grammarContainer = document.getElementById("grammaireContainer");
+      const relativesContainer = document.getElementById("relativesContainer");
+      if (grammarContainer) grammarContainer.hidden = true;
+      if (relativesContainer) relativesContainer.hidden = false;
+      if (relativesData) afficherRelatives();
+      else chargerRelatives().then(() => afficherRelatives());
+    }
+    
     if (id === "livres") afficherLivres();
     if (id === "audio") genererAlbumsAudio();
     if (id === "photos") afficherPhotos();
@@ -2276,8 +2319,6 @@ function initNavigation() {
     if (id === "search") rechercherPleinTexte();
     if (id === "dashboard") afficherDashboard();
     if (id === "rapports") afficherRapports();
-    if (id === "grammaire" && grammaire) afficherGrammaire();
-    if (id === "relatives" && relativesData) afficherRelatives();
     if (id === "contes" && contesData) afficherContes();
     if (id === "emissions" && emissionsData) afficherEmissions();
     if (id === "themes" && themesData) afficherThemes();
@@ -2363,7 +2404,7 @@ async function initialiserApplication() {
       showInstallBanner();
     }, 3000);
     
-    console.log("✅ Application prête !");
+    console.log("✅ Application fusionnée prête !");
     console.log("📚 Module des propositions relatives intégré (Christiansen & Levinsohn 2003)");
   } catch (error) {
     console.error("Erreur critique lors de l'initialisation :", error);
