@@ -1,0 +1,207 @@
+{
+  "id": "verbes_action",
+  "titre_fr": "🏃 Les verbes d'action",
+  "titre_en": "🏃 Action verbs",
+  "titre_ar": "🏃 أفعال الحركة",
+  "description_fr": "Les verbes d'action courants en tadaksahak",
+  "description_en": "Common action verbs in Tadaksahak",
+  "description_ar": "أفعال الحركة الشائعة في التدكساهق",
+  "mots": [
+    {
+      "tad": "didá",
+      "fr": "marcher",
+      "en": "to walk",
+      "ar": "يمشي",
+      "type": "intransitif"
+    },
+    {
+      "tad": "zurú",
+      "fr": "courir",
+      "en": "to run",
+      "ar": "يركض",
+      "type": "intransitif"
+    },
+    {
+      "tad": "kóy",
+      "fr": "partir",
+      "en": "to leave",
+      "ar": "يغادر",
+      "type": "intransitif"
+    },
+    {
+      "tad": "kóy-kat",
+      "fr": "venir",
+      "en": "to come",
+      "ar": "يأتي",
+      "type": "intransitif"
+    },
+    {
+      "tad": "tén",
+      "fr": "arriver",
+      "en": "to arrive",
+      "ar": "يصل",
+      "type": "intransitif"
+    },
+    {
+      "tad": "yéd",
+      "fr": "revenir",
+      "en": "to return",
+      "ar": "يعود",
+      "type": "intransitif"
+    },
+    {
+      "tad": "húuru",
+      "fr": "entrer",
+      "en": "to enter",
+      "ar": "يدخل",
+      "type": "intransitif"
+    },
+    {
+      "tad": "hunú",
+      "fr": "quitter, partir de",
+      "en": "to depart from",
+      "ar": "يرحل من",
+      "type": "intransitif"
+    },
+    {
+      "tad": "zumbú",
+      "fr": "descendre",
+      "en": "to go down",
+      "ar": "ينزل",
+      "type": "intransitif"
+    },
+    {
+      "tad": "tunú",
+      "fr": "se lever",
+      "en": "to get up",
+      "ar": "يقوم",
+      "type": "intransitif"
+    },
+    {
+      "tad": "gorá",
+      "fr": "s'asseoir, rester",
+      "en": "to sit, stay",
+      "ar": "يجلس، يبقى",
+      "type": "intransitif"
+    },
+    {
+      "tad": "keení",
+      "fr": "dormir, être allongé",
+      "en": "to sleep, lie down",
+      "ar": "ينام، يستلقي",
+      "type": "intransitif"
+    },
+    {
+      "tad": "káy",
+      "fr": "s'arrêter, être debout",
+      "en": "to stop, stand",
+      "ar": "يتوقف، يقف",
+      "type": "intransitif"
+    },
+    {
+      "tad": "dá",
+      "fr": "faire, mettre",
+      "en": "to do, put",
+      "ar": "يفعل، يضع",
+      "type": "transitif"
+    },
+    {
+      "tad": "ŋá",
+      "fr": "manger",
+      "en": "to eat",
+      "ar": "يأكل",
+      "type": "transitif"
+    },
+    {
+      "tad": "nín",
+      "fr": "boire",
+      "en": "to drink",
+      "ar": "يشرب",
+      "type": "transitif"
+    },
+    {
+      "tad": "ná",
+      "fr": "donner",
+      "en": "to give",
+      "ar": "يعطي",
+      "type": "transitif"
+    },
+    {
+      "tad": "záw",
+      "fr": "prendre, emmener",
+      "en": "to take, bring",
+      "ar": "يأخذ",
+      "type": "transitif"
+    },
+    {
+      "tad": "diní",
+      "fr": "prendre, attraper",
+      "en": "to take, catch",
+      "ar": "يأخذ، يقبض",
+      "type": "transitif"
+    },
+    {
+      "tad": "kár",
+      "fr": "frapper, jouer, avertir",
+      "en": "to hit, play, warn",
+      "ar": "يضرب، يلعب، يحذر",
+      "type": "transitif"
+    },
+    {
+      "tad": "dumbú",
+      "fr": "couper, égorger",
+      "en": "to cut, slaughter",
+      "ar": "يقطع، يذبح",
+      "type": "transitif"
+    },
+    {
+      "tad": "wí",
+      "fr": "tuer, éteindre",
+      "en": "to kill, extinguish",
+      "ar": "يقتل، يطفئ",
+      "type": "transitif"
+    },
+    {
+      "tad": "guná",
+      "fr": "voir",
+      "en": "to see",
+      "ar": "يرى",
+      "type": "transitif"
+    },
+    {
+      "tad": "mó",
+      "fr": "entendre",
+      "en": "to hear",
+      "ar": "يسمع",
+      "type": "transitif"
+    },
+    {
+      "tad": "cí",
+      "fr": "dire",
+      "en": "to say",
+      "ar": "يقول",
+      "type": "transitif"
+    },
+    {
+      "tad": "hár",
+      "fr": "raconter",
+      "en": "to tell",
+      "ar": "يروي",
+      "type": "transitif"
+    },
+    {
+      "tad": "báy",
+      "fr": "savoir, connaître",
+      "en": "to know",
+      "ar": "يعرف",
+      "type": "transitif"
+    },
+    {
+      "tad": "báaɣa",
+      "fr": "aimer, vouloir",
+      "en": "to love, want",
+      "ar": "يحب، يريد",
+      "type": "transitif"
+    }
+  ]
+}
