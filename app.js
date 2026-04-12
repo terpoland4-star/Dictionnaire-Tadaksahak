@@ -1,6 +1,6 @@
 // ==============================
 // APPLICATION TADAKSAHAK LEARNING
-// VERSION COMPLÈTE (avec contes, émissions, grammaire)
+// VERSION COMPLÈTE (avec contes, émissions, grammaire, flashcards, PWA)
 // ==============================
 
 console.log("🚀 Démarrage de l'application complète...");
@@ -26,6 +26,7 @@ const i18n = {
     nav_reports: "📄 Rapports",
     nav_actualites: "📰 Actualités",
     nav_quiz: "❓ Quiz",
+    nav_flashcards: "🃏 Flashcards",
     nav_timeline: "📅 Ligne du temps",
     nav_map: "🗺️ Carte",
     nav_search: "🔍 Recherche livres",
@@ -43,6 +44,10 @@ const i18n = {
     grammar_desc: "Verbes causatifs et passifs d'après Christiansen-Bolli (2010)",
     contes_title: "📖 Contes et légendes",
     emissions_title: "🎙️ Émissions radio",
+    flashcards_title: "🃏 Flashcards - Apprentissage",
+    theme_vocab: "📖 Vocabulaire",
+    theme_verbs: "🔤 Verbes",
+    theme_nouns: "🏷️ Noms",
     prev: "⬅️ Précédent",
     next: "Suivant ➡️",
     alphabet_index: "Index alphabétique",
@@ -112,6 +117,7 @@ const i18n = {
     nav_reports: "📄 التقارير",
     nav_actualites: "📰 الأخبار",
     nav_quiz: "❓ اختبار",
+    nav_flashcards: "🃏 بطاقات التعلم",
     nav_timeline: "📅 الخط الزمني",
     nav_map: "🗺️ الخريطة",
     nav_search: "🔍 بحث في الكتب",
@@ -129,6 +135,10 @@ const i18n = {
     grammar_desc: "الأفعال السببية والمجهولة حسب كريستيانسن-بولي (٢٠١٠)",
     contes_title: "📖 حكايات وأساطير",
     emissions_title: "🎙️ برامج إذاعية",
+    flashcards_title: "🃏 بطاقات التعلم",
+    theme_vocab: "📖 مفردات",
+    theme_verbs: "🔤 أفعال",
+    theme_nouns: "🏷️ أسماء",
     prev: "⬅️ السابق",
     next: "التالي ➡️",
     alphabet_index: "الفهرس الأبجدي",
@@ -198,6 +208,7 @@ const i18n = {
     nav_reports: "📄 Reports",
     nav_actualites: "📰 News",
     nav_quiz: "❓ Quiz",
+    nav_flashcards: "🃏 Flashcards",
     nav_timeline: "📅 Timeline",
     nav_map: "🗺️ Map",
     nav_search: "🔍 Search books",
@@ -215,6 +226,10 @@ const i18n = {
     grammar_desc: "Causative and passive verbs from Christiansen-Bolli (2010)",
     contes_title: "📖 Tales and legends",
     emissions_title: "🎙️ Radio broadcasts",
+    flashcards_title: "🃏 Flashcards - Learning",
+    theme_vocab: "📖 Vocabulary",
+    theme_verbs: "🔤 Verbs",
+    theme_nouns: "🏷️ Nouns",
     prev: "⬅️ Previous",
     next: "Next ➡️",
     alphabet_index: "Alphabetical index",
@@ -287,6 +302,11 @@ let quizData = null;
 let currentQuiz = { questions: [], currentIndex: 0, score: 0, lang: 'fr' };
 let timelineData = null;
 let mapInitialized = false;
+let isAppInstalled = false;
+
+// Variables Flashcards
+let currentFlashcards = [];
+let currentFlashcardIndex = 0;
 
 // Éléments DOM
 const searchBar = document.getElementById("searchBar");
@@ -423,6 +443,24 @@ function hideLoader() {
   }
 }
 
+function showSkeleton(containerId) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  
+  container.innerHTML = `
+    <div class="skeleton-grid">
+      ${Array(6).fill(0).map(() => `
+        <div class="skeleton-card">
+          <div class="skeleton-image"></div>
+          <div class="skeleton-title"></div>
+          <div class="skeleton-text"></div>
+          <div class="skeleton-text short"></div>
+        </div>
+      `).join('')}
+    </div>
+  `;
+}
+
 // ------------------------------
 // THÈMES PERSONNALISABLES
 // ------------------------------
@@ -478,6 +516,14 @@ function initTheme() {
   document.getElementById('themeSepia')?.addEventListener('click', () => setTheme('sepia'));
 }
 
+function detectSystemTheme() {
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    if (!localStorage.getItem('app_theme')) setTheme('dark');
+  } else {
+    if (!localStorage.getItem('app_theme')) setTheme('light');
+  }
+}
+
 // ------------------------------
 // GESTION DE LA LANGUE
 // ------------------------------
@@ -520,6 +566,7 @@ function setLanguage(lang) {
   if (document.getElementById("grammaire") && !document.getElementById("grammaire").hidden && grammaire) afficherGrammaire();
   if (document.getElementById("contes") && !document.getElementById("contes").hidden && contesData) afficherContes();
   if (document.getElementById("emissions") && !document.getElementById("emissions").hidden && emissionsData) afficherEmissions();
+  if (document.getElementById("flashcards") && !document.getElementById("flashcards").hidden && vocabulaire.length) genererFlashcards();
   if (motActuel) afficherMot(motActuel);
   updateChatSuggestions();
   afficherMotDuJour();
@@ -1020,7 +1067,7 @@ function afficherContes() {
   if (!container) return;
   
   if (!contesData) {
-    container.innerHTML = `<p class="info-message">📖 Aucun conte disponible.</p>`;
+    container.innerHTML = `<p class="info-message">📖 ${i18n[currentLanguage].contes_title || 'Aucun conte disponible.'}</p>`;
     return;
   }
   
@@ -1034,40 +1081,75 @@ function afficherContes() {
     
     html += `
       <div class="conte-card">
-        <h3>${escapeHtml(titre)}</h3>
-        <div class="conte-meta">
-          <span>📜 ${escapeHtml(conte.type || 'conte')}</span>
-          <span>🗣️ ${escapeHtml(conte.narrateur || 'Tradition orale')}</span>
+        <div class="conte-card-inner">
+          <div class="conte-card-front">
+            <h3>📖 ${escapeHtml(titre || 'Sans titre')}</h3>
+            <div class="conte-meta">
+              <span>📜 ${escapeHtml(conte.type || 'conte')}</span>
+              <span>🗣️ ${escapeHtml(conte.narrateur || 'Tradition orale')}</span>
+            </div>
+            <p class="conte-resume">${escapeHtml(resume || 'Résumé non disponible')}</p>
+            <button class="btn-lire-conte" data-conte-id="${conte.id || 0}">📖 Lire le conte</button>
+          </div>
         </div>
-        <p class="conte-resume">${escapeHtml(resume || '')}</p>
-        <details class="conte-details">
-          <summary>📖 Lire le conte</summary>
-          <div class="conte-versets">
-    `;
-    
-    if (conte.versets && conte.versets.length) {
-      for (const verset of conte.versets) {
-        html += `
-          <div class="verset">
-            <div class="verset-num">${verset.numero}</div>
-            <div class="verset-tad"><strong>${escapeHtml(verset.tadaksahak || '')}</strong></div>
-            <div class="verset-gloss">${escapeHtml(verset.glose_fr || '')}</div>
-            <div class="verset-trans">${escapeHtml(currentLanguage === 'fr' ? verset.traduction_fr : (currentLanguage === 'en' ? verset.traduction_en : (verset.traduction_ar || verset.traduction_fr)))}</div>
-          </div>
-        `;
-      }
-    }
-    
-    html += `
-          </div>
-        </details>
-        ${morale ? `<div class="conte-morale"><strong>💡 Morale :</strong> ${escapeHtml(morale)}</div>` : ''}
       </div>
     `;
   }
   
   html += `</div>`;
   container.innerHTML = html;
+  
+  document.querySelectorAll('.btn-lire-conte').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const id = parseInt(e.currentTarget.dataset.conteId);
+      const conte = contes.find(c => c.id === id);
+      if (conte) afficherConteDetail(conte);
+    });
+  });
+}
+
+function afficherConteDetail(conte) {
+  let titre = currentLanguage === 'fr' ? conte.titre_fr : (currentLanguage === 'en' ? conte.titre_en : conte.titre_ar);
+  let morale = currentLanguage === 'fr' ? conte.morale_fr : (currentLanguage === 'en' ? conte.morale_en : conte.morale_ar);
+  
+  let modalHtml = `
+    <div id="conteModal" class="modal">
+      <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <h2>${escapeHtml(titre)}</h2>
+        <div class="conte-versets">
+    `;
+  
+  if (conte.versets && conte.versets.length) {
+    for (const verset of conte.versets) {
+      modalHtml += `
+        <div class="verset">
+          <div class="verset-num">${verset.numero}</div>
+          <div class="verset-tad"><strong>${escapeHtml(verset.tadaksahak || '')}</strong></div>
+          <div class="verset-gloss">${escapeHtml(verset.glose_fr || '')}</div>
+          <div class="verset-trans">${escapeHtml(currentLanguage === 'fr' ? verset.traduction_fr : (currentLanguage === 'en' ? verset.traduction_en : (verset.traduction_ar || verset.traduction_fr)))}</div>
+        </div>
+      `;
+    }
+  }
+  
+  modalHtml += `
+        </div>
+        ${morale ? `<div class="conte-morale"><strong>💡 Morale :</strong> ${escapeHtml(morale)}</div>` : ''}
+      </div>
+    </div>
+  `;
+  
+  const existingModal = document.getElementById('conteModal');
+  if (existingModal) existingModal.remove();
+  
+  document.body.insertAdjacentHTML('beforeend', modalHtml);
+  
+  const modal = document.getElementById('conteModal');
+  const closeBtn = modal.querySelector('.modal-close');
+  
+  closeBtn.addEventListener('click', () => modal.remove());
+  modal.addEventListener('click', (e) => { if (e.target === modal) modal.remove(); });
 }
 
 // ------------------------------
@@ -1137,6 +1219,130 @@ function afficherEmissions() {
   
   html += `</div>`;
   container.innerHTML = html;
+}
+
+// ------------------------------
+// FLASHCARDS
+// ------------------------------
+function genererFlashcards() {
+  const container = document.getElementById("flashcardsContainer");
+  if (!container) return;
+  
+  const theme = document.getElementById('flashcardsThemeSelect')?.value || 'all';
+  let motsFiltres = [...vocabulaire];
+  
+  if (theme === 'verbes') {
+    motsFiltres = motsFiltres.filter(m => m.cat === 'vt.' || m.cat === 'vi.');
+  } else if (theme === 'noms') {
+    motsFiltres = motsFiltres.filter(m => m.cat === 'n.' || m.cat === 'npl.');
+  }
+  
+  if (motsFiltres.length === 0) {
+    container.innerHTML = `<div class="info-message">📚 Aucun mot dans cette catégorie.</div>`;
+    return;
+  }
+  
+  currentFlashcards = [...motsFiltres].sort(() => 0.5 - Math.random());
+  currentFlashcardIndex = 0;
+  
+  afficherFlashcard();
+  mettreAJourProgressionFlashcards();
+}
+
+function afficherFlashcard() {
+  const container = document.getElementById("flashcardsContainer");
+  if (!container) return;
+  
+  if (!currentFlashcards.length || currentFlashcardIndex >= currentFlashcards.length) {
+    container.innerHTML = `<div class="flashcards-complete">
+      <h3>🎉 Félicitations !</h3>
+      <p>Vous avez terminé toutes les flashcards !</p>
+      <button id="restartFlashcardsBtn" class="btn">🔄 Recommencer</button>
+    </div>`;
+    document.getElementById('restartFlashcardsBtn')?.addEventListener('click', () => {
+      genererFlashcards();
+    });
+    return;
+  }
+  
+  const mot = currentFlashcards[currentFlashcardIndex];
+  let question = mot.mot;
+  let reponse = currentLanguage === 'fr' ? mot.fr : (currentLanguage === 'en' ? mot.en : mot.ar);
+  let categorie = currentLanguage === 'fr' ? (mot.cat || 'Mot') : (mot.cat || 'Word');
+  
+  container.innerHTML = `
+    <div class="flashcard" data-flipped="false">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="flashcard-cat">${escapeHtml(categorie)}</div>
+          <div class="flashcard-word">${escapeHtml(question)}</div>
+          <div class="flashcard-prompt">👆 Cliquez pour voir la réponse</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="flashcard-def">${escapeHtml(reponse)}</div>
+          <div class="flashcard-buttons">
+            <button class="flashcard-btn correct" data-action="correct">✅ Je sais</button>
+            <button class="flashcard-btn wrong" data-action="wrong">❌ Je ne sais pas</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+  
+  const flashcard = container.querySelector('.flashcard');
+  const correctBtn = container.querySelector('.flashcard-btn.correct');
+  const wrongBtn = container.querySelector('.flashcard-btn.wrong');
+  
+  flashcard?.addEventListener('click', (e) => {
+    if (e.target.classList.contains('flashcard-btn')) return;
+    const isFlipped = flashcard.getAttribute('data-flipped') === 'true';
+    flashcard.setAttribute('data-flipped', !isFlipped);
+  });
+  
+  correctBtn?.addEventListener('click', () => {
+    currentFlashcardIndex++;
+    afficherFlashcard();
+    mettreAJourProgressionFlashcards();
+  });
+  
+  wrongBtn?.addEventListener('click', () => {
+    const wrongCard = currentFlashcards.splice(currentFlashcardIndex, 1)[0];
+    currentFlashcards.push(wrongCard);
+    afficherFlashcard();
+    mettreAJourProgressionFlashcards();
+  });
+}
+
+function mettreAJourProgressionFlashcards() {
+  const currentSpan = document.getElementById('flashcardCurrent');
+  const totalSpan = document.getElementById('flashcardTotal');
+  if (currentSpan) currentSpan.textContent = currentFlashcardIndex + 1;
+  if (totalSpan) totalSpan.textContent = currentFlashcards.length;
+}
+
+function initFlashcards() {
+  const themeSelect = document.getElementById('flashcardsThemeSelect');
+  const shuffleBtn = document.getElementById('shuffleFlashcardsBtn');
+  const resetBtn = document.getElementById('resetFlashcardsBtn');
+  
+  themeSelect?.addEventListener('change', () => genererFlashcards());
+  shuffleBtn?.addEventListener('click', () => {
+    if (currentFlashcards.length) {
+      currentFlashcards.sort(() => 0.5 - Math.random());
+      currentFlashcardIndex = 0;
+      afficherFlashcard();
+      mettreAJourProgressionFlashcards();
+    }
+  });
+  resetBtn?.addEventListener('click', () => {
+    if (currentFlashcards.length) {
+      currentFlashcardIndex = 0;
+      afficherFlashcard();
+      mettreAJourProgressionFlashcards();
+    }
+  });
+  
+  if (vocabulaire.length) genererFlashcards();
 }
 
 // ------------------------------
@@ -1320,7 +1526,7 @@ function afficherDashboard() {
 async function afficherLivres() {
   const cont = document.getElementById("livresContainer");
   if (!cont) return;
-  cont.innerHTML = `<div class="loading-books">📚 Chargement...</div>`;
+  showSkeleton('livresContainer');
   try {
     const response = await fetch('data/livres.json');
     if (!response.ok) throw new Error();
@@ -1430,7 +1636,7 @@ async function chargerLivresConnaissance() {
 }
 
 // ------------------------------
-// SERVICE WORKER (PWA)
+// SERVICE WORKER (PWA) et améliorations
 // ------------------------------
 function registerServiceWorker() {
   if ('serviceWorker' in navigator) {
@@ -1439,7 +1645,18 @@ function registerServiceWorker() {
       .then(response => {
         if (response.ok) {
           navigator.serviceWorker.register(swUrl)
-            .then(reg => console.log('SW enregistré', reg))
+            .then(reg => {
+              console.log('SW enregistré', reg);
+              
+              reg.addEventListener('updatefound', () => {
+                const newWorker = reg.installing;
+                newWorker.addEventListener('statechange', () => {
+                  if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                    showToast("🔄 Nouvelle version disponible ! Rafraîchissez la page.", "info");
+                  }
+                });
+              });
+            })
             .catch(err => console.warn('SW échec', err));
         } else {
           console.log('SW non trouvé (404), enregistrement ignoré');
@@ -1447,6 +1664,128 @@ function registerServiceWorker() {
       })
       .catch(() => console.log('Impossible de vérifier sw.js'));
   }
+}
+
+function showInstallBanner() {
+  if (isAppInstalled) return;
+  if (localStorage.getItem('installBannerDismissed') === 'true') return;
+  
+  const banner = document.createElement('div');
+  banner.id = 'installBanner';
+  banner.className = 'install-banner';
+  banner.innerHTML = `
+    <div class="install-banner-content">
+      <img src="images/idaksahak_round.png" alt="Logo" width="40" height="40">
+      <div class="install-banner-text">
+        <strong>Installer Tadaksahak Learning</strong>
+        <small>Utilisez l'application hors-ligne</small>
+      </div>
+      <button id="installAppBtn" class="btn-install">📲 Installer</button>
+      <button id="dismissBannerBtn" class="btn-dismiss">✖</button>
+    </div>
+  `;
+  
+  document.body.appendChild(banner);
+  
+  document.getElementById('dismissBannerBtn')?.addEventListener('click', () => {
+    banner.remove();
+    localStorage.setItem('installBannerDismissed', 'true');
+  });
+  
+  let deferredPrompt;
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    
+    document.getElementById('installAppBtn')?.addEventListener('click', () => {
+      banner.remove();
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+          isAppInstalled = true;
+        }
+        deferredPrompt = null;
+      });
+    });
+  });
+}
+
+window.addEventListener('appinstalled', () => {
+  isAppInstalled = true;
+  showToast("✅ Application installée ! Vous pouvez maintenant l'utiliser hors-ligne.", "success");
+});
+
+// ------------------------------
+// RACCOURCIS CLAVIER
+// ------------------------------
+function initKeyboardShortcuts() {
+  document.addEventListener('keydown', (e) => {
+    if (e.altKey && e.key === 'd') {
+      e.preventDefault();
+      if (sectionSelector) {
+        sectionSelector.value = 'dictionnaire';
+        sectionSelector.dispatchEvent(new Event('change'));
+      }
+    }
+    if (e.altKey && e.key === 'c') {
+      e.preventDefault();
+      if (sectionSelector) {
+        sectionSelector.value = 'chat';
+        sectionSelector.dispatchEvent(new Event('change'));
+      }
+    }
+    if (e.altKey && e.key === 'f') {
+      e.preventDefault();
+      if (sectionSelector) {
+        sectionSelector.value = 'flashcards';
+        sectionSelector.dispatchEvent(new Event('change'));
+      }
+    }
+    if (e.altKey && e.key === 'l') {
+      e.preventDefault();
+      if (sectionSelector) {
+        sectionSelector.value = 'livres';
+        sectionSelector.dispatchEvent(new Event('change'));
+      }
+    }
+    if (e.key === '?' || (e.shiftKey && e.key === '/')) {
+      e.preventDefault();
+      showHelpModal();
+    }
+  });
+}
+
+function showHelpModal() {
+  const modalHtml = `
+    <div id="helpModal" class="modal">
+      <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <h2>⌨️ Raccourcis clavier</h2>
+        <ul class="shortcuts-list">
+          <li><kbd>Alt</kbd> + <kbd>D</kbd> → Dictionnaire</li>
+          <li><kbd>Alt</kbd> + <kbd>C</kbd> → Chat Bot</li>
+          <li><kbd>Alt</kbd> + <kbd>F</kbd> → Flashcards</li>
+          <li><kbd>Alt</kbd> + <kbd>L</kbd> → Livres</li>
+          <li><kbd>?</kbd> → Cette aide</li>
+        </ul>
+        <h2>🎨 Thèmes</h2>
+        <p>Utilisez les boutons 🌙 📖 📜 en haut de page pour changer l'apparence.</p>
+        <h2>🌍 Langues</h2>
+        <p>Changez de langue avec les drapeaux 🇫🇷 🇸🇦 🇬🇧.</p>
+      </div>
+    </div>
+  `;
+  
+  const existingModal = document.getElementById('helpModal');
+  if (existingModal) existingModal.remove();
+  
+  document.body.insertAdjacentHTML('beforeend', modalHtml);
+  
+  const modal = document.getElementById('helpModal');
+  const closeBtn = modal.querySelector('.modal-close');
+  
+  closeBtn.addEventListener('click', () => modal.remove());
+  modal.addEventListener('click', (e) => { if (e.target === modal) modal.remove(); });
 }
 
 // ------------------------------
@@ -1471,6 +1810,7 @@ function initNavigation() {
     if (id === "grammaire" && grammaire) afficherGrammaire();
     if (id === "contes" && contesData) afficherContes();
     if (id === "emissions" && emissionsData) afficherEmissions();
+    if (id === "flashcards" && vocabulaire.length) genererFlashcards();
   }
   sectionSelector.addEventListener("change", (e) => showSection(e.target.value));
   const savedSection = localStorage.getItem("tadaksahak_active_section");
@@ -1488,6 +1828,7 @@ async function initialiserApplication() {
   try {
     initTheme();
     initThemeSettings();
+    detectSystemTheme();
     initNavigation();
     
     await chargerDictionnaire();
@@ -1506,6 +1847,9 @@ async function initialiserApplication() {
     afficherMotDuJour();
     setInterval(() => afficherMotDuJour(), 3600000);
     
+    initKeyboardShortcuts();
+    initFlashcards();
+    
     document.getElementById("btnEnvoyer")?.addEventListener("click", traiterSaisie);
     document.getElementById("chatInput")?.addEventListener("keypress", e => e.key === "Enter" && traiterSaisie());
     btnPrev?.addEventListener("click", navigationPrecedent);
@@ -1518,6 +1862,10 @@ async function initialiserApplication() {
     
     const searchBooksInput = document.getElementById("searchBooksInput");
     if (searchBooksInput) searchBooksInput.addEventListener("input", () => rechercherPleinTexte());
+    
+    setTimeout(() => {
+      showInstallBanner();
+    }, 3000);
     
     console.log("✅ Application prête !");
   } catch (error) {
