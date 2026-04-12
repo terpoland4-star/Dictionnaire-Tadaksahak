@@ -1,13 +1,16 @@
 // ============================================
-// SERVICE WORKER - Tadaksahak Learning v6
-// Version complète avec toutes les sections
+// SERVICE WORKER - Tadaksahak Learning v8
+// Version avec mise à jour auto et installation après 3 visites
 // Stratégie mixte : cache vs réseau
 // ============================================
 
-const CACHE_NAME = 'tadaksahak-v6';
-const STATIC_CACHE = 'tadaksahak-static-v6';
-const DATA_CACHE = 'tadaksahak-data-v6';
-const MEDIA_CACHE = 'tadaksahak-media-v6';
+const CACHE_NAME = 'tadaksahak-v8';
+const STATIC_CACHE = 'tadaksahak-static-v8';
+const DATA_CACHE = 'tadaksahak-data-v8';
+const MEDIA_CACHE = 'tadaksahak-media-v8';
+
+// Compteur de visites (stocké dans IndexedDB ou localStorage via client)
+let visitCount = 0;
 
 // ============================================
 // FICHIERS STATIQUES (Cache First)
@@ -46,6 +49,7 @@ const dataUrls = [
   './data/grammaire.json',
   './data/conte.json',
   './data/emission.json',
+  './data/themes.json',
   './data/audios.json',
   './data/histoire.json'
 ];
@@ -59,7 +63,7 @@ const imageExtensions = /\.(jpg|jpeg|png|gif|webp|svg|ico)$/i;
 // INSTALLATION - Cache des fichiers statiques
 // ============================================
 self.addEventListener('install', event => {
-  console.log('📦 SW: Installation v6 - Tadaksahak Learning');
+  console.log('📦 SW: Installation v8 - Tadaksahak Learning');
   
   event.waitUntil(
     (async () => {
@@ -81,7 +85,7 @@ self.addEventListener('install', event => {
       const succeeded = results.filter(r => r.status === 'fulfilled').length;
       console.log(`✅ Cache static: ${succeeded}/${results.length} fichiers`);
       
-      // Forcer l'activation immédiate
+      // Forcer l'activation immédiate pour prendre le contrôle
       return self.skipWaiting();
     })()
   );
@@ -95,8 +99,18 @@ self.addEventListener('fetch', event => {
   const pathname = url.pathname;
   const request = event.request;
   
+  // IGNORER les requêtes HEAD (ne pas les mettre en cache)
+  if (request.method === 'HEAD') {
+    event.respondWith(fetch(request));
+    return;
+  }
+  
+  // IGNORER les requêtes vers les extensions
+  if (pathname.includes('chrome-extension') || pathname.includes('__WB')) {
+    return;
+  }
+  
   // ---- STRATÉGIE 1 : Données JSON (Network First) ----
-  // Essayer le réseau d'abord, fallback cache
   if (dataUrls.some(dataUrl => pathname === dataUrl || pathname.endsWith(dataUrl))) {
     event.respondWith(
       fetch(request, { cache: 'no-store' })
@@ -116,7 +130,6 @@ self.addEventListener('fetch', event => {
             console.log(`📀 Données depuis cache: ${pathname}`);
             return cached;
           }
-          // Fallback ultime : données minimales
           if (pathname.includes('mots.json')) {
             return new Response(JSON.stringify([
               { mot: "Báy", cat: "vt.", fr: "Pouvoir (faire)", ar: "قدر على (فعل)", en: "Able, to be" }
@@ -146,7 +159,6 @@ self.addEventListener('fetch', event => {
           })
           .catch(() => null);
         
-        // Retourner le cache immédiatement, mettre à jour en arrière-plan
         if (cachedResponse) {
           fetchPromise.then(networkResponse => {
             if (networkResponse && cachedResponse !== networkResponse) {
@@ -159,7 +171,6 @@ self.addEventListener('fetch', event => {
         const networkResponse = await fetchPromise;
         if (networkResponse) return networkResponse;
         
-        // Fallback : image par défaut
         return caches.match('./images/idaksahak_round.png');
       })()
     );
@@ -193,7 +204,6 @@ self.addEventListener('fetch', event => {
   }
   
   // ---- STRATÉGIE 4 : Fichiers statiques (Cache First) ----
-  // HTML, CSS, JS
   if (pathname.endsWith('.html') || pathname.endsWith('.css') || pathname.endsWith('.js')) {
     event.respondWith(
       caches.match(request).then(cached => {
@@ -204,7 +214,7 @@ self.addEventListener('fetch', event => {
         
         return fetch(request)
           .then(response => {
-            if (response && response.ok) {
+            if (response && response.ok && request.method === 'GET') {
               const responseClone = response.clone();
               caches.open(STATIC_CACHE).then(cache => {
                 cache.put(request, responseClone);
@@ -213,7 +223,6 @@ self.addEventListener('fetch', event => {
             return response;
           })
           .catch(async () => {
-            // Fallback pour les pages HTML
             if (pathname.endsWith('.html') || pathname === '/' || pathname === '') {
               const offlinePage = await caches.match('./index.html');
               if (offlinePage) return offlinePage;
@@ -249,7 +258,7 @@ self.addEventListener('fetch', event => {
 // ACTIVATION - Nettoyage des anciens caches
 // ============================================
 self.addEventListener('activate', event => {
-  console.log('🚀 SW: Activation v6 - Tadaksahak Learning');
+  console.log('🚀 SW: Activation v8 - Tadaksahak Learning');
   
   event.waitUntil(
     (async () => {
@@ -279,13 +288,15 @@ self.addEventListener('activate', event => {
 });
 
 // ============================================
-// GESTION DES MESSAGES (mise à jour)
+// GESTION DES MESSAGES (mise à jour et installation)
 // ============================================
 self.addEventListener('message', event => {
+  // Forcer la mise à jour (skipWaiting)
   if (event.data === 'skipWaiting') {
     self.skipWaiting();
   }
   
+  // Vider tous les caches
   if (event.data === 'clearCache') {
     event.waitUntil(
       (async () => {
@@ -298,36 +309,70 @@ self.addEventListener('message', event => {
       })()
     );
   }
+  
+  // Mise à jour silencieuse (vérifier les mises à jour en arrière-plan)
+  if (event.data === 'checkUpdate') {
+    event.waitUntil(
+      (async () => {
+        const registration = await self.registration;
+        await registration.update();
+        console.log('🔄 Vérification de mise à jour effectuée');
+        if (event.ports && event.ports[0]) {
+          event.ports[0].postMessage({ status: 'success', message: 'Mise à jour vérifiée' });
+        }
+      })()
+    );
+  }
+  
+  // Incrémenter le compteur de visites (depuis le client)
+  if (event.data && event.data.type === 'incrementVisit') {
+    // Le comptage est géré par le client, mais on peut stocker dans le SW si besoin
+    console.log('👁️ Visite comptabilisée');
+  }
 });
 
 // ============================================
-// PUSH NOTIFICATIONS (optionnel)
+// PUSH NOTIFICATIONS (mise à jour disponible)
 // ============================================
 self.addEventListener('push', event => {
   if (event.data) {
     const data = event.data.json();
     const options = {
-      body: data.body || 'Nouvelle mise à jour disponible',
+      body: data.body || 'Nouvelle mise à jour disponible ! Rafraîchissez la page.',
       icon: './images/idaksahak_round.png',
       badge: './images/idaksahak_round.png',
       vibrate: [200, 100, 200],
-      data: { url: data.url || './' }
+      data: { url: data.url || './' },
+      actions: [
+        { action: 'refresh', title: '🔄 Rafraîchir' },
+        { action: 'dismiss', title: '❌ Plus tard' }
+      ]
     };
     
     event.waitUntil(
-      self.registration.showNotification('Tadaksahak Learning', options)
+      self.registration.showNotification('Tadaksahak Learning - Mise à jour', options)
     );
   }
 });
 
-// ============================================
-// CLIC SUR NOTIFICATION
-// ============================================
+// Notification d'installation proposée
 self.addEventListener('notificationclick', event => {
   event.notification.close();
-  event.waitUntil(
-    clients.openWindow(event.notification.data.url || './')
-  );
+  
+  if (event.action === 'refresh') {
+    event.waitUntil(
+      clients.matchAll({ type: 'window' }).then(clientList => {
+        if (clientList.length > 0) {
+          clientList[0].navigate(clientList[0].url);
+          clientList[0].focus();
+        }
+      })
+    );
+  } else {
+    event.waitUntil(
+      clients.openWindow(event.notification.data.url || './')
+    );
+  }
 });
 
 // ============================================
