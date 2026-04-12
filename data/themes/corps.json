@@ -1,0 +1,149 @@
+{
+  "id": "corps",
+  "titre_fr": "👤 Le corps humain",
+  "titre_en": "👤 Human body",
+  "titre_ar": "👤 جسم الإنسان",
+  "description_fr": "Les parties du corps en tadaksahak",
+  "description_en": "Body parts in Tadaksahak",
+  "description_ar": "أجزاء الجسم في التدكساهق",
+  "mots": [
+    {
+      "tad": "baŋgú",
+      "fr": "tête",
+      "en": "head",
+      "ar": "رأس"
+    },
+    {
+      "tad": "haŋgá",
+      "fr": "oreille",
+      "en": "ear",
+      "ar": "أذن"
+    },
+    {
+      "tad": "mó",
+      "fr": "œil / visage",
+      "en": "eye / face",
+      "ar": "عين / وجه"
+    },
+    {
+      "tad": "t-í-nʒar",
+      "fr": "nez / narines",
+      "en": "nose / nostrils",
+      "ar": "أنف / منخران"
+    },
+    {
+      "tad": "míya",
+      "fr": "bouche",
+      "en": "mouth",
+      "ar": "فم"
+    },
+    {
+      "tad": "íilǝs",
+      "fr": "langue",
+      "en": "tongue",
+      "ar": "لسان"
+    },
+    {
+      "tad": "ée-ʃan",
+      "fr": "dent",
+      "en": "tooth",
+      "ar": "سن"
+    },
+    {
+      "tad": "jinjí",
+      "fr": "cou",
+      "en": "neck",
+      "ar": "رقبة"
+    },
+    {
+      "tad": "a-rúuru",
+      "fr": "dos",
+      "en": "back",
+      "ar": "ظهر"
+    },
+    {
+      "tad": "guŋgú",
+      "fr": "ventre",
+      "en": "belly",
+      "ar": "بطن"
+    },
+    {
+      "tad": "kambá",
+      "fr": "bras / main",
+      "en": "arm / hand",
+      "ar": "ذراع / يد"
+    },
+    {
+      "tad": "cáy",
+      "fr": "jambe / pied",
+      "en": "leg / foot",
+      "ar": "ساق / قدم"
+    },
+    {
+      "tad": "i-futu-tan",
+      "fr": "paumes des mains",
+      "en": "palms of hands",
+      "ar": "راحتا اليدين"
+    },
+    {
+      "tad": "i-dmar-an",
+      "fr": "poitrine",
+      "en": "chest",
+      "ar": "صدر"
+    },
+    {
+      "tad": "wǝl",
+      "fr": "cœur",
+      "en": "heart",
+      "ar": "قلب"
+    },
+    {
+      "tad": "taaʃá",
+      "fr": "foie",
+      "en": "liver",
+      "ar": "كبد"
+    },
+    {
+      "tad": "áadan-an",
+      "fr": "tripes, intestins",
+      "en": "guts, intestines",
+      "ar": "أمعاء"
+    },
+    {
+      "tad": "biidí",
+      "fr": "os",
+      "en": "bone",
+      "ar": "عظم"
+    },
+    {
+      "tad": "kuurú",
+      "fr": "peau",
+      "en": "skin",
+      "ar": "جلد"
+    },
+    {
+      "tad": "haab-én",
+      "fr": "cheveux, poils",
+      "en": "hair",
+      "ar": "شعر"
+    },
+    {
+      "tad": "u-gmuʒ",
+      "fr": "pouce",
+      "en": "thumb",
+      "ar": "إبهام"
+    },
+    {
+      "tad": "t-a-licet-t",
+      "fr": "petit doigt",
+      "en": "little finger",
+      "ar": "خنصر"
+    },
+    {
+      "tad": "a-ŋgu",
+      "fr": "place, position",
+      "en": "place, position",
+      "ar": "مكان"
+    }
+  ]
+}
