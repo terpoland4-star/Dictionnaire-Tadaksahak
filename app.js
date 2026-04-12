@@ -1,6 +1,6 @@
 // ==============================
 // APPLICATION TADAKSAHAK LEARNING
-// VERSION COMPLÈTE (avec dictionnaire enrichi, thèmes, flashcards, PWA)
+// VERSION COMPLÈTE (avec dictionnaire enrichi, thèmes, flashcards, PWA, mises à jour auto)
 // ==============================
 
 console.log("🚀 Démarrage de l'application complète...");
@@ -310,6 +310,7 @@ let currentQuiz = { questions: [], currentIndex: 0, score: 0, lang: 'fr' };
 let timelineData = null;
 let mapInitialized = false;
 let isAppInstalled = false;
+let installPromptEvent = null;
 
 // Variables Flashcards
 let currentFlashcards = [];
@@ -1030,7 +1031,7 @@ function afficherGrammaire() {
                 <th>${currentLanguage === 'fr' ? 'Sens' : (currentLanguage === 'en' ? 'Meaning' : 'المعنى')}</th>
                 <th>${currentLanguage === 'fr' ? 'Causatif' : (currentLanguage === 'en' ? 'Causative' : 'سببي')}</th>
                 ${subsection.verbes[0].passif ? `<th>${currentLanguage === 'fr' ? 'Passif' : (currentLanguage === 'en' ? 'Passive' : 'مجهول')}</th>` : ''}
-              </tr>
+              </td>
             </thead>
             <tbody>`;
         
@@ -1043,7 +1044,7 @@ function afficherGrammaire() {
           if (verbe.passif) {
             html += `<td><code>${escapeHtml(verbe.passif)}</code></td>`;
           }
-          html += `</tr>`;
+          html += `</td>`;
         }
         html += `</tbody></table></div>`;
       }
@@ -1293,7 +1294,6 @@ function afficherThemes() {
   html += `</div>`;
   container.innerHTML = html;
   
-  // Ajouter les événements de clic sur les mots
   document.querySelectorAll('.theme-word-item').forEach(item => {
     item.addEventListener('click', () => {
       const mot = item.dataset.mot;
@@ -1883,6 +1883,114 @@ function showHelpModal() {
 }
 
 // ------------------------------
+// GESTION DES MISES À JOUR AUTO ET INSTALLATION APRÈS 3 VISITES
+// ------------------------------
+let visitCounter = parseInt(localStorage.getItem('tadaksahak_visit_count') || '0');
+
+function incrementVisitCount() {
+  visitCounter++;
+  localStorage.setItem('tadaksahak_visit_count', visitCounter);
+  console.log(`👁️ Visite ${visitCounter}`);
+  
+  if (visitCounter >= 3 && !localStorage.getItem('tadaksahak_installed') && !localStorage.getItem('tadaksahak_install_dismissed')) {
+    showAutoInstallBanner();
+  }
+}
+
+function showAutoInstallBanner() {
+  const existingBanner = document.getElementById('autoInstallBanner');
+  if (existingBanner) existingBanner.remove();
+  
+  const banner = document.createElement('div');
+  banner.id = 'autoInstallBanner';
+  banner.className = 'install-banner auto';
+  banner.innerHTML = `
+    <div class="install-banner-content">
+      <img src="images/idaksahak_round.png" alt="Logo" width="40" height="40">
+      <div class="install-banner-text">
+        <strong>📱 Installer Tadaksahak Learning</strong>
+        <small>Utilisez l'application hors-ligne après ${visitCounter} visites</small>
+      </div>
+      <button id="autoInstallBtn" class="btn-install">📲 Installer</button>
+      <button id="dismissAutoBtn" class="btn-dismiss">✖</button>
+    </div>
+  `;
+  
+  document.body.appendChild(banner);
+  
+  document.getElementById('autoInstallBtn')?.addEventListener('click', () => {
+    if (installPromptEvent) {
+      installPromptEvent.prompt();
+      installPromptEvent.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+          localStorage.setItem('tadaksahak_installed', 'true');
+          showToast("✅ Merci d'avoir installé l'application !", "success");
+        }
+        installPromptEvent = null;
+      });
+    } else {
+      showToast("📲 Pour installer : Menu > Installer l'application", "info");
+    }
+    banner.remove();
+    localStorage.setItem('tadaksahak_install_dismissed', 'true');
+  });
+  
+  document.getElementById('dismissAutoBtn')?.addEventListener('click', () => {
+    banner.remove();
+    localStorage.setItem('tadaksahak_install_dismissed', 'true');
+  });
+}
+
+function checkForSWUpdate() {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.ready.then(registration => {
+      registration.update();
+      
+      navigator.serviceWorker.addEventListener('message', event => {
+        if (event.data === 'update_available') {
+          showToast("🔄 Une mise à jour est disponible. Rafraîchissez la page.", "info");
+        }
+      });
+      
+      setInterval(() => {
+        registration.update();
+        console.log('🔄 Vérification périodique des mises à jour');
+      }, 6 * 60 * 60 * 1000);
+    });
+  }
+}
+
+function handleSWUpdate() {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.ready.then(registration => {
+      registration.addEventListener('updatefound', () => {
+        const newWorker = registration.installing;
+        newWorker.addEventListener('statechange', () => {
+          if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+            showToast("🔄 Nouvelle version disponible ! Rafraîchissez la page.", "info");
+            setTimeout(() => {
+              if (confirm("Une nouvelle version est disponible. Rafraîchir maintenant ?")) {
+                window.location.reload();
+              }
+            }, 3000);
+          }
+        });
+      });
+    });
+  }
+}
+
+function initAutoUpdates() {
+  incrementVisitCount();
+  checkForSWUpdate();
+  handleSWUpdate();
+  
+  if (navigator.serviceWorker && navigator.serviceWorker.controller) {
+    navigator.serviceWorker.controller.postMessage('checkUpdate');
+  }
+}
+
+// ------------------------------
 // NAVIGATION ENTRE SECTIONS
 // ------------------------------
 function initNavigation() {
@@ -1945,6 +2053,7 @@ async function initialiserApplication() {
     
     initKeyboardShortcuts();
     initFlashcards();
+    initAutoUpdates();
     
     document.getElementById("btnEnvoyer")?.addEventListener("click", traiterSaisie);
     document.getElementById("chatInput")?.addEventListener("keypress", e => e.key === "Enter" && traiterSaisie());
