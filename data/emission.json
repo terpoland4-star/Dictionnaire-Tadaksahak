@@ -1,0 +1,469 @@
+{
+  "id": "radio_decentralisation_menaka_2001",
+  "titre_fr": "La décentralisation au Mali - Émission radio",
+  "titre_ar": "اللامركزية في مالي - برنامج إذاعي",
+  "titre_en": "Decentralization in Mali - Radio Broadcast",
+  "type": "emission_radio",
+  "source": "Christiansen-Bolli, R. (2010). A grammar of Tadaksahak. Leiden University.",
+  "orateur": "Hadmahaamed ag Mohamed",
+  "lieu": "Inkiringiya (sud-est de Ménaka)",
+  "station": "Radio Rurale de Ménaka",
+  "date": "10 novembre 2001",
+  "contexte_fr": "Troisième partie d'un discours d'environ une heure, entrecoupé de musique. Le thème principal est la décentralisation, une nouvelle politique d'organisation du gouvernement malien.",
+  "contexte_ar": "الجزء الثالث من خطاب يستغرق حوالي ساعة، يتخلله موسيقى. الموضوع الرئيسي هو اللامركزية، سياسة تنظيمية جديدة للحكومة المالية.",
+  "contexte_en": "Third part of a speech lasting about one hour, interspersed with music. The main topic is decentralization, a new organizational policy of the Malian government.",
+  "versets": [
+    {
+      "numero": 1,
+      "tadaksahak": "Igmattaak ho senda",
+      "glose_fr": "Vous pouvez en être sûrs",
+      "glose_en": "You can be sure",
+      "traduction_fr": "Vous pouvez en être sûrs.",
+      "traduction_en": "You can be sure."
+    },
+    {
+      "numero": 2,
+      "tadaksahak": "ay-n t-a-damil-t be komin-tan andayo ooda anda-b-gun(a)-a Maali-a-d(a)-i",
+      "glose_fr": "c'est pour son bénéfice (du Mali) que les communautés que vous voyez sont faites. (litt : le Mali les fait)",
+      "glose_en": "it is for its (Mali) benefit that the communities you see are made. (lit: Mali makes them)",
+      "traduction_fr": "C'est pour le bénéfice du Mali que les communautés que vous voyez sont créées.",
+      "traduction_en": "It is for Mali's benefit that the communities you see are created."
+    },
+    {
+      "numero": 3,
+      "tadaksahak": "wiji bananda a-dda desatralisasiö",
+      "glose_fr": "Ce n'est pas pour rien qu'il a installé la décentralisation",
+      "glose_en": "It is not for nothing that it installed the decentralization",
+      "traduction_fr": "Ce n'est pas pour rien que l'État a instauré la décentralisation.",
+      "traduction_en": "It is not for nothing that the state established decentralization."
+    },
+    {
+      "numero": 4,
+      "tadaksahak": "wiji he be a-dd(a)-i har almital ay(o) ooda ay-to-har andi se",
+      "glose_fr": "Il n'y a pas d'autre raison pour laquelle il a fait cela, que cet exemple que je vais vous raconter",
+      "glose_en": "There is no other reason why he did it, than this example I am telling you",
+      "traduction_fr": "Il n'y a pas d'autre raison à cela que l'exemple que je vais vous donner.",
+      "traduction_en": "There is no other reason for this than the example I am about to give you."
+    },
+    {
+      "numero": 5,
+      "tadaksahak": "as bora a-to-may ay-n alman babo-(a)n",
+      "glose_fr": "Supposons qu'une personne possède son troupeau nombreux",
+      "glose_en": "Suppose somebody has his numerous herd",
+      "traduction_fr": "Supposons qu'une personne possède un troupeau nombreux.",
+      "traduction_en": "Suppose someone has a large herd."
+    },
+    {
+      "numero": 6,
+      "tadaksahak": "a-m-zi-mmizi marad-ood(a) ay-n barr-en se",
+      "glose_fr": "il le divise maintenant entre ses enfants",
+      "glose_en": "he divides it between his children",
+      "traduction_fr": "Il le divise entre ses enfants.",
+      "traduction_en": "He divides it among his children."
+    },
+    {
+      "numero": 7,
+      "tadaksahak": "a-m-d(a) anda t-a-sagar",
+      "glose_fr": "il fait plusieurs petits troupeaux avec elles",
+      "glose_en": "he makes several small herds out of them",
+      "traduction_fr": "Il en fait plusieurs petits troupeaux.",
+      "traduction_en": "He makes several small herds from them."
+    },
+    {
+      "numero": 8,
+      "tadaksahak": "bora kullu a-m-n(a) aa-se ay-n a-dagar ayof-kud",
+      "glose_fr": "il donne à chaque personne sa part à garder",
+      "glose_en": "he gives to each person his part to keep",
+      "traduction_fr": "Il donne à chacun sa part à garder.",
+      "traduction_en": "He gives each person their share to keep."
+    },
+    {
+      "numero": 9,
+      "tadaksahak": "bora kaaka s(a) a-f-kud ay-n alman",
+      "glose_fr": "Quiconque garde son troupeau",
+      "glose_en": "Anyone who keeps his herd",
+      "traduction_fr": "Quiconque garde son troupeau",
+      "traduction_en": "Whoever keeps their herd"
+    },
+    {
+      "numero": 10,
+      "tadaksahak": "a-ss-a-hsa-kaat-a",
+      "glose_fr": "le fait gagner (le rend plus nombreux)",
+      "glose_en": "makes it win (be more numerous)",
+      "traduction_fr": "Le fait prospérer (le rend plus nombreux).",
+      "traduction_en": "Makes it prosper (makes it more numerous)."
+    },
+    {
+      "numero": 11,
+      "tadaksahak": "a-m-d(a) aa-se kud gin-giman",
+      "glose_fr": "et le garde bien",
+      "glose_en": "and keeps it well",
+      "traduction_fr": "Et le garde bien.",
+      "traduction_en": "And keeps it well."
+    },
+    {
+      "numero": 12,
+      "tadaksahak": "ay-n ga s(e) a-kkuud-a",
+      "glose_fr": "C'est pour lui-même qu'il le garde",
+      "glose_en": "It's for himself he keeps it",
+      "traduction_fr": "C'est pour lui-même qu'il le garde.",
+      "traduction_en": "It's for himself that he keeps it."
+    },
+    {
+      "numero": 13,
+      "tadaksahak": "a-yyirsay aa-se ay-yirsay aa-se",
+      "glose_fr": "Il devient de plus en plus grand pour lui",
+      "glose_en": "It gets bigger and bigger for him",
+      "traduction_fr": "Il devient de plus en plus grand.",
+      "traduction_en": "It becomes bigger and bigger for him."
+    },
+    {
+      "numero": 14,
+      "tadaksahak": "bora da ay-wani agar kud",
+      "glose_fr": "Mais la personne qui le garde mal",
+      "glose_en": "But the person who is keeping it badly",
+      "traduction_fr": "Mais celui qui le garde mal",
+      "traduction_en": "But the one who keeps it badly"
+    },
+    {
+      "numero": 15,
+      "tadaksahak": "a-hun(u)-an",
+      "glose_fr": "il disparaîtra (le troupeau)",
+      "glose_en": "it (the herd) will disappear",
+      "traduction_fr": "Son troupeau disparaîtra.",
+      "traduction_en": "Their herd will disappear."
+    },
+    {
+      "numero": 16,
+      "tadaksahak": "anga se a-dda ho se",
+      "glose_fr": "C'est à lui-même qu'il a fait cela",
+      "glose_en": "It's to himself he did that",
+      "traduction_fr": "C'est à lui-même qu'il a fait du tort.",
+      "traduction_en": "It's to himself that he did harm."
+    },
+    {
+      "numero": 17,
+      "tadaksahak": "He (a)yo senda ay-n almital",
+      "glose_fr": "C'est la parabole",
+      "glose_en": "That is the parable",
+      "traduction_fr": "Voilà la parabole.",
+      "traduction_en": "That is the parable."
+    },
+    {
+      "numero": 18,
+      "tadaksahak": "anga ne (a)yda: Maali ay-n ga se addwal",
+      "glose_fr": "La voici : le Mali est un pays pour son propre droit",
+      "glose_en": "Here it is: Mali is a country for its own right",
+      "traduction_fr": "La voici : le Mali est un pays souverain.",
+      "traduction_en": "Here it is: Mali is a sovereign country."
+    },
+    {
+      "numero": 19,
+      "tadaksahak": "He (a)-kkas addwal ba-beer-i",
+      "glose_fr": "C'est un grand pays",
+      "glose_en": "It is a large country",
+      "traduction_fr": "C'est un grand pays.",
+      "traduction_en": "It is a large country."
+    },
+    {
+      "numero": 20,
+      "tadaksahak": "wertilla s(a) alhakumat a-kko(a)nda a-handag kaamil and-anga wiji anda ay-n ko-(e)n",
+      "glose_fr": "Il n'arrive pas que le gouvernement aille partout sans ses propriétaires",
+      "glose_en": "It does not happen that the government goes to every place without its owners",
+      "traduction_fr": "Le gouvernement ne peut pas gérer partout sans les populations locales.",
+      "traduction_en": "The government cannot manage everywhere without the local people."
+    },
+    {
+      "numero": 21,
+      "tadaksahak": "Ho senda be a-dda komin-tan",
+      "glose_fr": "À cause de cela, il a fait les communes",
+      "glose_en": "Because of that, it made communities",
+      "traduction_fr": "C'est pourquoi l'État a créé les communes.",
+      "traduction_en": "That is why the state created communes."
+    },
+    {
+      "numero": 22,
+      "tadaksahak": "ganda kullu anga na-wwaqay gand(a) ayo s(a) a-mmay",
+      "glose_fr": "Chaque terre a signé (reçu la responsabilité) pour la terre qu'elle possède",
+      "glose_en": "Every region has signed (=received responsibility) for the land that it owns",
+      "traduction_fr": "Chaque région a reçu la responsabilité de sa terre.",
+      "traduction_en": "Each region has received responsibility for its land."
+    },
+    {
+      "numero": 23,
+      "tadaksahak": "bora kullu a-wwakal ganda ayo s(a) ang(a) a-baara",
+      "glose_fr": "À chaque personne a été confiée la terre sur laquelle il se trouve",
+      "glose_en": "To each person was entrusted the land on which he is",
+      "traduction_fr": "À chaque personne a été confiée la terre sur laquelle elle vit.",
+      "traduction_en": "Each person has been entrusted with the land on which they live."
+    },
+    {
+      "numero": 24,
+      "tadaksahak": "he (a)yo senda be anga be komin-tan i-dda",
+      "glose_fr": "À cause de cette affaire, à cause de cela, les communes sont faites",
+      "glose_en": "Because of that matter, because of this, communities are made",
+      "traduction_fr": "C'est pour cela que les communes ont été créées.",
+      "traduction_en": "That is why communes were created."
+    },
+    {
+      "numero": 25,
+      "tadaksahak": "anga be desentralisazio i-dda",
+      "glose_fr": "à cause de cela, la décentralisation est faite",
+      "glose_en": "because of this, decentralization is made",
+      "traduction_fr": "C'est pourquoi la décentralisation a été instaurée.",
+      "traduction_en": "That is why decentralization was established."
+    },
+    {
+      "numero": 26,
+      "tadaksahak": "anga be sekter-tan i-dda",
+      "glose_fr": "à cause de cela, les secteurs sont faits",
+      "glose_en": "because of this, sectors are made",
+      "traduction_fr": "C'est pourquoi les secteurs ont été créés.",
+      "traduction_en": "That is why sectors were created."
+    },
+    {
+      "numero": 27,
+      "tadaksahak": "Ittill(a) a-handag a-mmay bor(a) ayo yyisked-an and(a)-a",
+      "glose_fr": "Tout lieu appartient à la personne dont le désastre lui revient",
+      "glose_en": "Every place belongs to the person to whom its disaster returns",
+      "traduction_fr": "Chaque lieu appartient à celui qui en subit les conséquences.",
+      "traduction_en": "Every place belongs to the one who suffers its consequences."
+    },
+    {
+      "numero": 28,
+      "tadaksahak": "a-n i-yayed",
+      "glose_fr": "C'est à lui que sa ruine revient",
+      "glose_en": "It is to him that its ruin returns",
+      "traduction_fr": "C'est lui qui subit sa ruine.",
+      "traduction_en": "He is the one who suffers its ruin."
+    },
+    {
+      "numero": 29,
+      "tadaksahak": "anga i-n t-a-nfa i-yed",
+      "glose_fr": "C'est à lui que son profit revient",
+      "glose_en": "It is to him that its profit returns",
+      "traduction_fr": "C'est lui qui en tire le profit.",
+      "traduction_en": "He is the one who gets the profit."
+    },
+    {
+      "numero": 30,
+      "tadaksahak": "Bora da ayo sa ganda a-b-d(a) agar kud",
+      "glose_fr": "La personne qui s'occupe mal de sa terre",
+      "glose_en": "The person who takes care of his land badly",
+      "traduction_fr": "Celui qui s'occupe mal de sa terre",
+      "traduction_en": "The one who takes care of their land badly"
+    },
+    {
+      "numero": 31,
+      "tadaksahak": "ayo (a)di ay-n ga a-yad",
+      "glose_fr": "celui-là, c'est à lui-même qu'il a fait une chose ruineuse",
+      "glose_en": "that one, it is to himself he did a ruinous thing",
+      "traduction_fr": "Celui-là, c'est à lui-même qu'il a fait du tort.",
+      "traduction_en": "That person has harmed themselves."
+    },
+    {
+      "numero": 32,
+      "tadaksahak": "Day adi ittill(a) agg aadem a-ngu kaak(a) a-haara",
+      "glose_fr": "Ainsi, chaque être humain, où qu'il soit",
+      "glose_en": "Thus, every human being, wherever he is",
+      "traduction_fr": "Ainsi, chaque être humain, où qu'il se trouve,",
+      "traduction_en": "Thus, every human being, wherever they are,"
+    },
+    {
+      "numero": 33,
+      "tadaksahak": "a-mmay a-dagar ganda n t-a-ggas-t ka",
+      "glose_fr": "a une part dans la protection de la terre",
+      "glose_en": "has a share in the protection of the land",
+      "traduction_fr": "a une part dans la protection de la terre.",
+      "traduction_en": "has a share in protecting the land."
+    },
+    {
+      "numero": 34,
+      "tadaksahak": "ittil(a) agg aadam kud day sa (a)n-ta-yiga z addekad ayo ka ni-nn alman a-bb-adan-kat har a-mm-ee-kat ay-n t-a-ggas-t a-f-keedi nin",
+      "glose_fr": "Chaque homme, même si tu ne gardes que dans la mesure où ton troupeau paît et revient, sa protection est ta responsabilité.",
+      "glose_en": "Every man, even if you only guard in the measure where your herd grazes and returns, its protection is your responsibility.",
+      "traduction_fr": "Chaque homme, même si tu ne gardes que là où ton troupeau paît et revient, sa protection est ta responsabilité.",
+      "traduction_en": "Every man, even if you only guard where your herd grazes and returns, its protection is your responsibility."
+    },
+    {
+      "numero": 35,
+      "tadaksahak": "I-manokal-an ingi da a-handag ayo i-wani ka i-n dini a-kkay-kat ganda ka ay-n t-a-ggas-t a-f-keedi-i",
+      "glose_fr": "Quant aux chefs, la zone qui est la leur, là où ils cessent de prendre de la terre, sa protection est leur responsabilité.",
+      "glose_en": "As for the chiefs, the area that is theirs, from where they stop taking from the land, its protection is their responsibility.",
+      "traduction_fr": "Quant aux autorités, la zone qui est la leur, là où ils prélèvent des ressources, sa protection est leur responsabilité.",
+      "traduction_en": "As for the authorities, the area that is theirs, where they take resources, its protection is their responsibility."
+    },
+    {
+      "numero": 36,
+      "tadaksahak": "a-yiiwan an koy anga da ne k(a) ay-n t-a-buuyar i-yyee-kat ganda ka anga da ay-n t-a-ggas-t a-f-keed(i)-a",
+      "glose_fr": "Quant au chef du camp, là où ses chamelles reviennent sur la terre, lui aussi, sa protection est sa responsabilité.",
+      "glose_en": "As for the head of the camp, there where his female camels return on the land, he too, its protection is his responsibility.",
+      "traduction_fr": "Quant au chef du campement, là où ses chamelles reviennent sur la terre, sa protection est aussi sa responsabilité.",
+      "traduction_en": "As for the camp chief, where his female camels return to the land, its protection is also his responsibility."
+    },
+    {
+      "numero": 37,
+      "tadaksahak": "day adi ittil(a) agg aadam eb-dida a-baara gand(a) ayo Maali wani a-mmay aa-ka t-a-dagar-t t-a-ggas-t wani",
+      "glose_fr": "Ainsi, chaque être humain qui marche, qui est dans le pays du Mali, a en lui une petite part de sa protection.",
+      "glose_en": "Thus, every human being walking, being in the country of Mali, has in it a little share of its protection.",
+      "traduction_fr": "Ainsi, chaque être humain qui vit au Mali a une petite part dans sa protection.",
+      "traduction_en": "Thus, every human being living in Mali has a small share in its protection."
+    },
+    {
+      "numero": 38,
+      "tadaksahak": "ni-b-d(a) aniyat bora s(e) ayo n-ta-dar ganda",
+      "glose_fr": "Tu fais attention à une personne qui peut nuire à la terre",
+      "glose_en": "You pay attention to a person that may harm the land",
+      "traduction_fr": "Tu dois veiller sur celui qui pourrait nuire à la terre.",
+      "traduction_en": "You must watch out for anyone who might harm the land."
+    },
+    {
+      "numero": 39,
+      "tadaksahak": "ni-b-d(a) aniyat a-na-z-gaafa se an-ta-huuru-kat ganda",
+      "glose_fr": "Tu fais attention à un malfaiteur qui pourrait entrer dans le pays",
+      "glose_en": "You pay attention to an evildoer that may enter the country",
+      "traduction_fr": "Tu dois veiller sur le malfaiteur qui pourrait entrer dans le pays.",
+      "traduction_en": "You must watch out for any wrongdoer who might enter the country."
+    },
+    {
+      "numero": 40,
+      "tadaksahak": "ni-b-da aniyat a-baydog se a-b-dida tarra ka",
+      "glose_fr": "Tu fais attention à un voleur qui marche dans la brousse",
+      "glose_en": "You pay attention to a thief who walks in the bush",
+      "traduction_fr": "Tu dois veiller sur le voleur qui rôde dans la brousse.",
+      "traduction_en": "You must watch out for any thief lurking in the bush."
+    },
+    {
+      "numero": 41,
+      "tadaksahak": "ni-b-da aniyat eeqad se",
+      "glose_fr": "Tu fais attention à un feu de brousse",
+      "glose_en": "You pay attention to a bush fire",
+      "traduction_fr": "Tu dois veiller sur les feux de brousse.",
+      "traduction_en": "You must watch out for bush fires."
+    },
+    {
+      "numero": 42,
+      "tadaksahak": "ni-b-da aniyat bora se an-ta-kos tugud-en",
+      "glose_fr": "Tu fais attention à une personne qui pourrait couper des arbres",
+      "glose_en": "You pay attention to a person that may cut trees",
+      "traduction_fr": "Tu dois veiller sur celui qui pourrait couper des arbres.",
+      "traduction_en": "You must watch out for anyone who might cut down trees."
+    },
+    {
+      "numero": 43,
+      "tadaksahak": "i-n tugud-en kaamil anda-wan-en",
+      "glose_fr": "Ses arbres sont tous à vous",
+      "glose_en": "Its trees are all yours",
+      "traduction_fr": "Les arbres de la terre vous appartiennent tous.",
+      "traduction_en": "The land's trees all belong to you."
+    },
+    {
+      "numero": 44,
+      "tadaksahak": "i-mmay t-a-nfa ba-beer-i",
+      "glose_fr": "ils ont une grande utilité",
+      "glose_en": "they have great use",
+      "traduction_fr": "Ils sont très utiles.",
+      "traduction_en": "They are very useful."
+    },
+    {
+      "numero": 45,
+      "tadaksahak": "day adi bor(a) ayo gguna bora b-d(a) eeqad wala f-kos tugud-en a-na-c(i) aa-se he",
+      "glose_fr": "Ainsi, la personne qui voit quelqu'un mettre un feu ou couper des arbres et ne lui dit rien",
+      "glose_en": "So, the person who sees somebody putting a fire or cutting trees and does not say anything to him",
+      "traduction_fr": "Ainsi, celui qui voit quelqu'un allumer un feu ou couper des arbres et ne lui dit rien,",
+      "traduction_en": "So, whoever sees someone starting a fire or cutting down trees and says nothing to them,"
+    },
+    {
+      "numero": 46,
+      "tadaksahak": "a-m-bay ganda se i-nn alman jen h(e) ayda k(a) a-kkan har a-ddumbu-i a-na-yiyam aa-se",
+      "glose_fr": "il devrait savoir que c'est comme quelqu'un qui est tombé sur leur troupeau et les a égorgés et ne l'a pas averti.",
+      "glose_en": "he should know that (this is like) somebody who fell on their herd and slaughtered them and did not warn him.",
+      "traduction_fr": "il doit savoir que c'est comme quelqu'un qui est tombé sur leur troupeau et les a égorgés sans l'avertir.",
+      "traduction_en": "he should know that this is like someone who came upon their herd and slaughtered them without warning him."
+    },
+    {
+      "numero": 47,
+      "tadaksahak": "Day adi ee-dag ayo senda ittilla agg aadam ayo f-keedi Maalin ganda kaamil a-mmay darwa, a-mmay alhaq a-to-yigaz ee-dag ayo a-baara ganda ka ittill(a) addokad ayo (a)nda ni-ddabet ay-n t-a-ggas-t",
+      "glose_fr": "Ainsi, en cette occasion, chaque être humain, où qu'il soit dans le pays du Mali, a le droit, a la responsabilité de veiller sur l'endroit où il se trouve avec chaque mesure que vous pouvez pour le protéger.",
+      "glose_en": "So, on this occasion, every human being, anywhere in the country of Mali, has the right, has the responsibility to look after the place where he is with every measure you can to protect it.",
+      "traduction_fr": "Ainsi, chaque être humain, où qu'il soit au Mali, a le droit et la responsabilité de veiller sur l'endroit où il se trouve, par tous les moyens possibles pour le protéger.",
+      "traduction_en": "Thus, every human being, wherever they are in Mali, has the right and responsibility to look after the place where they are, by every possible means to protect it."
+    },
+    {
+      "numero": 48,
+      "tadaksahak": "and-anga ni-ddabet sa (a)n-temaazal anda ni-n kamba n maazal",
+      "glose_fr": "Si tu peux, tu agis par l'acte de ta main",
+      "glose_en": "If you can, you act with the act of your hand",
+      "traduction_fr": "Si tu le peux, agis par toi-même.",
+      "traduction_en": "If you can, take action yourself."
+    },
+    {
+      "numero": 49,
+      "tadaksahak": "nanga t-a-raqim-t ni-n iilas wani ni-mm-aryam",
+      "glose_fr": "ou bien tu averties par un avertissement de ta langue",
+      "glose_en": "or you warn with a warning of your tongue",
+      "traduction_fr": "Ou bien avertis par la parole.",
+      "traduction_en": "Or warn with words."
+    },
+    {
+      "numero": 50,
+      "tadaksahak": "nanga he ni-kkassan ni-m-koy-kat ni-m-har alhakumat se",
+      "glose_fr": "Si la personne avertie refuse, tu viens et tu le dis au gouvernement",
+      "glose_en": "If the warned person refuses, you come and tell the authorities",
+      "traduction_fr": "Si la personne avertie refuse, va le signaler aux autorités.",
+      "traduction_en": "If the warned person refuses, go and report it to the authorities."
+    },
+    {
+      "numero": 51,
+      "tadaksahak": "manna ayo (a)yda a-ta-taw nin",
+      "glose_fr": "Ce même manque de nourriture t'atteindra",
+      "glose_en": "This same lack of food will reach you",
+      "traduction_fr": "Ce même manque de nourriture t'atteindra.",
+      "traduction_en": "This same lack of food will affect you too."
+    },
+    {
+      "numero": 52,
+      "tadaksahak": "as-kar cini-en i-sa-kar ittilla agg aadem h(e) ad(i) a-ta-dar",
+      "glose_fr": "Si les pluies ne tombent pas, tout le monde finira par souffrir",
+      "glose_en": "If the rains do not fall, everyone will eventually suffer",
+      "traduction_fr": "Si les pluies ne tombent pas, tout le monde finira par souffrir.",
+      "traduction_en": "If the rains don't come, everyone will eventually suffer."
+    },
+    {
+      "numero": 53,
+      "tadaksahak": "day adi ee-dag ayo senda anga be ittill(a) agg aadem a-m-nahad a-handag ayo a-baara ganda ka",
+      "glose_fr": "Ainsi, en cette occasion, à cause de cela, que chaque être humain prenne soin de la terre où il se trouve",
+      "glose_en": "Thus, on this occasion, because of this, may every human being take care of the land where he is",
+      "traduction_fr": "Ainsi, que chaque être humain prenne soin de la terre où il se trouve.",
+      "traduction_en": "Thus, may every human being take care of the land where they live."
+    },
+    {
+      "numero": 54,
+      "tadaksahak": "a-mm-agaz ay-n ga se wiji bora fo se",
+      "glose_fr": "Qu'il veille sur elle pour lui-même, pas pour quelqu'un d'autre",
+      "glose_en": "May he look after it for himself, not for someone else",
+      "traduction_fr": "Qu'il veille sur elle pour lui-même, pas pour un autre.",
+      "traduction_en": "May he look after it for himself, not for someone else."
+    }
+  ],
+  "themes_cles": [
+    "décentralisation",
+    "responsabilité collective",
+    "gestion des ressources naturelles",
+    "protection de l'environnement",
+    "gouvernance locale",
+    "autonomie des communautés"
+  ],
+  "vocabulaire_saillant": [
+    {"tad": "komin-tan", "fr": "communes", "en": "communes"},
+    {"tad": "desatralisasiö", "fr": "décentralisation", "en": "decentralization"},
+    {"tad": "alhakumat", "fr": "gouvernement", "en": "government"},
+    {"tad": "ganda", "fr": "terre/pays", "en": "land/country"},
+    {"tad": "t-a-ggas-t", "fr": "protection", "en": "protection"},
+    {"tad": "anìyat", "fr": "attention/veille", "en": "attention/watchfulness"},
+    {"tad": "alman", "fr": "troupeau", "en": "herd"},
+    {"tad": "eeqad", "fr": "feu de brousse", "en": "bush fire"},
+    {"tad": "tugud-en", "fr": "arbres", "en": "trees"},
+    {"tad": "sekter-tan", "fr": "secteurs", "en": "sectors"}
+  ]
+}
