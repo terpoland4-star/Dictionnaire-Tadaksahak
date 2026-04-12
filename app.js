@@ -982,7 +982,7 @@ function showWordNotification() {
 }
 
 // ------------------------------
-// GRAMMAIRE
+// GRAMMAIRE - VERSION CORRIGÉE
 // ------------------------------
 async function chargerGrammaire() {
   try {
@@ -1000,60 +1000,123 @@ function afficherGrammaire() {
   const container = document.getElementById("grammaireContainer");
   if (!container) return;
   
-  if (!grammaire || !grammaire.sections) {
+  if (!grammaire) {
     container.innerHTML = `<p class="info-message">📚 Données grammaticales non disponibles.</p>`;
+    return;
+  }
+  
+  // Récupérer les sections (différentes structures possibles)
+  let sections = [];
+  if (grammaire.sections && Array.isArray(grammaire.sections)) {
+    sections = grammaire.sections;
+  } else if (grammaire.causative_passive) {
+    sections = [grammaire.causative_passive];
+  } else {
+    container.innerHTML = `<p class="info-message">📚 Structure de grammaire non reconnue.</p>`;
+    console.error("Structure inconnue:", Object.keys(grammaire));
     return;
   }
   
   let html = `<div class="grammaire-intro"><p>${i18n[currentLanguage].grammar_desc}</p></div>`;
   
-  for (const section of grammaire.sections) {
+  for (let i = 0; i < sections.length; i++) {
+    const section = sections[i];
+    
     let sectionTitle = currentLanguage === 'fr' ? section.titre_fr : (currentLanguage === 'en' ? section.titre_en : section.titre_ar);
     let sectionDesc = currentLanguage === 'fr' ? section.description_fr : (currentLanguage === 'en' ? section.description_en : section.description_ar);
     
     html += `<div class="grammaire-section">
-      <h3>${escapeHtml(sectionTitle)}</h3>
-      <p class="section-desc">${escapeHtml(sectionDesc)}</p>`;
+      <h3>${escapeHtml(sectionTitle || 'Grammaire')}</h3>
+      <p class="section-desc">${escapeHtml(sectionDesc || '')}</p>`;
     
-    for (const subsection of section.subsections) {
-      let subTitle = currentLanguage === 'fr' ? subsection.titre_fr : (currentLanguage === 'en' ? subsection.titre_en : subsection.titre_ar);
-      let subDesc = currentLanguage === 'fr' ? subsection.description_fr : (currentLanguage === 'en' ? subsection.description_en : subsection.description_ar);
-      
-      html += `<div class="grammaire-subsection">
-        <h4>${escapeHtml(subTitle)}</h4>`;
-      if (subDesc) html += `<p class="sub-desc">${escapeHtml(subDesc)}</p>`;
-      
-      if (subsection.verbes && subsection.verbes.length) {
-        html += `<div class="verbes-table-wrapper">
-          <table class="verbes-table">
-            <thead>
-              <tr><th>${currentLanguage === 'fr' ? 'Racine' : (currentLanguage === 'en' ? 'Root' : 'الجذر')}</th>
-                <th>${currentLanguage === 'fr' ? 'Sens' : (currentLanguage === 'en' ? 'Meaning' : 'المعنى')}</th>
-                <th>${currentLanguage === 'fr' ? 'Causatif' : (currentLanguage === 'en' ? 'Causative' : 'سببي')}</th>
-                ${subsection.verbes[0].passif ? `<th>${currentLanguage === 'fr' ? 'Passif' : (currentLanguage === 'en' ? 'Passive' : 'مجهول')}</th>` : ''}
-              </td>
-            </thead>
-            <tbody>`;
+    // Vérifier si la section a des subsections
+    if (section.subsections && Array.isArray(section.subsections) && section.subsections.length > 0) {
+      for (let j = 0; j < section.subsections.length; j++) {
+        const subsection = section.subsections[j];
         
-        for (const verbe of subsection.verbes) {
-          let sens = currentLanguage === 'fr' ? verbe.sens_fr : (currentLanguage === 'en' ? verbe.sens_en : verbe.sens_ar);
-          html += `<tr>
-            <td><strong>${escapeHtml(verbe.imperatif || verbe.racine_tad || '—')}</strong></td>
-            <td>${escapeHtml(sens)}</td>
-            <td><code>${escapeHtml(verbe.causatif || '—')}</code></td>`;
-          if (verbe.passif) {
-            html += `<td><code>${escapeHtml(verbe.passif)}</code></td>`;
+        let subTitle = currentLanguage === 'fr' ? subsection.titre_fr : (currentLanguage === 'en' ? subsection.titre_en : subsection.titre_ar);
+        let subDesc = currentLanguage === 'fr' ? subsection.description_fr : (currentLanguage === 'en' ? subsection.description_en : subsection.description_ar);
+        
+        html += `<div class="grammaire-subsection">
+          <h4>${escapeHtml(subTitle || '')}</h4>`;
+        if (subDesc) html += `<p class="sub-desc">${escapeHtml(subDesc)}</p>`;
+        
+        if (subsection.verbes && Array.isArray(subsection.verbes) && subsection.verbes.length > 0) {
+          html += `<div class="verbes-table-wrapper">
+            <table class="verbes-table">
+              <thead>
+                <tr><th>${currentLanguage === 'fr' ? 'Racine' : (currentLanguage === 'en' ? 'Root' : 'الجذر')}</th>
+                  <th>${currentLanguage === 'fr' ? 'Sens' : (currentLanguage === 'en' ? 'Meaning' : 'المعنى')}</th>
+                  <th>${currentLanguage === 'fr' ? 'Causatif' : (currentLanguage === 'en' ? 'Causative' : 'سببي')}</th>
+                  ${subsection.verbes[0]?.passif ? `<th>${currentLanguage === 'fr' ? 'Passif' : (currentLanguage === 'en' ? 'Passive' : 'مجهول')}</th>` : ''}
+                </tr>
+              </thead>
+              <tbody>`;
+          
+          for (let k = 0; k < subsection.verbes.length; k++) {
+            const verbe = subsection.verbes[k];
+            let sens = currentLanguage === 'fr' ? verbe.sens_fr : (currentLanguage === 'en' ? verbe.sens_en : verbe.sens_ar);
+            html += `<tr>
+              <td><strong>${escapeHtml(verbe.imperatif || verbe.racine_tad || '—')}</strong></td>
+              <td>${escapeHtml(sens || '—')}</td>
+              <td><code>${escapeHtml(verbe.causatif || '—')}</code></td>`;
+            if (verbe.passif) {
+              html += `<td><code>${escapeHtml(verbe.passif)}</code></td>`;
+            }
+            html += `</tr>`;
           }
-          html += `</td>`;
+          html += `</tbody></table></div>`;
         }
-        html += `</tbody></table></div>`;
+        html += `</div>`;
+      }
+    }
+    // Si la section a des elements directement (pas de subsections)
+    else if (section.elements && Array.isArray(section.elements) && section.elements.length > 0) {
+      html += `<div class="grammaire-elements">`;
+      for (let j = 0; j < section.elements.length; j++) {
+        const element = section.elements[j];
+        let desc = currentLanguage === 'fr' ? element.fr : (currentLanguage === 'en' ? element.en : element.ar);
+        let titre = element.mot || element.tad || element.forme || element.personne || element.num;
+        html += `<div class="grammaire-element">
+          <strong>${escapeHtml(titre)}</strong>
+          <span class="element-desc">${escapeHtml(desc || '')}</span>
+        </div>`;
       }
       html += `</div>`;
     }
+    // Si la section a des verbes directement
+    else if (section.verbes && Array.isArray(section.verbes) && section.verbes.length > 0) {
+      html += `<div class="verbes-table-wrapper">
+        <table class="verbes-table">
+          <thead>
+            <tr><th>${currentLanguage === 'fr' ? 'Racine' : (currentLanguage === 'en' ? 'Root' : 'الجذر')}</th>
+              <th>${currentLanguage === 'fr' ? 'Sens' : (currentLanguage === 'en' ? 'Meaning' : 'المعنى')}</th>
+              <th>${currentLanguage === 'fr' ? 'Causatif' : (currentLanguage === 'en' ? 'Causative' : 'سببي')}</th>
+              ${section.verbes[0]?.passif ? `<th>${currentLanguage === 'fr' ? 'Passif' : (currentLanguage === 'en' ? 'Passive' : 'مجهول')}</th>` : ''}
+           </>
+          </thead>
+          <tbody>`;
+      
+      for (let k = 0; k < section.verbes.length; k++) {
+        const verbe = section.verbes[k];
+        let sens = currentLanguage === 'fr' ? verbe.sens_fr : (currentLanguage === 'en' ? verbe.sens_en : verbe.sens_ar);
+        html += `<tr>
+          <td><strong>${escapeHtml(verbe.imperatif || verbe.racine_tad || '—')}</strong></td>
+          <td>${escapeHtml(sens || '—')}</td>
+          <td><code>${escapeHtml(verbe.causatif || '—')}</code></td>`;
+        if (verbe.passif) {
+          html += `<td><code>${escapeHtml(verbe.passif)}</code></td>`;
+        }
+        html += `</tr>`;
+      }
+      html += `</tbody></table></div>`;
+    }
+    
     html += `</div>`;
   }
   
   container.innerHTML = html;
+  console.log("✅ Grammaire affichée avec succès");
 }
 
 // ------------------------------
