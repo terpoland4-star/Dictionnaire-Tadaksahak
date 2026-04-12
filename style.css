@@ -1758,3 +1758,459 @@ html[dir="rtl"] .verbes-table td {
     font-size: 0.65rem;
   }
 }
+/* ============================================
+   STYLES POUR LES FLASHCARDS
+   ============================================ */
+
+.flashcards-controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.flashcards-controls select,
+.flashcards-controls button {
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  border: 1px solid var(--border);
+  background: var(--bg-light);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.flashcards-controls select:hover,
+.flashcards-controls button:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.flashcards-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 450px;
+}
+
+/* Carte flash */
+.flashcard {
+  width: 360px;
+  height: 420px;
+  perspective: 1000px;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.flashcard-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  transform-style: preserve-3d;
+  border-radius: 24px;
+}
+
+.flashcard[data-flipped="true"] .flashcard-inner {
+  transform: rotateY(180deg);
+}
+
+/* Face avant et arrière */
+.flashcard-front,
+.flashcard-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.8rem;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+/* Face avant */
+.flashcard-front {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+}
+
+.flashcard-front .flashcard-cat {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.3rem 0.8rem;
+  border-radius: 30px;
+  display: inline-block;
+}
+
+.flashcard-front .flashcard-word {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  word-break: break-word;
+  line-height: 1.3;
+}
+
+.flashcard-front .flashcard-prompt {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.flashcard-front .flashcard-prompt::before {
+  content: "👆";
+  font-size: 1rem;
+}
+
+/* Face arrière */
+.flashcard-back {
+  background: linear-gradient(135deg, var(--success), var(--primary));
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.flashcard-back .flashcard-def {
+  font-size: 1.2rem;
+  margin-bottom: 1.8rem;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.flashcard-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.flashcard-btn {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.flashcard-btn.correct {
+  background: #4caf50;
+  color: white;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+}
+
+.flashcard-btn.correct:hover {
+  background: #43a047;
+  transform: scale(1.05);
+}
+
+.flashcard-btn.wrong {
+  background: #f44336;
+  color: white;
+  box-shadow: 0 2px 8px rgba(244, 67, 54, 0.3);
+}
+
+.flashcard-btn.wrong:hover {
+  background: #e53935;
+  transform: scale(1.05);
+}
+
+/* Progression */
+.flashcards-progress {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  background: var(--bg-card);
+  display: inline-block;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.5rem 1.5rem;
+  border-radius: 40px;
+}
+
+/* Écran de fin */
+.flashcards-complete {
+  text-align: center;
+  padding: 2.5rem;
+  background: var(--bg-card);
+  border-radius: 24px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.flashcards-complete h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+.flashcards-complete p {
+  margin-bottom: 1.5rem;
+  color: var(--text-muted);
+}
+
+.flashcards-complete .btn {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+}
+
+/* ============================================
+   STYLES POUR LES MODALS (contes, aide)
+   ============================================ */
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  animation: fadeIn 0.2s ease;
+}
+
+.modal-content {
+  background: var(--bg-light);
+  border-radius: 24px;
+  max-width: 90%;
+  max-height: 85%;
+  overflow-y: auto;
+  padding: 2rem;
+  position: relative;
+  animation: slideUp 0.3s ease;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h2 {
+  color: var(--accent);
+  margin-bottom: 1rem;
+  padding-right: 1.5rem;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+
+.modal-close:hover {
+  color: var(--error);
+}
+
+/* Raccourcis clavier */
+.shortcuts-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.shortcuts-list li {
+  padding: 0.6rem 0;
+  border-bottom: 1px dashed var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+kbd {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.2rem 0.6rem;
+  font-family: monospace;
+  font-size: 0.8rem;
+  font-weight: 600;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  color: var(--accent);
+}
+
+/* ============================================
+   BANNIÈRE D'INSTALLATION PWA
+   ============================================ */
+
+.install-banner {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, var(--bg-light), var(--bg-card));
+  border-radius: 20px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
+  z-index: 1100;
+  animation: slideUp 0.3s ease;
+  border: 1px solid var(--accent);
+}
+
+.install-banner-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.2rem;
+  flex-wrap: wrap;
+}
+
+.install-banner-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.install-banner-text strong {
+  font-size: 1rem;
+  color: var(--accent);
+}
+
+.install-banner-text small {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.btn-install {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 40px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-install:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-dismiss {
+  background: transparent;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: var(--text-muted);
+  padding: 0.3rem;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.btn-dismiss:hover {
+  color: var(--error);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================
+   SKELETON LOADING
+   ============================================ */
+
+.skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.skeleton-card {
+  background: var(--bg-card);
+  border-radius: 16px;
+  padding: 1rem;
+  animation: pulse 1.5s infinite;
+}
+
+.skeleton-image {
+  height: 160px;
+  background: var(--border);
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.skeleton-title {
+  height: 20px;
+  background: var(--border);
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  width: 70%;
+}
+
+.skeleton-text {
+  height: 14px;
+  background: var(--border);
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.skeleton-text.short {
+  width: 50%;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* ============================================
+   RESPONSIVE FLASHCARDS
+   ============================================ */
+
+@media (max-width: 480px) {
+  .flashcard {
+    width: 280px;
+    height: 340px;
+  }
+  
+  .flashcard-front .flashcard-word {
+    font-size: 1.4rem;
+  }
+  
+  .flashcard-back .flashcard-def {
+    font-size: 0.95rem;
+  }
+  
+  .flashcard-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
+  }
+  
+  .flashcards-controls select,
+  .flashcards-controls button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+  
+  .install-banner-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .install-banner-text {
+    align-items: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .install-banner {
+    left: auto;
+    right: 20px;
+    max-width: 380px;
+  }
+}
