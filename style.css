@@ -1,6 +1,6 @@
 /* ===========================================================
    🎨 Tadaksahak Learning – Style global complet
-   Version 3.0 (avec toutes les nouvelles sections)
+   Version 3.1 (avec propositions relatives et grammaire avancée)
    Thèmes : Dark, Light, Sepia
    Auteur : Hamadine AG MOCTAR
    =========================================================== */
@@ -24,6 +24,13 @@ body.dark {
   --success: #00c853;
   --warning: #ff9800;
   --error: #ff5252;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.2);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.3);
+  --shadow-xl: 0 12px 36px rgba(0,0,0,0.5);
+  --transition: 0.25s ease;
 }
 
 /* Thème clair */
@@ -43,6 +50,13 @@ body.light {
   --success: #00a86b;
   --warning: #e68a00;
   --error: #d32f2f;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.15);
+  --shadow-xl: 0 12px 36px rgba(0,0,0,0.2);
+  --transition: 0.25s ease;
 }
 
 /* Thème sépia */
@@ -62,6 +76,13 @@ body.sepia {
   --success: #6b8c42;
   --warning: #c47e3a;
   --error: #b85c3a;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.15);
+  --shadow-xl: 0 12px 36px rgba(0,0,0,0.2);
+  --transition: 0.25s ease;
 }
 
 /* Variables globales */
@@ -505,6 +526,235 @@ audio { width: 100%; margin-top: 1rem; border-radius: 10px; }
 .mot-item:hover { background: var(--hover); transform: translateX(5px); }
 
 /* =========================
+   GRAMMAIRE - ONGLETS
+========================= */
+.grammar-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--border);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.grammar-tab {
+  padding: 0.8rem 1.5rem;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  position: relative;
+}
+
+.grammar-tab:hover {
+  color: var(--accent);
+  background: rgba(51, 204, 255, 0.1);
+}
+
+.grammar-tab.active {
+  color: var(--accent);
+  background: var(--bg-card);
+  border-bottom: 3px solid var(--accent);
+}
+
+.grammar-tab-content {
+  animation: fadeIn 0.3s ease;
+}
+
+/* ============================================
+   STYLES POUR LES PROPOSITIONS RELATIVES
+   ============================================ */
+
+.relatives-intro {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border-left: 4px solid var(--accent);
+}
+
+.relatives-intro h3 {
+  font-size: 1.5rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.strategies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.strategy-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  transition: all var(--transition);
+}
+
+.strategy-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--accent);
+}
+
+.strategy-card h4 {
+  font-size: 1.3rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-family: 'Courier New', monospace;
+}
+
+.strategy-usage {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px dashed var(--border);
+}
+
+.strategy-exemples {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.exemple-card {
+  background: var(--bg-light);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  border-left: 3px solid var(--accent);
+  transition: all var(--transition);
+}
+
+.exemple-card:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-sm);
+}
+
+.exemple-tad {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  font-family: 'Courier New', monospace;
+}
+
+.exemple-gloss {
+  font-size: 0.75rem;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  padding: 0.25rem 0;
+  border-top: 1px dashed var(--border);
+}
+
+.exemple-trans {
+  font-size: 0.85rem;
+  color: var(--text);
+  padding-top: 0.25rem;
+}
+
+/* Tableau d'accessibilité */
+.accessibility-table {
+  margin: 2rem 0;
+  padding: 1rem;
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  overflow-x: auto;
+}
+
+.accessibility-table h4 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+.access-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.access-table th,
+.access-table td {
+  padding: 0.75rem;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+
+.access-table th {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  font-weight: 600;
+}
+
+.access-table td {
+  background: var(--bg-light);
+}
+
+.access-table td:first-child {
+  font-weight: 600;
+  background: var(--bg-card);
+}
+
+.table-note {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Exceptions */
+.exceptions-box {
+  margin: 2rem 0;
+  padding: 1rem;
+  background: rgba(255, 152, 0, 0.1);
+  border-radius: var(--radius-lg);
+  border-left: 4px solid var(--warning);
+}
+
+.exceptions-box h4 {
+  color: var(--warning);
+  margin-bottom: 1rem;
+}
+
+.exception-item {
+  padding: 0.8rem;
+  margin-bottom: 0.8rem;
+  background: var(--bg-light);
+  border-radius: var(--radius-md);
+}
+
+.exception-item strong {
+  color: var(--accent);
+}
+
+.exception-regle {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+}
+
+.exception-exemple {
+  font-size: 0.85rem;
+  font-family: 'Courier New', monospace;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background: var(--bg-card);
+  border-radius: var(--radius-sm);
+}
+
+/* =========================
    CHAT BOT
 ========================= */
 .chat-container { max-width: 800px; margin: 0 auto; }
@@ -922,6 +1172,12 @@ html[dir="rtl"] .btn-small { text-align: center; }
 html[dir="rtl"] .quiz-option:hover { transform: translateX(-5px); }
 html[dir="rtl"] .timeline { padding-left: 0; padding-right: 2rem; border-left: none; border-right: 3px solid var(--accent); }
 html[dir="rtl"] .timeline-item::before { left: auto; right: -2.5rem; }
+html[dir="rtl"] .grammar-tab { text-align: right; }
+html[dir="rtl"] .strategy-card { text-align: right; }
+html[dir="rtl"] .exemple-card { border-left: none; border-right: 3px solid var(--accent); }
+html[dir="rtl"] .exemple-card:hover { transform: translateX(-4px); }
+html[dir="rtl"] .relatives-intro { border-left: none; border-right: 4px solid var(--accent); }
+html[dir="rtl"] .exceptions-box { border-left: none; border-right: 4px solid var(--warning); }
 
 /* =========================
    MODE CONTRASTE ÉLEVÉ
@@ -972,6 +1228,11 @@ body.high-contrast .word-of-day {
   .filters input, .filters select { width: 100%; }
   .livre-actions { flex-direction: column; }
   .theme-selector { flex-wrap: wrap; }
+  .grammar-tabs { gap: 0.25rem; }
+  .grammar-tab { padding: 0.5rem 1rem; font-size: 0.85rem; }
+  .strategies-grid { grid-template-columns: 1fr; }
+  .access-table { font-size: 0.7rem; }
+  .access-table th, .access-table td { padding: 0.4rem; }
 }
 
 @media (max-width: 480px) {
@@ -980,6 +1241,9 @@ body.high-contrast .word-of-day {
   .suggestions-list li { font-size: 0.85rem; }
   .alphabet-btn { padding: 0.3rem 0.6rem; font-size: 0.8rem; }
   .word-list { grid-template-columns: 1fr; }
+  .strategy-card { padding: 1rem; }
+  .strategy-card h4 { font-size: 1rem; }
+  .exemple-tad { font-size: 0.85rem; }
 }
 
 @media print {
@@ -989,777 +1253,7 @@ body.high-contrast .word-of-day {
 }
 
 /* ============================================
-   STYLES POUR L'ARTICLE DE PRÉSENTATION
-   Idaksahak : entre mythes, histoire et résilience
-   ============================================ */
-
-.article-preview {
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    margin: 30px auto;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-body.dark .article-preview {
-    background: #2d2d2d;
-    color: #e0e0e0;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-body.sepia .article-preview {
-    background: #faf0e1;
-    color: #5b4636;
-}
-
-.preview-header {
-    padding: 30px 35px 20px 35px;
-    border-bottom: 2px solid #c44536;
-}
-
-.preview-categorie {
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #c44536;
-    font-weight: 600;
-    margin-bottom: 12px;
-}
-
-.preview-title {
-    font-size: 28px;
-    color: #2c3e2f;
-    margin-bottom: 10px;
-    font-weight: 700;
-}
-
-body.dark .preview-title {
-    color: #d4c9b8;
-}
-
-.preview-sous-titre {
-    font-size: 17px;
-    color: #4a627a;
-    font-style: italic;
-    margin-bottom: 15px;
-}
-
-body.dark .preview-sous-titre {
-    color: #b0a88a;
-}
-
-.preview-meta {
-    font-size: 13px;
-    color: #6c7e8f;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding-top: 12px;
-    border-top: 1px solid #e2e8f0;
-}
-
-body.dark .preview-meta {
-    color: #9a8c6f;
-    border-top-color: #4a4a4a;
-}
-
-.preview-resume {
-    background: #f8f5f0;
-    padding: 20px 35px;
-    margin: 0 35px 25px 35px;
-    border-left: 5px solid #c44536;
-    border-radius: 0 12px 12px 0;
-    font-size: 15px;
-}
-
-body.dark .preview-resume {
-    background: #3a3a3a;
-}
-
-.preview-content {
-    padding: 0 35px;
-}
-
-.preview-section {
-    margin-bottom: 28px;
-}
-
-.preview-section h3 {
-    font-size: 20px;
-    color: #2c3e2f;
-    margin-bottom: 12px;
-    font-weight: 600;
-    border-left: 4px solid #c44536;
-    padding-left: 15px;
-}
-
-body.dark .preview-section h3 {
-    color: #d4c9b8;
-}
-
-.preview-section p {
-    font-size: 16px;
-    line-height: 1.7;
-    text-align: justify;
-    margin-bottom: 0;
-}
-
-.preview-footer {
-    padding: 20px 35px 35px 35px;
-    border-top: 1px solid #e2e8f0;
-    margin-top: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-body.dark .preview-footer {
-    border-top-color: #4a4a4a;
-}
-
-.preview-signature {
-    font-size: 14px;
-    font-style: italic;
-    color: #4a627a;
-}
-
-body.dark .preview-signature {
-    color: #b0a88a;
-}
-
-.btn-lire-suite {
-    background: #c44536;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 30px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: inherit;
-}
-
-.btn-lire-suite:hover {
-    background: #a03428;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(196, 69, 54, 0.3);
-}
-
-/* Responsive */
-@media (max-width: 700px) {
-    .preview-header {
-        padding: 20px 20px 15px 20px;
-    }
-    .preview-resume {
-        margin: 0 20px 20px 20px;
-        padding: 15px 20px;
-    }
-    .preview-content {
-        padding: 0 20px;
-    }
-    .preview-footer {
-        padding: 20px 20px 30px 20px;
-        flex-direction: column;
-        text-align: center;
-    }
-    .preview-title {
-        font-size: 22px;
-    }
-    .preview-section h3 {
-        font-size: 18px;
-    }
-}
-/* =========================
-   RAPPORTS & DOCUMENTS
-   ========================= */
-
-.rapports-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-}
-
-.rapport-card {
-  background: linear-gradient(180deg, var(--bg-light), var(--bg-card));
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 1.2rem;
-  box-shadow: var(--shadow-md);
-  transition: all var(--transition);
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  overflow: hidden;
-}
-
-.rapport-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-xl);
-  border-color: var(--accent);
-}
-
-.rapport-type {
-  display: inline-block;
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  color: var(--accent);
-  background: rgba(51, 204, 255, 0.15);
-  padding: 0.2rem 0.6rem;
-  border-radius: 20px;
-  margin-bottom: 0.8rem;
-  width: fit-content;
-}
-
-.rapport-titre {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--accent);
-  margin-bottom: 0.5rem;
-  line-height: 1.3;
-}
-
-.rapport-auteur {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  margin-bottom: 0.5rem;
-  font-style: italic;
-}
-
-.rapport-meta {
-  font-size: 0.75rem;
-  color: var(--primary);
-  margin-bottom: 0.8rem;
-  display: flex;
-  gap: 0.8rem;
-  flex-wrap: wrap;
-}
-
-.rapport-desc {
-  font-size: 0.85rem;
-  color: var(--text);
-  line-height: 1.5;
-  margin-bottom: 1rem;
-  flex: 1;
-}
-
-.rapport-actions {
-  display: flex;
-  gap: 0.5rem;
-  margin-top: auto;
-}
-
-.rapport-actions .btn-small {
-  flex: 1;
-  padding: 0.5rem 0.8rem;
-  border-radius: var(--radius-sm);
-  border: none;
-  cursor: pointer;
-  background: var(--primary);
-  color: #fff;
-  font-size: 0.8rem;
-  transition: all var(--transition);
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-}
-
-.rapport-actions .btn-small:hover {
-  background: var(--hover);
-  transform: translateY(-2px);
-}
-
-/* Badge PDF en arrière-plan */
-.rapport-card::before {
-  content: "📄";
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 1.5rem;
-  opacity: 0.15;
-  pointer-events: none;
-}
-
-/* Version RTL (arabe) */
-html[dir="rtl"] .rapport-card::before {
-  right: auto;
-  left: 10px;
-}
-
-html[dir="rtl"] .rapport-type {
-  margin-left: auto;
-  margin-right: 0;
-}
-
-html[dir="rtl"] .rapport-actions {
-  flex-direction: row-reverse;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .rapports-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  
-  .rapport-card {
-    padding: 1rem;
-  }
-  
-  .rapport-titre {
-    font-size: 1rem;
-  }
-}
-/* ============================================
-   STYLES POUR LA GRAMMAIRE (tableaux de verbes)
-   ============================================ */
-
-.grammaire-intro {
-  text-align: center;
-  margin-bottom: 2rem;
-  padding: 1rem;
-  background: var(--bg-card);
-  border-radius: 16px;
-  border-left: 4px solid var(--accent);
-}
-
-.grammaire-section {
-  margin-bottom: 2.5rem;
-  background: var(--bg-card);
-  border-radius: 20px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.grammaire-section h3 {
-  font-size: 1.5rem;
-  color: var(--accent);
-  margin-bottom: 0.5rem;
-  border-bottom: 2px solid var(--accent);
-  padding-bottom: 0.5rem;
-  display: inline-block;
-}
-
-.grammaire-section .section-desc {
-  color: var(--text-muted);
-  margin-bottom: 1.5rem;
-  font-size: 0.9rem;
-}
-
-.grammaire-subsection {
-  margin: 1.5rem 0;
-  padding: 1rem;
-  background: var(--bg-light);
-  border-radius: 16px;
-  transition: all 0.25s;
-}
-
-.grammaire-subsection:hover {
-  transform: translateX(4px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.grammaire-subsection h4 {
-  font-size: 1.2rem;
-  color: var(--primary);
-  margin-bottom: 0.5rem;
-  padding-left: 0.5rem;
-  border-left: 3px solid var(--accent);
-}
-
-.grammaire-subsection .sub-desc {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  margin-bottom: 1rem;
-  padding-left: 0.5rem;
-}
-
-/* Tableau des verbes */
-.verbes-table-wrapper {
-  overflow-x: auto;
-  margin-top: 1rem;
-}
-
-.verbes-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.85rem;
-  background: var(--bg-card);
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.verbes-table th,
-.verbes-table td {
-  padding: 0.75rem;
-  text-align: left;
-  border-bottom: 1px solid var(--border);
-}
-
-.verbes-table th {
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  color: white;
-  font-weight: 600;
-  font-size: 0.85rem;
-}
-
-.verbes-table tr:hover {
-  background: var(--hover-bg, rgba(0, 153, 255, 0.1));
-}
-
-.verbes-table code {
-  background: var(--bg);
-  padding: 0.2rem 0.4rem;
-  border-radius: 6px;
-  font-family: 'Courier New', monospace;
-  font-size: 0.8rem;
-  color: var(--accent);
-}
-
-body.dark .verbes-table code {
-  background: #1a1a1a;
-}
-
-/* ============================================
-   STYLES POUR LES CARTES (CONTES, ÉMISSIONS)
-   ============================================ */
-
-.contes-grid,
-.emissions-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-  gap: 1.5rem;
-  margin: 1.5rem 0;
-}
-
-/* Carte de conte / émission */
-.conte-card,
-.emission-card {
-  background: var(--bg-card);
-  border-radius: 20px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  border: 1px solid var(--border);
-}
-
-.conte-card:hover,
-.emission-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  border-color: var(--accent);
-}
-
-.conte-card h3,
-.emission-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 0.75rem;
-  color: var(--accent);
-  border-left: 4px solid var(--accent);
-  padding-left: 0.75rem;
-}
-
-.conte-meta,
-.emission-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--border);
-}
-
-.conte-resume,
-.emission-contexte {
-  font-size: 0.9rem;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-  color: var(--text);
-}
-
-/* Détails accordéon pour contes et émissions */
-details {
-  margin-top: 1rem;
-}
-
-details summary {
-  cursor: pointer;
-  font-weight: 600;
-  color: var(--accent);
-  padding: 0.5rem 1rem;
-  background: var(--bg-light);
-  border-radius: 12px;
-  display: inline-block;
-  transition: all 0.2s ease;
-  font-size: 0.85rem;
-}
-
-details summary:hover {
-  background: var(--primary);
-  color: white;
-}
-
-details[open] summary {
-  background: var(--primary);
-  color: white;
-  margin-bottom: 1rem;
-}
-
-/* Versets (style flashcard) */
-.conte-versets,
-.emission-versets {
-  max-height: 400px;
-  overflow-y: auto;
-  padding: 0.5rem;
-  scrollbar-width: thin;
-}
-
-.conte-versets::-webkit-scrollbar,
-.emission-versets::-webkit-scrollbar {
-  width: 6px;
-}
-
-.conte-versets::-webkit-scrollbar-track,
-.emission-versets::-webkit-scrollbar-track {
-  background: var(--border);
-  border-radius: 10px;
-}
-
-.conte-versets::-webkit-scrollbar-thumb,
-.emission-versets::-webkit-scrollbar-thumb {
-  background: var(--accent);
-  border-radius: 10px;
-}
-
-.verset {
-  background: var(--bg-light);
-  border-radius: 16px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-left: 4px solid var(--accent);
-  transition: all 0.2s ease;
-}
-
-.verset:hover {
-  transform: translateX(4px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.verset-num {
-  font-size: 0.7rem;
-  color: var(--text-muted);
-  margin-bottom: 0.25rem;
-  font-weight: 600;
-}
-
-.verset-tad {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: var(--accent);
-  font-family: 'Courier New', monospace;
-}
-
-.verset-gloss {
-  font-size: 0.8rem;
-  font-style: italic;
-  color: var(--text-muted);
-  margin-bottom: 0.5rem;
-  padding: 0.25rem 0;
-  border-top: 1px dashed var(--border);
-}
-
-.verset-trans {
-  font-size: 0.9rem;
-  padding-top: 0.5rem;
-  border-top: 1px solid var(--border);
-  color: var(--text);
-}
-
-/* Morale du conte */
-.conte-morale {
-  margin-top: 1rem;
-  padding: 0.75rem;
-  background: rgba(51, 204, 255, 0.1);
-  border-radius: 12px;
-  font-size: 0.85rem;
-  font-style: italic;
-  border-left: 3px solid var(--accent);
-}
-
-/* ============================================
-   STYLES POUR LES CARTES DE GRAMMAIRE
-   ============================================ */
-
-.grammaire-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-}
-
-.grammaire-card {
-  background: var(--bg-card);
-  border-radius: 20px;
-  padding: 1.2rem;
-  border: 1px solid var(--border);
-  transition: all 0.25s;
-}
-
-.grammaire-card:hover {
-  transform: translateY(-3px);
-  border-color: var(--accent);
-}
-
-.grammaire-card h4 {
-  color: var(--accent);
-  margin-bottom: 0.5rem;
-  font-size: 1.1rem;
-}
-
-.grammaire-card .grammaire-sens {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  margin-bottom: 0.8rem;
-}
-
-.grammaire-card .grammaire-formes {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  font-size: 0.8rem;
-}
-
-.grammaire-card .causatif,
-.grammaire-card .passif {
-  background: var(--bg-light);
-  padding: 0.2rem 0.5rem;
-  border-radius: 8px;
-  font-family: monospace;
-}
-
-.grammaire-card .causatif { border-left: 2px solid var(--success); }
-.grammaire-card .passif { border-left: 2px solid var(--warning); }
-
-/* ============================================
-   RTL (ARABE) ADAPTATIONS
-   ============================================ */
-
-html[dir="rtl"] .grammaire-subsection h4 {
-  border-left: none;
-  border-right: 3px solid var(--accent);
-  padding-left: 0;
-  padding-right: 0.5rem;
-}
-
-html[dir="rtl"] .grammaire-subsection:hover {
-  transform: translateX(-4px);
-}
-
-html[dir="rtl"] .verset {
-  border-left: none;
-  border-right: 4px solid var(--accent);
-}
-
-html[dir="rtl"] .verset:hover {
-  transform: translateX(-4px);
-}
-
-html[dir="rtl"] .conte-card h3,
-html[dir="rtl"] .emission-card h3 {
-  border-left: none;
-  border-right: 4px solid var(--accent);
-  padding-left: 0;
-  padding-right: 0.75rem;
-}
-
-html[dir="rtl"] .conte-morale {
-  border-left: none;
-  border-right: 3px solid var(--accent);
-}
-
-html[dir="rtl"] .verbes-table th,
-html[dir="rtl"] .verbes-table td {
-  text-align: right;
-}
-
-/* ============================================
-   RESPONSIVE
-   ============================================ */
-
-@media (max-width: 768px) {
-  .contes-grid,
-  .emissions-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  
-  .conte-card,
-  .emission-card {
-    padding: 1rem;
-  }
-  
-  .conte-card h3,
-  .emission-card h3 {
-    font-size: 1.1rem;
-  }
-  
-  .verset-tad {
-    font-size: 0.9rem;
-  }
-  
-  .grammaire-section {
-    padding: 1rem;
-  }
-  
-  .grammaire-section h3 {
-    font-size: 1.2rem;
-  }
-  
-  .grammaire-subsection h4 {
-    font-size: 1rem;
-  }
-  
-  .verbes-table th,
-  .verbes-table td {
-    padding: 0.5rem;
-    font-size: 0.75rem;
-  }
-  
-  .verbes-table {
-    font-size: 0.7rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .contes-grid,
-  .emissions-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .verbes-table-wrapper {
-    overflow-x: scroll;
-  }
-  
-  .verbes-table {
-    min-width: 500px;
-  }
-  
-  .conte-meta,
-  .emission-meta {
-    gap: 0.5rem;
-    font-size: 0.65rem;
-  }
-}
-/* ============================================
-   STYLES POUR LES FLASHCARDS
+   STYLES POUR LES FLASHCARDS (déjà inclus)
    ============================================ */
 
 .flashcards-controls {
@@ -1795,7 +1289,6 @@ html[dir="rtl"] .verbes-table td {
   min-height: 450px;
 }
 
-/* Carte flash */
 .flashcard {
   width: 360px;
   height: 420px;
@@ -1818,7 +1311,6 @@ html[dir="rtl"] .verbes-table td {
   transform: rotateY(180deg);
 }
 
-/* Face avant et arrière */
 .flashcard-front,
 .flashcard-back {
   position: absolute;
@@ -1834,7 +1326,6 @@ html[dir="rtl"] .verbes-table td {
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
 }
 
-/* Face avant */
 .flashcard-front {
   background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   color: white;
@@ -1874,7 +1365,6 @@ html[dir="rtl"] .verbes-table td {
   font-size: 1rem;
 }
 
-/* Face arrière */
 .flashcard-back {
   background: linear-gradient(135deg, var(--success), var(--primary));
   color: white;
@@ -1928,7 +1418,6 @@ html[dir="rtl"] .verbes-table td {
   transform: scale(1.05);
 }
 
-/* Progression */
 .flashcards-progress {
   text-align: center;
   margin-top: 2rem;
@@ -1943,7 +1432,6 @@ html[dir="rtl"] .verbes-table td {
   border-radius: 40px;
 }
 
-/* Écran de fin */
 .flashcards-complete {
   text-align: center;
   padding: 2.5rem;
@@ -1968,8 +1456,30 @@ html[dir="rtl"] .verbes-table td {
   background: linear-gradient(135deg, var(--primary), var(--accent));
 }
 
+@media (max-width: 480px) {
+  .flashcard {
+    width: 280px;
+    height: 340px;
+  }
+  .flashcard-front .flashcard-word {
+    font-size: 1.4rem;
+  }
+  .flashcard-back .flashcard-def {
+    font-size: 0.95rem;
+  }
+  .flashcard-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
+  }
+  .flashcards-controls select,
+  .flashcards-controls button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+}
+
 /* ============================================
-   STYLES POUR LES MODALS (contes, aide)
+   MODALS (conte, aide)
    ============================================ */
 
 .modal {
@@ -2019,7 +1529,6 @@ html[dir="rtl"] .verbes-table td {
   color: var(--error);
 }
 
-/* Raccourcis clavier */
 .shortcuts-list {
   list-style: none;
   padding: 0;
@@ -2120,6 +1629,14 @@ kbd {
   background: rgba(255, 255, 255, 0.1);
 }
 
+@media (min-width: 768px) {
+  .install-banner {
+    left: auto;
+    right: 20px;
+    max-width: 380px;
+  }
+}
+
 /* ============================================
    SKELETON LOADING
    ============================================ */
@@ -2169,330 +1686,300 @@ kbd {
 }
 
 /* ============================================
-   RESPONSIVE FLASHCARDS
+   RAPPORTS & DOCUMENTS
    ============================================ */
 
-@media (max-width: 480px) {
-  .flashcard {
-    width: 280px;
-    height: 340px;
-  }
-  
-  .flashcard-front .flashcard-word {
-    font-size: 1.4rem;
-  }
-  
-  .flashcard-back .flashcard-def {
-    font-size: 0.95rem;
-  }
-  
-  .flashcard-btn {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.75rem;
-  }
-  
-  .flashcards-controls select,
-  .flashcards-controls button {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.8rem;
-  }
-  
-  .install-banner-content {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .install-banner-text {
-    align-items: center;
-  }
-}
-
-@media (min-width: 768px) {
-  .install-banner {
-    left: auto;
-    right: 20px;
-    max-width: 380px;
-  }
-}
-
-/* ============================================
-   THÈMES LEXICAUX (VOCABULAIRE THÉMATIQUE)
-   ============================================ */
-
-/* En-tête des thèmes */
-.themes-header {
-  text-align: center;
-  margin-bottom: 2rem;
-  padding: 1rem;
-  background: linear-gradient(135deg, var(--bg-card), var(--bg-light));
-  border-radius: var(--radius-lg);
-}
-
-.themes-header p {
-  color: var(--text-muted);
-  font-size: 0.95rem;
-}
-
-/* Grille des thèmes */
-.themes-grid {
+.rapports-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 1.8rem;
-  margin: 2rem 0;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
 }
 
-/* Carte d'un thème */
-.theme-card {
-  background: var(--bg-card);
-  border-radius: var(--radius-lg);
+.rapport-card {
+  background: linear-gradient(180deg, var(--bg-light), var(--bg-card));
   border: 1px solid var(--border);
-  overflow: hidden;
+  border-radius: var(--radius-lg);
+  padding: 1.2rem;
+  box-shadow: var(--shadow-md);
   transition: all var(--transition);
-  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
 }
 
-.theme-card:hover {
-  transform: translateY(-5px);
+.rapport-card:hover {
+  transform: translateY(-4px);
   box-shadow: var(--shadow-xl);
   border-color: var(--accent);
 }
 
-/* En-tête de la carte */
-.theme-header {
-  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-  padding: 1.2rem;
-  text-align: center;
-  cursor: pointer;
-  transition: all var(--transition);
-}
-
-.theme-header:hover {
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-}
-
-.theme-header h3 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: white;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
-.theme-header .theme-count {
-  font-size: 0.8rem;
-  background: rgba(255, 255, 255, 0.25);
+.rapport-type {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--accent);
+  background: rgba(51, 204, 255, 0.15);
   padding: 0.2rem 0.6rem;
-  border-radius: 30px;
-  margin-left: 0.5rem;
+  border-radius: 20px;
+  margin-bottom: 0.8rem;
+  width: fit-content;
 }
 
-/* Description du thème */
-.theme-description {
-  padding: 1rem 1.2rem;
+.rapport-titre {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.rapport-auteur {
   font-size: 0.85rem;
   color: var(--text-muted);
-  background: var(--bg-light);
-  border-bottom: 1px solid var(--border);
-  line-height: 1.5;
+  margin-bottom: 0.5rem;
+  font-style: italic;
 }
 
-/* Contenu du vocabulaire (expandable) */
-.theme-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease-out;
-}
-
-.theme-card.expanded .theme-content {
-  max-height: 600px;
-  overflow-y: auto;
-  transition: max-height 0.5s ease-in;
-}
-
-/* Liste des mots */
-.vocab-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.vocab-item {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  padding: 0.8rem 1rem;
-  border-bottom: 1px solid var(--border);
-  transition: background var(--transition);
-  gap: 0.5rem;
-}
-
-.vocab-item:hover {
-  background: rgba(51, 204, 255, 0.08);
-}
-
-/* Mot en tadaksahak */
-.vocab-tad {
-  font-weight: 700;
-  color: var(--accent);
-  font-size: 1rem;
-  min-width: 120px;
-  font-family: 'Courier New', monospace;
-}
-
-/* Traductions */
-.vocab-translations {
-  flex: 1;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-  font-size: 0.85rem;
-}
-
-.vocab-fr, .vocab-en, .vocab-ar {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 0.2rem;
-}
-
-.vocab-fr { color: var(--text); }
-.vocab-en { color: var(--text-muted); }
-.vocab-ar { color: var(--text-muted); font-family: 'Noto Naskh Arabic', 'Amiri', serif; }
-
-.vocab-lang-label {
-  font-size: 0.65rem;
-  font-weight: 600;
-  opacity: 0.7;
-  background: var(--bg);
-  padding: 0.1rem 0.3rem;
-  border-radius: 4px;
-}
-
-/* Bouton d'expansion */
-.theme-toggle {
-  width: 100%;
-  padding: 0.6rem;
-  background: var(--bg-light);
-  border: none;
-  border-top: 1px solid var(--border);
-  color: var(--accent);
-  font-size: 0.8rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all var(--transition);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
-.theme-toggle:hover {
-  background: var(--bg-card);
+.rapport-meta {
+  font-size: 0.75rem;
   color: var(--primary);
-}
-
-.theme-toggle .toggle-icon {
-  transition: transform 0.3s ease;
-}
-
-.theme-card.expanded .theme-toggle .toggle-icon {
-  transform: rotate(180deg);
-}
-
-/* =========================
-   FILTRES POUR THÈMES
-========================= */
-.themes-filters {
+  margin-bottom: 0.8rem;
   display: flex;
   gap: 0.8rem;
-  justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 2rem;
 }
 
-.themes-filters input {
-  padding: 0.6rem 1rem;
-  border-radius: 40px;
-  border: 1px solid var(--border);
-  background: var(--bg-light);
+.rapport-desc {
+  font-size: 0.85rem;
   color: var(--text);
-  min-width: 250px;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  flex: 1;
 }
 
-.themes-filters input:focus {
-  outline: none;
+.rapport-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.rapport-actions .btn-small {
+  flex: 1;
+  padding: 0.5rem 0.8rem;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.8rem;
+  transition: all var(--transition);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.rapport-actions .btn-small:hover {
+  background: var(--hover);
+  transform: translateY(-2px);
+}
+
+.rapport-card::before {
+  content: "📄";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+html[dir="rtl"] .rapport-card::before {
+  right: auto;
+  left: 10px;
+}
+
+/* ============================================
+   CONTES ET ÉMISSIONS
+   ============================================ */
+
+.contes-grid,
+.emissions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.conte-card,
+.emission-card {
+  background: var(--bg-card);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid var(--border);
+}
+
+.conte-card:hover,
+.emission-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   border-color: var(--accent);
 }
 
-/* =========================
-   VERSION RTL (ARABE)
-========================= */
-html[dir="rtl"] .vocab-tad {
-  text-align: right;
+.conte-card h3,
+.emission-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+  color: var(--accent);
+  border-left: 4px solid var(--accent);
+  padding-left: 0.75rem;
 }
 
-html[dir="rtl"] .vocab-translations {
-  text-align: right;
+.conte-meta,
+.emission-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
 }
 
-html[dir="rtl"] .theme-header h3 {
-  flex-direction: row-reverse;
+.conte-resume,
+.emission-contexte {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: var(--text);
 }
 
-html[dir="rtl"] .theme-count {
-  margin-left: 0;
-  margin-right: 0.5rem;
+details {
+  margin-top: 1rem;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+details summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--accent);
+  padding: 0.5rem 1rem;
+  background: var(--bg-light);
+  border-radius: 12px;
+  display: inline-block;
+  transition: all 0.2s ease;
+  font-size: 0.85rem;
+}
+
+details summary:hover {
+  background: var(--primary);
+  color: white;
+}
+
+details[open] summary {
+  background: var(--primary);
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.conte-versets,
+.emission-versets {
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 0.5rem;
+  scrollbar-width: thin;
+}
+
+.verset {
+  background: var(--bg-light);
+  border-radius: 16px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--accent);
+  transition: all 0.2s ease;
+}
+
+.verset:hover {
+  transform: translateX(4px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.verset-num {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.verset-tad {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+  font-family: 'Courier New', monospace;
+}
+
+.verset-gloss {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  padding: 0.25rem 0;
+  border-top: 1px dashed var(--border);
+}
+
+.verset-trans {
+  font-size: 0.9rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
+  color: var(--text);
+}
+
+.conte-morale {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: rgba(51, 204, 255, 0.1);
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-style: italic;
+  border-left: 3px solid var(--accent);
+}
+
+html[dir="rtl"] .conte-card h3,
+html[dir="rtl"] .emission-card h3 {
+  border-left: none;
+  border-right: 4px solid var(--accent);
+  padding-left: 0;
+  padding-right: 0.75rem;
+}
+
+html[dir="rtl"] .verset {
+  border-left: none;
+  border-right: 4px solid var(--accent);
+}
+
+html[dir="rtl"] .verset:hover {
+  transform: translateX(-4px);
+}
+
 @media (max-width: 768px) {
-  .themes-grid {
+  .contes-grid,
+  .emissions-grid {
     grid-template-columns: 1fr;
-    gap: 1.2rem;
   }
-  
-  .vocab-item {
-    flex-direction: column;
-    padding: 0.6rem 0.8rem;
+  .conte-card,
+  .emission-card {
+    padding: 1rem;
   }
-  
-  .vocab-tad {
-    margin-bottom: 0.3rem;
-  }
-  
-  .vocab-translations {
-    flex-direction: column;
-    gap: 0.3rem;
-  }
-  
-  .theme-header h3 {
+  .conte-card h3,
+  .emission-card h3 {
     font-size: 1.1rem;
   }
-  
-  .themes-filters input {
-    width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  .theme-card {
-    border-radius: var(--radius-md);
-  }
-  
-  .theme-header {
-    padding: 0.8rem;
-  }
-  
-  .vocab-tad {
+  .verset-tad {
     font-size: 0.9rem;
-    min-width: auto;
-  }
-  
-  .vocab-translations {
-    font-size: 0.75rem;
   }
 }
