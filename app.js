@@ -1,6 +1,6 @@
 // ==============================
 // APPLICATION TADAKSAHAK LEARNING
-// VERSION COMPLÈTE (avec contes, émissions, grammaire, flashcards, PWA)
+// VERSION COMPLÈTE (avec dictionnaire enrichi, thèmes, flashcards, PWA)
 // ==============================
 
 console.log("🚀 Démarrage de l'application complète...");
@@ -27,6 +27,7 @@ const i18n = {
     nav_actualites: "📰 Actualités",
     nav_quiz: "❓ Quiz",
     nav_flashcards: "🃏 Flashcards",
+    nav_themes: "📚 Thèmes",
     nav_timeline: "📅 Ligne du temps",
     nav_map: "🗺️ Carte",
     nav_search: "🔍 Recherche livres",
@@ -45,6 +46,7 @@ const i18n = {
     contes_title: "📖 Contes et légendes",
     emissions_title: "🎙️ Émissions radio",
     flashcards_title: "🃏 Flashcards - Apprentissage",
+    themes_title: "📚 Vocabulaire thématique",
     theme_vocab: "📖 Vocabulaire",
     theme_verbs: "🔤 Verbes",
     theme_nouns: "🏷️ Noms",
@@ -118,6 +120,7 @@ const i18n = {
     nav_actualites: "📰 الأخبار",
     nav_quiz: "❓ اختبار",
     nav_flashcards: "🃏 بطاقات التعلم",
+    nav_themes: "📚 المواضيع",
     nav_timeline: "📅 الخط الزمني",
     nav_map: "🗺️ الخريطة",
     nav_search: "🔍 بحث في الكتب",
@@ -136,6 +139,7 @@ const i18n = {
     contes_title: "📖 حكايات وأساطير",
     emissions_title: "🎙️ برامج إذاعية",
     flashcards_title: "🃏 بطاقات التعلم",
+    themes_title: "📚 مفردات موضوعية",
     theme_vocab: "📖 مفردات",
     theme_verbs: "🔤 أفعال",
     theme_nouns: "🏷️ أسماء",
@@ -209,6 +213,7 @@ const i18n = {
     nav_actualites: "📰 News",
     nav_quiz: "❓ Quiz",
     nav_flashcards: "🃏 Flashcards",
+    nav_themes: "📚 Themes",
     nav_timeline: "📅 Timeline",
     nav_map: "🗺️ Map",
     nav_search: "🔍 Search books",
@@ -227,6 +232,7 @@ const i18n = {
     contes_title: "📖 Tales and legends",
     emissions_title: "🎙️ Radio broadcasts",
     flashcards_title: "🃏 Flashcards - Learning",
+    themes_title: "📚 Thematic vocabulary",
     theme_vocab: "📖 Vocabulary",
     theme_verbs: "🔤 Verbs",
     theme_nouns: "🏷️ Nouns",
@@ -292,6 +298,7 @@ let vocabulaire = [];
 let grammaire = null;
 let contesData = null;
 let emissionsData = null;
+let themesData = null;
 let motActuel = null;
 let historique = [];
 let favoris = [];
@@ -566,6 +573,7 @@ function setLanguage(lang) {
   if (document.getElementById("grammaire") && !document.getElementById("grammaire").hidden && grammaire) afficherGrammaire();
   if (document.getElementById("contes") && !document.getElementById("contes").hidden && contesData) afficherContes();
   if (document.getElementById("emissions") && !document.getElementById("emissions").hidden && emissionsData) afficherEmissions();
+  if (document.getElementById("themes") && !document.getElementById("themes").hidden && themesData) afficherThemes();
   if (document.getElementById("flashcards") && !document.getElementById("flashcards").hidden && vocabulaire.length) genererFlashcards();
   if (motActuel) afficherMot(motActuel);
   updateChatSuggestions();
@@ -657,7 +665,7 @@ function traiterSaisie() {
 }
 
 // ------------------------------
-// DICTIONNAIRE - Version enrichie
+// DICTIONNAIRE - Version enrichie (415 mots)
 // ------------------------------
 async function chargerDictionnaire() {
   try {
@@ -1222,6 +1230,84 @@ function afficherEmissions() {
 }
 
 // ------------------------------
+// THÈMES (vocabulaire thématique)
+// ------------------------------
+async function chargerThemes() {
+  try {
+    const response = await fetch('data/themes.json');
+    if (!response.ok) throw new Error();
+    themesData = await response.json();
+    console.log('📚 Thèmes chargés');
+  } catch(e) {
+    console.warn("Erreur chargement thèmes", e);
+    themesData = null;
+  }
+}
+
+function afficherThemes() {
+  const container = document.getElementById("themesContainer");
+  if (!container) return;
+  
+  if (!themesData || !themesData.themes || themesData.themes.length === 0) {
+    container.innerHTML = `<p class="info-message">📚 Aucun thème disponible.</p>`;
+    return;
+  }
+  
+  let html = `<div class="themes-grid">`;
+  
+  for (const theme of themesData.themes) {
+    let titre = currentLanguage === 'fr' ? theme.titre_fr : (currentLanguage === 'en' ? theme.titre_en : theme.titre_ar);
+    let description = currentLanguage === 'fr' ? theme.description_fr : (currentLanguage === 'en' ? theme.description_en : theme.description_ar);
+    
+    html += `
+      <div class="theme-card">
+        <div class="theme-header">
+          <h3>${escapeHtml(titre)}</h3>
+          <span class="theme-count">${theme.mots?.length || 0} mots</span>
+        </div>
+        <p class="theme-description">${escapeHtml(description || '')}</p>
+        <div class="theme-words">
+    `;
+    
+    if (theme.mots && theme.mots.length) {
+      for (const mot of theme.mots.slice(0, 12)) {
+        let sens = currentLanguage === 'fr' ? mot.fr : (currentLanguage === 'en' ? mot.en : mot.ar);
+        html += `
+          <div class="theme-word-item" data-mot="${escapeHtml(mot.tad)}">
+            <span class="theme-word-tad">${escapeHtml(mot.tad)}</span>
+            <span class="theme-word-sens">${escapeHtml(sens)}</span>
+          </div>
+        `;
+      }
+      if (theme.mots.length > 12) {
+        html += `<div class="theme-more">+ ${theme.mots.length - 12} autres mots</div>`;
+      }
+    }
+    
+    html += `
+        </div>
+      </div>
+    `;
+  }
+  
+  html += `</div>`;
+  container.innerHTML = html;
+  
+  // Ajouter les événements de clic sur les mots
+  document.querySelectorAll('.theme-word-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const mot = item.dataset.mot;
+      const motTrouve = vocabulaire.find(v => v.mot === mot);
+      if (motTrouve && sectionSelector) {
+        sectionSelector.value = 'dictionnaire';
+        sectionSelector.dispatchEvent(new Event('change'));
+        setTimeout(() => afficherMot(motTrouve), 100);
+      }
+    });
+  });
+}
+
+// ------------------------------
 // FLASHCARDS
 // ------------------------------
 function genererFlashcards() {
@@ -1748,6 +1834,13 @@ function initKeyboardShortcuts() {
         sectionSelector.dispatchEvent(new Event('change'));
       }
     }
+    if (e.altKey && e.key === 't') {
+      e.preventDefault();
+      if (sectionSelector) {
+        sectionSelector.value = 'themes';
+        sectionSelector.dispatchEvent(new Event('change'));
+      }
+    }
     if (e.key === '?' || (e.shiftKey && e.key === '/')) {
       e.preventDefault();
       showHelpModal();
@@ -1766,6 +1859,7 @@ function showHelpModal() {
           <li><kbd>Alt</kbd> + <kbd>C</kbd> → Chat Bot</li>
           <li><kbd>Alt</kbd> + <kbd>F</kbd> → Flashcards</li>
           <li><kbd>Alt</kbd> + <kbd>L</kbd> → Livres</li>
+          <li><kbd>Alt</kbd> + <kbd>T</kbd> → Thèmes</li>
           <li><kbd>?</kbd> → Cette aide</li>
         </ul>
         <h2>🎨 Thèmes</h2>
@@ -1810,6 +1904,7 @@ function initNavigation() {
     if (id === "grammaire" && grammaire) afficherGrammaire();
     if (id === "contes" && contesData) afficherContes();
     if (id === "emissions" && emissionsData) afficherEmissions();
+    if (id === "themes" && themesData) afficherThemes();
     if (id === "flashcards" && vocabulaire.length) genererFlashcards();
   }
   sectionSelector.addEventListener("change", (e) => showSection(e.target.value));
@@ -1835,6 +1930,7 @@ async function initialiserApplication() {
     await chargerGrammaire();
     await chargerContes();
     await chargerEmissions();
+    await chargerThemes();
     await chargerLivresConnaissance();
     await chargerTimeline();
     
