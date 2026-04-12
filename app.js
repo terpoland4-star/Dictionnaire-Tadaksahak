@@ -1,6 +1,6 @@
 // ==============================
 // APPLICATION TADAKSAHAK LEARNING
-// VERSION FINALE (loader forcé)
+// VERSION COMPLÈTE (avec contes, émissions, grammaire)
 // ==============================
 
 console.log("🚀 Démarrage de l'application complète...");
@@ -15,6 +15,9 @@ const i18n = {
     choose_section: "Choisir une section",
     nav_home: "🏠 Accueil",
     nav_dictionary: "📖 Dictionnaire",
+    nav_grammar: "📚 Grammaire",
+    nav_contes: "📖 Contes",
+    nav_emissions: "🎙️ Émissions",
     nav_chat: "💬 Chat Bot",
     nav_audio: "🎧 Audio",
     nav_photos: "🖼️ Photos",
@@ -36,6 +39,10 @@ const i18n = {
     stat_audios: "audios",
     stat_books: "livres",
     dictionary_title: "📖 Dictionnaire Tadaksahak",
+    grammar_title: "📚 Grammaire Tadaksahak",
+    grammar_desc: "Verbes causatifs et passifs d'après Christiansen-Bolli (2010)",
+    contes_title: "📖 Contes et légendes",
+    emissions_title: "🎙️ Émissions radio",
     prev: "⬅️ Précédent",
     next: "Suivant ➡️",
     alphabet_index: "Index alphabétique",
@@ -84,7 +91,8 @@ const i18n = {
     bot_dico: "📖 Rendez-vous dans la section Dictionnaire.",
     bot_books: "📚 La bibliothèque contient plusieurs ouvrages.",
     bot_audio: "🎵 Section Audio à venir.",
-    bot_help: "🤖 Ce que je sais faire :\n📖 Dictionnaire\n📚 Livres\n🎵 Audio\n💬 Questions culturelles",
+    bot_grammar: "📚 Consultez la section Grammaire pour les verbes causatifs et passifs.",
+    bot_help: "🤖 Ce que je sais faire :\n📖 Dictionnaire\n📚 Livres\n📚 Grammaire\n📖 Contes\n🎙️ Émissions\n🎵 Audio\n💬 Questions culturelles",
     bot_default: "🤔 Je n'ai pas bien compris. Essayez « aide »."
   },
   ar: {
@@ -93,6 +101,9 @@ const i18n = {
     choose_section: "اختر القسم",
     nav_home: "🏠 الرئيسية",
     nav_dictionary: "📖 القاموس",
+    nav_grammar: "📚 قواعد اللغة",
+    nav_contes: "📖 حكايات",
+    nav_emissions: "🎙️ برامج إذاعية",
     nav_chat: "💬 الدردشة",
     nav_audio: "🎧 الصوتيات",
     nav_photos: "🖼️ الصور",
@@ -114,6 +125,10 @@ const i18n = {
     stat_audios: "صوتيات",
     stat_books: "كتب",
     dictionary_title: "📖 قاموس تدكساهق",
+    grammar_title: "📚 قواعد تدكساهق",
+    grammar_desc: "الأفعال السببية والمجهولة حسب كريستيانسن-بولي (٢٠١٠)",
+    contes_title: "📖 حكايات وأساطير",
+    emissions_title: "🎙️ برامج إذاعية",
     prev: "⬅️ السابق",
     next: "التالي ➡️",
     alphabet_index: "الفهرس الأبجدي",
@@ -162,7 +177,8 @@ const i18n = {
     bot_dico: "📖 توجه إلى قسم القاموس.",
     bot_books: "📚 تحتوي المكتبة على عدة كتب.",
     bot_audio: "🎵 قسم الصوتيات قريبًا.",
-    bot_help: "🤖 ما يمكنني فعله:\n📖 القاموس\n📚 الكتب\n🎵 الصوتيات\n💬 أسئلة ثقافية",
+    bot_grammar: "📚 راجع قسم القواعد للأفعال السببية والمجهولة.",
+    bot_help: "🤖 ما يمكنني فعله:\n📖 القاموس\n📚 الكتب\n📚 القواعد\n📖 الحكايات\n🎙️ البرامج\n🎵 الصوتيات\n💬 أسئلة ثقافية",
     bot_default: "🤔 لم أفهم. جرب « مساعدة »."
   },
   en: {
@@ -171,6 +187,9 @@ const i18n = {
     choose_section: "Choose a section",
     nav_home: "🏠 Home",
     nav_dictionary: "📖 Dictionary",
+    nav_grammar: "📚 Grammar",
+    nav_contes: "📖 Tales",
+    nav_emissions: "🎙️ Broadcasts",
     nav_chat: "💬 Chat Bot",
     nav_audio: "🎧 Audio",
     nav_photos: "🖼️ Photos",
@@ -192,6 +211,10 @@ const i18n = {
     stat_audios: "audios",
     stat_books: "books",
     dictionary_title: "📖 Tadaksahak Dictionary",
+    grammar_title: "📚 Tadaksahak Grammar",
+    grammar_desc: "Causative and passive verbs from Christiansen-Bolli (2010)",
+    contes_title: "📖 Tales and legends",
+    emissions_title: "🎙️ Radio broadcasts",
     prev: "⬅️ Previous",
     next: "Next ➡️",
     alphabet_index: "Alphabetical index",
@@ -240,7 +263,8 @@ const i18n = {
     bot_dico: "📖 Go to the Dictionary section.",
     bot_books: "📚 The library contains several books.",
     bot_audio: "🎵 Audio section coming soon.",
-    bot_help: "🤖 What I can do:\n📖 Dictionary\n📚 Books\n🎵 Audio\n💬 Cultural questions",
+    bot_grammar: "📚 Check the Grammar section for causative and passive verbs.",
+    bot_help: "🤖 What I can do:\n📖 Dictionary\n📚 Books\n📚 Grammar\n📖 Tales\n🎙️ Broadcasts\n🎵 Audio\n💬 Cultural questions",
     bot_default: "🤔 I didn't understand. Try 'help'."
   }
 };
@@ -250,6 +274,9 @@ const i18n = {
 // ------------------------------
 let currentLanguage = localStorage.getItem('app_language') || 'fr';
 let vocabulaire = [];
+let grammaire = null;
+let contesData = null;
+let emissionsData = null;
 let motActuel = null;
 let historique = [];
 let favoris = [];
@@ -490,6 +517,9 @@ function setLanguage(lang) {
   if (document.getElementById("map") && !document.getElementById("map").hidden && mapInitialized) initialiserCarte();
   if (document.getElementById("dashboard") && !document.getElementById("dashboard").hidden) afficherDashboard();
   if (document.getElementById("rapports") && !document.getElementById("rapports").hidden) afficherRapports();
+  if (document.getElementById("grammaire") && !document.getElementById("grammaire").hidden && grammaire) afficherGrammaire();
+  if (document.getElementById("contes") && !document.getElementById("contes").hidden && contesData) afficherContes();
+  if (document.getElementById("emissions") && !document.getElementById("emissions").hidden && emissionsData) afficherEmissions();
   if (motActuel) afficherMot(motActuel);
   updateChatSuggestions();
   afficherMotDuJour();
@@ -544,6 +574,9 @@ function reponseBot(txt) {
   if (clean.includes("bonjour") || clean.includes("salut") || clean.includes("hello") || clean.includes("salam")) return i18n[currentLanguage].bot_greeting;
   if (clean.includes("merci") || clean.includes("thanks") || clean.includes("شكرا")) return i18n[currentLanguage].bot_thanks;
   if (clean.includes("dictionnaire") || clean.includes("dico") || clean.includes("mot") || clean.includes("قاموس")) return i18n[currentLanguage].bot_dico;
+  if (clean.includes("grammaire") || clean.includes("grammar") || clean.includes("verbe") || clean.includes("causatif") || clean.includes("passif")) return i18n[currentLanguage].bot_grammar;
+  if (clean.includes("conte") || clean.includes("histoire") || clean.includes("légende") || clean.includes("حكاية")) return "📖 Rendez-vous dans la section Contes pour découvrir les légendes et histoires traditionnelles Idaksahak.";
+  if (clean.includes("émission") || clean.includes("radio") || clean.includes("broadcast")) return "🎙️ Consultez la section Émissions pour écouter les archives radiophoniques.";
   if (clean.includes("audio") || clean.includes("musique")) return i18n[currentLanguage].bot_audio;
   if (clean.includes("aide") || clean.includes("help") || clean.includes("مساعدة")) return i18n[currentLanguage].bot_help;
   const resultatLivre = chercherDansLivres(txt);
@@ -616,59 +649,26 @@ function afficherMot(item) {
     let def = "";
     let categorieValue = item.cat || "";
     
-    // Traduction des catégories grammaticales
     const categoriesFr = {
-      "vt.": "Verbe transitif",
-      "vi.": "Verbe intransitif",
-      "n.": "Nom",
-      "npl.": "Nom (pluriel uniquement)",
-      "adj.": "Adjectif",
-      "adv.": "Adverbe",
-      "conj.": "Conjonction",
-      "postp.": "Postposition",
-      "prep.": "Préposition",
-      "pron.": "Pronom",
-      "dem.": "Démonstratif",
-      "num.": "Numéral",
-      "quantifier": "Quantifieur",
-      "phrase": "Expression",
-      "idiom": "Idiome"
+      "vt.": "Verbe transitif", "vi.": "Verbe intransitif", "n.": "Nom",
+      "npl.": "Nom (pluriel uniquement)", "adj.": "Adjectif", "adv.": "Adverbe",
+      "conj.": "Conjonction", "postp.": "Postposition", "prep.": "Préposition",
+      "pron.": "Pronom", "dem.": "Démonstratif", "num.": "Numéral",
+      "quantifier": "Quantifieur", "phrase": "Expression", "idiom": "Idiome"
     };
-    
     const categoriesEn = {
-      "vt.": "Transitive verb",
-      "vi.": "Intransitive verb",
-      "n.": "Noun",
-      "npl.": "Noun (plural only)",
-      "adj.": "Adjective",
-      "adv.": "Adverb",
-      "conj.": "Conjunction",
-      "postp.": "Postposition",
-      "prep.": "Preposition",
-      "pron.": "Pronoun",
-      "dem.": "Demonstrative",
-      "num.": "Numeral",
-      "quantifier": "Quantifier",
-      "phrase": "Phrase",
-      "idiom": "Idiom"
+      "vt.": "Transitive verb", "vi.": "Intransitive verb", "n.": "Noun",
+      "npl.": "Noun (plural only)", "adj.": "Adjective", "adv.": "Adverb",
+      "conj.": "Conjunction", "postp.": "Postposition", "prep.": "Preposition",
+      "pron.": "Pronoun", "dem.": "Demonstrative", "num.": "Numeral",
+      "quantifier": "Quantifier", "phrase": "Phrase", "idiom": "Idiom"
     };
-    
     const categoriesAr = {
-      "vt.": "فعل متعد",
-      "vi.": "فعل لازم",
-      "n.": "اسم",
-      "npl.": "اسم (جمع فقط)",
-      "adj.": "صفة",
-      "adv.": "ظرف",
-      "conj.": "حرف عطف",
-      "postp.": "حرف جر لاحق",
-      "prep.": "حرف جر",
-      "pron.": "ضمير",
-      "dem.": "اسم إشارة",
-      "num.": "عدد",
-      "quantifier": "محدد كمي",
-      "phrase": "عبارة",
-      "idiom": "تعبير اصطلاحي"
+      "vt.": "فعل متعد", "vi.": "فعل لازم", "n.": "اسم",
+      "npl.": "اسم (جمع فقط)", "adj.": "صفة", "adv.": "ظرف",
+      "conj.": "حرف عطف", "postp.": "حرف جر لاحق", "prep.": "حرف جر",
+      "pron.": "ضمير", "dem.": "اسم إشارة", "num.": "عدد",
+      "quantifier": "محدد كمي", "phrase": "عبارة", "idiom": "تعبير اصطلاحي"
     };
     
     let categorieAffichee = categorieValue;
@@ -926,6 +926,220 @@ function showWordNotification() {
 }
 
 // ------------------------------
+// GRAMMAIRE
+// ------------------------------
+async function chargerGrammaire() {
+  try {
+    const response = await fetch('data/grammaire.json');
+    if (!response.ok) throw new Error();
+    grammaire = await response.json();
+    console.log('📚 Grammaire chargée');
+  } catch(e) {
+    console.warn("Erreur chargement grammaire", e);
+    grammaire = null;
+  }
+}
+
+function afficherGrammaire() {
+  const container = document.getElementById("grammaireContainer");
+  if (!container) return;
+  
+  if (!grammaire || !grammaire.sections) {
+    container.innerHTML = `<p class="info-message">📚 Données grammaticales non disponibles.</p>`;
+    return;
+  }
+  
+  let html = `<div class="grammaire-intro"><p>${i18n[currentLanguage].grammar_desc}</p></div>`;
+  
+  for (const section of grammaire.sections) {
+    let sectionTitle = currentLanguage === 'fr' ? section.titre_fr : (currentLanguage === 'en' ? section.titre_en : section.titre_ar);
+    let sectionDesc = currentLanguage === 'fr' ? section.description_fr : (currentLanguage === 'en' ? section.description_en : section.description_ar);
+    
+    html += `<div class="grammaire-section">
+      <h3>${escapeHtml(sectionTitle)}</h3>
+      <p class="section-desc">${escapeHtml(sectionDesc)}</p>`;
+    
+    for (const subsection of section.subsections) {
+      let subTitle = currentLanguage === 'fr' ? subsection.titre_fr : (currentLanguage === 'en' ? subsection.titre_en : subsection.titre_ar);
+      let subDesc = currentLanguage === 'fr' ? subsection.description_fr : (currentLanguage === 'en' ? subsection.description_en : subsection.description_ar);
+      
+      html += `<div class="grammaire-subsection">
+        <h4>${escapeHtml(subTitle)}</h4>`;
+      if (subDesc) html += `<p class="sub-desc">${escapeHtml(subDesc)}</p>`;
+      
+      if (subsection.verbes && subsection.verbes.length) {
+        html += `<div class="verbes-table-wrapper">
+          <table class="verbes-table">
+            <thead>
+              <tr><th>${currentLanguage === 'fr' ? 'Racine' : (currentLanguage === 'en' ? 'Root' : 'الجذر')}</th>
+                <th>${currentLanguage === 'fr' ? 'Sens' : (currentLanguage === 'en' ? 'Meaning' : 'المعنى')}</th>
+                <th>${currentLanguage === 'fr' ? 'Causatif' : (currentLanguage === 'en' ? 'Causative' : 'سببي')}</th>
+                ${subsection.verbes[0].passif ? `<th>${currentLanguage === 'fr' ? 'Passif' : (currentLanguage === 'en' ? 'Passive' : 'مجهول')}</th>` : ''}
+              </tr>
+            </thead>
+            <tbody>`;
+        
+        for (const verbe of subsection.verbes) {
+          let sens = currentLanguage === 'fr' ? verbe.sens_fr : (currentLanguage === 'en' ? verbe.sens_en : verbe.sens_ar);
+          html += `<tr>
+            <td><strong>${escapeHtml(verbe.imperatif || verbe.racine_tad || '—')}</strong></td>
+            <td>${escapeHtml(sens)}</td>
+            <td><code>${escapeHtml(verbe.causatif || '—')}</code></td>`;
+          if (verbe.passif) {
+            html += `<td><code>${escapeHtml(verbe.passif)}</code></td>`;
+          }
+          html += `</tr>`;
+        }
+        html += `</tbody></table></div>`;
+      }
+      html += `</div>`;
+    }
+    html += `</div>`;
+  }
+  
+  container.innerHTML = html;
+}
+
+// ------------------------------
+// CONTES
+// ------------------------------
+async function chargerContes() {
+  try {
+    const response = await fetch('data/conte.json');
+    if (!response.ok) throw new Error();
+    contesData = await response.json();
+    console.log('📖 Contes chargés');
+  } catch(e) {
+    console.warn("Erreur chargement contes", e);
+    contesData = null;
+  }
+}
+
+function afficherContes() {
+  const container = document.getElementById("contesContainer");
+  if (!container) return;
+  
+  if (!contesData) {
+    container.innerHTML = `<p class="info-message">📖 Aucun conte disponible.</p>`;
+    return;
+  }
+  
+  let html = `<div class="contes-grid">`;
+  const contes = Array.isArray(contesData) ? contesData : [contesData];
+  
+  for (const conte of contes) {
+    let titre = currentLanguage === 'fr' ? conte.titre_fr : (currentLanguage === 'en' ? conte.titre_en : conte.titre_ar);
+    let resume = currentLanguage === 'fr' ? conte.resume_fr : (currentLanguage === 'en' ? conte.resume_en : conte.resume_ar);
+    let morale = currentLanguage === 'fr' ? conte.morale_fr : (currentLanguage === 'en' ? conte.morale_en : conte.morale_ar);
+    
+    html += `
+      <div class="conte-card">
+        <h3>${escapeHtml(titre)}</h3>
+        <div class="conte-meta">
+          <span>📜 ${escapeHtml(conte.type || 'conte')}</span>
+          <span>🗣️ ${escapeHtml(conte.narrateur || 'Tradition orale')}</span>
+        </div>
+        <p class="conte-resume">${escapeHtml(resume || '')}</p>
+        <details class="conte-details">
+          <summary>📖 Lire le conte</summary>
+          <div class="conte-versets">
+    `;
+    
+    if (conte.versets && conte.versets.length) {
+      for (const verset of conte.versets) {
+        html += `
+          <div class="verset">
+            <div class="verset-num">${verset.numero}</div>
+            <div class="verset-tad"><strong>${escapeHtml(verset.tadaksahak || '')}</strong></div>
+            <div class="verset-gloss">${escapeHtml(verset.glose_fr || '')}</div>
+            <div class="verset-trans">${escapeHtml(currentLanguage === 'fr' ? verset.traduction_fr : (currentLanguage === 'en' ? verset.traduction_en : (verset.traduction_ar || verset.traduction_fr)))}</div>
+          </div>
+        `;
+      }
+    }
+    
+    html += `
+          </div>
+        </details>
+        ${morale ? `<div class="conte-morale"><strong>💡 Morale :</strong> ${escapeHtml(morale)}</div>` : ''}
+      </div>
+    `;
+  }
+  
+  html += `</div>`;
+  container.innerHTML = html;
+}
+
+// ------------------------------
+// ÉMISSIONS
+// ------------------------------
+async function chargerEmissions() {
+  try {
+    const response = await fetch('data/emission.json');
+    if (!response.ok) throw new Error();
+    emissionsData = await response.json();
+    console.log('🎙️ Émissions chargées');
+  } catch(e) {
+    console.warn("Erreur chargement émissions", e);
+    emissionsData = null;
+  }
+}
+
+function afficherEmissions() {
+  const container = document.getElementById("emissionsContainer");
+  if (!container) return;
+  
+  if (!emissionsData) {
+    container.innerHTML = `<p class="info-message">🎙️ Aucune émission disponible.</p>`;
+    return;
+  }
+  
+  let html = `<div class="emissions-grid">`;
+  const emissions = Array.isArray(emissionsData) ? emissionsData : [emissionsData];
+  
+  for (const emission of emissions) {
+    let titre = currentLanguage === 'fr' ? emission.titre_fr : (currentLanguage === 'en' ? emission.titre_en : emission.titre_ar);
+    let contexte = currentLanguage === 'fr' ? emission.contexte_fr : (currentLanguage === 'en' ? emission.contexte_en : emission.contexte_ar);
+    
+    html += `
+      <div class="emission-card">
+        <h3>🎙️ ${escapeHtml(titre)}</h3>
+        <div class="emission-meta">
+          <span>📅 ${emission.date || '?'}</span>
+          <span>🗣️ ${escapeHtml(emission.orateur || 'Inconnu')}</span>
+          <span>📍 ${escapeHtml(emission.lieu || '?')}</span>
+        </div>
+        <p class="emission-contexte">${escapeHtml(contexte || '')}</p>
+        <details class="emission-details">
+          <summary>🎧 Lire la transcription</summary>
+          <div class="emission-versets">
+    `;
+    
+    if (emission.versets && emission.versets.length) {
+      for (const verset of emission.versets) {
+        html += `
+          <div class="verset">
+            <div class="verset-num">${verset.numero}</div>
+            <div class="verset-tad"><strong>${escapeHtml(verset.tadaksahak || '')}</strong></div>
+            <div class="verset-gloss">${escapeHtml(verset.glose_fr || '')}</div>
+            <div class="verset-trans">${escapeHtml(currentLanguage === 'fr' ? verset.traduction_fr : (currentLanguage === 'en' ? verset.traduction_en : (verset.traduction_ar || verset.traduction_fr)))}</div>
+          </div>
+        `;
+      }
+    }
+    
+    html += `
+          </div>
+        </details>
+      </div>
+    `;
+  }
+  
+  html += `</div>`;
+  container.innerHTML = html;
+}
+
+// ------------------------------
 // QUIZ
 // ------------------------------
 async function chargerQuiz() {
@@ -1112,7 +1326,6 @@ async function afficherLivres() {
     if (!response.ok) throw new Error();
     const allLivres = await response.json();
     let langueCible = currentLanguage === "fr" ? "Français" : (currentLanguage === "ar" ? "Arabe" : "English");
-    // Exclure les rapports (type === "rapport")
     const livres = allLivres.filter(l => l.langue === langueCible && l.type !== "rapport");
     if (!livres.length) { cont.innerHTML = `<p class="info-message">📚 Aucun livre dans cette langue.</p>`; return; }
     cont.innerHTML = livres.map(livre => `
@@ -1255,6 +1468,9 @@ function initNavigation() {
     if (id === "search") rechercherPleinTexte();
     if (id === "dashboard") afficherDashboard();
     if (id === "rapports") afficherRapports();
+    if (id === "grammaire" && grammaire) afficherGrammaire();
+    if (id === "contes" && contesData) afficherContes();
+    if (id === "emissions" && emissionsData) afficherEmissions();
   }
   sectionSelector.addEventListener("change", (e) => showSection(e.target.value));
   const savedSection = localStorage.getItem("tadaksahak_active_section");
@@ -1275,6 +1491,9 @@ async function initialiserApplication() {
     initNavigation();
     
     await chargerDictionnaire();
+    await chargerGrammaire();
+    await chargerContes();
+    await chargerEmissions();
     await chargerLivresConnaissance();
     await chargerTimeline();
     
