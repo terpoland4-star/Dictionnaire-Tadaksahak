@@ -577,16 +577,21 @@ function traiterSaisie() {
 }
 
 // ------------------------------
-// DICTIONNAIRE
+// DICTIONNAIRE - Version enrichie
 // ------------------------------
 async function chargerDictionnaire() {
   try {
     const response = await fetch('data/mots.json');
     if (!response.ok) throw new Error();
     vocabulaire = await response.json();
+    console.log(`📖 Dictionnaire chargé : ${vocabulaire.length} mots`);
   } catch(e) {
     console.warn("Erreur chargement dictionnaire, utilisation fallback", e);
-    vocabulaire = [{ mot: "Báy", cat: "vt.", fr: "Pouvoir (faire)", en: "Able, to be" }];
+    vocabulaire = [
+      { mot: "Báy", cat: "vt.", fr: "Pouvoir (faire)", ar: "قدر على (فعل)", en: "Able, to be" },
+      { mot: "Yiddár", cat: "vi.", fr: "Être en vie", ar: "يكون حياً", en: "Alive, to be" },
+      { mot: "Káamil", cat: "quantifier", fr: "Tout", ar: "كل", en: "All" }
+    ];
   }
   motsListe = vocabulaire.map((item, idx) => ({ ...item, index: idx }));
   if (vocabulaire.length) {
@@ -609,30 +614,102 @@ function afficherMot(item) {
   if (motElem) motElem.textContent = item.mot;
   if (defElem) {
     let def = "";
-    if (currentLanguage === "fr" && item.fr) def = item.fr;
-    else if (currentLanguage === "en" && item.en) def = item.en;
-    else if (currentLanguage === "ar" && item.ar) def = item.ar;
-    else if (item.fr) def = item.fr;
-    else def = "Définition non disponible";
+    let categorieValue = item.cat || "";
     
-    let categorieLabel = "";
-    let defaultCat = "";
+    // Traduction des catégories grammaticales
+    const categoriesFr = {
+      "vt.": "Verbe transitif",
+      "vi.": "Verbe intransitif",
+      "n.": "Nom",
+      "npl.": "Nom (pluriel uniquement)",
+      "adj.": "Adjectif",
+      "adv.": "Adverbe",
+      "conj.": "Conjonction",
+      "postp.": "Postposition",
+      "prep.": "Préposition",
+      "pron.": "Pronom",
+      "dem.": "Démonstratif",
+      "num.": "Numéral",
+      "quantifier": "Quantifieur",
+      "phrase": "Expression",
+      "idiom": "Idiome"
+    };
+    
+    const categoriesEn = {
+      "vt.": "Transitive verb",
+      "vi.": "Intransitive verb",
+      "n.": "Noun",
+      "npl.": "Noun (plural only)",
+      "adj.": "Adjective",
+      "adv.": "Adverb",
+      "conj.": "Conjunction",
+      "postp.": "Postposition",
+      "prep.": "Preposition",
+      "pron.": "Pronoun",
+      "dem.": "Demonstrative",
+      "num.": "Numeral",
+      "quantifier": "Quantifier",
+      "phrase": "Phrase",
+      "idiom": "Idiom"
+    };
+    
+    const categoriesAr = {
+      "vt.": "فعل متعد",
+      "vi.": "فعل لازم",
+      "n.": "اسم",
+      "npl.": "اسم (جمع فقط)",
+      "adj.": "صفة",
+      "adv.": "ظرف",
+      "conj.": "حرف عطف",
+      "postp.": "حرف جر لاحق",
+      "prep.": "حرف جر",
+      "pron.": "ضمير",
+      "dem.": "اسم إشارة",
+      "num.": "عدد",
+      "quantifier": "محدد كمي",
+      "phrase": "عبارة",
+      "idiom": "تعبير اصطلاحي"
+    };
+    
+    let categorieAffichee = categorieValue;
+    if (currentLanguage === "fr" && categoriesFr[categorieValue]) categorieAffichee = categoriesFr[categorieValue];
+    else if (currentLanguage === "en" && categoriesEn[categorieValue]) categorieAffichee = categoriesEn[categorieValue];
+    else if (currentLanguage === "ar" && categoriesAr[categorieValue]) categorieAffichee = categoriesAr[categorieValue];
+    
     if (currentLanguage === "fr") {
-      categorieLabel = "Catégorie :";
-      defaultCat = "Général";
-    } else if (currentLanguage === "en") {
-      categorieLabel = "Category:";
-      defaultCat = "General";
-    } else if (currentLanguage === "ar") {
-      categorieLabel = "الفئة:";
-      defaultCat = "عام";
+      def = item.fr || item.en || "";
+      defElem.innerHTML = `<p><strong>📂 Catégorie :</strong> ${escapeHtml(categorieAffichee)}</p>
+        <p><strong>🇫🇷 Définition :</strong> ${escapeHtml(def)}</p>
+        ${item.ar ? `<p><strong>🇸🇦 بالعربية :</strong> ${escapeHtml(item.ar)}</p>` : ''}
+        ${item.en && currentLanguage !== 'en' ? `<p><strong>🇬🇧 English :</strong> ${escapeHtml(item.en)}</p>` : ''}
+        <div style="margin-top: 1rem; display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
+          <button class="btn-small" id="shareWordBtn">📤 ${i18n[currentLanguage].share}</button>
+          <button class="btn-small" id="favoriteWordBtn">⭐ ${favoris.includes(item.mot) ? i18n[currentLanguage].remove_favorite : i18n[currentLanguage].add_favorite}</button>
+        </div>`;
+    } 
+    else if (currentLanguage === "en") {
+      def = item.en || item.fr || "";
+      defElem.innerHTML = `<p><strong>📂 Category:</strong> ${escapeHtml(categorieAffichee)}</p>
+        <p><strong>🇬🇧 Definition:</strong> ${escapeHtml(def)}</p>
+        ${item.ar ? `<p><strong>🇸🇦 بالعربية :</strong> ${escapeHtml(item.ar)}</p>` : ''}
+        ${item.fr ? `<p><strong>🇫🇷 Français :</strong> ${escapeHtml(item.fr)}</p>` : ''}
+        <div style="margin-top: 1rem; display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
+          <button class="btn-small" id="shareWordBtn">📤 ${i18n[currentLanguage].share}</button>
+          <button class="btn-small" id="favoriteWordBtn">⭐ ${favoris.includes(item.mot) ? i18n[currentLanguage].remove_favorite : i18n[currentLanguage].add_favorite}</button>
+        </div>`;
+    }
+    else if (currentLanguage === "ar") {
+      def = item.ar || item.fr || "";
+      defElem.innerHTML = `<p><strong>📂 الفئة :</strong> ${escapeHtml(categorieAffichee)}</p>
+        <p><strong>🇸🇦 التعريف :</strong> ${escapeHtml(def)}</p>
+        ${item.fr ? `<p><strong>🇫🇷 Français :</strong> ${escapeHtml(item.fr)}</p>` : ''}
+        ${item.en ? `<p><strong>🇬🇧 English :</strong> ${escapeHtml(item.en)}</p>` : ''}
+        <div style="margin-top: 1rem; display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
+          <button class="btn-small" id="shareWordBtn">📤 ${i18n[currentLanguage].share}</button>
+          <button class="btn-small" id="favoriteWordBtn">⭐ ${favoris.includes(item.mot) ? i18n[currentLanguage].remove_favorite : i18n[currentLanguage].add_favorite}</button>
+        </div>`;
     }
     
-    defElem.innerHTML = `<p><strong>📂 ${categorieLabel}</strong> ${item.cat || defaultCat}</p><p><strong>${currentLanguage.toUpperCase()} :</strong> ${escapeHtml(def)}</p>
-      <div style="margin-top: 1rem; display: flex; gap: 0.5rem; justify-content: center;">
-        <button class="btn-small" id="shareWordBtn">📤 ${i18n[currentLanguage].share}</button>
-        <button class="btn-small" id="favoriteWordBtn">⭐ ${favoris.includes(item.mot) ? i18n[currentLanguage].remove_favorite : i18n[currentLanguage].add_favorite}</button>
-      </div>`;
     setTimeout(() => {
       document.getElementById("shareWordBtn")?.addEventListener("click", () => partagerMot(item));
       document.getElementById("favoriteWordBtn")?.addEventListener("click", () => basculerFavori(item));
@@ -642,7 +719,7 @@ function afficherMot(item) {
     audioElem.src = `audio/${item.audio}`;
     audioElem.hidden = false;
     audioElem.load();
-  } else audioElem.hidden = true;
+  } else if (audioElem) audioElem.hidden = true;
   ajouterHistorique(item.mot);
 }
 
@@ -659,13 +736,14 @@ function chercher(queryRaw) {
     if (motNorm.includes(query)) score = motNorm.startsWith(query) ? 0 : 1;
     if (score > 1 && item.fr && normalizeText(item.fr).includes(query)) score = 2;
     if (score > 2 && item.en && normalizeText(item.en).includes(query)) score = 3;
+    if (score > 3 && item.ar && normalizeText(item.ar).includes(query)) score = 4;
     if (score === Infinity && item.mot) {
       const dist = levenshtein(motNorm, query);
-      if (dist <= Math.max(2, Math.floor(query.length*0.4))) score = 4+dist;
+      if (dist <= Math.max(2, Math.floor(query.length*0.4))) score = 5 + dist;
     }
     if (score < Infinity) resultats.push({ item, score });
   }
-  return resultats.sort((a,b)=>a.score-b.score).slice(0,12).map(r=>r.item);
+  return resultats.sort((a,b)=>a.score-b.score).slice(0,15).map(r=>r.item);
 }
 
 if (searchBar) {
@@ -684,7 +762,13 @@ if (searchBar) {
     } else {
       resultats.forEach(item => {
         const li = document.createElement("li");
-        li.innerHTML = `<strong>${escapeHtml(item.mot)}</strong> — ${escapeHtml(item.fr || item.en || "")}`;
+        let extraInfo = "";
+        if (currentLanguage === "fr" && item.fr) extraInfo = item.fr;
+        else if (currentLanguage === "en" && item.en) extraInfo = item.en;
+        else if (currentLanguage === "ar" && item.ar) extraInfo = item.ar;
+        else extraInfo = item.fr || item.en || "";
+        
+        li.innerHTML = `<strong>${escapeHtml(item.mot)}</strong> <span class="mot-cat">(${escapeHtml(item.cat || '')})</span><br><small>${escapeHtml(extraInfo.substring(0, 80))}${extraInfo.length > 80 ? '…' : ''}</small>`;
         li.style.cursor = "pointer";
         li.addEventListener("click", () => {
           searchBar.value = item.mot;
@@ -824,7 +908,7 @@ function afficherMotDuJour() {
   if (!mot) return;
   const item = vocabulaire.find(v => v.mot === mot);
   if (!item) return;
-  let definition = currentLanguage === 'fr' ? item.fr : (currentLanguage === 'en' ? item.en : item.fr);
+  let definition = currentLanguage === 'fr' ? item.fr : (currentLanguage === 'en' ? item.en : item.ar);
   container.innerHTML = `<strong>${i18n[currentLanguage].word_of_day}</strong> : ${escapeHtml(mot)} — ${escapeHtml(definition)}`;
 }
 
