@@ -1,0 +1,501 @@
+{
+  "meta": {
+    "titre": "Relative Clauses in Tadaksahak",
+    "auteurs": "Regula Christiansen & Stephen H. Levinsohn",
+    "annee": 2003,
+    "description": "Analyse des trois stratégies de relativisation en tadaksahak"
+  },
+  "strategies": [
+    {
+      "id": "relative_pronoun",
+      "marqueur_sg": "ayo",
+      "marqueur_pl": "ayondo",
+      "variante_pl": "endayo",
+      "usage_fr": "Nom DÉFINI - proposition RESTRICTIVE (identifie le référent)",
+      "usage_en": "DEFINITE noun - RESTRICTIVE clause (identifies the referent)",
+      "usage_ar": "اسم مَعْرِفَة - جملة مُقَيِّدَة (تُحدد المرجع)",
+      "position": "immédiatement après le nom qu'il modifie",
+      "exemples": [
+        {
+          "id": 1,
+          "tadaksahak": "Ak a-ayimur-kat ayn barar [ayo a-bara Bamakoy]?",
+          "glose_fr": "QST 3s-PERF-ramener-VEN 3s.GEN enfant REL 3s-PERF-être Bamako",
+          "traduction_fr": "A-t-il ramené son enfant qui est à Bamako ?",
+          "traduction_en": "Did he bring back his child who is in Bamako?",
+          "traduction_ar": "هل أحضر طفله الذي في باماكو؟"
+        },
+        {
+          "id": 2,
+          "tadaksahak": "Ayal [ayo aya-aymay nin ka] a-ben.",
+          "glose_fr": "travail REL 1s-PERF-avoir 2s LOC 3s-PERF-finir",
+          "traduction_fr": "Le travail que j'ai pour toi est fini.",
+          "traduction_en": "The work that I have for you is finished.",
+          "traduction_ar": "العمل الذي لدي من أجلك انتهى."
+        },
+        {
+          "id": 4,
+          "tadaksahak": "A-emi a-su wuk awici [ayo a-da azruf ka].",
+          "glose_fr": "forgeron 3s-PERF-frotter bracelet REL 3s-PERF-faire argent LOC",
+          "traduction_fr": "Le forgeron a frotté le bracelet qui est en argent.",
+          "traduction_en": "The blacksmith rubbed the bracelet that is made of silver.",
+          "traduction_ar": "الحديد مسح السوار المصنوع من الفضة."
+        },
+        {
+          "id": 5,
+          "tadaksahak": "Ci na imunas-kon [ayondo a-zumbu Sali daw]?",
+          "glose_fr": "qui DET chameliers REL.PL 3p-PERF-descendre Rhali LOC",
+          "traduction_fr": "Qui sont les chameliers qui sont descendus chez Rhali ?",
+          "traduction_en": "Who are the camel riders who dismounted at Rhali's place?",
+          "traduction_ar": "من هم ركاب الإبل الذين نزلوا عند رالي؟"
+        },
+        {
+          "id": 8,
+          "tadaksahak": "Kuna ayay bora [ayo a-taw-kat neda]!",
+          "glose_fr": "trouve 1s personne REL 3s-PERF-arriver-VEN ici",
+          "traduction_fr": "Amène-moi la personne qui est arrivée ici !",
+          "traduction_en": "Get me the person who arrived here!",
+          "traduction_ar": "أحضر لي الشخص الذي وصل إلى هنا!"
+        },
+        {
+          "id": 11,
+          "tadaksahak": "Ajaqal [ayo aya-aymay nin ka] a-ben.",
+          "glose_fr": "travail REL 1s-PERF-avoir 2s LOC 3s-PERF-finir",
+          "traduction_fr": "Le travail que j'ai pour toi est fini.",
+          "traduction_en": "The work I have for you is finished.",
+          "traduction_ar": "العمل الذي لدي من أجلك انتهى."
+        },
+        {
+          "id": 16,
+          "tadaksahak": "Aya-guna bora [ayo se a-na taraswoyt].",
+          "glose_fr": "1s-PERF-voir personne REL BEN 3s-PERF-donner robe",
+          "traduction_fr": "J'ai vu la personne à qui il a donné une robe.",
+          "traduction_en": "I saw the person to whom he had given a dress.",
+          "traduction_ar": "رأيت الشخص الذي أعطى له ثوباً."
+        },
+        {
+          "id": 17,
+          "tadaksahak": "Alman [ayo se a-yikam] a-wuzuwuz.",
+          "glose_fr": "troupeau REL BEN 3s-PERF-garder 3s-PERF-se.disperser",
+          "traduction_fr": "Le troupeau qu'il gardait s'est dispersé.",
+          "traduction_en": "The herd that he guarded was scattered.",
+          "traduction_ar": "القطيع الذي كان يرعاه تفرق."
+        },
+        {
+          "id": 18,
+          "tadaksahak": "A-yed in angu [ayo ka i-yizday].",
+          "glose_fr": "3s-PERF-retourner 3p.GEN lieu REL LOC 3p-PERF-habiter",
+          "traduction_fr": "Il est retourné à l'endroit où ils habitent.",
+          "traduction_en": "He returned to the place where they live.",
+          "traduction_ar": "عاد إلى المكان الذي يعيشون فيه."
+        },
+        {
+          "id": 22,
+          "tadaksahak": "Zayri [ayo ka ni-sebded i ayan mo ka], zayri [ayo ayda] aya-b-na ana tayit.",
+          "glose_fr": "jour REL LOC 2s-arrêter 3p 1s.GEN face LOC jour REL même 1s-IMPF-donner 2s.BEN génisse",
+          "traduction_fr": "Le jour où tu les amèneras devant moi, ce même jour je te donnerai une génisse.",
+          "traduction_en": "The day that you bring them before me, that same day I will give you a heifer.",
+          "traduction_ar": "اليوم الذي تحضرهم أمامي، في ذلك اليوم stesso سأعطيك عجلة."
+        },
+        {
+          "id": 23,
+          "tadaksahak": "Asafat a-taw [ayo ka i-ten].",
+          "glose_fr": "moment 3s-PERF-arriver REL LOC 3p-IMPF-arriver",
+          "traduction_fr": "Le moment où ils arrivent habituellement est arrivé.",
+          "traduction_en": "The moment has come when they normally arrive.",
+          "traduction_ar": "لقد حانت اللحظة التي يصلون فيها عادة."
+        },
+        {
+          "id": 25,
+          "tadaksahak": "Bay lam a-se-bay umuk [ayo enda a-te-da a].",
+          "glose_fr": "savoir EXCL 1s-NEG.IMPF-savoir manière REL COM 1s-FUT-faire 3s",
+          "traduction_fr": "Je ne sais vraiment pas comment je vais faire.",
+          "traduction_en": "I really don't know how I am going to do it.",
+          "traduction_ar": "حقاً لا أعرف كيف سأفعلها."
+        },
+        {
+          "id": 30,
+          "tadaksahak": "Bora [ayo a-kedi ta-yamt] a-zumbu-kat.",
+          "glose_fr": "personne REL 3s-PERF-être.sur chameau 3s-PERF-descendre-VEN",
+          "traduction_fr": "La personne qui était sur le chameau est descendue.",
+          "traduction_en": "The person who sat on the camel dismounted.",
+          "traduction_ar": "الشخص الذي كان على الجمل نزل."
+        },
+        {
+          "id": 31,
+          "tadaksahak": "Man imunsuwa [ayondo a-b-furan andi se] a-ci ande-deraw?",
+          "glose_fr": "où nourriture.PL REL.PL 1s-IMPF-jeter 2p BEN 1s-IMPF-dire 2p-IMPF-partager",
+          "traduction_fr": "Où sont les nourritures que je vous ai jetées en vous disant de les partager ?",
+          "traduction_en": "Where are the foods that I threw to you, telling you to share them?",
+          "traduction_ar": "أين الأطعمة التي رميتها لكم وأنا أقول لكم تقاسمونها؟"
+        },
+        {
+          "id": 33,
+          "tadaksahak": "A-na a se bari [ayo senda b-zegedel].",
+          "glose_fr": "3s-PERF-donner 3s BEN cheval REL LÀ-BAS IMPF-boitier",
+          "traduction_fr": "Il lui a donné ce cheval qui boitait.",
+          "traduction_en": "He gave him that horse which limped.",
+          "traduction_ar": "أعطاه ذلك الحصان الذي كان يعرج."
+        },
+        {
+          "id": 34,
+          "tadaksahak": "Dini bari [ayo yifren-an] ni-m-tebbet ayay ayn tekermujit ka anazmay.",
+          "glose_fr": "prends cheval REL être.choisi-ADJZ 2s-SUBJ-frapper 1s 3s.GEN sabot LOC aiguille",
+          "traduction_fr": "Prends un cheval de bonne qualité et enfonce une aiguille dans son sabot pour moi.",
+          "traduction_en": "Take a horse of good quality and hammer a needle in its hoof for me.",
+          "traduction_ar": "خذ حصاناً جيداً وادق إبرة في حافره من أجلي."
+        },
+        {
+          "id": 36,
+          "tadaksahak": "Taradag hinciini [ayo zen-i].",
+          "glose_fr": "Taradag chèvre REL être.vieux-ADJZ",
+          "traduction_fr": "'Taradag' est une vieille chèvre.",
+          "traduction_en": "'Taradag' is an old goat.",
+          "traduction_ar": "طرادغ هي عنزة عجوز."
+        },
+        {
+          "id": 37,
+          "tadaksahak": "Alukukuj cidi [ayo yibrar-an] [ayo ka tidi a-baqat].",
+          "glose_fr": "Alukukush sel REL être.mauvais-ADJZ REL LOC saleté 3s-PERF-mélanger",
+          "traduction_fr": "'Alukukush' est du sel de mauvaise qualité dans lequel de la saleté est mélangée.",
+          "traduction_en": "'Alukukush' is salt which is of bad quality in which dirt is mixed.",
+          "traduction_ar": "ألوكوكوش هو ملح رديء مختلط بالأوساخ."
+        }
+      ]
+    },
+    {
+      "id": "gap",
+      "marqueur": "∅",
+      "description": "absence totale de marqueur",
+      "usage_fr": "Nom INDÉFINI - proposition RESTRICTIVE (introduit un nouveau référent)",
+      "usage_en": "INDEFINITE noun - RESTRICTIVE clause (introduces a new referent)",
+      "usage_ar": "اسم نَكِرَة - جملة مُقَيِّدَة (تُقدم مرجعاً جديداً)",
+      "exemples": [
+        {
+          "id": 6,
+          "tadaksahak": "A-gar hamu [# f-keni aykaran daw].",
+          "glose_fr": "3s-PERF-trouver viande IMPF-reposer chiots chez",
+          "traduction_fr": "Elle a trouvé de la viande qui était à côté des chiots.",
+          "traduction_en": "She found meat that was lying next to the cubs.",
+          "traduction_ar": "وجدت لحماً كان بجانب الجراء."
+        },
+        {
+          "id": 9,
+          "tadaksahak": "Sa itila aru [# a-ten i daw] i-te-dini a i-m-da a enda tamu.",
+          "glose_fr": "COMP chaque homme 3s-PERF-arriver 3p LOC 3p-FUT-prendre 3s 3p-SUBJ-faire 3s COM esclave",
+          "traduction_fr": "Chaque homme qui arrivait chez eux était pris pour être fait esclave.",
+          "traduction_en": "Each man who arrived at their place was taken to be made a slave.",
+          "traduction_ar": "كل رجل كان يصل إليهم كان يُؤخذ ليُجعل عبداً."
+        },
+        {
+          "id": 12,
+          "tadaksahak": "Kela aya-mo tanfust [# ayan baba ayo zen-i a-da].",
+          "glose_fr": "une.fois 1s-PERF-entendre histoire 1s.GEN père REL être.vieux-ADJZ 3s-PERF-faire",
+          "traduction_fr": "Une fois j'ai entendu une histoire d'un exploit que mon grand-père a fait.",
+          "traduction_en": "Once I heard a story of a deed that my grandfather did.",
+          "traduction_ar": "ذات مرة سمعت قصة عن عمل بطولي قام به جدي."
+        },
+        {
+          "id": 13,
+          "tadaksahak": "A-sesten a enda edag [# boren i-bara].",
+          "glose_fr": "3s-PERF-demander 3s COM lieu gens 3p-PERF-être.dans",
+          "traduction_fr": "Il lui a demandé un endroit où les gens habitaient.",
+          "traduction_en": "He asked her for a place where people were living.",
+          "traduction_ar": "طلب منها مكاناً يعيش فيه الناس."
+        },
+        {
+          "id": 19,
+          "tadaksahak": "A-f-kaykay har a-guna edag [# ka tahart a-hay].",
+          "glose_fr": "3s-IMPF-marcher jusqu'à 3s-PERF-voir lieu LOC lionne 3s-PERF-accoucher",
+          "traduction_fr": "Elle a marché jusqu'à ce qu'elle voie un endroit où une lionne avait accouché.",
+          "traduction_en": "She walked around till she saw a place where a lioness had given birth.",
+          "traduction_ar": "مشت حتى رأت مكاناً ولدت فيه لبؤة."
+        },
+        {
+          "id": 20,
+          "tadaksahak": "I-kuna arat n tazara [# ka igararan aryen i-huru i].",
+          "glose_fr": "3p-PERF-trouver chose GEN aspersion LOC plaines.sèches eau 3p-PERF-entrer 3s",
+          "traduction_fr": "Ils ont eu une aspersion de pluie par laquelle les plaines sèches ont reçu de l'eau.",
+          "traduction_en": "They got a sprinkle of rain from which the dry plains received water.",
+          "traduction_ar": "حصلوا على رذاذ مطر دخلت منه المياه إلى السهول الجافة."
+        },
+        {
+          "id": 21,
+          "tadaksahak": "Wa hinjin afereg [# enda tafan i-bara] [# enda alman i-huru-kat].",
+          "glose_fr": "IMP répare haie COM trous 3p-PERF-être.dans COM troupeau 3p-PERF-entrer-VEN",
+          "traduction_fr": "Répare la haie partout où il y a des trous, partout où les animaux entrent.",
+          "traduction_en": "Mend the hedge wherever there are holes, wherever the animals enter.",
+          "traduction_ar": "أصلح السياج حيثما توجد ثقوب، حيثما تدخل الحيوانات."
+        },
+        {
+          "id": 38,
+          "tadaksahak": "Har a-ten tamgart fo daw [# a-bara izagazan n gusen].",
+          "glose_fr": "jusqu'à 3s-PERF-arriver vieille.femme INDEF chez PERF-être chats.sauvages GEN terriers",
+          "traduction_fr": "...jusqu'à ce qu'il arrive chez une vieille femme qui habitait dans des terriers de chats sauvages.",
+          "traduction_en": "...until he arrived at an old woman's who lived in wildcats' burrows.",
+          "traduction_ar": "...حتى وصل إلى عجوز كانت تعيش في جحور قطط برية."
+        },
+        {
+          "id": 39,
+          "tadaksahak": "In lenkem a-ne-duwa bora se [# a-baya alhafiyat].",
+          "glose_fr": "3p.GEN derrière 3s-NEG.PERF-être.mieux personne BEN PERF-vouloir paix",
+          "traduction_fr": "Être derrière eux n'est pas mieux pour quelqu'un qui cherche la paix.",
+          "traduction_en": "Following them is not good for somebody who seeks peace.",
+          "traduction_ar": "اتباعهم ليس أفضل لمن يبحث عن السلام."
+        },
+        {
+          "id": 40,
+          "tadaksahak": "A-b-jigid ana aazar fo be [# b-yizar ari neda ka].",
+          "glose_fr": "1s-IMPF-attendre 2s.BEN mare INDEF sur IMPF-être.devant 1p ici LOC",
+          "traduction_fr": "Je t'attends sur une mare qui est devant nous ici.",
+          "traduction_en": "I am waiting for you on a pond that is ahead of us here.",
+          "traduction_ar": "أنتظرك على بركة ماء أمامنا هنا."
+        },
+        {
+          "id": 43,
+          "tadaksahak": "Sa itila aru [# a-ten i daw] i-te-dini a i-m-da a enda tamu.",
+          "glose_fr": "COMP chaque homme 3s-PERF-arriver 3p LOC 3p-FUT-prendre 3s 3p-SUBJ-faire 3s COM esclave",
+          "traduction_fr": "Chaque homme qui arrivait chez eux était pris pour être fait esclave.",
+          "traduction_en": "Each man who arrived at their place was taken to be made a slave.",
+          "traduction_ar": "كل رجل كان يصل إليهم كان يُؤخذ ليُجعل عبداً."
+        },
+        {
+          "id": 44,
+          "tadaksahak": "Itila [# a-yiktikat aqay] tacidawt ayda a-te-sot-kat ayn wul ka.",
+          "glose_fr": "chaque 3s-PERF-se.rappeler 1s oiseau même 3s-FUT-voler-VEN 3s.GEN cœur LOC",
+          "traduction_fr": "Chaque fois qu'il se souvient de moi, le même oiseau s'envole de son cœur.",
+          "traduction_en": "Whenever he remembers me, the same bird flies from his heart.",
+          "traduction_ar": "كلما تذكرني، يطير نفس الطائر من قلبه."
+        },
+        {
+          "id": 45,
+          "tadaksahak": "Har zarodi amanokal a-na ayn temgaden se ilanken [# ciday-enen].",
+          "glose_fr": "jusqu'à jour.ce chef 3s-PERF-donner 3s.GEN filles BEN rubans être.rouge-ADJZ.PL",
+          "traduction_fr": "...jusqu'au jour où le chef a donné à ses filles des rubans rouges.",
+          "traduction_en": "...until the day the chief gave his daughters red ribbons.",
+          "traduction_ar": "...حتى اليوم الذي أعطى فيه الرئيس بناته شرائط حمراء."
+        },
+        {
+          "id": 46,
+          "tadaksahak": "Tabuyant a-koy tugudu fo [# ber-i] n ciday.",
+          "glose_fr": "vieux.mouton 3s-PERF-aller arbre INDEF être.grand-ADJZ GEN sous",
+          "traduction_fr": "Le vieux mouton est allé sous un grand arbre.",
+          "traduction_en": "The old sheep went under a big tree.",
+          "traduction_ar": "ذهب الخروف العجوز تحت شجرة كبيرة."
+        },
+        {
+          "id": 47,
+          "tadaksahak": "Bora a-fi [# a-may imunas] endanga wiji Idaksahak.",
+          "glose_fr": "personne 3s-PERF-être.pas PERF-avoir chameaux si ce n'est Idaksahak",
+          "traduction_fr": "Il n'y a personne qui possède des chameaux si ce n'est les Idaksahak.",
+          "traduction_en": "There is nobody who has camels if it is not the Idaksahak.",
+          "traduction_ar": "لا يوجد أحد يملك جمالاً إلا إذا كان إدكساهق."
+        },
+        {
+          "id": 49,
+          "tadaksahak": "A-ne-yider ayn tenna, a-ne-da ho [# a-ci].",
+          "glose_fr": "3s-NEG.PERF-tenir 3s.GEN promesse 3s-NEG.PERF-faire chose.ce 3s-PERF-dire",
+          "traduction_fr": "Il n'a pas tenu sa promesse, il n'a pas fait ce qu'il a dit.",
+          "traduction_en": "He did not keep his promise, he did not do what he said.",
+          "traduction_ar": "لم يوف بوعده، لم يفعل ما قال."
+        },
+        {
+          "id": 50,
+          "tadaksahak": "Endar a-bay ho [# a-bara a se alaxar], a-se-da a se he [# yibrar-an].",
+          "glose_fr": "si 3s-PERF-savoir chose.ce PERF-être 3s BEN au.delà 3s-NEG.IMPF-faire 3s BEN chose être.mauvais-ADJZ",
+          "traduction_fr": "Si elle avait su ce qu'il y avait dans l'au-delà pour elle, elle ne lui aurait rien fait de mal.",
+          "traduction_en": "If she had known what was in the next world for her, she would not have done anything bad to him.",
+          "traduction_ar": "لو كانت تعلم ما في الآخرة لها، لما فعلت به أي شيء سيء."
+        },
+        {
+          "id": 51,
+          "tadaksahak": "Ci na ho [# ni-bayaj]?",
+          "glose_fr": "QST DET chose.ce 2s-PERF-vouloir",
+          "traduction_fr": "Qu'est-ce que tu veux ?",
+          "traduction_en": "What do you want?",
+          "traduction_ar": "ماذا تريد؟"
+        }
+      ]
+    },
+    {
+      "id": "sa",
+      "marqueur": "sa",
+      "usage_fr": "Proposition NON-RESTRICTIVE (information supplémentaire, comme une parenthèse)",
+      "usage_en": "NON-RESTRICTIVE clause (additional information, like a parenthesis)",
+      "usage_ar": "جملة غَيْر مُقَيِّدَة (معلومات إضافية، مثل اعتراضية)",
+      "position": "peut être séparée du nom par une pause",
+      "exemples": [
+        {
+          "id": 7,
+          "tadaksahak": "A-b-jiken-an ayn nana se, [sa ayn man Aminata].",
+          "glose_fr": "3s-IMPF-saluer-VERS 3s.GEN mère POUR COMPZR 3s.GEN nom Aminata",
+          "traduction_fr": "Il salue sa mère, qui s'appelle Aminata.",
+          "traduction_en": "He greets his mother, whose name is Aminata.",
+          "traduction_ar": "يسلم على أمه التي اسمها أميناتا."
+        },
+        {
+          "id": 10,
+          "tadaksahak": "A-zaw surgay fo, [sa itila zayri a-te-na imunas ija].",
+          "glose_fr": "3s-PERF-épouser femme INDEF COMPZR chaque jour 3s-FUT-manger chameaux sept",
+          "traduction_fr": "Il a épousé une certaine femme, qui mangeait sept chameaux par jour.",
+          "traduction_en": "He married a certain woman, who used to eat seven camels a day.",
+          "traduction_ar": "تزوج امرأة معينة، كانت تأكل سبعة جمال كل يوم."
+        },
+        {
+          "id": 14,
+          "tadaksahak": "Mahamad intaynawt, da aya he adi [sa ni-yabuk].",
+          "glose_fr": "Mohamed chacal fais 1s chose DET COMPZR 2s-PERF-être.sur.le.point.de.faire",
+          "traduction_fr": "Mohamed le chacal, fais-moi cette chose que tu étais sur le point de faire.",
+          "traduction_en": "Mohamed jackal, do to me that thing which you were about to do.",
+          "traduction_ar": "محمد ابن آوى، افعل بي ذلك الشيء الذي كنت على وشك فعله."
+        },
+        {
+          "id": 15,
+          "tadaksahak": "Way na-ayo, [sa tacidawt a-b-sekna armeni], a-ci.",
+          "glose_fr": "femme DET-REL COMPZR petit.oiseau 3s-IMPF-montrer souffrance 3s-PERF-dire",
+          "traduction_fr": "L'autre femme, à qui le petit oiseau montrait sa souffrance, a dit...",
+          "traduction_en": "The other woman, to whom the small bird was showing suffering, said...",
+          "traduction_ar": "المرأة الأخرى، التي كان الطائر الصغير يظهر لها المعاناة، قالت..."
+        },
+        {
+          "id": 26,
+          "tadaksahak": "Man na umuk [ayo enda] ar-te-guna way [# a-bara [gunnan]], [sa ayn hugu a-f-kedi tazagant n miya kuku-an]?",
+          "glose_fr": "où DET manière REL COM 1p-FUT-voir femme PERF-être ciel COMPZR 3s.GEN maison 3s-IMPF-être.sur mât GEN bout être.long-ADJZ",
+          "traduction_fr": "Comment allons-nous voir la femme qui est dans le ciel, dont la maison est au sommet d'un long mât ?",
+          "traduction_en": "How are we going to see the woman being in the sky, whose house is up at the end of a long mast?",
+          "traduction_ar": "كيف سنرى المرأة التي في السماء، التي بيتها فوق سارية طويلة؟"
+        },
+        {
+          "id": 27,
+          "tadaksahak": "Aya-ga-guna azaqib, [sa ayn mon huru a-b-da i ka].",
+          "glose_fr": "1s-PERF-voir fantôme COMPZR 3s.GEN yeux feu 3s-IMPF-faire 3p LOC",
+          "traduction_fr": "J'ai vu un fantôme, dans les yeux duquel brûlait du feu.",
+          "traduction_en": "I saw a phantom, in whose eyes fire was burning.",
+          "traduction_ar": "رأيت شبحاً، في عينيه كانت النار تشتعل."
+        },
+        {
+          "id": 28,
+          "tadaksahak": "Aya-ga-guna azaqib [# a-da ikjid], [sa huru a-b-da ayn mon ka].",
+          "glose_fr": "1s-PERF-voir fantôme PERF-faire peur COMPZR feu 3s-IMPF-faire 3s.GEN yeux LOC",
+          "traduction_fr": "J'ai vu un fantôme qui faisait peur, qui avait du feu dans les yeux.",
+          "traduction_en": "I saw a phantom that caused fear, which had fire in his eyes.",
+          "traduction_ar": "رأيت شبحاً يسبب الخوف، كان له نار في عينيه."
+        },
+        {
+          "id": 29,
+          "tadaksahak": "Aywa, da aqay tanfust ayo, [sa ni-baya ayn da]!",
+          "glose_fr": "bien fais 1s histoire REL COMPZR 2s-PERF-vouloir 3s.GEN faire",
+          "traduction_fr": "Eh bien, raconte-moi cette histoire que tu voulais raconter !",
+          "traduction_en": "Well, tell me that story which you wanted to tell!",
+          "traduction_ar": "حسناً، احكي لي تلك القصة التي أردت أن تحكيها!"
+        },
+        {
+          "id": 57,
+          "tadaksahak": "Idleman dag ka, [sa i-yagor temezday].",
+          "glose_fr": "Indelman aussi LOC COMPZR 3p-PERF-être.plus.grand lieux.d'habitation",
+          "traduction_fr": "Ils vivent aussi à Indelman, qui est plus grand que les autres lieux d'habitation.",
+          "traduction_en": "They live also in Indelman, which is bigger than the other dwelling places.",
+          "traduction_ar": "يعيشون أيضاً في إندلمان، وهي أكبر من أماكن السكن الأخرى."
+        },
+        {
+          "id": 60,
+          "tadaksahak": "Aya-guna azaqib [# a-da ikjid], [sa ayn mon huru a-b-da i ka].",
+          "glose_fr": "1s-PERF-voir fantôme PERF-faire peur COMPZR 3s.GEN yeux feu 3s-IMPF-faire 3p LOC",
+          "traduction_fr": "J'ai vu un fantôme qui fait peur, dans les yeux duquel brûlait du feu.",
+          "traduction_en": "I saw a phantom that causes fear, in whose eyes fire was burning.",
+          "traduction_ar": "رأيت شبحاً يسبب الخوف، في عينيه كانت النار تشتعل."
+        },
+        {
+          "id": 61,
+          "tadaksahak": "Ici aru fo na adi a-may ayn izacenan karad, [sa afo a-fi i b-deraw afo enda nana].",
+          "glose_fr": "3p.dire homme INDEF DET DET 3s-PERF-avoir 3s.GEN jeunes trois COMPZR un 3s-PERF-être.pas 3p IMPF-partager un COM mère",
+          "traduction_fr": "Il était une fois un homme, il avait trois fils, dont il n'y en avait pas un qui avait la même mère.",
+          "traduction_en": "There was once a man, he had three sons, of whom there was not one who had the same mother.",
+          "traduction_ar": "كان يا ما كان رجل، له ثلاثة أبناء، لم يكن بينهم من له نفس الأم."
+        },
+        {
+          "id": 62,
+          "tadaksahak": "A-hasi-an izace ayo, [sa anga ne-may tabakart].",
+          "glose_fr": "3s-PERF-regarder-VERS jeune.homme REL COMPZR 3s.T FOC-PERF-avoir brebis",
+          "traduction_fr": "Il a regardé vers le jeune homme, celui qui possédait la brebis.",
+          "traduction_en": "He looked toward the young man, the one who owned the ewe.",
+          "traduction_ar": "نظر نحو الشاب، ذلك الذي كان يملك النعجة."
+        },
+        {
+          "id": 63,
+          "tadaksahak": "Ni-te-muquis enda he fo [sa ni-ne-debet].",
+          "glose_fr": "2s-FUT-rencontrer COM chose INDEF COMPZR 2s-NEG.PERF-pouvoir.faire",
+          "traduction_fr": "Tu rencontreras quelque chose que tu ne peux pas faire.",
+          "traduction_en": "You will come across anything that you are not able to do.",
+          "traduction_ar": "ستصادف شيئاً لا تستطيع فعله."
+        }
+      ]
+    }
+  ],
+  "accessibilite": {
+    "description": "Hiérarchie d'accessibilité de Keenan & Comrie (1977) — quelles fonctions grammaticales peuvent être relativisées par chaque stratégie",
+    "sujet": ["relative_pronoun", "gap", "sa"],
+    "objet_direct": ["relative_pronoun", "gap", "sa"],
+    "objet_indirect": ["relative_pronoun"],
+    "oblique": ["relative_pronoun", "gap"],
+    "possesseur": ["sa"],
+    "notes": {
+      "objet_indirect": "Rarement attesté dans le corpus, exemples élicités",
+      "oblique": "Uniquement pour la localisation (postposition ka)"
+    }
+  },
+  "postpositions": {
+    "ka": {
+      "sens_fr": "locatif : dans, à, depuis, parmi",
+      "sens_en": "locative: in, at, from, among",
+      "sens_ar": "ظرف مكان: في، عند، من، بين",
+      "utilisation_relatives": "frontée (placée après le pronom relatif)"
+    },
+    "se": {
+      "sens_fr": "datif / bénéfactif : pour, à",
+      "sens_en": "dative / benefactive: for, to",
+      "sens_ar": "المفعول لأجله / المنفعة: لـ، إلى",
+      "utilisation_relatives": "frontée (placée après le pronom relatif)"
+    },
+    "enda": {
+      "sens_fr": "comitatif / instrumental : avec, et",
+      "sens_en": "comitative / instrumental: with, and",
+      "sens_ar": "المعية / الآلة: مع، بـ",
+      "utilisation_relatives": "frontée (placée après le pronom relatif) pour les manières"
+    },
+    "daw": {
+      "sens_fr": "chez (quelqu'un)",
+      "sens_en": "at (somebody's place)",
+      "sens_ar": "عند (شخص)",
+      "utilisation_relatives": "reste en place après le verbe"
+    }
+  },
+  "exceptions": {
+    "ho": {
+      "mot": "ho",
+      "sens_fr": "cette chose",
+      "sens_en": "this thing",
+      "sens_ar": "هذا الشيء",
+      "regle": "Utilise TOUJOURS la gap strategy, jamais le pronom relatif, bien que défini",
+      "exemple": "Ci na ho [# ni-bayaj]?"
+    },
+    "ne": {
+      "mot": "ne",
+      "sens_fr": "lieu (défini, ne peut pas être modifié par 'fo')",
+      "sens_en": "place (definite, cannot be modified by 'fo')",
+      "sens_ar": "مكان (معرف، لا يمكن تعديله بـ 'fo')",
+      "regle": "Utilise TOUJOURS la gap strategy, jamais le pronom relatif",
+      "exemple": "*I-keni ne fo ka. (agrammatical) → utiliser angu ou edag"
+    }
+  },
+  "comparaison_autres_langues": {
+    "songhay": {
+      "description": "Les autres langues songhay (Koyraboro Senni, Koyra Chiini) utilisent une seule stratégie avec le relativiseur 'ka'",
+      "reference": "Heath 1999:242"
+    },
+    "berbere_tamasheq": {
+      "description": "Le tamasheq (berbère) utilise la gap strategy",
+      "reference": "Christiansen & Levinsohn 2003"
+    },
+    "tadaksahak_specificite": "Le tadaksahak est unique parmi les langues songhay car il a DEUX stratégies restrictives (pronom relatif + gap)"
+  }
+}
