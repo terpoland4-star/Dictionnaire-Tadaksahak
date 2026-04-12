@@ -77,6 +77,7 @@
       <option value="rapports" data-i18n="nav_reports">📄 Rapports</option>
       <option value="actualites" data-i18n="nav_actualites">📰 Actualités</option>
       <option value="quiz" data-i18n="nav_quiz">❓ Quiz</option>
+      <option value="flashcards" data-i18n="nav_flashcards">🃏 Flashcards</option>
       <option value="timeline" data-i18n="nav_timeline">📅 Ligne du temps</option>
       <option value="map" data-i18n="nav_map">🗺️ Carte</option>
       <option value="search" data-i18n="nav_search">🔍 Recherche livres</option>
@@ -231,6 +232,25 @@
   <section id="quiz" class="onglet-contenu" hidden>
     <h2 data-i18n="quiz_title">❓ Quiz Culturel</h2>
     <div id="quizContainer"></div>
+  </section>
+
+  <!-- FLASHCARDS -->
+  <section id="flashcards" class="onglet-contenu" hidden>
+    <h2 data-i18n="flashcards_title">🃏 Flashcards - Apprentissage</h2>
+    <div class="flashcards-controls">
+      <select id="flashcardsThemeSelect">
+        <option value="all" data-i18n="all_themes">📚 Tous les thèmes</option>
+        <option value="vocabulaire" data-i18n="theme_vocab">📖 Vocabulaire</option>
+        <option value="verbes" data-i18n="theme_verbs">🔤 Verbes</option>
+        <option value="noms" data-i18n="theme_nouns">🏷️ Noms</option>
+      </select>
+      <button id="shuffleFlashcardsBtn" class="btn-small">🎲 Mélanger</button>
+      <button id="resetFlashcardsBtn" class="btn-small">🔄 Recommencer</button>
+    </div>
+    <div id="flashcardsContainer" class="flashcards-grid"></div>
+    <div class="flashcards-progress">
+      <span id="flashcardCurrent">0</span> / <span id="flashcardTotal">0</span>
+    </div>
   </section>
 
   <!-- LIGNE DU TEMPS -->
