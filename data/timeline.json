@@ -1,107 +1,112 @@
 [
   {
+    "date": "1492",
+    "title_fr": "Démantèlement de la synagogue de Tamantit",
+    "title_en": "Dismantling of the Tamantit synagogue",
+    "title_ar": "تفكيك كنيس تامانتيت",
+    "description_fr": "Le marabout El Maghili démantèle la synagogue de Tamantit au Maroc. Des populations juives disparaissent dans le désert.",
+    "description_en": "The marabout El Maghili dismantles the Tamantit synagogue in Morocco. Jewish populations disappear into the desert.",
+    "description_ar": "المارابوط المغيلي يفكك كنيس تامانتيت في المغرب. تختفي مجموعات يهودية في الصحراء.",
     "lang": "fr",
+    "image": null
+  },
+  {
+    "date": "1902",
+    "title_fr": "Soumission de Mohamed Adargajoj",
+    "title_en": "Submission of Mohamed Adargajoj",
+    "title_ar": "خضوع محمد أدرغاجوج",
+    "description_fr": "Le chef Idaksahak Mohamed Adargajoj tente une soumission de façade au colon français à Ansongo.",
+    "description_en": "The Idaksahak chief Mohamed Adargajoj attempts a superficial submission to the French colonizer in Ansongo.",
+    "description_ar": "زعيم الإدكساهق محمد أدرغاجوج يحاول خضوعاً شكلياً للمستعمر الفرنسي في أنسونغو.",
+    "lang": "fr",
+    "image": null
+  },
+  {
+    "date": "1905-1906",
+    "title_fr": "Révolte de Morou de Karma",
+    "title_en": "Revolt of Morou of Karma",
+    "title_ar": "ثورة مورو أوف كارما",
+    "description_fr": "Morou, descendant d'Askia Daoud, mène une insurrection contre l'administration coloniale française au Niger.",
+    "description_en": "Morou, descendant of Askia Daoud, leads an insurrection against the French colonial administration in Niger.",
+    "description_ar": "مورو، سليل أسكيا داود، يقود انتفاضة ضد الإدارة الاستعمارية الفرنسية في النيجر.",
+    "lang": "fr",
+    "image": null
+  },
+  {
+    "date": "1917",
+    "title_fr": "Paix de 1917",
+    "title_en": "Peace of 1917",
+    "title_ar": "سلام ١٩١٧",
+    "description_fr": "Les Idaksahak participent aux accords de paix avec l'administrateur colonial, en l'absence des Imajaghan.",
+    "description_en": "The Idaksahak participate in the peace agreements with the colonial administrator, in the absence of the Imajaghan.",
+    "description_ar": "يشارك الإدكساهق في اتفاقيات السلام مع المسؤول الاستعماري، في غياب الإماجان.",
+    "lang": "fr",
+    "image": null
+  },
+  {
+    "date": "1963-1964",
+    "title_fr": "Première rébellion touarègue",
+    "title_en": "First Tuareg rebellion",
+    "title_ar": "تمرد الطوارق الأول",
+    "description_fr": "Participation des Idaksahak aux côtés de Zeid Ag Attaher. Illiass Ag Ayouba s'engage au front.",
+    "description_en": "Participation of the Idaksahak alongside Zeid Ag Attaher. Illiass Ag Ayouba joins the front.",
+    "description_ar": "مشاركة الإدكساهق إلى جانب زيد أغ أتاهير. إلياس أغ أيوبا ينخرط في الجبهة.",
+    "lang": "fr",
+    "image": null
+  },
+  {
     "date": "1990",
-    "title": "Rébellion des Idaksahak",
-    "description": "Premier engagement armé de plusieurs centaines d'Idaksahak dans la rébellion touarègue.",
-    "image": ""
+    "title_fr": "Rébellion des années 1990",
+    "title_en": "1990s rebellion",
+    "title_ar": "تمرد التسعينيات",
+    "description_fr": "Plusieurs centaines d'Idaksahak participent activement à la rébellion armée contre l'État malien.",
+    "description_en": "Several hundred Idaksahak actively participate in the armed rebellion against the Malian state.",
+    "description_ar": "يشارك عدة مئات من الإدكساهق بنشاط في التمرد المسلح ضد الدولة المالية.",
+    "lang": "fr",
+    "image": "data/images/livres/Un jeune combattant Adaksahak, au nord de Ménaka, mars 1994. Photo C.G.jpeg"
   },
   {
-    "lang": "fr",
     "date": "1994",
-    "title": "Confrontation avec les Imajeghen",
-    "description": "Les Idaksahak se défendent militairement pour la première fois contre leurs anciens suzerains.",
-    "image": ""
-  },
-  {
+    "title_fr": "Confrontation avec les Imajeghen",
+    "title_en": "Confrontation with the Imajeghen",
+    "title_ar": "مواجهة مع الإماجيغن",
+    "description_fr": "Première confrontation armée directe entre les Idaksahak et leurs anciens suzerains Imajeghen.",
+    "description_en": "First direct armed confrontation between the Idaksahak and their former Imajeghen suzerains.",
+    "description_ar": "أول مواجهة مسلحة مباشرة بين الإدكساهق وأسيادهم السابقين الإماجيغن.",
     "lang": "fr",
-    "date": "2016",
-    "title": "Création du MSA",
-    "description": "Mouvement pour le salut de l'Azawad, fondé par Moussa Ag Acharatouman.",
-    "image": ""
+    "image": null
   },
   {
+    "date": "2001",
+    "title_fr": "Émission radio sur la décentralisation",
+    "title_en": "Radio broadcast on decentralization",
+    "title_ar": "بث إذاعي حول اللامركزية",
+    "description_fr": "Hadmahaamed ag Mohamed s'exprime sur Radio Rurale de Ménaka sur la décentralisation au Mali.",
+    "description_en": "Hadmahaamed ag Mohamed speaks on Radio Rurale de Ménaka about decentralization in Mali.",
+    "description_ar": "حدمحمد أغ محمد يتحدث على إذاعة مناكا الريفية عن اللامركزية في مالي.",
     "lang": "fr",
-    "date": "1905",
-    "title": "Humiliation de Morou de Karma",
-    "description": "Morou, chef du canton de Karma, est forcé de marcher pieds nus jusqu'à Niamey par l'administration coloniale française.",
-    "image": ""
+    "image": null
   },
   {
+    "date": "2014",
+    "title_fr": "Rencontre d'Adaranboukar",
+    "title_en": "Adaranboukar meeting",
+    "title_ar": "لقاء أدارانبوكار",
+    "description_fr": "Les leaders Idaksahak se réunissent pour mettre fin aux divisions communautaires.",
+    "description_en": "Idaksahak leaders meet to end community divisions.",
+    "description_ar": "قادة الإدكساهق يجتمعون لوضع حد للانقسامات المجتمعية.",
     "lang": "fr",
-    "date": "1984",
-    "title": "Mort de Mohamed Maïga",
-    "description": "Le journaliste malien, ami de Thomas Sankara, meurt empoisonné à Ouagadougou.",
-    "image": ""
+    "image": null
   },
   {
-    "lang": "en",
-    "date": "1990",
-    "title": "Idaksahak rebellion",
-    "description": "First armed involvement of hundreds of Idaksahak in the Tuareg rebellion.",
-    "image": ""
-  },
-  {
-    "lang": "en",
-    "date": "1994",
-    "title": "Confrontation with the Imajeghen",
-    "description": "The Idaksahak defend themselves militarily for the first time against their former suzerains.",
-    "image": ""
-  },
-  {
-    "lang": "en",
     "date": "2016",
-    "title": "Creation of the MSA",
-    "description": "Movement for the Salvation of Azawad, founded by Moussa Ag Acharatouman.",
-    "image": ""
-  },
-  {
-    "lang": "en",
-    "date": "1905",
-    "title": "Humiliation of Morou of Karma",
-    "description": "Morou, chief of the canton of Karma, is forced to walk barefoot to Niamey by the French colonial administration.",
-    "image": ""
-  },
-  {
-    "lang": "en",
-    "date": "1984",
-    "title": "Death of Mohamed Maïga",
-    "description": "The Malian journalist, friend of Thomas Sankara, dies poisoned in Ouagadougou.",
-    "image": ""
-  },
-  {
-    "lang": "ar",
-    "date": "1990",
-    "title": "تمرد الإدكساهق",
-    "description": "أول مشاركة مسلحة لمئات الإدكساهق في تمرد الطوارق.",
-    "image": ""
-  },
-  {
-    "lang": "ar",
-    "date": "1994",
-    "title": "مواجهة إماجيغن",
-    "description": "يدافع الإدكساهق عن أنفسهم عسكرياً لأول مرة ضد أسيادهم السابقين.",
-    "image": ""
-  },
-  {
-    "lang": "ar",
-    "date": "2016",
-    "title": "تأسيس MSA",
-    "description": "حركة إنقاذ أزواد، أسسها موسى أغ أشاراتومان.",
-    "image": ""
-  },
-  {
-    "lang": "ar",
-    "date": "1905",
-    "title": "إذلال مورو أوف كارما",
-    "description": "مورو، رئيس كانتون كارما، يجبر على المشي حافي القدمين إلى نيامي من قبل الإدارة الاستعمارية الفرنسية.",
-    "image": ""
-  },
-  {
-    "lang": "ar",
-    "date": "1984",
-    "title": "وفاة محمد مايغا",
-    "description": "الصحفي المالي، صديق توماس سانكارا، يموت مسموماً في واغادوغو.",
-    "image": ""
+    "title_fr": "Création du MSA",
+    "title_en": "Creation of the MSA",
+    "title_ar": "تأسيس حركة إنقاذ أزواد",
+    "description_fr": "Moussa Ag Acharatoumane fonde le Mouvement pour le Salut de l'Azawad (MSA).",
+    "description_en": "Moussa Ag Acharatoumane founds the Movement for the Salvation of Azawad (MSA).",
+    "description_ar": "موسى أغ أشاراتومان يؤسس حركة إنقاذ أزواد.",
+    "lang": "fr",
+    "image": null
   }
 ]
