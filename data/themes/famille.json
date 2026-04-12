@@ -1,0 +1,125 @@
+{
+  "id": "famille",
+  "titre_fr": "👨‍👩‍👧‍👦 La famille",
+  "titre_en": "👨‍👩‍👧‍👦 Family",
+  "titre_ar": "👨‍👩‍👧‍👦 الأسرة",
+  "description_fr": "Les termes de parenté en tadaksahak",
+  "description_en": "Kinship terms in Tadaksahak",
+  "description_ar": "مصطلحات القرابة في التدكساهق",
+  "mots": [
+    {
+      "tad": "baabá",
+      "fr": "père",
+      "en": "father",
+      "ar": "أب"
+    },
+    {
+      "tad": "naaná",
+      "fr": "mère",
+      "en": "mother",
+      "ar": "أم"
+    },
+    {
+      "tad": "baba béeri",
+      "fr": "grand-père",
+      "en": "grandfather",
+      "ar": "جد"
+    },
+    {
+      "tad": "nana béeri",
+      "fr": "grand-mère",
+      "en": "grandmother",
+      "ar": "جدة"
+    },
+    {
+      "tad": "bér",
+      "fr": "aîné(e), frère/soeur plus âgé(e)",
+      "en": "older sibling",
+      "ar": "أخ/أخت أكبر"
+    },
+    {
+      "tad": "ízzay",
+      "fr": "fils, enfant",
+      "en": "son, child",
+      "ar": "ابن، طفل"
+    },
+    {
+      "tad": "báarar",
+      "fr": "enfant",
+      "en": "child",
+      "ar": "طفل"
+    },
+    {
+      "tad": "ceena",
+      "fr": "petit(e), cadet(te)",
+      "en": "younger sibling",
+      "ar": "أخ/أخت أصغر"
+    },
+    {
+      "tad": "aarú",
+      "fr": "mari, homme",
+      "en": "husband, man",
+      "ar": "زوج، رجل"
+    },
+    {
+      "tad": "surgóy",
+      "fr": "femme, épouse",
+      "en": "woman, wife",
+      "ar": "امرأة، زوجة"
+    },
+    {
+      "tad": "a-bobaz",
+      "fr": "cousin croisé (mâle)",
+      "en": "cross cousin (male)",
+      "ar": "ابن عم/خال"
+    },
+    {
+      "tad": "t-a-bobas-t",
+      "fr": "cousine croisée (femelle)",
+      "en": "cross cousin (female)",
+      "ar": "بنت عم/خال"
+    },
+    {
+      "tad": "a-lugus",
+      "fr": "beau-frère / belle-soeur",
+      "en": "brother/sister in law",
+      "ar": "أخ/أخت الزوج"
+    },
+    {
+      "tad": "nana ceena",
+      "fr": "tante maternelle",
+      "en": "maternal aunt",
+      "ar": "خالة"
+    },
+    {
+      "tad": "nana fumbu",
+      "fr": "belle-mère",
+      "en": "stepmother",
+      "ar": "زوجة الأب"
+    },
+    {
+      "tad": "baba fumbu",
+      "fr": "beau-père",
+      "en": "stepfather",
+      "ar": "زوج الأم"
+    },
+    {
+      "tad": "i-dululin",
+      "fr": "belle-famille",
+      "en": "in-laws",
+      "ar": "أصهار"
+    },
+    {
+      "tad": "aw- maamala",
+      "fr": "marchand",
+      "en": "merchant",
+      "ar": "تاجر"
+    },
+    {
+      "tad": "kal maamala",
+      "fr": "marchands (pluriel)",
+      "en": "merchants (plural)",
+      "ar": "تجار"
+    }
+  ]
+}
