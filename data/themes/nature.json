@@ -1,0 +1,137 @@
+{
+  "id": "nature",
+  "titre_fr": "🌿 La nature",
+  "titre_en": "🌿 Nature",
+  "titre_ar": "🌿 الطبيعة",
+  "description_fr": "Vocabulaire de la nature en tadaksahak",
+  "description_en": "Nature vocabulary in Tadaksahak",
+  "description_ar": "مفردات الطبيعة في التدكساهق",
+  "mots": [
+    {
+      "tad": "gánda",
+      "fr": "terre, pays",
+      "en": "earth, land, country",
+      "ar": "أرض، بلد"
+    },
+    {
+      "tad": "aryén",
+      "fr": "eau",
+      "en": "water",
+      "ar": "ماء"
+    },
+    {
+      "tad": "wayní",
+      "fr": "soleil",
+      "en": "sun",
+      "ar": "شمس"
+    },
+    {
+      "tad": "a-yyár",
+      "fr": "lune, mois",
+      "en": "moon, month",
+      "ar": "قمر، شهر"
+    },
+    {
+      "tad": "i-ʒínn-an",
+      "fr": "ciel",
+      "en": "sky",
+      "ar": "سماء"
+    },
+    {
+      "tad": "tugúdu",
+      "fr": "arbre",
+      "en": "tree",
+      "ar": "شجرة"
+    },
+    {
+      "tad": "yél",
+      "fr": "herbe verte",
+      "en": "green grass",
+      "ar": "عشب أخضر"
+    },
+    {
+      "tad": "t-a-záazul-t",
+      "fr": "sable",
+      "en": "sand",
+      "ar": "رمل"
+    },
+    {
+      "tad": "ṭóndi",
+      "fr": "pierre, roche",
+      "en": "stone, rock",
+      "ar": "حجر، صخر"
+    },
+    {
+      "tad": "a-ɣázar",
+      "fr": "lac, étang",
+      "en": "lake, pond",
+      "ar": "بحيرة، بركة"
+    },
+    {
+      "tad": "a-jeraw",
+      "fr": "rivière (Niger)",
+      "en": "river (Niger River)",
+      "ar": "نهر (النيجر)"
+    },
+    {
+      "tad": "tárra",
+      "fr": "brousse",
+      "en": "bush",
+      "ar": "غابة"
+    },
+    {
+      "tad": "t-áa-das-t",
+      "fr": "moustique",
+      "en": "mosquito",
+      "ar": "بعوضة"
+    },
+    {
+      "tad": "nuun-én",
+      "fr": "nuage, fumée",
+      "en": "cloud, smoke",
+      "ar": "سحاب، دخان"
+    },
+    {
+      "tad": "héw",
+      "fr": "vent",
+      "en": "wind",
+      "ar": "ريح"
+    },
+    {
+      "tad": "cinjí",
+      "fr": "pluie",
+      "en": "rain",
+      "ar": "مطر"
+    },
+    {
+      "tad": "fufú",
+      "fr": "froid",
+      "en": "cold",
+      "ar": "برد"
+    },
+    {
+      "tad": "korrá",
+      "fr": "chaleur",
+      "en": "heat",
+      "ar": "حرارة"
+    },
+    {
+      "tad": "a-báaleq",
+      "fr": "poussière",
+      "en": "dust",
+      "ar": "غبار"
+    },
+    {
+      "tad": "ee-dag",
+      "fr": "lieu, endroit",
+      "en": "place, location",
+      "ar": "مكان"
+    },
+    {
+      "tad": "a-handag",
+      "fr": "lieu, endroit",
+      "en": "place, location",
+      "ar": "مكان"
+    }
+  ]
+}
