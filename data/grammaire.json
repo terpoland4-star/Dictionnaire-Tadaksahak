@@ -1,6 +1,7 @@
 {
-  "version": "1.0",
+  "version": "3.0",
   "langue": "Tadaksahak",
+  "source": "Christiansen-Bolli, R. (2010). A grammar of Tadaksahak, a northern Songhay language of Mali. Leiden University.",
   "description_fr": "Grammaire de référence du tadaksahak d'après Christiansen-Bolli (2010)",
   "description_en": "Reference grammar of Tadaksahak from Christiansen-Bolli (2010)",
   "description_ar": "مرجع نحوي للغة التدكساهق من كريستيانسن-بولي (٢٠١٠)",
@@ -928,6 +929,285 @@
             }
           ]
         }
+      ]
+    },
+    {
+      "id": "adpositions",
+      "titre_fr": "Postpositions et prépositions",
+      "titre_en": "Adpositions",
+      "titre_ar": "حروف الجر",
+      "description_fr": "Tadaksahak utilise plusieurs postpositions et quelques prépositions pour exprimer les relations spatiales, temporelles et grammaticales.",
+      "description_en": "Tadaksahak uses several postpositions and a few prepositions to express spatial, temporal and grammatical relationships.",
+      "description_ar": "تستخدم التدكساهق عدة حروف جر لاحقة وقليلة سابقة للتعبير عن العلاقات المكانية والزمانية والنحوية.",
+      "elements": [
+        {
+          "mot": "se",
+          "fonction": "datif",
+          "type": "postposition",
+          "fr": "pour, à",
+          "en": "for, to",
+          "ar": "لـ، إلى",
+          "exemple": "a-nn(a) a-se",
+          "exemple_fr": "il lui a donné"
+        },
+        {
+          "mot": "ka",
+          "fonction": "locatif",
+          "type": "postposition",
+          "fr": "dans, sur, à, de, depuis, parmi",
+          "en": "in, on, at, from, among",
+          "ar": "في، على، إلى، من، بين",
+          "exemple": "a-b-gora hugu ka",
+          "exemple_fr": "il s'assoit dans la tente"
+        },
+        {
+          "mot": "be",
+          "fonction": "locatif",
+          "type": "postposition",
+          "fr": "sur, au-dessus de, à propos de",
+          "en": "on, above, about",
+          "ar": "على، فوق، حول",
+          "exemple": "a-zzumbu a-be",
+          "exemple_fr": "il descend sur lui"
+        },
+        {
+          "mot": "daw",
+          "fonction": "locatif",
+          "type": "postposition",
+          "fr": "chez (quelqu'un), à côté de",
+          "en": "at (somebody's place), next to",
+          "ar": "عند (شخص)، بجانب",
+          "exemple": "a-ttén aɣay daw",
+          "exemple_fr": "il est arrivé chez moi"
+        },
+        {
+          "mot": "kamba",
+          "fonction": "directionnel",
+          "type": "postposition",
+          "fr": "vers",
+          "en": "towards",
+          "ar": "نحو",
+          "exemple": "kéd(i) a-gilal kamba",
+          "exemple_fr": "monte vers l'arrière"
+        },
+        {
+          "mot": "n",
+          "fonction": "génitif",
+          "type": "postposition",
+          "fr": "de (possession)",
+          "en": "of (possession)",
+          "ar": "لـ (ملكية)",
+          "exemple": "Mussa n hugu",
+          "exemple_fr": "la maison de Mussa"
+        },
+        {
+          "mot": "wani / wan-en",
+          "fonction": "possessif",
+          "type": "postposition",
+          "fr": "de (caractéristique, matière)",
+          "en": "of (characteristic, material)",
+          "ar": "لـ (صفة، مادة)",
+          "exemple": "i-salsa uary wan-en",
+          "exemple_fr": "des vêtements en or"
+        },
+        {
+          "mot": "ǝnda",
+          "fonction": "instrumental/comitatif",
+          "type": "préposition",
+          "fr": "avec, et, en direction de",
+          "en": "with, and, towards",
+          "ar": "مع، و، نحو",
+          "exemple": "a-bb-ayal anda tassad",
+          "exemple_fr": "il travaille avec une hache"
+        },
+        {
+          "mot": "wala",
+          "fonction": "privatif",
+          "type": "préposition",
+          "fr": "sans, ou",
+          "en": "without, or",
+          "ar": "بدون، أو",
+          "exemple": "a-dres wala haamu",
+          "exemple_fr": "une sauce sans viande"
+        },
+        {
+          "mot": "inzin",
+          "fonction": "comparaison",
+          "type": "préposition",
+          "fr": "comme",
+          "en": "like",
+          "ar": "مثل",
+          "exemple": "feeji ayo inzin aɣwani",
+          "exemple_fr": "ce mouton est comme le mien"
+        }
+      ]
+    },
+    {
+      "id": "adjectives",
+      "titre_fr": "Adjectifs",
+      "titre_en": "Adjectives",
+      "titre_ar": "الصفات",
+      "description_fr": "Les adjectifs en tadaksahak sont dérivés des verbes. Ils s'accordent en nombre avec le nom qu'ils modifient.",
+      "description_en": "Adjectives in Tadaksahak are derived from verbs. They agree in number with the noun they modify.",
+      "description_ar": "الصفات في التدكساهق مشتقة من الأفعال. تتطابق في العدد مع الاسم الذي تصفه.",
+      "elements": [
+        {"tad": "beer-i", "verbe": "bér", "fr": "grand", "en": "big", "ar": "كبير", "pluriel": "babber-anin"},
+        {"tad": "ceen-an", "verbe": "ceená", "fr": "petit, jeune", "en": "small, young", "ar": "صغير، شاب", "pluriel": "ceenan-anin"},
+        {"tad": "yibrar-an", "verbe": "yibrár", "fr": "mauvais, laid", "en": "bad, ugly", "ar": "سيء، قبيح", "pluriel": "yibraran-anin"},
+        {"tad": "gin-giman", "verbe": "gíman", "fr": "bon, agréable", "en": "good, nice", "ar": "جيد، لطيف", "pluriel": "gin-giman-an"},
+        {"tad": "bibi", "verbe": "bíibi", "fr": "noir", "en": "black", "ar": "أسود", "pluriel": "bibi-nin"},
+        {"tad": "kooray", "verbe": "kóoray", "fr": "blanc", "en": "white", "ar": "أبيض", "pluriel": "kooray-nin"},
+        {"tad": "ciday", "verbe": "cidáy", "fr": "rouge", "en": "red", "ar": "أحمر", "pluriel": "ciday-nin"},
+        {"tad": "yaray-an", "verbe": "yaráy", "fr": "jaune", "en": "yellow", "ar": "أصفر", "pluriel": "yarayan-anin"},
+        {"tad": "kuk-an", "verbe": "kukú", "fr": "long", "en": "long", "ar": "طويل", "pluriel": "kukan-anin"},
+        {"tad": "gazul", "verbe": "gazúl", "fr": "court", "en": "short", "ar": "قصير", "pluriel": "gazul-anin"},
+        {"tad": "yiwál", "verbe": "yiwál", "fr": "tranchant", "en": "sharp", "ar": "حاد", "pluriel": "yiwal-anin"},
+        {"tad": "qoq-i", "verbe": "qóq", "fr": "sec", "en": "dry", "ar": "جاف", "pluriel": "qoq-anin"},
+        {"tad": "zen-i", "verbe": "zén", "fr": "vieux", "en": "old", "ar": "عجوز", "pluriel": "zen-anin"},
+        {"tad": "nas-u", "verbe": "ṇás", "fr": "gras, bien nourri", "en": "fat, well-fed", "ar": "سمين", "pluriel": "nas-anin"},
+        {"tad": "ban-an", "verbe": "bán", "fr": "mou, tendre", "en": "soft, tender", "ar": "لين", "pluriel": "banan-anin"},
+        {"tad": "dagag-an", "verbe": "dagag", "fr": "lent", "en": "slow", "ar": "بطيء", "pluriel": "dagagan-anin"},
+        {"tad": "yimad-an", "verbe": "yimad", "fr": "complet", "en": "complete", "ar": "كامل", "pluriel": "yimadan-anin"},
+        {"tad": "yizzar-an", "verbe": "yizzar", "fr": "premier, devant", "en": "first, ahead", "ar": "أول، أمام", "pluriel": "yizzaran-anin"},
+        {"tad": "yish-an", "verbe": "yisha", "fr": "fort", "en": "strong", "ar": "قوي", "pluriel": "yishan-anin"},
+        {"tad": "zadig-an", "verbe": "zadig", "fr": "propre", "en": "clean", "ar": "نظيف", "pluriel": "zadigan-anin"}
+      ]
+    },
+    {
+      "id": "pronouns",
+      "titre_fr": "Pronoms personnels",
+      "titre_en": "Personal pronouns",
+      "titre_ar": "الضمائر الشخصية",
+      "description_fr": "Les pronoms personnels en tadaksahak distinguent trois personnes et deux nombres (singulier et pluriel). Il n'y a pas de distinction de genre.",
+      "description_en": "Personal pronouns in Tadaksahak distinguish three persons and two numbers (singular and plural). There is no gender distinction.",
+      "description_ar": "الضمائر الشخصية في التدكساهق تميز ثلاثة أشخاص وعددين (مفرد وجمع). لا يوجد تمييز بين الجنسين.",
+      "elements": [
+        {"personne": "1ère personne singulier", "code": "1s", "sujet_clitique": "aɣ(a)- / ay-", "independant": "aɣay", "objet_direct": "ayay", "objet_indirect": "ayay se", "possessif": "aya-n"},
+        {"personne": "2ème personne singulier", "code": "2s", "sujet_clitique": "ni- / an-", "independant": "nín", "objet_direct": "nin", "objet_indirect": "ana / nin se", "possessif": "ni-n"},
+        {"personne": "3ème personne singulier", "code": "3s", "sujet_clitique": "a-", "independant": "áŋga", "objet_direct": "-a", "objet_indirect": "aase", "possessif": "ay-n"},
+        {"personne": "1ère personne pluriel", "code": "1p", "sujet_clitique": "ar(ǝ)-", "independant": "áari", "objet_direct": "aari", "objet_indirect": "aari se", "possessif": "are-n"},
+        {"personne": "2ème personne pluriel", "code": "2p", "sujet_clitique": "andǝ-", "independant": "ándi", "objet_direct": "andi", "objet_indirect": "andi se", "possessif": "ande-n"},
+        {"personne": "3ème personne pluriel", "code": "3p", "sujet_clitique": "i-", "independant": "íŋgi", "objet_direct": "-i", "objet_indirect": "iise", "possessif": "i-n"}
+      ]
+    },
+    {
+      "id": "numerals",
+      "titre_fr": "Numéraux",
+      "titre_en": "Numerals",
+      "titre_ar": "الأعداد",
+      "description_fr": "Les numéraux de 1 à 10 sont d'origine tamasheq, sauf 'un' et 'deux' qui sont d'origine songhay. Les dizaines sont formées par juxtaposition.",
+      "description_en": "Numerals 1-10 are of Tamasheq origin, except 'one' and 'two' which are of Songhay origin. Tens are formed by juxtaposition.",
+      "description_ar": "الأعداد من ١ إلى ١٠ من أصل تماشقي، ما عدا 'واحد' و 'اثنان' من أصل سونغهاي. تتشكل العشرات بالمزاوجة.",
+      "elements": [
+        {"num": "1", "tad": "a-ffó / (a-f)fo-da", "notes": "a-ffó est la forme nominale, fo-da accompagne le nom"},
+        {"num": "2", "tad": "hiŋká"},
+        {"num": "3", "tad": "kaaráḍ"},
+        {"num": "4", "tad": "akkóz"},
+        {"num": "5", "tad": "ʃammúʃ"},
+        {"num": "6", "tad": "ʃaadíʃ"},
+        {"num": "7", "tad": "iffá"},
+        {"num": "8", "tad": "ittám"},
+        {"num": "9", "tad": "taasá"},
+        {"num": "10", "tad": "maará"},
+        {"num": "11", "tad": "maará (a)nda a-ffó", "notes": "littéralement 'dix et un'"},
+        {"num": "12", "tad": "maará (a)nda hinká", "notes": "littéralement 'dix et deux'"},
+        {"num": "20", "tad": "táafinda"},
+        {"num": "30", "tad": "kaarad-a-temerwin", "notes": "littéralement 'trois dizaines'"},
+        {"num": "40", "tad": "akkoz-a-temerwin", "notes": "littéralement 'quatre dizaines'"},
+        {"num": "50", "tad": "fammuf-a-temerwin", "notes": "littéralement 'cinq dizaines'"},
+        {"num": "60", "tad": "ʃaadif-a-temerwin", "notes": "littéralement 'six dizaines'"},
+        {"num": "70", "tad": "ifay-temerwin", "notes": "littéralement 'sept dizaines'"},
+        {"num": "80", "tad": "ittam-temerwin", "notes": "littéralement 'huit dizaines'"},
+        {"num": "90", "tad": "taasay-temerwin", "notes": "littéralement 'neuf dizaines'"},
+        {"num": "100", "tad": "t-á-méedi"},
+        {"num": "200", "tad": "t-á-méedi hinká"},
+        {"num": "1000", "tad": "a-jím"},
+        {"num": "2000", "tad": "i-jimm-an hinká"}
+      ]
+    },
+    {
+      "id": "demonstratives",
+      "titre_fr": "Démonstratifs",
+      "titre_en": "Demonstratives",
+      "titre_ar": "أسماء الإشارة",
+      "description_fr": "Tadaksahak possède six démonstratifs qui indiquent la distance et le degré de connaissance du référent.",
+      "description_en": "Tadaksahak has six demonstratives that indicate distance and the degree of familiarity with the referent.",
+      "description_ar": "التدكساهق لديها ستة أسماء إشارة تشير إلى المسافة ودرجة الإلمام بالمرجع.",
+      "elements": [
+        {"mot": "(a)sénda", "fonction": "distant", "fr": "celui-là, là-bas (loin du locuteur)", "en": "that (far from speaker)", "ar": "ذلك، هناك (بعيد عن المتكلم)"},
+        {"mot": "óoda", "fonction": "proximal", "fr": "ceci, ce (près du locuteur)", "en": "this (close to speaker)", "ar": "هذا (قريب من المتكلم)"},
+        {"mot": "áyda", "fonction": "proximal à l'interlocuteur", "fr": "ceci (près de l'interlocuteur)", "en": "this (close to addressee)", "ar": "هذا (قريب من المخاطب)"},
+        {"mot": "adi", "fonction": "anaphorique", "fr": "ce (déjà mentionné)", "en": "that (already mentioned)", "ar": "ذلك (سبق ذكره)"},
+        {"mot": "o", "fonction": "référence large", "fr": "ce (référence temporelle ou spatiale large)", "en": "this/that (broad reference)", "ar": "هذا/ذلك (مرجع واسع)"},
+        {"mot": "na", "fonction": "opposé", "fr": "ce (en face, opposé)", "en": "this/that (opposite)", "ar": "هذا/ذلك (مقابل)"}
+      ]
+    },
+    {
+      "id": "interrogatives",
+      "titre_fr": "Mots interrogatifs",
+      "titre_en": "Question words",
+      "titre_ar": "أدوات الاستفهام",
+      "description_fr": "Les mots interrogatifs en tadaksahak sont principalement basés sur deux racines : ci 'qui/quoi' et man 'où'.",
+      "description_en": "Question words in Tadaksahak are mainly based on two roots: ci 'who/what' and man 'where'.",
+      "description_ar": "أدوات الاستفهام في التدكساهق مبنية بشكل أساسي على جذرين: ci 'من/ماذا' و man 'أين'.",
+      "elements": [
+        {"mot": "ci", "fr": "qui ? / quoi ?", "en": "who? / what?", "ar": "من؟ / ماذا؟", "exemple": "cí mmáay a?", "exemple_fr": "qui est-ce ? (littéralement : qui le possède ?)"},
+        {"mot": "ci ná a", "fr": "qu'est-ce que c'est ?", "en": "what is it?", "ar": "ما هذا؟", "exemple": "cí ná a?", "exemple_fr": "qu'est-ce que c'est ?"},
+        {"mot": "ci ná aɣo", "fr": "qui (humain) ?", "en": "who (human)?", "ar": "من (بشر)؟", "exemple": "ci ná aɣo?", "exemple_fr": "qui est-ce ?"},
+        {"mot": "ci ná hó", "fr": "quoi (non-humain) ?", "en": "what (non-human)?", "ar": "ماذا (غير بشر)؟", "exemple": "ci ná hó?", "exemple_fr": "qu'est-ce que c'est ?"},
+        {"mot": "ci ná hó be", "fr": "pourquoi ?", "en": "why?", "ar": "لماذا؟", "exemple": "ci ná hó be ni-b-zoɣ?", "exemple_fr": "pourquoi te bats-tu ?"},
+        {"mot": "c(i) agúd", "fr": "quand ?", "en": "when?", "ar": "متى؟", "exemple": "c(i) agúd a-ddidá?", "exemple_fr": "quand est-il parti ?"},
+        {"mot": "maaná", "fr": "où ? (proche)", "en": "where? (close)", "ar": "أين؟ (قريب)", "exemple": "maaná ni-n hugu?", "exemple_fr": "où est ta tente ?"},
+        {"mot": "man n(e)", "fr": "où ? (éloigné)", "en": "where? (far)", "ar": "أين؟ (بعيد)", "exemple": "man ne i-f-ko?", "exemple_fr": "où vont-ils ?"},
+        {"mot": "man ícet", "fr": "combien ?", "en": "how many/much?", "ar": "كم؟", "exemple": "man ícet feej-an a-dday-an?", "exemple_fr": "combien de moutons a-t-il vendus ?"},
+        {"mot": "man émmék aɣó (ǝ)nda", "fr": "comment ?", "en": "how?", "ar": "كيف؟", "exemple": "man émmék aɣó ǝnda aɣ-tǝ-dá-a?", "exemple_fr": "comment vais-je le faire ?"}
+      ]
+    },
+    {
+      "id": "negation",
+      "titre_fr": "Négation",
+      "titre_en": "Negation",
+      "titre_ar": "النفي",
+      "description_fr": "Tadaksahak distingue deux formes de négation : la négation du perfectif (nǝ-) et la négation de l'imperfectif (sǝ-).",
+      "description_en": "Tadaksahak distinguishes two forms of negation: perfective negation (nǝ-) and imperfective negation (sǝ-).",
+      "description_ar": "التدكساهق تميز بين شكلين من النفي: نفي الماضي التام (nǝ-) ونفي المضارع (sǝ-).",
+      "elements": [
+        {"forme": "nǝ-", "aspect": "perfectif", "fr": "ne ... pas (action terminée)", "en": "did not (completed action)", "ar": "لم (فعل مكتمل)", "exemple": "a-nǝ-kun(a) ay-n a-zraf", "exemple_fr": "il n'a pas trouvé son argent"},
+        {"forme": "sǝ-", "aspect": "imperfectif", "fr": "ne ... pas (action non terminée)", "en": "do not (uncompleted action)", "ar": "لا (فعل غير مكتمل)", "exemple": "aɣ-sǝ-báy-a", "exemple_fr": "je ne le sais pas"},
+        {"forme": "kǝlá ... nǝ-", "aspect": "perfectif", "fr": "ne ... jamais", "en": "never", "ar": "لم ... أبداً", "exemple": "kǝlá aɣ-nǝ-guná Bamakoy", "exemple_fr": "je n'ai jamais vu Bamako"},
+        {"forme": "nǝ- ... fów", "aspect": "perfectif", "fr": "ne ... pas du tout", "en": "not at all", "ar": "لم ... إطلاقاً", "exemple": "aɣ-nǝ-fǝlás-a fów", "exemple_fr": "je ne le crois pas du tout"},
+        {"forme": "NEG + har", "aspect": "tous", "fr": "ne ... que (exception)", "en": "nothing but", "ar": "لا ... إلا", "exemple": "a-nǝ-yíkkǝl-kat i-ǝnda je har i-mǝzzur-an", "exemple_fr": "il ne leur a servi que des crottins"},
+        {"forme": "NEG + wala", "aspect": "tous", "fr": "ne ... même pas", "en": "not even", "ar": "ولا حتى", "exemple": "a-nǝ-guná wala a-ffooda", "exemple_fr": "il n'en a même pas vu un"},
+        {"forme": "NEG + ʃeddí / ceddí", "aspect": "tous", "fr": "ne ... pas encore", "en": "not yet", "ar": "لم ... بعد", "exemple": "a-nǝ-tén ʃeddí", "exemple_fr": "il n'est pas encore arrivé"},
+        {"forme": "h(e) a-ʃʃí", "type": "existential", "fr": "il n'y a rien", "en": "there is nothing", "ar": "لا شيء", "exemple": "h(e) a-ʃʃí a-cc(i) aase", "exemple_fr": "elle ne lui a rien dit"},
+        {"forme": "bor(a) a-ʃʃí", "type": "existential", "fr": "il n'y a personne", "en": "there is nobody", "ar": "لا أحد", "exemple": "bor(a) a-ʃʃí máy i-munas", "exemple_fr": "personne ne possède de chameaux"},
+        {"forme": "wǝrtilla", "type": "existential", "fr": "il n'y a pas (emphatique)", "en": "there is not (emphatic)", "ar": "ليس هناك (تأكيد)", "exemple": "wǝrtilla alxér", "exemple_fr": "il n'y a pas de paix"},
+        {"forme": "wiji", "type": "identité", "fr": "n'est pas (identification)", "en": "is not (identification)", "ar": "ليس (تحديد هوية)", "exemple": "wiji t-a-ngud, iizace", "exemple_fr": "ce n'est pas une fille, c'est un garçon"}
+      ]
+    },
+    {
+      "id": "reciprocal_verbs",
+      "titre_fr": "Verbes réciproques",
+      "titre_en": "Reciprocal verbs",
+      "titre_ar": "أفعال متبادلة",
+      "description_fr": "Le réciproque se forme avec les préfixes m(a)- ou n(a)-, et parfois na-mm(a)- pour les verbes supplétifs.",
+      "description_en": "The reciprocal is formed with prefixes m(a)- or n(a)-, and sometimes na-mm(a)- for suppletive verbs.",
+      "description_ar": "يتم تكوين التبادلية بالبادئات m(a)- أو n(a)-، وأحياناً na-mm(a)- للأفعال البديلة.",
+      "verbes": [
+        {"racine": "yidyar", "fr": "être collé", "en": "to be glued", "ar": "يكون ملتصقاً", "reciproque": "m-adyar", "reciproque_fr": "adhérer l'un à l'autre"},
+        {"racine": "yixwal", "fr": "être préoccupé", "en": "to be preoccupied", "ar": "يكون مشغول البال", "reciproque": "m-axwal", "reciproque_fr": "être préoccupés l'un par l'autre"},
+        {"racine": "yirzam", "fr": "pendre autour", "en": "to hang around", "ar": "يعلق حول", "reciproque": "n-arzam", "reciproque_fr": "être enlacés"},
+        {"racine": "yibdad", "fr": "être retenu", "en": "to be held up", "ar": "يكون محتجزاً", "reciproque": "n-abdad", "reciproque_fr": "se tenir ensemble"},
+        {"racine": "gartattaf", "fr": "trébucher", "en": "to stumble", "ar": "يتعثر", "reciproque": "na-gartattaf", "reciproque_fr": "trébucher ensemble"},
+        {"racine": "yirkab", "fr": "tirer", "en": "to pull", "ar": "يسحب", "reciproque": "n-arkab", "reciproque_fr": "tirer l'un sur l'autre"},
+        {"racine": "yiktab", "fr": "écrire", "en": "to write", "ar": "يكتب", "reciproque": "n-aktab", "reciproque_fr": "s'écrire l'un à l'autre"},
+        {"racine": "wi", "fr": "tuer", "en": "to kill", "ar": "يقتل", "reciproque": "n-mm-anya", "reciproque_fr": "s'entretuer"},
+        {"racine": "dá", "fr": "faire", "en": "to do", "ar": "يفعل", "reciproque": "n-mm-aga", "reciproque_fr": "se faire l'un à l'autre"},
+        {"racine": "mór", "fr": "être distant", "en": "to be far", "ar": "يكون بعيداً", "reciproque": "n-mm-agag", "reciproque_fr": "être éloignés l'un de l'autre"},
+        {"racine": "mán", "fr": "être proche", "en": "to be near", "ar": "يكون قريباً", "reciproque": "n-mm-ahaz", "reciproque_fr": "être proches l'un de l'autre"},
+        {"racine": "kár", "fr": "frapper", "en": "to hit", "ar": "يضرب", "reciproque": "n-mm-awut", "reciproque_fr": "se frapper mutuellement"},
+        {"racine": "háaṣi", "fr": "regarder", "en": "to look at", "ar": "ينظر", "reciproque": "n-mm-aswud", "reciproque_fr": "se regarder mutuellement"},
+        {"racine": "yintaz", "fr": "tirer rapidement", "en": "to pull quickly", "ar": "يسحب بسرعة", "reciproque": "n-mm-antaz", "reciproque_fr": "se tirer l'un de l'autre"}
       ]
     }
   ]
