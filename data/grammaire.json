@@ -1,0 +1,934 @@
+{
+  "version": "1.0",
+  "langue": "Tadaksahak",
+  "description_fr": "Grammaire de référence du tadaksahak d'après Christiansen-Bolli (2010)",
+  "description_en": "Reference grammar of Tadaksahak from Christiansen-Bolli (2010)",
+  "description_ar": "مرجع نحوي للغة التدكساهق من كريستيانسن-بولي (٢٠١٠)",
+  "sections": [
+    {
+      "id": "causative_passive",
+      "titre_fr": "Verbes causatifs et passifs",
+      "titre_en": "Causative and Passive Verbs",
+      "titre_ar": "الأفعال السببية والمجهولة",
+      "description_fr": "En tadaksahak, les verbes d'origine songhay prennent des racines empruntées au tamasheq pour former le causatif et le passif.",
+      "description_en": "In Tadaksahak, Songhay-origin verbs take roots borrowed from Tamasheq to form the causative and passive.",
+      "description_ar": "في التدكساهق، تأخذ الأفعال ذات الأصل السونغهاي جذوراً مستعارة من التماشق لتكوين السببية والمجهول.",
+      "subsections": [
+        {
+          "id": "one_argument_verbs",
+          "titre_fr": "Verbes à un argument",
+          "titre_en": "One-Argument Verbs",
+          "titre_ar": "أفعال بحجة واحدة",
+          "verbes": [
+            {
+              "racine_tad": "hēw",
+              "sens_fr": "pleurer",
+              "sens_en": "to cry",
+              "sens_ar": "يبكي",
+              "causatif": "s-ahlá",
+              "causatif_source": "tamasheq"
+            },
+            {
+              "racine_tad": "kungú",
+              "sens_fr": "manger à satiété",
+              "sens_en": "to eat enough",
+              "sens_ar": "يأكل حتى الشبع",
+              "causatif": "s-iywá",
+              "causatif_source": "tamasheq"
+            },
+            {
+              "racine_tad": "kánf",
+              "sens_fr": "tomber",
+              "sens_en": "to fall",
+              "sens_ar": "يسقط",
+              "causatif": "ādár",
+              "causatif_source": "tamasheq"
+            },
+            {
+              "racine_tad": "sót",
+              "sens_fr": "voler (oiseau)",
+              "sens_en": "to fly",
+              "sens_ar": "يطير",
+              "causatif": "sā-ss-agád",
+              "causatif_source": "tamasheq"
+            },
+            {
+              "racine_tad": "tunú",
+              "sens_fr": "se lever",
+              "sens_en": "to get up",
+              "sens_ar": "يقوم",
+              "causatif": "s-ārkár",
+              "causatif_source": "tamasheq"
+            },
+            {
+              "racine_tad": "zumbú",
+              "sens_fr": "descendre",
+              "sens_en": "to go down",
+              "sens_ar": "ينزل",
+              "causatif": "zā-zab-át",
+              "causatif_source": "tamasheq"
+            },
+            {
+              "racine_tad": "húur",
+              "sens_fr": "entrer",
+              "sens_en": "to enter",
+              "sens_ar": "يدخل",
+              "causatif": "z-úguz",
+              "causatif_source": "tamasheq"
+            },
+            {
+              "racine_tad": "kóy",
+              "sens_fr": "partir",
+              "sens_en": "to leave",
+              "sens_ar": "يغادر",
+              "causatif": "s-áglá",
+              "causatif_source": "tamasheq"
+            },
+            {
+              "racine_tad": "hunú",
+              "sens_fr": "quitter",
+              "sens_en": "to depart",
+              "sens_ar": "يرحل",
+              "causatif": "s-āfel",
+              "causatif_source": "tamasheq"
+            },
+            {
+              "racine_tad": "keení",
+              "sens_fr": "être allongé, dormir",
+              "sens_en": "to be laid down, sleep",
+              "sens_ar": "يكون مستلقياً، ينام",
+              "causatif": "f-ínjá",
+              "causatif_source": "tamasheq"
+            },
+            {
+              "racine_tad": "zurú",
+              "sens_fr": "courir",
+              "sens_en": "to run",
+              "sens_ar": "يركض",
+              "causatif": "z-ázál",
+              "causatif_source": "tamasheq"
+            },
+            {
+              "racine_tad": "gorá",
+              "sens_fr": "s'asseoir",
+              "sens_en": "to sit",
+              "sens_ar": "يجلس",
+              "causatif": "f-áyam",
+              "causatif_source": "tamasheq"
+            },
+            {
+              "racine_tad": "hóoy",
+              "sens_fr": "passer la journée",
+              "sens_en": "to spend the day",
+              "sens_ar": "يقضي اليوم",
+              "causatif": "s-aklá",
+              "causatif_source": "tamasheq"
+            },
+            {
+              "racine_tad": "káy",
+              "sens_fr": "s'arrêter",
+              "sens_en": "to stop",
+              "sens_ar": "يتوقف",
+              "causatif": "s-ábdād",
+              "causatif_source": "tamasheq"
+            },
+            {
+              "racine_tad": "kánkam",
+              "sens_fr": "téter",
+              "sens_en": "to suckle",
+              "sens_ar": "يرضع",
+              "causatif": "s-ánkās",
+              "causatif_source": "tamasheq"
+            },
+            {
+              "racine_tad": "káy",
+              "sens_fr": "être debout",
+              "sens_en": "to be upright",
+              "sens_ar": "يكون واقفاً",
+              "causatif": "s-oytá",
+              "causatif_source": "tamasheq"
+            },
+            {
+              "racine_tad": "didá",
+              "sens_fr": "marcher",
+              "sens_en": "to walk",
+              "sens_ar": "يمشي",
+              "causatif": "z-áwánk-at",
+              "causatif_source": "tamasheq"
+            }
+          ]
+        },
+        {
+          "id": "two_argument_verbs",
+          "titre_fr": "Verbes à deux arguments",
+          "titre_en": "Two-Argument Verbs",
+          "titre_ar": "أفعال بحجتين",
+          "description_fr": "La forme de la racine songhay correspond à l'impératif singulier.",
+          "description_en": "The form of the Songhay root corresponds to the singular imperative.",
+          "description_ar": "شكل الجذر السونغهاي يتوافق مع صيغة الأمر للمفرد.",
+          "verbes": [
+            {
+              "imperatif": "záw",
+              "sens_fr": "apporter",
+              "sens_en": "to bring",
+              "sens_ar": "يجلب",
+              "causatif": "fī-fī-wit",
+              "passif": "āwīt",
+              "passif_sens_fr": "être apporté",
+              "passif_sens_en": "to be brought",
+              "passif_sens_ar": "يجلب"
+            },
+            {
+              "imperatif": "cēw",
+              "sens_fr": "appeler",
+              "sens_en": "to call",
+              "sens_ar": "ينادي",
+              "causatif": "s-āyrət",
+              "passif": "tuw-ayrát",
+              "passif_sens_fr": "être appelé",
+              "passif_sens_en": "to be called",
+              "passif_sens_ar": "ينادى"
+            },
+            {
+              "imperatif": "keedí",
+              "sens_fr": "monter, chevaucher",
+              "sens_en": "to climb, ride",
+              "sens_ar": "يركب",
+              "causatif": "s-āwēnt",
+              "passif": "t-āwēn",
+              "passif_sens_fr": "être monté",
+              "passif_sens_en": "to be ridden",
+              "passif_sens_ar": "يركب"
+            },
+            {
+              "imperatif": "dumbú",
+              "sens_fr": "couper, égorger",
+              "sens_en": "to cut, slaughter",
+              "sens_ar": "يقطع، يذبح",
+              "causatif": "z-āgzám",
+              "passif": "t-āgzám",
+              "passif_sens_fr": "être coupé, égorgé",
+              "passif_sens_en": "to be cut, slaughtered",
+              "passif_sens_ar": "يقطع، يذبح"
+            },
+            {
+              "imperatif": "dá",
+              "sens_fr": "faire",
+              "sens_en": "to do",
+              "sens_ar": "يفعل",
+              "causatif": "f-īgát",
+              "passif": "t-āgá",
+              "passif_sens_fr": "être fait",
+              "passif_sens_en": "to be done",
+              "passif_sens_ar": "يفعل"
+            },
+            {
+              "imperatif": "nín",
+              "sens_fr": "boire",
+              "sens_en": "to drink",
+              "sens_ar": "يشرب",
+              "causatif": "f-ījút",
+              "passif": "t-ījú",
+              "passif_sens_fr": "être bu",
+              "passif_sens_en": "to be drunk",
+              "passif_sens_ar": "يشرب"
+            },
+            {
+              "imperatif": "ná",
+              "sens_fr": "manger",
+              "sens_en": "to eat",
+              "sens_ar": "يأكل",
+              "causatif": "f-īkját",
+              "passif": "t-ākjá",
+              "passif_sens_fr": "être mangé",
+              "passif_sens_en": "to be eaten",
+              "passif_sens_ar": "يأكل"
+            },
+            {
+              "imperatif": "zóy",
+              "sens_fr": "se battre",
+              "sens_en": "to fight",
+              "sens_ar": "يتشاجر",
+              "causatif": "s-āk(ā)nās",
+              "passif": "t-āknās",
+              "passif_sens_fr": "être évité, rejeté",
+              "passif_sens_en": "to be shunned",
+              "passif_sens_ar": "يجتنب"
+            },
+            {
+              "imperatif": "habá",
+              "sens_fr": "ramasser (nourriture)",
+              "sens_en": "to gather (food)",
+              "sens_ar": "يجمع (طعام)",
+              "causatif": "s-āfrād",
+              "passif": "t-āfrād",
+              "passif_sens_fr": "être ramassé",
+              "passif_sens_en": "to be gathered",
+              "passif_sens_ar": "يجمع"
+            },
+            {
+              "imperatif": "nát",
+              "sens_fr": "donner",
+              "sens_en": "to give",
+              "sens_ar": "يعطي",
+              "causatif": "s-ākfá",
+              "passif": "t-ākfá",
+              "passif_sens_fr": "être donné",
+              "passif_sens_en": "to be given",
+              "passif_sens_ar": "يعطى"
+            },
+            {
+              "imperatif": "mós",
+              "sens_fr": "entendre",
+              "sens_en": "to hear",
+              "sens_ar": "يسمع",
+              "causatif": "s-āsát",
+              "passif": "tūw-āsá",
+              "passif_sens_fr": "être entendu",
+              "passif_sens_en": "to be heard",
+              "passif_sens_ar": "يسمع"
+            },
+            {
+              "imperatif": "kár",
+              "sens_fr": "frapper",
+              "sens_en": "to hit",
+              "sens_ar": "يضرب",
+              "causatif": "f-āwwət",
+              "passif": "t-āwwət",
+              "passif_sens_fr": "être frappé",
+              "passif_sens_en": "to be hit",
+              "passif_sens_ar": "يضرب"
+            },
+            {
+              "imperatif": "sót",
+              "sens_fr": "sauter par-dessus",
+              "sens_en": "to jump over",
+              "sens_ar": "يقفز فوق",
+              "causatif": "sā-ss-āgād",
+              "passif": "tūw-āgād",
+              "passif_sens_fr": "être sauté",
+              "passif_sens_en": "to be jumped over",
+              "passif_sens_ar": "يقفز فوقه"
+            },
+            {
+              "imperatif": "wís",
+              "sens_fr": "tuer, frapper",
+              "sens_en": "to kill, hit",
+              "sens_ar": "يقتل، يضرب",
+              "causatif": "sā-ss-ūw-anyā",
+              "passif": "tūw-anyā",
+              "passif_sens_fr": "être tué",
+              "passif_sens_en": "to be killed",
+              "passif_sens_ar": "يقتل"
+            },
+            {
+              "imperatif": "báy",
+              "sens_fr": "savoir, connaître",
+              "sens_en": "to know",
+              "sens_ar": "يعرف",
+              "causatif": "fī-fī-int",
+              "passif": "tūw-āsān",
+              "passif_sens_fr": "être connu",
+              "passif_sens_en": "to be known",
+              "passif_sens_ar": "يعرف"
+            },
+            {
+              "imperatif": "gurgú",
+              "sens_fr": "tirer en guidant",
+              "sens_en": "to lead pulling",
+              "sens_ar": "يسحب ويقود",
+              "causatif": "sā-ss-āwī",
+              "passif": "t-āwī",
+              "passif_sens_fr": "être tiré",
+              "passif_sens_en": "to be pulled",
+              "passif_sens_ar": "يسحب"
+            },
+            {
+              "imperatif": "dis",
+              "sens_fr": "laisser tranquille",
+              "sens_en": "to leave alone",
+              "sens_ar": "يترك وشأنه",
+              "causatif": "t-ūw-iyá",
+              "passif": "t-ūw-iyá",
+              "passif_sens_fr": "être laissé",
+              "passif_sens_en": "to be left alone",
+              "passif_sens_ar": "يترك"
+            },
+            {
+              "imperatif": "háasi",
+              "sens_fr": "regarder",
+              "sens_en": "to look at",
+              "sens_ar": "ينظر إلى",
+              "causatif": "s-ūswúd",
+              "passif": "t-ūswúd",
+              "passif_sens_fr": "être regardé",
+              "passif_sens_en": "to be looked at",
+              "passif_sens_ar": "ينظر إليه"
+            },
+            {
+              "imperatif": "hurú",
+              "sens_fr": "chercher",
+              "sens_en": "to look for",
+              "sens_ar": "يبحث عن",
+              "causatif": "s-āgmít",
+              "passif": "t-āgmít",
+              "passif_sens_fr": "être cherché",
+              "passif_sens_en": "to be looked for",
+              "passif_sens_ar": "يبحث عنه"
+            },
+            {
+              "imperatif": "báaya",
+              "sens_fr": "aimer, vouloir",
+              "sens_en": "to love, want",
+              "sens_ar": "يحب، يريد",
+              "causatif": "f-ēerát",
+              "passif": "tūw-ērá",
+              "passif_sens_fr": "être aimé",
+              "passif_sens_en": "to be loved",
+              "passif_sens_ar": "يحب"
+            },
+            {
+              "imperatif": "qaarán",
+              "sens_fr": "lire, étudier (Coran)",
+              "sens_en": "to read, study (Quran)",
+              "sens_ar": "يقرأ، يدرس (قرآناً)",
+              "causatif": "sā-ss-ēyrát",
+              "passif": "tūw-ērá",
+              "passif_sens_fr": "être lu, étudié",
+              "passif_sens_en": "to be read, studied",
+              "passif_sens_ar": "يقرأ، يدرس"
+            },
+            {
+              "imperatif": "cí",
+              "sens_fr": "dire",
+              "sens_en": "to say",
+              "sens_ar": "يقول",
+              "causatif": "sā-ss-uw-an ~ fē-jūw-an",
+              "passif": "tūw-ēnná",
+              "passif_sens_fr": "être dit",
+              "passif_sens_en": "to be said",
+              "passif_sens_ar": "يقال"
+            },
+            {
+              "imperatif": "guná",
+              "sens_fr": "voir",
+              "sens_en": "to see",
+              "sens_ar": "يرى",
+              "causatif": "s-ēknā",
+              "passif": "tūw-ēni ~ tūw-ēná",
+              "passif_sens_fr": "être vu",
+              "passif_sens_en": "to be seen",
+              "passif_sens_ar": "يرى"
+            },
+            {
+              "imperatif": "záy",
+              "sens_fr": "voler",
+              "sens_en": "to steal",
+              "sens_ar": "يسرق",
+              "causatif": "fī-fēkēr",
+              "passif": "t-ēkēr",
+              "passif_sens_fr": "être volé",
+              "passif_sens_en": "to be stolen",
+              "passif_sens_ar": "يسرق"
+            },
+            {
+              "imperatif": "gón",
+              "sens_fr": "avaler",
+              "sens_en": "to swallow",
+              "sens_ar": "يبتلع",
+              "causatif": "z-ēlmáz",
+              "passif": "t-ēlmáz",
+              "passif_sens_fr": "être avalé",
+              "passif_sens_en": "to be swallowed",
+              "passif_sens_ar": "يبتلع"
+            },
+            {
+              "imperatif": "dini",
+              "sens_fr": "prendre",
+              "sens_en": "to take",
+              "sens_ar": "يأخذ",
+              "causatif": "z-ēbēz",
+              "passif": "t-ēbēz",
+              "passif_sens_fr": "être arrêté, pris",
+              "passif_sens_en": "to be arrested, taken",
+              "passif_sens_ar": "يؤخذ، يقبض عليه"
+            },
+            {
+              "imperatif": "káw",
+              "sens_fr": "sortir",
+              "sens_en": "to take out",
+              "sens_ar": "يخرج",
+              "causatif": "f-ūkūf",
+              "passif": "t-ūkūf",
+              "passif_sens_fr": "être sorti",
+              "passif_sens_en": "to be taken out",
+              "passif_sens_ar": "يخرج"
+            },
+            {
+              "imperatif": "tabá",
+              "sens_fr": "goûter",
+              "sens_en": "to taste",
+              "sens_ar": "يتذوق",
+              "causatif": "s-ēndēk",
+              "passif": "t-ēndēk",
+              "passif_sens_fr": "être goûté",
+              "passif_sens_en": "to be tasted",
+              "passif_sens_ar": "يتذوق"
+            },
+            {
+              "imperatif": "hár",
+              "sens_fr": "raconter",
+              "sens_en": "to tell",
+              "sens_ar": "يروي",
+              "causatif": "t-ēmāl",
+              "passif": "t-ēmāl",
+              "passif_sens_fr": "être raconté",
+              "passif_sens_en": "to be told",
+              "passif_sens_ar": "يروى"
+            },
+            {
+              "imperatif": "fúr",
+              "sens_fr": "jeter",
+              "sens_en": "to throw",
+              "sens_ar": "يرمي",
+              "causatif": "sā-ss-ēgēr",
+              "passif": "t-ēgēr",
+              "passif_sens_fr": "être jeté",
+              "passif_sens_en": "to be thrown",
+              "passif_sens_ar": "يرمى"
+            },
+            {
+              "imperatif": "gangá",
+              "sens_fr": "empêcher",
+              "sens_en": "to hinder",
+              "sens_ar": "يمنع",
+              "causatif": "s-ēgēl",
+              "passif": "t-ēgēl",
+              "passif_sens_fr": "être empêché",
+              "passif_sens_en": "to be hindered",
+              "passif_sens_ar": "يمنع"
+            },
+            {
+              "imperatif": "dáy-kat",
+              "sens_fr": "acheter",
+              "sens_en": "to buy",
+              "sens_ar": "يشتري",
+              "causatif": "z-ēnzá",
+              "passif": "t-ēnzā",
+              "passif_sens_fr": "être acheté",
+              "passif_sens_en": "to be bought",
+              "passif_sens_ar": "يشتري"
+            },
+            {
+              "imperatif": "dáy-an",
+              "sens_fr": "vendre",
+              "sens_en": "to sell",
+              "sens_ar": "يبيع",
+              "causatif": "t-ānz-ā",
+              "passif": "t-ānz-ā",
+              "passif_sens_fr": "être vendu",
+              "passif_sens_en": "to be sold",
+              "passif_sens_ar": "يباع"
+            },
+            {
+              "imperatif": "gár",
+              "sens_fr": "garder, surveiller",
+              "sens_en": "to guard",
+              "sens_ar": "يحرس",
+              "causatif": "z-ēgēz",
+              "passif": "t-ēgēz",
+              "passif_sens_fr": "être gardé",
+              "passif_sens_en": "to be guarded",
+              "passif_sens_ar": "يحرس"
+            },
+            {
+              "imperatif": "hangá",
+              "sens_fr": "accompagner",
+              "sens_en": "to accompany",
+              "sens_ar": "يرافق",
+              "causatif": "fī-fī-idú",
+              "passif": "tūwa-fī-fī-idú",
+              "passif_sens_fr": "être accompagné",
+              "passif_sens_en": "to be accompanied",
+              "passif_sens_ar": "يرافق"
+            },
+            {
+              "imperatif": "hímay",
+              "sens_fr": "laver",
+              "sens_en": "to wash",
+              "sens_ar": "يغسل",
+              "causatif": "fī-fērēd",
+              "passif": "tūwa-fī-fērēd",
+              "passif_sens_fr": "être lavé",
+              "passif_sens_en": "to be washed",
+              "passif_sens_ar": "يغسل"
+            },
+            {
+              "imperatif": "tāngá",
+              "sens_fr": "pousser en guidant",
+              "sens_en": "to guide pushing",
+              "sens_ar": "يدفع ويقود",
+              "causatif": "f-ēwwēt",
+              "passif": "t-ēwwēt",
+              "passif_sens_fr": "être poussé",
+              "passif_sens_en": "to be pushed",
+              "passif_sens_ar": "يدفع"
+            }
+          ]
+        },
+        {
+          "id": "labile_verbs",
+          "titre_fr": "Verbes labiles (transitifs/intransitifs)",
+          "titre_en": "Labile Verbs (transitive/intransitive)",
+          "titre_ar": "أفعال متعدية ولازمة",
+          "description_fr": "Ces verbes peuvent être utilisés de manière transitive ou intransitive sans changement de forme. La traduction donnée est pour l'usage transitif.",
+          "description_en": "These verbs can be used transitively or intransitively without change of form. The translation given is for the transitive use.",
+          "description_ar": "يمكن استخدام هذه الأفعال بشكل متعد أو لازم دون تغيير في الشكل. الترجمة المعطاة هي للاستخدام المتعدي.",
+          "verbes": [
+            {
+              "imperatif": "dīgī",
+              "sens_fr": "casser (jambe)",
+              "sens_en": "to break (leg)",
+              "sens_ar": "يكسر (رجلاً)",
+              "causatif": "dīgz-ārza",
+              "passif": "t-ārza",
+              "passif_sens_fr": "être cassé",
+              "passif_sens_en": "to be broken",
+              "passif_sens_ar": "ينكسر"
+            },
+            {
+              "imperatif": "bāq",
+              "sens_fr": "casser (objet)",
+              "sens_en": "to break (thing)",
+              "sens_ar": "يكسر (شيئاً)",
+              "causatif": "z-ārzā",
+              "passif": "t-ārzā",
+              "passif_sens_fr": "être cassé",
+              "passif_sens_en": "to be broken",
+              "passif_sens_ar": "ينكسر"
+            },
+            {
+              "imperatif": "mān",
+              "sens_fr": "approcher",
+              "sens_en": "to approach",
+              "sens_ar": "يقترب",
+              "causatif": "z-āhāz(-kat)",
+              "passif": "t-āhāz(-kat)",
+              "passif_sens_fr": "être approché",
+              "passif_sens_en": "to be approached",
+              "passif_sens_ar": "يقترب منه"
+            },
+            {
+              "imperatif": "cén",
+              "sens_fr": "construire",
+              "sens_en": "to construct",
+              "sens_ar": "يبني",
+              "causatif": "s-ākrās",
+              "passif": "t-ākrās",
+              "passif_sens_fr": "être construit",
+              "passif_sens_en": "to be constructed",
+              "passif_sens_ar": "يبنى"
+            },
+            {
+              "imperatif": "hín",
+              "sens_fr": "cuire",
+              "sens_en": "to cook",
+              "sens_ar": "يطبخ",
+              "causatif": "sā-ss-ānyá",
+              "passif": "t-ānyá",
+              "passif_sens_fr": "être cuit",
+              "passif_sens_en": "to be cooked",
+              "passif_sens_ar": "يطبخ"
+            },
+            {
+              "imperatif": "kós",
+              "sens_fr": "couper",
+              "sens_en": "to cut",
+              "sens_ar": "يقطع",
+              "causatif": "f-āydāf",
+              "passif": "t-āydāf",
+              "passif_sens_fr": "être coupé",
+              "passif_sens_en": "to be cut",
+              "passif_sens_ar": "يقطع"
+            },
+            {
+              "imperatif": "fás",
+              "sens_fr": "creuser",
+              "sens_en": "to dig",
+              "sens_ar": "يحفر",
+              "causatif": "z-āyāz",
+              "passif": "t-āyāz",
+              "passif_sens_fr": "être creusé",
+              "passif_sens_en": "to be dug",
+              "passif_sens_ar": "يحفر"
+            },
+            {
+              "imperatif": "mór",
+              "sens_fr": "éloigner",
+              "sens_en": "to distance from",
+              "sens_ar": "يبعد",
+              "causatif": "s-āgāg",
+              "passif": "t-āgāg",
+              "passif_sens_fr": "être éloigné",
+              "passif_sens_en": "to be distanced",
+              "passif_sens_ar": "يبعد"
+            },
+            {
+              "imperatif": "dáb",
+              "sens_fr": "habiller",
+              "sens_en": "to dress",
+              "sens_ar": "يلبس",
+              "causatif": "s-ālsā",
+              "passif": "t-ālsā",
+              "passif_sens_fr": "être habillé",
+              "passif_sens_en": "to be dressed",
+              "passif_sens_ar": "يلبس"
+            },
+            {
+              "imperatif": "tón",
+              "sens_fr": "remplir",
+              "sens_en": "to fill",
+              "sens_ar": "يملأ",
+              "causatif": "s-ātār",
+              "passif": "t-ātār",
+              "passif_sens_fr": "être rempli",
+              "passif_sens_en": "to be filled",
+              "passif_sens_ar": "يملأ"
+            },
+            {
+              "imperatif": "háy",
+              "sens_fr": "enfanter",
+              "sens_en": "to give birth",
+              "sens_ar": "تلد",
+              "causatif": "fī-fī-āru",
+              "passif": "t-āru",
+              "passif_sens_fr": "être enfanté",
+              "passif_sens_en": "to be born",
+              "passif_sens_ar": "يولد"
+            },
+            {
+              "imperatif": "dudú",
+              "sens_fr": "verser",
+              "sens_en": "to pour",
+              "sens_ar": "يصُب",
+              "causatif": "sā-ss-ānyāl",
+              "passif": "t-ānyāl",
+              "passif_sens_fr": "être versé",
+              "passif_sens_en": "to be poured",
+              "passif_sens_ar": "يصَب"
+            },
+            {
+              "imperatif": "dút",
+              "sens_fr": "piler",
+              "sens_en": "to pound",
+              "sens_ar": "يدق",
+              "causatif": "z-īdīz",
+              "passif": "t-ādīz",
+              "passif_sens_fr": "être pilé",
+              "passif_sens_en": "to be pounded",
+              "passif_sens_ar": "يدق"
+            },
+            {
+              "imperatif": "fér",
+              "sens_fr": "détacher",
+              "sens_en": "to untie",
+              "sens_ar": "يفك",
+              "causatif": "fī-f-ūw-ārá",
+              "passif": "t-ūw-ārá",
+              "passif_sens_fr": "être détaché",
+              "passif_sens_en": "to be untied",
+              "passif_sens_ar": "يفك"
+            },
+            {
+              "imperatif": "táw",
+              "sens_fr": "atteindre",
+              "sens_en": "to reach",
+              "sens_ar": "يصل إلى",
+              "causatif": "sā-ss-āwād",
+              "passif": "t-āwād",
+              "passif_sens_fr": "être rattrapé",
+              "passif_sens_en": "to be caught up with",
+              "passif_sens_ar": "يلحق به"
+            },
+            {
+              "imperatif": "tāt",
+              "sens_fr": "semer",
+              "sens_en": "to sow",
+              "sens_ar": "يزرع",
+              "causatif": "z-āzmī",
+              "passif": "t-āzmī",
+              "passif_sens_fr": "être semé",
+              "passif_sens_en": "to be sown",
+              "passif_sens_ar": "يزرع"
+            },
+            {
+              "imperatif": "táy",
+              "sens_fr": "mouiller",
+              "sens_en": "to moisten",
+              "sens_ar": "يبلل",
+              "causatif": "s-ābdāg",
+              "passif": "t-ābdāg",
+              "passif_sens_fr": "être mouillé",
+              "passif_sens_en": "to be made wet",
+              "passif_sens_ar": "يبلل"
+            },
+            {
+              "imperatif": "mún",
+              "sens_fr": "jeter dehors",
+              "sens_en": "to throw out",
+              "sens_ar": "يطرد",
+              "causatif": "sā-ss-ānyāl",
+              "passif": "tūw-ānyāl",
+              "passif_sens_fr": "être jeté",
+              "passif_sens_en": "to be thrown out",
+              "passif_sens_ar": "يطرد"
+            },
+            {
+              "imperatif": "háw",
+              "sens_fr": "attacher",
+              "sens_en": "to tie up",
+              "sens_ar": "يربط",
+              "causatif": "s-ūw-aqán",
+              "passif": "tūw-aqán",
+              "passif_sens_fr": "être attaché",
+              "passif_sens_en": "to be tied up",
+              "passif_sens_ar": "يربط"
+            },
+            {
+              "imperatif": "bér",
+              "sens_fr": "agrandir",
+              "sens_en": "to enlarge",
+              "sens_ar": "يكبر",
+              "causatif": "s-āmyār ~ rāmī",
+              "passif": "t-āmyār",
+              "passif_sens_fr": "être honoré",
+              "passif_sens_en": "to be honoured",
+              "passif_sens_ar": "يكرم"
+            }
+          ]
+        },
+        {
+          "id": "songhay_derivational_prefix",
+          "titre_fr": "Verbes d'origine songhay avec préfixe dérivationnel",
+          "titre_en": "Songhay-Origin Verbs with Derivational Prefix",
+          "titre_ar": "أفعال ذات أصل سونغهاي ببادئة اشتقاقية",
+          "description_fr": "Ces verbes prennent un préfixe dérivationnel d'origine tamasheq.",
+          "description_en": "These verbs take a derivational prefix of Tamasheq origin.",
+          "description_ar": "تأخذ هذه الأفعال بادئة اشتقاقية من أصل تماشقي.",
+          "verbes": [
+            {
+              "imperatif": "qóq",
+              "sens_fr": "sécher",
+              "sens_en": "to dry",
+              "sens_ar": "يجف",
+              "causatif": "s-éyar",
+              "passif": "t-éyar",
+              "passif_sens_fr": "être séché",
+              "passif_sens_en": "to be dried",
+              "passif_sens_ar": "يجفف"
+            },
+            {
+              "imperatif": "túk",
+              "sens_fr": "cacher",
+              "sens_en": "to hide",
+              "sens_ar": "يخفي",
+              "causatif": "z-égez",
+              "passif": "t-égez",
+              "passif_sens_fr": "être caché",
+              "passif_sens_en": "to be hidden",
+              "passif_sens_ar": "يخفي"
+            },
+            {
+              "imperatif": "zibit",
+              "sens_fr": "être sale",
+              "sens_en": "to be dirty",
+              "sens_ar": "يكون قذراً",
+              "causatif": "zī-zibít",
+              "passif": "t-ī-zibít",
+              "passif_sens_fr": "être sali",
+              "passif_sens_en": "to be dirtied",
+              "passif_sens_ar": "يتسخ"
+            },
+            {
+              "imperatif": "yeer",
+              "sens_fr": "vomir",
+              "sens_en": "to vomit",
+              "sens_ar": "يتقيأ",
+              "causatif": "s-ēerí",
+              "passif": "t-ēerí",
+              "passif_sens_fr": "être vomi",
+              "passif_sens_en": "to be vomited",
+              "passif_sens_ar": "يتقيأ"
+            },
+            {
+              "imperatif": "yéd",
+              "sens_fr": "revenir",
+              "sens_en": "to return",
+              "sens_ar": "يعود",
+              "causatif": "s-eedí",
+              "passif": "t-eedí",
+              "passif_sens_fr": "être ramené",
+              "passif_sens_en": "to be returned",
+              "passif_sens_ar": "يعاد"
+            },
+            {
+              "imperatif": "ciday",
+              "sens_fr": "être rouge",
+              "sens_en": "to be red",
+              "sens_ar": "يكون أحمر",
+              "causatif": "sī-cidáy",
+              "passif": "t-ī-cidáy",
+              "passif_sens_fr": "être rougi",
+              "passif_sens_en": "to be reddened",
+              "passif_sens_ar": "يحمر"
+            },
+            {
+              "imperatif": "kuku",
+              "sens_fr": "être long",
+              "sens_en": "to be long",
+              "sens_ar": "يكون طويلاً",
+              "causatif": "sū-kukú",
+              "passif": "t-ū-kukú",
+              "passif_sens_fr": "être allongé",
+              "passif_sens_en": "to be lengthened",
+              "passif_sens_ar": "يطول"
+            },
+            {
+              "imperatif": "fik",
+              "sens_fr": "semer, enterrer",
+              "sens_en": "to sow, bury",
+              "sens_ar": "يزرع، يدفن",
+              "causatif": "sē-fik",
+              "passif": "tūwa-fík",
+              "passif_sens_fr": "être semé, enterré",
+              "passif_sens_en": "to be sown, buried",
+              "passif_sens_ar": "يزرع، يدفن"
+            },
+            {
+              "imperatif": "mún",
+              "sens_fr": "jeter",
+              "sens_en": "to throw out",
+              "sens_ar": "يطرد",
+              "causatif": "tūwa-mún",
+              "passif": "tūwa-mún",
+              "passif_sens_fr": "être jeté",
+              "passif_sens_en": "to be thrown out",
+              "passif_sens_ar": "يطرد"
+            },
+            {
+              "imperatif": "tim",
+              "sens_fr": "piquer",
+              "sens_en": "to prick",
+              "sens_ar": "يلسع",
+              "causatif": "sē-tīm",
+              "passif": "tūwa-tīm",
+              "passif_sens_fr": "être piqué, injecté",
+              "passif_sens_en": "to be pricked, injected",
+              "passif_sens_ar": "يلسع، يحقن"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
