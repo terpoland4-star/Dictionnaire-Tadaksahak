@@ -1,12 +1,14 @@
 // ==============================
 // APPLICATION TADAKSAHAK LEARNING
-// VERSION COMPLÈTE (avec dictionnaire enrichi, thèmes, flashcards, PWA, mises à jour auto)
+// VERSION FUSIONNÉE - ULTIME
+// Avec dictionnaire enrichi, thèmes, flashcards, PWA, mises à jour auto
+// ET propositions relatives (Christiansen & Levinsohn 2003)
 // ==============================
 
-console.log("🚀 Démarrage de l'application complète...");
+console.log("🚀 Démarrage de l'application fusionnée...");
 
 // ------------------------------
-// TRADUCTIONS (i18n) - Version étendue
+// TRADUCTIONS (i18n) - Version étendue AVEC relatives
 // ------------------------------
 const i18n = {
   fr: {
@@ -43,6 +45,8 @@ const i18n = {
     dictionary_title: "📖 Dictionnaire Tadaksahak",
     grammar_title: "📚 Grammaire Tadaksahak",
     grammar_desc: "Verbes causatifs et passifs d'après Christiansen-Bolli (2010)",
+    grammar_relatives_title: "📖 Propositions relatives",
+    grammar_relatives_desc: "D'après Christiansen & Levinsohn (2003) — Relative Clauses in Tadaksahak",
     contes_title: "📖 Contes et légendes",
     emissions_title: "🎙️ Émissions radio",
     flashcards_title: "🃏 Flashcards - Apprentissage",
@@ -99,7 +103,8 @@ const i18n = {
     bot_books: "📚 La bibliothèque contient plusieurs ouvrages.",
     bot_audio: "🎵 Section Audio à venir.",
     bot_grammar: "📚 Consultez la section Grammaire pour les verbes causatifs et passifs.",
-    bot_help: "🤖 Ce que je sais faire :\n📖 Dictionnaire\n📚 Livres\n📚 Grammaire\n📖 Contes\n🎙️ Émissions\n🎵 Audio\n💬 Questions culturelles",
+    bot_grammar_relatives: "📖 Pour les propositions relatives, consultez l'onglet 'Propositions relatives' dans la section Grammaire.",
+    bot_help: "🤖 Ce que je sais faire :\n📖 Dictionnaire\n📚 Livres\n📚 Grammaire (causatifs/passifs + relatives)\n📖 Contes\n🎙️ Émissions\n🎵 Audio\n💬 Questions culturelles",
     bot_default: "🤔 Je n'ai pas bien compris. Essayez « aide »."
   },
   ar: {
@@ -136,6 +141,8 @@ const i18n = {
     dictionary_title: "📖 قاموس تدكساهق",
     grammar_title: "📚 قواعد تدكساهق",
     grammar_desc: "الأفعال السببية والمجهولة حسب كريستيانسن-بولي (٢٠١٠)",
+    grammar_relatives_title: "📖 جمل الوصل",
+    grammar_relatives_desc: "حسب كريستيانسن وليفينسون (٢٠٠٣)",
     contes_title: "📖 حكايات وأساطير",
     emissions_title: "🎙️ برامج إذاعية",
     flashcards_title: "🃏 بطاقات التعلم",
@@ -192,6 +199,7 @@ const i18n = {
     bot_books: "📚 تحتوي المكتبة على عدة كتب.",
     bot_audio: "🎵 قسم الصوتيات قريبًا.",
     bot_grammar: "📚 راجع قسم القواعد للأفعال السببية والمجهولة.",
+    bot_grammar_relatives: "📖 راجع قسم جمل الوصل في القواعد.",
     bot_help: "🤖 ما يمكنني فعله:\n📖 القاموس\n📚 الكتب\n📚 القواعد\n📖 الحكايات\n🎙️ البرامج\n🎵 الصوتيات\n💬 أسئلة ثقافية",
     bot_default: "🤔 لم أفهم. جرب « مساعدة »."
   },
@@ -229,6 +237,8 @@ const i18n = {
     dictionary_title: "📖 Tadaksahak Dictionary",
     grammar_title: "📚 Tadaksahak Grammar",
     grammar_desc: "Causative and passive verbs from Christiansen-Bolli (2010)",
+    grammar_relatives_title: "📖 Relative clauses",
+    grammar_relatives_desc: "From Christiansen & Levinsohn (2003)",
     contes_title: "📖 Tales and legends",
     emissions_title: "🎙️ Radio broadcasts",
     flashcards_title: "🃏 Flashcards - Learning",
@@ -285,6 +295,7 @@ const i18n = {
     bot_books: "📚 The library contains several books.",
     bot_audio: "🎵 Audio section coming soon.",
     bot_grammar: "📚 Check the Grammar section for causative and passive verbs.",
+    bot_grammar_relatives: "📖 Check the Relative Clauses tab in the Grammar section.",
     bot_help: "🤖 What I can do:\n📖 Dictionary\n📚 Books\n📚 Grammar\n📖 Tales\n🎙️ Broadcasts\n🎵 Audio\n💬 Cultural questions",
     bot_default: "🤔 I didn't understand. Try 'help'."
   }
@@ -299,6 +310,7 @@ let grammaire = null;
 let contesData = null;
 let emissionsData = null;
 let themesData = null;
+let relativesData = null;  // NOUVEAU : données des propositions relatives
 let motActuel = null;
 let historique = [];
 let favoris = [];
@@ -572,6 +584,7 @@ function setLanguage(lang) {
   if (document.getElementById("dashboard") && !document.getElementById("dashboard").hidden) afficherDashboard();
   if (document.getElementById("rapports") && !document.getElementById("rapports").hidden) afficherRapports();
   if (document.getElementById("grammaire") && !document.getElementById("grammaire").hidden && grammaire) afficherGrammaire();
+  if (document.getElementById("relatives") && !document.getElementById("relatives").hidden && relativesData) afficherRelatives();
   if (document.getElementById("contes") && !document.getElementById("contes").hidden && contesData) afficherContes();
   if (document.getElementById("emissions") && !document.getElementById("emissions").hidden && emissionsData) afficherEmissions();
   if (document.getElementById("themes") && !document.getElementById("themes").hidden && themesData) afficherThemes();
@@ -596,7 +609,7 @@ function updateChatSuggestions() {
 }
 
 // ------------------------------
-// BOT (avec recherche dans livres)
+// BOT (avec recherche dans livres ET relatives)
 // ------------------------------
 function extraireMotsCles(question) {
   const stopWords = ['le','la','les','un','une','de','du','des','et','ou','mais','donc','car','pour','dans','avec','sans','par','sur','sous','que','qui','quoi','dont','où','comment','pourquoi','est','sont','être','avoir','faire'];
@@ -625,19 +638,93 @@ function chercherDansLivres(question) {
   return resultats[0];
 }
 
+// NOUVEAU : Fonction pour générer un exemple aléatoire de relative
+function genererExempleRelative() {
+  if (!relativesData || !relativesData.strategies) return null;
+  const strategies = relativesData.strategies;
+  const randomIndex = Math.floor(Math.random() * strategies.length);
+  const strat = strategies[randomIndex];
+  const exemples = strat.exemples || [];
+  if (exemples.length === 0) return null;
+  const ex = exemples[Math.floor(Math.random() * exemples.length)];
+  let traduction = "";
+  if (currentLanguage === "fr") traduction = ex.traduction_fr;
+  else if (currentLanguage === "en") traduction = ex.traduction_en;
+  else traduction = ex.traduction_ar;
+  return {
+    strategie: strat,
+    exemple: ex,
+    traduction: traduction
+  };
+}
+
 function reponseBot(txt) {
   const clean = txt.toLowerCase().trim();
+  
+  // NOUVEAU : RÈGLES POUR LES RELATIVES
+  if (clean.includes("relative") || clean.includes("proposition") || 
+      (clean.includes("qui") && clean.includes("que")) ||
+      clean.includes("ayo") || clean.includes("ayondo") || clean.includes("sa") ||
+      clean.includes("gap") || clean.includes("pronom relatif")) {
+    
+    // Expliquer "ayo"
+    if (clean.includes("ayo") && !clean.includes("ayondo")) {
+      return `📖 **"ayo"** (singulier) est le pronom relatif en tadaksahak pour les noms DÉFINIS dans des propositions RESTRICTIVES.\n\nExemple : *Bora [ayo a-taw-kat] a-zumbu-kat.*\n→ "La personne QUI est arrivée est descendue."\n\n📚 Voir section 3.1 du PDF "Relative Clauses in Tadaksahak".`;
+    }
+    
+    // Expliquer "ayondo"
+    if (clean.includes("ayondo")) {
+      return `📖 **"ayondo"** (parfois **"endayo"**) est le pronom relatif PLURIEL en tadaksahak pour les noms DÉFINIS.\n\nExemple : *Ci na imunas-kon [ayondo a-zumbu Sali daw]?*\n→ "Qui sont les chameliers QUI sont descendus chez Rhali ?"`;
+    }
+    
+    // Expliquer "sa"
+    if (clean.includes("sa") && (clean.includes("relative") || clean.includes("proposition"))) {
+      return `📖 **"sa"** introduit des propositions relatives NON-RESTRICTIVES (information supplémentaire).\n\nExemple : *A-jiken-an ayn nana se, [sa ayn man Aminata].*\n→ "Il salue sa mère, QUI s'appelle Aminata."\n\n💡 La relative pourrait être une phrase indépendante.\n\n📚 Voir section 4 du PDF.`;
+    }
+    
+    // Expliquer la gap strategy
+    if (clean.includes("gap") || (clean.includes("sans") && clean.includes("marqueur"))) {
+      return `📖 **Gap strategy** = aucune marqueur dans la proposition relative.\n\nUtilisation : noms INDÉFINIS (nouveaux) dans des relatives RESTRICTIVES.\n\nExemple : *A-gar hamu [# f-keni aykaran daw].*\n→ "Elle a trouvé de la viande QUI était à côté des chiots."\n\n📚 Voir section 3.2 du PDF.`;
+    }
+    
+    // Demander un exemple
+    if (clean.includes("exemple") || clean.includes("example")) {
+      const exempleData = genererExempleRelative();
+      if (exempleData) {
+        return `📖 **Exemple de relative (${exempleData.strategie.usage_fr})** :\n\n🔹 **Tadaksahak** : ${exempleData.exemple.tadaksahak}\n🔹 **Glose** : ${exempleData.exemple.glose_fr}\n🔹 **Traduction** : ${exempleData.traduction}\n\n💡 Stratégie : "${exempleData.strategie.marqueur_sg || exempleData.strategie.marqueur || '∅'}" (${exempleData.strategie.usage_fr})`;
+      }
+    }
+    
+    // Explication générale
+    return `📖 **Les 3 stratégies de relativisation en tadaksahak** :
+
+1️⃣ **Pronom relatif "ayo/ayondo"** → noms DÉFINIS, restrictif
+   Ex: *Bora [ayo a-taw-kat]*
+
+2️⃣ **Gap strategy (∅)** → noms INDÉFINIS, restrictif
+   Ex: *A-gar hamu [# f-keni]*
+
+3️⃣ **"sa"** → non-restrictif (info supplémentaire)
+   Ex: *nana, [sa ayn man...]*
+
+📚 D'après Christiansen & Levinsohn (2003). Tapez "exemple relative" pour un exemple.`;
+  }
+  
+  // RÈGLES EXISTANTES
   if (clean.includes("bonjour") || clean.includes("salut") || clean.includes("hello") || clean.includes("salam")) return i18n[currentLanguage].bot_greeting;
   if (clean.includes("merci") || clean.includes("thanks") || clean.includes("شكرا")) return i18n[currentLanguage].bot_thanks;
   if (clean.includes("dictionnaire") || clean.includes("dico") || clean.includes("mot") || clean.includes("قاموس")) return i18n[currentLanguage].bot_dico;
   if (clean.includes("grammaire") || clean.includes("grammar") || clean.includes("verbe") || clean.includes("causatif") || clean.includes("passif")) return i18n[currentLanguage].bot_grammar;
+  if (clean.includes("relative") || clean.includes("proposition")) return i18n[currentLanguage].bot_grammar_relatives;
   if (clean.includes("conte") || clean.includes("histoire") || clean.includes("légende") || clean.includes("حكاية")) return "📖 Rendez-vous dans la section Contes pour découvrir les légendes et histoires traditionnelles Idaksahak.";
   if (clean.includes("émission") || clean.includes("radio") || clean.includes("broadcast")) return "🎙️ Consultez la section Émissions pour écouter les archives radiophoniques.";
   if (clean.includes("audio") || clean.includes("musique")) return i18n[currentLanguage].bot_audio;
   if (clean.includes("aide") || clean.includes("help") || clean.includes("مساعدة")) return i18n[currentLanguage].bot_help;
+  
   const resultatLivre = chercherDansLivres(txt);
   if (resultatLivre) return `📖 D'après « ${resultatLivre.livre} » (${resultatLivre.auteur}), chapitre ${resultatLivre.chapitre} — « ${resultatLivre.titre} » :\n\n“${resultatLivre.texte}”\n\n💡 Posez-moi d'autres questions sur ce livre !`;
   if (clean.includes("livre") || clean.includes("bibliothèque") || clean.includes("كتاب")) return i18n[currentLanguage].bot_books;
+  
   return i18n[currentLanguage].bot_default;
 }
 
@@ -666,7 +753,7 @@ function traiterSaisie() {
 }
 
 // ------------------------------
-// DICTIONNAIRE - Version enrichie (415 mots)
+// DICTIONNAIRE - Version enrichie
 // ------------------------------
 async function chargerDictionnaire() {
   try {
@@ -679,7 +766,10 @@ async function chargerDictionnaire() {
     vocabulaire = [
       { mot: "Báy", cat: "vt.", fr: "Pouvoir (faire)", ar: "قدر على (فعل)", en: "Able, to be" },
       { mot: "Yiddár", cat: "vi.", fr: "Être en vie", ar: "يكون حياً", en: "Alive, to be" },
-      { mot: "Káamil", cat: "quantifier", fr: "Tout", ar: "كل", en: "All" }
+      { mot: "Káamil", cat: "quantifier", fr: "Tout", ar: "كل", en: "All" },
+      { mot: "ayo", cat: "pron.", fr: "qui, que (pronom relatif singulier, nom défini)", ar: "الذي، التي (ضمير موصول، مفرد، اسم معرف)", en: "who, which, that (relative pronoun sg, definite noun)" },
+      { mot: "ayondo", cat: "pron.", fr: "qui, que (pronom relatif pluriel, nom défini)", ar: "الذين، اللواتي (ضمير موصول، جمع، اسم معرف)", en: "who, which, that (relative pronoun pl, definite noun)" },
+      { mot: "sa", cat: "conj.", fr: "qui, que (introduit une proposition relative non-restrictive)", ar: "الذي، التي (لجملة غير مقيدة)", en: "who, which, that (introduces a non-restrictive relative clause)" }
     ];
   }
   motsListe = vocabulaire.map((item, idx) => ({ ...item, index: idx }));
@@ -803,39 +893,49 @@ function chercher(queryRaw) {
 }
 
 if (searchBar) {
+  let debounceTimeout;
   searchBar.addEventListener("input", (e) => {
     const raw = e.target.value.trim();
     if (clearSearchBtn) clearSearchBtn.hidden = !raw;
     if (!suggestionsList) return;
-    suggestionsList.innerHTML = "";
-    suggestionsList.classList.remove("show");
-    if (!raw) return;
-    const resultats = chercher(raw);
-    if (!resultats.length) {
-      const li = document.createElement("li");
-      li.textContent = "🔍 Aucun résultat";
-      suggestionsList.appendChild(li);
-    } else {
-      resultats.forEach(item => {
+    
+    clearTimeout(debounceTimeout);
+    debounceTimeout = setTimeout(() => {
+      suggestionsList.innerHTML = "";
+      suggestionsList.classList.remove("show");
+      if (!raw) return;
+      
+      const resultats = chercher(raw);
+      if (!resultats.length) {
         const li = document.createElement("li");
-        let extraInfo = "";
-        if (currentLanguage === "fr" && item.fr) extraInfo = item.fr;
-        else if (currentLanguage === "en" && item.en) extraInfo = item.en;
-        else if (currentLanguage === "ar" && item.ar) extraInfo = item.ar;
-        else extraInfo = item.fr || item.en || "";
-        
-        li.innerHTML = `<strong>${escapeHtml(item.mot)}</strong> <span class="mot-cat">(${escapeHtml(item.cat || '')})</span><br><small>${escapeHtml(extraInfo.substring(0, 80))}${extraInfo.length > 80 ? '…' : ''}</small>`;
-        li.style.cursor = "pointer";
-        li.addEventListener("click", () => {
-          searchBar.value = item.mot;
-          suggestionsList.innerHTML = "";
-          suggestionsList.classList.remove("show");
-          afficherMot(item);
-        });
+        li.textContent = "🔍 Aucun résultat";
+        li.style.padding = "0.75rem";
+        li.style.color = "var(--text-muted)";
         suggestionsList.appendChild(li);
-      });
-    }
-    suggestionsList.classList.add("show");
+      } else {
+        resultats.forEach(item => {
+          const li = document.createElement("li");
+          let extraInfo = "";
+          if (currentLanguage === "fr" && item.fr) extraInfo = item.fr;
+          else if (currentLanguage === "en" && item.en) extraInfo = item.en;
+          else if (currentLanguage === "ar" && item.ar) extraInfo = item.ar;
+          else extraInfo = item.fr || item.en || "";
+          
+          li.innerHTML = `<strong>${escapeHtml(item.mot)}</strong> <span class="mot-cat">(${escapeHtml(item.cat || '')})</span><br><small>${escapeHtml(extraInfo.substring(0, 80))}${extraInfo.length > 80 ? '…' : ''}</small>`;
+          li.style.cursor = "pointer";
+          li.style.padding = "0.75rem";
+          li.style.borderBottom = "1px solid var(--border-color)";
+          li.addEventListener("click", () => {
+            searchBar.value = item.mot;
+            suggestionsList.innerHTML = "";
+            suggestionsList.classList.remove("show");
+            afficherMot(item);
+          });
+          suggestionsList.appendChild(li);
+        });
+      }
+      suggestionsList.classList.add("show");
+    }, 300);
   });
   if (clearSearchBtn) {
     clearSearchBtn.addEventListener("click", () => {
@@ -982,7 +1082,7 @@ function showWordNotification() {
 }
 
 // ------------------------------
-// GRAMMAIRE - VERSION CORRIGÉE
+// GRAMMAIRE - Version corrigée AVEC onglets pour relatives
 // ------------------------------
 async function chargerGrammaire() {
   try {
@@ -1001,16 +1101,17 @@ function afficherGrammaire() {
   if (!container) return;
   
   if (!grammaire) {
-    container.innerHTML = `<p class="info-message">📚 Données grammaticales non disponibles.</p>`;
+    container.innerHTML = `<p class="info-message">📚 Données grammaticales non disponibles. <button onclick="chargerGrammaire()">Recharger</button></p>`;
     return;
   }
   
-  // Récupérer les sections (différentes structures possibles)
   let sections = [];
   if (grammaire.sections && Array.isArray(grammaire.sections)) {
     sections = grammaire.sections;
   } else if (grammaire.causative_passive) {
     sections = [grammaire.causative_passive];
+  } else if (Array.isArray(grammaire)) {
+    sections = grammaire;
   } else {
     container.innerHTML = `<p class="info-message">📚 Structure de grammaire non reconnue.</p>`;
     console.error("Structure inconnue:", Object.keys(grammaire));
@@ -1029,7 +1130,6 @@ function afficherGrammaire() {
       <h3>${escapeHtml(sectionTitle || 'Grammaire')}</h3>
       <p class="section-desc">${escapeHtml(sectionDesc || '')}</p>`;
     
-    // Vérifier si la section a des subsections
     if (section.subsections && Array.isArray(section.subsections) && section.subsections.length > 0) {
       for (let j = 0; j < section.subsections.length; j++) {
         const subsection = section.subsections[j];
@@ -1070,7 +1170,6 @@ function afficherGrammaire() {
         html += `</div>`;
       }
     }
-    // Si la section a des elements directement (pas de subsections)
     else if (section.elements && Array.isArray(section.elements) && section.elements.length > 0) {
       html += `<div class="grammaire-elements">`;
       for (let j = 0; j < section.elements.length; j++) {
@@ -1084,7 +1183,6 @@ function afficherGrammaire() {
       }
       html += `</div>`;
     }
-    // Si la section a des verbes directement
     else if (section.verbes && Array.isArray(section.verbes) && section.verbes.length > 0) {
       html += `<div class="verbes-table-wrapper">
         <table class="verbes-table">
@@ -1120,6 +1218,109 @@ function afficherGrammaire() {
 }
 
 // ------------------------------
+// NOUVEAU : PROPOSITIONS RELATIVES (Christiansen & Levinsohn 2003)
+// ------------------------------
+async function chargerRelatives() {
+  try {
+    const response = await fetch('data/relatives.json');
+    if (!response.ok) throw new Error();
+    relativesData = await response.json();
+    console.log('📚 Données sur les relatives chargées');
+  } catch(e) {
+    console.warn("Erreur chargement relatives.json", e);
+    relativesData = null;
+  }
+}
+
+async function afficherRelatives() {
+  const container = document.getElementById("relativesContainer");
+  if (!container) return;
+  
+  if (!relativesData) {
+    await chargerRelatives();
+  }
+  
+  if (!relativesData) {
+    container.innerHTML = `<p class="info-message">📚 Données sur les relatives non disponibles.</p>`;
+    return;
+  }
+  
+  let html = `
+    <div class="relatives-intro">
+      <h3>${i18n[currentLanguage].grammar_relatives_title}</h3>
+      <p>${i18n[currentLanguage].grammar_relatives_desc}</p>
+      <p>Le tadaksahak utilise trois stratégies distinctes pour former des propositions relatives.</p>
+    </div>
+    <div class="strategies-grid">
+  `;
+  
+  for (const strat of relativesData.strategies) {
+    let usage = currentLanguage === 'fr' ? strat.usage_fr : (currentLanguage === 'en' ? strat.usage_en : strat.usage_ar);
+    let marqueurAffiche = strat.marqueur === "∅" ? "∅ (aucun)" : (strat.marqueur_sg || strat.marqueur);
+    
+    html += `
+      <div class="strategy-card">
+        <h4>${escapeHtml(marqueurAffiche)}</h4>
+        <p class="strategy-usage">${escapeHtml(usage)}</p>
+        <div class="strategy-exemples">
+    `;
+    
+    const exemples = strat.exemples || [];
+    for (const ex of exemples.slice(0, 2)) {
+      let trad = currentLanguage === 'fr' ? ex.traduction_fr : (currentLanguage === 'en' ? ex.traduction_en : ex.traduction_ar);
+      html += `
+        <div class="exemple-card">
+          <div class="exemple-tad">${escapeHtml(ex.tadaksahak)}</div>
+          <div class="exemple-gloss">${escapeHtml(ex.glose_fr)}</div>
+          <div class="exemple-trans">${escapeHtml(trad)}</div>
+        </div>
+      `;
+    }
+    
+    html += `</div></div>`;
+  }
+  
+  html += `</div>`;
+  
+  if (relativesData.accessibilite) {
+    html += `
+      <div class="accessibility-table">
+        <h4>🎯 Hiérarchie d'accessibilité (Keenan & Comrie 1977)</h4>
+        <table class="access-table">
+          <thead>
+            <tr><th>Fonction grammaticale</th><th>Pronom relatif</th><th>Gap</th><th>sa</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Sujet</td><td>✅</td><td>✅</td><td>✅</td></tr>
+            <tr><td>Objet direct</td><td>✅</td><td>✅</tr><td>✅</tr>
+            <tr><td>Objet indirect</tr><td>✅</tr><td>❌</tr><td>❌</tr>
+            <tr><td>Oblique</tr><td>✅</tr><td>✅</tr><td>❌</tr>
+            <tr><td>Possesseur</tr><td>❌</tr><td>❌</tr><td>✅</tr>
+          </tbody>
+        ~
+        <p class="table-note">📚 D'après l'analyse du corpus de Christiansen & Levinsohn (2003)</p>
+      </div>
+    `;
+  }
+  
+  if (relativesData.exceptions) {
+    html += `<div class="exceptions-box"><h4>⚠️ Exceptions notables</h4>`;
+    for (const [key, exc] of Object.entries(relativesData.exceptions)) {
+      html += `
+        <div class="exception-item">
+          <strong>${escapeHtml(exc.mot || key)}</strong> : ${escapeHtml(currentLanguage === 'fr' ? exc.sens_fr : (currentLanguage === 'en' ? exc.sens_en : exc.sens_ar))}
+          <p class="exception-regle">${escapeHtml(exc.regle)}</p>
+          ${exc.exemple ? `<div class="exception-exemple">${escapeHtml(exc.exemple)}</div>` : ''}
+        </div>
+      `;
+    }
+    html += `</div>`;
+  }
+  
+  container.innerHTML = html;
+}
+
+// ------------------------------
 // CONTES
 // ------------------------------
 async function chargerContes() {
@@ -1149,7 +1350,6 @@ function afficherContes() {
   for (const conte of contes) {
     let titre = currentLanguage === 'fr' ? conte.titre_fr : (currentLanguage === 'en' ? conte.titre_en : conte.titre_ar);
     let resume = currentLanguage === 'fr' ? conte.resume_fr : (currentLanguage === 'en' ? conte.resume_en : conte.resume_ar);
-    let morale = currentLanguage === 'fr' ? conte.morale_fr : (currentLanguage === 'en' ? conte.morale_en : conte.morale_ar);
     
     html += `
       <div class="conte-card">
@@ -1371,7 +1571,7 @@ function afficherThemes() {
 }
 
 // ------------------------------
-// FLASHCARDS
+// FLASHCARDS (AVEC option relatives)
 // ------------------------------
 function genererFlashcards() {
   const container = document.getElementById("flashcardsContainer");
@@ -1384,6 +1584,20 @@ function genererFlashcards() {
     motsFiltres = motsFiltres.filter(m => m.cat === 'vt.' || m.cat === 'vi.');
   } else if (theme === 'noms') {
     motsFiltres = motsFiltres.filter(m => m.cat === 'n.' || m.cat === 'npl.');
+  } else if (theme === 'relatives' && relativesData) {
+    // NOUVEAU : Flashcards pour les propositions relatives
+    motsFiltres = [];
+    for (const strat of relativesData.strategies) {
+      for (const ex of (strat.exemples || [])) {
+        motsFiltres.push({
+          mot: ex.tadaksahak.split('[')[0].trim() + ' [...]',
+          cat: strat.marqueur_sg || strat.marqueur || 'relative',
+          fr: ex.traduction_fr,
+          en: ex.traduction_en,
+          ar: ex.traduction_ar
+        });
+      }
+    }
   }
   
   if (motsFiltres.length === 0) {
@@ -1763,7 +1977,11 @@ function genererAlbumsAudio() {
   const conteneur = document.getElementById("audioContainer");
   if (conteneur) conteneur.innerHTML = "<p class='info-message'>🎵 Pistes audio à venir prochainement...</p>";
 }
-function genererVideos() { /* à implémenter */ }
+
+function genererVideos() {
+  const conteneur = document.getElementById("videosContainer");
+  if (conteneur) conteneur.innerHTML = "<p class='info-message'>🎥 Vidéos à venir prochainement...</p>";
+}
 
 // ------------------------------
 // CHARGEMENT BASE DE CONNAISSANCES
@@ -1904,6 +2122,13 @@ function initKeyboardShortcuts() {
         sectionSelector.dispatchEvent(new Event('change'));
       }
     }
+    if (e.altKey && e.key === 'g') {
+      e.preventDefault();
+      if (sectionSelector) {
+        sectionSelector.value = 'grammaire';
+        sectionSelector.dispatchEvent(new Event('change'));
+      }
+    }
     if (e.key === '?' || (e.shiftKey && e.key === '/')) {
       e.preventDefault();
       showHelpModal();
@@ -1923,12 +2148,15 @@ function showHelpModal() {
           <li><kbd>Alt</kbd> + <kbd>F</kbd> → Flashcards</li>
           <li><kbd>Alt</kbd> + <kbd>L</kbd> → Livres</li>
           <li><kbd>Alt</kbd> + <kbd>T</kbd> → Thèmes</li>
+          <li><kbd>Alt</kbd> + <kbd>G</kbd> → Grammaire</li>
           <li><kbd>?</kbd> → Cette aide</li>
         </ul>
         <h2>🎨 Thèmes</h2>
         <p>Utilisez les boutons 🌙 📖 📜 en haut de page pour changer l'apparence.</p>
         <h2>🌍 Langues</h2>
         <p>Changez de langue avec les drapeaux 🇫🇷 🇸🇦 🇬🇧.</p>
+        <h2>📖 Propositions relatives</h2>
+        <p>Dans la section Grammaire, cliquez sur l'onglet "Propositions relatives" pour découvrir les 3 stratégies de relativisation.</p>
       </div>
     </div>
   `;
@@ -2054,7 +2282,7 @@ function initAutoUpdates() {
 }
 
 // ------------------------------
-// NAVIGATION ENTRE SECTIONS
+// NAVIGATION ENTRE SECTIONS (AVEC gestion des onglets grammaire/relatives)
 // ------------------------------
 function initNavigation() {
   if (!sectionSelector) return;
@@ -2062,6 +2290,25 @@ function initNavigation() {
   function showSection(id) {
     sections.forEach(sec => { sec.hidden = sec.id !== id; });
     localStorage.setItem("tadaksahak_active_section", id);
+    
+    // Gestion spécifique pour grammaire et relatives
+    if (id === "grammaire") {
+      const grammarContainer = document.getElementById("grammaireContainer");
+      const relativesContainer = document.getElementById("relativesContainer");
+      if (grammarContainer) grammarContainer.hidden = false;
+      if (relativesContainer) relativesContainer.hidden = true;
+      if (grammaire) afficherGrammaire();
+      else chargerGrammaire().then(() => afficherGrammaire());
+    }
+    if (id === "relatives") {
+      const grammarContainer = document.getElementById("grammaireContainer");
+      const relativesContainer = document.getElementById("relativesContainer");
+      if (grammarContainer) grammarContainer.hidden = true;
+      if (relativesContainer) relativesContainer.hidden = false;
+      if (relativesData) afficherRelatives();
+      else chargerRelatives().then(() => afficherRelatives());
+    }
+    
     if (id === "livres") afficherLivres();
     if (id === "audio") genererAlbumsAudio();
     if (id === "photos") afficherPhotos();
@@ -2072,7 +2319,6 @@ function initNavigation() {
     if (id === "search") rechercherPleinTexte();
     if (id === "dashboard") afficherDashboard();
     if (id === "rapports") afficherRapports();
-    if (id === "grammaire" && grammaire) afficherGrammaire();
     if (id === "contes" && contesData) afficherContes();
     if (id === "emissions" && emissionsData) afficherEmissions();
     if (id === "themes" && themesData) afficherThemes();
@@ -2104,6 +2350,7 @@ async function initialiserApplication() {
     await chargerThemes();
     await chargerLivresConnaissance();
     await chargerTimeline();
+    await chargerRelatives();  // NOUVEAU : chargement des données sur les relatives
     
     chargerHistorique();
     chargerFavoris();
@@ -2117,6 +2364,28 @@ async function initialiserApplication() {
     initKeyboardShortcuts();
     initFlashcards();
     initAutoUpdates();
+    
+    // Gestion des onglets de grammaire
+    const grammarTabs = document.querySelectorAll('.grammar-tab');
+    if (grammarTabs.length) {
+      grammarTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const target = tab.dataset.tab;
+          grammarTabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          document.querySelectorAll('.grammar-tab-content').forEach(c => c.hidden = true);
+          if (target === 'causative') {
+            const grammarContainer = document.getElementById('grammaireContainer');
+            if (grammarContainer) grammarContainer.hidden = false;
+            if (grammaire) afficherGrammaire();
+          } else if (target === 'relatives') {
+            const relativesContainer = document.getElementById('relativesContainer');
+            if (relativesContainer) relativesContainer.hidden = false;
+            afficherRelatives();
+          }
+        });
+      });
+    }
     
     document.getElementById("btnEnvoyer")?.addEventListener("click", traiterSaisie);
     document.getElementById("chatInput")?.addEventListener("keypress", e => e.key === "Enter" && traiterSaisie());
@@ -2135,7 +2404,8 @@ async function initialiserApplication() {
       showInstallBanner();
     }, 3000);
     
-    console.log("✅ Application prête !");
+    console.log("✅ Application fusionnée prête !");
+    console.log("📚 Module des propositions relatives intégré (Christiansen & Levinsohn 2003)");
   } catch (error) {
     console.error("Erreur critique lors de l'initialisation :", error);
     showToast("Erreur de chargement, vérifiez la console", "error");
@@ -2146,4 +2416,5 @@ async function initialiserApplication() {
   }
 }
 
+// Démarrer l'application
 initialiserApplication();
