@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Tadaksahak Learning – Plateforme Multilingue</title>
-  <meta name="description" content="Dictionnaire Tadaksahak multilingue, culture, histoire, médias, quiz, carte, timeline.">
+  <meta name="description" content="Dictionnaire Tadaksahak multilingue, culture, histoire, médias, quiz, carte, timeline, propositions relatives.">
   <meta name="author" content="Hamadine Ag Moctar">
   <meta name="theme-color" content="#005fa3">
   <link rel="manifest" href="manifest.webmanifest">
@@ -141,10 +141,19 @@
     </div>
   </section>
 
-  <!-- GRAMMAIRE -->
+  <!-- GRAMMAIRE - AVEC ONGLETS (causatifs/passifs + relatives) -->
   <section id="grammaire" class="onglet-contenu" hidden>
     <h2 data-i18n="grammar_title">📚 Grammaire Tadaksahak</h2>
-    <div id="grammaireContainer"></div>
+    
+    <!-- Onglets de navigation grammaticale -->
+    <div class="grammar-tabs">
+      <button class="grammar-tab active" data-tab="causative">🔤 Verbes causatifs & passifs</button>
+      <button class="grammar-tab" data-tab="relatives">📖 Propositions relatives</button>
+    </div>
+    
+    <!-- Contenu des onglets -->
+    <div class="grammar-tab-content" id="grammaireContainer"></div>
+    <div class="grammar-tab-content" id="relativesContainer" hidden></div>
   </section>
 
   <!-- CONTES -->
@@ -235,7 +244,7 @@
     <div id="quizContainer"></div>
   </section>
 
-  <!-- FLASHCARDS -->
+  <!-- FLASHCARDS - AVEC option relatives -->
   <section id="flashcards" class="onglet-contenu" hidden>
     <h2 data-i18n="flashcards_title">🃏 Flashcards - Apprentissage</h2>
     <div class="flashcards-controls">
@@ -244,6 +253,7 @@
         <option value="vocabulaire" data-i18n="theme_vocab">📖 Vocabulaire</option>
         <option value="verbes" data-i18n="theme_verbs">🔤 Verbes</option>
         <option value="noms" data-i18n="theme_nouns">🏷️ Noms</option>
+        <option value="relatives">📖 Propositions relatives</option>
       </select>
       <button id="shuffleFlashcardsBtn" class="btn-small">🎲 Mélanger</button>
       <button id="resetFlashcardsBtn" class="btn-small">🔄 Recommencer</button>
