@@ -2214,3 +2214,285 @@ kbd {
     max-width: 380px;
   }
 }
+
+/* ============================================
+   THÈMES LEXICAUX (VOCABULAIRE THÉMATIQUE)
+   ============================================ */
+
+/* En-tête des thèmes */
+.themes-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, var(--bg-card), var(--bg-light));
+  border-radius: var(--radius-lg);
+}
+
+.themes-header p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Grille des thèmes */
+.themes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.8rem;
+  margin: 2rem 0;
+}
+
+/* Carte d'un thème */
+.theme-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: all var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.theme-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--accent);
+}
+
+/* En-tête de la carte */
+.theme-header {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  padding: 1.2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.theme-header:hover {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+}
+
+.theme-header h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.theme-header .theme-count {
+  font-size: 0.8rem;
+  background: rgba(255, 255, 255, 0.25);
+  padding: 0.2rem 0.6rem;
+  border-radius: 30px;
+  margin-left: 0.5rem;
+}
+
+/* Description du thème */
+.theme-description {
+  padding: 1rem 1.2rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  background: var(--bg-light);
+  border-bottom: 1px solid var(--border);
+  line-height: 1.5;
+}
+
+/* Contenu du vocabulaire (expandable) */
+.theme-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+}
+
+.theme-card.expanded .theme-content {
+  max-height: 600px;
+  overflow-y: auto;
+  transition: max-height 0.5s ease-in;
+}
+
+/* Liste des mots */
+.vocab-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.vocab-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid var(--border);
+  transition: background var(--transition);
+  gap: 0.5rem;
+}
+
+.vocab-item:hover {
+  background: rgba(51, 204, 255, 0.08);
+}
+
+/* Mot en tadaksahak */
+.vocab-tad {
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 1rem;
+  min-width: 120px;
+  font-family: 'Courier New', monospace;
+}
+
+/* Traductions */
+.vocab-translations {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  font-size: 0.85rem;
+}
+
+.vocab-fr, .vocab-en, .vocab-ar {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.2rem;
+}
+
+.vocab-fr { color: var(--text); }
+.vocab-en { color: var(--text-muted); }
+.vocab-ar { color: var(--text-muted); font-family: 'Noto Naskh Arabic', 'Amiri', serif; }
+
+.vocab-lang-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  opacity: 0.7;
+  background: var(--bg);
+  padding: 0.1rem 0.3rem;
+  border-radius: 4px;
+}
+
+/* Bouton d'expansion */
+.theme-toggle {
+  width: 100%;
+  padding: 0.6rem;
+  background: var(--bg-light);
+  border: none;
+  border-top: 1px solid var(--border);
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.theme-toggle:hover {
+  background: var(--bg-card);
+  color: var(--primary);
+}
+
+.theme-toggle .toggle-icon {
+  transition: transform 0.3s ease;
+}
+
+.theme-card.expanded .theme-toggle .toggle-icon {
+  transform: rotate(180deg);
+}
+
+/* =========================
+   FILTRES POUR THÈMES
+========================= */
+.themes-filters {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.themes-filters input {
+  padding: 0.6rem 1rem;
+  border-radius: 40px;
+  border: 1px solid var(--border);
+  background: var(--bg-light);
+  color: var(--text);
+  min-width: 250px;
+}
+
+.themes-filters input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* =========================
+   VERSION RTL (ARABE)
+========================= */
+html[dir="rtl"] .vocab-tad {
+  text-align: right;
+}
+
+html[dir="rtl"] .vocab-translations {
+  text-align: right;
+}
+
+html[dir="rtl"] .theme-header h3 {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .theme-count {
+  margin-left: 0;
+  margin-right: 0.5rem;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .themes-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  
+  .vocab-item {
+    flex-direction: column;
+    padding: 0.6rem 0.8rem;
+  }
+  
+  .vocab-tad {
+    margin-bottom: 0.3rem;
+  }
+  
+  .vocab-translations {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  
+  .theme-header h3 {
+    font-size: 1.1rem;
+  }
+  
+  .themes-filters input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .theme-card {
+    border-radius: var(--radius-md);
+  }
+  
+  .theme-header {
+    padding: 0.8rem;
+  }
+  
+  .vocab-tad {
+    font-size: 0.9rem;
+    min-width: auto;
+  }
+  
+  .vocab-translations {
+    font-size: 0.75rem;
+  }
+}
