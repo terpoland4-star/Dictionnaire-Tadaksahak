@@ -3,6 +3,7 @@
 // Version avec mise à jour auto et installation après 3 visites
 // Stratégie mixte : cache vs réseau
 // INCLUT : Propositions relatives (Christiansen & Levinsohn 2003)
+// CORRIGÉ : Plus d'erreur "Response body is already used"
 // ============================================
 
 const CACHE_NAME = 'tadaksahak-v8';
@@ -46,7 +47,7 @@ const dataUrls = [
   './data/quiz.json',
   './data/timeline.json',
   './data/grammaire.json',
-  './data/relatives.json',      // NOUVEAU : propositions relatives
+  './data/relatives.json',
   './data/conte.json',
   './data/emission.json',
   './data/themes.json',
@@ -68,12 +69,10 @@ self.addEventListener('install', event => {
   
   event.waitUntil(
     (async () => {
-      // Créer les caches
       await caches.open(STATIC_CACHE);
       await caches.open(DATA_CACHE);
       await caches.open(MEDIA_CACHE);
       
-      // Tenter de cacher les fichiers statiques
       const cacheStatic = await caches.open(STATIC_CACHE);
       const results = await Promise.allSettled(
         [...staticUrls, ...externalUrls].map(url => 
@@ -86,57 +85,58 @@ self.addEventListener('install', event => {
       const succeeded = results.filter(r => r.status === 'fulfilled').length;
       console.log(`✅ Cache static: ${succeeded}/${results.length} fichiers`);
       
-      // Forcer l'activation immédiate pour prendre le contrôle
       return self.skipWaiting();
     })()
   );
 });
 
 // ============================================
-// STRATÉGIES DE FETCH
+// STRATÉGIES DE FETCH (CORRIGÉES)
 // ============================================
 self.addEventListener('fetch', event => {
   const url = new URL(event.request.url);
   const pathname = url.pathname;
   const request = event.request;
   
-  // IGNORER les requêtes HEAD (ne pas les mettre en cache)
   if (request.method === 'HEAD') {
     event.respondWith(fetch(request));
     return;
   }
   
-  // IGNORER les requêtes vers les extensions
   if (pathname.includes('chrome-extension') || pathname.includes('__WB')) {
     return;
   }
   
-  // IGNORER les requêtes vers les analytics et tracking
   if (pathname.includes('analytics') || pathname.includes('tracking')) {
     event.respondWith(fetch(request));
     return;
   }
   
-  // ---- STRATÉGIE 1 : Données JSON (Network First) ----
+  // ---- STRATÉGIE 1 : Données JSON (Network First) - CORRIGÉ ----
   if (dataUrls.some(dataUrl => pathname === dataUrl || pathname.endsWith(dataUrl))) {
     event.respondWith(
-      fetch(request, { cache: 'no-store' })
-        .then(response => {
+      (async () => {
+        try {
+          const response = await fetch(request, { cache: 'no-store' });
           if (response && response.ok) {
-            const responseClone = response.clone();
-            caches.open(DATA_CACHE).then(cache => {
-              cache.put(request, responseClone);
-            });
+            // Cloner UNIQUEMENT si la réponse est valide
+            try {
+              const responseToCache = response.clone();
+              const cache = await caches.open(DATA_CACHE);
+              await cache.put(request, responseToCache);
+            } catch (cloneError) {
+              console.warn(`⚠️ Impossible de cacher ${pathname}:`, cloneError.message);
+            }
             return response;
           }
           throw new Error('Network response not ok');
-        })
-        .catch(async () => {
+        } catch (error) {
           const cached = await caches.match(request);
           if (cached) {
             console.log(`📀 Données depuis cache: ${pathname}`);
             return cached;
           }
+          
           // Fallback pour relatives.json
           if (pathname.includes('relatives.json')) {
             return new Response(JSON.stringify({
@@ -149,6 +149,7 @@ self.addEventListener('fetch', event => {
               exceptions: {}
             }), { headers: { 'Content-Type': 'application/json' } });
           }
+          
           // Fallback pour mots.json
           if (pathname.includes('mots.json')) {
             return new Response(JSON.stringify([
@@ -160,72 +161,78 @@ self.addEventListener('fetch', event => {
               { mot: "sa", cat: "conj.", fr: "qui, que (relative non-restrictive)", ar: "الذي، التي", en: "who, which, that (non-restrictive)" }
             ]), { headers: { 'Content-Type': 'application/json' } });
           }
+          
           return new Response(JSON.stringify({ error: 'Hors-ligne', message: 'Données non disponibles' }), {
             headers: { 'Content-Type': 'application/json' }
           });
-        })
+        }
+      })()
     );
     return;
   }
   
-  // ---- STRATÉGIE 2 : Images (Stale-While-Revalidate) ----
+  // ---- STRATÉGIE 2 : Images (Stale-While-Revalidate) - CORRIGÉ ----
   if (imageExtensions.test(pathname) || pathname.includes('/images/')) {
     event.respondWith(
       (async () => {
         const cachedResponse = await caches.match(request);
-        const fetchPromise = fetch(request.clone())
+        
+        // Mise à jour en arrière-plan SANS bloquer la réponse
+        fetch(request.clone())
           .then(networkResponse => {
             if (networkResponse && networkResponse.ok) {
               caches.open(MEDIA_CACHE).then(cache => {
-                cache.put(request, networkResponse.clone());
+                try {
+                  cache.put(request, networkResponse.clone());
+                } catch (e) {
+                  console.warn(`⚠️ Impossible de mettre en cache l'image: ${pathname}`);
+                }
               });
             }
-            return networkResponse;
           })
-          .catch(() => null);
+          .catch(() => {});
         
         if (cachedResponse) {
-          // Mise à jour en arrière-plan
-          fetchPromise.then(networkResponse => {
-            if (networkResponse && cachedResponse !== networkResponse) {
-              console.log(`🖼️ Image mise à jour: ${pathname}`);
-            }
-          });
           return cachedResponse;
         }
         
-        const networkResponse = await fetchPromise;
-        if (networkResponse) return networkResponse;
+        const networkResponse = await fetch(request);
+        if (networkResponse && networkResponse.ok) {
+          return networkResponse;
+        }
         
-        // Fallback: image par défaut
         return caches.match('./images/idaksahak_round.png');
       })()
     );
     return;
   }
   
-  // ---- STRATÉGIE 3 : Fichiers audio (Network First avec fallback) ----
+  // ---- STRATÉGIE 3 : Fichiers audio (Network First avec fallback) - CORRIGÉ ----
   if (audioExtensions.test(pathname) || pathname.includes('/audio/')) {
     event.respondWith(
-      fetch(request)
-        .then(response => {
+      (async () => {
+        try {
+          const response = await fetch(request);
           if (response && response.ok) {
-            const responseClone = response.clone();
-            caches.open(MEDIA_CACHE).then(cache => {
-              cache.put(request, responseClone);
-            });
+            try {
+              const responseToCache = response.clone();
+              const cache = await caches.open(MEDIA_CACHE);
+              await cache.put(request, responseToCache);
+            } catch (e) {
+              console.warn(`⚠️ Impossible de cacher l'audio: ${pathname}`);
+            }
             return response;
           }
           throw new Error('Audio not available');
-        })
-        .catch(async () => {
+        } catch (error) {
           const cached = await caches.match(request);
           if (cached) {
             console.log(`🎵 Audio depuis cache: ${pathname}`);
             return cached;
           }
           return new Response('Audio non disponible hors-ligne', { status: 404, headers: { 'Content-Type': 'text/plain' } });
-        })
+        }
+      })()
     );
     return;
   }
@@ -233,30 +240,34 @@ self.addEventListener('fetch', event => {
   // ---- STRATÉGIE 4 : Fichiers statiques (Cache First) ----
   if (pathname.endsWith('.html') || pathname.endsWith('.css') || pathname.endsWith('.js')) {
     event.respondWith(
-      caches.match(request).then(cached => {
+      (async () => {
+        const cached = await caches.match(request);
         if (cached) {
           console.log(`📄 Cache hit: ${pathname}`);
           return cached;
         }
         
-        return fetch(request)
-          .then(response => {
-            if (response && response.ok && request.method === 'GET') {
-              const responseClone = response.clone();
-              caches.open(STATIC_CACHE).then(cache => {
-                cache.put(request, responseClone);
-              });
+        try {
+          const response = await fetch(request);
+          if (response && response.ok && request.method === 'GET') {
+            try {
+              const responseToCache = response.clone();
+              const cache = await caches.open(STATIC_CACHE);
+              await cache.put(request, responseToCache);
+            } catch (e) {
+              console.warn(`⚠️ Impossible de cacher le fichier statique: ${pathname}`);
             }
             return response;
-          })
-          .catch(async () => {
-            if (pathname.endsWith('.html') || pathname === '/' || pathname === '') {
-              const offlinePage = await caches.match('./index.html');
-              if (offlinePage) return offlinePage;
-            }
-            return new Response('Hors-ligne', { status: 503, headers: { 'Content-Type': 'text/plain' } });
-          });
-      })
+          }
+          throw new Error('Network response not ok');
+        } catch (error) {
+          if (pathname.endsWith('.html') || pathname === '/' || pathname === '') {
+            const offlinePage = await caches.match('./index.html');
+            if (offlinePage) return offlinePage;
+          }
+          return new Response('Hors-ligne', { status: 503, headers: { 'Content-Type': 'text/plain' } });
+        }
+      })()
     );
     return;
   }
@@ -264,36 +275,41 @@ self.addEventListener('fetch', event => {
   // ---- STRATÉGIE 5 : Manifest et Webmanifest (Cache First) ----
   if (pathname.includes('manifest') || pathname.includes('webmanifest')) {
     event.respondWith(
-      caches.match(request).then(cached => {
+      (async () => {
+        const cached = await caches.match(request);
         if (cached) return cached;
         return fetch(request);
-      })
+      })()
     );
     return;
   }
   
   // ---- STRATÉGIE 6 : Autres ressources (Network First) ----
   event.respondWith(
-    fetch(request)
-      .then(response => {
+    (async () => {
+      try {
+        const response = await fetch(request);
         if (response && response.ok && request.method === 'GET') {
-          const responseClone = response.clone();
-          caches.open(STATIC_CACHE).then(cache => {
-            cache.put(request, responseClone);
-          });
+          try {
+            const responseToCache = response.clone();
+            const cache = await caches.open(STATIC_CACHE);
+            await cache.put(request, responseToCache);
+          } catch (e) {
+            console.warn(`⚠️ Impossible de cacher la ressource: ${pathname}`);
+          }
+          return response;
         }
-        return response;
-      })
-      .catch(async () => {
+        throw new Error('Network response not ok');
+      } catch (error) {
         const cached = await caches.match(request);
         if (cached) return cached;
         
-        // Message personnalisé pour les APIs externes
         if (url.origin !== self.location.origin) {
           return new Response('Service externe non disponible hors-ligne', { status: 503 });
         }
         return new Response('Ressource non disponible', { status: 404 });
-      })
+      }
+    })()
   );
 });
 
@@ -305,13 +321,11 @@ self.addEventListener('activate', event => {
   
   event.waitUntil(
     (async () => {
-      // Récupérer tous les noms de caches
       const cacheNames = await caches.keys();
       const cachesToDelete = cacheNames.filter(name => {
         return name !== STATIC_CACHE && name !== DATA_CACHE && name !== MEDIA_CACHE;
       });
       
-      // Supprimer les anciens caches
       await Promise.all(
         cachesToDelete.map(cache => {
           console.log(`🗑️ Suppression ancien cache: ${cache}`);
@@ -321,7 +335,6 @@ self.addEventListener('activate', event => {
       
       console.log(`✅ Caches actifs: ${STATIC_CACHE}, ${DATA_CACHE}, ${MEDIA_CACHE}`);
       
-      // Prendre le contrôle de toutes les pages
       const clients = await self.clients.matchAll({ type: 'window' });
       clients.forEach(client => {
         client.navigate(client.url);
@@ -333,10 +346,9 @@ self.addEventListener('activate', event => {
 });
 
 // ============================================
-// GESTION DES MESSAGES (mise à jour et installation)
+// GESTION DES MESSAGES
 // ============================================
 self.addEventListener('message', event => {
-  // Forcer la mise à jour (skipWaiting)
   if (event.data === 'skipWaiting') {
     self.skipWaiting();
     event.waitUntil(
@@ -346,7 +358,6 @@ self.addEventListener('message', event => {
     );
   }
   
-  // Vider tous les caches
   if (event.data === 'clearCache') {
     event.waitUntil(
       (async () => {
@@ -360,7 +371,6 @@ self.addEventListener('message', event => {
     );
   }
   
-  // Mise à jour silencieuse (vérifier les mises à jour en arrière-plan)
   if (event.data === 'checkUpdate') {
     event.waitUntil(
       (async () => {
@@ -381,21 +391,19 @@ self.addEventListener('message', event => {
     );
   }
   
-  // Récupérer la version du cache
   if (event.data === 'getVersion') {
     if (event.ports && event.ports[0]) {
       event.ports[0].postMessage({ version: CACHE_NAME });
     }
   }
   
-  // Incrémenter le compteur de visites (depuis le client)
   if (event.data && event.data.type === 'incrementVisit') {
     console.log('👁️ Visite comptabilisée - SW notifié');
   }
 });
 
 // ============================================
-// PUSH NOTIFICATIONS (mise à jour disponible)
+// PUSH NOTIFICATIONS
 // ============================================
 self.addEventListener('push', event => {
   if (event.data) {
@@ -424,7 +432,6 @@ self.addEventListener('push', event => {
       self.registration.showNotification('📚 Tadaksahak Learning - Mise à jour', options)
     );
   } else {
-    // Notification générique
     event.waitUntil(
       self.registration.showNotification('📚 Tadaksahak Learning', {
         body: 'Nouveau contenu disponible !',
@@ -461,21 +468,20 @@ self.addEventListener('notificationclick', event => {
 });
 
 // ============================================
-// NOTIFICATION FERMÉE (pour analytics)
+// NOTIFICATION FERMÉE
 // ============================================
 self.addEventListener('notificationclose', event => {
   console.log('🔔 Notification fermée:', event.notification.tag);
 });
 
 // ============================================
-// SYNC EN ARRIÈRE-PLAN (Background Sync)
+// SYNC EN ARRIÈRE-PLAN
 // ============================================
 self.addEventListener('sync', event => {
   if (event.tag === 'sync-data') {
     console.log('🔄 Sync en arrière-plan déclenchée');
     event.waitUntil(
       (async () => {
-        // Tentative de mise à jour des données en arrière-plan
         const cache = await caches.open(DATA_CACHE);
         for (const dataUrl of dataUrls) {
           try {
