@@ -3,12 +3,13 @@
 // VERSION FUSIONNÉE - ULTIME
 // Avec dictionnaire enrichi, thèmes, flashcards, PWA, mises à jour auto
 // ET propositions relatives (Christiansen & Levinsohn 2003)
+// ET ressources académiques
 // ==============================
 
 console.log("🚀 Démarrage de l'application fusionnée...");
 
 // ------------------------------
-// TRADUCTIONS (i18n) - Version étendue AVEC relatives
+// TRADUCTIONS (i18n) - Version étendue AVEC relatives et ressources
 // ------------------------------
 const i18n = {
   fr: {
@@ -34,6 +35,7 @@ const i18n = {
     nav_map: "🗺️ Carte",
     nav_search: "🔍 Recherche livres",
     nav_dashboard: "📊 Tableau de bord",
+    nav_ressources: "📚 Ressources académiques",
     welcome_title: "Bienvenue",
     welcome_subtitle: "Une plateforme dédiée à la langue et à la culture Tadaksahak.",
     go_dico: "📖 Accéder au dictionnaire",
@@ -105,7 +107,18 @@ const i18n = {
     bot_grammar: "📚 Consultez la section Grammaire pour les verbes causatifs et passifs.",
     bot_grammar_relatives: "📖 Pour les propositions relatives, consultez l'onglet 'Propositions relatives' dans la section Grammaire.",
     bot_help: "🤖 Ce que je sais faire :\n📖 Dictionnaire\n📚 Livres\n📚 Grammaire (causatifs/passifs + relatives)\n📖 Contes\n🎙️ Émissions\n🎵 Audio\n💬 Questions culturelles",
-    bot_default: "🤔 Je n'ai pas bien compris. Essayez « aide »."
+    bot_default: "🤔 Je n'ai pas bien compris. Essayez « aide ».",
+    ressources_title: "📚 Ressources académiques",
+    ressources_desc: "Découvrez des podcasts, articles et références sur les langues et l'histoire du Sahara",
+    podcast_section: "🎙️ Podcasts et conférences",
+    podcast_episode_title: "La linguistique historique au Sahara",
+    podcast_episode_desc: "Dans cet épisode, Dr. Lameen Souag (CNRS, LACITO) développe l'idée que l'histoire d'une langue ne dépend pas que d'une tradition écrite. La linguistique nous fournit des outils pour reconstruire les changements qu'elle a subi et les mouvements de ses locuteurs.",
+    podcast_episode_date: "22 janvier 2018",
+    podcast_listen: "🎧 Écouter le podcast",
+    articles_section: "📖 Articles et publications",
+    bibliography_section: "📚 Bibliographie suggérée",
+    share_resource: "Partager",
+    see_more: "Voir plus →"
   },
   ar: {
     loading: "جاري تحميل التطبيق...",
@@ -130,6 +143,7 @@ const i18n = {
     nav_map: "🗺️ الخريطة",
     nav_search: "🔍 بحث في الكتب",
     nav_dashboard: "📊 لوحة التحكم",
+    nav_ressources: "📚 الموارد الأكاديمية",
     welcome_title: "مرحبًا",
     welcome_subtitle: "منصة مخصصة للغة والثقافة التدكساهقية.",
     go_dico: "📖 الذهاب إلى القاموس",
@@ -201,7 +215,18 @@ const i18n = {
     bot_grammar: "📚 راجع قسم القواعد للأفعال السببية والمجهولة.",
     bot_grammar_relatives: "📖 راجع قسم جمل الوصل في القواعد.",
     bot_help: "🤖 ما يمكنني فعله:\n📖 القاموس\n📚 الكتب\n📚 القواعد\n📖 الحكايات\n🎙️ البرامج\n🎵 الصوتيات\n💬 أسئلة ثقافية",
-    bot_default: "🤔 لم أفهم. جرب « مساعدة »."
+    bot_default: "🤔 لم أفهم. جرب « مساعدة ».",
+    ressources_title: "📚 الموارد الأكاديمية",
+    ressources_desc: "اكتشف البودكاست والمقالات والمراجع حول لغات وتاريخ الصحراء",
+    podcast_section: "🎙️ البودكاست والمحاضرات",
+    podcast_episode_title: "اللغويات التاريخية في الصحراء",
+    podcast_episode_desc: "في هذه الحلقة، الدكتور لمين سواغ (CNRS، LACITO) يشرح كيف أن تاريخ اللغة لا يعتمد فقط على التقليد المكتوب. اللغويات تزودنا بأدوات لإعادة بناء التغيرات وحركات المتحدثين.",
+    podcast_episode_date: "22 يناير 2018",
+    podcast_listen: "🎧 استمع إلى البودكاست",
+    articles_section: "📖 المقالات والمنشورات",
+    bibliography_section: "📚 المراجع المقترحة",
+    share_resource: "مشاركة",
+    see_more: "عرض المزيد ←"
   },
   en: {
     loading: "Loading application...",
@@ -226,6 +251,7 @@ const i18n = {
     nav_map: "🗺️ Map",
     nav_search: "🔍 Search books",
     nav_dashboard: "📊 Dashboard",
+    nav_ressources: "📚 Academic Resources",
     welcome_title: "Welcome",
     welcome_subtitle: "A platform dedicated to the Tadaksahak language and culture.",
     go_dico: "📖 Go to dictionary",
@@ -297,7 +323,18 @@ const i18n = {
     bot_grammar: "📚 Check the Grammar section for causative and passive verbs.",
     bot_grammar_relatives: "📖 Check the Relative Clauses tab in the Grammar section.",
     bot_help: "🤖 What I can do:\n📖 Dictionary\n📚 Books\n📚 Grammar\n📖 Tales\n🎙️ Broadcasts\n🎵 Audio\n💬 Cultural questions",
-    bot_default: "🤔 I didn't understand. Try 'help'."
+    bot_default: "🤔 I didn't understand. Try 'help'.",
+    ressources_title: "📚 Academic Resources",
+    ressources_desc: "Discover podcasts, articles and references on Saharan languages and history",
+    podcast_section: "🎙️ Podcasts and lectures",
+    podcast_episode_title: "Historical Linguistics in the Sahara",
+    podcast_episode_desc: "In this episode, Dr. Lameen Souag (CNRS, LACITO) explains that the history of a language does not depend only on written tradition. Linguistics provides tools to reconstruct changes and speaker movements.",
+    podcast_episode_date: "January 22, 2018",
+    podcast_listen: "🎧 Listen to the podcast",
+    articles_section: "📖 Articles and publications",
+    bibliography_section: "📚 Suggested bibliography",
+    share_resource: "Share",
+    see_more: "See more →"
   }
 };
 
@@ -310,7 +347,7 @@ let grammaire = null;
 let contesData = null;
 let emissionsData = null;
 let themesData = null;
-let relativesData = null;  // NOUVEAU : données des propositions relatives
+let relativesData = null;
 let motActuel = null;
 let historique = [];
 let favoris = [];
@@ -589,6 +626,7 @@ function setLanguage(lang) {
   if (document.getElementById("emissions") && !document.getElementById("emissions").hidden && emissionsData) afficherEmissions();
   if (document.getElementById("themes") && !document.getElementById("themes").hidden && themesData) afficherThemes();
   if (document.getElementById("flashcards") && !document.getElementById("flashcards").hidden && vocabulaire.length) genererFlashcards();
+  if (document.getElementById("ressources") && !document.getElementById("ressources").hidden) afficherRessources();
   if (motActuel) afficherMot(motActuel);
   updateChatSuggestions();
   afficherMotDuJour();
@@ -638,7 +676,6 @@ function chercherDansLivres(question) {
   return resultats[0];
 }
 
-// NOUVEAU : Fonction pour générer un exemple aléatoire de relative
 function genererExempleRelative() {
   if (!relativesData || !relativesData.strategies) return null;
   const strategies = relativesData.strategies;
@@ -661,33 +698,27 @@ function genererExempleRelative() {
 function reponseBot(txt) {
   const clean = txt.toLowerCase().trim();
   
-  // NOUVEAU : RÈGLES POUR LES RELATIVES
   if (clean.includes("relative") || clean.includes("proposition") || 
       (clean.includes("qui") && clean.includes("que")) ||
       clean.includes("ayo") || clean.includes("ayondo") || clean.includes("sa") ||
       clean.includes("gap") || clean.includes("pronom relatif")) {
     
-    // Expliquer "ayo"
     if (clean.includes("ayo") && !clean.includes("ayondo")) {
       return `📖 **"ayo"** (singulier) est le pronom relatif en tadaksahak pour les noms DÉFINIS dans des propositions RESTRICTIVES.\n\nExemple : *Bora [ayo a-taw-kat] a-zumbu-kat.*\n→ "La personne QUI est arrivée est descendue."\n\n📚 Voir section 3.1 du PDF "Relative Clauses in Tadaksahak".`;
     }
     
-    // Expliquer "ayondo"
     if (clean.includes("ayondo")) {
       return `📖 **"ayondo"** (parfois **"endayo"**) est le pronom relatif PLURIEL en tadaksahak pour les noms DÉFINIS.\n\nExemple : *Ci na imunas-kon [ayondo a-zumbu Sali daw]?*\n→ "Qui sont les chameliers QUI sont descendus chez Rhali ?"`;
     }
     
-    // Expliquer "sa"
     if (clean.includes("sa") && (clean.includes("relative") || clean.includes("proposition"))) {
       return `📖 **"sa"** introduit des propositions relatives NON-RESTRICTIVES (information supplémentaire).\n\nExemple : *A-jiken-an ayn nana se, [sa ayn man Aminata].*\n→ "Il salue sa mère, QUI s'appelle Aminata."\n\n💡 La relative pourrait être une phrase indépendante.\n\n📚 Voir section 4 du PDF.`;
     }
     
-    // Expliquer la gap strategy
     if (clean.includes("gap") || (clean.includes("sans") && clean.includes("marqueur"))) {
       return `📖 **Gap strategy** = aucune marqueur dans la proposition relative.\n\nUtilisation : noms INDÉFINIS (nouveaux) dans des relatives RESTRICTIVES.\n\nExemple : *A-gar hamu [# f-keni aykaran daw].*\n→ "Elle a trouvé de la viande QUI était à côté des chiots."\n\n📚 Voir section 3.2 du PDF.`;
     }
     
-    // Demander un exemple
     if (clean.includes("exemple") || clean.includes("example")) {
       const exempleData = genererExempleRelative();
       if (exempleData) {
@@ -695,7 +726,6 @@ function reponseBot(txt) {
       }
     }
     
-    // Explication générale
     return `📖 **Les 3 stratégies de relativisation en tadaksahak** :
 
 1️⃣ **Pronom relatif "ayo/ayondo"** → noms DÉFINIS, restrictif
@@ -710,7 +740,6 @@ function reponseBot(txt) {
 📚 D'après Christiansen & Levinsohn (2003). Tapez "exemple relative" pour un exemple.`;
   }
   
-  // RÈGLES EXISTANTES
   if (clean.includes("bonjour") || clean.includes("salut") || clean.includes("hello") || clean.includes("salam")) return i18n[currentLanguage].bot_greeting;
   if (clean.includes("merci") || clean.includes("thanks") || clean.includes("شكرا")) return i18n[currentLanguage].bot_thanks;
   if (clean.includes("dictionnaire") || clean.includes("dico") || clean.includes("mot") || clean.includes("قاموس")) return i18n[currentLanguage].bot_dico;
@@ -1291,13 +1320,13 @@ async function afficherRelatives() {
             <tr><th>Fonction grammaticale</th><th>Pronom relatif</th><th>Gap</th><th>sa</th></tr>
           </thead>
           <tbody>
-            <tr><td>Sujet</td><td>✅</td><td>✅</td><td>✅</td></tr>
-            <tr><td>Objet direct</td><td>✅</td><td>✅</tr><td>✅</tr>
-            <tr><td>Objet indirect</tr><td>✅</tr><td>❌</tr><td>❌</tr>
-            <tr><td>Oblique</tr><td>✅</tr><td>✅</tr><td>❌</tr>
-            <tr><td>Possesseur</tr><td>❌</tr><td>❌</tr><td>✅</tr>
+            <tr><td>Sujet</td><td>✅</td><td>✅</td><td>✅</td>
+            <tr><td>Objet direct</td><td>✅</td><td>✅</td><td>✅</td>
+            <tr><td>Objet indirect</td><td>✅</td><td>❌</td><td>❌</td>
+            <tr><td>Oblique</td><td>✅</td><td>✅</td><td>❌</td>
+            <tr><td>Possesseur</td><td>❌</td><td>❌</td><td>✅</td>
           </tbody>
-        ~
+        </table>
         <p class="table-note">📚 D'après l'analyse du corpus de Christiansen & Levinsohn (2003)</p>
       </div>
     `;
@@ -1585,7 +1614,6 @@ function genererFlashcards() {
   } else if (theme === 'noms') {
     motsFiltres = motsFiltres.filter(m => m.cat === 'n.' || m.cat === 'npl.');
   } else if (theme === 'relatives' && relativesData) {
-    // NOUVEAU : Flashcards pour les propositions relatives
     motsFiltres = [];
     for (const strat of relativesData.strategies) {
       for (const ex of (strat.exemples || [])) {
@@ -2282,7 +2310,190 @@ function initAutoUpdates() {
 }
 
 // ------------------------------
-// NAVIGATION ENTRE SECTIONS (AVEC gestion des onglets grammaire/relatives)
+// RESSOURCES ACADÉMIQUES - NOUVELLE SECTION
+// ------------------------------
+function afficherRessources() {
+  const container = document.getElementById("ressourcesContainer");
+  if (!container) return;
+  
+  const podcastUrl = "https://www.themaghribpodcast.com/2018/01/la-linguistique-historique-au-sahara.html";
+  
+  let html = `
+    <div class="ressources-intro">
+      <p data-i18n="ressources_desc">Découvrez des podcasts, articles et références sur les langues et l'histoire du Sahara</p>
+    </div>
+    
+    <!-- Section Podcast -->
+    <div class="ressources-section">
+      <h3 data-i18n="podcast_section">🎙️ Podcasts et conférences</h3>
+      <div class="podcast-card">
+        <div class="podcast-header">
+          <div class="podcast-icon">🎙️</div>
+          <div class="podcast-info">
+            <h4 data-i18n="podcast_episode_title">La linguistique historique au Sahara</h4>
+            <p class="podcast-speaker">Dr. Lameen Souag (CNRS, LACITO)</p>
+            <p class="podcast-date" data-i18n="podcast_episode_date">22 janvier 2018</p>
+          </div>
+        </div>
+        <p class="podcast-description" data-i18n="podcast_episode_desc">
+          Dans cet épisode, Dr. Lameen Souag développe l'idée que l'histoire d'une langue 
+          ne dépend pas que d'une tradition écrite. La linguistique nous fournit des outils 
+          pour reconstruire les changements qu'elle a subi et les mouvements de ses locuteurs.
+        </p>
+        <div class="podcast-links">
+          <a href="${podcastUrl}" target="_blank" rel="noopener noreferrer" class="btn-podcast">
+            🎧 <span data-i18n="podcast_listen">Écouter le podcast</span>
+          </a>
+          <button class="btn-share-resource" onclick="shareResource('${podcastUrl}', 'La linguistique historique au Sahara')">
+            📤 <span data-i18n="share_resource">Partager</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Section Articles -->
+    <div class="ressources-section">
+      <h3 data-i18n="articles_section">📖 Articles et publications</h3>
+      <div class="articles-grid" id="articlesGrid">
+        <div class="loading-spinner">📚 Chargement des articles...</div>
+      </div>
+    </div>
+    
+    <!-- Section Bibliographie -->
+    <div class="ressources-section">
+      <h3 data-i18n="bibliography_section">📚 Bibliographie suggérée</h3>
+      <div class="bibliography-list" id="bibliographyList">
+        <div class="loading-spinner">📖 Chargement de la bibliographie...</div>
+      </div>
+    </div>
+  `;
+  
+  container.innerHTML = html;
+  
+  chargerArticlesAcademiques();
+  chargerBibliographie();
+}
+
+function chargerArticlesAcademiques() {
+  const container = document.getElementById("articlesGrid");
+  if (!container) return;
+  
+  const articles = [
+    {
+      titre: "The Tadaksahak language: a Zénaga variety of the Malian Sahara",
+      auteur: "Christiansen-Bolli, R.",
+      annee: 2010,
+      url: "#",
+      description: "Étude descriptive du tadaksahak, sa phonologie, sa morphologie et sa syntaxe.",
+      tags: ["Tadaksahak", "Grammaire", "Zénaga"]
+    },
+    {
+      titre: "Relative Clauses in Tadaksahak",
+      auteur: "Christiansen, N. & Levinsohn, S.",
+      annee: 2003,
+      url: "#",
+      description: "Analyse des trois stratégies de relativisation en tadaksahak (ayo/ayondo, gap, sa).",
+      tags: ["Tadaksahak", "Syntaxe", "Relatives"]
+    },
+    {
+      titre: "A Grammar of Tamashek (Tuareg of Mali)",
+      auteur: "Heath, J.",
+      annee: 2005,
+      url: "#",
+      description: "Grammaire de référence du touareg, langue soeur du tadaksahak.",
+      tags: ["Touareg", "Grammaire comparative"]
+    },
+    {
+      titre: "The Berber language",
+      auteur: "Kossmann, M.",
+      annee: 2011,
+      url: "#",
+      description: "Aperçu des langues berbères, y compris les parlers zénatiques.",
+      tags: ["Berbère", "Linguistique historique"]
+    },
+    {
+      titre: "Essai sur la phonologie du proto-berbère",
+      auteur: "Kossmann, M.",
+      annee: 1999,
+      url: "#",
+      description: "Reconstruction du système phonologique du proto-berbère.",
+      tags: ["Berbère", "Phonologie historique"]
+    },
+    {
+      titre: "Non-Tuareg Berber and the Genesis of Nomadic Northern Songhay",
+      auteur: "Souag, L.",
+      annee: 2015,
+      url: "#",
+      description: "Étude des contacts entre berbère et songhay au Sahara.",
+      tags: ["Songhay", "Contacts linguistiques"]
+    }
+  ];
+  
+  let html = `<div class="articles-grid-inner">`;
+  
+  for (const article of articles) {
+    html += `
+      <div class="article-card">
+        <div class="article-icon">📄</div>
+        <div class="article-content">
+          <h4>${escapeHtml(article.titre)}</h4>
+          <p class="article-meta">${escapeHtml(article.auteur)} • ${article.annee}</p>
+          <p class="article-desc">${escapeHtml(article.description)}</p>
+          <div class="article-tags">
+            ${article.tags.map(tag => `<span class="tag">${escapeHtml(tag)}</span>`).join('')}
+          </div>
+          <a href="${article.url}" class="article-link" target="_blank">🔗 Accéder à la publication</a>
+        </div>
+      </div>
+    `;
+  }
+  
+  html += `</div>`;
+  container.innerHTML = html;
+}
+
+function chargerBibliographie() {
+  const container = document.getElementById("bibliographyList");
+  if (!container) return;
+  
+  const bibliography = [
+    "Brugnatelli, Vermondo. 2011. \"Some grammatical features of Ancient Eastern Berber (the language of the Mudawwana).\" In Luca Busetto, Roberto Sottile, Livia Tonelli, Mauro Tosco (Eds.), He Bitaney Lagge: Studies in African Linguistics in honour of Marcello Lamberti. Milano: Qu.a.s.a.r.",
+    "Cohen, David et Catherine Taine-Cheikh. 2000. \"A propos du Zénaga: Vocalisme et morphologie verbale en berbère.\" Bull. de la SLP, XCV, fasc. 1: 269-322.",
+    "Kossmann, Maarten. 2001. \"The origin of the glottal stop in Zenaga and its reflexes in the other Berber languages.\" Afrika und Übersee 84: 61-100.",
+    "Kossmann, Maarten. 1999. Essai sur la phonologie du proto-berbère. Köln: Rüdiger Köppe.",
+    "Souag, Lameen. 2015. \"Non-Tuareg Berber and the Genesis of Nomadic Northern Songhay.\" Journal of African Languages and Linguistics. 36(1): 121-143.",
+    "Souag, Lameen and Marijn van Putten. 2016. \"The origin of mid vowels in Siwi.\" Studies in African Linguistics. 45(1&2): 189-208.",
+    "Christiansen-Bolli, Regula. 2010. \"A Grammar of Tadaksahak, a Northern Songhay language.\" Köln: Rüdiger Köppe.",
+    "Christiansen, Niels et Stephen Levinsohn. 2003. \"Relative Clauses in Tadaksahak.\" SIL Electronic Working Papers."
+  ];
+  
+  let html = `<ul class="bibliography-list-ul">`;
+  
+  for (const ref of bibliography) {
+    html += `<li>📖 ${escapeHtml(ref)}</li>`;
+  }
+  
+  html += `</ul>`;
+  html += `<p class="bibliography-note">📚 D'après l'épisode "La linguistique historique au Sahara" du podcast Maghrib in Past & Present</p>`;
+  
+  container.innerHTML = html;
+}
+
+function shareResource(url, title) {
+  if (navigator.share) {
+    navigator.share({
+      title: title,
+      text: `Découvrez cette ressource sur ${title}`,
+      url: url
+    }).catch(() => {});
+  } else {
+    navigator.clipboard.writeText(url);
+    showToast("📋 Lien copié dans le presse-papier", "success");
+  }
+}
+
+// ------------------------------
+// NAVIGATION ENTRE SECTIONS (AVEC gestion des onglets grammaire/relatives et ressources)
 // ------------------------------
 function initNavigation() {
   if (!sectionSelector) return;
@@ -2291,7 +2502,6 @@ function initNavigation() {
     sections.forEach(sec => { sec.hidden = sec.id !== id; });
     localStorage.setItem("tadaksahak_active_section", id);
     
-    // Gestion spécifique pour grammaire et relatives
     if (id === "grammaire") {
       const grammarContainer = document.getElementById("grammaireContainer");
       const relativesContainer = document.getElementById("relativesContainer");
@@ -2323,6 +2533,7 @@ function initNavigation() {
     if (id === "emissions" && emissionsData) afficherEmissions();
     if (id === "themes" && themesData) afficherThemes();
     if (id === "flashcards" && vocabulaire.length) genererFlashcards();
+    if (id === "ressources") afficherRessources();
   }
   sectionSelector.addEventListener("change", (e) => showSection(e.target.value));
   const savedSection = localStorage.getItem("tadaksahak_active_section");
@@ -2350,7 +2561,7 @@ async function initialiserApplication() {
     await chargerThemes();
     await chargerLivresConnaissance();
     await chargerTimeline();
-    await chargerRelatives();  // NOUVEAU : chargement des données sur les relatives
+    await chargerRelatives();
     
     chargerHistorique();
     chargerFavoris();
@@ -2365,7 +2576,6 @@ async function initialiserApplication() {
     initFlashcards();
     initAutoUpdates();
     
-    // Gestion des onglets de grammaire
     const grammarTabs = document.querySelectorAll('.grammar-tab');
     if (grammarTabs.length) {
       grammarTabs.forEach(tab => {
@@ -2406,6 +2616,7 @@ async function initialiserApplication() {
     
     console.log("✅ Application fusionnée prête !");
     console.log("📚 Module des propositions relatives intégré (Christiansen & Levinsohn 2003)");
+    console.log("📚 Section Ressources académiques intégrée (podcast Maghrib in Past & Present)");
   } catch (error) {
     console.error("Erreur critique lors de l'initialisation :", error);
     showToast("Erreur de chargement, vérifiez la console", "error");
