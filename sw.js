@@ -65,7 +65,7 @@ const audioExtensions = /\.(mp3|wav|ogg|m4a|flac)$/i;
 // INSTALLATION - Cache des fichiers statiques
 // ============================================
 self.addEventListener('install', event => {
-  console.log('📦 SW: Installation v8 - Tadaksahak Learning (avec relatives)');
+  console.log(`📦 SW: Installation ${CACHE_NAME} - Tadaksahak Learning (avec relatives)`);
   
   event.waitUntil(
     (async () => {
@@ -75,11 +75,13 @@ self.addEventListener('install', event => {
       
       const cacheStatic = await caches.open(STATIC_CACHE);
       const results = await Promise.allSettled(
-        [...staticUrls, ...externalUrls].map(url => 
-          cacheStatic.add(url).catch(err => {
+        [...staticUrls, ...externalUrls].map(async url => {
+          try {
+            await cacheStatic.add(url);
+          } catch (err) {
             console.warn(`⚠️ Échec cache ${url}:`, err.message);
-          })
-        )
+          }
+        })
       );
       
       const succeeded = results.filter(r => r.status === 'fulfilled').length;
@@ -119,7 +121,6 @@ self.addEventListener('fetch', event => {
         try {
           const response = await fetch(request, { cache: 'no-store' });
           if (response && response.ok) {
-            // Cloner UNIQUEMENT si la réponse est valide
             try {
               const responseToCache = response.clone();
               const cache = await caches.open(DATA_CACHE);
@@ -201,7 +202,9 @@ self.addEventListener('fetch', event => {
           return networkResponse;
         }
         
-        return caches.match('./images/idaksahak_round.png');
+        const defaultImage = await caches.match('./images/idaksahak_round.png');
+        if (defaultImage) return defaultImage;
+        return new Response('Image non disponible', { status: 404 });
       })()
     );
     return;
@@ -317,7 +320,7 @@ self.addEventListener('fetch', event => {
 // ACTIVATION - Nettoyage des anciens caches
 // ============================================
 self.addEventListener('activate', event => {
-  console.log('🚀 SW: Activation v8 - Tadaksahak Learning (avec relatives)');
+  console.log(`🚀 SW: Activation ${CACHE_NAME} - Tadaksahak Learning (avec relatives)`);
   
   event.waitUntil(
     (async () => {
@@ -337,7 +340,11 @@ self.addEventListener('activate', event => {
       
       const clients = await self.clients.matchAll({ type: 'window' });
       clients.forEach(client => {
-        client.navigate(client.url);
+        try {
+          client.navigate(client.url);
+        } catch (e) {
+          console.warn(`Impossible de naviguer: ${client.url}`);
+        }
       });
       
       return self.clients.claim();
@@ -487,7 +494,8 @@ self.addEventListener('sync', event => {
           try {
             const response = await fetch(dataUrl, { cache: 'no-store' });
             if (response && response.ok) {
-              await cache.put(dataUrl, response);
+              const responseToCache = response.clone();
+              await cache.put(dataUrl, responseToCache);
               console.log(`✅ Sync: ${dataUrl} mis à jour`);
             }
           } catch (err) {
@@ -513,5 +521,5 @@ self.addEventListener('unhandledrejection', event => {
 // ============================================
 // LOG DE DÉMARRAGE
 // ============================================
-console.log('✅ Service Worker Tadaksahak Learning v8 chargé');
+console.log(`✅ Service Worker ${CACHE_NAME} chargé`);
 console.log('📚 Module des propositions relatives intégré (Christiansen & Levinsohn 2003)');
