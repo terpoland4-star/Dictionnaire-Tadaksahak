@@ -492,9 +492,6 @@ function hideLoader() {
   if (loader) {
     loader.hidden = true;
     loader.style.display = 'none';
-    setTimeout(() => {
-      if (loader && loader.parentNode) loader.remove();
-    }, 200);
   } else {
     console.warn("Loader introuvable, mais on continue");
   }
@@ -905,20 +902,29 @@ function chercher(queryRaw) {
   const query = normalizeText(queryRaw);
   if (!query || !vocabulaire.length) return [];
   const resultats = [];
+  const maxDist = Math.max(2, Math.floor(query.length * 0.4));
+  
   for (const item of vocabulaire) {
     let score = Infinity;
     const motNorm = normalizeText(item.mot);
-    if (motNorm.includes(query)) score = motNorm.startsWith(query) ? 0 : 1;
-    if (score > 1 && item.fr && normalizeText(item.fr).includes(query)) score = 2;
-    if (score > 2 && item.en && normalizeText(item.en).includes(query)) score = 3;
-    if (score > 3 && item.ar && normalizeText(item.ar).includes(query)) score = 4;
-    if (score === Infinity && item.mot) {
+    
+    if (motNorm.includes(query)) {
+      score = motNorm.startsWith(query) ? 0 : 1;
+    } else if (score > 1 && item.fr && normalizeText(item.fr).includes(query)) {
+      score = 2;
+    } else if (score > 2 && item.en && normalizeText(item.en).includes(query)) {
+      score = 3;
+    } else if (score > 3 && item.ar && normalizeText(item.ar).includes(query)) {
+      score = 4;
+    } else if (score === Infinity && item.mot) {
       const dist = levenshtein(motNorm, query);
-      if (dist <= Math.max(2, Math.floor(query.length*0.4))) score = 5 + dist;
+      if (dist <= maxDist) score = 5 + dist;
     }
+    
     if (score < Infinity) resultats.push({ item, score });
   }
-  return resultats.sort((a,b)=>a.score-b.score).slice(0,15).map(r=>r.item);
+  
+  return resultats.sort((a,b) => a.score - b.score).slice(0,15).map(r => r.item);
 }
 
 if (searchBar) {
@@ -1321,10 +1327,15 @@ async function afficherRelatives() {
           </thead>
           <tbody>
             <tr><td>Sujet</td><td>✅</td><td>✅</td><td>✅</td>
+            <tr>
             <tr><td>Objet direct</td><td>✅</td><td>✅</td><td>✅</td>
+            </tr>
             <tr><td>Objet indirect</td><td>✅</td><td>❌</td><td>❌</td>
+            </tr>
             <tr><td>Oblique</td><td>✅</td><td>✅</td><td>❌</td>
+            </tr>
             <tr><td>Possesseur</td><td>❌</td><td>❌</td><td>✅</td>
+            </tr>
           </tbody>
         </table>
         <p class="table-note">📚 D'après l'analyse du corpus de Christiansen & Levinsohn (2003)</p>
@@ -1735,7 +1746,6 @@ function initFlashcards() {
   
   if (vocabulaire.length) genererFlashcards();
 }
-
 // ------------------------------
 // QUIZ
 // ------------------------------
@@ -2035,7 +2045,7 @@ async function chargerLivresConnaissance() {
 // ------------------------------
 function registerServiceWorker() {
   if ('serviceWorker' in navigator) {
-    const swUrl = '/Dictionnaire-Tadaksahak/sw.js';
+    const swUrl = './sw.js';
     fetch(swUrl, { method: 'HEAD' })
       .then(response => {
         if (response.ok) {
@@ -2323,7 +2333,6 @@ function afficherRessources() {
       <p data-i18n="ressources_desc">Découvrez des podcasts, articles et références sur les langues et l'histoire du Sahara</p>
     </div>
     
-    <!-- Section Podcast -->
     <div class="ressources-section">
       <h3 data-i18n="podcast_section">🎙️ Podcasts et conférences</h3>
       <div class="podcast-card">
@@ -2351,7 +2360,6 @@ function afficherRessources() {
       </div>
     </div>
     
-    <!-- Section Articles -->
     <div class="ressources-section">
       <h3 data-i18n="articles_section">📖 Articles et publications</h3>
       <div class="articles-grid" id="articlesGrid">
@@ -2359,7 +2367,6 @@ function afficherRessources() {
       </div>
     </div>
     
-    <!-- Section Bibliographie -->
     <div class="ressources-section">
       <h3 data-i18n="bibliography_section">📚 Bibliographie suggérée</h3>
       <div class="bibliography-list" id="bibliographyList">
@@ -2479,7 +2486,7 @@ function chargerBibliographie() {
   container.innerHTML = html;
 }
 
-function shareResource(url, title) {
+window.shareResource = function(url, title) {
   if (navigator.share) {
     navigator.share({
       title: title,
@@ -2490,6 +2497,81 @@ function shareResource(url, title) {
     navigator.clipboard.writeText(url);
     showToast("📋 Lien copié dans le presse-papier", "success");
   }
+};
+
+// ------------------------------
+// POP-UP DE BIENVENUE POUR LA SECTION RESSOURCES
+// ------------------------------
+function showRessourcesWelcomePopup() {
+  const hasSeenRessourcesPopup = localStorage.getItem('has_seen_ressources_popup');
+  if (hasSeenRessourcesPopup === 'true') return;
+  
+  const popup = document.createElement('div');
+  popup.id = 'ressourcesPopup';
+  popup.className = 'modal ressources-popup';
+  popup.innerHTML = `
+    <div class="modal-content ressources-popup-content">
+      <button class="popup-close" id="closeRessourcesPopup">&times;</button>
+      <div class="popup-icon">📚</div>
+      <h2>Nouvelle section</h2>
+      <h3>Ressources academiques</h3>
+      <div class="popup-author">Par <strong>Hamadine Ag Moctar</strong></div>
+      <div class="popup-divider"></div>
+      <div class="popup-text">
+        <p>"La connaissance ne se construit pas seule. Elle se tisse au fil des echanges, des lectures et des rencontres."</p>
+      </div>
+      <div class="popup-features">
+        <div class="popup-feature">
+          <span class="feature-icon">🎙️</span>
+          <span class="feature-text">Podcast exclusif avec <strong>Dr. Lameen Souag (CNRS)</strong></span>
+        </div>
+        <div class="popup-feature">
+          <span class="feature-icon">📖</span>
+          <span class="feature-text">Articles scientifiques sur le tadaksahak</span>
+        </div>
+        <div class="popup-feature">
+          <span class="feature-icon">📚</span>
+          <span class="feature-text">Bibliographie specialisee</span>
+        </div>
+      </div>
+      <div class="popup-quote">
+        <p>La langue et la culture Tadaksahak meritent d'etre etudiees, partagees et transmises.</p>
+      </div>
+      <button id="goToRessourcesBtn" class="btn-popup-go">Decouvrir la section</button>
+      <button id="dismissRessourcesPopup" class="btn-popup-later">Plus tard</button>
+    </div>
+  `;
+  
+  document.body.appendChild(popup);
+  
+  localStorage.setItem('has_seen_ressources_popup', 'true');
+  localStorage.setItem('ressources_popup_date', new Date().toISOString());
+  
+  const closeBtn = document.getElementById('closeRessourcesPopup');
+  const dismissBtn = document.getElementById('dismissRessourcesPopup');
+  const goBtn = document.getElementById('goToRessourcesBtn');
+  
+  const closePopup = () => {
+    popup.classList.add('popup-closing');
+    setTimeout(() => {
+      if (popup && popup.parentNode) popup.remove();
+    }, 300);
+  };
+  
+  closeBtn?.addEventListener('click', closePopup);
+  dismissBtn?.addEventListener('click', closePopup);
+  
+  goBtn?.addEventListener('click', () => {
+    closePopup();
+    if (sectionSelector) {
+      sectionSelector.value = 'ressources';
+      sectionSelector.dispatchEvent(new Event('change'));
+    }
+  });
+  
+  popup.addEventListener('click', (e) => {
+    if (e.target === popup) closePopup();
+  });
 }
 
 // ------------------------------
@@ -2613,6 +2695,10 @@ async function initialiserApplication() {
     setTimeout(() => {
       showInstallBanner();
     }, 3000);
+    
+    setTimeout(() => {
+      showRessourcesWelcomePopup();
+    }, 2000);
     
     console.log("✅ Application fusionnée prête !");
     console.log("📚 Module des propositions relatives intégré (Christiansen & Levinsohn 2003)");
