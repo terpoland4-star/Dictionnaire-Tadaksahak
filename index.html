@@ -11,9 +11,19 @@
   <link rel="icon" href="images/idaksahak_round.png" type="image/png">
   <link rel="apple-touch-icon" href="images/idaksahak_round.png">
   <link rel="stylesheet" href="style.css">
-  <!-- Leaflet pour la carte -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <!-- Leaflet pour la carte - chargement différé -->
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"></noscript>
+  <script>
+    function loadLeaflet() {
+      var script = document.createElement('script');
+      script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    }
+    window.addEventListener('load', function() { setTimeout(loadLeaflet, 3000); });
+  </script>
 </head>
 <body class="dark">
 
@@ -26,18 +36,17 @@
 
 <header class="site-header">
   <div class="header-container">
-    <img src="images/idaksahak_round.png" alt="Logo" class="logo-header" width="60" height="60">
+    <img src="images/idaksahak_round.png" alt="Logo Tadaksahak Learning - Symbole de la communauté Idaksahak" class="logo-header" width="60" height="60">
     <div class="header-text">
       <h1>Tadaksahak Learning</h1>
       <p class="subtitle" data-i18n="subtitle">Langue, culture et mémoire vivante du peuple Idaksahak</p>
     </div>
   </div>
 
-  <!-- Sélecteurs : thème (couleur) + police + taille + contraste -->
   <div class="theme-selector">
-    <button id="themeDark" class="theme-btn" title="Sombre">🌙</button>
-    <button id="themeLight" class="theme-btn" title="Clair">📖</button>
-    <button id="themeSepia" class="theme-btn" title="Sépia">📜</button>
+    <button id="themeDark" class="theme-btn" title="Thème sombre" aria-label="Thème sombre">🌙</button>
+    <button id="themeLight" class="theme-btn" title="Thème clair" aria-label="Thème clair">📖</button>
+    <button id="themeSepia" class="theme-btn" title="Thème sépia" aria-label="Thème sépia">📜</button>
     <select id="fontFamilySelect" class="theme-select-small">
       <option value="sans">🔤 Sans-serif</option>
       <option value="serif">📜 Serif</option>
@@ -54,11 +63,10 @@
     </label>
   </div>
 
-  <!-- Sélecteur de langue -->
   <div class="lang-selector">
-    <button data-lang="fr" class="lang-flag">🇫🇷</button>
-    <button data-lang="ar" class="lang-flag">🇸🇦</button>
-    <button data-lang="en" class="lang-flag">🇬🇧</button>
+    <button data-lang="fr" class="lang-flag" aria-label="Français">🇫🇷</button>
+    <button data-lang="ar" class="lang-flag" aria-label="العربية">🇸🇦</button>
+    <button data-lang="en" class="lang-flag" aria-label="English">🇬🇧</button>
   </div>
 
   <nav class="main-nav">
@@ -90,7 +98,6 @@
 
 <main id="main-content">
 
-  <!-- ACCUEIL - Version simplifiée -->
   <section id="accueil" class="onglet-contenu">
     <div class="hero">
       <h2 data-i18n="welcome_title">Bienvenue</h2>
@@ -98,7 +105,7 @@
       <button id="btnGoDico" class="btn btn-primary" data-i18n="go_dico">📖 Accéder au dictionnaire</button>
     </div>
     <div class="bio-container">
-      <img src="images/hamadine_bio.jpg" alt="Hamadine" class="bio-photo" loading="lazy">
+      <img src="images/hamadine_bio.jpg" alt="Hamadine Ag Moctar - Gardien de la mémoire culturelle Idaksahak" class="bio-photo" loading="lazy">
       <div class="bio-text">
         <p><strong>Hamadine Ag Moctar</strong></p>
         <p data-i18n="bio_text1">Interprète, développeur et gardien de la mémoire culturelle.</p>
@@ -113,13 +120,12 @@
     </div>
   </section>
 
-  <!-- DICTIONNAIRE -->
   <section id="dictionnaire" class="onglet-contenu" hidden>
     <h2 data-i18n="dictionary_title">📖 Dictionnaire Tadaksahak</h2>
     <div class="search-section">
       <div class="search-wrapper">
         <input id="searchBar" type="search" placeholder="Rechercher un mot…" autocomplete="off">
-        <button id="clearSearch" class="clear-search" hidden>✖</button>
+        <button id="clearSearch" class="clear-search" hidden aria-label="Effacer">✖</button>
       </div>
       <ul id="suggestions" class="suggestions-list"></ul>
     </div>
@@ -129,9 +135,9 @@
         <div id="definition">—</div>
         <audio id="audioLecteur" controls hidden></audio>
         <div class="navigation-mots">
-          <button id="btnPrev" class="nav-btn" disabled data-i18n="prev">⬅️ Précédent</button>
+          <button id="btnPrev" class="nav-btn" disabled data-i18n="prev" aria-label="Mot précédent">⬅️ Précédent</button>
           <span id="compteurMot" class="compteur">0 / 0</span>
-          <button id="btnNext" class="nav-btn" disabled data-i18n="next">Suivant ➡️</button>
+          <button id="btnNext" class="nav-btn" disabled data-i18n="next" aria-label="Mot suivant">Suivant ➡️</button>
         </div>
       </div>
     </div>
@@ -142,34 +148,26 @@
     </div>
   </section>
 
-  <!-- GRAMMAIRE - AVEC ONGLETS (causatifs/passifs + relatives) -->
   <section id="grammaire" class="onglet-contenu" hidden>
     <h2 data-i18n="grammar_title">📚 Grammaire Tadaksahak</h2>
-    
-    <!-- Onglets de navigation grammaticale -->
     <div class="grammar-tabs">
-      <button class="grammar-tab active" data-tab="causative">🔤 Verbes causatifs & passifs</button>
-      <button class="grammar-tab" data-tab="relatives">📖 Propositions relatives</button>
+      <button class="grammar-tab active" data-tab="causative" aria-label="Verbes causatifs et passifs">🔤 Verbes causatifs & passifs</button>
+      <button class="grammar-tab" data-tab="relatives" aria-label="Propositions relatives">📖 Propositions relatives</button>
     </div>
-    
-    <!-- Contenu des onglets -->
     <div class="grammar-tab-content" id="grammaireContainer"></div>
     <div class="grammar-tab-content" id="relativesContainer" hidden></div>
   </section>
 
-  <!-- CONTES -->
   <section id="contes" class="onglet-contenu" hidden>
     <h2 data-i18n="contes_title">📖 Contes et légendes</h2>
     <div id="contesContainer"></div>
   </section>
 
-  <!-- ÉMISSIONS -->
   <section id="emissions" class="onglet-contenu" hidden>
     <h2 data-i18n="emissions_title">🎙️ Émissions radio</h2>
     <div id="emissionsContainer"></div>
   </section>
 
-  <!-- CHAT -->
   <section id="chat" class="onglet-contenu" hidden>
     <h2 data-i18n="chat_title">💬 Chat Bot Hamadine</h2>
     <div class="chat-container">
@@ -186,19 +184,16 @@
     </div>
   </section>
 
-  <!-- AUDIO -->
   <section id="audio" class="onglet-contenu" hidden>
     <h2 data-i18n="audio_title">🎧 Albums Audio</h2>
     <div id="audioContainer" class="audio-grid"></div>
   </section>
 
-  <!-- PHOTOS -->
   <section id="photos" class="onglet-contenu" hidden>
     <h2 data-i18n="photos_title">🖼️ Galerie Photos</h2>
     <div id="photosContainer" class="grid"></div>
   </section>
 
-  <!-- VIDEOS -->
   <section id="videos" class="onglet-contenu" hidden>
     <h2 data-i18n="videos_title">🎥 Vidéos</h2>
     <div class="filters">
@@ -211,7 +206,6 @@
     <div id="videosContainer" class="grid"></div>
   </section>
 
-  <!-- LIVRES -->
   <section id="livres" class="onglet-contenu" hidden>
     <h2 data-i18n="books_title">📚 Bibliothèque</h2>
     <div class="filters">
@@ -227,25 +221,21 @@
     <div id="livresContainer" class="books-grid"></div>
   </section>
 
-  <!-- RAPPORTS -->
   <section id="rapports" class="onglet-contenu" hidden>
     <h2 data-i18n="reports_title">📄 Rapports et Documents</h2>
     <div id="rapportsContainer"></div>
   </section>
 
-  <!-- ACTUALITÉS -->
   <section id="actualites" class="onglet-contenu" hidden>
     <h2 data-i18n="news_title">📰 Actualités</h2>
     <div class="coming-soon"><p data-i18n="news_coming">📰 Restez connectés !</p></div>
   </section>
 
-  <!-- QUIZ -->
   <section id="quiz" class="onglet-contenu" hidden>
     <h2 data-i18n="quiz_title">❓ Quiz Culturel</h2>
     <div id="quizContainer"></div>
   </section>
 
-  <!-- FLASHCARDS - AVEC option relatives -->
   <section id="flashcards" class="onglet-contenu" hidden>
     <h2 data-i18n="flashcards_title">🃏 Flashcards - Apprentissage</h2>
     <div class="flashcards-controls">
@@ -265,40 +255,32 @@
     </div>
   </section>
 
-  <!-- THÈMES -->
   <section id="themes" class="onglet-contenu" hidden>
     <h2 data-i18n="themes_title">📚 Vocabulaire thématique</h2>
     <div id="themesContainer"></div>
   </section>
 
-  <!-- LIGNE DU TEMPS -->
   <section id="timeline" class="onglet-contenu" hidden>
     <h2 data-i18n="timeline_title">📅 Ligne du temps historique</h2>
     <div id="timelineContainer" class="timeline-wrapper"></div>
   </section>
 
-  <!-- CARTE GÉOGRAPHIQUE -->
   <section id="map" class="onglet-contenu" hidden>
     <h2 data-i18n="map_title">🗺️ Carte des zones Idaksahak</h2>
     <div id="mapContainer" style="height: 500px; width: 100%; border-radius: 16px;"></div>
   </section>
 
-  <!-- RECHERCHE PLEIN TEXTE DANS LES LIVRES -->
   <section id="search" class="onglet-contenu" hidden>
     <h2 data-i18n="search_books_title">🔍 Recherche dans les livres</h2>
     <input type="text" id="searchBooksInput" class="search-books-input" placeholder="Rechercher...">
     <div id="searchBooksResults" class="search-results"></div>
   </section>
 
-  <!-- TABLEAU DE BORD -->
   <section id="dashboard" class="onglet-contenu" hidden>
     <h2 data-i18n="dashboard_title">📊 Tableau de bord</h2>
     <div id="dashboardContainer"></div>
   </section>
 
-  <!-- ============================================ -->
-  <!-- RESSOURCES ACADÉMIQUES - NOUVELLE SECTION -->
-  <!-- ============================================ -->
   <section id="ressources" class="onglet-contenu" hidden>
     <h2 data-i18n="ressources_title">📚 Ressources académiques</h2>
     <div id="ressourcesContainer"></div>
