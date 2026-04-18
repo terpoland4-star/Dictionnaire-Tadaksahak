@@ -6,7 +6,7 @@
 // ET ressources académiques
 // ==============================
 
-console.log("🚀 Démarrage de l'application ultime...");
+console.log("🚀 Démarrage de l'application fusionnée...");
 
 // ------------------------------
 // TRADUCTIONS (i18n) - Version étendue
@@ -1095,7 +1095,7 @@ function showWordNotification() {
 }
 
 // ------------------------------
-// GRAMMAIRE - VERSION PREMIUM
+// GRAMMAIRE - VERSION PREMIUM COMPLÈTE
 // ------------------------------
 async function chargerGrammaire() {
   try {
@@ -1121,10 +1121,6 @@ function afficherGrammairePremium() {
   let sections = [];
   if (grammaire.sections && Array.isArray(grammaire.sections)) {
     sections = grammaire.sections;
-  } else if (grammaire.causative_passive) {
-    sections = [grammaire.causative_passive];
-  } else if (Array.isArray(grammaire)) {
-    sections = grammaire;
   } else {
     container.innerHTML = `<p class="info-message">📚 Structure de grammaire non reconnue.</p>`;
     return;
@@ -1134,59 +1130,130 @@ function afficherGrammairePremium() {
     <div class="grammaire-premium-intro">
       <div class="premium-icon">📚</div>
       <h3>${i18n[currentLanguage].grammar_title}</h3>
-      <p>${i18n[currentLanguage].grammar_desc}</p>
+      <p>${grammaire.description_fr || i18n[currentLanguage].grammar_desc}</p>
     </div>
     <div class="grammaire-premium-grid">
   `;
   
-  for (let i = 0; i < sections.length; i++) {
-    const section = sections[i];
+  for (const section of sections) {
     let sectionTitle = currentLanguage === 'fr' ? section.titre_fr : (currentLanguage === 'en' ? section.titre_en : section.titre_ar);
+    let sectionDesc = currentLanguage === 'fr' ? section.description_fr : (currentLanguage === 'en' ? section.description_en : section.description_ar);
     
     html += `
       <div class="grammaire-premium-card">
         <div class="card-header">
-          <span class="card-icon">🔤</span>
+          <span class="card-icon">📖</span>
           <h4>${escapeHtml(sectionTitle || 'Grammaire')}</h4>
         </div>
         <div class="card-content">
+          ${sectionDesc ? `<p class="section-desc">${escapeHtml(sectionDesc)}</p>` : ''}
     `;
     
     if (section.subsections && Array.isArray(section.subsections)) {
       for (const subsection of section.subsections) {
         let subTitle = currentLanguage === 'fr' ? subsection.titre_fr : (currentLanguage === 'en' ? subsection.titre_en : subsection.titre_ar);
-        html += `<div class="grammar-subsection"><strong>${escapeHtml(subTitle || '')}</strong>`;
+        let subDesc = currentLanguage === 'fr' ? subsection.description_fr : (currentLanguage === 'en' ? subsection.description_en : subsection.description_ar);
+        
+        html += `<div class="grammar-subsection">
+          <strong>${escapeHtml(subTitle || '')}</strong>
+          ${subDesc ? `<p class="sub-desc">${escapeHtml(subDesc)}</p>` : ''}
+        `;
         
         if (subsection.verbes && Array.isArray(subsection.verbes)) {
           html += `<div class="verb-list">`;
           for (const verbe of subsection.verbes) {
             let sens = currentLanguage === 'fr' ? verbe.sens_fr : (currentLanguage === 'en' ? verbe.sens_en : verbe.sens_ar);
+            let causatif = verbe.causatif || '—';
+            let passif = verbe.passif || verbe.passif_sens_fr || '—';
+            
             html += `
               <div class="verb-item">
-                <span class="verb-root">${escapeHtml(verbe.imperatif || verbe.racine_tad || '—')}</span>
+                <span class="verb-root">${escapeHtml(verbe.imperatif || verbe.racine_tad || verbe.racine || '—')}</span>
                 <span class="verb-meaning">${escapeHtml(sens || '—')}</span>
                 <div class="verb-forms">
-                  <span class="causative">Caus: ${escapeHtml(verbe.causatif || '—')}</span>
-                  ${verbe.passif ? `<span class="passive">Pass: ${escapeHtml(verbe.passif)}</span>` : ''}
+                  ${causatif !== '—' ? `<span class="causative">Caus: ${escapeHtml(causatif)}</span>` : ''}
+                  ${passif !== '—' ? `<span class="passive">Pass: ${escapeHtml(passif)}</span>` : ''}
                 </div>
               </div>
             `;
           }
           html += `</div>`;
         }
+        
+        if (subsection.verbes && subsection.verbes[0] && subsection.verbes[0].reciproque) {
+          html += `<div class="verb-list">`;
+          for (const verbe of subsection.verbes) {
+            let sens = currentLanguage === 'fr' ? verbe.fr : (currentLanguage === 'en' ? verbe.en : verbe.ar);
+            html += `
+              <div class="verb-item">
+                <span class="verb-root">${escapeHtml(verbe.racine || '—')}</span>
+                <span class="verb-meaning">${escapeHtml(sens || '—')}</span>
+                <div class="verb-forms">
+                  <span class="causative">Réc: ${escapeHtml(verbe.reciproque || '—')}</span>
+                </div>
+              </div>
+            `;
+          }
+          html += `</div>`;
+        }
+        
         html += `</div>`;
       }
-    } else if (section.verbes && Array.isArray(section.verbes)) {
+    }
+    
+    if (section.elements && Array.isArray(section.elements)) {
+      html += `<div class="grammar-elements">`;
+      for (const element of section.elements) {
+        let label = element.mot || element.tad || element.personne || element.num || element.forme || '';
+        let value = currentLanguage === 'fr' ? (element.fr || element.fonction || element.sens_fr) : 
+                   (currentLanguage === 'en' ? (element.en || element.fonction || element.sens_en) : 
+                   (element.ar || element.fonction || element.sens_ar));
+        
+        if (section.id === 'pronouns' && element.code) {
+          html += `
+            <div class="grammar-element pronoun-row">
+              <strong>${escapeHtml(element.personne || '')}</strong>
+              <code>${escapeHtml(element.sujet_clitique || '')}</code>
+              <span>${escapeHtml(element.independant || '')}</span>
+              <span>${escapeHtml(element.objet_direct || '')}</span>
+              <span>${escapeHtml(element.possessif || '')}</span>
+            </div>
+          `;
+        } else if (section.id === 'numerals' && element.num) {
+          html += `
+            <div class="grammar-element numeral-row">
+              <strong>${escapeHtml(element.num || '')}</strong>
+              <code>${escapeHtml(element.tad || '')}</code>
+              ${element.notes ? `<small>${escapeHtml(element.notes)}</small>` : ''}
+            </div>
+          `;
+        } else {
+          html += `
+            <div class="grammar-element">
+              <strong>${escapeHtml(label)}</strong>
+              <span class="element-desc">${escapeHtml(value || '')}</span>
+              ${element.exemple ? `<div class="element-exemple"><em>${escapeHtml(element.exemple)}</em> → ${escapeHtml(element.exemple_fr || '')}</div>` : ''}
+            </div>
+          `;
+        }
+      }
+      html += `</div>`;
+    }
+    
+    if (section.verbes && Array.isArray(section.verbes) && !section.subsections) {
       html += `<div class="verb-list">`;
       for (const verbe of section.verbes) {
         let sens = currentLanguage === 'fr' ? verbe.sens_fr : (currentLanguage === 'en' ? verbe.sens_en : verbe.sens_ar);
+        let causatif = verbe.causatif || '—';
+        let reciproque = verbe.reciproque || '—';
+        
         html += `
           <div class="verb-item">
-            <span class="verb-root">${escapeHtml(verbe.imperatif || verbe.racine_tad || '—')}</span>
+            <span class="verb-root">${escapeHtml(verbe.racine || verbe.imperatif || '—')}</span>
             <span class="verb-meaning">${escapeHtml(sens || '—')}</span>
             <div class="verb-forms">
-              <span class="causative">Caus: ${escapeHtml(verbe.causatif || '—')}</span>
-              ${verbe.passif ? `<span class="passive">Pass: ${escapeHtml(verbe.passif)}</span>` : ''}
+              ${causatif !== '—' ? `<span class="causative">Caus: ${escapeHtml(causatif)}</span>` : ''}
+              ${reciproque !== '—' ? `<span class="passive">Réc: ${escapeHtml(reciproque)}</span>` : ''}
             </div>
           </div>
         `;
@@ -1194,14 +1261,12 @@ function afficherGrammairePremium() {
       html += `</div>`;
     }
     
-    html += `
-        </div>
-      </div>
-    `;
+    html += `</div></div>`;
   }
   
   html += `</div>`;
   container.innerHTML = html;
+  console.log("✅ Grammaire premium affichée avec succès");
 }
 
 // ------------------------------
@@ -1560,18 +1625,15 @@ function afficherThemesPremium() {
       e.stopPropagation();
       const idx = btn.dataset.themeIdx;
       const wordsContainer = document.getElementById(`themeWordsPremium-${idx}`);
-      const card = btn.closest('.theme-premium-card');
       
       if (wordsContainer.style.display === 'none') {
         wordsContainer.style.display = 'block';
         btn.querySelector('.expand-icon').textContent = '▲';
         btn.querySelector('span:first-child').textContent = 'Réduire';
-        card.classList.add('expanded');
       } else {
         wordsContainer.style.display = 'none';
         btn.querySelector('.expand-icon').textContent = '▼';
         btn.querySelector('span:first-child').textContent = 'Explorer le thème';
-        card.classList.remove('expanded');
       }
     });
   });
