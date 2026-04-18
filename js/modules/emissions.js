@@ -23,6 +23,44 @@ const EMISSIONS_CONFIG = {
 };
 
 // ------------------------------
+// FONCTIONS UTILITAIRES
+// ------------------------------
+function escapeHtml(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function formatTime(seconds) {
+  if (isNaN(seconds) || !isFinite(seconds)) return '0:00';
+  const mins = Math.floor(seconds / 60);
+  const secs = Math.floor(seconds % 60);
+  return `${mins}:${secs.toString().padStart(2, '0')}`;
+}
+
+function parseDuration(duration) {
+  if (!duration) return 0;
+  const parts = duration.split(':');
+  if (parts.length === 2) {
+    return parseInt(parts[0]) * 60 + parseInt(parts[1]);
+  }
+  return parseInt(parts[0]) || 0;
+}
+
+function formatDuration(seconds) {
+  const hours = Math.floor(seconds / 3600);
+  const minutes = Math.floor((seconds % 3600) / 60);
+  if (hours > 0) {
+    return `${hours}h ${minutes}min`;
+  }
+  return `${minutes}min`;
+}
+
+// ------------------------------
 // BASE DE DONNÉES DE FALLBACK
 // ------------------------------
 function getFallbackEmissions() {
@@ -110,20 +148,32 @@ function sauvegarderFavorisEmissions() {
 }
 
 function basculerFavoriEmission(emissionId) {
-  if (userEmissionFavorites.includes(emissionId)) {
-    userEmissionFavorites = userEmissionFavorites.filter(id => id !== emissionId);
+  const id = parseInt(emissionId);
+  if (userEmissionFavorites.includes(id)) {
+    userEmissionFavorites = userEmissionFavorites.filter(i => i !== id);
     if (window.showToast) window.showToast("⭐ Émission retirée des favoris", "info");
   } else {
-    userEmissionFavorites.push(emissionId);
+    userEmissionFavorites.push(id);
     if (window.showToast) window.showToast("⭐ Émission ajoutée aux favoris", "success");
   }
   sauvegarderFavorisEmissions();
   
-  // Mettre à jour l'affichage
-  const btn = document.querySelector(`.emission-favorite-btn[data-id="${emissionId}"]`);
-  if (btn) {
-    btn.textContent = userEmissionFavorites.includes(emissionId) ? '⭐' : '☆';
-  }
+  // Mettre à jour l'affichage de tous les boutons
+  document.querySelectorAll(`.emission-favorite-btn[data-id="${emissionId}"]`).forEach(btn => {
+    btn.textContent = userEmissionFavorites.includes(id) ? '⭐' : '☆';
+  });
+  
+  // Mettre à jour la propriété favorite dans les données
+  const emissions = Array.isArray(emissionsData) ? emissionsData : [emissionsData];
+  const emission = emissions.find(e => e.id === id);
+  if (emission) emission.favorite = userEmissionFavorites.includes(id);
+}
+
+function getDurationDisplay(emissionId) {
+  if (!emissionsData) return '0:00';
+  const emissions = Array.isArray(emissionsData) ? emissionsData : [emissionsData];
+  const emission = emissions.find(e => e.id == emissionId);
+  return emission?.duree || '0:00';
 }
 
 // ------------------------------
@@ -133,12 +183,24 @@ function initAudioPlayer(emissionId, audioUrl, titre) {
   const playerContainer = document.getElementById('audioPlayerContainer');
   if (!playerContainer) return;
   
+  // Vérifier si l'URL audio est valide
+  if (!audioUrl || audioUrl === '#') {
+    if (window.showToast) window.showToast("🔊 Fichier audio non disponible", "warning");
+    return;
+  }
+  
+  // Si même émission déjà en cours, la mettre en pause
   if (currentPlayingId === emissionId && currentAudio && !currentAudio.paused) {
-    // Pause si déjà en cours
     currentAudio.pause();
     currentPlayingId = null;
     playerContainer.innerHTML = '';
     return;
+  }
+  
+  // Arrêter toute lecture en cours
+  if (currentAudio) {
+    currentAudio.pause();
+    currentAudio = null;
   }
   
   playerContainer.innerHTML = `
@@ -150,7 +212,8 @@ function initAudioPlayer(emissionId, audioUrl, titre) {
         </div>
         <button class="audio-player-close" id="closeAudioPlayer">✖</button>
       </div>
-      <audio id="emissionAudio" controls autoplay="${EMISSIONS_CONFIG.autoPlay}" src="${audioUrl}">
+      <audio id="emissionAudio" controls autoplay="${EMISSIONS_CONFIG.autoPlay}">
+        <source src="${audioUrl}" type="audio/mpeg">
         Votre navigateur ne supporte pas la lecture audio.
       </audio>
       <div class="audio-player-controls">
@@ -162,8 +225,18 @@ function initAudioPlayer(emissionId, audioUrl, titre) {
   `;
   
   const audio = document.getElementById('emissionAudio');
+  if (!audio) return;
+  
   currentAudio = audio;
   currentPlayingId = emissionId;
+  
+  // Gestionnaire d'erreur audio
+  audio.onerror = () => {
+    if (window.showToast) window.showToast("🔊 Erreur de lecture audio", "error");
+    playerContainer.innerHTML = '';
+    currentPlayingId = null;
+    currentAudio = null;
+  };
   
   const playPauseBtn = document.getElementById('audioPlayPause');
   const closeBtn = document.getElementById('closeAudioPlayer');
@@ -171,7 +244,7 @@ function initAudioPlayer(emissionId, audioUrl, titre) {
   if (playPauseBtn) {
     playPauseBtn.addEventListener('click', () => {
       if (audio.paused) {
-        audio.play();
+        audio.play().catch(e => console.warn('Lecture impossible:', e));
         playPauseBtn.textContent = '⏸️ Pause';
       } else {
         audio.pause();
@@ -186,41 +259,48 @@ function initAudioPlayer(emissionId, audioUrl, titre) {
   });
   
   audio.addEventListener('timeupdate', () => {
-    const duration = document.getElementById('audioDuration');
-    if (duration && audio.duration) {
+    const durationSpan = document.getElementById('audioDuration');
+    if (durationSpan && audio.duration && !isNaN(audio.duration)) {
       const current = formatTime(audio.currentTime);
       const total = formatTime(audio.duration);
-      duration.textContent = `${current} / ${total}`;
+      durationSpan.textContent = `${current} / ${total}`;
     }
   });
   
-  document.getElementById('audioDownload')?.addEventListener('click', () => {
-    const link = document.createElement('a');
-    link.href = audioUrl;
-    link.download = `emission_${emissionId}.mp3`;
-    link.click();
-  });
+  const downloadBtn = document.getElementById('audioDownload');
+  if (downloadBtn) {
+    downloadBtn.addEventListener('click', () => {
+      const link = document.createElement('a');
+      link.href = audioUrl;
+      link.download = `emission_${emissionId}.mp3`;
+      link.click();
+    });
+  }
   
   if (closeBtn) {
     closeBtn.addEventListener('click', () => {
       audio.pause();
       currentPlayingId = null;
+      currentAudio = null;
       playerContainer.innerHTML = '';
     });
   }
 }
 
-function formatTime(seconds) {
-  if (isNaN(seconds)) return '0:00';
-  const mins = Math.floor(seconds / 60);
-  const secs = Math.floor(seconds % 60);
-  return `${mins}:${secs.toString().padStart(2, '0')}`;
-}
-
-function getDurationDisplay(emissionId) {
-  const emissions = Array.isArray(emissionsData) ? emissionsData : [emissionsData];
-  const emission = emissions.find(e => e.id == emissionId);
-  return emission?.duree || '0:00';
+// ------------------------------
+// PRONONCIATION
+// ------------------------------
+function speakEmissionText(text) {
+  if (!text) return;
+  if ('speechSynthesis' in window) {
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'fr-FR';
+    utterance.rate = 0.7;
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(utterance);
+  } else {
+    if (window.showToast) window.showToast("🔊 Synthèse vocale non supportée", "warning");
+  }
 }
 
 // ------------------------------
@@ -244,15 +324,16 @@ function afficherEmissionsPremium() {
   let filteredEmissions = [...emissions];
   if (emissionSearchQuery) {
     const query = emissionSearchQuery.toLowerCase();
-    filteredEmissions = filteredEmissions.filter(e => 
-      (e.titre_fr && e.titre_fr.toLowerCase().includes(query)) ||
-      (e.titre_en && e.titre_en.toLowerCase().includes(query)) ||
-      (e.titre_ar && e.titre_ar.toLowerCase().includes(query)) ||
-      (e.orateur && e.orateur.toLowerCase().includes(query)) ||
-      (e.lieu && e.lieu.toLowerCase().includes(query)) ||
-      (e.contexte_fr && e.contexte_fr.toLowerCase().includes(query)) ||
-      (e.tags && e.tags.some(t => t.toLowerCase().includes(query)))
-    );
+    filteredEmissions = filteredEmissions.filter(e => {
+      const tagsMatch = e.tags ? e.tags.some(t => t.toLowerCase().includes(query)) : false;
+      return (e.titre_fr && e.titre_fr.toLowerCase().includes(query)) ||
+             (e.titre_en && e.titre_en.toLowerCase().includes(query)) ||
+             (e.titre_ar && e.titre_ar.toLowerCase().includes(query)) ||
+             (e.orateur && e.orateur.toLowerCase().includes(query)) ||
+             (e.lieu && e.lieu.toLowerCase().includes(query)) ||
+             (e.contexte_fr && e.contexte_fr.toLowerCase().includes(query)) ||
+             tagsMatch;
+    });
   }
   
   // Filtrer par favoris
@@ -266,7 +347,7 @@ function afficherEmissionsPremium() {
   let html = `
     <div class="emissions-premium-header">
       <div class="premium-icon">🎙️</div>
-      <h3>${window.t('emissions_title') || 'Émissions radio'}</h3>
+      <h3>${window.t ? window.t('emissions_title') : 'Émissions radio'}</h3>
       <p>Découvrez les archives radiophoniques sur la langue et la culture Idaksahak</p>
       
       ${EMISSIONS_CONFIG.showSearch ? `
@@ -411,6 +492,10 @@ function initialiserInteractionsEmissions() {
         document.querySelectorAll('.emission-transcription').forEach(div => {
           div.style.display = 'none';
         });
+        // Réinitialiser les autres boutons
+        document.querySelectorAll('.btn-emission-premium').forEach(b => {
+          if (b.dataset.emissionId != id) b.textContent = '📖 Lire la transcription';
+        });
         transcriptDiv.style.display = 'block';
         btn.textContent = '📖 Masquer la transcription';
       } else {
@@ -501,43 +586,6 @@ function initialiserInteractionsEmissions() {
 }
 
 // ------------------------------
-// PRONONCIATION
-// ------------------------------
-function speakEmissionText(text) {
-  if (!text) return;
-  if ('speechSynthesis' in window) {
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'fr-FR';
-    utterance.rate = 0.7;
-    window.speechSynthesis.cancel();
-    window.speechSynthesis.speak(utterance);
-  } else {
-    if (window.showToast) window.showToast("🔊 Synthèse vocale non supportée", "warning");
-  }
-}
-
-// ------------------------------
-// UTILITAIRES
-// ------------------------------
-function parseDuration(duration) {
-  if (!duration) return 0;
-  const parts = duration.split(':');
-  if (parts.length === 2) {
-    return parseInt(parts[0]) * 60 + parseInt(parts[1]);
-  }
-  return parseInt(parts[0]) || 0;
-}
-
-function formatDuration(seconds) {
-  const hours = Math.floor(seconds / 3600);
-  const minutes = Math.floor((seconds % 3600) / 60);
-  if (hours > 0) {
-    return `${hours}h ${minutes}min`;
-  }
-  return `${minutes}min`;
-}
-
-// ------------------------------
 // STYLES CSS
 // ------------------------------
 const EMISSIONS_STYLES = `
@@ -574,6 +622,18 @@ const EMISSIONS_STYLES = `
     background: var(--bg);
     color: var(--text);
     font-size: 0.9rem;
+  }
+  
+  .search-clear-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-muted);
+    font-size: 1rem;
   }
   
   .emissions-filters {
@@ -657,6 +717,7 @@ const EMISSIONS_STYLES = `
     display: flex;
     gap: 1rem;
     align-items: center;
+    flex-wrap: wrap;
   }
   
   .audio-control {
@@ -925,15 +986,27 @@ const EMISSIONS_STYLES = `
       flex-direction: column;
       gap: 0.3rem;
     }
+    
+    .audio-player-controls {
+      flex-direction: column;
+      align-items: stretch;
+    }
   }
 `;
 
-// Injecter les styles
-if (!document.getElementById('emissions-styles')) {
-  const styleSheet = document.createElement('style');
-  styleSheet.id = 'emissions-styles';
-  styleSheet.textContent = EMISSIONS_STYLES;
-  document.head.appendChild(styleSheet);
+// ------------------------------
+// INITIALISATION
+// ------------------------------
+function initEmissionsModule() {
+  // Injecter les styles
+  if (!document.getElementById('emissions-styles')) {
+    const styleSheet = document.createElement('style');
+    styleSheet.id = 'emissions-styles';
+    styleSheet.textContent = EMISSIONS_STYLES;
+    document.head.appendChild(styleSheet);
+  }
+  
+  console.log("🎙️ Module Émissions Premium prêt");
 }
 
 // ------------------------------
@@ -943,5 +1016,11 @@ window.emissionsData = emissionsData;
 window.chargerEmissions = chargerEmissions;
 window.afficherEmissionsPremium = afficherEmissionsPremium;
 window.basculerFavoriEmission = basculerFavoriEmission;
+window.initAudioPlayer = initAudioPlayer;
+window.speakEmissionText = speakEmissionText;
+window.initEmissionsModule = initEmissionsModule;
+
+// Initialisation automatique
+initEmissionsModule();
 
 console.log("🎙️ Module Émissions Premium chargé - Version avec lecteur audio, favoris et recherche");
