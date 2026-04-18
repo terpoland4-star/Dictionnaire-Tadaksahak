@@ -1,14 +1,15 @@
 // ==============================
 // APPLICATION TADAKSAHAK LEARNING
-// VERSION FUSIONNÉE - ULTIME
-// Avec dictionnaire enrichi, thèmes, flashcards, PWA, mises à jour auto
-// ET propositions relatives (Christiansen & Levinsohn 2003)
+// VERSION ULTIME - COMPLÈTE
+// Avec dictionnaire enrichi, thèmes premium, flashcards, PWA
+// Grammaire premium, émissions modernisées, propositions relatives
+// ET ressources académiques
 // ==============================
 
-console.log("🚀 Démarrage de l'application fusionnée...");
+console.log("🚀 Démarrage de l'application ultime...");
 
 // ------------------------------
-// TRADUCTIONS (i18n) - Version étendue AVEC relatives
+// TRADUCTIONS (i18n) - Version étendue
 // ------------------------------
 const i18n = {
   fr: {
@@ -34,6 +35,7 @@ const i18n = {
     nav_map: "🗺️ Carte",
     nav_search: "🔍 Recherche livres",
     nav_dashboard: "📊 Tableau de bord",
+    nav_ressources: "📚 Ressources académiques",
     welcome_title: "Bienvenue",
     welcome_subtitle: "Une plateforme dédiée à la langue et à la culture Tadaksahak.",
     go_dico: "📖 Accéder au dictionnaire",
@@ -105,7 +107,18 @@ const i18n = {
     bot_grammar: "📚 Consultez la section Grammaire pour les verbes causatifs et passifs.",
     bot_grammar_relatives: "📖 Pour les propositions relatives, consultez l'onglet 'Propositions relatives' dans la section Grammaire.",
     bot_help: "🤖 Ce que je sais faire :\n📖 Dictionnaire\n📚 Livres\n📚 Grammaire (causatifs/passifs + relatives)\n📖 Contes\n🎙️ Émissions\n🎵 Audio\n💬 Questions culturelles",
-    bot_default: "🤔 Je n'ai pas bien compris. Essayez « aide »."
+    bot_default: "🤔 Je n'ai pas bien compris. Essayez « aide ».",
+    ressources_title: "📚 Ressources académiques",
+    ressources_desc: "Découvrez des podcasts, articles et références sur les langues et l'histoire du Sahara",
+    podcast_section: "🎙️ Podcasts et conférences",
+    podcast_episode_title: "La linguistique historique au Sahara",
+    podcast_episode_desc: "Dans cet épisode, Dr. Lameen Souag (CNRS, LACITO) développe l'idée que l'histoire d'une langue ne dépend pas que d'une tradition écrite.",
+    podcast_episode_date: "22 janvier 2018",
+    podcast_listen: "🎧 Écouter le podcast",
+    articles_section: "📖 Articles et publications",
+    bibliography_section: "📚 Bibliographie suggérée",
+    share_resource: "Partager",
+    see_more: "Voir plus →"
   },
   ar: {
     loading: "جاري تحميل التطبيق...",
@@ -130,6 +143,7 @@ const i18n = {
     nav_map: "🗺️ الخريطة",
     nav_search: "🔍 بحث في الكتب",
     nav_dashboard: "📊 لوحة التحكم",
+    nav_ressources: "📚 الموارد الأكاديمية",
     welcome_title: "مرحبًا",
     welcome_subtitle: "منصة مخصصة للغة والثقافة التدكساهقية.",
     go_dico: "📖 الذهاب إلى القاموس",
@@ -201,7 +215,18 @@ const i18n = {
     bot_grammar: "📚 راجع قسم القواعد للأفعال السببية والمجهولة.",
     bot_grammar_relatives: "📖 راجع قسم جمل الوصل في القواعد.",
     bot_help: "🤖 ما يمكنني فعله:\n📖 القاموس\n📚 الكتب\n📚 القواعد\n📖 الحكايات\n🎙️ البرامج\n🎵 الصوتيات\n💬 أسئلة ثقافية",
-    bot_default: "🤔 لم أفهم. جرب « مساعدة »."
+    bot_default: "🤔 لم أفهم. جرب « مساعدة ».",
+    ressources_title: "📚 الموارد الأكاديمية",
+    ressources_desc: "اكتشف البودكاست والمقالات والمراجع حول لغات وتاريخ الصحراء",
+    podcast_section: "🎙️ البودكاست والمحاضرات",
+    podcast_episode_title: "اللغويات التاريخية في الصحراء",
+    podcast_episode_desc: "في هذه الحلقة، الدكتور لمين سواغ (CNRS، LACITO) يشرح كيف أن تاريخ اللغة لا يعتمد فقط على التقليد المكتوب.",
+    podcast_episode_date: "22 يناير 2018",
+    podcast_listen: "🎧 استمع إلى البودكاست",
+    articles_section: "📖 المقالات والمنشورات",
+    bibliography_section: "📚 المراجع المقترحة",
+    share_resource: "مشاركة",
+    see_more: "عرض المزيد ←"
   },
   en: {
     loading: "Loading application...",
@@ -226,6 +251,7 @@ const i18n = {
     nav_map: "🗺️ Map",
     nav_search: "🔍 Search books",
     nav_dashboard: "📊 Dashboard",
+    nav_ressources: "📚 Academic Resources",
     welcome_title: "Welcome",
     welcome_subtitle: "A platform dedicated to the Tadaksahak language and culture.",
     go_dico: "📖 Go to dictionary",
@@ -297,7 +323,18 @@ const i18n = {
     bot_grammar: "📚 Check the Grammar section for causative and passive verbs.",
     bot_grammar_relatives: "📖 Check the Relative Clauses tab in the Grammar section.",
     bot_help: "🤖 What I can do:\n📖 Dictionary\n📚 Books\n📚 Grammar\n📖 Tales\n🎙️ Broadcasts\n🎵 Audio\n💬 Cultural questions",
-    bot_default: "🤔 I didn't understand. Try 'help'."
+    bot_default: "🤔 I didn't understand. Try 'help'.",
+    ressources_title: "📚 Academic Resources",
+    ressources_desc: "Discover podcasts, articles and references on Saharan languages and history",
+    podcast_section: "🎙️ Podcasts and lectures",
+    podcast_episode_title: "Historical Linguistics in the Sahara",
+    podcast_episode_desc: "In this episode, Dr. Lameen Souag (CNRS, LACITO) explains that the history of a language does not depend only on written tradition.",
+    podcast_episode_date: "January 22, 2018",
+    podcast_listen: "🎧 Listen to the podcast",
+    articles_section: "📖 Articles and publications",
+    bibliography_section: "📚 Suggested bibliography",
+    share_resource: "Share",
+    see_more: "See more →"
   }
 };
 
@@ -310,7 +347,7 @@ let grammaire = null;
 let contesData = null;
 let emissionsData = null;
 let themesData = null;
-let relativesData = null;  // NOUVEAU : données des propositions relatives
+let relativesData = null;
 let motActuel = null;
 let historique = [];
 let favoris = [];
@@ -341,7 +378,7 @@ const btnNext = document.getElementById("btnNext");
 const compteurMot = document.getElementById("compteurMot");
 
 // ------------------------------
-// GALERIE PHOTOS (trilingue)
+// GALERIE PHOTOS
 // ------------------------------
 const imagesGalerie = [
   {
@@ -455,18 +492,12 @@ function hideLoader() {
   if (loader) {
     loader.hidden = true;
     loader.style.display = 'none';
-    setTimeout(() => {
-      if (loader && loader.parentNode) loader.remove();
-    }, 200);
-  } else {
-    console.warn("Loader introuvable, mais on continue");
   }
 }
 
 function showSkeleton(containerId) {
   const container = document.getElementById(containerId);
   if (!container) return;
-  
   container.innerHTML = `
     <div class="skeleton-grid">
       ${Array(6).fill(0).map(() => `
@@ -519,9 +550,6 @@ function initThemeSettings() {
   applyThemeSettings();
 }
 
-// ------------------------------
-// THÈMES CLAIR/SOMBRE/SEPIA
-// ------------------------------
 function setTheme(theme) {
   document.body.classList.remove('dark', 'light', 'sepia');
   document.body.classList.add(theme);
@@ -583,12 +611,13 @@ function setLanguage(lang) {
   if (document.getElementById("map") && !document.getElementById("map").hidden && mapInitialized) initialiserCarte();
   if (document.getElementById("dashboard") && !document.getElementById("dashboard").hidden) afficherDashboard();
   if (document.getElementById("rapports") && !document.getElementById("rapports").hidden) afficherRapports();
-  if (document.getElementById("grammaire") && !document.getElementById("grammaire").hidden && grammaire) afficherGrammaire();
+  if (document.getElementById("grammaire") && !document.getElementById("grammaire").hidden) afficherGrammairePremium();
   if (document.getElementById("relatives") && !document.getElementById("relatives").hidden && relativesData) afficherRelatives();
   if (document.getElementById("contes") && !document.getElementById("contes").hidden && contesData) afficherContes();
-  if (document.getElementById("emissions") && !document.getElementById("emissions").hidden && emissionsData) afficherEmissions();
-  if (document.getElementById("themes") && !document.getElementById("themes").hidden && themesData) afficherThemes();
+  if (document.getElementById("emissions") && !document.getElementById("emissions").hidden && emissionsData) afficherEmissionsPremium();
+  if (document.getElementById("themes") && !document.getElementById("themes").hidden && themesData) afficherThemesPremium();
   if (document.getElementById("flashcards") && !document.getElementById("flashcards").hidden && vocabulaire.length) genererFlashcards();
+  if (document.getElementById("ressources") && !document.getElementById("ressources").hidden) afficherRessources();
   if (motActuel) afficherMot(motActuel);
   updateChatSuggestions();
   afficherMotDuJour();
@@ -609,7 +638,7 @@ function updateChatSuggestions() {
 }
 
 // ------------------------------
-// BOT (avec recherche dans livres ET relatives)
+// BOT
 // ------------------------------
 function extraireMotsCles(question) {
   const stopWords = ['le','la','les','un','une','de','du','des','et','ou','mais','donc','car','pour','dans','avec','sans','par','sur','sous','que','qui','quoi','dont','où','comment','pourquoi','est','sont','être','avoir','faire'];
@@ -638,7 +667,6 @@ function chercherDansLivres(question) {
   return resultats[0];
 }
 
-// NOUVEAU : Fonction pour générer un exemple aléatoire de relative
 function genererExempleRelative() {
   if (!relativesData || !relativesData.strategies) return null;
   const strategies = relativesData.strategies;
@@ -661,56 +689,38 @@ function genererExempleRelative() {
 function reponseBot(txt) {
   const clean = txt.toLowerCase().trim();
   
-  // NOUVEAU : RÈGLES POUR LES RELATIVES
   if (clean.includes("relative") || clean.includes("proposition") || 
       (clean.includes("qui") && clean.includes("que")) ||
       clean.includes("ayo") || clean.includes("ayondo") || clean.includes("sa") ||
       clean.includes("gap") || clean.includes("pronom relatif")) {
     
-    // Expliquer "ayo"
     if (clean.includes("ayo") && !clean.includes("ayondo")) {
       return `📖 **"ayo"** (singulier) est le pronom relatif en tadaksahak pour les noms DÉFINIS dans des propositions RESTRICTIVES.\n\nExemple : *Bora [ayo a-taw-kat] a-zumbu-kat.*\n→ "La personne QUI est arrivée est descendue."\n\n📚 Voir section 3.1 du PDF "Relative Clauses in Tadaksahak".`;
     }
-    
-    // Expliquer "ayondo"
     if (clean.includes("ayondo")) {
       return `📖 **"ayondo"** (parfois **"endayo"**) est le pronom relatif PLURIEL en tadaksahak pour les noms DÉFINIS.\n\nExemple : *Ci na imunas-kon [ayondo a-zumbu Sali daw]?*\n→ "Qui sont les chameliers QUI sont descendus chez Rhali ?"`;
     }
-    
-    // Expliquer "sa"
     if (clean.includes("sa") && (clean.includes("relative") || clean.includes("proposition"))) {
       return `📖 **"sa"** introduit des propositions relatives NON-RESTRICTIVES (information supplémentaire).\n\nExemple : *A-jiken-an ayn nana se, [sa ayn man Aminata].*\n→ "Il salue sa mère, QUI s'appelle Aminata."\n\n💡 La relative pourrait être une phrase indépendante.\n\n📚 Voir section 4 du PDF.`;
     }
-    
-    // Expliquer la gap strategy
     if (clean.includes("gap") || (clean.includes("sans") && clean.includes("marqueur"))) {
       return `📖 **Gap strategy** = aucune marqueur dans la proposition relative.\n\nUtilisation : noms INDÉFINIS (nouveaux) dans des relatives RESTRICTIVES.\n\nExemple : *A-gar hamu [# f-keni aykaran daw].*\n→ "Elle a trouvé de la viande QUI était à côté des chiots."\n\n📚 Voir section 3.2 du PDF.`;
     }
-    
-    // Demander un exemple
     if (clean.includes("exemple") || clean.includes("example")) {
       const exempleData = genererExempleRelative();
       if (exempleData) {
         return `📖 **Exemple de relative (${exempleData.strategie.usage_fr})** :\n\n🔹 **Tadaksahak** : ${exempleData.exemple.tadaksahak}\n🔹 **Glose** : ${exempleData.exemple.glose_fr}\n🔹 **Traduction** : ${exempleData.traduction}\n\n💡 Stratégie : "${exempleData.strategie.marqueur_sg || exempleData.strategie.marqueur || '∅'}" (${exempleData.strategie.usage_fr})`;
       }
     }
-    
-    // Explication générale
     return `📖 **Les 3 stratégies de relativisation en tadaksahak** :
 
 1️⃣ **Pronom relatif "ayo/ayondo"** → noms DÉFINIS, restrictif
-   Ex: *Bora [ayo a-taw-kat]*
-
 2️⃣ **Gap strategy (∅)** → noms INDÉFINIS, restrictif
-   Ex: *A-gar hamu [# f-keni]*
-
 3️⃣ **"sa"** → non-restrictif (info supplémentaire)
-   Ex: *nana, [sa ayn man...]*
 
 📚 D'après Christiansen & Levinsohn (2003). Tapez "exemple relative" pour un exemple.`;
   }
   
-  // RÈGLES EXISTANTES
   if (clean.includes("bonjour") || clean.includes("salut") || clean.includes("hello") || clean.includes("salam")) return i18n[currentLanguage].bot_greeting;
   if (clean.includes("merci") || clean.includes("thanks") || clean.includes("شكرا")) return i18n[currentLanguage].bot_thanks;
   if (clean.includes("dictionnaire") || clean.includes("dico") || clean.includes("mot") || clean.includes("قاموس")) return i18n[currentLanguage].bot_dico;
@@ -753,7 +763,7 @@ function traiterSaisie() {
 }
 
 // ------------------------------
-// DICTIONNAIRE - Version enrichie
+// DICTIONNAIRE
 // ------------------------------
 async function chargerDictionnaire() {
   try {
@@ -767,9 +777,9 @@ async function chargerDictionnaire() {
       { mot: "Báy", cat: "vt.", fr: "Pouvoir (faire)", ar: "قدر على (فعل)", en: "Able, to be" },
       { mot: "Yiddár", cat: "vi.", fr: "Être en vie", ar: "يكون حياً", en: "Alive, to be" },
       { mot: "Káamil", cat: "quantifier", fr: "Tout", ar: "كل", en: "All" },
-      { mot: "ayo", cat: "pron.", fr: "qui, que (pronom relatif singulier, nom défini)", ar: "الذي، التي (ضمير موصول، مفرد، اسم معرف)", en: "who, which, that (relative pronoun sg, definite noun)" },
-      { mot: "ayondo", cat: "pron.", fr: "qui, que (pronom relatif pluriel, nom défini)", ar: "الذين، اللواتي (ضمير موصول، جمع، اسم معرف)", en: "who, which, that (relative pronoun pl, definite noun)" },
-      { mot: "sa", cat: "conj.", fr: "qui, que (introduit une proposition relative non-restrictive)", ar: "الذي، التي (لجملة غير مقيدة)", en: "who, which, that (introduces a non-restrictive relative clause)" }
+      { mot: "ayo", cat: "pron.", fr: "qui, que (pronom relatif singulier)", ar: "الذي، التي", en: "who, which, that" },
+      { mot: "ayondo", cat: "pron.", fr: "qui, que (pronom relatif pluriel)", ar: "الذين، اللواتي", en: "who, which, that (pl)" },
+      { mot: "sa", cat: "conj.", fr: "qui, que (relative non-restrictive)", ar: "الذي، التي", en: "who, which, that (non-restrictive)" }
     ];
   }
   motsListe = vocabulaire.map((item, idx) => ({ ...item, index: idx }));
@@ -827,7 +837,6 @@ function afficherMot(item) {
       defElem.innerHTML = `<p><strong>📂 Catégorie :</strong> ${escapeHtml(categorieAffichee)}</p>
         <p><strong>🇫🇷 Définition :</strong> ${escapeHtml(def)}</p>
         ${item.ar ? `<p><strong>🇸🇦 بالعربية :</strong> ${escapeHtml(item.ar)}</p>` : ''}
-        ${item.en && currentLanguage !== 'en' ? `<p><strong>🇬🇧 English :</strong> ${escapeHtml(item.en)}</p>` : ''}
         <div style="margin-top: 1rem; display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
           <button class="btn-small" id="shareWordBtn">📤 ${i18n[currentLanguage].share}</button>
           <button class="btn-small" id="favoriteWordBtn">⭐ ${favoris.includes(item.mot) ? i18n[currentLanguage].remove_favorite : i18n[currentLanguage].add_favorite}</button>
@@ -838,7 +847,6 @@ function afficherMot(item) {
       defElem.innerHTML = `<p><strong>📂 Category:</strong> ${escapeHtml(categorieAffichee)}</p>
         <p><strong>🇬🇧 Definition:</strong> ${escapeHtml(def)}</p>
         ${item.ar ? `<p><strong>🇸🇦 بالعربية :</strong> ${escapeHtml(item.ar)}</p>` : ''}
-        ${item.fr ? `<p><strong>🇫🇷 Français :</strong> ${escapeHtml(item.fr)}</p>` : ''}
         <div style="margin-top: 1rem; display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
           <button class="btn-small" id="shareWordBtn">📤 ${i18n[currentLanguage].share}</button>
           <button class="btn-small" id="favoriteWordBtn">⭐ ${favoris.includes(item.mot) ? i18n[currentLanguage].remove_favorite : i18n[currentLanguage].add_favorite}</button>
@@ -849,7 +857,6 @@ function afficherMot(item) {
       defElem.innerHTML = `<p><strong>📂 الفئة :</strong> ${escapeHtml(categorieAffichee)}</p>
         <p><strong>🇸🇦 التعريف :</strong> ${escapeHtml(def)}</p>
         ${item.fr ? `<p><strong>🇫🇷 Français :</strong> ${escapeHtml(item.fr)}</p>` : ''}
-        ${item.en ? `<p><strong>🇬🇧 English :</strong> ${escapeHtml(item.en)}</p>` : ''}
         <div style="margin-top: 1rem; display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
           <button class="btn-small" id="shareWordBtn">📤 ${i18n[currentLanguage].share}</button>
           <button class="btn-small" id="favoriteWordBtn">⭐ ${favoris.includes(item.mot) ? i18n[currentLanguage].remove_favorite : i18n[currentLanguage].add_favorite}</button>
@@ -876,20 +883,29 @@ function chercher(queryRaw) {
   const query = normalizeText(queryRaw);
   if (!query || !vocabulaire.length) return [];
   const resultats = [];
+  const maxDist = Math.max(2, Math.floor(query.length * 0.4));
+  
   for (const item of vocabulaire) {
     let score = Infinity;
     const motNorm = normalizeText(item.mot);
-    if (motNorm.includes(query)) score = motNorm.startsWith(query) ? 0 : 1;
-    if (score > 1 && item.fr && normalizeText(item.fr).includes(query)) score = 2;
-    if (score > 2 && item.en && normalizeText(item.en).includes(query)) score = 3;
-    if (score > 3 && item.ar && normalizeText(item.ar).includes(query)) score = 4;
-    if (score === Infinity && item.mot) {
+    
+    if (motNorm.includes(query)) {
+      score = motNorm.startsWith(query) ? 0 : 1;
+    } else if (score > 1 && item.fr && normalizeText(item.fr).includes(query)) {
+      score = 2;
+    } else if (score > 2 && item.en && normalizeText(item.en).includes(query)) {
+      score = 3;
+    } else if (score > 3 && item.ar && normalizeText(item.ar).includes(query)) {
+      score = 4;
+    } else if (score === Infinity && item.mot) {
       const dist = levenshtein(motNorm, query);
-      if (dist <= Math.max(2, Math.floor(query.length*0.4))) score = 5 + dist;
+      if (dist <= maxDist) score = 5 + dist;
     }
+    
     if (score < Infinity) resultats.push({ item, score });
   }
-  return resultats.sort((a,b)=>a.score-b.score).slice(0,15).map(r=>r.item);
+  
+  return resultats.sort((a,b) => a.score - b.score).slice(0,15).map(r => r.item);
 }
 
 if (searchBar) {
@@ -1030,9 +1046,6 @@ function basculerFavori(item) {
   if (document.getElementById("dashboard") && !document.getElementById("dashboard").hidden) afficherDashboard();
 }
 
-// ------------------------------
-// PARTAGE SOCIAL
-// ------------------------------
 function partagerMot(item) {
   const text = `${item.mot} : ${currentLanguage === 'fr' ? item.fr : (currentLanguage === 'en' ? item.en : item.fr)}`;
   if (navigator.share) {
@@ -1082,7 +1095,7 @@ function showWordNotification() {
 }
 
 // ------------------------------
-// GRAMMAIRE - Version corrigée AVEC onglets pour relatives
+// GRAMMAIRE - VERSION PREMIUM
 // ------------------------------
 async function chargerGrammaire() {
   try {
@@ -1096,12 +1109,12 @@ async function chargerGrammaire() {
   }
 }
 
-function afficherGrammaire() {
+function afficherGrammairePremium() {
   const container = document.getElementById("grammaireContainer");
   if (!container) return;
   
   if (!grammaire) {
-    container.innerHTML = `<p class="info-message">📚 Données grammaticales non disponibles. <button onclick="chargerGrammaire()">Recharger</button></p>`;
+    container.innerHTML = `<p class="info-message">📚 Données grammaticales non disponibles.</p>`;
     return;
   }
   
@@ -1114,111 +1127,85 @@ function afficherGrammaire() {
     sections = grammaire;
   } else {
     container.innerHTML = `<p class="info-message">📚 Structure de grammaire non reconnue.</p>`;
-    console.error("Structure inconnue:", Object.keys(grammaire));
     return;
   }
   
-  let html = `<div class="grammaire-intro"><p>${i18n[currentLanguage].grammar_desc}</p></div>`;
+  let html = `
+    <div class="grammaire-premium-intro">
+      <div class="premium-icon">📚</div>
+      <h3>${i18n[currentLanguage].grammar_title}</h3>
+      <p>${i18n[currentLanguage].grammar_desc}</p>
+    </div>
+    <div class="grammaire-premium-grid">
+  `;
   
   for (let i = 0; i < sections.length; i++) {
     const section = sections[i];
-    
     let sectionTitle = currentLanguage === 'fr' ? section.titre_fr : (currentLanguage === 'en' ? section.titre_en : section.titre_ar);
-    let sectionDesc = currentLanguage === 'fr' ? section.description_fr : (currentLanguage === 'en' ? section.description_en : section.description_ar);
     
-    html += `<div class="grammaire-section">
-      <h3>${escapeHtml(sectionTitle || 'Grammaire')}</h3>
-      <p class="section-desc">${escapeHtml(sectionDesc || '')}</p>`;
+    html += `
+      <div class="grammaire-premium-card">
+        <div class="card-header">
+          <span class="card-icon">🔤</span>
+          <h4>${escapeHtml(sectionTitle || 'Grammaire')}</h4>
+        </div>
+        <div class="card-content">
+    `;
     
-    if (section.subsections && Array.isArray(section.subsections) && section.subsections.length > 0) {
-      for (let j = 0; j < section.subsections.length; j++) {
-        const subsection = section.subsections[j];
-        
+    if (section.subsections && Array.isArray(section.subsections)) {
+      for (const subsection of section.subsections) {
         let subTitle = currentLanguage === 'fr' ? subsection.titre_fr : (currentLanguage === 'en' ? subsection.titre_en : subsection.titre_ar);
-        let subDesc = currentLanguage === 'fr' ? subsection.description_fr : (currentLanguage === 'en' ? subsection.description_en : subsection.description_ar);
+        html += `<div class="grammar-subsection"><strong>${escapeHtml(subTitle || '')}</strong>`;
         
-        html += `<div class="grammaire-subsection">
-          <h4>${escapeHtml(subTitle || '')}</h4>`;
-        if (subDesc) html += `<p class="sub-desc">${escapeHtml(subDesc)}</p>`;
-        
-        if (subsection.verbes && Array.isArray(subsection.verbes) && subsection.verbes.length > 0) {
-          html += `<div class="verbes-table-wrapper">
-            <table class="verbes-table">
-              <thead>
-                <tr><th>${currentLanguage === 'fr' ? 'Racine' : (currentLanguage === 'en' ? 'Root' : 'الجذر')}</th>
-                  <th>${currentLanguage === 'fr' ? 'Sens' : (currentLanguage === 'en' ? 'Meaning' : 'المعنى')}</th>
-                  <th>${currentLanguage === 'fr' ? 'Causatif' : (currentLanguage === 'en' ? 'Causative' : 'سببي')}</th>
-                  ${subsection.verbes[0]?.passif ? `<th>${currentLanguage === 'fr' ? 'Passif' : (currentLanguage === 'en' ? 'Passive' : 'مجهول')}</th>` : ''}
-                </tr>
-              </thead>
-              <tbody>`;
-          
-          for (let k = 0; k < subsection.verbes.length; k++) {
-            const verbe = subsection.verbes[k];
+        if (subsection.verbes && Array.isArray(subsection.verbes)) {
+          html += `<div class="verb-list">`;
+          for (const verbe of subsection.verbes) {
             let sens = currentLanguage === 'fr' ? verbe.sens_fr : (currentLanguage === 'en' ? verbe.sens_en : verbe.sens_ar);
-            html += `<tr>
-              <td><strong>${escapeHtml(verbe.imperatif || verbe.racine_tad || '—')}</strong></td>
-              <td>${escapeHtml(sens || '—')}</td>
-              <td><code>${escapeHtml(verbe.causatif || '—')}</code></td>`;
-            if (verbe.passif) {
-              html += `<td><code>${escapeHtml(verbe.passif)}</code></td>`;
-            }
-            html += `</tr>`;
+            html += `
+              <div class="verb-item">
+                <span class="verb-root">${escapeHtml(verbe.imperatif || verbe.racine_tad || '—')}</span>
+                <span class="verb-meaning">${escapeHtml(sens || '—')}</span>
+                <div class="verb-forms">
+                  <span class="causative">Caus: ${escapeHtml(verbe.causatif || '—')}</span>
+                  ${verbe.passif ? `<span class="passive">Pass: ${escapeHtml(verbe.passif)}</span>` : ''}
+                </div>
+              </div>
+            `;
           }
-          html += `</tbody></table></div>`;
+          html += `</div>`;
         }
         html += `</div>`;
       }
-    }
-    else if (section.elements && Array.isArray(section.elements) && section.elements.length > 0) {
-      html += `<div class="grammaire-elements">`;
-      for (let j = 0; j < section.elements.length; j++) {
-        const element = section.elements[j];
-        let desc = currentLanguage === 'fr' ? element.fr : (currentLanguage === 'en' ? element.en : element.ar);
-        let titre = element.mot || element.tad || element.forme || element.personne || element.num;
-        html += `<div class="grammaire-element">
-          <strong>${escapeHtml(titre)}</strong>
-          <span class="element-desc">${escapeHtml(desc || '')}</span>
-        </div>`;
+    } else if (section.verbes && Array.isArray(section.verbes)) {
+      html += `<div class="verb-list">`;
+      for (const verbe of section.verbes) {
+        let sens = currentLanguage === 'fr' ? verbe.sens_fr : (currentLanguage === 'en' ? verbe.sens_en : verbe.sens_ar);
+        html += `
+          <div class="verb-item">
+            <span class="verb-root">${escapeHtml(verbe.imperatif || verbe.racine_tad || '—')}</span>
+            <span class="verb-meaning">${escapeHtml(sens || '—')}</span>
+            <div class="verb-forms">
+              <span class="causative">Caus: ${escapeHtml(verbe.causatif || '—')}</span>
+              ${verbe.passif ? `<span class="passive">Pass: ${escapeHtml(verbe.passif)}</span>` : ''}
+            </div>
+          </div>
+        `;
       }
       html += `</div>`;
     }
-    else if (section.verbes && Array.isArray(section.verbes) && section.verbes.length > 0) {
-      html += `<div class="verbes-table-wrapper">
-        <table class="verbes-table">
-          <thead>
-            <tr><th>${currentLanguage === 'fr' ? 'Racine' : (currentLanguage === 'en' ? 'Root' : 'الجذر')}</th>
-              <th>${currentLanguage === 'fr' ? 'Sens' : (currentLanguage === 'en' ? 'Meaning' : 'المعنى')}</th>
-              <th>${currentLanguage === 'fr' ? 'Causatif' : (currentLanguage === 'en' ? 'Causative' : 'سببي')}</th>
-              ${section.verbes[0]?.passif ? `<th>${currentLanguage === 'fr' ? 'Passif' : (currentLanguage === 'en' ? 'Passive' : 'مجهول')}</th>` : ''}
-           </>
-          </thead>
-          <tbody>`;
-      
-      for (let k = 0; k < section.verbes.length; k++) {
-        const verbe = section.verbes[k];
-        let sens = currentLanguage === 'fr' ? verbe.sens_fr : (currentLanguage === 'en' ? verbe.sens_en : verbe.sens_ar);
-        html += `<tr>
-          <td><strong>${escapeHtml(verbe.imperatif || verbe.racine_tad || '—')}</strong></td>
-          <td>${escapeHtml(sens || '—')}</td>
-          <td><code>${escapeHtml(verbe.causatif || '—')}</code></td>`;
-        if (verbe.passif) {
-          html += `<td><code>${escapeHtml(verbe.passif)}</code></td>`;
-        }
-        html += `</tr>`;
-      }
-      html += `</tbody></table></div>`;
-    }
     
-    html += `</div>`;
+    html += `
+        </div>
+      </div>
+    `;
   }
   
+  html += `</div>`;
   container.innerHTML = html;
-  console.log("✅ Grammaire affichée avec succès");
 }
 
 // ------------------------------
-// NOUVEAU : PROPOSITIONS RELATIVES (Christiansen & Levinsohn 2003)
+// PROPOSITIONS RELATIVES
 // ------------------------------
 async function chargerRelatives() {
   try {
@@ -1246,12 +1233,13 @@ async function afficherRelatives() {
   }
   
   let html = `
-    <div class="relatives-intro">
+    <div class="relatives-premium-intro">
+      <div class="premium-icon">📖</div>
       <h3>${i18n[currentLanguage].grammar_relatives_title}</h3>
       <p>${i18n[currentLanguage].grammar_relatives_desc}</p>
       <p>Le tadaksahak utilise trois stratégies distinctes pour former des propositions relatives.</p>
     </div>
-    <div class="strategies-grid">
+    <div class="strategies-premium-grid">
   `;
   
   for (const strat of relativesData.strategies) {
@@ -1259,20 +1247,23 @@ async function afficherRelatives() {
     let marqueurAffiche = strat.marqueur === "∅" ? "∅ (aucun)" : (strat.marqueur_sg || strat.marqueur);
     
     html += `
-      <div class="strategy-card">
-        <h4>${escapeHtml(marqueurAffiche)}</h4>
-        <p class="strategy-usage">${escapeHtml(usage)}</p>
-        <div class="strategy-exemples">
+      <div class="strategy-premium-card">
+        <div class="strategy-header">
+          <span class="strategy-marker">${escapeHtml(marqueurAffiche)}</span>
+          <span class="strategy-type">${strat.marqueur === "∅" ? "Gap Strategy" : (strat.marqueur === "sa" ? "Non-restrictive" : "Relative Pronoun")}</span>
+        </div>
+        <p class="strategy-usage-premium">${escapeHtml(usage)}</p>
+        <div class="strategy-exemples-premium">
     `;
     
     const exemples = strat.exemples || [];
     for (const ex of exemples.slice(0, 2)) {
       let trad = currentLanguage === 'fr' ? ex.traduction_fr : (currentLanguage === 'en' ? ex.traduction_en : ex.traduction_ar);
       html += `
-        <div class="exemple-card">
-          <div class="exemple-tad">${escapeHtml(ex.tadaksahak)}</div>
-          <div class="exemple-gloss">${escapeHtml(ex.glose_fr)}</div>
-          <div class="exemple-trans">${escapeHtml(trad)}</div>
+        <div class="exemple-premium-card">
+          <div class="exemple-tad-premium">${escapeHtml(ex.tadaksahak)}</div>
+          <div class="exemple-gloss-premium">${escapeHtml(ex.glose_fr)}</div>
+          <div class="exemple-trans-premium">${escapeHtml(trad)}</div>
         </div>
       `;
     }
@@ -1281,42 +1272,6 @@ async function afficherRelatives() {
   }
   
   html += `</div>`;
-  
-  if (relativesData.accessibilite) {
-    html += `
-      <div class="accessibility-table">
-        <h4>🎯 Hiérarchie d'accessibilité (Keenan & Comrie 1977)</h4>
-        <table class="access-table">
-          <thead>
-            <tr><th>Fonction grammaticale</th><th>Pronom relatif</th><th>Gap</th><th>sa</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Sujet</td><td>✅</td><td>✅</td><td>✅</td></tr>
-            <tr><td>Objet direct</td><td>✅</td><td>✅</tr><td>✅</tr>
-            <tr><td>Objet indirect</tr><td>✅</tr><td>❌</tr><td>❌</tr>
-            <tr><td>Oblique</tr><td>✅</tr><td>✅</tr><td>❌</tr>
-            <tr><td>Possesseur</tr><td>❌</tr><td>❌</tr><td>✅</tr>
-          </tbody>
-        ~
-        <p class="table-note">📚 D'après l'analyse du corpus de Christiansen & Levinsohn (2003)</p>
-      </div>
-    `;
-  }
-  
-  if (relativesData.exceptions) {
-    html += `<div class="exceptions-box"><h4>⚠️ Exceptions notables</h4>`;
-    for (const [key, exc] of Object.entries(relativesData.exceptions)) {
-      html += `
-        <div class="exception-item">
-          <strong>${escapeHtml(exc.mot || key)}</strong> : ${escapeHtml(currentLanguage === 'fr' ? exc.sens_fr : (currentLanguage === 'en' ? exc.sens_en : exc.sens_ar))}
-          <p class="exception-regle">${escapeHtml(exc.regle)}</p>
-          ${exc.exemple ? `<div class="exception-exemple">${escapeHtml(exc.exemple)}</div>` : ''}
-        </div>
-      `;
-    }
-    html += `</div>`;
-  }
-  
   container.innerHTML = html;
 }
 
@@ -1344,7 +1299,7 @@ function afficherContes() {
     return;
   }
   
-  let html = `<div class="contes-grid">`;
+  let html = `<div class="contes-premium-grid">`;
   const contes = Array.isArray(contesData) ? contesData : [contesData];
   
   for (const conte of contes) {
@@ -1352,18 +1307,15 @@ function afficherContes() {
     let resume = currentLanguage === 'fr' ? conte.resume_fr : (currentLanguage === 'en' ? conte.resume_en : conte.resume_ar);
     
     html += `
-      <div class="conte-card">
-        <div class="conte-card-inner">
-          <div class="conte-card-front">
-            <h3>📖 ${escapeHtml(titre || 'Sans titre')}</h3>
-            <div class="conte-meta">
-              <span>📜 ${escapeHtml(conte.type || 'conte')}</span>
-              <span>🗣️ ${escapeHtml(conte.narrateur || 'Tradition orale')}</span>
-            </div>
-            <p class="conte-resume">${escapeHtml(resume || 'Résumé non disponible')}</p>
-            <button class="btn-lire-conte" data-conte-id="${conte.id || 0}">📖 Lire le conte</button>
-          </div>
+      <div class="conte-premium-card">
+        <div class="conte-card-icon">📖</div>
+        <h3>${escapeHtml(titre || 'Sans titre')}</h3>
+        <div class="conte-meta-premium">
+          <span>📜 ${escapeHtml(conte.type || 'conte')}</span>
+          <span>🗣️ ${escapeHtml(conte.narrateur || 'Tradition orale')}</span>
         </div>
+        <p class="conte-resume-premium">${escapeHtml(resume || 'Résumé non disponible')}</p>
+        <button class="btn-lire-conte-premium" data-conte-id="${conte.id || 0}">📖 Lire le conte</button>
       </div>
     `;
   }
@@ -1371,7 +1323,7 @@ function afficherContes() {
   html += `</div>`;
   container.innerHTML = html;
   
-  document.querySelectorAll('.btn-lire-conte').forEach(btn => {
+  document.querySelectorAll('.btn-lire-conte-premium').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const id = parseInt(e.currentTarget.dataset.conteId);
       const conte = contes.find(c => c.id === id);
@@ -1414,18 +1366,16 @@ function afficherConteDetail(conte) {
   
   const existingModal = document.getElementById('conteModal');
   if (existingModal) existingModal.remove();
-  
   document.body.insertAdjacentHTML('beforeend', modalHtml);
   
   const modal = document.getElementById('conteModal');
   const closeBtn = modal.querySelector('.modal-close');
-  
   closeBtn.addEventListener('click', () => modal.remove());
   modal.addEventListener('click', (e) => { if (e.target === modal) modal.remove(); });
 }
 
 // ------------------------------
-// ÉMISSIONS
+// ÉMISSIONS - VERSION PREMIUM
 // ------------------------------
 async function chargerEmissions() {
   try {
@@ -1439,7 +1389,7 @@ async function chargerEmissions() {
   }
 }
 
-function afficherEmissions() {
+function afficherEmissionsPremium() {
   const container = document.getElementById("emissionsContainer");
   if (!container) return;
   
@@ -1448,7 +1398,15 @@ function afficherEmissions() {
     return;
   }
   
-  let html = `<div class="emissions-grid">`;
+  let html = `
+    <div class="emissions-premium-intro">
+      <div class="premium-icon">🎙️</div>
+      <h3>${i18n[currentLanguage].emissions_title}</h3>
+      <p>Découvrez les archives radiophoniques sur la langue et la culture Idaksahak</p>
+    </div>
+    <div class="emissions-premium-grid">
+  `;
+  
   const emissions = Array.isArray(emissionsData) ? emissionsData : [emissionsData];
   
   for (const emission of emissions) {
@@ -1456,17 +1414,23 @@ function afficherEmissions() {
     let contexte = currentLanguage === 'fr' ? emission.contexte_fr : (currentLanguage === 'en' ? emission.contexte_en : emission.contexte_ar);
     
     html += `
-      <div class="emission-card">
-        <h3>🎙️ ${escapeHtml(titre)}</h3>
-        <div class="emission-meta">
-          <span>📅 ${emission.date || '?'}</span>
-          <span>🗣️ ${escapeHtml(emission.orateur || 'Inconnu')}</span>
-          <span>📍 ${escapeHtml(emission.lieu || '?')}</span>
+      <div class="emission-premium-card">
+        <div class="emission-card-header">
+          <div class="emission-icon">🎙️</div>
+          <div class="emission-info">
+            <h4>${escapeHtml(titre)}</h4>
+            <div class="emission-meta-premium">
+              <span>📅 ${emission.date || '?'}</span>
+              <span>🗣️ ${escapeHtml(emission.orateur || 'Inconnu')}</span>
+              <span>📍 ${escapeHtml(emission.lieu || '?')}</span>
+            </div>
+          </div>
         </div>
-        <p class="emission-contexte">${escapeHtml(contexte || '')}</p>
-        <details class="emission-details">
-          <summary>🎧 Lire la transcription</summary>
-          <div class="emission-versets">
+        <p class="emission-contexte-premium">${escapeHtml(contexte || '')}</p>
+        <button class="btn-emission-premium" data-emission-id="${emission.id || 0}">
+          🎧 Lire la transcription
+        </button>
+        <div class="emission-transcription" id="emissionTrans-${emission.id || 0}" style="display: none;">
     `;
     
     if (emission.versets && emission.versets.length) {
@@ -1483,18 +1447,31 @@ function afficherEmissions() {
     }
     
     html += `
-          </div>
-        </details>
+        </div>
       </div>
     `;
   }
   
   html += `</div>`;
   container.innerHTML = html;
+  
+  document.querySelectorAll('.btn-emission-premium').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const id = e.currentTarget.dataset.emissionId;
+      const transcriptDiv = document.getElementById(`emissionTrans-${id}`);
+      if (transcriptDiv.style.display === 'none') {
+        transcriptDiv.style.display = 'block';
+        btn.textContent = '📖 Masquer la transcription';
+      } else {
+        transcriptDiv.style.display = 'none';
+        btn.textContent = '🎧 Lire la transcription';
+      }
+    });
+  });
 }
 
 // ------------------------------
-// THÈMES (vocabulaire thématique)
+// THÈMES - VERSION PREMIUM
 // ------------------------------
 async function chargerThemes() {
   try {
@@ -1508,7 +1485,7 @@ async function chargerThemes() {
   }
 }
 
-function afficherThemes() {
+function afficherThemesPremium() {
   const container = document.getElementById("themesContainer");
   if (!container) return;
   
@@ -1517,38 +1494,59 @@ function afficherThemes() {
     return;
   }
   
-  let html = `<div class="themes-grid">`;
+  let html = `
+    <div class="themes-premium-header">
+      <div class="premium-icon">📚</div>
+      <h2>${i18n[currentLanguage].themes_title}</h2>
+      <p>Apprenez le vocabulaire tadaksahak par catégories thématiques</p>
+      <div class="themes-premium-search">
+        <input type="text" id="themeSearchPremium" placeholder="🔍 Rechercher un mot..." class="theme-search-premium">
+      </div>
+      <div class="themes-premium-stats">
+        <span class="stat-badge">📖 ${themesData.themes.reduce((acc, t) => acc + (t.mots?.length || 0), 0)} mots</span>
+        <span class="stat-badge">📚 ${themesData.themes.length} thèmes</span>
+      </div>
+    </div>
+    <div class="themes-premium-grid">
+  `;
   
-  for (const theme of themesData.themes) {
+  for (let i = 0; i < themesData.themes.length; i++) {
+    const theme = themesData.themes[i];
     let titre = currentLanguage === 'fr' ? theme.titre_fr : (currentLanguage === 'en' ? theme.titre_en : theme.titre_ar);
     let description = currentLanguage === 'fr' ? theme.description_fr : (currentLanguage === 'en' ? theme.description_en : theme.description_ar);
+    const motCount = theme.mots?.length || 0;
     
     html += `
-      <div class="theme-card">
-        <div class="theme-header">
+      <div class="theme-premium-card" data-theme-idx="${i}">
+        <div class="theme-premium-header">
+          <div class="theme-premium-icon">📖</div>
           <h3>${escapeHtml(titre)}</h3>
-          <span class="theme-count">${theme.mots?.length || 0} mots</span>
+          <span class="theme-premium-badge">${motCount} mots</span>
         </div>
-        <p class="theme-description">${escapeHtml(description || '')}</p>
-        <div class="theme-words">
-    `;
-    
-    if (theme.mots && theme.mots.length) {
-      for (const mot of theme.mots.slice(0, 12)) {
-        let sens = currentLanguage === 'fr' ? mot.fr : (currentLanguage === 'en' ? mot.en : mot.ar);
-        html += `
-          <div class="theme-word-item" data-mot="${escapeHtml(mot.tad)}">
-            <span class="theme-word-tad">${escapeHtml(mot.tad)}</span>
-            <span class="theme-word-sens">${escapeHtml(sens)}</span>
+        <p class="theme-premium-desc">${escapeHtml(description || '')}</p>
+        <div class="theme-premium-preview">
+          ${theme.mots?.slice(0, 4).map(mot => `<span class="preview-word-premium">${escapeHtml(mot.tad)}</span>`).join('')}
+          ${motCount > 4 ? `<span class="preview-more-premium">+${motCount - 4} autres</span>` : ''}
+        </div>
+        <button class="theme-premium-expand" data-theme-idx="${i}">
+          <span>Explorer le thème</span>
+          <span class="expand-icon">▼</span>
+        </button>
+        <div class="theme-premium-words" id="themeWordsPremium-${i}" style="display: none;">
+          <div class="words-premium-header">
+            <span>Mot en tadaksahak</span>
+            <span>Traduction</span>
+            <span></span>
           </div>
-        `;
-      }
-      if (theme.mots.length > 12) {
-        html += `<div class="theme-more">+ ${theme.mots.length - 12} autres mots</div>`;
-      }
-    }
-    
-    html += `
+          <div class="words-premium-list">
+            ${theme.mots?.map(mot => `
+              <div class="word-premium-row" data-mot="${escapeHtml(mot.tad)}">
+                <span class="word-premium-tad">${escapeHtml(mot.tad)}</span>
+                <span class="word-premium-trans">${escapeHtml(currentLanguage === 'fr' ? mot.fr : (currentLanguage === 'en' ? mot.en : mot.ar))}</span>
+                <button class="word-premium-play" onclick="speakTextPremium('${escapeHtml(mot.tad)}')">🔊</button>
+              </div>
+            `).join('')}
+          </div>
         </div>
       </div>
     `;
@@ -1557,9 +1555,66 @@ function afficherThemes() {
   html += `</div>`;
   container.innerHTML = html;
   
-  document.querySelectorAll('.theme-word-item').forEach(item => {
-    item.addEventListener('click', () => {
-      const mot = item.dataset.mot;
+  document.querySelectorAll('.theme-premium-expand').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const idx = btn.dataset.themeIdx;
+      const wordsContainer = document.getElementById(`themeWordsPremium-${idx}`);
+      const card = btn.closest('.theme-premium-card');
+      
+      if (wordsContainer.style.display === 'none') {
+        wordsContainer.style.display = 'block';
+        btn.querySelector('.expand-icon').textContent = '▲';
+        btn.querySelector('span:first-child').textContent = 'Réduire';
+        card.classList.add('expanded');
+      } else {
+        wordsContainer.style.display = 'none';
+        btn.querySelector('.expand-icon').textContent = '▼';
+        btn.querySelector('span:first-child').textContent = 'Explorer le thème';
+        card.classList.remove('expanded');
+      }
+    });
+  });
+  
+  const searchInput = document.getElementById('themeSearchPremium');
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase();
+      const cards = document.querySelectorAll('.theme-premium-card');
+      
+      cards.forEach(card => {
+        const words = card.querySelectorAll('.word-premium-row');
+        let hasMatch = false;
+        
+        words.forEach(word => {
+          const text = word.textContent.toLowerCase();
+          if (query === '' || text.includes(query)) {
+            word.style.display = 'flex';
+            hasMatch = true;
+          } else {
+            word.style.display = 'none';
+          }
+        });
+        
+        if (query !== '' && hasMatch) {
+          const wordsContainer = card.querySelector('.theme-premium-words');
+          if (wordsContainer && wordsContainer.style.display !== 'block') {
+            wordsContainer.style.display = 'block';
+            const btn = card.querySelector('.theme-premium-expand');
+            if (btn) {
+              btn.querySelector('.expand-icon').textContent = '▲';
+              btn.querySelector('span:first-child').textContent = 'Réduire';
+            }
+          }
+        }
+      });
+    });
+  }
+  
+  document.querySelectorAll('.word-premium-row').forEach(row => {
+    row.addEventListener('click', (e) => {
+      if (e.target.classList.contains('word-premium-play')) return;
+      const mot = row.dataset.mot;
       const motTrouve = vocabulaire.find(v => v.mot === mot);
       if (motTrouve && sectionSelector) {
         sectionSelector.value = 'dictionnaire';
@@ -1570,8 +1625,20 @@ function afficherThemes() {
   });
 }
 
+function speakTextPremium(text) {
+  if ('speechSynthesis' in window) {
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'fr-FR';
+    utterance.rate = 0.8;
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(utterance);
+  } else {
+    showToast("🔊 Synthèse vocale non supportée", "warning");
+  }
+}
+
 // ------------------------------
-// FLASHCARDS (AVEC option relatives)
+// FLASHCARDS
 // ------------------------------
 function genererFlashcards() {
   const container = document.getElementById("flashcardsContainer");
@@ -1585,7 +1652,6 @@ function genererFlashcards() {
   } else if (theme === 'noms') {
     motsFiltres = motsFiltres.filter(m => m.cat === 'n.' || m.cat === 'npl.');
   } else if (theme === 'relatives' && relativesData) {
-    // NOUVEAU : Flashcards pour les propositions relatives
     motsFiltres = [];
     for (const strat of relativesData.strategies) {
       for (const ex of (strat.exemples || [])) {
@@ -1607,7 +1673,6 @@ function genererFlashcards() {
   
   currentFlashcards = [...motsFiltres].sort(() => 0.5 - Math.random());
   currentFlashcardIndex = 0;
-  
   afficherFlashcard();
   mettreAJourProgressionFlashcards();
 }
@@ -1622,9 +1687,7 @@ function afficherFlashcard() {
       <p>Vous avez terminé toutes les flashcards !</p>
       <button id="restartFlashcardsBtn" class="btn">🔄 Recommencer</button>
     </div>`;
-    document.getElementById('restartFlashcardsBtn')?.addEventListener('click', () => {
-      genererFlashcards();
-    });
+    document.getElementById('restartFlashcardsBtn')?.addEventListener('click', () => genererFlashcards());
     return;
   }
   
@@ -1704,7 +1767,6 @@ function initFlashcards() {
       mettreAJourProgressionFlashcards();
     }
   });
-  
   if (vocabulaire.length) genererFlashcards();
 }
 
@@ -1884,7 +1946,7 @@ function afficherDashboard() {
 }
 
 // ------------------------------
-// LIVRES (multilingue) - Exclut les rapports
+// LIVRES
 // ------------------------------
 async function afficherLivres() {
   const cont = document.getElementById("livresContainer");
@@ -1932,25 +1994,21 @@ function afficherPhotos() {
 }
 
 // ------------------------------
-// RAPPORTS (depuis livres.json, type: "rapport")
+// RAPPORTS
 // ------------------------------
 function afficherRapports() {
   const container = document.getElementById("rapportsContainer");
   if (!container) return;
-  
   container.innerHTML = `<div class="loading-books">📄 Chargement des rapports...</div>`;
-  
   fetch('data/livres.json')
     .then(response => response.json())
     .then(allLivres => {
       let langueCible = currentLanguage === "fr" ? "Français" : (currentLanguage === "ar" ? "Arabe" : "English");
       const rapports = allLivres.filter(l => l.type === "rapport" && l.langue === langueCible);
-      
       if (!rapports.length) {
         container.innerHTML = `<p class="info-message">📄 Aucun rapport dans cette langue.</p>`;
         return;
       }
-      
       container.innerHTML = `<div class="rapports-grid">` + rapports.map(rapport => `
         <div class="rapport-card">
           <div class="rapport-type">📄 RAPPORT</div>
@@ -1970,9 +2028,6 @@ function afficherRapports() {
     });
 }
 
-// ------------------------------
-// AUTRES SECTIONS
-// ------------------------------
 function genererAlbumsAudio() {
   const conteneur = document.getElementById("audioContainer");
   if (conteneur) conteneur.innerHTML = "<p class='info-message'>🎵 Pistes audio à venir prochainement...</p>";
@@ -1984,7 +2039,7 @@ function genererVideos() {
 }
 
 // ------------------------------
-// CHARGEMENT BASE DE CONNAISSANCES
+// BASE DE CONNAISSANCES
 // ------------------------------
 async function chargerLivresConnaissance() {
   try {
@@ -2003,18 +2058,17 @@ async function chargerLivresConnaissance() {
 }
 
 // ------------------------------
-// SERVICE WORKER (PWA) et améliorations
+// SERVICE WORKER PWA
 // ------------------------------
 function registerServiceWorker() {
   if ('serviceWorker' in navigator) {
-    const swUrl = '/Dictionnaire-Tadaksahak/sw.js';
+    const swUrl = './sw.js';
     fetch(swUrl, { method: 'HEAD' })
       .then(response => {
         if (response.ok) {
           navigator.serviceWorker.register(swUrl)
             .then(reg => {
               console.log('SW enregistré', reg);
-              
               reg.addEventListener('updatefound', () => {
                 const newWorker = reg.installing;
                 newWorker.addEventListener('statechange', () => {
@@ -2036,7 +2090,6 @@ function registerServiceWorker() {
 function showInstallBanner() {
   if (isAppInstalled) return;
   if (localStorage.getItem('installBannerDismissed') === 'true') return;
-  
   const banner = document.createElement('div');
   banner.id = 'installBanner';
   banner.className = 'install-banner';
@@ -2051,19 +2104,15 @@ function showInstallBanner() {
       <button id="dismissBannerBtn" class="btn-dismiss">✖</button>
     </div>
   `;
-  
   document.body.appendChild(banner);
-  
   document.getElementById('dismissBannerBtn')?.addEventListener('click', () => {
     banner.remove();
     localStorage.setItem('installBannerDismissed', 'true');
   });
-  
   let deferredPrompt;
   window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     deferredPrompt = e;
-    
     document.getElementById('installAppBtn')?.addEventListener('click', () => {
       banner.remove();
       deferredPrompt.prompt();
@@ -2160,21 +2209,17 @@ function showHelpModal() {
       </div>
     </div>
   `;
-  
   const existingModal = document.getElementById('helpModal');
   if (existingModal) existingModal.remove();
-  
   document.body.insertAdjacentHTML('beforeend', modalHtml);
-  
   const modal = document.getElementById('helpModal');
   const closeBtn = modal.querySelector('.modal-close');
-  
   closeBtn.addEventListener('click', () => modal.remove());
   modal.addEventListener('click', (e) => { if (e.target === modal) modal.remove(); });
 }
 
 // ------------------------------
-// GESTION DES MISES À JOUR AUTO ET INSTALLATION APRÈS 3 VISITES
+// MISES À JOUR AUTO
 // ------------------------------
 let visitCounter = parseInt(localStorage.getItem('tadaksahak_visit_count') || '0');
 
@@ -2182,7 +2227,6 @@ function incrementVisitCount() {
   visitCounter++;
   localStorage.setItem('tadaksahak_visit_count', visitCounter);
   console.log(`👁️ Visite ${visitCounter}`);
-  
   if (visitCounter >= 3 && !localStorage.getItem('tadaksahak_installed') && !localStorage.getItem('tadaksahak_install_dismissed')) {
     showAutoInstallBanner();
   }
@@ -2191,7 +2235,6 @@ function incrementVisitCount() {
 function showAutoInstallBanner() {
   const existingBanner = document.getElementById('autoInstallBanner');
   if (existingBanner) existingBanner.remove();
-  
   const banner = document.createElement('div');
   banner.id = 'autoInstallBanner';
   banner.className = 'install-banner auto';
@@ -2206,9 +2249,7 @@ function showAutoInstallBanner() {
       <button id="dismissAutoBtn" class="btn-dismiss">✖</button>
     </div>
   `;
-  
   document.body.appendChild(banner);
-  
   document.getElementById('autoInstallBtn')?.addEventListener('click', () => {
     if (installPromptEvent) {
       installPromptEvent.prompt();
@@ -2225,7 +2266,6 @@ function showAutoInstallBanner() {
     banner.remove();
     localStorage.setItem('tadaksahak_install_dismissed', 'true');
   });
-  
   document.getElementById('dismissAutoBtn')?.addEventListener('click', () => {
     banner.remove();
     localStorage.setItem('tadaksahak_install_dismissed', 'true');
@@ -2236,13 +2276,11 @@ function checkForSWUpdate() {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.ready.then(registration => {
       registration.update();
-      
       navigator.serviceWorker.addEventListener('message', event => {
         if (event.data === 'update_available') {
           showToast("🔄 Une mise à jour est disponible. Rafraîchissez la page.", "info");
         }
       });
-      
       setInterval(() => {
         registration.update();
         console.log('🔄 Vérification périodique des mises à jour');
@@ -2275,14 +2313,163 @@ function initAutoUpdates() {
   incrementVisitCount();
   checkForSWUpdate();
   handleSWUpdate();
-  
   if (navigator.serviceWorker && navigator.serviceWorker.controller) {
     navigator.serviceWorker.controller.postMessage('checkUpdate');
   }
 }
 
 // ------------------------------
-// NAVIGATION ENTRE SECTIONS (AVEC gestion des onglets grammaire/relatives)
+// RESSOURCES ACADÉMIQUES
+// ------------------------------
+function afficherRessources() {
+  const container = document.getElementById("ressourcesContainer");
+  if (!container) return;
+  const podcastUrl = "https://www.themaghribpodcast.com/2018/01/la-linguistique-historique-au-sahara.html";
+  let html = `
+    <div class="ressources-intro">
+      <p data-i18n="ressources_desc">Découvrez des podcasts, articles et références sur les langues et l'histoire du Sahara</p>
+    </div>
+    <div class="ressources-section">
+      <h3 data-i18n="podcast_section">🎙️ Podcasts et conférences</h3>
+      <div class="podcast-card">
+        <div class="podcast-header">
+          <div class="podcast-icon">🎙️</div>
+          <div class="podcast-info">
+            <h4 data-i18n="podcast_episode_title">La linguistique historique au Sahara</h4>
+            <p class="podcast-speaker">Dr. Lameen Souag (CNRS, LACITO)</p>
+            <p class="podcast-date" data-i18n="podcast_episode_date">22 janvier 2018</p>
+          </div>
+        </div>
+        <p class="podcast-description" data-i18n="podcast_episode_desc">
+          Dans cet épisode, Dr. Lameen Souag développe l'idée que l'histoire d'une langue ne dépend pas que d'une tradition écrite.
+        </p>
+        <div class="podcast-links">
+          <a href="${podcastUrl}" target="_blank" rel="noopener noreferrer" class="btn-podcast">🎧 <span data-i18n="podcast_listen">Écouter le podcast</span></a>
+          <button class="btn-share-resource" onclick="shareResource('${podcastUrl}', 'La linguistique historique au Sahara')">📤 <span data-i18n="share_resource">Partager</span></button>
+        </div>
+      </div>
+    </div>
+    <div class="ressources-section">
+      <h3 data-i18n="articles_section">📖 Articles et publications</h3>
+      <div class="articles-grid" id="articlesGrid"><div class="loading-spinner">📚 Chargement des articles...</div></div>
+    </div>
+    <div class="ressources-section">
+      <h3 data-i18n="bibliography_section">📚 Bibliographie suggérée</h3>
+      <div class="bibliography-list" id="bibliographyList"><div class="loading-spinner">📖 Chargement de la bibliographie...</div></div>
+    </div>
+  `;
+  container.innerHTML = html;
+  chargerArticlesAcademiques();
+  chargerBibliographie();
+}
+
+function chargerArticlesAcademiques() {
+  const container = document.getElementById("articlesGrid");
+  if (!container) return;
+  const articles = [
+    { titre: "The Tadaksahak language: a Zénaga variety of the Malian Sahara", auteur: "Christiansen-Bolli, R.", annee: 2010, url: "#", description: "Étude descriptive du tadaksahak.", tags: ["Tadaksahak", "Grammaire"] },
+    { titre: "Relative Clauses in Tadaksahak", auteur: "Christiansen, N. & Levinsohn, S.", annee: 2003, url: "#", description: "Analyse des trois stratégies de relativisation.", tags: ["Tadaksahak", "Syntaxe"] },
+    { titre: "A Grammar of Tamashek (Tuareg of Mali)", auteur: "Heath, J.", annee: 2005, url: "#", description: "Grammaire de référence du touareg.", tags: ["Touareg", "Grammaire"] },
+    { titre: "The Berber language", auteur: "Kossmann, M.", annee: 2011, url: "#", description: "Aperçu des langues berbères.", tags: ["Berbère", "Linguistique"] },
+    { titre: "Non-Tuareg Berber and the Genesis of Nomadic Northern Songhay", auteur: "Souag, L.", annee: 2015, url: "#", description: "Contacts entre berbère et songhay.", tags: ["Songhay", "Contacts"] }
+  ];
+  let html = `<div class="articles-grid-inner">`;
+  for (const article of articles) {
+    html += `
+      <div class="article-card">
+        <div class="article-icon">📄</div>
+        <div class="article-content">
+          <h4>${escapeHtml(article.titre)}</h4>
+          <p class="article-meta">${escapeHtml(article.auteur)} • ${article.annee}</p>
+          <p class="article-desc">${escapeHtml(article.description)}</p>
+          <div class="article-tags">${article.tags.map(tag => `<span class="tag">${escapeHtml(tag)}</span>`).join('')}</div>
+          <a href="${article.url}" class="article-link" target="_blank">🔗 Accéder à la publication</a>
+        </div>
+      </div>
+    `;
+  }
+  html += `</div>`;
+  container.innerHTML = html;
+}
+
+function chargerBibliographie() {
+  const container = document.getElementById("bibliographyList");
+  if (!container) return;
+  const bibliography = [
+    "Brugnatelli, Vermondo. 2011. \"Some grammatical features of Ancient Eastern Berber.\"",
+    "Cohen, David et Catherine Taine-Cheikh. 2000. \"A propos du Zénaga.\"",
+    "Kossmann, Maarten. 2001. \"The origin of the glottal stop in Zenaga.\"",
+    "Kossmann, Maarten. 1999. Essai sur la phonologie du proto-berbère.",
+    "Souag, Lameen. 2015. \"Non-Tuareg Berber and the Genesis of Nomadic Northern Songhay.\"",
+    "Christiansen-Bolli, Regula. 2010. \"A Grammar of Tadaksahak.\"",
+    "Christiansen, Niels et Stephen Levinsohn. 2003. \"Relative Clauses in Tadaksahak.\""
+  ];
+  let html = `<ul class="bibliography-list-ul">`;
+  for (const ref of bibliography) { html += `<li>📖 ${escapeHtml(ref)}</li>`; }
+  html += `</ul><p class="bibliography-note">📚 D'après l'épisode "La linguistique historique au Sahara" du podcast Maghrib in Past & Present</p>`;
+  container.innerHTML = html;
+}
+
+window.shareResource = function(url, title) {
+  if (navigator.share) {
+    navigator.share({ title: title, text: `Découvrez cette ressource sur ${title}`, url: url }).catch(() => {});
+  } else {
+    navigator.clipboard.writeText(url);
+    showToast("📋 Lien copié dans le presse-papier", "success");
+  }
+};
+
+// ------------------------------
+// POP-UP DE BIENVENUE
+// ------------------------------
+function showRessourcesWelcomePopup() {
+  const hasSeenRessourcesPopup = localStorage.getItem('has_seen_ressources_popup');
+  if (hasSeenRessourcesPopup === 'true') return;
+  const popup = document.createElement('div');
+  popup.id = 'ressourcesPopup';
+  popup.className = 'modal ressources-popup';
+  popup.innerHTML = `
+    <div class="modal-content ressources-popup-content">
+      <button class="popup-close" id="closeRessourcesPopup">&times;</button>
+      <div class="popup-icon">📚</div>
+      <h2>Nouvelle section</h2>
+      <h3>Ressources academiques</h3>
+      <div class="popup-author">Par <strong>Hamadine Ag Moctar</strong></div>
+      <div class="popup-divider"></div>
+      <div class="popup-text"><p>"La connaissance ne se construit pas seule. Elle se tisse au fil des echanges."</p></div>
+      <div class="popup-features">
+        <div class="popup-feature"><span class="feature-icon">🎙️</span><span class="feature-text">Podcast exclusif avec <strong>Dr. Lameen Souag (CNRS)</strong></span></div>
+        <div class="popup-feature"><span class="feature-icon">📖</span><span class="feature-text">Articles scientifiques sur le tadaksahak</span></div>
+        <div class="popup-feature"><span class="feature-icon">📚</span><span class="feature-text">Bibliographie specialisee</span></div>
+      </div>
+      <div class="popup-quote"><p>La langue et la culture Tadaksahak meritent d'etre etudiees, partagees et transmises.</p></div>
+      <button id="goToRessourcesBtn" class="btn-popup-go">Decouvrir la section</button>
+      <button id="dismissRessourcesPopup" class="btn-popup-later">Plus tard</button>
+    </div>
+  `;
+  document.body.appendChild(popup);
+  localStorage.setItem('has_seen_ressources_popup', 'true');
+  const closeBtn = document.getElementById('closeRessourcesPopup');
+  const dismissBtn = document.getElementById('dismissRessourcesPopup');
+  const goBtn = document.getElementById('goToRessourcesBtn');
+  const closePopup = () => {
+    popup.classList.add('popup-closing');
+    setTimeout(() => { if (popup && popup.parentNode) popup.remove(); }, 300);
+  };
+  closeBtn?.addEventListener('click', closePopup);
+  dismissBtn?.addEventListener('click', closePopup);
+  goBtn?.addEventListener('click', () => {
+    closePopup();
+    if (sectionSelector) {
+      sectionSelector.value = 'ressources';
+      sectionSelector.dispatchEvent(new Event('change'));
+    }
+  });
+  popup.addEventListener('click', (e) => { if (e.target === popup) closePopup(); });
+}
+
+// ------------------------------
+// NAVIGATION
 // ------------------------------
 function initNavigation() {
   if (!sectionSelector) return;
@@ -2291,24 +2478,18 @@ function initNavigation() {
     sections.forEach(sec => { sec.hidden = sec.id !== id; });
     localStorage.setItem("tadaksahak_active_section", id);
     
-    // Gestion spécifique pour grammaire et relatives
     if (id === "grammaire") {
-      const grammarContainer = document.getElementById("grammaireContainer");
-      const relativesContainer = document.getElementById("relativesContainer");
-      if (grammarContainer) grammarContainer.hidden = false;
-      if (relativesContainer) relativesContainer.hidden = true;
-      if (grammaire) afficherGrammaire();
-      else chargerGrammaire().then(() => afficherGrammaire());
+      document.getElementById("grammaireContainer").hidden = false;
+      document.getElementById("relativesContainer").hidden = true;
+      if (grammaire) afficherGrammairePremium();
+      else chargerGrammaire().then(() => afficherGrammairePremium());
     }
     if (id === "relatives") {
-      const grammarContainer = document.getElementById("grammaireContainer");
-      const relativesContainer = document.getElementById("relativesContainer");
-      if (grammarContainer) grammarContainer.hidden = true;
-      if (relativesContainer) relativesContainer.hidden = false;
+      document.getElementById("grammaireContainer").hidden = true;
+      document.getElementById("relativesContainer").hidden = false;
       if (relativesData) afficherRelatives();
       else chargerRelatives().then(() => afficherRelatives());
     }
-    
     if (id === "livres") afficherLivres();
     if (id === "audio") genererAlbumsAudio();
     if (id === "photos") afficherPhotos();
@@ -2320,9 +2501,10 @@ function initNavigation() {
     if (id === "dashboard") afficherDashboard();
     if (id === "rapports") afficherRapports();
     if (id === "contes" && contesData) afficherContes();
-    if (id === "emissions" && emissionsData) afficherEmissions();
-    if (id === "themes" && themesData) afficherThemes();
+    if (id === "emissions" && emissionsData) afficherEmissionsPremium();
+    if (id === "themes" && themesData) afficherThemesPremium();
     if (id === "flashcards" && vocabulaire.length) genererFlashcards();
+    if (id === "ressources") afficherRessources();
   }
   sectionSelector.addEventListener("change", (e) => showSection(e.target.value));
   const savedSection = localStorage.getItem("tadaksahak_active_section");
@@ -2336,13 +2518,11 @@ function initNavigation() {
 // ------------------------------
 async function initialiserApplication() {
   showLoader();
-  
   try {
     initTheme();
     initThemeSettings();
     detectSystemTheme();
     initNavigation();
-    
     await chargerDictionnaire();
     await chargerGrammaire();
     await chargerContes();
@@ -2350,8 +2530,7 @@ async function initialiserApplication() {
     await chargerThemes();
     await chargerLivresConnaissance();
     await chargerTimeline();
-    await chargerRelatives();  // NOUVEAU : chargement des données sur les relatives
-    
+    await chargerRelatives();
     chargerHistorique();
     chargerFavoris();
     genererAlbumsAudio();
@@ -2360,12 +2539,10 @@ async function initialiserApplication() {
     showWordNotification();
     afficherMotDuJour();
     setInterval(() => afficherMotDuJour(), 3600000);
-    
     initKeyboardShortcuts();
     initFlashcards();
     initAutoUpdates();
     
-    // Gestion des onglets de grammaire
     const grammarTabs = document.querySelectorAll('.grammar-tab');
     if (grammarTabs.length) {
       grammarTabs.forEach(tab => {
@@ -2375,12 +2552,10 @@ async function initialiserApplication() {
           tab.classList.add('active');
           document.querySelectorAll('.grammar-tab-content').forEach(c => c.hidden = true);
           if (target === 'causative') {
-            const grammarContainer = document.getElementById('grammaireContainer');
-            if (grammarContainer) grammarContainer.hidden = false;
-            if (grammaire) afficherGrammaire();
+            document.getElementById('grammaireContainer').hidden = false;
+            if (grammaire) afficherGrammairePremium();
           } else if (target === 'relatives') {
-            const relativesContainer = document.getElementById('relativesContainer');
-            if (relativesContainer) relativesContainer.hidden = false;
+            document.getElementById('relativesContainer').hidden = false;
             afficherRelatives();
           }
         });
@@ -2393,17 +2568,12 @@ async function initialiserApplication() {
     btnNext?.addEventListener("click", navigationSuivant);
     document.getElementById("btnGoDico")?.addEventListener("click", () => { if (sectionSelector) { sectionSelector.value = "dictionnaire"; sectionSelector.dispatchEvent(new Event("change")); } });
     document.getElementById("toggleChatBot")?.addEventListener("click", () => { if (sectionSelector) { sectionSelector.value = "chat"; sectionSelector.dispatchEvent(new Event("change")); } });
-    
     document.querySelectorAll('.lang-flag').forEach(btn => { btn.addEventListener('click', () => setLanguage(btn.dataset.lang)); });
     setLanguage(currentLanguage);
-    
     const searchBooksInput = document.getElementById("searchBooksInput");
     if (searchBooksInput) searchBooksInput.addEventListener("input", () => rechercherPleinTexte());
-    
-    setTimeout(() => {
-      showInstallBanner();
-    }, 3000);
-    
+    setTimeout(() => { showInstallBanner(); }, 3000);
+    setTimeout(() => { showRessourcesWelcomePopup(); }, 2000);
     console.log("✅ Application fusionnée prête !");
     console.log("📚 Module des propositions relatives intégré (Christiansen & Levinsohn 2003)");
   } catch (error) {
@@ -2411,10 +2581,7 @@ async function initialiserApplication() {
     showToast("Erreur de chargement, vérifiez la console", "error");
   } finally {
     hideLoader();
-    setTimeout(hideLoader, 500);
-    setTimeout(hideLoader, 2000);
   }
 }
 
-// Démarrer l'application
 initialiserApplication();
