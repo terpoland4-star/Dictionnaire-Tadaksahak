@@ -1,6 +1,6 @@
 /* ===========================================================
    🎨 TADAKSAHAK LEARNING - STYLE PREMIUM ULTIME
-   Version 4.0 - Design System complet
+   Version 4.1 - Design System complet
    Thèmes : Dark, Light, Sepia
    Auteur : Hamadine AG MOCTAR
    =========================================================== */
@@ -217,7 +217,7 @@ body {
 }
 
 .skip-link:focus {
-  top: 10px;
+  top: 80px; /* Apparaît sous le header sticky */
   outline: none;
 }
 
@@ -294,9 +294,37 @@ body {
 }
 
 /* ============================================
-   HEADER & NAVIGATION PREMIUM
+   HEADER & NAVIGATION - RÉORGANISATION PREMIUM
    ============================================ */
 
+/* Compensation pour le header sticky */
+html {
+  scroll-padding-top: 180px; /* valeur par défaut */
+}
+
+main {
+  padding-top: 180px; /* même valeur que scroll-padding-top */
+}
+
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 240px;
+  }
+  main {
+    padding-top: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    scroll-padding-top: 280px;
+  }
+  main {
+    padding-top: 280px;
+  }
+}
+
+/* Nouveau layout Grid du header */
 .site-header {
   position: sticky;
   top: 0;
@@ -304,17 +332,123 @@ body {
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
   border-bottom: 1px solid var(--glass-border);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas:
+    "logo title lang"
+    "theme theme theme"
+    "nav nav nav";
+  align-items: center;
+  gap: 0.75rem 1.5rem;
   padding: 1rem 2rem;
 }
 
 .header-container {
+  grid-area: logo;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-self: start;
 }
 
+.header-text {
+  grid-area: title;
+  text-align: center;
+}
+
+.theme-selector {
+  grid-area: theme;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: var(--glass-bg);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--glass-border);
+}
+
+.lang-selector {
+  grid-area: lang;
+  display: flex;
+  gap: 0.5rem;
+  justify-self: end;
+}
+
+.main-nav {
+  grid-area: nav;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Adaptation tablette */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .site-header {
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas:
+      "logo title lang"
+      "theme theme theme"
+      "nav nav nav";
+  }
+}
+
+/* Adaptation desktop : tout sur deux lignes */
+@media (min-width: 1025px) {
+  .site-header {
+    grid-template-columns: auto 1fr auto auto;
+    grid-template-areas:
+      "logo title lang nav"
+      "theme theme theme theme";
+  }
+  .main-nav {
+    max-width: 280px;
+    margin: 0;
+  }
+}
+
+/* Très petits écrans : retour à l'empilement contrôlé */
+@media (max-width: 480px) {
+  .site-header {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "logo"
+      "title"
+      "lang"
+      "theme"
+      "nav";
+    gap: 0.5rem;
+  }
+  .header-container {
+    justify-self: center;
+  }
+  .lang-selector {
+    justify-self: center;
+  }
+}
+
+/* Rendre les contrôles de thème plus discrets sur petit écran */
+@media (max-width: 640px) {
+  .theme-selector {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .theme-btn {
+    padding: 0.3rem 0.5rem;
+    font-size: 1rem;
+  }
+  .theme-select-small {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.7rem;
+  }
+  .contrast-label {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.7rem;
+  }
+}
+
+/* Styles des éléments du header (inchangés) */
 .logo-header {
   width: 56px;
   height: 56px;
@@ -342,20 +476,6 @@ body {
   font-size: 0.75rem;
   color: var(--text-muted);
   margin-top: 0.25rem;
-}
-
-/* Theme Selector Premium */
-.theme-selector {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: center;
-  align-items: center;
-  margin: 0.75rem 0;
-  padding: 0.5rem;
-  background: var(--glass-bg);
-  border-radius: var(--radius-full);
-  border: 1px solid var(--glass-border);
 }
 
 .theme-btn {
@@ -401,14 +521,6 @@ body {
   cursor: pointer;
 }
 
-/* Language Selector Premium */
-.lang-selector {
-  display: flex;
-  gap: 0.5rem;
-  justify-content: center;
-  margin: 0.5rem 0;
-}
-
 .lang-flag {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -429,13 +541,6 @@ body {
   border-color: var(--accent);
   color: white;
   box-shadow: var(--shadow-glow);
-}
-
-/* Main Navigation Premium */
-.main-nav {
-  margin-top: 1rem;
-  width: 100%;
-  max-width: 320px;
 }
 
 .main-nav select {
@@ -466,6 +571,7 @@ main {
   margin: 0 auto;
   width: 100%;
   padding: 0 1.5rem;
+  /* padding-top déjà défini plus haut pour compenser le header */
 }
 
 .onglet-contenu {
