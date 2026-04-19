@@ -236,20 +236,6 @@
       font-size: 1.2rem;
       color: var(--text-muted);
     }
-    .progress-bar-container {
-      width: 100%;
-      height: 4px;
-      background: var(--border);
-      border-radius: 2px;
-      margin-bottom: 0.5rem;
-      overflow: hidden;
-    }
-    .progress-bar-fill {
-      height: 100%;
-      background: var(--accent);
-      width: 0%;
-      transition: width 0.3s ease;
-    }
     /* Support RTL */
     html[dir="rtl"] .book-description {
       border-left: none;
@@ -306,7 +292,6 @@
 <button id="backToTop" class="back-to-top" title="Haut de page" aria-label="Retour en haut de page">⬆</button>
 
 <script>
-  // Gestion du thème
   const select = document.getElementById('themeSelect');
   const body = document.body;
   const savedTheme = localStorage.getItem('livre-theme') || 'dark';
@@ -318,16 +303,13 @@
     localStorage.setItem('livre-theme', newTheme);
   };
 
-  // Paramètres URL
   const urlParams = new URLSearchParams(window.location.search);
   const livreId = parseInt(urlParams.get('id')) || 1;
 
-  // État
   let currentChapter = 0;
   let livreData = null;
   let totalChapters = 0;
 
-  // Utilitaires
   function escapeHtml(str) {
     if (!str) return '';
     return String(str)
@@ -344,7 +326,6 @@
     img.alt = 'Image non disponible';
   }
 
-  // Récupération des données
   function getCoverImage() {
     if (livreData.couverture) return livreData.couverture;
     if (livreData.illustrations && livreData.illustrations.length) {
@@ -364,20 +345,11 @@
     return livreData.illustrations.filter(ill => ill.conclusion === true);
   }
 
-  // Navigation
   function updateNavButtons() {
     const prevBtn = document.getElementById('prevChapter');
     const nextBtn = document.getElementById('nextChapter');
     if (prevBtn) prevBtn.disabled = (currentChapter === 0);
     if (nextBtn) nextBtn.disabled = (currentChapter === totalChapters - 1);
-  }
-
-  function updateProgressBar() {
-    const progressBar = document.getElementById('progressBarFill');
-    if (progressBar && totalChapters > 0) {
-      const percent = ((currentChapter + 1) / totalChapters) * 100;
-      progressBar.style.width = `${percent}%`;
-    }
   }
 
   function scrollToChapter(index) {
@@ -391,11 +363,9 @@
       chapters[index].scrollIntoView({ behavior: 'smooth', block: 'start' });
       currentChapter = index;
       updateNavButtons();
-      updateProgressBar();
     }
   }
 
-  // Affichage du livre
   function afficherLivre() {
     if (!livreData) return;
     const container = document.getElementById('bookViewer');
@@ -417,12 +387,6 @@
 
     html += `<div class="book-content">`;
     html += `<div class="book-description">${escapeHtml(livreData.description || '')}</div>`;
-    
-    // Barre de progression des chapitres
-    html += `<div class="progress-bar-container">
-      <div id="progressBarFill" class="progress-bar-fill" style="width: 0%;"></div>
-    </div>`;
-    
     html += `<div class="chapters-container" id="chaptersContainer"></div>`;
 
     if (livreData.conclusion) {
@@ -437,7 +401,7 @@
       </div>
       <div class="book-footer">
         <p>© ${livreData.annee || ''} ${escapeHtml(livreData.auteur)}</p>
-        <p>📚 Tadaksahak Learning — Traduction du français vers l'arabe par Hamadine AG MOCTAR, CEO de HAM Global Words.</p>
+        <p>📚 Tadaksahak Learning — "Traduction du français vers l'arabe par Hamadine AG MOCTAR, CEO de HAM Global Words."</p>
       </div>
     `;
 
@@ -493,7 +457,6 @@
       });
       totalChapters = livreData.chapitres.length;
       updateNavButtons();
-      updateProgressBar();
     }
 
     if (livreData.conclusion) {
@@ -544,13 +507,7 @@
     }
   }
 
-  // Chargement avec retry
   function chargerLivreWithRetry(retryCount = 2) {
-    const container = document.getElementById('bookViewer');
-    if (container) {
-      container.innerHTML = '<div class="book-loading">📖 Chargement du livre...</div>';
-    }
-    
     fetch('data/livres.json')
       .then(response => {
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -580,14 +537,11 @@
               ❌ Erreur de chargement. Vérifiez que le fichier data/livres.json existe.
               <br><br>
               <button onclick="location.reload()" style="padding: 0.5rem 1rem; background: var(--primary); color: white; border: none; border-radius: 8px; cursor: pointer;">🔄 Réessayer</button>
-              <br><br>
-              <a href="index.html" style="color: var(--accent);">🏠 Retour à l'accueil</a>
             </div>`;
         }
       });
   }
 
-  // Écouteurs d'événements
   document.getElementById('prevChapter')?.addEventListener('click', () => scrollToChapter(currentChapter - 1));
   document.getElementById('nextChapter')?.addEventListener('click', () => scrollToChapter(currentChapter + 1));
 
@@ -597,10 +551,7 @@
   });
   backBtn?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-  // Exporter les fonctions pour les appels HTML
   window.handleImageError = handleImageError;
-  
-  // Démarrer le chargement
   chargerLivreWithRetry();
 </script>
 
