@@ -1,0 +1,119 @@
+{
+  "name": "Tadaksahak Learning",
+  "short_name": "Tadaksahak",
+  "description": "Dictionnaire, culture et histoire du peuple Idaksahak – Multilingue FR/AR/EN",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#0099ff",
+  "background_color": "#0e1116",
+  "lang": "fr",
+  "dir": "ltr",
+  "categories": ["education", "reference", "dictionary", "culture", "language"],
+  "icons": [
+    {
+      "src": "images/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "images/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "images/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "images/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "images/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "images/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "images/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Dictionnaire",
+      "short_name": "Dico",
+      "description": "Rechercher un mot en tadaksahak",
+      "url": "./index.html",
+      "icons": [{ "src": "images/icon-96x96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Grammaire",
+      "short_name": "Grammaire",
+      "description": "Grammaire tadaksahak et propositions relatives",
+      "url": "./index.html",
+      "icons": [{ "src": "images/icon-96x96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Flashcards",
+      "short_name": "Flashcards",
+      "description": "Apprendre avec les flashcards",
+      "url": "./index.html",
+      "icons": [{ "src": "images/icon-96x96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Quiz",
+      "short_name": "Quiz",
+      "description": "Testez vos connaissances",
+      "url": "./index.html",
+      "icons": [{ "src": "images/icon-96x96.png", "sizes": "96x96" }]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "images/screenshot-home.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "Page d'accueil de Tadaksahak Learning"
+    },
+    {
+      "src": "images/screenshot-dictionary.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "Dictionnaire Tadaksahak"
+    }
+  ],
+  "prefer_related_applications": false,
+  "display_override": ["window-controls-overlay", "standalone"],
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "route_to": "existing-client",
+    "navigate_existing_client": "always"
+  }
+}
