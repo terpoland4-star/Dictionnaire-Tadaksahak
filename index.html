@@ -11,7 +11,6 @@
   <link rel="icon" href="images/idaksahak_round.png" type="image/png">
   <link rel="apple-touch-icon" href="images/idaksahak_round.png">
   <link rel="stylesheet" href="style.css">
-  
   <!-- Leaflet pour la carte - chargement différé -->
   <link rel="preconnect" href="https://unpkg.com">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" media="print" onload="this.media='all'">
@@ -44,63 +43,26 @@
     </div>
   </div>
 
-  <!-- Menu thème déroulant unifié -->
-  <div class="theme-menu-container">
-    <button id="themeMenuBtn" class="theme-menu-btn">🎨 Thèmes et préférences</button>
-    <div id="themeMenuDropdown" class="theme-menu-dropdown" style="display: none;">
-      <div class="theme-menu-header">
-        <span class="theme-menu-title">⚙️ Personnalisation</span>
-        <button id="themeMenuClose" class="theme-menu-close">✖</button>
-      </div>
-      
-      <div class="theme-menu-section">
-        <div class="theme-menu-label">🎨 Thème</div>
-        <div class="theme-buttons">
-          <button data-theme="dark" class="theme-option dark" title="Sombre">🌙 Sombre</button>
-          <button data-theme="light" class="theme-option light" title="Clair">📖 Clair</button>
-          <button data-theme="sepia" class="theme-option sepia" title="Sépia">📜 Sépia</button>
-        </div>
-      </div>
-      
-      <div class="theme-menu-section">
-        <div class="theme-menu-label">🔤 Police d'écriture</div>
-        <div class="font-buttons">
-          <button data-font="sans" class="font-option">🔤 Sans-serif</button>
-          <button data-font="serif" class="font-option">📜 Serif</button>
-          <button data-font="mono" class="font-option">💻 Monospace</button>
-        </div>
-      </div>
-      
-      <div class="theme-menu-section">
-        <div class="theme-menu-label">📏 Taille du texte</div>
-        <div class="size-controls">
-          <input type="range" id="fontSizeSlider" min="80" max="150" step="5" value="100">
-          <span id="fontSizeValue" class="size-value">100%</span>
-          <div class="size-presets">
-            <button data-size="80" class="size-preset">80%</button>
-            <button data-size="100" class="size-preset active">100%</button>
-            <button data-size="120" class="size-preset">120%</button>
-            <button data-size="140" class="size-preset">140%</button>
-          </div>
-        </div>
-      </div>
-      
-      <div class="theme-menu-section">
-        <div class="theme-menu-label">♿ Accessibilité</div>
-        <label class="contrast-toggle">
-          <input type="checkbox" id="highContrastCheckbox">
-          <span class="toggle-slider"></span>
-          <span class="toggle-label">Contraste élevé</span>
-        </label>
-      </div>
-      
-      <div class="theme-menu-section">
-        <button id="resetThemeSettings" class="reset-btn">🔄 Rétablir les paramètres par défaut</button>
-      </div>
-    </div>
+  <div class="theme-selector">
+    <button id="themeDark" class="theme-btn" title="Thème sombre" aria-label="Thème sombre">🌙</button>
+    <button id="themeLight" class="theme-btn" title="Thème clair" aria-label="Thème clair">📖</button>
+    <button id="themeSepia" class="theme-btn" title="Thème sépia" aria-label="Thème sépia">📜</button>
+    <select id="fontFamilySelect" class="theme-select-small">
+      <option value="sans">🔤 Sans-serif</option>
+      <option value="serif">📜 Serif</option>
+      <option value="mono">💻 Monospace</option>
+    </select>
+    <select id="fontSizeSelect" class="theme-select-small">
+      <option value="80">80%</option>
+      <option value="100" selected>100%</option>
+      <option value="120">120%</option>
+      <option value="140">140%</option>
+    </select>
+    <label class="contrast-label">
+      <input type="checkbox" id="highContrastCheck"> ♿ Contraste élevé
+    </label>
   </div>
 
-  <!-- Sélecteur de langue -->
   <div class="lang-selector">
     <button data-lang="fr" class="lang-flag" aria-label="Français">🇫🇷</button>
     <button data-lang="ar" class="lang-flag" aria-label="العربية">🇸🇦</button>
@@ -136,7 +98,6 @@
 
 <main id="main-content">
 
-  <!-- ACCUEIL -->
   <section id="accueil" class="onglet-contenu">
     <div class="hero">
       <h2 data-i18n="welcome_title">Bienvenue</h2>
@@ -159,7 +120,6 @@
     </div>
   </section>
 
-  <!-- DICTIONNAIRE -->
   <section id="dictionnaire" class="onglet-contenu" hidden>
     <h2 data-i18n="dictionary_title">📖 Dictionnaire Tadaksahak</h2>
     <div class="search-section">
@@ -188,7 +148,6 @@
     </div>
   </section>
 
-  <!-- GRAMMAIRE - AVEC ONGLETS -->
   <section id="grammaire" class="onglet-contenu" hidden>
     <h2 data-i18n="grammar_title">📚 Grammaire Tadaksahak</h2>
     <div class="grammar-tabs">
@@ -199,19 +158,16 @@
     <div class="grammar-tab-content" id="relativesContainer" hidden></div>
   </section>
 
-  <!-- CONTES -->
   <section id="contes" class="onglet-contenu" hidden>
     <h2 data-i18n="contes_title">📖 Contes et légendes</h2>
     <div id="contesContainer"></div>
   </section>
 
-  <!-- ÉMISSIONS -->
   <section id="emissions" class="onglet-contenu" hidden>
     <h2 data-i18n="emissions_title">🎙️ Émissions radio</h2>
     <div id="emissionsContainer"></div>
   </section>
 
-  <!-- CHAT -->
   <section id="chat" class="onglet-contenu" hidden>
     <h2 data-i18n="chat_title">💬 Chat Bot Hamadine</h2>
     <div class="chat-container">
@@ -228,19 +184,16 @@
     </div>
   </section>
 
-  <!-- AUDIO -->
   <section id="audio" class="onglet-contenu" hidden>
     <h2 data-i18n="audio_title">🎧 Albums Audio</h2>
     <div id="audioContainer" class="audio-grid"></div>
   </section>
 
-  <!-- PHOTOS -->
   <section id="photos" class="onglet-contenu" hidden>
     <h2 data-i18n="photos_title">🖼️ Galerie Photos</h2>
     <div id="photosContainer" class="grid"></div>
   </section>
 
-  <!-- VIDEOS -->
   <section id="videos" class="onglet-contenu" hidden>
     <h2 data-i18n="videos_title">🎥 Vidéos</h2>
     <div class="filters">
@@ -253,7 +206,6 @@
     <div id="videosContainer" class="grid"></div>
   </section>
 
-  <!-- LIVRES -->
   <section id="livres" class="onglet-contenu" hidden>
     <h2 data-i18n="books_title">📚 Bibliothèque</h2>
     <div class="filters">
@@ -269,25 +221,21 @@
     <div id="livresContainer" class="books-grid"></div>
   </section>
 
-  <!-- RAPPORTS -->
   <section id="rapports" class="onglet-contenu" hidden>
     <h2 data-i18n="reports_title">📄 Rapports et Documents</h2>
     <div id="rapportsContainer"></div>
   </section>
 
-  <!-- ACTUALITÉS -->
   <section id="actualites" class="onglet-contenu" hidden>
     <h2 data-i18n="news_title">📰 Actualités</h2>
     <div class="coming-soon"><p data-i18n="news_coming">📰 Restez connectés !</p></div>
   </section>
 
-  <!-- QUIZ -->
   <section id="quiz" class="onglet-contenu" hidden>
     <h2 data-i18n="quiz_title">❓ Quiz Culturel</h2>
     <div id="quizContainer"></div>
   </section>
 
-  <!-- FLASHCARDS -->
   <section id="flashcards" class="onglet-contenu" hidden>
     <h2 data-i18n="flashcards_title">🃏 Flashcards - Apprentissage</h2>
     <div class="flashcards-controls">
@@ -297,57 +245,42 @@
         <option value="verbes" data-i18n="theme_verbs">🔤 Verbes</option>
         <option value="noms" data-i18n="theme_nouns">🏷️ Noms</option>
         <option value="relatives">📖 Propositions relatives</option>
-        <option value="favoris">⭐ Mes favoris</option>
-        <option value="aReviser">🔄 À réviser</option>
       </select>
       <button id="shuffleFlashcardsBtn" class="btn-small">🎲 Mélanger</button>
       <button id="resetFlashcardsBtn" class="btn-small">🔄 Recommencer</button>
-      <button id="showStatsToggle" class="btn-small">📊 Statistiques</button>
-    </div>
-    <div id="flashcardsStatsPanel" class="flashcards-stats-panel" style="display: none;">
-      <div class="stats-grid" id="flashcardsStats"></div>
     </div>
     <div id="flashcardsContainer" class="flashcards-grid"></div>
     <div class="flashcards-progress">
-      <div class="progress-bar-container">
-        <div id="flashcardProgressBar" class="progress-bar-fill" style="width: 0%;"></div>
-      </div>
       <span id="flashcardCurrent">0</span> / <span id="flashcardTotal">0</span>
     </div>
   </section>
 
-  <!-- THÈMES -->
   <section id="themes" class="onglet-contenu" hidden>
     <h2 data-i18n="themes_title">📚 Vocabulaire thématique</h2>
     <div id="themesContainer"></div>
   </section>
 
-  <!-- LIGNE DU TEMPS -->
   <section id="timeline" class="onglet-contenu" hidden>
     <h2 data-i18n="timeline_title">📅 Ligne du temps historique</h2>
     <div id="timelineContainer" class="timeline-wrapper"></div>
   </section>
 
-  <!-- CARTE -->
   <section id="map" class="onglet-contenu" hidden>
     <h2 data-i18n="map_title">🗺️ Carte des zones Idaksahak</h2>
     <div id="mapContainer" style="height: 500px; width: 100%; border-radius: 16px;"></div>
   </section>
 
-  <!-- RECHERCHE PLEIN TEXTE -->
   <section id="search" class="onglet-contenu" hidden>
     <h2 data-i18n="search_books_title">🔍 Recherche dans les livres</h2>
     <input type="text" id="searchBooksInput" class="search-books-input" placeholder="Rechercher...">
     <div id="searchBooksResults" class="search-results"></div>
   </section>
 
-  <!-- TABLEAU DE BORD -->
   <section id="dashboard" class="onglet-contenu" hidden>
     <h2 data-i18n="dashboard_title">📊 Tableau de bord</h2>
     <div id="dashboardContainer"></div>
   </section>
 
-  <!-- RESSOURCES ACADÉMIQUES -->
   <section id="ressources" class="onglet-contenu" hidden>
     <h2 data-i18n="ressources_title">📚 Ressources académiques</h2>
     <div id="ressourcesContainer"></div>
@@ -365,31 +298,6 @@
   </div>
 </footer>
 
-<!-- Core modules -->
-<script src="js/core/i18n.js"></script>
-<script src="js/core/utils.js"></script>
-<script src="js/core/themes.js"></script>
-<script src="js/core/storage.js"></script>
-
-<!-- Data modules -->
-<script src="js/modules/dictionary.js"></script>
-<script src="js/modules/grammar.js"></script>
-<script src="js/modules/relatives.js"></script>
-<script src="js/modules/contes.js"></script>
-<script src="js/modules/emissions.js"></script>
-<script src="js/modules/themesVocab.js"></script>
-<script src="js/modules/flashcards.js"></script>
-<script src="js/modules/chat.js"></script>
-<script src="js/modules/ressources.js"></script>
-
-<!-- UI modules -->
-<script src="js/ui/navigation.js"></script>
-
-<!-- PWA modules -->
-<script src="js/pwa/sw-register.js"></script>
-<script src="js/pwa/install.js"></script>
-
-<!-- Main entry point -->
-<script src="js/app.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
