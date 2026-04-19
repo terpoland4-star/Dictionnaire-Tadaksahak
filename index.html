@@ -9,20 +9,24 @@
   <meta name="theme-color" content="#005fa3">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="images/idaksahak_round.png" type="image/png">
-  <link rel="apple-touch-icon" href="images/idaksahak_round.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/idaksahak_round.png">
   <link rel="stylesheet" href="style.css">
   <!-- Leaflet pour la carte - chargement différé -->
   <link rel="preconnect" href="https://unpkg.com">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"></noscript>
   <script>
+    // Chargement différé de Leaflet (sera déclenché au besoin par app.js)
     function loadLeaflet() {
-      var script = document.createElement('script');
-      script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
-      script.defer = true;
-      document.head.appendChild(script);
+      if (!window.L) {
+        var script = document.createElement('script');
+        script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+        script.defer = true;
+        document.head.appendChild(script);
+      }
     }
-    window.addEventListener('load', function() { setTimeout(loadLeaflet, 3000); });
+    // On précharge seulement quand l'utilisateur interagit avec la section carte (géré dans app.js)
+    // Évite le setTimeout inutile.
   </script>
 </head>
 <body class="dark">
@@ -47,12 +51,12 @@
     <button id="themeDark" class="theme-btn" title="Thème sombre" aria-label="Thème sombre">🌙</button>
     <button id="themeLight" class="theme-btn" title="Thème clair" aria-label="Thème clair">📖</button>
     <button id="themeSepia" class="theme-btn" title="Thème sépia" aria-label="Thème sépia">📜</button>
-    <select id="fontFamilySelect" class="theme-select-small">
+    <select id="fontFamilySelect" class="theme-select-small" aria-label="Changer la police">
       <option value="sans">🔤 Sans-serif</option>
       <option value="serif">📜 Serif</option>
       <option value="mono">💻 Monospace</option>
     </select>
-    <select id="fontSizeSelect" class="theme-select-small">
+    <select id="fontSizeSelect" class="theme-select-small" aria-label="Changer la taille du texte">
       <option value="80">80%</option>
       <option value="100" selected>100%</option>
       <option value="120">120%</option>
@@ -96,7 +100,7 @@
   </nav>
 </header>
 
-<main id="main-content">
+<main id="main-content" tabindex="-1">
 
   <section id="accueil" class="onglet-contenu">
     <div class="hero">
@@ -105,14 +109,14 @@
       <button id="btnGoDico" class="btn btn-primary" data-i18n="go_dico">📖 Accéder au dictionnaire</button>
     </div>
     <div class="bio-container">
-      <img src="images/hamadine_bio.jpg" alt="Hamadine Ag Moctar - Gardien de la mémoire culturelle Idaksahak" class="bio-photo" loading="lazy">
+      <img src="images/hamadine_bio.jpg" alt="Hamadine Ag Moctar - Gardien de la mémoire culturelle Idaksahak" class="bio-photo" width="140" height="140" loading="lazy">
       <div class="bio-text">
         <p><strong>Hamadine Ag Moctar</strong></p>
         <p data-i18n="bio_text1">Interprète, développeur et gardien de la mémoire culturelle.</p>
         <p><em data-i18n="bio_text2">Une mission : connecter nos mondes.</em></p>
       </div>
     </div>
-    <div id="wordOfDayContainer" class="word-of-day"></div>
+    <div id="wordOfDayContainer" class="word-of-day" aria-live="polite"></div>
     <div class="stats-container" id="statsContainer" hidden>
       <div class="stat-card"><span class="stat-number" id="statMots">0</span><span class="stat-label" data-i18n="stat_words">mots</span></div>
       <div class="stat-card"><span class="stat-number" id="statAudios">0</span><span class="stat-label" data-i18n="stat_audios">audios</span></div>
@@ -124,14 +128,14 @@
     <h2 data-i18n="dictionary_title">📖 Dictionnaire Tadaksahak</h2>
     <div class="search-section">
       <div class="search-wrapper">
-        <input id="searchBar" type="search" placeholder="Rechercher un mot…" autocomplete="off">
-        <button id="clearSearch" class="clear-search" hidden aria-label="Effacer">✖</button>
+        <input id="searchBar" type="search" placeholder="Rechercher un mot…" autocomplete="off" aria-label="Rechercher un mot">
+        <button id="clearSearch" class="clear-search" hidden aria-label="Effacer la recherche">✖</button>
       </div>
-      <ul id="suggestions" class="suggestions-list"></ul>
+      <ul id="suggestions" class="suggestions-list" role="listbox" aria-label="Suggestions de mots"></ul>
     </div>
     <div class="result-section">
-      <div id="ficheMot">
-        <h2 id="motTexte">—</h2>
+      <div id="ficheMot" aria-live="polite">
+        <h3 id="motTexte">—</h3>
         <div id="definition">—</div>
         <audio id="audioLecteur" controls hidden></audio>
         <div class="navigation-mots">
@@ -154,26 +158,26 @@
       <button class="grammar-tab active" data-tab="causative" aria-label="Verbes causatifs et passifs">🔤 Verbes causatifs & passifs</button>
       <button class="grammar-tab" data-tab="relatives" aria-label="Propositions relatives">📖 Propositions relatives</button>
     </div>
-    <div class="grammar-tab-content" id="grammaireContainer"></div>
-    <div class="grammar-tab-content" id="relativesContainer" hidden></div>
+    <div class="grammar-tab-content" id="grammaireContainer" aria-live="polite"></div>
+    <div class="grammar-tab-content" id="relativesContainer" hidden aria-live="polite"></div>
   </section>
 
   <section id="contes" class="onglet-contenu" hidden>
     <h2 data-i18n="contes_title">📖 Contes et légendes</h2>
-    <div id="contesContainer"></div>
+    <div id="contesContainer" aria-live="polite"></div>
   </section>
 
   <section id="emissions" class="onglet-contenu" hidden>
     <h2 data-i18n="emissions_title">🎙️ Émissions radio</h2>
-    <div id="emissionsContainer"></div>
+    <div id="emissionsContainer" aria-live="polite"></div>
   </section>
 
   <section id="chat" class="onglet-contenu" hidden>
     <h2 data-i18n="chat_title">💬 Chat Bot Hamadine</h2>
     <div class="chat-container">
-      <div id="chatWindow" class="chatbox"></div>
+      <div id="chatWindow" class="chatbox" aria-live="polite" aria-label="Conversation avec le bot"></div>
       <div class="chat-input">
-        <input id="chatInput" type="text" placeholder="Écrivez votre message...">
+        <input id="chatInput" type="text" placeholder="Écrivez votre message..." aria-label="Votre message">
         <button id="btnEnvoyer" class="btn-send" data-i18n="send">Envoyer 📤</button>
       </div>
       <div class="chat-suggestions">
@@ -186,31 +190,31 @@
 
   <section id="audio" class="onglet-contenu" hidden>
     <h2 data-i18n="audio_title">🎧 Albums Audio</h2>
-    <div id="audioContainer" class="audio-grid"></div>
+    <div id="audioContainer" class="audio-grid" aria-live="polite"></div>
   </section>
 
   <section id="photos" class="onglet-contenu" hidden>
     <h2 data-i18n="photos_title">🖼️ Galerie Photos</h2>
-    <div id="photosContainer" class="grid"></div>
+    <div id="photosContainer" class="grid" aria-live="polite"></div>
   </section>
 
   <section id="videos" class="onglet-contenu" hidden>
     <h2 data-i18n="videos_title">🎥 Vidéos</h2>
     <div class="filters">
-      <label data-i18n="sort_by">Trier par :</label>
+      <label for="filtreVideos" data-i18n="sort_by">Trier par :</label>
       <select id="filtreVideos">
         <option value="nouveau" data-i18n="sort_new">📅 Plus récentes</option>
         <option value="ancien" data-i18n="sort_old">📅 Plus anciennes</option>
       </select>
     </div>
-    <div id="videosContainer" class="grid"></div>
+    <div id="videosContainer" class="grid" aria-live="polite"></div>
   </section>
 
   <section id="livres" class="onglet-contenu" hidden>
     <h2 data-i18n="books_title">📚 Bibliothèque</h2>
     <div class="filters">
-      <input id="rechercheLivres" type="search" placeholder="Rechercher un livre...">
-      <select id="selectThemeLivres">
+      <input id="rechercheLivres" type="search" placeholder="Rechercher un livre..." aria-label="Rechercher un livre">
+      <select id="selectThemeLivres" aria-label="Filtrer par thème">
         <option value="" data-i18n="all_themes">📚 Tous les thèmes</option>
         <option value="linguistique" data-i18n="theme_linguistics">🔤 Linguistique</option>
         <option value="histoire" data-i18n="theme_history">📖 Histoire</option>
@@ -218,12 +222,12 @@
         <option value="politique" data-i18n="theme_politics">🏛️ Politique</option>
       </select>
     </div>
-    <div id="livresContainer" class="books-grid"></div>
+    <div id="livresContainer" class="books-grid" aria-live="polite"></div>
   </section>
 
   <section id="rapports" class="onglet-contenu" hidden>
     <h2 data-i18n="reports_title">📄 Rapports et Documents</h2>
-    <div id="rapportsContainer"></div>
+    <div id="rapportsContainer" aria-live="polite"></div>
   </section>
 
   <section id="actualites" class="onglet-contenu" hidden>
@@ -233,13 +237,13 @@
 
   <section id="quiz" class="onglet-contenu" hidden>
     <h2 data-i18n="quiz_title">❓ Quiz Culturel</h2>
-    <div id="quizContainer"></div>
+    <div id="quizContainer" aria-live="polite"></div>
   </section>
 
   <section id="flashcards" class="onglet-contenu" hidden>
     <h2 data-i18n="flashcards_title">🃏 Flashcards - Apprentissage</h2>
     <div class="flashcards-controls">
-      <select id="flashcardsThemeSelect">
+      <select id="flashcardsThemeSelect" aria-label="Choisir un thème de flashcards">
         <option value="all" data-i18n="all_themes">📚 Tous les thèmes</option>
         <option value="vocabulaire" data-i18n="theme_vocab">📖 Vocabulaire</option>
         <option value="verbes" data-i18n="theme_verbs">🔤 Verbes</option>
@@ -249,7 +253,7 @@
       <button id="shuffleFlashcardsBtn" class="btn-small">🎲 Mélanger</button>
       <button id="resetFlashcardsBtn" class="btn-small">🔄 Recommencer</button>
     </div>
-    <div id="flashcardsContainer" class="flashcards-grid"></div>
+    <div id="flashcardsContainer" class="flashcards-grid" aria-live="polite"></div>
     <div class="flashcards-progress">
       <span id="flashcardCurrent">0</span> / <span id="flashcardTotal">0</span>
     </div>
@@ -257,33 +261,33 @@
 
   <section id="themes" class="onglet-contenu" hidden>
     <h2 data-i18n="themes_title">📚 Vocabulaire thématique</h2>
-    <div id="themesContainer"></div>
+    <div id="themesContainer" aria-live="polite"></div>
   </section>
 
   <section id="timeline" class="onglet-contenu" hidden>
     <h2 data-i18n="timeline_title">📅 Ligne du temps historique</h2>
-    <div id="timelineContainer" class="timeline-wrapper"></div>
+    <div id="timelineContainer" class="timeline-wrapper" aria-live="polite"></div>
   </section>
 
   <section id="map" class="onglet-contenu" hidden>
     <h2 data-i18n="map_title">🗺️ Carte des zones Idaksahak</h2>
-    <div id="mapContainer" style="height: 500px; width: 100%; border-radius: 16px;"></div>
+    <div id="mapContainer" style="height: 500px; width: 100%; border-radius: 16px;" aria-label="Carte interactive"></div>
   </section>
 
   <section id="search" class="onglet-contenu" hidden>
     <h2 data-i18n="search_books_title">🔍 Recherche dans les livres</h2>
-    <input type="text" id="searchBooksInput" class="search-books-input" placeholder="Rechercher...">
-    <div id="searchBooksResults" class="search-results"></div>
+    <input type="text" id="searchBooksInput" class="search-books-input" placeholder="Rechercher..." aria-label="Rechercher dans les livres">
+    <div id="searchBooksResults" class="search-results" aria-live="polite"></div>
   </section>
 
   <section id="dashboard" class="onglet-contenu" hidden>
     <h2 data-i18n="dashboard_title">📊 Tableau de bord</h2>
-    <div id="dashboardContainer"></div>
+    <div id="dashboardContainer" aria-live="polite"></div>
   </section>
 
   <section id="ressources" class="onglet-contenu" hidden>
     <h2 data-i18n="ressources_title">📚 Ressources académiques</h2>
-    <div id="ressourcesContainer"></div>
+    <div id="ressourcesContainer" aria-live="polite"></div>
   </section>
 
 </main>
@@ -294,7 +298,7 @@
 <footer class="site-footer">
   <div class="footer-content">
     <p>&copy; 2024 Tadaksahak Learning - Hamadine Ag Moctar</p>
-    <div id="historique"></div>
+    <div id="historique" aria-live="polite"></div>
   </div>
 </footer>
 
