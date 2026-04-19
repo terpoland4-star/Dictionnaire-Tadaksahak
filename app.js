@@ -358,8 +358,10 @@ let quizData = null;
 let currentQuiz = { questions: [], currentIndex: 0, score: 0, lang: 'fr' };
 let timelineData = null;
 let mapInitialized = false;
+let leafletLoaded = false;
 let isAppInstalled = false;
 let installPromptEvent = null;
+let activeGrammarTab = 'causative'; // 'causative' ou 'relatives'
 
 // Variables Flashcards
 let currentFlashcards = [];
@@ -376,6 +378,9 @@ const clearSearchBtn = document.getElementById("clearSearch");
 const btnPrev = document.getElementById("btnPrev");
 const btnNext = document.getElementById("btnNext");
 const compteurMot = document.getElementById("compteurMot");
+
+// Debounce pour recherche plein texte
+let searchBooksDebounce = null;
 
 // ------------------------------
 // GALERIE PHOTOS
@@ -611,8 +616,10 @@ function setLanguage(lang) {
   if (document.getElementById("map") && !document.getElementById("map").hidden && mapInitialized) initialiserCarte();
   if (document.getElementById("dashboard") && !document.getElementById("dashboard").hidden) afficherDashboard();
   if (document.getElementById("rapports") && !document.getElementById("rapports").hidden) afficherRapports();
-  if (document.getElementById("grammaire") && !document.getElementById("grammaire").hidden) afficherGrammairePremium();
-  if (document.getElementById("relatives") && !document.getElementById("relatives").hidden && relativesData) afficherRelatives();
+  if (document.getElementById("grammaire") && !document.getElementById("grammaire").hidden) {
+    if (activeGrammarTab === 'causative') afficherGrammairePremium();
+    else if (activeGrammarTab === 'relatives') afficherRelatives();
+  }
   if (document.getElementById("contes") && !document.getElementById("contes").hidden && contesData) afficherContes();
   if (document.getElementById("emissions") && !document.getElementById("emissions").hidden && emissionsData) afficherEmissionsPremium();
   if (document.getElementById("themes") && !document.getElementById("themes").hidden && themesData) afficherThemesPremium();
@@ -1928,14 +1935,18 @@ function initialiserCarte() {
   const container = document.getElementById("mapContainer");
   if (!container) return;
   if (mapInitialized) return;
-  if (typeof L === 'undefined') {
+  
+  if (!leafletLoaded) {
     const link = document.createElement('link');
     link.rel = 'stylesheet';
     link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
     document.head.appendChild(link);
     const script = document.createElement('script');
     script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
-    script.onload = () => { creerCarte(); };
+    script.onload = () => {
+      leafletLoaded = true;
+      creerCarte();
+    };
     document.head.appendChild(script);
   } else {
     creerCarte();
@@ -2531,26 +2542,47 @@ function showRessourcesWelcomePopup() {
 }
 
 // ------------------------------
-// NAVIGATION
+// NAVIGATION (avec gestion scroll/focus améliorée)
 // ------------------------------
 function initNavigation() {
   if (!sectionSelector) return;
   const sections = document.querySelectorAll("main > section");
+  
   function showSection(id) {
     sections.forEach(sec => { sec.hidden = sec.id !== id; });
     localStorage.setItem("tadaksahak_active_section", id);
     
-    if (id === "grammaire") {
-      document.getElementById("grammaireContainer").hidden = false;
-      document.getElementById("relativesContainer").hidden = true;
-      if (grammaire) afficherGrammairePremium();
-      else chargerGrammaire().then(() => afficherGrammairePremium());
+    // Scroll et focus améliorés pour le header sticky
+    const activeSection = document.getElementById(id);
+    if (activeSection) {
+      // Focus sur le titre pour l'accessibilité
+      const heading = activeSection.querySelector('h2, h3');
+      if (heading) {
+        heading.setAttribute('tabindex', '-1');
+        heading.focus({ preventScroll: true });
+      }
+      // Scroll avec compensation du header sticky (80px approximatif)
+      const headerOffset = 80;
+      const elementPosition = activeSection.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - headerOffset;
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
     }
-    if (id === "relatives") {
-      document.getElementById("grammaireContainer").hidden = true;
-      document.getElementById("relativesContainer").hidden = false;
-      if (relativesData) afficherRelatives();
-      else chargerRelatives().then(() => afficherRelatives());
+    
+    // Annonce du changement de section pour les lecteurs d'écran
+    const sectionName = i18n[currentLanguage]['nav_' + id] || id;
+    showToast(sectionName, 'info');
+    
+    // Affichage des contenus spécifiques
+    if (id === "grammaire") {
+      document.getElementById("grammaireContainer").hidden = (activeGrammarTab !== 'causative');
+      document.getElementById("relativesContainer").hidden = (activeGrammarTab !== 'relatives');
+      if (activeGrammarTab === 'causative') {
+        if (grammaire) afficherGrammairePremium();
+        else chargerGrammaire().then(() => afficherGrammairePremium());
+      } else {
+        if (relativesData) afficherRelatives();
+        else chargerRelatives().then(() => afficherRelatives());
+      }
     }
     if (id === "livres") afficherLivres();
     if (id === "audio") genererAlbumsAudio();
@@ -2568,6 +2600,7 @@ function initNavigation() {
     if (id === "flashcards" && vocabulaire.length) genererFlashcards();
     if (id === "ressources") afficherRessources();
   }
+  
   sectionSelector.addEventListener("change", (e) => showSection(e.target.value));
   const savedSection = localStorage.getItem("tadaksahak_active_section");
   const defaultSection = (savedSection && document.getElementById(savedSection)) ? savedSection : "accueil";
@@ -2605,11 +2638,13 @@ async function initialiserApplication() {
     initFlashcards();
     initAutoUpdates();
     
+    // Gestion des onglets de grammaire (mémorisation)
     const grammarTabs = document.querySelectorAll('.grammar-tab');
     if (grammarTabs.length) {
       grammarTabs.forEach(tab => {
         tab.addEventListener('click', () => {
           const target = tab.dataset.tab;
+          activeGrammarTab = target;
           grammarTabs.forEach(t => t.classList.remove('active'));
           tab.classList.add('active');
           document.querySelectorAll('.grammar-tab-content').forEach(c => c.hidden = true);
@@ -2632,8 +2667,16 @@ async function initialiserApplication() {
     document.getElementById("toggleChatBot")?.addEventListener("click", () => { if (sectionSelector) { sectionSelector.value = "chat"; sectionSelector.dispatchEvent(new Event("change")); } });
     document.querySelectorAll('.lang-flag').forEach(btn => { btn.addEventListener('click', () => setLanguage(btn.dataset.lang)); });
     setLanguage(currentLanguage);
+    
+    // Debounce pour la recherche plein texte
     const searchBooksInput = document.getElementById("searchBooksInput");
-    if (searchBooksInput) searchBooksInput.addEventListener("input", () => rechercherPleinTexte());
+    if (searchBooksInput) {
+      searchBooksInput.addEventListener("input", () => {
+        clearTimeout(searchBooksDebounce);
+        searchBooksDebounce = setTimeout(() => rechercherPleinTexte(), 300);
+      });
+    }
+    
     setTimeout(() => { showInstallBanner(); }, 3000);
     setTimeout(() => { showRessourcesWelcomePopup(); }, 2000);
     console.log("✅ Application fusionnée prête !");
