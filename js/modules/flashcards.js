@@ -1,6 +1,7 @@
 // ============================================
 // MODULE - FLASHCARDS
 // Version premium avec statistiques, progression, thèmes multiples, audio
+// CORRIGÉ - Version complète sans troncature
 // ============================================
 
 let currentFlashcards = [];
@@ -29,7 +30,17 @@ const FLASHCARDS_CONFIG = {
   enableProgressTracking: true,
   enableAutoFlip: false,
   itemsPerSession: 20,
-  reviewMode: 'spaced' // spaced, random, sequential
+  reviewMode: 'spaced'
+};
+
+// ------------------------------
+// CONSTANTE PRONONCIATION
+// ------------------------------
+const PRONONCIATION = {
+  enabled: true,
+  language: 'fr-FR',
+  rate: 0.8,
+  pitch: 1.0
 };
 
 // ------------------------------
@@ -44,6 +55,19 @@ const FLASHCARDS_THEMES = {
   favoris: { name: "Mes favoris", icon: "⭐", color: "var(--warning)" },
   aReviser: { name: "À réviser", icon: "🔄", color: "var(--error)" }
 };
+
+// ------------------------------
+// FONCTIONS UTILITAIRES
+// ------------------------------
+function escapeHtml(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
 
 // ------------------------------
 // STATISTIQUES
@@ -121,14 +145,17 @@ function mettreAJourStatistiquesAffichage() {
 }
 
 // ------------------------------
-- PRONONCIATION
+// PRONONCIATION
 // ------------------------------
 function speakFlashcardWord(word) {
   if (!FLASHCARDS_CONFIG.enableAudio) return;
+  if (!PRONONCIATION.enabled) return;
+  
   if ('speechSynthesis' in window) {
     const utterance = new SpeechSynthesisUtterance(word);
-    utterance.lang = 'fr-FR';
-    utterance.rate = 0.7;
+    utterance.lang = PRONONCIATION.language;
+    utterance.rate = PRONONCIATION.rate;
+    utterance.pitch = PRONONCIATION.pitch;
     window.speechSynthesis.cancel();
     window.speechSynthesis.speak(utterance);
   }
@@ -146,7 +173,6 @@ function genererFlashcards() {
   
   let motsFiltres = [];
   
-  // Filtrer selon le thème
   if (theme === 'verbes') {
     motsFiltres = (window.vocabulaire || []).filter(m => m.cat === 'vt.' || m.cat === 'vi.');
   } else if (theme === 'noms') {
@@ -187,9 +213,7 @@ function genererFlashcards() {
     return;
   }
   
-  // Mode d'apprentissage
   if (FLASHCARDS_CONFIG.reviewMode === 'spaced') {
-    // Mettre les mots faibles en priorité
     const weakCards = motsFiltres.filter(m => flashcardsStats.weak.includes(m.mot));
     const masteredCards = motsFiltres.filter(m => flashcardsStats.mastered.includes(m.mot));
     const newCards = motsFiltres.filter(m => !flashcardsStats.weak.includes(m.mot) && !flashcardsStats.mastered.includes(m.mot));
@@ -198,7 +222,6 @@ function genererFlashcards() {
     motsFiltres.sort(() => 0.5 - Math.random());
   }
   
-  // Limiter le nombre de cartes par session
   if (motsFiltres.length > FLASHCARDS_CONFIG.itemsPerSession) {
     motsFiltres = motsFiltres.slice(0, FLASHCARDS_CONFIG.itemsPerSession);
   }
@@ -233,7 +256,6 @@ function afficherFlashcard() {
   let exemple = mot.exemple || (mot.tadaksahak ? mot.tadaksahak : null);
   let glose = mot.glose || (mot.glose_fr ? mot.glose_fr : null);
   
-  // Améliorer l'affichage des relatives
   if (mot.cat === 'relative' && mot.tadaksahak) {
     question = mot.tadaksahak;
     reponse = mot.fr;
@@ -282,7 +304,6 @@ function afficherFlashcard() {
   const laterBtn = container.querySelector('.flashcard-btn.later');
   const audioBtns = container.querySelectorAll('.flashcard-audio, .flashcard-audio-back');
   
-  // Gestion du clic pour retourner la carte
   flashcard?.addEventListener('click', (e) => {
     if (e.target.classList.contains('flashcard-btn')) return;
     if (e.target.classList.contains('flashcard-audio')) return;
@@ -291,7 +312,6 @@ function afficherFlashcard() {
     flashcardContainer.setAttribute('data-flipped', !isFlipped);
   });
   
-  // Audio
   audioBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -300,7 +320,6 @@ function afficherFlashcard() {
     });
   });
   
-  // Bouton "Je sais"
   correctBtn?.addEventListener('click', (e) => {
     e.stopPropagation();
     enregistrerResultatFlashcard(mot.mot, true);
@@ -309,7 +328,6 @@ function afficherFlashcard() {
     mettreAJourProgressionFlashcards();
   });
   
-  // Bouton "Je ne sais pas"
   wrongBtn?.addEventListener('click', (e) => {
     e.stopPropagation();
     enregistrerResultatFlashcard(mot.mot, false);
@@ -319,7 +337,6 @@ function afficherFlashcard() {
     mettreAJourProgressionFlashcards();
   });
   
-  // Bouton "Plus tard"
   laterBtn?.addEventListener('click', (e) => {
     e.stopPropagation();
     currentFlashcardIndex++;
@@ -327,7 +344,6 @@ function afficherFlashcard() {
     mettreAJourProgressionFlashcards();
   });
   
-  // Auto-flip optionnel
   if (FLASHCARDS_CONFIG.enableAutoFlip) {
     setTimeout(() => {
       if (flashcardContainer && flashcardContainer.getAttribute('data-flipped') !== 'true') {
@@ -436,9 +452,7 @@ function initFlashcards() {
   
   chargerStatsFlashcards();
   
-  // Ajouter les options de thème
   if (themeSelect) {
-    // Ajouter les options manquantes si nécessaire
     const existingOptions = Array.from(themeSelect.options).map(o => o.value);
     if (!existingOptions.includes('adjectifs')) {
       const adjOption = document.createElement('option');
@@ -844,7 +858,9 @@ const FLASHCARDS_STYLES = `
   }
 `;
 
-// Injecter les styles
+// ------------------------------
+// INJECTION DES STYLES
+// ------------------------------
 if (!document.getElementById('flashcards-styles')) {
   const styleSheet = document.createElement('style');
   styleSheet.id = 'flashcards-styles';
@@ -860,5 +876,6 @@ window.genererFlashcards = genererFlashcards;
 window.initFlashcards = initFlashcards;
 window.speakFlashcardWord = speakFlashcardWord;
 window.flashcardsStats = flashcardsStats;
+window.PRONONCIATION = PRONONCIATION;
 
 console.log("🃏 Module Flashcards Premium chargé - Version avec statistiques et progression");
