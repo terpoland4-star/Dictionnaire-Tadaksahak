@@ -4230,5 +4230,165 @@
     "ar": "بعد، لم ... بعد",
     "en": "Yet, not yet",
     "source": "negation"
+  },
+  {
+    "mot": "Ahún",
+    "cat": "impératif",
+    "fr": "prends ! (impératif)",
+    "ar": "خذ! (صيغة أمر)",
+    "en": "take! (imperative)",
+    "source": "grammaire"
+  },
+  {
+    "mot": "Baŋgáw",
+    "cat": "n.",
+    "fr": "hippopotame",
+    "ar": "فرس النهر",
+    "en": "hippopotamus",
+    "source": "animaux"
+  },
+  {
+    "mot": "Barmáy",
+    "cat": "n.",
+    "fr": "monnaie, petite change",
+    "ar": "عملة صغيرة، صرافة",
+    "en": "change (money)",
+    "source": "vocabulaire_saillant"
+  },
+  {
+    "mot": "Bíŋgi",
+    "cat": "n.",
+    "fr": "âne mâle",
+    "ar": "حمار ذكر",
+    "en": "male donkey",
+    "source": "animaux"
+  },
+  {
+    "mot": "Bitá",
+    "cat": "n.",
+    "fr": "bouillie de mil",
+    "ar": "عصيدة الدخن",
+    "en": "millet porridge",
+    "source": "nature"
+  },
+  {
+    "mot": "Daamá",
+    "cat": "n.",
+    "fr": "bien-être, amélioration",
+    "ar": "رفاهية، تحسن",
+    "en": "well-being, improvement",
+    "source": "emission"
+  },
+  {
+    "mot": "Daanay",
+    "cat": "n.",
+    "fr": "graines de cram-cram",
+    "ar": "بذور نبات الكرام كرام",
+    "en": "seeds of cram-cram (burrgrass)",
+    "source": "nature"
+  },
+  {
+    "mot": "Danfú",
+    "cat": "n.",
+    "fr": "cuit-vapeur (couscoussier)",
+    "ar": "قدر البخار (كسكس)",
+    "en": "steamer pot (for couscous)",
+    "source": "vocabulaire_saillant"
+  },
+  {
+    "mot": "Dár",
+    "cat": "n.",
+    "fr": "natte, tapis de sol",
+    "ar": "حصيرة، بساط",
+    "en": "mat (floor covering)",
+    "source": "nature"
+  },
+  {
+    "mot": "Dáy-day",
+    "cat": "n.",
+    "fr": "provisions quotidiennes (épices, viande)",
+    "ar": "مؤن يومية (توابل، لحم)",
+    "en": "daily groceries (spices, meat)",
+    "source": "vocabulaire_saillant"
+  },
+  {
+    "mot": "Dílwil",
+    "cat": "n.",
+    "fr": "huile végétale",
+    "ar": "زيت نباتي",
+    "en": "vegetable oil",
+    "source": "nature"
+  },
+  {
+    "mot": "Ǹdororó",
+    "cat": "n.",
+    "fr": "gouttière (toit)",
+    "ar": "مزراب (سقف)",
+    "en": "roof gutter",
+    "source": "nature"
+  },
+  {
+    "mot": "Fendí",
+    "cat": "n.",
+    "fr": "van (à grains)",
+    "ar": "منخل (للحبوب)",
+    "en": "winnowing fan",
+    "source": "nature"
+  },
+  {
+    "mot": "Gismá",
+    "cat": "n.",
+    "fr": "oseille de Guinée (pour sauce)",
+    "ar": "حميض غينيا (لصلصة)",
+    "en": "roselle (for sauce)",
+    "source": "nature"
+  },
+  {
+    "mot": "Góora",
+    "cat": "n.",
+    "fr": "noix de cola",
+    "ar": "جوز الكولا",
+    "en": "cola nut",
+    "source": "nature"
+  },
+  {
+    "mot": "Jíifa",
+    "cat": "n.",
+    "fr": "charogne",
+    "ar": "جيفة",
+    "en": "carcass",
+    "source": "animaux"
+  },
+  {
+    "mot": "Karjí",
+    "cat": "n.",
+    "fr": "épine",
+    "ar": "شوكة",
+    "en": "thorn",
+    "source": "nature"
+  },
+  {
+    "mot": "Kussú",
+    "cat": "n.",
+    "fr": "jarre, pot",
+    "ar": "جرة، قدر",
+    "en": "jar, pot",
+    "source": "vocabulaire_saillant"
+  },
+  {
+    "mot": "Laŋgáy",
+    "cat": "n.",
+    "fr": "sel de natron (en natte)",
+    "ar": "ملح النطرون (في حصيرة)",
+    "en": "natron salt (in mat)",
+    "source": "nature"
+  },
+  {
+    "mot": "Maatíga",
+    "cat": "n.",
+    "fr": "arachide",
+    "ar": "فول سوداني",
+    "en": "peanut",
+    "source": "nature"
   }
 ]
