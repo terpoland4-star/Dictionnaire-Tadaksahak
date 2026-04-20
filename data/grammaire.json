@@ -156,6 +156,142 @@
               "sens_ar": "يمشي",
               "causatif": "z-áwánk-at",
               "causatif_source": "tamasheq"
+            },
+            {
+              "racine_tad": "bún",
+              "sens_fr": "être mort, mourir, s'éteindre (feu), s'épuiser (batterie)",
+              "sens_en": "to be dead, die, go out (fire), be exhausted (battery)",
+              "sens_ar": "يكون ميتاً، يموت، ينطفئ (نار)، ينفد (بطارية)",
+              "causatif": "",
+              "causatif_source": ""
+            },
+            {
+              "racine_tad": "cindí",
+              "sens_fr": "rester (un reste), se reposer",
+              "sens_en": "to remain, rest",
+              "sens_ar": "يبقى (بقية)، يستريح",
+              "causatif": "",
+              "causatif_source": ""
+            },
+            {
+              "racine_tad": "gimár",
+              "sens_fr": "chasser (gibier)",
+              "sens_en": "to hunt (game)",
+              "sens_ar": "يصطاد",
+              "causatif": "",
+              "causatif_source": ""
+            },
+            {
+              "racine_tad": "górgor",
+              "sens_fr": "rire, se moquer",
+              "sens_en": "to laugh, mock",
+              "sens_ar": "يضحك، يسخر",
+              "causatif": "",
+              "causatif_source": ""
+            },
+            {
+              "racine_tad": "hínjin",
+              "sens_fr": "être beaucoup, intensifier",
+              "sens_en": "to be very much, intensify",
+              "sens_ar": "يكون كثيراً",
+              "causatif": "",
+              "causatif_source": ""
+            },
+            {
+              "racine_tad": "korrá",
+              "sens_fr": "être chaud",
+              "sens_en": "to be hot",
+              "sens_ar": "يكون ساخناً",
+              "causatif": "",
+              "causatif_source": ""
+            },
+            {
+              "racine_tad": "sélal",
+              "sens_fr": "être lisse",
+              "sens_en": "to be smooth",
+              "sens_ar": "يكون أملس",
+              "causatif": "",
+              "causatif_source": ""
+            },
+            {
+              "racine_tad": "tinʒit",
+              "sens_fr": "éternuer",
+              "sens_en": "to sneeze",
+              "sens_ar": "يعطس",
+              "causatif": "",
+              "causatif_source": ""
+            },
+            {
+              "racine_tad": "tíŋ",
+              "sens_fr": "être lourd",
+              "sens_en": "to be heavy",
+              "sens_ar": "يكون ثقيلاً",
+              "causatif": "",
+              "causatif_source": ""
+            },
+            {
+              "racine_tad": "yaynay",
+              "sens_fr": "être nouveau",
+              "sens_en": "to be new",
+              "sens_ar": "يكون جديداً",
+              "causatif": "",
+              "causatif_source": ""
+            },
+            {
+              "racine_tad": "yiddár",
+              "sens_fr": "être en vie, vivre",
+              "sens_en": "to be alive, live",
+              "sens_ar": "يكون حياً، يعيش",
+              "causatif": "",
+              "causatif_source": ""
+            },
+            {
+              "racine_tad": "yilbák",
+              "sens_fr": "être maigre, mince",
+              "sens_en": "to be lean, thin",
+              "sens_ar": "يكون نحيفاً، رفيعاً",
+              "causatif": "",
+              "causatif_source": ""
+            },
+            {
+              "racine_tad": "yiltág",
+              "sens_fr": "être lourd, maigre",
+              "sens_en": "to be heavy, lean",
+              "sens_ar": "يكون ثقيلاً، نحيفاً",
+              "causatif": "",
+              "causatif_source": ""
+            },
+            {
+              "racine_tad": "yilwá",
+              "sens_fr": "être large",
+              "sens_en": "to be wide",
+              "sens_ar": "يكون واسعاً",
+              "causatif": "",
+              "causatif_source": ""
+            },
+            {
+              "racine_tad": "yordá",
+              "sens_fr": "penser (que)",
+              "sens_en": "to think (that)",
+              "sens_ar": "يعتقد (أن)",
+              "causatif": "",
+              "causatif_source": ""
+            },
+            {
+              "racine_tad": "yíniʃtaga",
+              "sens_fr": "s'allonger sur le côté",
+              "sens_en": "to lie on side",
+              "sens_ar": "يستلقي على جنبه",
+              "causatif": "",
+              "causatif_source": ""
+            },
+            {
+              "racine_tad": "yíʃǝf",
+              "sens_fr": "plonger, nager",
+              "sens_en": "to dive, swim",
+              "sens_ar": "يغوص، يسبح",
+              "causatif": "",
+              "causatif_source": ""
             }
           ]
         },
@@ -574,6 +710,72 @@
               "passif_sens_fr": "être poussé",
               "passif_sens_en": "to be pushed",
               "passif_sens_ar": "يدفع"
+            },
+            {
+              "imperatif": "hambará",
+              "sens_fr": "craindre",
+              "sens_en": "to fear",
+              "sens_ar": "يخاف",
+              "causatif": "",
+              "passif": "",
+              "passif_sens_fr": "",
+              "passif_sens_en": "",
+              "passif_sens_ar": ""
+            },
+            {
+              "imperatif": "nam",
+              "sens_fr": "mordre, piquer (insecte)",
+              "sens_en": "to bite, sting",
+              "sens_ar": "يعض، يلسع (حشرة)",
+              "causatif": "",
+              "passif": "",
+              "passif_sens_fr": "",
+              "passif_sens_en": "",
+              "passif_sens_ar": ""
+            },
+            {
+              "imperatif": "taatab",
+              "sens_fr": "coudre",
+              "sens_en": "to sew",
+              "sens_ar": "يخيط",
+              "causatif": "",
+              "passif": "",
+              "passif_sens_fr": "",
+              "passif_sens_en": "",
+              "passif_sens_ar": ""
+            },
+            {
+              "imperatif": "yíddǝr",
+              "sens_fr": "tenir",
+              "sens_en": "to hold",
+              "sens_ar": "يمسك",
+              "causatif": "",
+              "passif": "",
+              "passif_sens_fr": "",
+              "passif_sens_en": "",
+              "passif_sens_ar": ""
+            },
+            {
+              "imperatif": "yírkǝb",
+              "sens_fr": "tirer",
+              "sens_en": "to pull",
+              "sens_ar": "يسحب",
+              "causatif": "",
+              "passif": "",
+              "passif_sens_fr": "",
+              "passif_sens_en": "",
+              "passif_sens_ar": ""
+            },
+            {
+              "imperatif": "z-ákmaʒ",
+              "sens_fr": "gratter",
+              "sens_en": "to scratch",
+              "sens_ar": "يحك",
+              "causatif": "",
+              "passif": "",
+              "passif_sens_fr": "",
+              "passif_sens_en": "",
+              "passif_sens_ar": ""
             }
           ]
         },
@@ -805,6 +1007,94 @@
               "passif_sens_fr": "être honoré",
               "passif_sens_en": "to be honoured",
               "passif_sens_ar": "يكرم"
+            },
+            {
+              "imperatif": "bér",
+              "sens_fr": "agrandir, rendre grand",
+              "sens_en": "to enlarge",
+              "sens_ar": "يكبر",
+              "causatif": "",
+              "passif": "",
+              "passif_sens_fr": "",
+              "passif_sens_en": "",
+              "passif_sens_ar": ""
+            },
+            {
+              "imperatif": "bíibi",
+              "sens_fr": "noircir",
+              "sens_en": "to blacken",
+              "sens_ar": "يسود",
+              "causatif": "",
+              "passif": "",
+              "passif_sens_fr": "",
+              "passif_sens_en": "",
+              "passif_sens_ar": ""
+            },
+            {
+              "imperatif": "ceená",
+              "sens_fr": "rétrécir, rendre petit",
+              "sens_en": "to make small",
+              "sens_ar": "يُصغر",
+              "causatif": "",
+              "passif": "",
+              "passif_sens_fr": "",
+              "passif_sens_en": "",
+              "passif_sens_ar": ""
+            },
+            {
+              "imperatif": "kurú-kuru",
+              "sens_fr": "brûler",
+              "sens_en": "to burn",
+              "sens_ar": "يحرق",
+              "causatif": "",
+              "passif": "",
+              "passif_sens_fr": "",
+              "passif_sens_en": "",
+              "passif_sens_ar": ""
+            },
+            {
+              "imperatif": "lés",
+              "sens_fr": "salir, rendre sale",
+              "sens_en": "to make dirty",
+              "sens_ar": "يوسخ",
+              "causatif": "",
+              "passif": "",
+              "passif_sens_fr": "",
+              "passif_sens_en": "",
+              "passif_sens_ar": ""
+            },
+            {
+              "imperatif": "tay",
+              "sens_fr": "mouiller",
+              "sens_en": "to make wet",
+              "sens_ar": "يبلل",
+              "causatif": "",
+              "passif": "",
+              "passif_sens_fr": "",
+              "passif_sens_en": "",
+              "passif_sens_ar": ""
+            },
+            {
+              "imperatif": "tus",
+              "sens_fr": "effacer, essuyer",
+              "sens_en": "to wipe out, erase",
+              "sens_ar": "يمحو، يمسح",
+              "causatif": "",
+              "passif": "",
+              "passif_sens_fr": "",
+              "passif_sens_en": "",
+              "passif_sens_ar": ""
+            },
+            {
+              "imperatif": "zén",
+              "sens_fr": "vieillir, rendre vieux",
+              "sens_en": "to make old",
+              "sens_ar": "يشيخ",
+              "causatif": "",
+              "passif": "",
+              "passif_sens_fr": "",
+              "passif_sens_en": "",
+              "passif_sens_ar": ""
             }
           ]
         },
@@ -926,6 +1216,17 @@
               "passif_sens_fr": "être piqué, injecté",
               "passif_sens_en": "to be pricked, injected",
               "passif_sens_ar": "يلسع، يحقن"
+            },
+            {
+              "imperatif": "yiwál",
+              "sens_fr": "être tranchant (couteau)",
+              "sens_en": "to be sharp (knife)",
+              "sens_ar": "يكون حاداً (سكين)",
+              "causatif": "",
+              "passif": "",
+              "passif_sens_fr": "",
+              "passif_sens_en": "",
+              "passif_sens_ar": ""
             }
           ]
         }
