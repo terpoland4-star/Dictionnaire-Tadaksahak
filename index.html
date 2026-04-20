@@ -152,15 +152,49 @@
     </div>
   </section>
 
-  <section id="grammaire" class="onglet-contenu" hidden>
+<section id="grammaire" class="onglet-contenu" hidden>
     <h2 data-i18n="grammar_title">📚 Grammaire Tadaksahak</h2>
-    <div class="grammar-tabs">
-      <button class="grammar-tab active" data-tab="causative" aria-label="Verbes causatifs et passifs">🔤 Verbes causatifs & passifs</button>
-      <button class="grammar-tab" data-tab="relatives" aria-label="Propositions relatives">📖 Propositions relatives</button>
+    
+    <!-- Sélecteur de langue intégré au livre -->
+    <div class="lang-selector-book">
+        <button class="lang-btn active" data-lang="fr">🇫🇷 Français</button>
+        <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+        <button class="lang-btn" data-lang="ar">🇸🇦 العربية</button>
     </div>
-    <div class="grammar-tab-content" id="grammaireContainer" aria-live="polite"></div>
-    <div class="grammar-tab-content" id="relativesContainer" hidden aria-live="polite"></div>
-  </section>
+
+    <!-- Livre ouvert -->
+    <div class="book-spread" id="bookSpread">
+        <!-- Page gauche -->
+        <div class="book-page page-left" id="pageLeft">
+            <div class="page-header">
+                <span class="page-title" id="leftTitle">Chapitre</span>
+                <span class="page-number" id="leftPageNum">p. 1</span>
+            </div>
+            <div class="page-content" id="leftContent"></div>
+            <div class="page-range" id="leftRange"></div>
+            <div class="page-keywords" id="leftKeywords"></div>
+        </div>
+
+        <!-- Page droite -->
+        <div class="book-page page-right" id="pageRight">
+            <div class="page-header">
+                <span class="page-title" id="rightTitle">Chapitre</span>
+                <span class="page-number" id="rightPageNum">p. 2</span>
+            </div>
+            <div class="page-content" id="rightContent"></div>
+            <div class="page-range" id="rightRange"></div>
+            <div class="page-keywords" id="rightKeywords"></div>
+        </div>
+    </div>
+
+    <!-- Contrôles -->
+    <div class="book-controls">
+        <button class="nav-btn" id="prevBtn" title="Page précédente">←</button>
+        <span class="page-indicator" id="pageIndicator">Bloc 1 / 30</span>
+        <button class="nav-btn" id="nextBtn" title="Page suivante">→</button>
+    </div>
+    <div class="swipe-hint">← Swipez pour tourner les pages →</div>
+</section>
 
   <section id="contes" class="onglet-contenu" hidden>
     <h2 data-i18n="contes_title">📖 Contes et légendes</h2>
