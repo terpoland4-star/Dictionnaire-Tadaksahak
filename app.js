@@ -2,7 +2,8 @@
 // APPLICATION TADAKSAHAK LEARNING
 // VERSION ULTIME - COMPLÈTE
 // Avec dictionnaire enrichi, thèmes premium, flashcards, PWA
-// Grammaire premium, émissions modernisées, propositions relatives
+// Grammaire : LIVRE OUVERT INTERACTIF (30 blocs)
+// Émissions modernisées, propositions relatives
 // ET ressources académiques
 // ==============================
 
@@ -343,7 +344,7 @@ const i18n = {
 // ------------------------------
 let currentLanguage = localStorage.getItem('app_language') || 'fr';
 let vocabulaire = [];
-let grammaire = null;
+let grammaire = null; // n'est plus utilisé pour le livre (mais conservé pour compatibilité)
 let contesData = null;
 let emissionsData = null;
 let themesData = null;
@@ -366,6 +367,30 @@ let activeGrammarTab = 'causative'; // 'causative' ou 'relatives'
 // Variables Flashcards
 let currentFlashcards = [];
 let currentFlashcardIndex = 0;
+
+// ========== LIVRE GRAMMAIRE OUVERT ==========
+let grammarBlocks = [];
+let currentBlockIndex = 0;
+let currentGrammarLang = localStorage.getItem('preferredLanguage') || 'fr';
+let bookInitialized = false;
+
+// Éléments DOM du livre (doivent correspondre aux ID dans index.html)
+const bookElements = {
+    leftTitle: document.getElementById('leftTitle'),
+    leftContent: document.getElementById('leftContent'),
+    leftRange: document.getElementById('leftRange'),
+    leftKeywords: document.getElementById('leftKeywords'),
+    leftPageNum: document.getElementById('leftPageNum'),
+    rightTitle: document.getElementById('rightTitle'),
+    rightContent: document.getElementById('rightContent'),
+    rightRange: document.getElementById('rightRange'),
+    rightKeywords: document.getElementById('rightKeywords'),
+    rightPageNum: document.getElementById('rightPageNum'),
+    pageIndicator: document.getElementById('pageIndicator'),
+    prevBtn: document.getElementById('prevBtn'),
+    nextBtn: document.getElementById('nextBtn'),
+    bookSpread: document.getElementById('bookSpread')
+};
 
 // Éléments DOM
 const searchBar = document.getElementById("searchBar");
@@ -617,8 +642,13 @@ function setLanguage(lang) {
   if (document.getElementById("dashboard") && !document.getElementById("dashboard").hidden) afficherDashboard();
   if (document.getElementById("rapports") && !document.getElementById("rapports").hidden) afficherRapports();
   if (document.getElementById("grammaire") && !document.getElementById("grammaire").hidden) {
-    if (activeGrammarTab === 'causative') afficherGrammairePremium();
-    else if (activeGrammarTab === 'relatives') afficherRelatives();
+    if (activeGrammarTab === 'causative') {
+      // Le livre gère maintenant la grammaire, on s'assure qu'il est affiché
+      if (grammarBlocks.length) updateGrammarSpread();
+      else showGrammarSection();
+    } else if (activeGrammarTab === 'relatives') {
+      afficherRelatives();
+    }
   }
   if (document.getElementById("contes") && !document.getElementById("contes").hidden && contesData) afficherContes();
   if (document.getElementById("emissions") && !document.getElementById("emissions").hidden && emissionsData) afficherEmissionsPremium();
@@ -1101,180 +1131,194 @@ function showWordNotification() {
   }
 }
 
-// ------------------------------
-// GRAMMAIRE - VERSION PREMIUM COMPLÈTE
-// ------------------------------
-async function chargerGrammaire() {
-  try {
-    const response = await fetch('data/grammaire.json');
-    if (!response.ok) throw new Error();
-    grammaire = await response.json();
-    console.log('📚 Grammaire chargée');
-  } catch(e) {
-    console.warn("Erreur chargement grammaire", e);
-    grammaire = null;
-  }
+// ============================================================
+// GRAMMAIRE - LIVRE OUVERT INTERACTIF (30 BLOCS)
+// ============================================================
+
+// Chargement du fichier grammaire.json (tableau fusionné des 30 blocs)
+async function loadGrammarBook() {
+    if (grammarBlocks.length > 0) return; // déjà chargé
+    try {
+        const response = await fetch('data/grammaire.json');
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        grammarBlocks = await response.json();
+        if (!Array.isArray(grammarBlocks)) {
+            throw new Error('Format invalide : attendu un tableau');
+        }
+        console.log(`📚 Grammaire chargée : ${grammarBlocks.length} blocs`);
+        initGrammarBook();
+    } catch (error) {
+        console.error('Erreur chargement grammaire.json:', error);
+        const left = document.getElementById('leftContent');
+        if (left) left.innerHTML = '<p style="color:red;">❌ Erreur de chargement des données grammaticales.</p>';
+    }
 }
 
-function afficherGrammairePremium() {
-  const container = document.getElementById("grammaireContainer");
-  if (!container) return;
-  
-  if (!grammaire) {
-    container.innerHTML = `<p class="info-message">📚 Données grammaticales non disponibles.</p>`;
-    return;
-  }
-  
-  let sections = [];
-  if (grammaire.sections && Array.isArray(grammaire.sections)) {
-    sections = grammaire.sections;
-  } else {
-    container.innerHTML = `<p class="info-message">📚 Structure de grammaire non reconnue.</p>`;
-    return;
-  }
-  
-  let html = `
-    <div class="grammaire-premium-intro">
-      <div class="premium-icon">📚</div>
-      <h3>${i18n[currentLanguage].grammar_title}</h3>
-      <p>${grammaire.description_fr || i18n[currentLanguage].grammar_desc}</p>
-    </div>
-    <div class="grammaire-premium-grid">
-  `;
-  
-  for (const section of sections) {
-    let sectionTitle = currentLanguage === 'fr' ? section.titre_fr : (currentLanguage === 'en' ? section.titre_en : section.titre_ar);
-    let sectionDesc = currentLanguage === 'fr' ? section.description_fr : (currentLanguage === 'en' ? section.description_en : section.description_ar);
-    
-    html += `
-      <div class="grammaire-premium-card">
-        <div class="card-header">
-          <span class="card-icon">📖</span>
-          <h4>${escapeHtml(sectionTitle || 'Grammaire')}</h4>
-        </div>
-        <div class="card-content">
-          ${sectionDesc ? `<p class="section-desc">${escapeHtml(sectionDesc)}</p>` : ''}
-    `;
-    
-    if (section.subsections && Array.isArray(section.subsections)) {
-      for (const subsection of section.subsections) {
-        let subTitle = currentLanguage === 'fr' ? subsection.titre_fr : (currentLanguage === 'en' ? subsection.titre_en : subsection.titre_ar);
-        let subDesc = currentLanguage === 'fr' ? subsection.description_fr : (currentLanguage === 'en' ? subsection.description_en : subsection.description_ar);
-        
-        html += `<div class="grammar-subsection">
-          <strong>${escapeHtml(subTitle || '')}</strong>
-          ${subDesc ? `<p class="sub-desc">${escapeHtml(subDesc)}</p>` : ''}
-        `;
-        
-        if (subsection.verbes && Array.isArray(subsection.verbes)) {
-          html += `<div class="verb-list">`;
-          for (const verbe of subsection.verbes) {
-            let sens = currentLanguage === 'fr' ? verbe.sens_fr : (currentLanguage === 'en' ? verbe.sens_en : verbe.sens_ar);
-            let causatif = verbe.causatif || '—';
-            let passif = verbe.passif || verbe.passif_sens_fr || '—';
-            
-            html += `
-              <div class="verb-item">
-                <span class="verb-root">${escapeHtml(verbe.imperatif || verbe.racine_tad || verbe.racine || '—')}</span>
-                <span class="verb-meaning">${escapeHtml(sens || '—')}</span>
-                <div class="verb-forms">
-                  ${causatif !== '—' ? `<span class="causative">Caus: ${escapeHtml(causatif)}</span>` : ''}
-                  ${passif !== '—' ? `<span class="passive">Pass: ${escapeHtml(passif)}</span>` : ''}
-                </div>
-              </div>
-            `;
-          }
-          html += `</div>`;
-        }
-        
-        if (subsection.verbes && subsection.verbes[0] && subsection.verbes[0].reciproque) {
-          html += `<div class="verb-list">`;
-          for (const verbe of subsection.verbes) {
-            let sens = currentLanguage === 'fr' ? verbe.fr : (currentLanguage === 'en' ? verbe.en : verbe.ar);
-            html += `
-              <div class="verb-item">
-                <span class="verb-root">${escapeHtml(verbe.racine || '—')}</span>
-                <span class="verb-meaning">${escapeHtml(sens || '—')}</span>
-                <div class="verb-forms">
-                  <span class="causative">Réc: ${escapeHtml(verbe.reciproque || '—')}</span>
-                </div>
-              </div>
-            `;
-          }
-          html += `</div>`;
-        }
-        
-        html += `</div>`;
-      }
+// Rendu d'une page (gauche ou droite)
+function renderBookPage(side, block) {
+    const elements = side === 'left' ? {
+        title: bookElements.leftTitle,
+        content: bookElements.leftContent,
+        range: bookElements.leftRange,
+        keywords: bookElements.leftKeywords,
+        pageNum: bookElements.leftPageNum
+    } : {
+        title: bookElements.rightTitle,
+        content: bookElements.rightContent,
+        range: bookElements.rightRange,
+        keywords: bookElements.rightKeywords,
+        pageNum: bookElements.rightPageNum
+    };
+
+    if (!block) {
+        elements.title.textContent = '';
+        elements.content.innerHTML = '<p style="opacity:0.5;">— Fin du livre —</p>';
+        elements.range.textContent = '';
+        elements.keywords.innerHTML = '';
+        elements.pageNum.textContent = '';
+        return;
     }
-    
-    if (section.elements && Array.isArray(section.elements)) {
-      html += `<div class="grammar-elements">`;
-      for (const element of section.elements) {
-        let label = element.mot || element.tad || element.personne || element.num || element.forme || '';
-        let value = currentLanguage === 'fr' ? (element.fr || element.fonction || element.sens_fr) : 
-                   (currentLanguage === 'en' ? (element.en || element.fonction || element.sens_en) : 
-                   (element.ar || element.fonction || element.sens_ar));
-        
-        if (section.id === 'pronouns' && element.code) {
-          html += `
-            <div class="grammar-element pronoun-row">
-              <strong>${escapeHtml(element.personne || '')}</strong>
-              <code>${escapeHtml(element.sujet_clitique || '')}</code>
-              <span>${escapeHtml(element.independant || '')}</span>
-              <span>${escapeHtml(element.objet_direct || '')}</span>
-              <span>${escapeHtml(element.possessif || '')}</span>
-            </div>
-          `;
-        } else if (section.id === 'numerals' && element.num) {
-          html += `
-            <div class="grammar-element numeral-row">
-              <strong>${escapeHtml(element.num || '')}</strong>
-              <code>${escapeHtml(element.tad || '')}</code>
-              ${element.notes ? `<small>${escapeHtml(element.notes)}</small>` : ''}
-            </div>
-          `;
-        } else {
-          html += `
-            <div class="grammar-element">
-              <strong>${escapeHtml(label)}</strong>
-              <span class="element-desc">${escapeHtml(value || '')}</span>
-              ${element.exemple ? `<div class="element-exemple"><em>${escapeHtml(element.exemple)}</em> → ${escapeHtml(element.exemple_fr || '')}</div>` : ''}
-            </div>
-          `;
-        }
-      }
-      html += `</div>`;
-    }
-    
-    if (section.verbes && Array.isArray(section.verbes) && !section.subsections) {
-      html += `<div class="verb-list">`;
-      for (const verbe of section.verbes) {
-        let sens = currentLanguage === 'fr' ? verbe.sens_fr : (currentLanguage === 'en' ? verbe.sens_en : verbe.sens_ar);
-        let causatif = verbe.causatif || '—';
-        let reciproque = verbe.reciproque || '—';
-        
-        html += `
-          <div class="verb-item">
-            <span class="verb-root">${escapeHtml(verbe.racine || verbe.imperatif || '—')}</span>
-            <span class="verb-meaning">${escapeHtml(sens || '—')}</span>
-            <div class="verb-forms">
-              ${causatif !== '—' ? `<span class="causative">Caus: ${escapeHtml(causatif)}</span>` : ''}
-              ${reciproque !== '—' ? `<span class="passive">Réc: ${escapeHtml(reciproque)}</span>` : ''}
-            </div>
-          </div>
-        `;
-      }
-      html += `</div>`;
-    }
-    
-    html += `</div></div>`;
-  }
-  
-  html += `</div>`;
-  container.innerHTML = html;
-  console.log("✅ Grammaire premium affichée avec succès");
+
+    const title = block.titre_section[currentGrammarLang] || block.titre_section.fr || '';
+    const content = block.contenu[currentGrammarLang] || block.contenu.fr || '';
+    const plage = block.plage_pages || '';
+    const keywords = block.mots_cles || [];
+
+    elements.title.textContent = title;
+    elements.content.innerHTML = `<p>${content.replace(/\n/g, '<br>')}</p>`;
+    elements.range.textContent = `📄 p. ${plage}`;
+    elements.keywords.innerHTML = keywords.map(k => `<span class="keyword-tag">${k}</span>`).join('');
+    elements.pageNum.textContent = `Bloc ${block.bloc_id}`;
 }
+
+// Mise à jour de l'affichage des deux pages
+function updateGrammarSpread() {
+    const leftBlock = grammarBlocks[currentBlockIndex] || null;
+    const rightBlock = (currentBlockIndex + 1 < grammarBlocks.length) ? grammarBlocks[currentBlockIndex + 1] : null;
+
+    renderBookPage('left', leftBlock);
+    renderBookPage('right', rightBlock);
+
+    const total = grammarBlocks.length;
+    const start = currentBlockIndex + 1;
+    const end = Math.min(currentBlockIndex + 2, total);
+    if (bookElements.pageIndicator) {
+        bookElements.pageIndicator.textContent = `Blocs ${start}–${end} / ${total}`;
+    }
+
+    if (bookElements.prevBtn) bookElements.prevBtn.disabled = (currentBlockIndex === 0);
+    if (bookElements.nextBtn) bookElements.nextBtn.disabled = (currentBlockIndex + 2 >= total);
+}
+
+function nextGrammarSpread() {
+    if (currentBlockIndex + 2 < grammarBlocks.length) {
+        currentBlockIndex += 2;
+        updateGrammarSpread();
+        if (bookElements.bookSpread) {
+            bookElements.bookSpread.style.transform = 'translateX(-5px)';
+            setTimeout(() => bookElements.bookSpread.style.transform = '', 150);
+        }
+    }
+}
+
+function prevGrammarSpread() {
+    if (currentBlockIndex > 0) {
+        currentBlockIndex = Math.max(0, currentBlockIndex - 2);
+        updateGrammarSpread();
+        if (bookElements.bookSpread) {
+            bookElements.bookSpread.style.transform = 'translateX(5px)';
+            setTimeout(() => bookElements.bookSpread.style.transform = '', 150);
+        }
+    }
+}
+
+// Changement de langue dans le livre
+function setGrammarLanguage(lang) {
+    currentGrammarLang = lang;
+    localStorage.setItem('preferredLanguage', lang);
+    document.querySelectorAll('#grammaire .lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    if (grammarBlocks.length > 0) {
+        updateGrammarSpread();
+    }
+}
+
+// Synchronisation avec le sélecteur de langue global (header)
+function syncGrammarWithGlobalLang(globalLang) {
+    if (globalLang && ['fr','en','ar'].includes(globalLang)) {
+        setGrammarLanguage(globalLang);
+    }
+}
+
+// Initialisation du livre
+function initGrammarBook() {
+    if (!grammarBlocks.length) return;
+    if (bookInitialized) return;
+    
+    currentBlockIndex = 0;
+    updateGrammarSpread();
+    
+    // Écouteurs des boutons de navigation
+    if (bookElements.prevBtn) bookElements.prevBtn.addEventListener('click', prevGrammarSpread);
+    if (bookElements.nextBtn) bookElements.nextBtn.addEventListener('click', nextGrammarSpread);
+    
+    // Écouteurs des boutons de langue internes au livre
+    document.querySelectorAll('#grammaire .lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => setGrammarLanguage(btn.dataset.lang));
+    });
+    
+    // Swipe tactile
+    let touchStartX = 0;
+    if (bookElements.bookSpread) {
+        bookElements.bookSpread.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        
+        bookElements.bookSpread.addEventListener('touchend', (e) => {
+            if (!touchStartX) return;
+            const diff = e.changedTouches[0].screenX - touchStartX;
+            if (Math.abs(diff) > 50) {
+                if (diff < 0) nextGrammarSpread();
+                else prevGrammarSpread();
+            }
+            touchStartX = 0;
+        });
+    }
+    
+    // Navigation clavier (seulement quand la section grammaire est visible)
+    window.addEventListener('keydown', (e) => {
+        const gramSection = document.getElementById('grammaire');
+        if (gramSection && gramSection.hidden) return;
+        if (e.key === 'ArrowLeft') {
+            prevGrammarSpread();
+            e.preventDefault();
+        } else if (e.key === 'ArrowRight') {
+            nextGrammarSpread();
+            e.preventDefault();
+        }
+    });
+    
+    bookInitialized = true;
+    console.log('📖 Livre grammaire initialisé');
+}
+
+// Fonction à appeler quand l'onglet Grammaire est affiché
+function showGrammarSection() {
+    const section = document.getElementById('grammaire');
+    if (section && section.hidden === false) {
+        loadGrammarBook();
+        // Synchroniser la langue du livre avec la langue globale
+        const globalLang = localStorage.getItem('preferredLanguage') || 'fr';
+        if (currentGrammarLang !== globalLang) {
+            setGrammarLanguage(globalLang);
+        }
+    }
+}
+
+// ============================================================
+// FIN DU LIVRE GRAMMAIRE
+// ============================================================
 
 // ------------------------------
 // PROPOSITIONS RELATIVES
@@ -2574,15 +2618,14 @@ function initNavigation() {
     
     // Affichage des contenus spécifiques
     if (id === "grammaire") {
-      document.getElementById("grammaireContainer").hidden = (activeGrammarTab !== 'causative');
-      document.getElementById("relativesContainer").hidden = (activeGrammarTab !== 'relatives');
-      if (activeGrammarTab === 'causative') {
-        if (grammaire) afficherGrammairePremium();
-        else chargerGrammaire().then(() => afficherGrammairePremium());
-      } else {
-        if (relativesData) afficherRelatives();
-        else chargerRelatives().then(() => afficherRelatives());
-      }
+      // Masquer les anciens containers de grammaire premium
+      const gramContainer = document.getElementById("grammaireContainer");
+      const relContainer = document.getElementById("relativesContainer");
+      if (gramContainer) gramContainer.hidden = true;
+      if (relContainer) relContainer.hidden = true;
+      
+      // Afficher le livre
+      showGrammarSection();
     }
     if (id === "livres") afficherLivres();
     if (id === "audio") genererAlbumsAudio();
@@ -2619,7 +2662,7 @@ async function initialiserApplication() {
     detectSystemTheme();
     initNavigation();
     await chargerDictionnaire();
-    await chargerGrammaire();
+    // Note: le livre charge grammaire.json à la demande
     await chargerContes();
     await chargerEmissions();
     await chargerThemes();
@@ -2638,7 +2681,8 @@ async function initialiserApplication() {
     initFlashcards();
     initAutoUpdates();
     
-    // Gestion des onglets de grammaire (mémorisation)
+    // Gestion des onglets de grammaire (mémorisation) - désormais désactivé car on utilise le livre
+    // On peut garder les onglets pour les relatives si on veut, mais le livre remplace le causatif.
     const grammarTabs = document.querySelectorAll('.grammar-tab');
     if (grammarTabs.length) {
       grammarTabs.forEach(tab => {
@@ -2647,12 +2691,14 @@ async function initialiserApplication() {
           activeGrammarTab = target;
           grammarTabs.forEach(t => t.classList.remove('active'));
           tab.classList.add('active');
-          document.querySelectorAll('.grammar-tab-content').forEach(c => c.hidden = true);
           if (target === 'causative') {
-            document.getElementById('grammaireContainer').hidden = false;
-            if (grammaire) afficherGrammairePremium();
+            // Afficher le livre
+            document.getElementById('grammaireContainer')?.setAttribute('hidden', '');
+            document.getElementById('relativesContainer')?.setAttribute('hidden', '');
+            showGrammarSection();
           } else if (target === 'relatives') {
-            document.getElementById('relativesContainer').hidden = false;
+            document.getElementById('grammaireContainer')?.setAttribute('hidden', '');
+            document.getElementById('relativesContainer')?.removeAttribute('hidden');
             afficherRelatives();
           }
         });
@@ -2681,6 +2727,7 @@ async function initialiserApplication() {
     setTimeout(() => { showRessourcesWelcomePopup(); }, 2000);
     console.log("✅ Application fusionnée prête !");
     console.log("📚 Module des propositions relatives intégré (Christiansen & Levinsohn 2003)");
+    console.log("📖 Livre de grammaire ouvert intégré (30 blocs)");
   } catch (error) {
     console.error("Erreur critique lors de l'initialisation :", error);
     showToast("Erreur de chargement, vérifiez la console", "error");
