@@ -1,15 +1,15 @@
 // ============================================
-// SERVICE WORKER - Tadaksahak Learning v8
+// SERVICE WORKER - Tadaksahak Learning v9
 // Version avec mise à jour auto et installation après 3 visites
 // Stratégie mixte : cache vs réseau
 // INCLUT : Propositions relatives (Christiansen & Levinsohn 2003)
 // CORRIGÉ : Plus d'erreur "Response body is already used"
 // ============================================
 
-const CACHE_NAME = 'tadaksahak-v8';
-const STATIC_CACHE = 'tadaksahak-static-v8';
-const DATA_CACHE = 'tadaksahak-data-v8';
-const MEDIA_CACHE = 'tadaksahak-media-v8';
+const CACHE_NAME = 'tadaksahak-v9';
+const STATIC_CACHE = 'tadaksahak-static-v9';
+const DATA_CACHE = 'tadaksahak-data-v9';
+const MEDIA_CACHE = 'tadaksahak-media-v9';
 
 // ============================================
 // FICHIERS STATIQUES (Cache First)
