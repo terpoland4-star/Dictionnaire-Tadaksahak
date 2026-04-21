@@ -2,12 +2,32 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>📘 Lecteur de livres - Tadaksahak Learning</title>
+  <meta name="description" content="Lecteur de livres et documents de la bibliothèque Tadaksahak Learning">
+  <meta name="author" content="Hamadine Ag Moctar">
+  <meta name="theme-color" content="#005fa3">
   
   <link rel="stylesheet" href="style.css">
   
+  <!-- Google Analytics 4 – Configuration respectueuse de la vie privée -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N1801YD76L"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-N1801YD76L', {
+      'anonymize_ip': true,
+      'allow_google_signals': false,
+      'allow_ad_personalization_signals': false,
+      'cookie_flags': 'SameSite=None;Secure',
+      'send_page_view': true
+    });
+  </script>
+  
   <style>
+    /* Styles spécifiques au lecteur de livre (conservés) */
     .back-to-app {
       position: sticky;
       top: 0;
@@ -291,7 +311,15 @@
 
 <button id="backToTop" class="back-to-top" title="Haut de page" aria-label="Retour en haut de page">⬆</button>
 
+<!-- Bannière de consentement cookies (conforme RGPD) -->
+<div id="cookie-consent" style="position:fixed; bottom:0; left:0; right:0; background:var(--bg-card); color:var(--text); padding:12px 20px; text-align:center; z-index:1000; border-top:1px solid var(--border); display:none; backdrop-filter:blur(8px);">
+    <span>🍪 Ce site utilise Google Analytics pour mesurer l'audience de manière anonyme (adresses IP masquées). Aucune donnée personnelle n'est collectée.</span>
+    <button id="accept-cookies" style="margin-left:15px; padding:6px 16px; background:var(--gradient-primary); border:none; border-radius:20px; color:white; cursor:pointer; font-weight:600;">J'accepte</button>
+    <button id="reject-cookies" style="margin-left:8px; padding:6px 16px; background:transparent; border:1px solid var(--border); border-radius:20px; color:var(--text-muted); cursor:pointer;">Refuser</button>
+</div>
+
 <script>
+  // ===== GESTION DU THÈME =====
   const select = document.getElementById('themeSelect');
   const body = document.body;
   const savedTheme = localStorage.getItem('livre-theme') || 'dark';
@@ -303,6 +331,32 @@
     localStorage.setItem('livre-theme', newTheme);
   };
 
+  // ===== BANNIÈRE DE CONSENTEMENT COOKIES =====
+  (function() {
+    const consentBanner = document.getElementById('cookie-consent');
+    const acceptBtn = document.getElementById('accept-cookies');
+    const rejectBtn = document.getElementById('reject-cookies');
+    
+    if (localStorage.getItem('cookies_consent') === null) {
+      consentBanner.style.display = 'block';
+    }
+    
+    function setConsent(accepted) {
+      localStorage.setItem('cookies_consent', accepted ? 'true' : 'false');
+      consentBanner.style.display = 'none';
+      if (accepted) {
+        console.log('📊 Analytics activé (consentement)');
+      } else {
+        window['ga-disable-G-N1801YD76L'] = true;
+        console.log('📊 Analytics désactivé');
+      }
+    }
+    
+    acceptBtn.addEventListener('click', () => setConsent(true));
+    rejectBtn.addEventListener('click', () => setConsent(false));
+  })();
+
+  // ===== LOGIQUE DU LECTEUR DE LIVRE =====
   const urlParams = new URLSearchParams(window.location.search);
   const livreId = parseInt(urlParams.get('id')) || 1;
 
@@ -327,6 +381,7 @@
   }
 
   function getCoverImage() {
+    if (!livreData) return null;
     if (livreData.couverture) return livreData.couverture;
     if (livreData.illustrations && livreData.illustrations.length) {
       const first = livreData.illustrations.find(ill => !ill.chapitre && !ill.conclusion);
@@ -336,12 +391,12 @@
   }
 
   function getIllustrationsForChapter(chapNumero) {
-    if (!livreData.illustrations) return [];
+    if (!livreData || !livreData.illustrations) return [];
     return livreData.illustrations.filter(ill => ill.chapitre === chapNumero);
   }
 
   function getIllustrationsForConclusion() {
-    if (!livreData.illustrations) return [];
+    if (!livreData || !livreData.illustrations) return [];
     return livreData.illustrations.filter(ill => ill.conclusion === true);
   }
 
@@ -373,8 +428,8 @@
 
     let html = `
       <div class="book-header">
-        <div class="book-author">${escapeHtml(livreData.auteur.toUpperCase())}</div>
-        <h1 class="book-title">${escapeHtml(livreData.titre)}</h1>
+        <div class="book-author">${escapeHtml(livreData.auteur ? livreData.auteur.toUpperCase() : '')}</div>
+        <h1 class="book-title">${escapeHtml(livreData.titre || 'Sans titre')}</h1>
         <div class="book-subtitle">${escapeHtml(livreData.sous_titre || '')}</div>
         <div class="book-meta">📅 ${livreData.annee || ''} • 📄 ${livreData.pages || '?'} pages • 🏷️ ${escapeHtml(livreData.categorie || '')}</div>
       </div>
@@ -400,7 +455,7 @@
     html += `
       </div>
       <div class="book-footer">
-        <p>© ${livreData.annee || ''} ${escapeHtml(livreData.auteur)}</p>
+        <p>© ${livreData.annee || ''} ${escapeHtml(livreData.auteur || '')}</p>
         <p>📚 Tadaksahak Learning — "Traduction du français vers l'arabe par Hamadine AG MOCTAR, CEO de HAM Global Words."</p>
       </div>
     `;
@@ -415,8 +470,8 @@
         chapDiv.id = `chapter-${idx}`;
         
         let chapHtml = `
-          <div class="chapter-number">CHAPITRE ${chap.numero}</div>
-          <h2 class="chapter-title">${escapeHtml(chap.titre)}</h2>
+          <div class="chapter-number">CHAPITRE ${chap.numero || idx+1}</div>
+          <h2 class="chapter-title">${escapeHtml(chap.titre || '')}</h2>
         `;
         
         if (chap.sous_titre) {
