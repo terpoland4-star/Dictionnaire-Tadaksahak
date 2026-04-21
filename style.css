@@ -2834,3 +2834,302 @@ body.dark {
     font-size: 0.8rem;
     color: var(--text-muted);
 }
+/* ============================================
+   BOUTONS PREMIUM - ÉLÉGANCE ET INTERACTION
+   ============================================ */
+
+/* --- Bouton Primaire (CTA) amélioré --- */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.3) 0%, transparent 50%);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.btn-primary:hover::before {
+  opacity: 1;
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+  box-shadow: var(--shadow-md);
+}
+
+/* --- Bouton Secondaire (Outline) --- */
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  box-shadow: none;
+}
+
+.btn-outline:hover {
+  background: var(--accent);
+  color: var(--bg-card);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-glow);
+}
+
+/* --- Bouton Fantôme (Ghost) --- */
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  box-shadow: none;
+}
+
+.btn-ghost:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* --- Sélecteur de Langue - Version Luxe --- */
+.lang-selector {
+  display: flex;
+  gap: 0.75rem;
+  justify-self: end;
+}
+
+.lang-flag {
+  position: relative;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1.5px solid var(--glass-border);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  color: var(--text);
+  transition: all var(--transition-bounce);
+  box-shadow: var(--shadow-sm);
+  letter-spacing: 0.3px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Effet de brillance au survol */
+.lang-flag::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.6s ease;
+  z-index: -1;
+}
+
+.lang-flag:hover::before {
+  left: 100%;
+}
+
+.lang-flag:hover {
+  transform: translateY(-4px) scale(1.02);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+  color: white;
+  background: var(--gradient-primary);
+  border-color: transparent;
+}
+
+.lang-flag:active {
+  transform: translateY(-2px) scale(0.98);
+  box-shadow: var(--shadow-md);
+}
+
+.lang-flag.active {
+  background: var(--gradient-primary);
+  border-color: var(--accent);
+  color: white;
+  box-shadow: var(--shadow-glow);
+  font-weight: 700;
+}
+
+/* Animation de pulsation légère pour la langue active */
+@keyframes softPulse {
+  0%, 100% { box-shadow: var(--shadow-glow), 0 0 0 0 rgba(0, 212, 255, 0.4); }
+  50% { box-shadow: var(--shadow-glow), 0 0 0 6px rgba(0, 212, 255, 0); }
+}
+
+.lang-flag.active {
+  animation: softPulse 2s infinite;
+}
+
+/* --- Boutons de Navigation (flèches, etc.) --- */
+.nav-btn {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.8rem;
+  color: var(--accent);
+  cursor: pointer;
+  transition: all var(--transition-bounce);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+}
+
+.nav-btn:hover:not(:disabled) {
+  background: var(--gradient-primary);
+  color: white;
+  border-color: transparent;
+  transform: scale(1.1) rotate(2deg);
+  box-shadow: var(--shadow-xl), var(--shadow-glow);
+}
+
+.nav-btn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.nav-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* --- Boutons de Thème (Dark/Light/Sepia) --- */
+.theme-btn {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  font-size: 1.2rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  color: var(--text);
+  transition: all var(--transition-bounce);
+}
+
+.theme-btn:hover {
+  background: var(--gradient-primary);
+  color: white;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+/* --- Bouton "Mot du jour" / "Quiz" --- */
+.btn-word {
+  background: var(--gradient-secondary);
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-bounce);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-word:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: var(--shadow-xl), var(--shadow-glow-secondary);
+}
+
+/* --- Boutons d'Action (Flashcards, Dictionnaire) --- */
+.btn-action {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.6rem 1.5rem;
+  border-radius: var(--radius-full);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-action:hover {
+  background: var(--accent);
+  color: white;
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* --- Amélioration des boutons dans les cartes (livres, contes) --- */
+.btn-lire-conte-premium,
+.btn-emission-premium,
+.btn-small {
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-bounce);
+}
+
+.btn-lire-conte-premium:hover,
+.btn-emission-premium:hover,
+.btn-small:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+.btn-lire-conte-premium:active,
+.btn-emission-premium:active,
+.btn-small:active {
+  transform: translateY(-1px);
+}
+
+/* --- Effet de vague (ripple) pour les boutons (optionnel) --- */
+.btn-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-ripple::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%, -50%);
+  transform-origin: 50% 50%;
+}
+
+.btn-ripple:focus:not(:active)::after {
+  animation: ripple 0.6s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  20% {
+    transform: scale(25, 25);
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(40, 40);
+  }
+}
+
+/* Appliquer l'effet ripple aux boutons importants */
+.btn-primary,
+.lang-flag,
+.nav-btn,
+.btn-lire-conte-premium {
+  position: relative;
+  overflow: hidden;
+}
