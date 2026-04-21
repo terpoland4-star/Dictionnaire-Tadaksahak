@@ -11,6 +11,23 @@
   <link rel="icon" href="images/idaksahak_round.png" type="image/png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/idaksahak_round.png">
   <link rel="stylesheet" href="style.css">
+  
+  <!-- Google Analytics 4 – Configuration respectueuse de la vie privée -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N1801YD76L"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-N1801YD76L', {
+      'anonymize_ip': true,
+      'allow_google_signals': false,
+      'allow_ad_personalization_signals': false,
+      'cookie_flags': 'SameSite=None;Secure',
+      'send_page_view': true
+    });
+  </script>
+
   <!-- Leaflet pour la carte - chargement différé -->
   <link rel="preconnect" href="https://unpkg.com">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" media="print" onload="this.media='all'">
@@ -25,8 +42,6 @@
         document.head.appendChild(script);
       }
     }
-    // On précharge seulement quand l'utilisateur interagit avec la section carte (géré dans app.js)
-    // Évite le setTimeout inutile.
   </script>
 </head>
 <body class="dark">
@@ -152,7 +167,7 @@
     </div>
   </section>
 
-<section id="grammaire" class="onglet-contenu" hidden>
+  <section id="grammaire" class="onglet-contenu" hidden>
     <h2 data-i18n="grammar_title">📚 Grammaire Tadaksahak</h2>
     
     <!-- Sélecteur de langue intégré au livre -->
@@ -194,7 +209,7 @@
         <button class="nav-btn" id="nextBtn" title="Page suivante">→</button>
     </div>
     <div class="swipe-hint">← Swipez pour tourner les pages →</div>
-</section>
+  </section>
 
   <section id="contes" class="onglet-contenu" hidden>
     <h2 data-i18n="contes_title">📖 Contes et légendes</h2>
@@ -328,6 +343,38 @@
 
 <button id="toggleChatBot" class="floating-chat-btn" aria-label="Ouvrir le chat">💬</button>
 <div id="toast" class="toast" role="alert" hidden></div>
+
+<!-- Bannière de consentement cookies (conforme RGPD) -->
+<div id="cookie-consent" style="position:fixed; bottom:0; left:0; right:0; background:var(--bg-card); color:var(--text); padding:12px 20px; text-align:center; z-index:1000; border-top:1px solid var(--border); display:none; backdrop-filter:blur(8px);">
+    <span>🍪 Ce site utilise Google Analytics pour mesurer l'audience de manière anonyme (adresses IP masquées). Aucune donnée personnelle n'est collectée.</span>
+    <button id="accept-cookies" style="margin-left:15px; padding:6px 16px; background:var(--gradient-primary); border:none; border-radius:20px; color:white; cursor:pointer; font-weight:600;">J'accepte</button>
+    <button id="reject-cookies" style="margin-left:8px; padding:6px 16px; background:transparent; border:1px solid var(--border); border-radius:20px; color:var(--text-muted); cursor:pointer;">Refuser</button>
+</div>
+<script>
+(function() {
+    const consentBanner = document.getElementById('cookie-consent');
+    const acceptBtn = document.getElementById('accept-cookies');
+    const rejectBtn = document.getElementById('reject-cookies');
+    
+    if (localStorage.getItem('cookies_consent') === null) {
+        consentBanner.style.display = 'block';
+    }
+    
+    function setConsent(accepted) {
+        localStorage.setItem('cookies_consent', accepted ? 'true' : 'false');
+        consentBanner.style.display = 'none';
+        if (accepted) {
+            console.log('📊 Analytics activé (consentement)');
+        } else {
+            window['ga-disable-G-N1801YD76L'] = true;
+            console.log('📊 Analytics désactivé');
+        }
+    }
+    
+    acceptBtn.addEventListener('click', () => setConsent(true));
+    rejectBtn.addEventListener('click', () => setConsent(false));
+})();
+</script>
 
 <footer class="site-footer">
   <div class="footer-content">
