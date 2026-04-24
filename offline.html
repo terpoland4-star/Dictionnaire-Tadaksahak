@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hors-ligne - Tadaksahak Learning</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(135deg, #0a0c10 0%, #1a1f2e 100%);
+      color: #f1f5f9;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    
+    .offline-container {
+      max-width: 500px;
+      text-align: center;
+      animation: fadeInUp 0.5s ease;
+    }
+    
+    .offline-icon {
+      font-size: 5rem;
+      margin-bottom: 1rem;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #0099ff, #33ccff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    p {
+      color: #94a3b8;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    
+    .features-list {
+      background: rgba(30, 41, 59, 0.5);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .features-list h3 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: #00d4ff;
+    }
+    
+    .features-list ul {
+      list-style: none;
+      text-align: left;
+    }
+    
+    .features-list li {
+      padding: 0.5rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .features-list li:last-child {
+      border-bottom: none;
+    }
+    
+    .feature-icon {
+      font-size: 1.2rem;
+    }
+    
+    .btn-retry {
+      background: linear-gradient(135deg, #0099ff, #33ccff);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 40px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      margin-bottom: 1rem;
+    }
+    
+    .btn-retry:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0, 153, 255, 0.3);
+    }
+    
+    .version {
+      font-size: 0.7rem;
+      color: #64748b;
+      margin-top: 2rem;
+    }
+    
+    .status {
+      background: rgba(239, 68, 68, 0.2);
+      color: #f87171;
+      padding: 0.5rem 1rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="offline-container">
+    <div class="offline-icon">📡</div>
+    <div class="status">⚠️ Mode hors-ligne</div>
+    <h1>Vous êtes hors-ligne</h1>
+    <p>L'application fonctionne toujours !<br>Voici ce que vous pouvez consulter sans connexion :</p>
+    
+    <div class="features-list">
+      <h3>✨ Fonctionnalités disponibles :</h3>
+      <ul>
+        <li><span class="feature-icon">📖</span> Dictionnaire (mots déjà chargés)</li>
+        <li><span class="feature-icon">🃏</span> Flashcards (vos sessions en cours)</li>
+        <li><span class="feature-icon">📚</span> Grammaire (livre interactif)</li>
+        <li><span class="feature-icon">⭐</span> Vos mots favoris</li>
+        <li><span class="feature-icon">📜</span> Votre historique de recherche</li>
+      </ul>
+    </div>
+    
+    <button class="btn-retry" onclick="retryConnection()">
+      🔄 Vérifier la connexion
+    </button>
+    
+    <p style="font-size: 0.8rem;">
+      Dès que la connexion sera rétablie,<br>
+      toutes les fonctionnalités seront à nouveau disponibles.
+    </p>
+    
+    <div class="version">
+      Tadaksahak Learning v3.0 - Préservation de la culture Idaksahak
+    </div>
+  </div>
+  
+  <script>
+    function retryConnection() {
+      if (navigator.onLine) {
+        window.location.href = './index.html';
+      } else {
+        alert('Toujours hors-ligne. Vérifiez votre connexion internet.');
+      }
+    }
+    
+    // Vérifier automatiquement la connexion
+    window.addEventListener('online', () => {
+      window.location.href = './index.html';
+    });
+  </script>
+</body>
+</html>
