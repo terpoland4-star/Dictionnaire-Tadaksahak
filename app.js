@@ -415,7 +415,6 @@ const AppState = {
   currentGrammarLang: localStorage.getItem('preferredLanguage') || 'fr',
   bookInitialized: false,
   activeGrammarTab: 'causative',
-  // NOUVEAUX
   actualites: [],
   partenaires: [],
   userId: null,
@@ -640,6 +639,7 @@ function detectSystemTheme() {
     setTheme(prefersDark ? 'dark' : 'light');
   }
 }
+
 // ============================================================
 // SECTION 6 : GESTION DE LA LANGUE
 // ============================================================
@@ -791,60 +791,180 @@ class AnalyticsManager {
 const analytics = new AnalyticsManager();
 
 // ============================================================
-// SECTION 8 : NEWSLETTER MANAGER
+// SECTION 8 : NEWSLETTER MANAGER (CORRIGÉ - NON INVASIF)
 // ============================================================
 
 class NewsletterManager {
   constructor() {
+    this.initialized = false;
+    this.popupShown = false;
     this.init();
   }
 
   init() {
+    if (this.initialized) return;
+    this.initialized = true;
+    
     const hasSubscribed = localStorage.getItem('newsletter_subscribed') === 'true';
     const hasSeenPopup = localStorage.getItem('newsletter_popup_seen') === 'true';
     
-    if (!hasSubscribed && !hasSeenPopup) {
-      setTimeout(() => this.showPopup(), 7000);
+    // Initialiser le formulaire du footer s'il existe
+    const footerForm = getElement('newsletterForm', false);
+    if (footerForm) {
+      const newFooterForm = footerForm.cloneNode(true);
+      footerForm.parentNode?.replaceChild(newFooterForm, footerForm);
+      newFooterForm.addEventListener('submit', (e) => this.handleSubscribe(e));
     }
     
-    const form = getElement('newsletterForm', false);
-    if (form) {
-      form.addEventListener('submit', (e) => this.handleSubscribe(e));
-    }
+    // NE PAS afficher si déjà abonné ou déjà vu
+    if (hasSubscribed || hasSeenPopup) return;
+    
+    // Attendre une interaction utilisateur (respectueux)
+    const showPopupOnInteraction = () => {
+      if (this.popupShown) return;
+      setTimeout(() => {
+        if (!localStorage.getItem('newsletter_subscribed') && 
+            !localStorage.getItem('newsletter_popup_seen')) {
+          this.showPopup();
+          this.popupShown = true;
+        }
+      }, 500);
+      
+      // Nettoyer les écouteurs
+      document.removeEventListener('click', showPopupOnInteraction);
+      document.removeEventListener('scroll', showPopupOnInteraction);
+      document.removeEventListener('keydown', showPopupOnInteraction);
+    };
+    
+    // Attendre une vraie interaction utilisateur
+    const events = ['click', 'scroll', 'keydown'];
+    events.forEach(event => {
+      document.addEventListener(event, showPopupOnInteraction, { once: true });
+    });
+    
+    // Fallback très long (60 secondes) uniquement si aucune interaction
+    setTimeout(() => {
+      if (!localStorage.getItem('newsletter_subscribed') && 
+          !localStorage.getItem('newsletter_popup_seen') && 
+          !this.popupShown) {
+        this.showPopup();
+        this.popupShown = true;
+      }
+    }, 60000);
   }
 
   showPopup() {
-    const popup = getElement('newsletterPopup', false);
-    if (!popup) return;
-    popup.hidden = false;
+    if (localStorage.getItem('newsletter_subscribed') === 'true') return;
+    
+    let popup = getElement('newsletterPopup', false);
+    if (!popup) {
+      popup = this.createPopup();
+      document.body.appendChild(popup);
+    }
+    
     localStorage.setItem('newsletter_popup_seen', 'true');
+    popup.hidden = false;
+    popup.style.display = 'flex';
     
-    const closeBtn = getElement('closeNewsletter', false);
-    if (closeBtn) closeBtn.addEventListener('click', () => { popup.hidden = true; });
-    
-    const form = popup.querySelector('.newsletter-form');
-    if (form) {
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        this.handleSubscribe(e, () => { popup.hidden = true; });
+    this.attachPopupEvents(popup);
+  }
+
+  createPopup() {
+    const popup = document.createElement('div');
+    popup.id = 'newsletterPopup';
+    popup.className = 'newsletter-popup';
+    popup.hidden = true;
+    popup.style.display = 'none';
+    popup.innerHTML = `
+      <div class="newsletter-popup-content">
+        <button class="newsletter-close" id="closeNewsletterBtn" aria-label="Fermer">✕</button>
+        <div class="newsletter-icon">📧</div>
+        <h3>Restez connecté !</h3>
+        <p>Recevez les nouveaux mots et actualités de la communauté Idaksahak.</p>
+        <form class="newsletter-form" id="newsletterPopupForm">
+          <input type="email" id="newsletterEmailPopup" placeholder="Votre adresse email" required autocomplete="email">
+          <button type="submit">S'abonner</button>
+        </form>
+        <p class="newsletter-note">Aucun spam, désabonnement à tout moment.</p>
+        <button id="dismissNewsletterPopup" class="btn-popup-later">Plus tard</button>
+      </div>
+    `;
+    return popup;
+  }
+
+  attachPopupEvents(popup) {
+    const closeBtn = popup.querySelector('#closeNewsletterBtn');
+    if (closeBtn) {
+      const newCloseBtn = closeBtn.cloneNode(true);
+      closeBtn.parentNode.replaceChild(newCloseBtn, closeBtn);
+      newCloseBtn.addEventListener('click', () => {
+        popup.hidden = true;
+        popup.style.display = 'none';
       });
     }
+    
+    const laterBtn = popup.querySelector('#dismissNewsletterPopup');
+    if (laterBtn) {
+      const newLaterBtn = laterBtn.cloneNode(true);
+      laterBtn.parentNode.replaceChild(newLaterBtn, laterBtn);
+      newLaterBtn.addEventListener('click', () => {
+        popup.hidden = true;
+        popup.style.display = 'none';
+      });
+    }
+    
+    const form = popup.querySelector('#newsletterPopupForm');
+    if (form) {
+      const newForm = form.cloneNode(true);
+      form.parentNode.replaceChild(newForm, form);
+      newForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        this.handleSubscribe(e, () => {
+          popup.hidden = true;
+          popup.style.display = 'none';
+        });
+      });
+    }
+    
+    popup.addEventListener('click', (e) => {
+      if (e.target === popup) {
+        popup.hidden = true;
+        popup.style.display = 'none';
+      }
+    });
   }
 
   async handleSubscribe(e, onSuccess = null) {
     e.preventDefault();
-    const input = e.target.querySelector('input[type="email"]');
-    const email = input?.value.trim();
+    e.stopPropagation();
+    
+    let email = null;
+    const emailInput = e.target?.querySelector('input[type="email"]') || getElement('newsletterEmailPopup', false);
+    if (emailInput) email = emailInput.value.trim();
     
     if (!email || !this.validateEmail(email)) {
-      showToast('Email invalide', 'warning');
+      showToast('📧 Email invalide', 'warning');
       return;
     }
     
     localStorage.setItem('newsletter_subscribed', 'true');
     localStorage.setItem('newsletter_email', email);
-    analytics.track('newsletter_subscribe', { email: email.substring(0, 3) + '***' });
+    localStorage.setItem('newsletter_popup_seen', 'true');
+    
+    if (analytics && analytics.track) {
+      analytics.track('newsletter_subscribe', { email: email.substring(0, 3) + '***' });
+    }
+    
     showToast('✅ Merci pour votre abonnement !', 'success');
+    
+    if (emailInput) emailInput.value = '';
+    
+    const footerForm = getElement('newsletterForm', false);
+    if (footerForm) {
+      const footerInput = footerForm.querySelector('input[type="email"]');
+      if (footerInput) footerInput.value = '';
+    }
+    
     if (onSuccess) onSuccess();
   }
 
@@ -1318,6 +1438,7 @@ window.shareResource = function(url, title) {
   }
   analytics.track('resource_share', { title });
 };
+
 // ============================================================
 // SECTION 13 : MOT DU JOUR
 // ============================================================
