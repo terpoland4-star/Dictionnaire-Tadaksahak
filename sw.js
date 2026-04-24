@@ -1,15 +1,17 @@
 // ============================================
-// SERVICE WORKER - Tadaksahak Learning v9
+// SERVICE WORKER - Tadaksahak Learning v10
 // Version avec mise à jour auto et installation après 3 visites
 // Stratégie mixte : cache vs réseau
 // INCLUT : Propositions relatives (Christiansen & Levinsohn 2003)
+// INCLUT : Actualités WordPress, Partenaires, Newsletter
 // CORRIGÉ : Plus d'erreur "Response body is already used"
 // ============================================
 
-const CACHE_NAME = 'tadaksahak-v9';
-const STATIC_CACHE = 'tadaksahak-static-v9';
-const DATA_CACHE = 'tadaksahak-data-v9';
-const MEDIA_CACHE = 'tadaksahak-media-v9';
+const CACHE_NAME = 'tadaksahak-v10';
+const STATIC_CACHE = 'tadaksahak-static-v10';
+const DATA_CACHE = 'tadaksahak-data-v10';
+const MEDIA_CACHE = 'tadaksahak-media-v10';
+const API_CACHE = 'tadaksahak-api-v10';
 
 // ============================================
 // FICHIERS STATIQUES (Cache First)
@@ -22,9 +24,11 @@ const staticUrls = [
   './manifest.webmanifest',
   './livre-viewer.html',
   './sw.js',
+  './offline.html',
   './images/idaksahak_round.png',
   './images/hamadine_bio.jpg',
-  './images/idaksahak_square.png'
+  './images/idaksahak_square.png',
+  './images/og-image.jpg'
 ];
 
 // ============================================
@@ -52,7 +56,17 @@ const dataUrls = [
   './data/emission.json',
   './data/themes.json',
   './data/audios.json',
-  './data/histoire.json'
+  './data/histoire.json',
+  './data/actualites.json',
+  './data/partenaires.json'
+];
+
+// ============================================
+// URLS API EXTERNES (Stale-While-Revalidate)
+// ============================================
+const apiUrls = [
+  'https://idaksahak.com/wp-json/wp/v2/posts',
+  'https://idaksahak.com/wp-json/wp/v2/posts?per_page=6&_embed'
 ];
 
 // ============================================
@@ -65,19 +79,21 @@ const audioExtensions = /\.(mp3|wav|ogg|m4a|flac)$/i;
 // INSTALLATION - Cache des fichiers statiques
 // ============================================
 self.addEventListener('install', event => {
-  console.log(`📦 SW: Installation ${CACHE_NAME} - Tadaksahak Learning (avec relatives)`);
+  console.log(`📦 SW: Installation ${CACHE_NAME} - Tadaksahak Learning Ultimate`);
   
   event.waitUntil(
     (async () => {
       await caches.open(STATIC_CACHE);
       await caches.open(DATA_CACHE);
       await caches.open(MEDIA_CACHE);
+      await caches.open(API_CACHE);
       
       const cacheStatic = await caches.open(STATIC_CACHE);
       const results = await Promise.allSettled(
         [...staticUrls, ...externalUrls].map(async url => {
           try {
             await cacheStatic.add(url);
+            console.log(`✅ Cache static: ${url}`);
           } catch (err) {
             console.warn(`⚠️ Échec cache ${url}:`, err.message);
           }
@@ -86,6 +102,20 @@ self.addEventListener('install', event => {
       
       const succeeded = results.filter(r => r.status === 'fulfilled').length;
       console.log(`✅ Cache static: ${succeeded}/${results.length} fichiers`);
+      
+      // Précharger les données essentielles
+      const cacheData = await caches.open(DATA_CACHE);
+      for (const dataUrl of dataUrls.slice(0, 5)) {
+        try {
+          const response = await fetch(dataUrl);
+          if (response.ok) {
+            await cacheData.put(dataUrl, response);
+            console.log(`✅ Préchargé: ${dataUrl}`);
+          }
+        } catch (err) {
+          console.warn(`⚠️ Préchargement échoué: ${dataUrl}`);
+        }
+      }
       
       return self.skipWaiting();
     })()
@@ -100,21 +130,66 @@ self.addEventListener('fetch', event => {
   const pathname = url.pathname;
   const request = event.request;
   
+  // Ignorer les requêtes problématiques
   if (request.method === 'HEAD') {
     event.respondWith(fetch(request));
     return;
   }
   
-  if (pathname.includes('chrome-extension') || pathname.includes('__WB')) {
+  if (pathname.includes('chrome-extension') || pathname.includes('__WB') || pathname.includes('webpack')) {
     return;
   }
   
-  if (pathname.includes('analytics') || pathname.includes('tracking')) {
+  if (pathname.includes('analytics') || pathname.includes('tracking') || pathname.includes('pixel')) {
     event.respondWith(fetch(request));
     return;
   }
   
-  // ---- STRATÉGIE 1 : Données JSON (Network First) - CORRIGÉ ----
+  // ---- STRATÉGIE 1 : API WordPress (Stale-While-Revalidate) ----
+  if (apiUrls.some(apiUrl => request.url.includes(apiUrl))) {
+    event.respondWith(
+      (async () => {
+        const cached = await caches.match(request);
+        
+        // Mise à jour en arrière-plan
+        fetch(request.clone())
+          .then(networkResponse => {
+            if (networkResponse && networkResponse.ok) {
+              caches.open(API_CACHE).then(cache => {
+                try {
+                  cache.put(request, networkResponse.clone());
+                  console.log(`✅ API WordPress mise en cache: ${pathname}`);
+                } catch (e) {
+                  console.warn(`⚠️ Impossible de cacher l'API: ${pathname}`);
+                }
+              });
+            }
+          })
+          .catch(() => {});
+        
+        if (cached) {
+          console.log(`📀 API WordPress depuis cache: ${pathname}`);
+          return cached;
+        }
+        
+        const networkResponse = await fetch(request);
+        if (networkResponse && networkResponse.ok) {
+          return networkResponse;
+        }
+        
+        // Fallback actualités locales
+        const fallbackActualites = await caches.match('./data/actualites.json');
+        if (fallbackActualites) return fallbackActualites;
+        
+        return new Response(JSON.stringify([]), {
+          headers: { 'Content-Type': 'application/json' }
+        });
+      })()
+    );
+    return;
+  }
+  
+  // ---- STRATÉGIE 2 : Données JSON (Network First) - CORRIGÉ ----
   if (dataUrls.some(dataUrl => pathname === dataUrl || pathname.endsWith(dataUrl))) {
     event.respondWith(
       (async () => {
@@ -142,9 +217,30 @@ self.addEventListener('fetch', event => {
           if (pathname.includes('relatives.json')) {
             return new Response(JSON.stringify({
               strategies: [
-                { marqueur: "ayo", usage_fr: "Pronom relatif (singulier, nom défini, restrictif)", exemples: [] },
-                { marqueur: "∅", usage_fr: "Gap strategy (nom indéfini, restrictif)", exemples: [] },
-                { marqueur: "sa", usage_fr: "Non-restrictif (information supplémentaire)", exemples: [] }
+                { 
+                  marqueur: "ayo", 
+                  marqueur_sg: "ayo", 
+                  usage_fr: "Pronom relatif (singulier, nom défini, restrictif)", 
+                  usage_en: "Relative pronoun (singular, definite noun, restrictive)",
+                  usage_ar: "ضمير موصول (مفرد، اسم معرف، حصري)",
+                  exemples: [
+                    { tadaksahak: "Bora [ayo a-taw-kat] a-zumbu-kat.", glose_fr: "personne [qui est.arrivée] est.descendue", traduction_fr: "La personne qui est arrivée est descendue" }
+                  ]
+                },
+                { 
+                  marqueur: "∅", 
+                  usage_fr: "Gap strategy (nom indéfini, restrictif)", 
+                  usage_en: "Gap strategy (indefinite noun, restrictive)",
+                  usage_ar: "استراتيجية الفجوة (اسم نكرة، حصري)",
+                  exemples: []
+                },
+                { 
+                  marqueur: "sa", 
+                  usage_fr: "Non-restrictif (information supplémentaire)", 
+                  usage_en: "Non-restrictive (additional information)",
+                  usage_ar: "غير حصري (معلومات إضافية)",
+                  exemples: []
+                }
               ],
               accessibilite: true,
               exceptions: {}
@@ -163,6 +259,13 @@ self.addEventListener('fetch', event => {
             ]), { headers: { 'Content-Type': 'application/json' } });
           }
           
+          // Fallback pour actualites.json
+          if (pathname.includes('actualites.json')) {
+            return new Response(JSON.stringify([
+              { id: 1, titre: "Bienvenue sur Tadaksahak Learning", date: new Date().toISOString(), resume: "Plateforme dédiée à la langue et culture Idaksahak", url: "#", image: null }
+            ]), { headers: { 'Content-Type': 'application/json' } });
+          }
+          
           return new Response(JSON.stringify({ error: 'Hors-ligne', message: 'Données non disponibles' }), {
             headers: { 'Content-Type': 'application/json' }
           });
@@ -172,7 +275,7 @@ self.addEventListener('fetch', event => {
     return;
   }
   
-  // ---- STRATÉGIE 2 : Images (Stale-While-Revalidate) - CORRIGÉ ----
+  // ---- STRATÉGIE 3 : Images (Stale-While-Revalidate) - CORRIGÉ ----
   if (imageExtensions.test(pathname) || pathname.includes('/images/')) {
     event.respondWith(
       (async () => {
@@ -210,7 +313,7 @@ self.addEventListener('fetch', event => {
     return;
   }
   
-  // ---- STRATÉGIE 3 : Fichiers audio (Network First avec fallback) - CORRIGÉ ----
+  // ---- STRATÉGIE 4 : Fichiers audio (Network First avec fallback) - CORRIGÉ ----
   if (audioExtensions.test(pathname) || pathname.includes('/audio/')) {
     event.respondWith(
       (async () => {
@@ -240,7 +343,7 @@ self.addEventListener('fetch', event => {
     return;
   }
   
-  // ---- STRATÉGIE 4 : Fichiers statiques (Cache First) ----
+  // ---- STRATÉGIE 5 : Fichiers statiques (Cache First) ----
   if (pathname.endsWith('.html') || pathname.endsWith('.css') || pathname.endsWith('.js')) {
     event.respondWith(
       (async () => {
@@ -265,8 +368,10 @@ self.addEventListener('fetch', event => {
           throw new Error('Network response not ok');
         } catch (error) {
           if (pathname.endsWith('.html') || pathname === '/' || pathname === '') {
-            const offlinePage = await caches.match('./index.html');
+            const offlinePage = await caches.match('./offline.html');
             if (offlinePage) return offlinePage;
+            const indexPage = await caches.match('./index.html');
+            if (indexPage) return indexPage;
           }
           return new Response('Hors-ligne', { status: 503, headers: { 'Content-Type': 'text/plain' } });
         }
@@ -275,7 +380,7 @@ self.addEventListener('fetch', event => {
     return;
   }
   
-  // ---- STRATÉGIE 5 : Manifest et Webmanifest (Cache First) ----
+  // ---- STRATÉGIE 6 : Manifest et Webmanifest (Cache First) ----
   if (pathname.includes('manifest') || pathname.includes('webmanifest')) {
     event.respondWith(
       (async () => {
@@ -287,7 +392,7 @@ self.addEventListener('fetch', event => {
     return;
   }
   
-  // ---- STRATÉGIE 6 : Autres ressources (Network First) ----
+  // ---- STRATÉGIE 7 : Autres ressources (Network First) ----
   event.respondWith(
     (async () => {
       try {
@@ -320,13 +425,13 @@ self.addEventListener('fetch', event => {
 // ACTIVATION - Nettoyage des anciens caches
 // ============================================
 self.addEventListener('activate', event => {
-  console.log(`🚀 SW: Activation ${CACHE_NAME} - Tadaksahak Learning (avec relatives)`);
+  console.log(`🚀 SW: Activation ${CACHE_NAME} - Tadaksahak Learning Ultimate`);
   
   event.waitUntil(
     (async () => {
       const cacheNames = await caches.keys();
       const cachesToDelete = cacheNames.filter(name => {
-        return name !== STATIC_CACHE && name !== DATA_CACHE && name !== MEDIA_CACHE;
+        return name !== STATIC_CACHE && name !== DATA_CACHE && name !== MEDIA_CACHE && name !== API_CACHE;
       });
       
       await Promise.all(
@@ -336,15 +441,16 @@ self.addEventListener('activate', event => {
         })
       );
       
-      console.log(`✅ Caches actifs: ${STATIC_CACHE}, ${DATA_CACHE}, ${MEDIA_CACHE}`);
+      console.log(`✅ Caches actifs: ${STATIC_CACHE}, ${DATA_CACHE}, ${MEDIA_CACHE}, ${API_CACHE}`);
       
+      // Notifier les clients de la mise à jour
       const clients = await self.clients.matchAll({ type: 'window' });
       clients.forEach(client => {
-        try {
-          client.navigate(client.url);
-        } catch (e) {
-          console.warn(`Impossible de naviguer: ${client.url}`);
-        }
+        client.postMessage({
+          type: 'SW_ACTIVATED',
+          version: CACHE_NAME,
+          message: 'Nouvelle version disponible'
+        });
       });
       
       return self.clients.claim();
@@ -356,16 +462,23 @@ self.addEventListener('activate', event => {
 // GESTION DES MESSAGES
 // ============================================
 self.addEventListener('message', event => {
-  if (event.data === 'skipWaiting') {
+  const { data } = event;
+  
+  if (data === 'skipWaiting') {
     self.skipWaiting();
     event.waitUntil(
       self.clients.claim().then(() => {
         console.log('✅ SW: Mise à jour forcée');
+        self.clients.matchAll({ type: 'window' }).then(clients => {
+          clients.forEach(client => {
+            client.postMessage({ type: 'UPDATE_READY' });
+          });
+        });
       })
     );
   }
   
-  if (event.data === 'clearCache') {
+  if (data === 'clearCache') {
     event.waitUntil(
       (async () => {
         const cacheNames = await caches.keys();
@@ -378,7 +491,7 @@ self.addEventListener('message', event => {
     );
   }
   
-  if (event.data === 'checkUpdate') {
+  if (data === 'checkUpdate') {
     event.waitUntil(
       (async () => {
         try {
@@ -398,14 +511,35 @@ self.addEventListener('message', event => {
     );
   }
   
-  if (event.data === 'getVersion') {
+  if (data === 'getVersion') {
     if (event.ports && event.ports[0]) {
       event.ports[0].postMessage({ version: CACHE_NAME });
     }
   }
   
-  if (event.data && event.data.type === 'incrementVisit') {
+  if (data && data.type === 'incrementVisit') {
     console.log('👁️ Visite comptabilisée - SW notifié');
+    // Optionnel: stocker le compteur dans IndexedDB du SW
+  }
+  
+  if (data && data.type === 'prefetch') {
+    event.waitUntil(
+      (async () => {
+        const { urls } = data;
+        const cache = await caches.open(DATA_CACHE);
+        for (const url of urls) {
+          try {
+            const response = await fetch(url);
+            if (response.ok) {
+              await cache.put(url, response);
+              console.log(`✅ Préchargement: ${url}`);
+            }
+          } catch (err) {
+            console.warn(`⚠️ Préchargement échoué: ${url}`);
+          }
+        }
+      })()
+    );
   }
 });
 
@@ -502,10 +636,62 @@ self.addEventListener('sync', event => {
             console.warn(`⚠️ Sync échouée pour ${dataUrl}:`, err);
           }
         }
+        
+        // Sync des actualités WordPress
+        for (const apiUrl of apiUrls) {
+          try {
+            const response = await fetch(apiUrl);
+            if (response.ok) {
+              const apiCache = await caches.open(API_CACHE);
+              await apiCache.put(apiUrl, response);
+              console.log(`✅ Sync API: ${apiUrl}`);
+            }
+          } catch (err) {
+            console.warn(`⚠️ Sync API échouée: ${apiUrl}`);
+          }
+        }
+      })()
+    );
+  }
+  
+  if (event.tag === 'sync-newsletter') {
+    console.log('📧 Sync newsletter déclenchée');
+    event.waitUntil(
+      (async () => {
+        // Ici on pourrait envoyer les abonnements en attente
+        const pendingSubscriptions = await getPendingSubscriptions();
+        for (const sub of pendingSubscriptions) {
+          try {
+            await sendSubscriptionToServer(sub);
+          } catch (err) {
+            console.warn('Erreur envoi newsletter:', err);
+          }
+        }
       })()
     );
   }
 });
+
+// ============================================
+// FONCTIONS AIDE POUR SYNC
+// ============================================
+async function getPendingSubscriptions() {
+  // Récupérer depuis IndexedDB du SW
+  try {
+    const cache = await caches.open(DATA_CACHE);
+    const response = await cache.match('./pending-subscriptions');
+    if (response) {
+      return await response.json();
+    }
+  } catch (e) {}
+  return [];
+}
+
+async function sendSubscriptionToServer(subscription) {
+  // À implémenter si besoin d'un endpoint serveur
+  console.log('📧 Envoi subscription:', subscription.email);
+  return Promise.resolve();
+}
 
 // ============================================
 // GESTION DES ERREURS GLOBALES
@@ -523,3 +709,5 @@ self.addEventListener('unhandledrejection', event => {
 // ============================================
 console.log(`✅ Service Worker ${CACHE_NAME} chargé`);
 console.log('📚 Module des propositions relatives intégré (Christiansen & Levinsohn 2003)');
+console.log('📰 Module des actualités WordPress intégré');
+console.log('🤝 Module des partenaires intégré');
