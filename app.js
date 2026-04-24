@@ -1,13 +1,15 @@
 // ==============================
 // APPLICATION TADAKSAHAK LEARNING
-// VERSION ULTIME FUSIONNÉE
-// Fusion : Robustesse (v1) + UI Premium (v2)
+// VERSION ULTIME COMPLÈTE
+// Avec : Dictionnaire, Grammaire, Contes, Émissions, Chat Bot, Audio, Photos, Vidéos
+// Livres, Rapports, Actualités, Quiz, Flashcards, Thèmes, Timeline, Carte
+// + NOUVEAU : Analytics, Newsletter, Accessibilité, Partage Social
 // ==============================
 
-console.log("🚀 Démarrage de l'application fusionnée...");
+console.log("🚀 Démarrage de l'application Tadaksahak Ultimate...");
 
 // ============================================================
-// SECTION 1 : INTERNATIONALISATION (i18n) - VERSION ÉTENDUE
+// SECTION 1 : INTERNATIONALISATION (i18n) - VERSION COMPLÈTE
 // ============================================================
 
 const i18n = {
@@ -35,6 +37,7 @@ const i18n = {
     nav_search: "🔍 Recherche livres",
     nav_dashboard: "📊 Tableau de bord",
     nav_ressources: "📚 Ressources académiques",
+    nav_partenaires: "🤝 Partenaires",
     welcome_title: "Bienvenue",
     welcome_subtitle: "Une plateforme dédiée à la langue et à la culture Tadaksahak.",
     go_dico: "📖 Accéder au dictionnaire",
@@ -43,6 +46,7 @@ const i18n = {
     stat_words: "mots",
     stat_audios: "audios",
     stat_books: "livres",
+    stat_users: "utilisateurs",
     dictionary_title: "📖 Dictionnaire Tadaksahak",
     grammar_title: "📚 Grammaire Tadaksahak",
     grammar_desc: "Verbes causatifs et passifs d'après Christiansen-Bolli (2010)",
@@ -117,7 +121,26 @@ const i18n = {
     articles_section: "📖 Articles et publications",
     bibliography_section: "📚 Bibliographie suggérée",
     share_resource: "Partager",
-    see_more: "Voir plus →"
+    see_more: "Voir plus →",
+    partenaires_title: "🤝 Nos partenaires",
+    partenaires_subtitle: "Ils soutiennent la préservation de la culture Idaksahak",
+    newsletter_title: "📧 Restez connecté !",
+    newsletter_desc: "Recevez les nouveaux mots et actualités de la communauté Idaksahak.",
+    newsletter_subscribe: "S'abonner",
+    newsletter_note: "Aucun spam, désabonnement à tout moment.",
+    footer_quicklinks: "Liens rapides",
+    footer_contact: "Contact",
+    footer_follow: "Suivez-nous",
+    dev_message: "Plateforme opérationnelle — Nouvelles fonctionnalités et services linguistiques à venir",
+    gallery_all: "📷 Toutes",
+    gallery_culture: "🎭 Culture",
+    gallery_events: "📅 Événements",
+    gallery_portraits: "👤 Portraits",
+    gallery_geography: "🗺️ Géographie",
+    timeline_filter_all: "📜 Tous",
+    timeline_filter_reunion: "📢 Réunions",
+    timeline_filter_campagne: "🎯 Campagnes",
+    timeline_filter_creation: "✨ Créations"
   },
   ar: {
     loading: "جاري تحميل التطبيق...",
@@ -143,6 +166,7 @@ const i18n = {
     nav_search: "🔍 بحث في الكتب",
     nav_dashboard: "📊 لوحة التحكم",
     nav_ressources: "📚 الموارد الأكاديمية",
+    nav_partenaires: "🤝 الشركاء",
     welcome_title: "مرحبًا",
     welcome_subtitle: "منصة مخصصة للغة والثقافة التدكساهقية.",
     go_dico: "📖 الذهاب إلى القاموس",
@@ -151,6 +175,7 @@ const i18n = {
     stat_words: "كلمة",
     stat_audios: "صوتيات",
     stat_books: "كتب",
+    stat_users: "مستخدم",
     dictionary_title: "📖 قاموس تدكساهق",
     grammar_title: "📚 قواعد تدكساهق",
     grammar_desc: "الأفعال السببية والمجهولة حسب كريستيانسن-بولي (٢٠١٠)",
@@ -225,7 +250,17 @@ const i18n = {
     articles_section: "📖 المقالات والمنشورات",
     bibliography_section: "📚 المراجع المقترحة",
     share_resource: "مشاركة",
-    see_more: "عرض المزيد ←"
+    see_more: "عرض المزيد ←",
+    partenaires_title: "🤝 شركاؤنا",
+    partenaires_subtitle: "يدعمون الحفاظ على ثقافة إدكساهق",
+    newsletter_title: "📧 ابق على اتصال",
+    newsletter_desc: "احصل على الكلمات الجديدة وأخبار المجتمع",
+    newsletter_subscribe: "اشترك",
+    newsletter_note: "لا بريد عشوائي، إلغاء الاشتراك في أي وقت",
+    footer_quicklinks: "روابط سريعة",
+    footer_contact: "اتصل بنا",
+    footer_follow: "تابعنا",
+    dev_message: "منصة تشغيلية — ميزات وخدمات لغوية جديدة قريبًا"
   },
   en: {
     loading: "Loading application...",
@@ -251,6 +286,7 @@ const i18n = {
     nav_search: "🔍 Search books",
     nav_dashboard: "📊 Dashboard",
     nav_ressources: "📚 Academic Resources",
+    nav_partenaires: "🤝 Partners",
     welcome_title: "Welcome",
     welcome_subtitle: "A platform dedicated to the Tadaksahak language and culture.",
     go_dico: "📖 Go to dictionary",
@@ -259,6 +295,7 @@ const i18n = {
     stat_words: "words",
     stat_audios: "audios",
     stat_books: "books",
+    stat_users: "users",
     dictionary_title: "📖 Tadaksahak Dictionary",
     grammar_title: "📚 Tadaksahak Grammar",
     grammar_desc: "Causative and passive verbs from Christiansen-Bolli (2010)",
@@ -333,7 +370,17 @@ const i18n = {
     articles_section: "📖 Articles and publications",
     bibliography_section: "📚 Suggested bibliography",
     share_resource: "Share",
-    see_more: "See more →"
+    see_more: "See more →",
+    partenaires_title: "🤝 Our Partners",
+    partenaires_subtitle: "They support the preservation of Idaksahak culture",
+    newsletter_title: "📧 Stay connected",
+    newsletter_desc: "Get new words and community news",
+    newsletter_subscribe: "Subscribe",
+    newsletter_note: "No spam, unsubscribe anytime",
+    footer_quicklinks: "Quick links",
+    footer_contact: "Contact",
+    footer_follow: "Follow us",
+    dev_message: "Operational platform — New linguistic features and services coming soon"
   }
 };
 
@@ -367,23 +414,24 @@ const AppState = {
   currentBlockIndex: 0,
   currentGrammarLang: localStorage.getItem('preferredLanguage') || 'fr',
   bookInitialized: false,
-  activeGrammarTab: 'causative'
+  activeGrammarTab: 'causative',
+  // NOUVEAUX
+  actualites: [],
+  partenaires: [],
+  userId: null,
+  sessionStart: Date.now(),
+  analyticsEnabled: localStorage.getItem('analytics_consent') === 'true'
 };
 
 // ============================================================
-// SECTION 3 : ÉLÉMENTS DOM (initialisés dans DOMContentLoaded)
+// SECTION 3 : ÉLÉMENTS DOM
 // ============================================================
 
 let DOM = {};
 
-/**
- * Helper sécurisé pour accès DOM
- */
 function getElement(id, warnIfMissing = true) {
   const el = document.getElementById(id);
-  if (!el && warnIfMissing) {
-    console.warn(`⚠️ Élément DOM introuvable : #${id}`);
-  }
+  if (!el && warnIfMissing) console.warn(`⚠️ Élément DOM introuvable : #${id}`);
   return el;
 }
 
@@ -421,7 +469,7 @@ function initDOMReferences() {
 }
 
 // ============================================================
-// SECTION 4 : UTILITAIRES (Version robuste de l'ancienne)
+// SECTION 4 : UTILITAIRES
 // ============================================================
 
 function escapeHtml(str) {
@@ -454,9 +502,6 @@ function levenshtein(a, b) {
   return matrix[an][bn];
 }
 
-/**
- * Factory debounce réutilisable
- */
 function debounce(fn, delay = 300) {
   let timer;
   return function(...args) {
@@ -465,9 +510,6 @@ function debounce(fn, delay = 300) {
   };
 }
 
-/**
- * Cache simple pour mémoïsation
- */
 function createCache(maxSize = 100) {
   const cache = new Map();
   return {
@@ -523,15 +565,14 @@ function showSkeleton(containerId) {
   `;
 }
 
-/**
- * Wrapper pour chargement avec fallback
- */
 async function chargerAvecFallback(fn, nom) {
   try {
     await fn();
     console.log(`✅ ${nom} : OK`);
+    return true;
   } catch (e) {
     console.warn(`⚠️ ${nom} non disponible : ${e.message}`);
+    return false;
   }
 }
 
@@ -599,7 +640,6 @@ function detectSystemTheme() {
     setTheme(prefersDark ? 'dark' : 'light');
   }
 }
-
 // ============================================================
 // SECTION 6 : GESTION DE LA LANGUE
 // ============================================================
@@ -629,7 +669,6 @@ function setLanguage(lang) {
   const rechercheLivres = getElement("rechercheLivres", false);
   if (rechercheLivres) rechercheLivres.placeholder = i18n[lang].search_placeholder || "Rechercher un livre...";
   
-  // Rafraîchissement conditionnel
   const sectionRefreshMap = {
     livres: () => afficherLivres(),
     photos: () => afficherPhotos(),
@@ -641,7 +680,9 @@ function setLanguage(lang) {
     emissions: () => AppState.emissionsData && afficherEmissionsPremium(),
     themes: () => AppState.themesData && afficherThemesPremium(),
     flashcards: () => AppState.vocabulaire.length && genererFlashcards(),
-    ressources: () => afficherRessources()
+    ressources: () => afficherRessources(),
+    actualites: () => AppState.actualites.length && afficherActualites(),
+    partenaires: () => AppState.partenaires.length && afficherPartenaires()
   };
   
   for (const [sectionId, refreshFn] of Object.entries(sectionRefreshMap)) {
@@ -656,6 +697,8 @@ function setLanguage(lang) {
   document.querySelectorAll('.lang-flag').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.lang === lang);
   });
+  
+  analytics.track('language_change', { language: lang });
 }
 
 function updateChatSuggestions() {
@@ -668,7 +711,150 @@ function updateChatSuggestions() {
 }
 
 // ============================================================
-// SECTION 7 : BOT HAMADINE (Version améliorée avec relatives)
+// SECTION 7 : ANALYTICS MANAGER
+// ============================================================
+
+class AnalyticsManager {
+  constructor() {
+    this.userId = this.getOrCreateUserId();
+    this.eventsQueue = [];
+    this.init();
+  }
+
+  getOrCreateUserId() {
+    let id = localStorage.getItem('tadaksahak_user_id');
+    if (!id) {
+      id = 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+      localStorage.setItem('tadaksahak_user_id', id);
+    }
+    return id;
+  }
+
+  init() {
+    if (!AppState.analyticsEnabled) return;
+    
+    this.track('session_start', {
+      timestamp: Date.now(),
+      referrer: document.referrer,
+      screen: `${window.innerWidth}x${window.innerHeight}`,
+      language: AppState.currentLanguage
+    });
+    
+    window.addEventListener('beforeunload', () => {
+      this.track('session_end', { duration: Date.now() - AppState.sessionStart });
+      this.flush();
+    });
+    
+    window.addEventListener('error', (e) => {
+      this.track('error', { message: e.message, filename: e.filename });
+    });
+  }
+
+  track(event, properties = {}) {
+    if (!AppState.analyticsEnabled) return;
+    
+    const eventData = {
+      event,
+      properties,
+      userId: this.userId,
+      timestamp: Date.now(),
+      url: window.location.href,
+      language: AppState.currentLanguage
+    };
+    
+    this.eventsQueue.push(eventData);
+    if (this.eventsQueue.length >= 10) this.flush();
+  }
+
+  async flush() {
+    if (!AppState.analyticsEnabled || this.eventsQueue.length === 0) return;
+    const events = [...this.eventsQueue];
+    this.eventsQueue = [];
+    console.log(`📊 Analytics: ${events.length} events`, events);
+  }
+
+  enable() {
+    AppState.analyticsEnabled = true;
+    localStorage.setItem('analytics_consent', 'true');
+    this.init();
+    this.track('analytics_enabled');
+  }
+
+  disable() {
+    AppState.analyticsEnabled = false;
+    localStorage.setItem('analytics_consent', 'false');
+    this.eventsQueue = [];
+    this.track('analytics_disabled');
+  }
+}
+
+const analytics = new AnalyticsManager();
+
+// ============================================================
+// SECTION 8 : NEWSLETTER MANAGER
+// ============================================================
+
+class NewsletterManager {
+  constructor() {
+    this.init();
+  }
+
+  init() {
+    const hasSubscribed = localStorage.getItem('newsletter_subscribed') === 'true';
+    const hasSeenPopup = localStorage.getItem('newsletter_popup_seen') === 'true';
+    
+    if (!hasSubscribed && !hasSeenPopup) {
+      setTimeout(() => this.showPopup(), 7000);
+    }
+    
+    const form = getElement('newsletterForm', false);
+    if (form) {
+      form.addEventListener('submit', (e) => this.handleSubscribe(e));
+    }
+  }
+
+  showPopup() {
+    const popup = getElement('newsletterPopup', false);
+    if (!popup) return;
+    popup.hidden = false;
+    localStorage.setItem('newsletter_popup_seen', 'true');
+    
+    const closeBtn = getElement('closeNewsletter', false);
+    if (closeBtn) closeBtn.addEventListener('click', () => { popup.hidden = true; });
+    
+    const form = popup.querySelector('.newsletter-form');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        this.handleSubscribe(e, () => { popup.hidden = true; });
+      });
+    }
+  }
+
+  async handleSubscribe(e, onSuccess = null) {
+    e.preventDefault();
+    const input = e.target.querySelector('input[type="email"]');
+    const email = input?.value.trim();
+    
+    if (!email || !this.validateEmail(email)) {
+      showToast('Email invalide', 'warning');
+      return;
+    }
+    
+    localStorage.setItem('newsletter_subscribed', 'true');
+    localStorage.setItem('newsletter_email', email);
+    analytics.track('newsletter_subscribe', { email: email.substring(0, 3) + '***' });
+    showToast('✅ Merci pour votre abonnement !', 'success');
+    if (onSuccess) onSuccess();
+  }
+
+  validateEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+}
+
+// ============================================================
+// SECTION 9 : BOT HAMADINE
 // ============================================================
 
 const botResponses = {
@@ -817,6 +1003,7 @@ function traiterSaisie() {
     afficheMsg("bot", reponseBot(txt));
     DOM.chatInput.disabled = false;
     DOM.chatInput.focus();
+    analytics.track('chat_message', { message_length: txt.length });
   }, 400);
 }
 
@@ -830,7 +1017,7 @@ function initChatEvents() {
 }
 
 // ============================================================
-// SECTION 8 : DICTIONNAIRE (Version robuste avec cache)
+// SECTION 10 : DICTIONNAIRE
 // ============================================================
 
 async function chargerDictionnaire() {
@@ -894,6 +1081,12 @@ function afficherMot(item) {
         <button class="btn-small" data-action="share">📤 ${i18n[lang].share}</button>
         <button class="btn-small" data-action="favorite">⭐ ${isFavori ? i18n[lang].remove_favorite : i18n[lang].add_favorite}</button>
       </div>
+      <div class="share-buttons" id="dictionaryShare">
+        <button class="share-btn whatsapp" onclick="shareCurrentWord('whatsapp')">📱 WhatsApp</button>
+        <button class="share-btn twitter" onclick="shareCurrentWord('twitter')">🐦 Twitter</button>
+        <button class="share-btn facebook" onclick="shareCurrentWord('facebook')">📘 Facebook</button>
+        <button class="share-btn copy" onclick="shareCurrentWord('copy')">📋 Copier</button>
+      </div>
     `;
   }
   
@@ -907,6 +1100,7 @@ function afficherMot(item) {
     }
   }
   ajouterHistorique(item.mot);
+  analytics.track('word_view', { word: item.mot, category: item.cat });
 }
 
 function navigationPrecedent() { if (AppState.currentIndex > 0) afficherMot(AppState.motsListe[AppState.currentIndex - 1]); }
@@ -1025,7 +1219,7 @@ function initDictionaryEvents() {
 }
 
 // ============================================================
-// SECTION 9 : HISTORIQUE & FAVORIS
+// SECTION 11 : HISTORIQUE & FAVORIS
 // ============================================================
 
 function ajouterHistorique(mot) {
@@ -1069,6 +1263,7 @@ function basculerFavori(item) {
   if (AppState.motActuel === item) afficherMot(item);
   const dashboard = getElement("dashboard", false);
   if (dashboard && !dashboard.hidden) afficherDashboard();
+  analytics.track('favorite_toggle', { word: item.mot, favori: !isFavori });
 }
 
 function partagerMot(item) {
@@ -1081,10 +1276,50 @@ function partagerMot(item) {
     navigator.clipboard?.writeText(text);
     showToast("📋 Copié dans le presse-papier", "success");
   }
+  analytics.track('word_share', { word: item.mot });
 }
 
 // ============================================================
-// SECTION 10 : MOT DU JOUR
+// SECTION 12 : PARTAGE SOCIAL
+// ============================================================
+
+window.shareCurrentWord = function(platform) {
+  if (!AppState.motActuel) return;
+  const lang = AppState.currentLanguage;
+  const word = AppState.motActuel.mot;
+  const def = lang === 'fr' ? AppState.motActuel.fr : lang === 'en' ? AppState.motActuel.en : AppState.motActuel.ar;
+  const text = `${word} : ${def}`;
+  const url = window.location.href;
+  
+  switch(platform) {
+    case 'whatsapp':
+      window.open(`https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`, '_blank');
+      break;
+    case 'twitter':
+      window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
+      break;
+    case 'facebook':
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
+      break;
+    case 'copy':
+      navigator.clipboard?.writeText(text + ' ' + url);
+      showToast('📋 Copié dans le presse-papier', 'success');
+      break;
+  }
+  analytics.track('social_share', { platform, word: AppState.motActuel.mot });
+};
+
+window.shareResource = function(url, title) {
+  if (navigator.share) {
+    navigator.share({ title, text: `Découvrez : ${title}`, url }).catch(() => {});
+  } else {
+    navigator.clipboard?.writeText(url);
+    showToast("📋 Lien copié dans le presse-papier", "success");
+  }
+  analytics.track('resource_share', { title });
+};
+// ============================================================
+// SECTION 13 : MOT DU JOUR
 // ============================================================
 
 function getWordOfDay() {
@@ -1125,7 +1360,7 @@ function showWordNotification() {
 }
 
 // ============================================================
-// SECTION 11 : LIVRE DE GRAMMAIRE INTERACTIF (Version premium)
+// SECTION 14 : LIVRE DE GRAMMAIRE INTERACTIF
 // ============================================================
 
 async function loadGrammarBook() {
@@ -1200,6 +1435,7 @@ function nextGrammarSpread() {
     AppState.currentBlockIndex += 2;
     updateGrammarSpread();
     animateBookSpread(-5);
+    analytics.track('grammar_page', { block: AppState.currentBlockIndex, direction: 'next' });
   }
 }
 
@@ -1208,6 +1444,7 @@ function prevGrammarSpread() {
     AppState.currentBlockIndex = Math.max(0, AppState.currentBlockIndex - 2);
     updateGrammarSpread();
     animateBookSpread(5);
+    analytics.track('grammar_page', { block: AppState.currentBlockIndex, direction: 'prev' });
   }
 }
 
@@ -1264,7 +1501,7 @@ async function showGrammarSection() {
 }
 
 // ============================================================
-// SECTION 12 : PROPOSITIONS RELATIVES (Version premium)
+// SECTION 15 : PROPOSITIONS RELATIVES
 // ============================================================
 
 async function chargerRelatives() {
@@ -1318,7 +1555,7 @@ async function afficherRelatives() {
 }
 
 // ============================================================
-// SECTION 13 : CONTES (Version premium)
+// SECTION 16 : CONTES
 // ============================================================
 
 async function chargerContes() {
@@ -1341,7 +1578,7 @@ function afficherContes() {
     const titre = lang === 'fr' ? conte.titre_fr : lang === 'en' ? conte.titre_en : conte.titre_ar;
     const resume = lang === 'fr' ? conte.resume_fr : lang === 'en' ? conte.resume_en : conte.resume_ar;
     html += `
-      <div class="conte-premium-card">
+      <div class="conte-premium-card animate-on-scroll">
         <div class="conte-card-icon">📖</div>
         <h3>${escapeHtml(titre || 'Sans titre')}</h3>
         <div class="conte-meta-premium"><span>📜 ${escapeHtml(conte.type || 'conte')}</span><span>🗣️ ${escapeHtml(conte.narrateur || 'Tradition orale')}</span></div>
@@ -1379,10 +1616,11 @@ function afficherConteDetail(conte) {
   const modal = getElement('conteModal', false);
   modal?.querySelector('.modal-close')?.addEventListener('click', () => modal.remove());
   modal?.addEventListener('click', (e) => { if (e.target === modal) modal.remove(); });
+  analytics.track('tale_read', { tale_id: conte.id });
 }
 
 // ============================================================
-// SECTION 14 : ÉMISSIONS (Version premium)
+// SECTION 17 : ÉMISSIONS
 // ============================================================
 
 async function chargerEmissions() {
@@ -1406,7 +1644,7 @@ function afficherEmissionsPremium() {
     const contexte = lang === 'fr' ? emission.contexte_fr : lang === 'en' ? emission.contexte_en : emission.contexte_ar;
     const emissionId = emission.id || 0;
     html += `
-      <div class="emission-premium-card">
+      <div class="emission-premium-card animate-on-scroll">
         <div class="emission-card-header"><div class="emission-icon">🎙️</div><div class="emission-info"><h4>${escapeHtml(titre)}</h4><div class="emission-meta-premium"><span>📅 ${emission.date || '?'}</span><span>🗣️ ${escapeHtml(emission.orateur || 'Inconnu')}</span><span>📍 ${escapeHtml(emission.lieu || '?')}</span></div></div></div>
         <p class="emission-contexte-premium">${escapeHtml(contexte || '')}</p>
         <button class="btn-emission-premium" data-emission-id="${emissionId}">🎧 Lire la transcription</button>
@@ -1430,11 +1668,12 @@ function afficherEmissionsPremium() {
     const isHidden = transcriptEl.hidden;
     transcriptEl.hidden = !isHidden;
     btn.textContent = isHidden ? '📖 Masquer la transcription' : '🎧 Lire la transcription';
+    analytics.track('emission_view', { emission_id: id });
   });
 }
 
 // ============================================================
-// SECTION 15 : THÈMES VOCABULAIRE (Version premium)
+// SECTION 18 : THÈMES VOCABULAIRE
 // ============================================================
 
 async function chargerThemes() {
@@ -1471,7 +1710,7 @@ function afficherThemesPremium() {
     const description = lang === 'fr' ? theme.description_fr : lang === 'en' ? theme.description_en : theme.description_ar;
     const motCount = theme.mots?.length || 0;
     html += `
-      <div class="theme-premium-card" data-theme-idx="${i}">
+      <div class="theme-premium-card animate-on-scroll" data-theme-idx="${i}">
         <div class="theme-premium-header"><div class="theme-premium-icon">📖</div><h3>${escapeHtml(titre)}</h3><span class="theme-premium-badge">${motCount} mots</span></div>
         <p class="theme-premium-desc">${escapeHtml(description || '')}</p>
         <div class="theme-premium-preview">${(theme.mots || []).slice(0, 4).map(m => `<span class="preview-word-premium">${escapeHtml(m.tad)}</span>`).join('')}${motCount > 4 ? `<span class="preview-more-premium">+${motCount - 4} autres</span>` : ''}</div>
@@ -1498,6 +1737,7 @@ function afficherThemesPremium() {
         wordsPanel.hidden = isExpanded;
         expandBtn.querySelector('.expand-icon').textContent = isExpanded ? '▼' : '▲';
         expandBtn.querySelector('.expand-label').textContent = isExpanded ? 'Explorer le thème' : 'Réduire';
+        analytics.track('theme_expand', { theme: idx, expanded: !isExpanded });
         return;
       }
       const playBtn = e.target.closest('[data-speak]');
@@ -1548,10 +1788,11 @@ function speakTextPremium(text) {
   utterance.rate = 0.8;
   window.speechSynthesis.cancel();
   window.speechSynthesis.speak(utterance);
+  analytics.track('text_to_speech', { text_length: text.length });
 }
 
 // ============================================================
-// SECTION 16 : FLASHCARDS (Version premium)
+// SECTION 19 : FLASHCARDS
 // ============================================================
 
 function genererFlashcards() {
@@ -1577,6 +1818,7 @@ function genererFlashcards() {
   AppState.currentFlashcardIndex = 0;
   afficherFlashcard();
   mettreAJourProgressionFlashcards();
+  analytics.track('flashcards_generate', { theme, count: motsFiltres.length });
 }
 
 function afficherFlashcard() {
@@ -1611,10 +1853,13 @@ function flashcardClickHandler(e) {
   if (!flashcard) return;
   const actionBtn = e.target.closest('[data-action]');
   if (actionBtn) {
-    if (actionBtn.dataset.action === 'correct') AppState.currentFlashcardIndex++;
-    else if (actionBtn.dataset.action === 'wrong') {
+    if (actionBtn.dataset.action === 'correct') {
+      AppState.currentFlashcardIndex++;
+      analytics.track('flashcard_correct');
+    } else if (actionBtn.dataset.action === 'wrong') {
       const wrongCard = AppState.currentFlashcards.splice(AppState.currentFlashcardIndex, 1)[0];
       AppState.currentFlashcards.push(wrongCard);
+      analytics.track('flashcard_wrong');
     }
     afficherFlashcard();
     mettreAJourProgressionFlashcards();
@@ -1643,18 +1888,20 @@ function initFlashcards() {
     AppState.currentFlashcardIndex = 0;
     afficherFlashcard();
     mettreAJourProgressionFlashcards();
+    showToast('🃏 Flashcards mélangées', 'info');
   });
   resetBtn?.addEventListener('click', () => {
     if (!AppState.currentFlashcards.length) return;
     AppState.currentFlashcardIndex = 0;
     afficherFlashcard();
     mettreAJourProgressionFlashcards();
+    showToast('🃏 Flashcards réinitialisées', 'info');
   });
   if (AppState.vocabulaire.length) genererFlashcards();
 }
 
 // ============================================================
-// SECTION 17 : QUIZ
+// SECTION 20 : QUIZ
 // ============================================================
 
 async function chargerQuiz() {
@@ -1676,6 +1923,7 @@ function demarrerQuiz() {
   if (!AppState.quizData?.[lang]) return;
   AppState.currentQuiz = { questions: AppState.quizData[lang], currentIndex: 0, score: 0, lang: lang };
   afficherQuestionQuiz();
+  analytics.track('quiz_start', { language: lang, question_count: AppState.currentQuiz.questions.length });
 }
 
 function afficherQuestionQuiz() {
@@ -1693,6 +1941,7 @@ function afficherQuestionQuiz() {
     if (selected === q.reponse) AppState.currentQuiz.score++;
     AppState.currentQuiz.currentIndex++;
     afficherQuestionQuiz();
+    analytics.track('quiz_answer', { correct: selected === q.reponse });
   }, { once: true });
 }
 
@@ -1709,10 +1958,14 @@ function terminerQuiz() {
   getElement('restartQuizBtn', false)?.addEventListener('click', demarrerQuiz);
   const dashboard = getElement("dashboard", false);
   if (dashboard && !dashboard.hidden) afficherDashboard();
+  analytics.track('quiz_complete', { score, total, percent, language: lang });
+  if (percent === 100) showToast('🎉 Parfait ! Score parfait au quiz !', 4000);
+  else if (percent >= 70) showToast(`📚 Bon travail ! Score: ${percent}%`, 3000);
+  else showToast(`📖 Continuez à apprendre ! Score: ${percent}%`, 3000);
 }
 
 // ============================================================
-// SECTION 18 : TIMELINE & CARTE
+// SECTION 21 : TIMELINE & CARTE
 // ============================================================
 
 async function chargerTimeline() {
@@ -1726,10 +1979,30 @@ async function chargerTimeline() {
 
 function afficherTimeline() {
   const container = getElement("timelineContainer", false);
-  if (!container || !AppState.timelineData) return;
-  const events = AppState.timelineData.filter(e => e.lang === AppState.currentLanguage);
-  if (!events.length) { container.innerHTML = "<p>Aucun événement</p>"; return; }
-  container.innerHTML = `<div class="timeline">${events.map(event => `<div class="timeline-item"><div class="timeline-date">${escapeHtml(event.date)}</div><div class="timeline-content"><h4>${escapeHtml(event.title)}</h4><p>${escapeHtml(event.description)}</p>${event.image ? `<img src="${escapeHtml(event.image)}" alt="" style="max-width:100%; border-radius:8px; margin-top:0.5rem;" loading="lazy">` : ''}</div></div>`).join('')}</div>`;
+  if (!container) return;
+  
+  let events = AppState.timelineData;
+  if (!events.length) {
+    events = [
+      { date: "1990", title_fr: "Début de la rébellion touarègue", description_fr: "Les communautés Idaksahak s'impliquent", type: "reunion", lang: "fr" },
+      { date: "2012", title_fr: "Crise du Nord du Mali", description_fr: "Nouveau conflit affectant la région", type: "campagne", lang: "fr" },
+      { date: "2015", title_fr: "Accord d'Alger", description_fr: "Signature de l'accord de paix", type: "creation", lang: "fr" }
+    ];
+  }
+  
+  const filteredEvents = events.filter(e => e.lang === AppState.currentLanguage);
+  if (!filteredEvents.length) { container.innerHTML = "<p>Aucun événement</p>"; return; }
+  
+  container.innerHTML = `<div class="timeline">${filteredEvents.map(event => `
+    <div class="timeline-item animate-on-scroll">
+      <div class="timeline-date">${escapeHtml(event.date)}</div>
+      <div class="timeline-content">
+        <h4>${escapeHtml(event.title_fr || event.title)}</h4>
+        <p>${escapeHtml(event.description_fr || event.description)}</p>
+        ${event.image ? `<img src="${escapeHtml(event.image)}" alt="" loading="lazy" style="max-width:100%; border-radius:8px; margin-top:0.5rem;">` : ''}
+      </div>
+    </div>
+  `).join('')}</div>`;
 }
 
 function initialiserCarte() {
@@ -1742,6 +2015,7 @@ function initialiserCarte() {
     const points = [{ lat: 15.9167, lon: 2.4167, fr: "Ménaka", ar: "ميناكا", en: "Ménaka" }, { lat: 16.2667, lon: -0.05, fr: "Gao", ar: "غاو", en: "Gao" }, { lat: 15.7167, lon: 0.9167, fr: "Talatayt", ar: "تالاتايت", en: "Talatayt" }];
     points.forEach(p => { const name = lang === 'fr' ? p.fr : lang === 'ar' ? p.ar : p.en; L.marker([p.lat, p.lon]).addTo(map).bindPopup(name); });
     AppState.mapInitialized = true;
+    analytics.track('map_viewed');
   }
   if (AppState.leafletLoaded) { creerCarte(); return; }
   const link = document.createElement('link'); link.rel = 'stylesheet'; link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css'; document.head.appendChild(link);
@@ -1749,7 +2023,7 @@ function initialiserCarte() {
 }
 
 // ============================================================
-// SECTION 19 : LIVRES & RAPPORTS
+// SECTION 22 : LIVRES & RAPPORTS
 // ============================================================
 
 async function afficherLivres() {
@@ -1763,7 +2037,7 @@ async function afficherLivres() {
     const langCible = AppState.currentLanguage === "fr" ? "Français" : AppState.currentLanguage === "ar" ? "Arabe" : "English";
     const livres = allLivres.filter(l => l.langue === langCible && l.type !== "rapport");
     if (!livres.length) { cont.innerHTML = `<p class="info-message">📚 Aucun livre dans cette langue.</p>`; return; }
-    cont.innerHTML = livres.map(livre => `<div class="livre-card">${livre.couverture ? `<div class="livre-cover"><img src="${escapeHtml(livre.couverture)}" alt="Couverture" loading="lazy" style="width:100%; border-radius:8px;"></div>` : ''}<div class="livre-titre">📖 ${escapeHtml(livre.titre)}</div><div class="livre-auteur">✍️ ${escapeHtml(livre.auteur)}</div><div class="livre-desc">${escapeHtml(livre.description || '')}</div><div class="livre-meta">🏷️ ${escapeHtml(livre.categorie || 'Général')} • 📅 ${livre.annee || '?'} • 📄 ${livre.pages || '?'} pages</div><div class="livre-actions"><a href="livre-viewer.html?id=${livre.id}" class="btn-small" target="_blank">📖 Lire l'ouvrage</a></div></div>`).join('');
+    cont.innerHTML = livres.map(livre => `<div class="livre-card animate-on-scroll">${livre.couverture ? `<div class="livre-cover"><img src="${escapeHtml(livre.couverture)}" alt="Couverture" loading="lazy" style="width:100%; border-radius:8px;"></div>` : ''}<div class="livre-titre">📖 ${escapeHtml(livre.titre)}</div><div class="livre-auteur">✍️ ${escapeHtml(livre.auteur)}</div><div class="livre-desc">${escapeHtml(livre.description || '')}</div><div class="livre-meta">🏷️ ${escapeHtml(livre.categorie || 'Général')} • 📅 ${livre.annee || '?'} • 📄 ${livre.pages || '?'} pages</div><div class="livre-actions"><a href="livre-viewer.html?id=${livre.id}" class="btn-small" target="_blank">📖 Lire l'ouvrage</a></div></div>`).join('');
   } catch(e) { console.error("Erreur chargement livres", e); cont.innerHTML = `<p class="error-message">❌ Erreur chargement livres.</p>`; }
 }
 
@@ -1778,90 +2052,116 @@ async function afficherRapports() {
     const langCible = AppState.currentLanguage === "fr" ? "Français" : AppState.currentLanguage === "ar" ? "Arabe" : "English";
     const rapports = allLivres.filter(l => l.type === "rapport" && l.langue === langCible);
     if (!rapports.length) { container.innerHTML = `<p class="info-message">📄 Aucun rapport dans cette langue.</p>`; return; }
-    container.innerHTML = `<div class="rapports-grid">${rapports.map(rapport => `<div class="rapport-card"><div class="rapport-type">📄 RAPPORT</div><h3 class="rapport-titre">${escapeHtml(rapport.titre)}</h3><div class="rapport-auteur">✍️ ${escapeHtml(rapport.auteur)}</div><div class="rapport-meta">📅 ${rapport.annee || '?'} • 🏷️ ${escapeHtml(rapport.categorie || 'Linguistique')}</div><div class="rapport-desc">${escapeHtml(rapport.description || '')}</div><div class="rapport-actions"><a href="livre-viewer.html?id=${rapport.id}" class="btn-small" target="_blank">📖 Lire le rapport</a></div></div>`).join('')}</div>`;
+    container.innerHTML = `<div class="rapports-grid">${rapports.map(rapport => `<div class="rapport-card animate-on-scroll"><div class="rapport-type">📄 RAPPORT</div><h3 class="rapport-titre">${escapeHtml(rapport.titre)}</h3><div class="rapport-auteur">✍️ ${escapeHtml(rapport.auteur)}</div><div class="rapport-meta">📅 ${rapport.annee || '?'} • 🏷️ ${escapeHtml(rapport.categorie || 'Linguistique')}</div><div class="rapport-desc">${escapeHtml(rapport.description || '')}</div><div class="rapport-actions"><a href="livre-viewer.html?id=${rapport.id}" class="btn-small" target="_blank">📖 Lire le rapport</a></div></div>`).join('')}</div>`;
   } catch(e) { console.error("Erreur chargement rapports", e); container.innerHTML = `<p class="error-message">❌ Erreur de chargement des rapports.</p>`; }
 }
 
 // ============================================================
-// SECTION 20 : PHOTOS
+// SECTION 23 : PHOTOS
 // ============================================================
 
 const imagesGalerie = [
-  { fichier: "data/images/livres/chef_idoguiritane_1.jpg", titre_fr: "Chef Idoguiritane à Tin Abaw", titre_ar: "الشيخ إيدوغيريتان في تين أبا", titre_en: "Chief Idoguiritane in Tin Abaw", legende_fr: "Portrait du chef historique de la fraction Idoguiritane.", legende_ar: "صورة للشيخ التاريخي لفصيلة إيدوغيريتان.", legende_en: "Portrait of the historical chief of the Idoguiritane fraction.", credit: "© Charles Grémont" },
-  { fichier: "data/images/livres/chef_idoguiritane_2.jpg", titre_fr: "Réunion traditionnelle à Tin Abaw", titre_ar: "اجتماع تقليدي في تين أبا", titre_en: "Traditional meeting in Tin Abaw", legende_fr: "Le chef entouré de notables.", legende_ar: "الشيخ وحوله الأعيان.", legende_en: "The chief surrounded by notables.", credit: "© Charles Grémont" },
-  { fichier: "data/images/livres/chef_idoguitirane_3.jpg", titre_fr: "Le chef et ses conseillers", titre_ar: "الشيخ ومستشاروه", titre_en: "The chief and his advisors", legende_fr: "Discussion des affaires de la communauté.", legende_ar: "مناقشة شؤون المجتمع.", legende_en: "Discussing community affairs.", credit: "© Charles Grémont" },
-  { fichier: "data/images/livres/Un jeune combattant Adaksahak, au nord de Ménaka, mars 1994. Photo C.G.jpeg", titre_fr: "Jeune combattant Idaksahak (1994)", titre_ar: "مقاتل شاب إدكساهق (١٩٩٤)", titre_en: "Young Idaksahak fighter (1994)", legende_fr: "Rébellion des années 1990, nord de Ménaka.", legende_ar: "تمرد التسعينيات، شمال مناكا.", legende_en: "1990s rebellion, north of Ménaka.", credit: "© Charles Grémont" },
-  { fichier: "data/images/livres/zone des idaksahak.jpeg", titre_fr: "Carte de la région des Idaksahak", titre_ar: "خريطة منطقة الإدكساهق", titre_en: "Map of the Idaksahak region", legende_fr: "Localisation dans le nord-est du Mali.", legende_ar: "الموقع في شمال شرق مالي.", legende_en: "Location in north-eastern Mali.", credit: "Charles Grémont" },
-  { fichier: "data/images/livres/idaksahak_square.png", titre_fr: "Logo de la communauté Idaksahak", titre_ar: "شعار مجتمع الإدكساهق", titre_en: "Logo of the Idaksahak community", legende_fr: "Symbole officiel : lecture, épée et dromadaires.", legende_ar: "الشعار الرسمي: القراءة، السيف والجمال.", legende_en: "Official symbol: reading, sword and dromedaries.", credit: "Communauté Idaksahak" }
+  { fichier: "data/images/livres/chef_idoguiritane_1.jpg", titre_fr: "Chef Idoguiritane à Tin Abaw", titre_ar: "الشيخ إيدوغيريتان في تين أبا", titre_en: "Chief Idoguiritane in Tin Abaw", legende_fr: "Portrait du chef historique de la fraction Idoguiritane.", legende_ar: "صورة للشيخ التاريخي لفصيلة إيدوغيريتان.", legende_en: "Portrait of the historical chief of the Idoguiritane fraction.", credit: "© Charles Grémont", categorie: "portraits", date: "2010" },
+  { fichier: "data/images/livres/chef_idoguiritane_2.jpg", titre_fr: "Réunion traditionnelle à Tin Abaw", titre_ar: "اجتماع تقليدي في تين أبا", titre_en: "Traditional meeting in Tin Abaw", legende_fr: "Le chef entouré de notables.", legende_ar: "الشيخ وحوله الأعيان.", legende_en: "The chief surrounded by notables.", credit: "© Charles Grémont", categorie: "evenements", date: "2010" },
+  { fichier: "data/images/livres/chef_idoguitirane_3.jpg", titre_fr: "Le chef et ses conseillers", titre_ar: "الشيخ ومستشاروه", titre_en: "The chief and his advisors", legende_fr: "Discussion des affaires de la communauté.", legende_ar: "مناقشة شؤون المجتمع.", legende_en: "Discussing community affairs.", credit: "© Charles Grémont", categorie: "portraits", date: "2010" },
+  { fichier: "data/images/livres/Un jeune combattant Adaksahak, au nord de Ménaka, mars 1994. Photo C.G.jpeg", titre_fr: "Jeune combattant Idaksahak (1994)", titre_ar: "مقاتل شاب إدكساهق (١٩٩٤)", titre_en: "Young Idaksahak fighter (1994)", legende_fr: "Rébellion des années 1990, nord de Ménaka.", legende_ar: "تمرد التسعينيات، شمال مناكا.", legende_en: "1990s rebellion, north of Ménaka.", credit: "© Charles Grémont", categorie: "histoire", date: "1994" },
+  { fichier: "data/images/livres/zone des idaksahak.jpeg", titre_fr: "Carte de la région des Idaksahak", titre_ar: "خريطة منطقة الإدكساهق", titre_en: "Map of the Idaksahak region", legende_fr: "Localisation dans le nord-est du Mali.", legende_ar: "الموقع في شمال شرق مالي.", legende_en: "Location in north-eastern Mali.", credit: "Charles Grémont", categorie: "geographie", date: "2015" },
+  { fichier: "data/images/livres/idaksahak_square.png", titre_fr: "Logo de la communauté Idaksahak", titre_ar: "شعار مجتمع الإدكساهق", titre_en: "Logo of the Idaksahak community", legende_fr: "Symbole officiel : lecture, épée et dromadaires.", legende_ar: "الشعار الرسمي: القراءة، السيف والجمال.", legende_en: "Official symbol: reading, sword and dromedaries.", credit: "Communauté Idaksahak", categorie: "culture", date: "2020" }
 ];
+
+let currentGalleryFilter = 'all';
 
 function afficherPhotos() {
   const container = getElement("photosContainer", false);
   if (!container) return;
   const lang = AppState.currentLanguage;
-  let html = `<div class="album-header"><h3>📷 Album : Photos historiques</h3><p>Clichés de Charles Grémont</p></div><div class="galerie-grid">`;
-  imagesGalerie.forEach(img => {
+  let filteredImages = imagesGalerie;
+  if (currentGalleryFilter !== 'all') {
+    filteredImages = imagesGalerie.filter(img => img.categorie === currentGalleryFilter);
+  }
+  let html = `<div class="galerie-grid">`;
+  filteredImages.forEach(img => {
     const titre = lang === 'fr' ? img.titre_fr : lang === 'ar' ? img.titre_ar : img.titre_en;
     const legende = lang === 'fr' ? img.legende_fr : lang === 'ar' ? img.legende_ar : img.legende_en;
-    html += `<div class="galerie-item"><img src="${escapeHtml(img.fichier)}" alt="${escapeHtml(titre)}" loading="lazy"><div class="galerie-caption"><strong>${escapeHtml(titre)}</strong><p class="legende">${escapeHtml(legende)}</p><small class="credit">${escapeHtml(img.credit)}</small></div></div>`;
+    html += `<div class="galerie-item animate-on-scroll"><img src="${escapeHtml(img.fichier)}" alt="${escapeHtml(titre)}" loading="lazy"><div class="galerie-caption"><strong>${escapeHtml(titre)}</strong><p class="legende">${escapeHtml(legende)}</p><small class="credit">${escapeHtml(img.credit)}</small>${img.date ? `<small class="date">📅 ${img.date}</small>` : ''}</div></div>`;
   });
   html += `</div>`;
   container.innerHTML = html;
+}
+
+function initGalleryFilters() {
+  const filters = document.querySelectorAll('.gallery-filter');
+  if (!filters.length) return;
+  filters.forEach(filter => {
+    filter.addEventListener('click', () => {
+      filters.forEach(f => f.classList.remove('active'));
+      filter.classList.add('active');
+      currentGalleryFilter = filter.dataset.category;
+      afficherPhotos();
+      analytics.track('gallery_filter', { filter: currentGalleryFilter });
+    });
+  });
 }
 
 function genererAlbumsAudio() { const cont = getElement("audioContainer", false); if (cont) cont.innerHTML = "<p class='info-message'>🎵 Pistes audio à venir prochainement...</p>"; }
 function genererVideos() { const cont = getElement("videosContainer", false); if (cont) cont.innerHTML = "<p class='info-message'>🎥 Vidéos à venir prochainement...</p>"; }
 
 // ============================================================
-// SECTION 21 : BASE DE CONNAISSANCES & RECHERCHE
+// SECTION 24 : ACTUALITÉS (NOUVEAU)
 // ============================================================
 
-async function chargerLivresConnaissance() {
+async function chargerActualites() {
   try {
-    const response = await fetch('data/livres_connaissance.json');
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    AppState.livresConnaissance = await response.json();
-    console.log('📚 Base de connaissances chargée');
-  } catch(e) { console.warn("livres_connaissance.json non trouvé", e); AppState.livresConnaissance = { livres: [] }; }
-}
-
-function rechercherPleinTexte() {
-  const queryInput = getElement("searchBooksInput", false);
-  const container = getElement("searchBooksResults", false);
-  if (!queryInput || !container) return;
-  const query = queryInput.value.trim();
-  if (!query || !AppState.livresConnaissance) { container.innerHTML = ""; return; }
-  const mots = query.toLowerCase().split(/\s+/);
-  const results = [];
-  for (const livre of AppState.livresConnaissance.livres) {
-    for (const chunk of livre.chunks) {
-      if (mots.every(mot => chunk.texte.toLowerCase().includes(mot))) {
-        results.push({ livre: livre.titre, auteur: livre.auteur, chapitre: chunk.chapitre, titre: chunk.titre, texte: chunk.texte });
-      }
+    const response = await fetch('https://idaksahak.com/wp-json/wp/v2/posts?per_page=6&_embed');
+    if (response.ok) {
+      const data = await response.json();
+      AppState.actualites = data.map(post => ({
+        id: post.id,
+        titre: post.title?.rendered || 'Sans titre',
+        resume: post.excerpt?.rendered?.replace(/<[^>]*>/g, '').substring(0, 150) || '',
+        date: post.date,
+        url: post.link,
+        image: post._embedded?.['wp:featuredmedia']?.[0]?.source_url || null
+      }));
+    } else {
+      const localResponse = await fetch('data/actualites.json');
+      if (localResponse.ok) AppState.actualites = await localResponse.json();
     }
-  }
-  if (!results.length) { container.innerHTML = "<p>Aucun résultat</p>"; return; }
+    console.log(`📰 Actualités: ${AppState.actualites.length} articles`);
+  } catch(e) { console.warn('Erreur chargement actualités:', e); AppState.actualites = []; }
+}
+
+function afficherActualites() {
+  const container = getElement('actualitesContainer', false);
+  if (!container) return;
+  if (!AppState.actualites.length) { container.innerHTML = '<p class="info-message">📰 Aucune actualité disponible.</p>'; return; }
   const lang = AppState.currentLanguage;
-  const regex = new RegExp(`(${mots.map(m => escapeHtml(m)).join('|')})`, 'gi');
-  let html = `<h3>${i18n[lang].search_results} (${results.length})</h3>`;
-  results.forEach(r => { const apercu = escapeHtml(r.texte.substring(0, 300)).replace(regex, '<mark>$1</mark>'); html += `<div class="search-result"><strong>${escapeHtml(r.livre)}</strong> (${escapeHtml(r.auteur)}), ch.${r.chapitre} : ${escapeHtml(r.titre)}<p>${apercu}…</p></div>`; });
-  container.innerHTML = html;
+  const formatDate = (dateStr) => new Date(dateStr).toLocaleDateString(lang === 'fr' ? 'fr-FR' : lang === 'en' ? 'en-US' : 'ar-EG');
+  container.innerHTML = `<div class="actualites-grid">${AppState.actualites.map(actu => `<article class="actu-card animate-on-scroll">${actu.image ? `<img src="${actu.image}" alt="${escapeHtml(actu.titre)}" class="actu-image" loading="lazy">` : `<div class="actu-placeholder">📰</div>`}<div class="actu-content"><div class="actu-meta"><span class="actu-date">📅 ${formatDate(actu.date)}</span></div><h3 class="actu-title">${escapeHtml(actu.titre)}</h3><p class="actu-excerpt">${escapeHtml(actu.resume)}...</p><a href="${actu.url}" target="_blank" rel="noopener noreferrer" class="actu-link">Lire la suite <span class="link-arrow">→</span></a></div></article>`).join('')}</div>`;
 }
 
 // ============================================================
-// SECTION 22 : TABLEAU DE BORD
+// SECTION 25 : PARTENAIRES (NOUVEAU)
 // ============================================================
 
-function afficherDashboard() {
-  const container = getElement("dashboardContainer", false);
+const partenairesData = [
+  { nom: "CNRS - LACITO", logo: "🎓", description_fr: "Laboratoire de recherche en linguistique", description_en: "Linguistics research laboratory", description_ar: "مختبر أبحاث لغوية", url: "https://lacito.cnrs.fr" },
+  { nom: "INALCO", logo: "🏛️", description_fr: "Institut National des Langues et Civilisations Orientales", description_en: "Institute of Oriental Languages", description_ar: "معهد اللغات والحضارات", url: "https://www.inalco.fr" },
+  { nom: "Université de Gao", logo: "📚", description_fr: "Partenariat académique pour la préservation culturelle", description_en: "Academic partnership", description_ar: "شراكة أكاديمية", url: "#" },
+  { nom: "Fondation Idaksahak", logo: "🤝", description_fr: "Soutien à la communauté et aux initiatives locales", description_en: "Community support", description_ar: "دعم المجتمع", url: "#" }
+];
+
+async function chargerPartenaires() { AppState.partenaires = partenairesData; console.log(`🤝 Partenaires: ${AppState.partenaires.length}`); }
+
+function afficherPartenaires() {
+  const container = getElement('partenairesContainer', false);
   if (!container) return;
   const lang = AppState.currentLanguage;
-  const progress = JSON.parse(localStorage.getItem("quizProgress") || "{}");
-  container.innerHTML = `<h3>${i18n[lang].dashboard_history}</h3><ul>${AppState.historique.slice(0, 10).map(m => `<li>${escapeHtml(m)}</li>`).join('')}</ul><h3>${i18n[lang].dashboard_favorites}</h3><ul>${AppState.favoris.map(m => `<li>${escapeHtml(m)}</li>`).join('')}</ul><h3>${i18n[lang].dashboard_quiz_progress}</h3>${Object.entries(progress).map(([l, p]) => `<p>${l.toUpperCase()} : ${p.score}/${p.total}</p>`).join('')}`;
+  container.innerHTML = `<div class="partenaires-grid">${AppState.partenaires.map(part => `<div class="partenaire-card animate-on-scroll"><div class="partenaire-logo">${part.logo}</div><h3 class="partenaire-name">${escapeHtml(part.nom)}</h3><p class="partenaire-desc">${escapeHtml(lang === 'fr' ? part.description_fr : lang === 'en' ? part.description_en : part.description_ar)}</p><a href="${part.url}" target="_blank" rel="noopener noreferrer" class="btn-small">Site web →</a></div>`).join('')}</div>`;
 }
 
 // ============================================================
-// SECTION 23 : RESSOURCES ACADÉMIQUES
+// SECTION 26 : RESSOURCES ACADÉMIQUES
 // ============================================================
 
 function afficherRessources() {
@@ -1869,8 +2169,7 @@ function afficherRessources() {
   if (!container) return;
   const podcastUrl = "https://www.themaghribpodcast.com/2018/01/la-linguistique-historique-au-sahara.html";
   const lang = AppState.currentLanguage;
-  container.innerHTML = `<div class="ressources-intro"><p>${i18n[lang].ressources_desc}</p></div><div class="ressources-section"><h3>${i18n[lang].podcast_section}</h3><div class="podcast-card"><div class="podcast-header"><div class="podcast-icon">🎙️</div><div class="podcast-info"><h4>${i18n[lang].podcast_episode_title}</h4><p class="podcast-speaker">Dr. Lameen Souag (CNRS, LACITO)</p><p class="podcast-date">${i18n[lang].podcast_episode_date}</p></div></div><p class="podcast-description">${i18n[lang].podcast_episode_desc}</p><div class="podcast-links"><a href="${podcastUrl}" target="_blank" rel="noopener noreferrer" class="btn-podcast">🎧 ${i18n[lang].podcast_listen}</a><button class="btn-share-resource" data-url="${podcastUrl}" data-title="${escapeHtml(i18n[lang].podcast_episode_title)}">📤 ${i18n[lang].share_resource}</button></div></div></div><div class="ressources-section"><h3>${i18n[lang].articles_section}</h3><div id="articlesGrid">⏳</div></div><div class="ressources-section"><h3>${i18n[lang].bibliography_section}</h3><div id="bibliographyList">⏳</div></div>`;
-  container.addEventListener('click', (e) => { const btn = e.target.closest('.btn-share-resource'); if (btn) shareResource(btn.dataset.url, btn.dataset.title); });
+  container.innerHTML = `<div class="ressources-intro"><p>${i18n[lang].ressources_desc}</p></div><div class="ressources-section"><h3>${i18n[lang].podcast_section}</h3><div class="podcast-card"><div class="podcast-header"><div class="podcast-icon">🎙️</div><div class="podcast-info"><h4>${i18n[lang].podcast_episode_title}</h4><p class="podcast-speaker">Dr. Lameen Souag (CNRS, LACITO)</p><p class="podcast-date">${i18n[lang].podcast_episode_date}</p></div></div><p class="podcast-description">${i18n[lang].podcast_episode_desc}</p><div class="podcast-links"><a href="${podcastUrl}" target="_blank" rel="noopener noreferrer" class="btn-podcast">🎧 ${i18n[lang].podcast_listen}</a><button class="btn-share-resource" onclick="shareResource('${podcastUrl}', '${i18n[lang].podcast_episode_title}')">📤 ${i18n[lang].share_resource}</button></div></div></div><div class="ressources-section"><h3>${i18n[lang].articles_section}</h3><div id="articlesGrid">⏳</div></div><div class="ressources-section"><h3>${i18n[lang].bibliography_section}</h3><div id="bibliographyList">⏳</div></div>`;
   chargerArticlesAcademiques();
   chargerBibliographie();
 }
@@ -1878,8 +2177,14 @@ function afficherRessources() {
 function chargerArticlesAcademiques() {
   const container = getElement("articlesGrid", false);
   if (!container) return;
-  const articles = [{ titre: "The Tadaksahak language: a Zénaga variety of the Malian Sahara", auteur: "Christiansen-Bolli, R.", annee: 2010, url: "#", description: "Étude descriptive du tadaksahak.", tags: ["Tadaksahak", "Grammaire"] }, { titre: "Relative Clauses in Tadaksahak", auteur: "Christiansen, N. & Levinsohn, S.", annee: 2003, url: "#", description: "Analyse des trois stratégies de relativisation.", tags: ["Tadaksahak", "Syntaxe"] }, { titre: "A Grammar of Tamashek (Tuareg of Mali)", auteur: "Heath, J.", annee: 2005, url: "#", description: "Grammaire de référence du touareg.", tags: ["Touareg", "Grammaire"] }, { titre: "The Berber language", auteur: "Kossmann, M.", annee: 2011, url: "#", description: "Aperçu des langues berbères.", tags: ["Berbère", "Linguistique"] }, { titre: "Non-Tuareg Berber and the Genesis of Nomadic Northern Songhay", auteur: "Souag, L.", annee: 2015, url: "#", description: "Contacts entre berbère et songhay.", tags: ["Songhay", "Contacts"] }];
-  container.innerHTML = `<div class="articles-grid-inner">${articles.map(article => `<div class="article-card"><div class="article-icon">📄</div><div class="article-content"><h4>${escapeHtml(article.titre)}</h4><p class="article-meta">${escapeHtml(article.auteur)} • ${article.annee}</p><p class="article-desc">${escapeHtml(article.description)}</p><div class="article-tags">${article.tags.map(tag => `<span class="tag">${escapeHtml(tag)}</span>`).join('')}</div><a href="${article.url}" class="article-link" target="_blank">🔗 Accéder à la publication</a></div></div>`).join('')}</div>`;
+  const articles = [
+    { titre: "The Tadaksahak language: a Zénaga variety of the Malian Sahara", auteur: "Christiansen-Bolli, R.", annee: 2010, url: "#", description: "Étude descriptive du tadaksahak.", tags: ["Tadaksahak", "Grammaire"] },
+    { titre: "Relative Clauses in Tadaksahak", auteur: "Christiansen, N. & Levinsohn, S.", annee: 2003, url: "#", description: "Analyse des trois stratégies de relativisation.", tags: ["Tadaksahak", "Syntaxe"] },
+    { titre: "A Grammar of Tamashek (Tuareg of Mali)", auteur: "Heath, J.", annee: 2005, url: "#", description: "Grammaire de référence du touareg.", tags: ["Touareg", "Grammaire"] },
+    { titre: "The Berber language", auteur: "Kossmann, M.", annee: 2011, url: "#", description: "Aperçu des langues berbères.", tags: ["Berbère", "Linguistique"] },
+    { titre: "Non-Tuareg Berber and the Genesis of Nomadic Northern Songhay", auteur: "Souag, L.", annee: 2015, url: "#", description: "Contacts entre berbère et songhay.", tags: ["Songhay", "Contacts"] }
+  ];
+  container.innerHTML = `<div class="articles-grid-inner">${articles.map(article => `<div class="article-card animate-on-scroll"><div class="article-icon">📄</div><div class="article-content"><h4>${escapeHtml(article.titre)}</h4><p class="article-meta">${escapeHtml(article.auteur)} • ${article.annee}</p><p class="article-desc">${escapeHtml(article.description)}</p><div class="article-tags">${article.tags.map(tag => `<span class="tag">${escapeHtml(tag)}</span>`).join('')}</div><a href="${article.url}" class="article-link" target="_blank">🔗 Accéder à la publication</a></div></div>`).join('')}</div>`;
 }
 
 function chargerBibliographie() {
@@ -1889,19 +2194,14 @@ function chargerBibliographie() {
   container.innerHTML = `<ul class="bibliography-list-ul">${bibliography.map(ref => `<li>📖 ${escapeHtml(ref)}</li>`).join('')}</ul><p class="bibliography-note">📚 D'après l'épisode "La linguistique historique au Sahara" du podcast Maghrib in Past & Present</p>`;
 }
 
-function shareResource(url, title) {
-  if (navigator.share) { navigator.share({ title, text: `Découvrez : ${title}`, url }).catch(() => {}); }
-  else { navigator.clipboard?.writeText(url); showToast("📋 Lien copié dans le presse-papier", "success"); }
-}
-
 // ============================================================
-// SECTION 24 : PWA & SERVICE WORKER (Version améliorée)
+// SECTION 27 : PWA & SERVICE WORKER
 // ============================================================
 
 function registerServiceWorker() {
   if (!('serviceWorker' in navigator)) return;
   fetch('./sw.js', { method: 'HEAD' }).then(response => {
-    if (!response.ok) { console.log('SW non trouvé (404), enregistrement ignoré'); return; }
+    if (!response.ok) { console.log('SW non trouvé (404)'); return; }
     return navigator.serviceWorker.register('./sw.js');
   }).then(reg => {
     if (!reg) return;
@@ -1923,6 +2223,8 @@ function incrementVisitCount() {
   visitCounter++;
   localStorage.setItem('tadaksahak_visit_count', String(visitCounter));
   console.log(`👁️ Visite ${visitCounter}`);
+  const statUsers = getElement("statUtilisateurs", false);
+  if (statUsers) statUsers.textContent = visitCounter;
   const shouldShowBanner = visitCounter >= 3 && !localStorage.getItem('tadaksahak_installed') && !localStorage.getItem('tadaksahak_install_dismissed');
   if (shouldShowBanner) showAutoInstallBanner();
 }
@@ -1961,7 +2263,7 @@ function initAutoUpdates() {
 }
 
 // ============================================================
-// SECTION 25 : RACCOURCIS CLAVIER
+// SECTION 28 : RACCOURCIS CLAVIER
 // ============================================================
 
 const KEYBOARD_SHORTCUTS = [
@@ -1985,7 +2287,7 @@ function initKeyboardShortcuts() {
 
 function showHelpModal() {
   getElement('helpModal', false)?.remove();
-  const modalHtml = `<div id="helpModal" class="modal" role="dialog" aria-modal="true" aria-label="Aide"><div class="modal-content"><button class="modal-close" aria-label="Fermer">&times;</button><h2>⌨️ Raccourcis clavier</h2><ul class="shortcuts-list">${KEYBOARD_SHORTCUTS.map(s => `<li><kbd>Alt</kbd> + <kbd>${s.key.toUpperCase()}</kbd> → ${s.label}</li>`).join('')}<li><kbd>?</kbd> → Cette aide</li><li><kbd>←</kbd> <kbd>→</kbd> → Navigation livre grammaire</li></ul><h2>🌍 Langues</h2><p>Changez de langue avec les drapeaux 🇫🇷 🇸🇦 🇬🇧.</p><h2>🎨 Thèmes visuels</h2><p>Utilisez 🌙 📖 📜 en haut de page.</p><h2>📖 Grammaire</h2><p>Explorez le livre interactif de 30 blocs avec navigation tactile et clavier.</p></div></div>`;
+  const modalHtml = `<div id="helpModal" class="modal" role="dialog"><div class="modal-content"><button class="modal-close">&times;</button><h2>⌨️ Raccourcis clavier</h2><ul class="shortcuts-list">${KEYBOARD_SHORTCUTS.map(s => `<li><kbd>Alt</kbd> + <kbd>${s.key.toUpperCase()}</kbd> → ${s.label}</li>`).join('')}<li><kbd>?</kbd> → Cette aide</li><li><kbd>←</kbd> <kbd>→</kbd> → Navigation livre grammaire</li></ul><h2>🌍 Langues</h2><p>Changez de langue avec les drapeaux 🇫🇷 🇸🇦 🇬🇧.</p><h2>🎨 Thèmes visuels</h2><p>Utilisez 🌙 📖 📜 en haut de page.</p><h2>📖 Grammaire</h2><p>Explorez le livre interactif de 30 blocs.</p></div></div>`;
   document.body.insertAdjacentHTML('beforeend', modalHtml);
   const modal = getElement('helpModal', false);
   modal?.querySelector('.modal-close')?.addEventListener('click', () => modal.remove());
@@ -1993,7 +2295,53 @@ function showHelpModal() {
 }
 
 // ============================================================
-// SECTION 26 : POP-UP DE BIENVENUE
+// SECTION 29 : ACCESSIBILITÉ
+// ============================================================
+
+function initAccessibilityPanel() {
+  const panel = getElement('accessibilityPanel', false);
+  if (!panel) return;
+  setTimeout(() => { panel.hidden = false; }, 3000);
+  panel.querySelectorAll('[data-action]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const action = e.currentTarget.dataset.action;
+      switch(action) {
+        case 'fontSizeIncrease':
+          let size = parseInt(localStorage.getItem('app_font_size') || '100');
+          size = Math.min(200, size + 10);
+          localStorage.setItem('app_font_size', size);
+          document.body.style.fontSize = `${size}%`;
+          showToast(`🔤 Taille: ${size}%`, 'info');
+          break;
+        case 'fontSizeDecrease':
+          let size2 = parseInt(localStorage.getItem('app_font_size') || '100');
+          size2 = Math.max(60, size2 - 10);
+          localStorage.setItem('app_font_size', size2);
+          document.body.style.fontSize = `${size2}%`;
+          showToast(`🔤 Taille: ${size2}%`, 'info');
+          break;
+        case 'fontSizeReset':
+          localStorage.setItem('app_font_size', '100');
+          document.body.style.fontSize = '100%';
+          showToast('🔤 Taille réinitialisée', 'info');
+          break;
+        case 'highContrast':
+          const isHighContrast = localStorage.getItem('app_high_contrast') === 'true';
+          localStorage.setItem('app_high_contrast', (!isHighContrast).toString());
+          document.body.classList.toggle('high-contrast', !isHighContrast);
+          showToast(isHighContrast ? '♿ Contraste normal' : '♿ Contraste élevé activé', 'info');
+          break;
+        case 'voiceCommand':
+          if (voiceCommands) voiceCommands.start();
+          break;
+      }
+      analytics.track('accessibility_action', { action });
+    });
+  });
+}
+
+// ============================================================
+// SECTION 30 : POP-UP DE BIENVENUE
 // ============================================================
 
 function showRessourcesWelcomePopup() {
@@ -2001,7 +2349,7 @@ function showRessourcesWelcomePopup() {
   const popup = document.createElement('div');
   popup.id = 'ressourcesPopup';
   popup.className = 'modal ressources-popup';
-  popup.innerHTML = `<div class="modal-content ressources-popup-content"><button class="popup-close" id="closeRessourcesPopup" aria-label="Fermer">&times;</button><div class="popup-icon">📚</div><h2>Nouvelle section</h2><h3>Ressources académiques</h3><div class="popup-author">Par <strong>Hamadine Ag Moctar</strong></div><div class="popup-features"><div class="popup-feature"><span class="feature-icon">🎙️</span><span>Podcast avec <strong>Dr. Lameen Souag (CNRS)</strong></span></div><div class="popup-feature"><span class="feature-icon">📖</span><span>Articles scientifiques sur le tadaksahak</span></div><div class="popup-feature"><span class="feature-icon">📚</span><span>Bibliographie spécialisée</span></div></div><button id="goToRessourcesBtn" class="btn-popup-go">Découvrir la section</button><button id="dismissRessourcesPopup" class="btn-popup-later">Plus tard</button></div>`;
+  popup.innerHTML = `<div class="modal-content ressources-popup-content"><button class="popup-close" id="closeRessourcesPopup">&times;</button><div class="popup-icon">📚</div><h2>Nouvelle section</h2><h3>Ressources académiques</h3><div class="popup-author">Par <strong>Hamadine Ag Moctar</strong></div><div class="popup-features"><div class="popup-feature"><span class="feature-icon">🎙️</span><span>Podcast avec <strong>Dr. Lameen Souag (CNRS)</strong></span></div><div class="popup-feature"><span class="feature-icon">📖</span><span>Articles scientifiques sur le tadaksahak</span></div><div class="popup-feature"><span class="feature-icon">📚</span><span>Bibliographie spécialisée</span></div></div><button id="goToRessourcesBtn" class="btn-popup-go">Découvrir la section</button><button id="dismissRessourcesPopup" class="btn-popup-later">Plus tard</button></div>`;
   document.body.appendChild(popup);
   localStorage.setItem('has_seen_ressources_popup', 'true');
   const closePopup = () => { popup.classList.add('popup-closing'); setTimeout(() => popup.remove(), 300); };
@@ -2009,11 +2357,10 @@ function showRessourcesWelcomePopup() {
   getElement('dismissRessourcesPopup', false)?.addEventListener('click', closePopup);
   getElement('goToRessourcesBtn', false)?.addEventListener('click', () => { closePopup(); if (DOM.sectionSelector) { DOM.sectionSelector.value = 'ressources'; DOM.sectionSelector.dispatchEvent(new Event('change')); } });
   popup.addEventListener('click', (e) => { if (e.target === popup) closePopup(); });
-  popup.addEventListener('keydown', (e) => { if (e.key === 'Escape') closePopup(); });
 }
 
 // ============================================================
-// SECTION 27 : NAVIGATION PRINCIPALE
+// SECTION 31 : NAVIGATION PRINCIPALE
 // ============================================================
 
 function initNavigation() {
@@ -2034,7 +2381,7 @@ function initNavigation() {
       grammaire: () => showGrammarSection(),
       livres: () => chargerAvecFallback(afficherLivres, "Livres"),
       audio: () => genererAlbumsAudio(),
-      photos: () => afficherPhotos(),
+      photos: () => { afficherPhotos(); initGalleryFilters(); },
       videos: () => genererVideos(),
       quiz: () => chargerAvecFallback(chargerQuiz, "Quiz"),
       timeline: () => AppState.timelineData && afficherTimeline(),
@@ -2045,9 +2392,12 @@ function initNavigation() {
       emissions: () => AppState.emissionsData && afficherEmissionsPremium(),
       themes: () => AppState.themesData && afficherThemesPremium(),
       flashcards: () => AppState.vocabulaire.length && genererFlashcards(),
-      ressources: () => afficherRessources()
+      ressources: () => afficherRessources(),
+      actualites: () => chargerAvecFallback(async () => { await chargerActualites(); afficherActualites(); }, "Actualités"),
+      partenaires: () => chargerAvecFallback(async () => { await chargerPartenaires(); afficherPartenaires(); }, "Partenaires")
     };
     sectionActions[id]?.();
+    analytics.track('section_view', { section: id });
   }
   DOM.sectionSelector.addEventListener("change", (e) => showSection(e.target.value));
   const saved = localStorage.getItem("tadaksahak_active_section");
@@ -2056,8 +2406,91 @@ function initNavigation() {
   showSection(initial);
 }
 
+function initGrammarTabs() {
+  const tabs = document.querySelectorAll('.grammar-tab');
+  if (!tabs.length) return;
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.tab;
+      AppState.activeGrammarTab = target;
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const gramContainer = getElement('grammaireContainer', false);
+      const relContainer = getElement('relativesContainer', false);
+      if (target === 'causative') {
+        gramContainer?.setAttribute('hidden', '');
+        relContainer?.setAttribute('hidden', '');
+        showGrammarSection();
+      } else if (target === 'relatives') {
+        gramContainer?.setAttribute('hidden', '');
+        if (relContainer) { relContainer.removeAttribute('hidden'); afficherRelatives(); }
+      }
+    });
+  });
+}
+
+function initScrollAnimations() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '50px' });
+  document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+}
+
 // ============================================================
-// SECTION 28 : INITIALISATION PRINCIPALE
+// SECTION 32 : TABLEAU DE BORD
+// ============================================================
+
+function afficherDashboard() {
+  const container = getElement("dashboardContainer", false);
+  if (!container) return;
+  const lang = AppState.currentLanguage;
+  const progress = JSON.parse(localStorage.getItem("quizProgress") || "{}");
+  container.innerHTML = `<h3>${i18n[lang].dashboard_history}</h3><ul>${AppState.historique.slice(0, 10).map(m => `<li>${escapeHtml(m)}</li>`).join('')}</ul><h3>${i18n[lang].dashboard_favorites}</h3><ul>${AppState.favoris.map(m => `<li>${escapeHtml(m)}</li>`).join('')}</ul><h3>${i18n[lang].dashboard_quiz_progress}</h3>${Object.entries(progress).map(([l, p]) => `<p>${l.toUpperCase()} : ${p.score}/${p.total}</p>`).join('')}`;
+}
+
+// ============================================================
+// SECTION 33 : BASE DE CONNAISSANCES & RECHERCHE
+// ============================================================
+
+async function chargerLivresConnaissance() {
+  try {
+    const response = await fetch('data/livres_connaissance.json');
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    AppState.livresConnaissance = await response.json();
+    console.log('📚 Base de connaissances chargée');
+  } catch(e) { console.warn("livres_connaissance.json non trouvé", e); AppState.livresConnaissance = { livres: [] }; }
+}
+
+function rechercherPleinTexte() {
+  const queryInput = getElement("searchBooksInput", false);
+  const container = getElement("searchBooksResults", false);
+  if (!queryInput || !container) return;
+  const query = queryInput.value.trim();
+  if (!query || !AppState.livresConnaissance) { container.innerHTML = ""; return; }
+  const mots = query.toLowerCase().split(/\s+/);
+  const results = [];
+  for (const livre of AppState.livresConnaissance.livres) {
+    for (const chunk of livre.chunks) {
+      if (mots.every(mot => chunk.texte.toLowerCase().includes(mot))) {
+        results.push({ livre: livre.titre, auteur: livre.auteur, chapitre: chunk.chapitre, titre: chunk.titre, texte: chunk.texte });
+      }
+    }
+  }
+  if (!results.length) { container.innerHTML = "<p>Aucun résultat</p>"; return; }
+  const lang = AppState.currentLanguage;
+  const regex = new RegExp(`(${mots.map(m => escapeHtml(m)).join('|')})`, 'gi');
+  let html = `<h3>${i18n[lang].search_results} (${results.length})</h3>`;
+  results.forEach(r => { const apercu = escapeHtml(r.texte.substring(0, 300)).replace(regex, '<mark>$1</mark>'); html += `<div class="search-result"><strong>${escapeHtml(r.livre)}</strong> (${escapeHtml(r.auteur)}), ch.${r.chapitre} : ${escapeHtml(r.titre)}<p>${apercu}…</p></div>`; });
+  container.innerHTML = html;
+}
+
+// ============================================================
+// SECTION 34 : INITIALISATION PRINCIPALE
 // ============================================================
 
 async function initialiserApplication() {
@@ -2068,6 +2501,9 @@ async function initialiserApplication() {
     detectSystemTheme();
     initNavigation();
     initGrammarTabs();
+    initAccessibilityPanel();
+    
+    const newsletter = new NewsletterManager();
     
     await Promise.allSettled([
       chargerAvecFallback(chargerDictionnaire, "Dictionnaire"),
@@ -2076,7 +2512,9 @@ async function initialiserApplication() {
       chargerAvecFallback(chargerThemes, "Thèmes"),
       chargerAvecFallback(chargerRelatives, "Relatives"),
       chargerAvecFallback(chargerTimeline, "Timeline"),
-      chargerAvecFallback(chargerLivresConnaissance, "Base de connaissances")
+      chargerAvecFallback(chargerLivresConnaissance, "Base de connaissances"),
+      chargerAvecFallback(chargerActualites, "Actualités"),
+      chargerAvecFallback(chargerPartenaires, "Partenaires")
     ]);
     
     chargerHistorique();
@@ -2087,6 +2525,7 @@ async function initialiserApplication() {
     initDictionaryEvents();
     initChatEvents();
     initFlashcards();
+    initScrollAnimations();
     
     document.querySelectorAll('.lang-flag').forEach(btn => {
       btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
@@ -2114,38 +2553,14 @@ async function initialiserApplication() {
     setTimeout(() => showAutoInstallBanner(), 3000);
     setTimeout(() => showRessourcesWelcomePopup(), 2000);
     
-    console.log("✅ Application Tadaksahak fusionnée prête !");
-    console.log("📚 Module relatives : Christiansen & Levinsohn (2003)");
-    console.log("📖 Livre grammaire : 30 blocs interactifs");
+    console.log("✅ Application Tadaksahak Ultimate prête !");
+    console.log("📚 Nouvelles fonctionnalités: Actualités, Partenaires, Analytics, Newsletter");
   } catch (error) {
     console.error("🔴 Erreur critique :", error);
     showToast("Erreur de chargement. Rechargez la page.", "error");
   } finally {
     hideLoader();
   }
-}
-
-function initGrammarTabs() {
-  const tabs = document.querySelectorAll('.grammar-tab');
-  if (!tabs.length) return;
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const target = tab.dataset.tab;
-      AppState.activeGrammarTab = target;
-      tabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      const gramContainer = getElement('grammaireContainer', false);
-      const relContainer = getElement('relativesContainer', false);
-      if (target === 'causative') {
-        gramContainer?.setAttribute('hidden', '');
-        relContainer?.setAttribute('hidden', '');
-        showGrammarSection();
-      } else if (target === 'relatives') {
-        gramContainer?.setAttribute('hidden', '');
-        if (relContainer) { relContainer.removeAttribute('hidden'); afficherRelatives(); }
-      }
-    });
-  });
 }
 
 // ============================================================
