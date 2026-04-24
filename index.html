@@ -125,10 +125,6 @@
       <option value="quiz" data-i18n="nav_quiz">❓ Quiz</option>
       <option value="flashcards" data-i18n="nav_flashcards">🃏 Flashcards</option>
       <option value="themes" data-i18n="nav_themes">📚 Thèmes</option>
-      <option value="timeline" data-i18n="nav_timeline">📅 Ligne du temps</option>
-      <option value="map" data-i18n="nav_map">🗺️ Carte</option>
-      <option value="search" data-i18n="nav_search">🔍 Recherche livres</option>
-      <option value="dashboard" data-i18n="nav_dashboard">📊 Tableau de bord</option>
       <option value="ressources" data-i18n="nav_ressources">📚 Ressources académiques</option>
       <!-- NOUVEAU : Partenaires -->
       <option value="partenaires" data-i18n="nav_partenaires">🤝 Partenaires</option>
@@ -382,33 +378,12 @@
     <div id="themesContainer" aria-live="polite"></div>
   </section>
 
-  <!-- TIMELINE AMÉLIORÉE -->
-  <section id="timeline" class="onglet-contenu" hidden>
-    <h2 data-i18n="timeline_title">📅 Événements historiques</h2>
-    <div class="timeline-filters">
-      <button class="timeline-filter active" data-filter="all">📜 Tous</button>
-      <button class="timeline-filter" data-filter="reunion">📢 Réunions</button>
-      <button class="timeline-filter" data-filter="campagne">🎯 Campagnes</button>
-      <button class="timeline-filter" data-filter="creation">✨ Créations</button>
-    </div>
-    <div id="timelineContainer" class="timeline-wrapper" aria-live="polite"></div>
-  </section>
-
-  <section id="map" class="onglet-contenu" hidden>
-    <h2 data-i18n="map_title">🗺️ Carte des zones Idaksahak</h2>
-    <div id="mapContainer" style="height: 500px; width: 100%; border-radius: 16px;" aria-label="Carte interactive"></div>
-  </section>
-
-  <section id="search" class="onglet-contenu" hidden>
+<section id="search" class="onglet-contenu" hidden>
     <h2 data-i18n="search_books_title">🔍 Recherche dans les livres</h2>
     <input type="text" id="searchBooksInput" class="search-books-input" placeholder="Rechercher..." aria-label="Rechercher dans les livres">
     <div id="searchBooksResults" class="search-results" aria-live="polite"></div>
   </section>
 
-  <section id="dashboard" class="onglet-contenu" hidden>
-    <h2 data-i18n="dashboard_title">📊 Tableau de bord</h2>
-    <div id="dashboardContainer" aria-live="polite"></div>
-  </section>
 
   <section id="ressources" class="onglet-contenu" hidden>
     <h2 data-i18n="ressources_title">📚 Ressources académiques</h2>
@@ -434,8 +409,6 @@
   <button class="accessibility-btn" data-action="fontSizeReset" title="Réinitialiser">A</button>
   <button class="accessibility-btn" data-action="highContrast" title="Contraste élevé">◑</button>
   <button class="accessibility-btn" data-action="dyslexiaFont" title="Police dyslexie">📖</button>
-  <button class="accessibility-btn" data-action="readingMask" title="Masque de lecture">📏</button>
-  <button class="accessibility-btn" data-action="voiceCommand" title="Commande vocale">🎤</button>
 </div>
 
 <!-- Bannière de consentement cookies (conforme RGPD) -->
@@ -443,21 +416,6 @@
   <span>🍪 Ce site utilise des cookies pour améliorer votre expérience. Vos données restent confidentielles.</span>
   <button id="accept-cookies" style="margin-left:15px; padding:6px 16px; background:var(--gradient-primary); border:none; border-radius:20px; color:white; cursor:pointer; font-weight:600;">J'accepte</button>
   <button id="reject-cookies" style="margin-left:8px; padding:6px 16px; background:transparent; border:1px solid var(--border); border-radius:20px; color:var(--text-muted); cursor:pointer;">Refuser</button>
-</div>
-
-<!-- Newsletter Subscription (inspirée du site Idaksahak.com) -->
-<div id="newsletterPopup" class="newsletter-popup" hidden>
-  <div class="newsletter-popup-content">
-    <button class="newsletter-close" id="closeNewsletter">✕</button>
-    <div class="newsletter-icon">📧</div>
-    <h3 data-i18n="newsletter_title">Restez connecté !</h3>
-    <p data-i18n="newsletter_desc">Recevez les nouveaux mots et actualités de la communauté Idaksahak.</p>
-    <form id="newsletterForm" class="newsletter-form">
-      <input type="email" id="newsletterEmail" placeholder="Votre adresse email" required>
-      <button type="submit" data-i18n="newsletter_subscribe">S'abonner</button>
-    </form>
-    <p class="newsletter-note" data-i18n="newsletter_note">Aucun spam, désabonnement à tout moment.</p>
-  </div>
 </div>
 
 <footer class="site-footer">
@@ -483,15 +441,15 @@
       <div class="footer-column">
         <h4 data-i18n="footer_follow">Suivez-nous</h4>
         <div class="social-links">
-          <a href="#" class="social-link" data-social="facebook">📘</a>
-          <a href="#" class="social-link" data-social="twitter">🐦</a>
-          <a href="#" class="social-link" data-social="youtube">🎥</a>
+          <a href="#" class="social-link" data-social="facebook"></a>
+          <a href="#" class="social-link" data-social="twitter"></a>
+          <a href="#" class="social-link" data-social="youtube"></a>
         </div>
       </div>
     </div>
     <div id="historique" class="historique-section" aria-live="polite"></div>
     <div class="footer-copyright">
-      <p>&copy; 2024-2025 Tadaksahak Learning - Hamadine Ag Moctar</p>
+      <p>&copy; 2024-2026 Tadaksahak Learning - Hamadine Ag Moctar</p>
       <p class="footer-version">Version 3.0.0</p>
     </div>
   </div>
