@@ -7,6 +7,17 @@
   <meta name="description" content="Dictionnaire Tadaksahak multilingue, culture, histoire, médias, quiz, carte, timeline, propositions relatives.">
   <meta name="author" content="Hamadine Ag Moctar">
   <meta name="theme-color" content="#005fa3">
+  
+  <!-- Open Graph / SEO (inspiré du site Idaksahak.com) -->
+  <meta property="og:title" content="Tadaksahak Learning – Langue et culture Idaksahak">
+  <meta property="og:description" content="Apprenez la langue et découvrez la culture du peuple Idaksahak. Dictionnaire, grammaire, contes, quiz et ressources académiques.">
+  <meta property="og:image" content="images/og-image.jpg">
+  <meta property="og:url" content="https://tadaksahak-learning.com">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tadaksahak Learning">
+  <meta name="twitter:description" content="Plateforme dédiée à la langue et culture Idaksahak">
+  
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="images/idaksahak_round.png" type="image/png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/idaksahak_round.png">
@@ -33,7 +44,6 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"></noscript>
   <script>
-    // Chargement différé de Leaflet (sera déclenché au besoin par app.js)
     function loadLeaflet() {
       if (!window.L) {
         var script = document.createElement('script');
@@ -51,6 +61,15 @@
 <div id="loadingOverlay" class="loading-overlay" hidden>
   <div class="spinner"></div>
   <p data-i18n="loading">Chargement de l'application...</p>
+</div>
+
+<!-- Bannière de développement (inspirée du site) -->
+<div id="devBanner" class="dev-banner">
+  <div class="dev-banner-content">
+    <span class="dev-badge">🚀 EN EXPANSION</span>
+    <span class="dev-message" data-i18n="dev_message">Plateforme opérationnelle — Nouvelles fonctionnalités et services linguistiques à venir</span>
+    <button id="closeDevBanner" class="dev-banner-close" aria-label="Fermer">✕</button>
+  </div>
 </div>
 
 <header class="site-header">
@@ -83,10 +102,10 @@
   </div>
 
   <div class="lang-selector">
-    <button data-lang="fr" class="lang-flag" aria-label="Français">Français</button>
-    <button data-lang="ar" class="lang-flag" aria-label="العربية">العربية</button>
-    <button data-lang="en" class="lang-flag" aria-label="English">English</button>
-</div>
+    <button data-lang="fr" class="lang-flag" aria-label="Français">🇫🇷 Français</button>
+    <button data-lang="ar" class="lang-flag" aria-label="العربية">🇸🇦 العربية</button>
+    <button data-lang="en" class="lang-flag" aria-label="English">🇬🇧 English</button>
+  </div>
 
   <nav class="main-nav">
     <label for="sectionSelector" class="visually-hidden" data-i18n="choose_section">Choisir une section</label>
@@ -111,6 +130,8 @@
       <option value="search" data-i18n="nav_search">🔍 Recherche livres</option>
       <option value="dashboard" data-i18n="nav_dashboard">📊 Tableau de bord</option>
       <option value="ressources" data-i18n="nav_ressources">📚 Ressources académiques</option>
+      <!-- NOUVEAU : Partenaires -->
+      <option value="partenaires" data-i18n="nav_partenaires">🤝 Partenaires</option>
     </select>
   </nav>
 </header>
@@ -123,6 +144,31 @@
       <p data-i18n="welcome_subtitle">Une plateforme dédiée à la langue et à la culture Tadaksahak.</p>
       <button id="btnGoDico" class="btn btn-primary" data-i18n="go_dico">📖 Accéder au dictionnaire</button>
     </div>
+    
+    <!-- NOUVEAU : Statistiques améliorées -->
+    <div class="stats-grid">
+      <div class="stat-card premium">
+        <div class="stat-icon">📖</div>
+        <span class="stat-number" id="statMots">0</span>
+        <span class="stat-label" data-i18n="stat_words">mots</span>
+      </div>
+      <div class="stat-card premium">
+        <div class="stat-icon">🎧</div>
+        <span class="stat-number" id="statAudios">0</span>
+        <span class="stat-label" data-i18n="stat_audios">audios</span>
+      </div>
+      <div class="stat-card premium">
+        <div class="stat-icon">📚</div>
+        <span class="stat-number" id="statLivres">0</span>
+        <span class="stat-label" data-i18n="stat_books">livres</span>
+      </div>
+      <div class="stat-card premium">
+        <div class="stat-icon">👥</div>
+        <span class="stat-number" id="statUtilisateurs">0</span>
+        <span class="stat-label" data-i18n="stat_users">utilisateurs</span>
+      </div>
+    </div>
+    
     <div class="bio-container">
       <img src="images/hamadine_bio.jpg" alt="Hamadine Ag Moctar - Gardien de la mémoire culturelle Idaksahak" class="bio-photo" width="140" height="140" loading="lazy">
       <div class="bio-text">
@@ -131,16 +177,23 @@
         <p><em data-i18n="bio_text2">Une mission : connecter nos mondes.</em></p>
       </div>
     </div>
+    
     <div id="wordOfDayContainer" class="word-of-day" aria-live="polite"></div>
-    <div class="stats-container" id="statsContainer" hidden>
-      <div class="stat-card"><span class="stat-number" id="statMots">0</span><span class="stat-label" data-i18n="stat_words">mots</span></div>
-      <div class="stat-card"><span class="stat-number" id="statAudios">0</span><span class="stat-label" data-i18n="stat_audios">audios</span></div>
-      <div class="stat-card"><span class="stat-number" id="statLivres">0</span><span class="stat-label" data-i18n="stat_books">livres</span></div>
-    </div>
   </section>
 
   <section id="dictionnaire" class="onglet-contenu" hidden>
     <h2 data-i18n="dictionary_title">📖 Dictionnaire Tadaksahak</h2>
+    
+    <!-- NOUVEAU : Boutons de partage social -->
+    <div class="share-section" id="dictionaryShareSection" hidden>
+      <div class="share-buttons">
+        <button class="share-btn whatsapp" onclick="shareCurrentWord('whatsapp')">📱 WhatsApp</button>
+        <button class="share-btn twitter" onclick="shareCurrentWord('twitter')">🐦 Twitter</button>
+        <button class="share-btn facebook" onclick="shareCurrentWord('facebook')">📘 Facebook</button>
+        <button class="share-btn copy" onclick="shareCurrentWord('copy')">📋 Copier</button>
+      </div>
+    </div>
+    
     <div class="search-section">
       <div class="search-wrapper">
         <input id="searchBar" type="search" placeholder="Rechercher un mot…" autocomplete="off" aria-label="Rechercher un mot">
@@ -170,45 +223,50 @@
   <section id="grammaire" class="onglet-contenu" hidden>
     <h2 data-i18n="grammar_title">📚 Grammaire Tadaksahak</h2>
     
+    <!-- Onglets Grammaire -->
+    <div class="grammar-tabs">
+      <button class="grammar-tab active" data-tab="causative">📖 Verbes causatifs/passifs</button>
+      <button class="grammar-tab" data-tab="relatives">📖 Propositions relatives</button>
+    </div>
+    
     <!-- Sélecteur de langue intégré au livre -->
     <div class="lang-selector-book">
-        <button class="lang-btn active" data-lang="fr">🇫🇷 Français</button>
-        <button class="lang-btn" data-lang="en">🇬🇧 English</button>
-        <button class="lang-btn" data-lang="ar">🇸🇦 العربية</button>
+      <button class="lang-btn active" data-lang="fr">🇫🇷 Français</button>
+      <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+      <button class="lang-btn" data-lang="ar">🇸🇦 العربية</button>
     </div>
 
     <!-- Livre ouvert -->
     <div class="book-spread" id="bookSpread">
-        <!-- Page gauche -->
-        <div class="book-page page-left" id="pageLeft">
-            <div class="page-header">
-                <span class="page-title" id="leftTitle">Chapitre</span>
-                <span class="page-number" id="leftPageNum">p. 1</span>
-            </div>
-            <div class="page-content" id="leftContent"></div>
-            <div class="page-range" id="leftRange"></div>
-            <div class="page-keywords" id="leftKeywords"></div>
+      <div class="book-page page-left" id="pageLeft">
+        <div class="page-header">
+          <span class="page-title" id="leftTitle">Chapitre</span>
+          <span class="page-number" id="leftPageNum">p. 1</span>
         </div>
-
-        <!-- Page droite -->
-        <div class="book-page page-right" id="pageRight">
-            <div class="page-header">
-                <span class="page-title" id="rightTitle">Chapitre</span>
-                <span class="page-number" id="rightPageNum">p. 2</span>
-            </div>
-            <div class="page-content" id="rightContent"></div>
-            <div class="page-range" id="rightRange"></div>
-            <div class="page-keywords" id="rightKeywords"></div>
+        <div class="page-content" id="leftContent"></div>
+        <div class="page-range" id="leftRange"></div>
+        <div class="page-keywords" id="leftKeywords"></div>
+      </div>
+      <div class="book-page page-right" id="pageRight">
+        <div class="page-header">
+          <span class="page-title" id="rightTitle">Chapitre</span>
+          <span class="page-number" id="rightPageNum">p. 2</span>
         </div>
+        <div class="page-content" id="rightContent"></div>
+        <div class="page-range" id="rightRange"></div>
+        <div class="page-keywords" id="rightKeywords"></div>
+      </div>
     </div>
 
-    <!-- Contrôles -->
     <div class="book-controls">
-        <button class="nav-btn" id="prevBtn" title="Page précédente">←</button>
-        <span class="page-indicator" id="pageIndicator">Bloc 1 / 30</span>
-        <button class="nav-btn" id="nextBtn" title="Page suivante">→</button>
+      <button class="nav-btn" id="prevBtn" title="Page précédente">←</button>
+      <span class="page-indicator" id="pageIndicator">Bloc 1 / 30</span>
+      <button class="nav-btn" id="nextBtn" title="Page suivante">→</button>
     </div>
     <div class="swipe-hint">← Swipez pour tourner les pages →</div>
+    
+    <!-- Container pour les relatives -->
+    <div id="relativesContainer" class="relatives-container" hidden></div>
   </section>
 
   <section id="contes" class="onglet-contenu" hidden>
@@ -244,6 +302,13 @@
 
   <section id="photos" class="onglet-contenu" hidden>
     <h2 data-i18n="photos_title">🖼️ Galerie Photos</h2>
+    <div class="gallery-filters">
+      <button class="gallery-filter active" data-category="all">📷 Toutes</button>
+      <button class="gallery-filter" data-category="culture">🎭 Culture</button>
+      <button class="gallery-filter" data-category="evenements">📅 Événements</button>
+      <button class="gallery-filter" data-category="portraits">👤 Portraits</button>
+      <button class="gallery-filter" data-category="geographie">🗺️ Géographie</button>
+    </div>
     <div id="photosContainer" class="grid" aria-live="polite"></div>
   </section>
 
@@ -279,9 +344,18 @@
     <div id="rapportsContainer" aria-live="polite"></div>
   </section>
 
+  <!-- SECTION ACTUALITÉS AMÉLIORÉE (inspirée du site Idaksahak.com) -->
   <section id="actualites" class="onglet-contenu" hidden>
-    <h2 data-i18n="news_title">📰 Actualités</h2>
-    <div class="coming-soon"><p data-i18n="news_coming">📰 Restez connectés !</p></div>
+    <h2 data-i18n="news_title">📰 Actualités de la communauté</h2>
+    <div class="actualites-header">
+      <p class="actualites-subtitle">Restez informé des événements et communiqués de la communauté Idaksahak</p>
+    </div>
+    <div id="actualitesContainer" class="actualites-grid" aria-live="polite"></div>
+    <div class="actualites-footer">
+      <a href="https://idaksahak.com" target="_blank" class="btn-outline" rel="noopener noreferrer">
+        🌐 Voir plus sur le site officiel Idaksahak.com →
+      </a>
+    </div>
   </section>
 
   <section id="quiz" class="onglet-contenu" hidden>
@@ -313,8 +387,15 @@
     <div id="themesContainer" aria-live="polite"></div>
   </section>
 
+  <!-- TIMELINE AMÉLIORÉE -->
   <section id="timeline" class="onglet-contenu" hidden>
-    <h2 data-i18n="timeline_title">📅 Ligne du temps historique</h2>
+    <h2 data-i18n="timeline_title">📅 Événements historiques</h2>
+    <div class="timeline-filters">
+      <button class="timeline-filter active" data-filter="all">📜 Tous</button>
+      <button class="timeline-filter" data-filter="reunion">📢 Réunions</button>
+      <button class="timeline-filter" data-filter="campagne">🎯 Campagnes</button>
+      <button class="timeline-filter" data-filter="creation">✨ Créations</button>
+    </div>
     <div id="timelineContainer" class="timeline-wrapper" aria-live="polite"></div>
   </section>
 
@@ -339,25 +420,99 @@
     <div id="ressourcesContainer" aria-live="polite"></div>
   </section>
 
+  <!-- NOUVELLE SECTION : PARTENAIRES -->
+  <section id="partenaires" class="onglet-contenu" hidden>
+    <h2 data-i18n="partenaires_title">🤝 Nos partenaires</h2>
+    <p class="partenaires-subtitle" data-i18n="partenaires_subtitle">Ils soutiennent la préservation de la culture Idaksahak</p>
+    <div id="partenairesContainer" class="partenaires-grid" aria-live="polite"></div>
+  </section>
+
 </main>
 
 <button id="toggleChatBot" class="floating-chat-btn" aria-label="Ouvrir le chat">💬</button>
 <div id="toast" class="toast" role="alert" hidden></div>
 
+<!-- Panneau d'accessibilité flottant -->
+<div id="accessibilityPanel" class="accessibility-panel" hidden>
+  <button class="accessibility-btn" data-action="fontSizeIncrease" title="Augmenter la taille">A+</button>
+  <button class="accessibility-btn" data-action="fontSizeDecrease" title="Diminuer la taille">A-</button>
+  <button class="accessibility-btn" data-action="fontSizeReset" title="Réinitialiser">A</button>
+  <button class="accessibility-btn" data-action="highContrast" title="Contraste élevé">◑</button>
+  <button class="accessibility-btn" data-action="dyslexiaFont" title="Police dyslexie">📖</button>
+  <button class="accessibility-btn" data-action="readingMask" title="Masque de lecture">📏</button>
+  <button class="accessibility-btn" data-action="voiceCommand" title="Commande vocale">🎤</button>
+</div>
+
 <!-- Bannière de consentement cookies (conforme RGPD) -->
 <div id="cookie-consent" style="position:fixed; bottom:0; left:0; right:0; background:var(--bg-card); color:var(--text); padding:12px 20px; text-align:center; z-index:1000; border-top:1px solid var(--border); display:none; backdrop-filter:blur(8px);">
-    <span>🍪 Ce site utilise Google Analytics pour mesurer l'audience de manière anonyme (adresses IP masquées). Aucune donnée personnelle n'est collectée.</span>
-    <button id="accept-cookies" style="margin-left:15px; padding:6px 16px; background:var(--gradient-primary); border:none; border-radius:20px; color:white; cursor:pointer; font-weight:600;">J'accepte</button>
-    <button id="reject-cookies" style="margin-left:8px; padding:6px 16px; background:transparent; border:1px solid var(--border); border-radius:20px; color:var(--text-muted); cursor:pointer;">Refuser</button>
+  <span>🍪 Ce site utilise des cookies pour améliorer votre expérience. Vos données restent confidentielles.</span>
+  <button id="accept-cookies" style="margin-left:15px; padding:6px 16px; background:var(--gradient-primary); border:none; border-radius:20px; color:white; cursor:pointer; font-weight:600;">J'accepte</button>
+  <button id="reject-cookies" style="margin-left:8px; padding:6px 16px; background:transparent; border:1px solid var(--border); border-radius:20px; color:var(--text-muted); cursor:pointer;">Refuser</button>
 </div>
+
+<!-- Newsletter Subscription (inspirée du site Idaksahak.com) -->
+<div id="newsletterPopup" class="newsletter-popup" hidden>
+  <div class="newsletter-popup-content">
+    <button class="newsletter-close" id="closeNewsletter">✕</button>
+    <div class="newsletter-icon">📧</div>
+    <h3 data-i18n="newsletter_title">Restez connecté !</h3>
+    <p data-i18n="newsletter_desc">Recevez les nouveaux mots et actualités de la communauté Idaksahak.</p>
+    <form id="newsletterForm" class="newsletter-form">
+      <input type="email" id="newsletterEmail" placeholder="Votre adresse email" required>
+      <button type="submit" data-i18n="newsletter_subscribe">S'abonner</button>
+    </form>
+    <p class="newsletter-note" data-i18n="newsletter_note">Aucun spam, désabonnement à tout moment.</p>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h4>Tadaksahak Learning</h4>
+        <p>Plateforme dédiée à la langue et culture Idaksahak</p>
+      </div>
+      <div class="footer-column">
+        <h4 data-i18n="footer_quicklinks">Liens rapides</h4>
+        <ul>
+          <li><a href="#" data-section="dictionnaire">📖 Dictionnaire</a></li>
+          <li><a href="#" data-section="grammaire">📚 Grammaire</a></li>
+          <li><a href="#" data-section="contes">📖 Contes</a></li>
+          <li><a href="#" data-section="ressources">📚 Ressources</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4 data-i18n="footer_contact">Contact</h4>
+        <p><a href="mailto:hamadineagmoctar@gmail.com">hamadineagmoctar@gmail.com</a></p>
+      </div>
+      <div class="footer-column">
+        <h4 data-i18n="footer_follow">Suivez-nous</h4>
+        <div class="social-links">
+          <a href="#" class="social-link" data-social="facebook">📘</a>
+          <a href="#" class="social-link" data-social="twitter">🐦</a>
+          <a href="#" class="social-link" data-social="youtube">🎥</a>
+        </div>
+      </div>
+    </div>
+    <div id="historique" class="historique-section" aria-live="polite"></div>
+    <div class="footer-copyright">
+      <p>&copy; 2024-2025 Tadaksahak Learning - Hamadine Ag Moctar</p>
+      <p class="footer-version">Version 3.0.0</p>
+    </div>
+  </div>
+</footer>
+
 <script>
+// Script de consentement cookies amélioré
 (function() {
     const consentBanner = document.getElementById('cookie-consent');
     const acceptBtn = document.getElementById('accept-cookies');
     const rejectBtn = document.getElementById('reject-cookies');
     
     if (localStorage.getItem('cookies_consent') === null) {
-        consentBanner.style.display = 'block';
+        setTimeout(() => {
+            consentBanner.style.display = 'block';
+        }, 1000);
     }
     
     function setConsent(accepted) {
@@ -365,23 +520,40 @@
         consentBanner.style.display = 'none';
         if (accepted) {
             console.log('📊 Analytics activé (consentement)');
+            if (typeof gtag !== 'undefined') {
+                gtag('consent', 'update', {
+                    'analytics_storage': 'granted'
+                });
+            }
         } else {
             window['ga-disable-G-N1801YD76L'] = true;
             console.log('📊 Analytics désactivé');
         }
     }
     
-    acceptBtn.addEventListener('click', () => setConsent(true));
-    rejectBtn.addEventListener('click', () => setConsent(false));
+    if (acceptBtn) acceptBtn.addEventListener('click', () => setConsent(true));
+    if (rejectBtn) rejectBtn.addEventListener('click', () => setConsent(false));
 })();
-</script>
 
-<footer class="site-footer">
-  <div class="footer-content">
-    <p>&copy; 2024 Tadaksahak Learning - Hamadine Ag Moctar</p>
-    <div id="historique" aria-live="polite"></div>
-  </div>
-</footer>
+// Fermeture bannière de développement
+document.getElementById('closeDevBanner')?.addEventListener('click', function() {
+    document.getElementById('devBanner').style.display = 'none';
+    localStorage.setItem('devBannerClosed', 'true');
+});
+
+// Liens footer vers sections
+document.querySelectorAll('.footer-column a[data-section]').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const section = link.dataset.section;
+        const sectionSelector = document.getElementById('sectionSelector');
+        if (sectionSelector) {
+            sectionSelector.value = section;
+            sectionSelector.dispatchEvent(new Event('change'));
+        }
+    });
+});
+</script>
 
 <script src="app.js"></script>
 </body>
