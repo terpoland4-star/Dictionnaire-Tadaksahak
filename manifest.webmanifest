@@ -1,7 +1,7 @@
 {
-  "name": "Tadaksahak Learning",
+  "name": "Tadaksahak Learning - Langue et culture Idaksahak",
   "short_name": "Tadaksahak",
-  "description": "Dictionnaire, culture et histoire du peuple Idaksahak – Multilingue FR/AR/EN",
+  "description": "Dictionnaire, grammaire, contes, actualités et histoire du peuple Idaksahak – Multilingue FR/AR/EN",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
@@ -10,7 +10,7 @@
   "background_color": "#0e1116",
   "lang": "fr",
   "dir": "ltr",
-  "categories": ["education", "reference", "dictionary", "culture", "language"],
+  "categories": ["education", "reference", "dictionary", "culture", "language", "books", "history"],
   "icons": [
     {
       "src": "images/icon-72x72.png",
@@ -63,24 +63,45 @@
   ],
   "shortcuts": [
     {
-      "name": "Dictionnaire",
+      "name": "📖 Dictionnaire",
       "short_name": "Dico",
       "description": "Rechercher un mot en tadaksahak",
-      "url": "./index.html",
+      "url": "./index.html?section=dictionnaire",
       "icons": [{ "src": "images/icon-96x96.png", "sizes": "96x96" }]
     },
     {
-      "name": "Grammaire",
+      "name": "📚 Grammaire",
       "short_name": "Grammaire",
       "description": "Grammaire tadaksahak et propositions relatives",
-      "url": "./index.html",
+      "url": "./index.html?section=grammaire",
       "icons": [{ "src": "images/icon-96x96.png", "sizes": "96x96" }]
     },
     {
-      "name": "Flashcards",
+      "name": "🃏 Flashcards",
       "short_name": "Flashcards",
       "description": "Apprendre avec les flashcards",
-      "url": "./index.html",
+      "url": "./index.html?section=flashcards",
+      "icons": [{ "src": "images/icon-96x96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "📰 Actualités",
+      "short_name": "Actus",
+      "description": "Actualités de la communauté Idaksahak",
+      "url": "./index.html?section=actualites",
+      "icons": [{ "src": "images/icon-96x96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "❓ Quiz",
+      "short_name": "Quiz",
+      "description": "Testez vos connaissances",
+      "url": "./index.html?section=quiz",
+      "icons": [{ "src": "images/icon-96x96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "🤝 Partenaires",
+      "short_name": "Partenaires",
+      "description": "Nos partenaires institutionnels",
+      "url": "./index.html?section=partenaires",
       "icons": [{ "src": "images/icon-96x96.png", "sizes": "96x96" }]
     }
   ],
@@ -91,8 +112,42 @@
       "type": "image/jpeg",
       "form_factor": "wide",
       "label": "Page d'accueil de Tadaksahak Learning"
+    },
+    {
+      "src": "images/screenshot-dictionary.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "Dictionnaire Tadaksahak"
+    },
+    {
+      "src": "images/screenshot-grammar.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "Livre de grammaire interactif"
     }
   ],
   "prefer_related_applications": false,
-  "display_override": ["window-controls-overlay", "standalone"]
+  "display_override": ["window-controls-overlay", "standalone"],
+  "launch_handler": {
+    "client_mode": ["focus-existing", "auto"]
+  },
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "related_applications": [],
+  "handle_links": "preferred",
+  "note": "Application éducative pour la préservation de la langue et culture Idaksahak",
+  "iarc_rating_id": "",
+  "share_target": {
+    "action": "./index.html",
+    "method": "GET",
+    "enctype": "application/x-www-form-urlencoded",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  }
 }
