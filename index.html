@@ -184,14 +184,9 @@
   <section id="dictionnaire" class="onglet-contenu" hidden>
     <h2 data-i18n="dictionary_title">📖 Dictionnaire Tadaksahak</h2>
     
-    <!-- NOUVEAU : Boutons de partage social -->
+    <!-- SECTION MODIFIÉE : boutons redondants remplacés par un bouton unique "Partager" -->
     <div class="share-section" id="dictionaryShareSection" hidden>
-      <div class="share-buttons">
-        <button class="share-btn whatsapp" onclick="shareCurrentWord('whatsapp')">📱 WhatsApp</button>
-        <button class="share-btn twitter" onclick="shareCurrentWord('twitter')">🐦 Twitter</button>
-        <button class="share-btn facebook" onclick="shareCurrentWord('facebook')">📘 Facebook</button>
-        <button class="share-btn copy" onclick="shareCurrentWord('copy')">📋 Copier</button>
-      </div>
+      <button class="share-btn unified" id="shareWordBtn">🔗 Partager</button>
     </div>
     
     <div class="search-section">
@@ -553,6 +548,63 @@ document.querySelectorAll('.footer-column a[data-section]').forEach(link => {
         }
     });
 });
+
+// ============================================================
+// AJOUT UNIQUE : Bouton de partage unifié (remplace WhatsApp/Twitter/Facebook/Copier)
+// ============================================================
+document.addEventListener('DOMContentLoaded', function() {
+    const shareBtn = document.getElementById('shareWordBtn');
+    if (shareBtn) {
+        shareBtn.addEventListener('click', function() {
+            const motElement = document.getElementById('motTexte');
+            const defElement = document.getElementById('definition');
+            
+            const mot = motElement ? motElement.innerText : 'Mot Tadaksahak';
+            let definition = '';
+            if (defElement) {
+                // On nettoie le HTML pour ne garder que le texte
+                definition = defElement.innerText || defElement.textContent || '';
+            }
+            
+            const textePartage = `${mot} : ${definition}`.trim();
+            
+            // Utilisation de l'API native de partage si disponible
+            if (navigator.share) {
+                navigator.share({
+                    title: mot,
+                    text: definition,
+                    url: window.location.href
+                }).catch(err => {
+                    // Si l'utilisateur annule, on ne fait rien
+                    if (err.name !== 'AbortError') {
+                        console.log('Erreur de partage:', err);
+                        fallbackCopy(textePartage);
+                    }
+                });
+            } else {
+                // Fallback pour navigateurs sans Web Share API (ex: desktop)
+                fallbackCopy(textePartage);
+            }
+            
+            function fallbackCopy(text) {
+                navigator.clipboard.writeText(text).then(() => {
+                    // Afficher une notification discrète
+                    const toast = document.getElementById('toast');
+                    if (toast) {
+                        toast.textContent = '📋 Mot copié dans le presse-papier';
+                        toast.hidden = false;
+                        setTimeout(() => { toast.hidden = true; }, 2000);
+                    } else {
+                        alert('📋 Mot copié :\n' + text);
+                    }
+                }).catch(() => {
+                    alert('❌ Impossible de copier le mot');
+                });
+            }
+        });
+    }
+});
+// ============================================================
 </script>
 
 <script src="app.js"></script>
