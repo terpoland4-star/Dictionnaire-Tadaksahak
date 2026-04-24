@@ -3,7 +3,7 @@
 // VERSION ULTIME COMPLÈTE
 // Avec : Dictionnaire, Grammaire, Contes, Émissions, Chat Bot, Audio, Photos, Vidéos
 // Livres, Rapports, Actualités, Quiz, Flashcards, Thèmes, Timeline, Carte
-// + NOUVEAU : Analytics, Newsletter, Accessibilité, Partage Social
+// + NOUVEAU : Analytics, Accessibilité, Partage Social
 // ==============================
 
 console.log("🚀 Démarrage de l'application Tadaksahak Ultimate...");
@@ -124,10 +124,6 @@ const i18n = {
     see_more: "Voir plus →",
     partenaires_title: "🤝 Nos partenaires",
     partenaires_subtitle: "Ils soutiennent la préservation de la culture Idaksahak",
-    newsletter_title: "📧 Restez connecté !",
-    newsletter_desc: "Recevez les nouveaux mots et actualités de la communauté Idaksahak.",
-    newsletter_subscribe: "S'abonner",
-    newsletter_note: "Aucun spam, désabonnement à tout moment.",
     footer_quicklinks: "Liens rapides",
     footer_contact: "Contact",
     footer_follow: "Suivez-nous",
@@ -253,10 +249,6 @@ const i18n = {
     see_more: "عرض المزيد ←",
     partenaires_title: "🤝 شركاؤنا",
     partenaires_subtitle: "يدعمون الحفاظ على ثقافة إدكساهق",
-    newsletter_title: "📧 ابق على اتصال",
-    newsletter_desc: "احصل على الكلمات الجديدة وأخبار المجتمع",
-    newsletter_subscribe: "اشترك",
-    newsletter_note: "لا بريد عشوائي، إلغاء الاشتراك في أي وقت",
     footer_quicklinks: "روابط سريعة",
     footer_contact: "اتصل بنا",
     footer_follow: "تابعنا",
@@ -373,10 +365,6 @@ const i18n = {
     see_more: "See more →",
     partenaires_title: "🤝 Our Partners",
     partenaires_subtitle: "They support the preservation of Idaksahak culture",
-    newsletter_title: "📧 Stay connected",
-    newsletter_desc: "Get new words and community news",
-    newsletter_subscribe: "Subscribe",
-    newsletter_note: "No spam, unsubscribe anytime",
     footer_quicklinks: "Quick links",
     footer_contact: "Contact",
     footer_follow: "Follow us",
@@ -791,190 +779,7 @@ class AnalyticsManager {
 const analytics = new AnalyticsManager();
 
 // ============================================================
-// SECTION 8 : NEWSLETTER MANAGER (CORRIGÉ - NON INVASIF)
-// ============================================================
-
-class NewsletterManager {
-  constructor() {
-    this.initialized = false;
-    this.popupShown = false;
-    this.init();
-  }
-
-  init() {
-    if (this.initialized) return;
-    this.initialized = true;
-    
-    const hasSubscribed = localStorage.getItem('newsletter_subscribed') === 'true';
-    const hasSeenPopup = localStorage.getItem('newsletter_popup_seen') === 'true';
-    
-    // Initialiser le formulaire du footer s'il existe
-    const footerForm = getElement('newsletterForm', false);
-    if (footerForm) {
-      const newFooterForm = footerForm.cloneNode(true);
-      footerForm.parentNode?.replaceChild(newFooterForm, footerForm);
-      newFooterForm.addEventListener('submit', (e) => this.handleSubscribe(e));
-    }
-    
-    // NE PAS afficher si déjà abonné ou déjà vu
-    if (hasSubscribed || hasSeenPopup) return;
-    
-    // Attendre une interaction utilisateur (respectueux)
-    const showPopupOnInteraction = () => {
-      if (this.popupShown) return;
-      setTimeout(() => {
-        if (!localStorage.getItem('newsletter_subscribed') && 
-            !localStorage.getItem('newsletter_popup_seen')) {
-          this.showPopup();
-          this.popupShown = true;
-        }
-      }, 500);
-      
-      // Nettoyer les écouteurs
-      document.removeEventListener('click', showPopupOnInteraction);
-      document.removeEventListener('scroll', showPopupOnInteraction);
-      document.removeEventListener('keydown', showPopupOnInteraction);
-    };
-    
-    // Attendre une vraie interaction utilisateur
-    const events = ['click', 'scroll', 'keydown'];
-    events.forEach(event => {
-      document.addEventListener(event, showPopupOnInteraction, { once: true });
-    });
-    
-    // Fallback très long (60 secondes) uniquement si aucune interaction
-    setTimeout(() => {
-      if (!localStorage.getItem('newsletter_subscribed') && 
-          !localStorage.getItem('newsletter_popup_seen') && 
-          !this.popupShown) {
-        this.showPopup();
-        this.popupShown = true;
-      }
-    }, 60000);
-  }
-
-  showPopup() {
-    if (localStorage.getItem('newsletter_subscribed') === 'true') return;
-    
-    let popup = getElement('newsletterPopup', false);
-    if (!popup) {
-      popup = this.createPopup();
-      document.body.appendChild(popup);
-    }
-    
-    localStorage.setItem('newsletter_popup_seen', 'true');
-    popup.hidden = false;
-    popup.style.display = 'flex';
-    
-    this.attachPopupEvents(popup);
-  }
-
-  createPopup() {
-    const popup = document.createElement('div');
-    popup.id = 'newsletterPopup';
-    popup.className = 'newsletter-popup';
-    popup.hidden = true;
-    popup.style.display = 'none';
-    popup.innerHTML = `
-      <div class="newsletter-popup-content">
-        <button class="newsletter-close" id="closeNewsletterBtn" aria-label="Fermer">✕</button>
-        <div class="newsletter-icon">📧</div>
-        <h3>Restez connecté !</h3>
-        <p>Recevez les nouveaux mots et actualités de la communauté Idaksahak.</p>
-        <form class="newsletter-form" id="newsletterPopupForm">
-          <input type="email" id="newsletterEmailPopup" placeholder="Votre adresse email" required autocomplete="email">
-          <button type="submit">S'abonner</button>
-        </form>
-        <p class="newsletter-note">Aucun spam, désabonnement à tout moment.</p>
-        <button id="dismissNewsletterPopup" class="btn-popup-later">Plus tard</button>
-      </div>
-    `;
-    return popup;
-  }
-
-  attachPopupEvents(popup) {
-    const closeBtn = popup.querySelector('#closeNewsletterBtn');
-    if (closeBtn) {
-      const newCloseBtn = closeBtn.cloneNode(true);
-      closeBtn.parentNode.replaceChild(newCloseBtn, closeBtn);
-      newCloseBtn.addEventListener('click', () => {
-        popup.hidden = true;
-        popup.style.display = 'none';
-      });
-    }
-    
-    const laterBtn = popup.querySelector('#dismissNewsletterPopup');
-    if (laterBtn) {
-      const newLaterBtn = laterBtn.cloneNode(true);
-      laterBtn.parentNode.replaceChild(newLaterBtn, laterBtn);
-      newLaterBtn.addEventListener('click', () => {
-        popup.hidden = true;
-        popup.style.display = 'none';
-      });
-    }
-    
-    const form = popup.querySelector('#newsletterPopupForm');
-    if (form) {
-      const newForm = form.cloneNode(true);
-      form.parentNode.replaceChild(newForm, form);
-      newForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        this.handleSubscribe(e, () => {
-          popup.hidden = true;
-          popup.style.display = 'none';
-        });
-      });
-    }
-    
-    popup.addEventListener('click', (e) => {
-      if (e.target === popup) {
-        popup.hidden = true;
-        popup.style.display = 'none';
-      }
-    });
-  }
-
-  async handleSubscribe(e, onSuccess = null) {
-    e.preventDefault();
-    e.stopPropagation();
-    
-    let email = null;
-    const emailInput = e.target?.querySelector('input[type="email"]') || getElement('newsletterEmailPopup', false);
-    if (emailInput) email = emailInput.value.trim();
-    
-    if (!email || !this.validateEmail(email)) {
-      showToast('📧 Email invalide', 'warning');
-      return;
-    }
-    
-    localStorage.setItem('newsletter_subscribed', 'true');
-    localStorage.setItem('newsletter_email', email);
-    localStorage.setItem('newsletter_popup_seen', 'true');
-    
-    if (analytics && analytics.track) {
-      analytics.track('newsletter_subscribe', { email: email.substring(0, 3) + '***' });
-    }
-    
-    showToast('✅ Merci pour votre abonnement !', 'success');
-    
-    if (emailInput) emailInput.value = '';
-    
-    const footerForm = getElement('newsletterForm', false);
-    if (footerForm) {
-      const footerInput = footerForm.querySelector('input[type="email"]');
-      if (footerInput) footerInput.value = '';
-    }
-    
-    if (onSuccess) onSuccess();
-  }
-
-  validateEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  }
-}
-
-// ============================================================
-// SECTION 9 : BOT HAMADINE
+// SECTION 8 : BOT HAMADINE
 // ============================================================
 
 const botResponses = {
@@ -1137,7 +942,7 @@ function initChatEvents() {
 }
 
 // ============================================================
-// SECTION 10 : DICTIONNAIRE
+// SECTION 9 : DICTIONNAIRE (sans boutons de partage)
 // ============================================================
 
 async function chargerDictionnaire() {
@@ -1192,20 +997,14 @@ function afficherMot(item) {
     const labelDef = lang === 'fr' ? '🇫🇷 Définition' : lang === 'en' ? '🇬🇧 Definition' : '🇸🇦 التعريف';
     const labelCat = lang === 'fr' ? '📂 Catégorie' : lang === 'en' ? '📂 Category' : '📂 الفئة';
     
+    // Version sans les boutons de partage social (WhatsApp, Twitter, Facebook, Copier)
     DOM.defElem.innerHTML = `
       <p><strong>${labelCat} :</strong> ${escapeHtml(catLabel)}</p>
       <p><strong>${labelDef} :</strong> ${escapeHtml(def)}</p>
       ${item.fr && lang !== 'fr' ? `<p><strong>🇫🇷 Français :</strong> ${escapeHtml(item.fr)}</p>` : ''}
       ${item.ar && lang !== 'ar' ? `<p><strong>🇸🇦 بالعربية :</strong> ${escapeHtml(item.ar)}</p>` : ''}
       <div class="mot-actions">
-        <button class="btn-small" data-action="share">📤 ${i18n[lang].share}</button>
         <button class="btn-small" data-action="favorite">⭐ ${isFavori ? i18n[lang].remove_favorite : i18n[lang].add_favorite}</button>
-      </div>
-      <div class="share-buttons" id="dictionaryShare">
-        <button class="share-btn whatsapp" onclick="shareCurrentWord('whatsapp')">📱 WhatsApp</button>
-        <button class="share-btn twitter" onclick="shareCurrentWord('twitter')">🐦 Twitter</button>
-        <button class="share-btn facebook" onclick="shareCurrentWord('facebook')">📘 Facebook</button>
-        <button class="share-btn copy" onclick="shareCurrentWord('copy')">📋 Copier</button>
       </div>
     `;
   }
@@ -1284,7 +1083,6 @@ function initDictionaryEvents() {
   DOM.defElem?.addEventListener("click", (e) => {
     const btn = e.target.closest('[data-action]');
     if (!btn || !AppState.motActuel) return;
-    if (btn.dataset.action === "share") partagerMot(AppState.motActuel);
     if (btn.dataset.action === "favorite") basculerFavori(AppState.motActuel);
   });
   
@@ -1339,7 +1137,7 @@ function initDictionaryEvents() {
 }
 
 // ============================================================
-// SECTION 11 : HISTORIQUE & FAVORIS
+// SECTION 10 : HISTORIQUE & FAVORIS
 // ============================================================
 
 function ajouterHistorique(mot) {
@@ -1386,61 +1184,8 @@ function basculerFavori(item) {
   analytics.track('favorite_toggle', { word: item.mot, favori: !isFavori });
 }
 
-function partagerMot(item) {
-  const lang = AppState.currentLanguage;
-  const def = lang === 'fr' ? item.fr : lang === 'en' ? item.en : item.ar;
-  const text = `${item.mot} : ${def || ''}`;
-  if (navigator.share) {
-    navigator.share({ title: 'Mot Tadaksahak', text, url: window.location.href }).catch(() => {});
-  } else {
-    navigator.clipboard?.writeText(text);
-    showToast("📋 Copié dans le presse-papier", "success");
-  }
-  analytics.track('word_share', { word: item.mot });
-}
-
 // ============================================================
-// SECTION 12 : PARTAGE SOCIAL
-// ============================================================
-
-window.shareCurrentWord = function(platform) {
-  if (!AppState.motActuel) return;
-  const lang = AppState.currentLanguage;
-  const word = AppState.motActuel.mot;
-  const def = lang === 'fr' ? AppState.motActuel.fr : lang === 'en' ? AppState.motActuel.en : AppState.motActuel.ar;
-  const text = `${word} : ${def}`;
-  const url = window.location.href;
-  
-  switch(platform) {
-    case 'whatsapp':
-      window.open(`https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`, '_blank');
-      break;
-    case 'twitter':
-      window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
-      break;
-    case 'facebook':
-      window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
-      break;
-    case 'copy':
-      navigator.clipboard?.writeText(text + ' ' + url);
-      showToast('📋 Copié dans le presse-papier', 'success');
-      break;
-  }
-  analytics.track('social_share', { platform, word: AppState.motActuel.mot });
-};
-
-window.shareResource = function(url, title) {
-  if (navigator.share) {
-    navigator.share({ title, text: `Découvrez : ${title}`, url }).catch(() => {});
-  } else {
-    navigator.clipboard?.writeText(url);
-    showToast("📋 Lien copié dans le presse-papier", "success");
-  }
-  analytics.track('resource_share', { title });
-};
-
-// ============================================================
-// SECTION 13 : MOT DU JOUR
+// SECTION 11 : MOT DU JOUR
 // ============================================================
 
 function getWordOfDay() {
@@ -1481,7 +1226,7 @@ function showWordNotification() {
 }
 
 // ============================================================
-// SECTION 14 : LIVRE DE GRAMMAIRE INTERACTIF
+// SECTION 12 : LIVRE DE GRAMMAIRE INTERACTIF
 // ============================================================
 
 async function loadGrammarBook() {
@@ -1622,7 +1367,7 @@ async function showGrammarSection() {
 }
 
 // ============================================================
-// SECTION 15 : PROPOSITIONS RELATIVES
+// SECTION 13 : PROPOSITIONS RELATIVES
 // ============================================================
 
 async function chargerRelatives() {
@@ -1676,7 +1421,7 @@ async function afficherRelatives() {
 }
 
 // ============================================================
-// SECTION 16 : CONTES
+// SECTION 14 : CONTES
 // ============================================================
 
 async function chargerContes() {
@@ -1741,7 +1486,7 @@ function afficherConteDetail(conte) {
 }
 
 // ============================================================
-// SECTION 17 : ÉMISSIONS
+// SECTION 15 : ÉMISSIONS
 // ============================================================
 
 async function chargerEmissions() {
@@ -1794,7 +1539,7 @@ function afficherEmissionsPremium() {
 }
 
 // ============================================================
-// SECTION 18 : THÈMES VOCABULAIRE
+// SECTION 16 : THÈMES VOCABULAIRE
 // ============================================================
 
 async function chargerThemes() {
@@ -1913,7 +1658,7 @@ function speakTextPremium(text) {
 }
 
 // ============================================================
-// SECTION 19 : FLASHCARDS
+// SECTION 17 : FLASHCARDS
 // ============================================================
 
 function genererFlashcards() {
@@ -2022,7 +1767,7 @@ function initFlashcards() {
 }
 
 // ============================================================
-// SECTION 20 : QUIZ
+// SECTION 18 : QUIZ
 // ============================================================
 
 async function chargerQuiz() {
@@ -2086,7 +1831,7 @@ function terminerQuiz() {
 }
 
 // ============================================================
-// SECTION 21 : TIMELINE & CARTE
+// SECTION 19 : TIMELINE & CARTE
 // ============================================================
 
 async function chargerTimeline() {
@@ -2144,7 +1889,7 @@ function initialiserCarte() {
 }
 
 // ============================================================
-// SECTION 22 : LIVRES & RAPPORTS
+// SECTION 20 : LIVRES & RAPPORTS
 // ============================================================
 
 async function afficherLivres() {
@@ -2178,7 +1923,7 @@ async function afficherRapports() {
 }
 
 // ============================================================
-// SECTION 23 : PHOTOS
+// SECTION 21 : PHOTOS
 // ============================================================
 
 const imagesGalerie = [
@@ -2228,7 +1973,7 @@ function genererAlbumsAudio() { const cont = getElement("audioContainer", false)
 function genererVideos() { const cont = getElement("videosContainer", false); if (cont) cont.innerHTML = "<p class='info-message'>🎥 Vidéos à venir prochainement...</p>"; }
 
 // ============================================================
-// SECTION 24 : ACTUALITÉS (NOUVEAU)
+// SECTION 22 : ACTUALITÉS (NOUVEAU)
 // ============================================================
 
 async function chargerActualites() {
@@ -2262,7 +2007,7 @@ function afficherActualites() {
 }
 
 // ============================================================
-// SECTION 25 : PARTENAIRES (NOUVEAU)
+// SECTION 23 : PARTENAIRES (NOUVEAU)
 // ============================================================
 
 const partenairesData = [
@@ -2282,7 +2027,7 @@ function afficherPartenaires() {
 }
 
 // ============================================================
-// SECTION 26 : RESSOURCES ACADÉMIQUES
+// SECTION 24 : RESSOURCES ACADÉMIQUES
 // ============================================================
 
 function afficherRessources() {
@@ -2316,7 +2061,7 @@ function chargerBibliographie() {
 }
 
 // ============================================================
-// SECTION 27 : PWA & SERVICE WORKER
+// SECTION 25 : PWA & SERVICE WORKER
 // ============================================================
 
 function registerServiceWorker() {
@@ -2384,7 +2129,7 @@ function initAutoUpdates() {
 }
 
 // ============================================================
-// SECTION 28 : RACCOURCIS CLAVIER
+// SECTION 26 : RACCOURCIS CLAVIER
 // ============================================================
 
 const KEYBOARD_SHORTCUTS = [
@@ -2416,7 +2161,7 @@ function showHelpModal() {
 }
 
 // ============================================================
-// SECTION 29 : ACCESSIBILITÉ
+// SECTION 27 : ACCESSIBILITÉ
 // ============================================================
 
 function initAccessibilityPanel() {
@@ -2462,7 +2207,7 @@ function initAccessibilityPanel() {
 }
 
 // ============================================================
-// SECTION 30 : POP-UP DE BIENVENUE
+// SECTION 28 : POP-UP DE BIENVENUE
 // ============================================================
 
 function showRessourcesWelcomePopup() {
@@ -2481,7 +2226,7 @@ function showRessourcesWelcomePopup() {
 }
 
 // ============================================================
-// SECTION 31 : NAVIGATION PRINCIPALE
+// SECTION 29 : NAVIGATION PRINCIPALE
 // ============================================================
 
 function initNavigation() {
@@ -2563,7 +2308,7 @@ function initScrollAnimations() {
 }
 
 // ============================================================
-// SECTION 32 : TABLEAU DE BORD
+// SECTION 30 : TABLEAU DE BORD
 // ============================================================
 
 function afficherDashboard() {
@@ -2575,7 +2320,7 @@ function afficherDashboard() {
 }
 
 // ============================================================
-// SECTION 33 : BASE DE CONNAISSANCES & RECHERCHE
+// SECTION 31 : BASE DE CONNAISSANCES & RECHERCHE
 // ============================================================
 
 async function chargerLivresConnaissance() {
@@ -2611,7 +2356,7 @@ function rechercherPleinTexte() {
 }
 
 // ============================================================
-// SECTION 34 : INITIALISATION PRINCIPALE
+// SECTION 32 : INITIALISATION PRINCIPALE
 // ============================================================
 
 async function initialiserApplication() {
@@ -2623,8 +2368,6 @@ async function initialiserApplication() {
     initNavigation();
     initGrammarTabs();
     initAccessibilityPanel();
-    
-    const newsletter = new NewsletterManager();
     
     await Promise.allSettled([
       chargerAvecFallback(chargerDictionnaire, "Dictionnaire"),
@@ -2675,7 +2418,7 @@ async function initialiserApplication() {
     setTimeout(() => showRessourcesWelcomePopup(), 2000);
     
     console.log("✅ Application Tadaksahak Ultimate prête !");
-    console.log("📚 Nouvelles fonctionnalités: Actualités, Partenaires, Analytics, Newsletter");
+    console.log("📚 Nouvelles fonctionnalités: Actualités, Partenaires, Analytics");
   } catch (error) {
     console.error("🔴 Erreur critique :", error);
     showToast("Erreur de chargement. Rechargez la page.", "error");
