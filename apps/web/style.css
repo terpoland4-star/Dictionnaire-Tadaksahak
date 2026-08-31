@@ -453,23 +453,94 @@ main {
   justify-self: end;
 }
 
+/* ============================================
+   NAVIGATION À PÔLES — pilliers cliquables + sous-navigation
+   Remplace l'ancien menu déroulant <select> par une hiérarchie
+   visuelle réelle (le <select> reste présent, caché, pour la
+   compatibilité avec le code existant et l'accessibilité).
+   ============================================ */
+
 .main-nav {
   grid-area: nav;
   width: 100%;
-  max-width: 400px;
+}
+
+.nav-pillars {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.35rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-full);
+  max-width: 720px;
   margin: 0 auto;
+}
+
+.nav-pillar {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--radius-full);
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.nav-pillar:hover {
+  color: var(--text);
+  background: var(--bg-card-hover);
+}
+
+.nav-pillar.active {
+  background: var(--gradient-primary);
+  color: var(--bg);
+}
+
+.nav-subsections {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+}
+
+.nav-chip {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.nav-chip:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+.nav-chip.active {
+  color: var(--accent);
+  border-color: var(--accent);
+  font-weight: 600;
 }
 
 @media (min-width: 1025px) {
   .site-header {
-    grid-template-columns: auto 1fr auto auto;
+    grid-template-columns: auto 1fr auto;
     grid-template-areas:
-      "logo title lang nav"
-      "theme theme theme theme";
-  }
-  .main-nav {
-    max-width: 280px;
-    margin: 0;
+      "logo title lang"
+      "theme theme theme"
+      "nav nav nav";
   }
 }
 

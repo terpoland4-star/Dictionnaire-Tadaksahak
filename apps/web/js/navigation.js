@@ -8,6 +8,97 @@ import { showGrammarSection } from './grammar.js';
 import { chargerQuiz } from './quiz.js';
 import { afficherDashboard, afficherLivres, afficherPhotos, afficherRapports, afficherRessources, genererAlbumsAudio, genererVideos, rechercherPleinTexte } from './ressources.js';
 import { afficherThemesPremium } from './themesVocab.js';
+
+// ------------------------------
+// NAVIGATION À 5 PÔLES (pilliers → sous-sections)
+// Couche ajoutée par-dessus l'ancien <select id="sectionSelector">, qui reste
+// la source de vérité unique : tout code existant (raccourcis clavier, boutons
+// "Aller au dictionnaire", etc.) continue de fonctionner sans modification.
+// ------------------------------
+
+const PILIERS = {
+  accueil: ['accueil'],
+  dictionnaire: ['dictionnaire', 'chat'],
+  apprendre: ['grammaire', 'themes', 'flashcards', 'quiz'],
+  culture: ['contes', 'emissions', 'audio', 'photos', 'videos', 'livres', 'actualites', 'rapports', 'search'],
+  ressources: ['ressources', 'partenaires'],
+};
+
+function pilierDeSection(id) {
+  for (const [pilier, ids] of Object.entries(PILIERS)) {
+    if (ids.includes(id)) return pilier;
+  }
+  return 'accueil';
+}
+
+function libelleSection(id) {
+  const option = dom.sectionSelector?.querySelector(`option[value="${id}"]`);
+  return option ? option.textContent : id;
+}
+
+function rendreSousNav(pilier) {
+  const container = document.getElementById('navSubsections');
+  if (!container) return;
+  const ids = PILIERS[pilier] || [];
+  // Le pôle "accueil" n'a qu'une seule section : pas besoin de sous-nav.
+  if (ids.length <= 1) {
+    container.innerHTML = '';
+    container.hidden = true;
+    return;
+  }
+  container.hidden = false;
+  container.innerHTML = ids
+    .map((id) => `<button class="nav-chip" data-section="${id}" role="tab">${libelleSection(id)}</button>`)
+    .join('');
+  container.querySelectorAll('.nav-chip').forEach((chip) => {
+    chip.addEventListener('click', () => {
+      dom.sectionSelector.value = chip.dataset.section;
+      dom.sectionSelector.dispatchEvent(new Event('change'));
+    });
+  });
+  mettreAJourChipActif();
+}
+
+function mettreAJourChipActif() {
+  const courant = dom.sectionSelector?.value;
+  document.querySelectorAll('.nav-chip').forEach((c) => {
+    const actif = c.dataset.section === courant;
+    c.classList.toggle('active', actif);
+    c.setAttribute('aria-selected', actif ? 'true' : 'false');
+  });
+}
+
+function definirPilierActif(pilier) {
+  document.querySelectorAll('.nav-pillar').forEach((btn) => {
+    const actif = btn.dataset.pillar === pilier;
+    btn.classList.toggle('active', actif);
+    btn.setAttribute('aria-selected', actif ? 'true' : 'false');
+  });
+  rendreSousNav(pilier);
+}
+
+function initNavigationPiliers() {
+  if (!dom.sectionSelector) return;
+
+  document.querySelectorAll('.nav-pillar').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const pilier = btn.dataset.pillar;
+      definirPilierActif(pilier);
+      const premiereSection = PILIERS[pilier][0];
+      dom.sectionSelector.value = premiereSection;
+      dom.sectionSelector.dispatchEvent(new Event('change'));
+    });
+  });
+
+  // Synchronise les pôles/chips à chaque changement de section, y compris
+  // ceux déclenchés par du code existant (raccourcis, boutons "Aller à…").
+  dom.sectionSelector.addEventListener('change', () => {
+    definirPilierActif(pilierDeSection(dom.sectionSelector.value));
+  });
+
+  definirPilierActif(pilierDeSection(dom.sectionSelector.value));
+}
+
 import { afficherTimeline, initialiserCarte } from './timeline.js';
 import { showToast } from './utils.js';
 
@@ -160,6 +251,8 @@ export function initNavigation() {
   const defaultSection = (savedSection && document.getElementById(savedSection)) ? savedSection : "accueil";
   dom.sectionSelector.value = defaultSection;
   showSection(defaultSection);
+
+  initNavigationPiliers();
 }
 
 // ------------------------------

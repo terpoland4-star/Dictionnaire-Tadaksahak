@@ -111,9 +111,18 @@
     <button data-lang="en" class="lang-flag" aria-label="English">🇬🇧 English</button>
   </div>
 
-  <nav class="main-nav">
+  <nav class="main-nav" aria-label="Navigation principale">
+    <div class="nav-pillars" role="tablist" aria-label="Sections principales">
+      <button class="nav-pillar" data-pillar="accueil" role="tab" data-i18n="pillar_home">🏠 Accueil</button>
+      <button class="nav-pillar" data-pillar="dictionnaire" role="tab" data-i18n="pillar_dictionary">📖 Dictionnaire</button>
+      <button class="nav-pillar" data-pillar="apprendre" role="tab" data-i18n="pillar_learn">🎓 Apprendre</button>
+      <button class="nav-pillar" data-pillar="culture" role="tab" data-i18n="pillar_culture">🏺 Culture &amp; mémoire</button>
+      <button class="nav-pillar" data-pillar="ressources" role="tab" data-i18n="pillar_resources">📚 Ressources</button>
+    </div>
+    <div class="nav-subsections" id="navSubsections" role="tablist" aria-label="Sous-sections"></div>
+
     <label for="sectionSelector" class="visually-hidden" data-i18n="choose_section">Choisir une section</label>
-    <select id="sectionSelector">
+    <select id="sectionSelector" class="visually-hidden">
       <option value="accueil" data-i18n="nav_home">🏠 Accueil</option>
       <option value="dictionnaire" data-i18n="nav_dictionary">📖 Dictionnaire</option>
       <option value="grammaire" data-i18n="nav_grammar">📚 Grammaire</option>
@@ -129,8 +138,8 @@
       <option value="quiz" data-i18n="nav_quiz">❓ Quiz</option>
       <option value="flashcards" data-i18n="nav_flashcards">🃏 Flashcards</option>
       <option value="themes" data-i18n="nav_themes">📚 Thèmes</option>
+      <option value="search" data-i18n="nav_search">🔍 Recherche livres</option>
       <option value="ressources" data-i18n="nav_ressources">📚 Ressources académiques</option>
-      <!-- NOUVEAU : Partenaires -->
       <option value="partenaires" data-i18n="nav_partenaires">🤝 Partenaires</option>
     </select>
   </nav>
