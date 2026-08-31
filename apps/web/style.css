@@ -5,46 +5,57 @@
    Auteur : Hamadine AG MOCTAR
    =========================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Noto+Sans+Arabic:wght@400;500;600&family=Noto+Naskh+Arabic:wght@500;600&display=swap');
+
+/* ============================================
+   TYPOGRAPHIE - VARIABLES GLOBALES
+   (indépendantes du thème clair/sombre/sépia)
+   ============================================ */
+:root {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-sans-ar: 'Noto Sans Arabic', 'Inter', sans-serif;
+  --font-display-ar: 'Noto Naskh Arabic', 'Fraunces', serif;
+}
 
 /* ============================================
    DESIGN SYSTEM - VARIABLES
    ============================================ */
 
-/* Thème sombre (par défaut) */
+/* Thème sombre (par défaut) — indigo nocturne, écho du tissage teint à l'indigo */
 body.dark {
   /* Couleurs primaires */
-  --primary: #0099ff;
-  --primary-dark: #0077cc;
-  --primary-light: #33ccff;
-  --accent: #00d4ff;
-  --accent-glow: rgba(0, 212, 255, 0.15);
-  --secondary: #6c5ce7;
-  --secondary-glow: rgba(108, 92, 231, 0.15);
+  --primary: #C09A3E;
+  --primary-dark: #9C7D2F;
+  --primary-light: #D4B45E;
+  --accent: #B5602E;
+  --accent-glow: rgba(181, 96, 46, 0.18);
+  --secondary: #6B7FA3;
+  --secondary-glow: rgba(107, 127, 163, 0.15);
   
   /* Couleurs de texte */
-  --text: #f1f5f9;
-  --text-muted: #94a3b8;
-  --text-light: #cbd5e1;
+  --text: #E8DFC8;
+  --text-muted: #A79C82;
+  --text-light: #C7BCA0;
   
   /* Couleurs de fond */
-  --bg: #0a0c10;
-  --bg-light: #111827;
-  --bg-card: #1e293b;
-  --bg-card-hover: #2d3a4e;
-  --bg-elevated: #1a1f2e;
+  --bg: #14202F;
+  --bg-light: #1B2942;
+  --bg-card: #1F2E48;
+  --bg-card-hover: #28395A;
+  --bg-elevated: #223452;
   
   /* Couleurs de bordure */
-  --border: #2d3748;
-  --border-light: #374151;
-  --border-accent: rgba(0, 212, 255, 0.3);
+  --border: #33445F;
+  --border-light: #405577;
+  --border-accent: rgba(192, 154, 62, 0.3);
   
   /* États */
-  --hover: #1a73e8;
-  --success: #10b981;
-  --warning: #f59e0b;
-  --error: #ef4444;
-  --info: #3b82f6;
+  --hover: #D4B45E;
+  --success: #4C8C5B;
+  --warning: #C09A3E;
+  --error: #B5402E;
+  --info: #6B85B5;
   
   /* Ombres */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -52,8 +63,8 @@ body.dark {
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  --shadow-glow: 0 0 20px rgba(0, 212, 255, 0.3);
-  --shadow-glow-secondary: 0 0 20px rgba(108, 92, 231, 0.3);
+  --shadow-glow: 0 0 20px rgba(181, 96, 46, 0.3);
+  --shadow-glow-secondary: 0 0 20px rgba(107, 127, 163, 0.3);
   
   /* Rayons */
   --radius-sm: 0.375rem;
@@ -71,16 +82,16 @@ body.dark {
   
   /* Gradients */
   --gradient-primary: linear-gradient(135deg, var(--primary), var(--primary-light));
-  --gradient-secondary: linear-gradient(135deg, var(--secondary), #a855f7);
-  --gradient-success: linear-gradient(135deg, #10b981, #34d399);
-  --gradient-warning: linear-gradient(135deg, #f59e0b, #fbbf24);
-  --gradient-danger: linear-gradient(135deg, #ef4444, #f87171);
-  --gradient-dark: linear-gradient(135deg, #1e293b, #334155);
-  --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
+  --gradient-secondary: linear-gradient(135deg, var(--secondary), #8fa3c9);
+  --gradient-success: linear-gradient(135deg, #4C8C5B, #6BAA7A);
+  --gradient-warning: linear-gradient(135deg, #C09A3E, #D4B45E);
+  --gradient-danger: linear-gradient(135deg, #B5402E, #D4633F);
+  --gradient-dark: linear-gradient(135deg, #1B2942, #223452);
+  --gradient-glass: linear-gradient(135deg, rgba(232, 223, 200, 0.08), rgba(232, 223, 200, 0.02));
   
   /* Glassmorphism */
-  --glass-bg: rgba(30, 41, 59, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-bg: rgba(27, 41, 66, 0.7);
+  --glass-border: rgba(232, 223, 200, 0.1);
   --glass-blur: blur(12px);
   
   /* Tailles */
@@ -90,27 +101,27 @@ body.dark {
 
 /* Thème clair */
 body.light {
-  --primary: #0066cc;
-  --primary-dark: #0052a3;
-  --primary-light: #0099ff;
-  --accent: #0088cc;
-  --accent-glow: rgba(0, 136, 204, 0.1);
-  --secondary: #5b4bc4;
-  --secondary-glow: rgba(91, 75, 196, 0.1);
+  --primary: #1B2942;
+  --primary-dark: #101A2C;
+  --primary-light: #2F4568;
+  --accent: #B5602E;
+  --accent-glow: rgba(181, 96, 46, 0.12);
+  --secondary: #8B6A2E;
+  --secondary-glow: rgba(139, 106, 46, 0.1);
   
-  --text: #1e293b;
-  --text-muted: #64748b;
-  --text-light: #94a3b8;
+  --text: #2A2A28;
+  --text-muted: #6B6558;
+  --text-light: #8B8578;
   
-  --bg: #f8fafc;
-  --bg-light: #ffffff;
-  --bg-card: #ffffff;
-  --bg-card-hover: #f1f5f9;
-  --bg-elevated: #f8fafc;
+  --bg: #F5EFE0;
+  --bg-light: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #EFE7D3;
+  --bg-elevated: #F5EFE0;
   
-  --border: #e2e8f0;
-  --border-light: #f1f5f9;
-  --border-accent: rgba(0, 136, 204, 0.2);
+  --border: #DED2B4;
+  --border-light: #EAE0C8;
+  --border-accent: rgba(181, 96, 46, 0.25);
   
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -119,35 +130,35 @@ body.light {
   --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   
   --glass-bg: rgba(255, 255, 255, 0.8);
-  --glass-border: rgba(0, 0, 0, 0.05);
+  --glass-border: rgba(42, 42, 40, 0.06);
 }
 
-/* Thème sépia */
+/* Thème sépia — mode lecture chaleureux, papier ancien */
 body.sepia {
-  --primary: #b87c4f;
-  --primary-dark: #9a623b;
-  --primary-light: #d69d6c;
-  --accent: #c4875a;
-  --accent-glow: rgba(196, 135, 90, 0.15);
-  --secondary: #8b6914;
-  --secondary-glow: rgba(139, 105, 20, 0.1);
+  --primary: #8B6A2E;
+  --primary-dark: #6E5424;
+  --primary-light: #A98847;
+  --accent: #B5602E;
+  --accent-glow: rgba(181, 96, 46, 0.15);
+  --secondary: #6B4C2C;
+  --secondary-glow: rgba(107, 76, 44, 0.1);
   
   --text: #3b2a1f;
   --text-muted: #6b4c2c;
   --text-light: #8b6c4c;
   
-  --bg: #fbf5e8;
-  --bg-light: #fef4e8;
-  --bg-card: #f7edd9;
-  --bg-card-hover: #f3e5d0;
-  --bg-elevated: #fef0e0;
+  --bg: #FBF3E3;
+  --bg-light: #FDF6EA;
+  --bg-card: #F5E9D0;
+  --bg-card-hover: #F0E0C0;
+  --bg-elevated: #FBEFDA;
   
   --border: #d4b48c;
   --border-light: #e6d4b3;
-  --border-accent: rgba(196, 135, 90, 0.3);
+  --border-accent: rgba(181, 96, 46, 0.3);
   
-  --gradient-primary: linear-gradient(135deg, #b87c4f, #d69d6c);
-  --gradient-secondary: linear-gradient(135deg, #8b6914, #c4a43a);
+  --gradient-primary: linear-gradient(135deg, #8B6A2E, #A98847);
+  --gradient-secondary: linear-gradient(135deg, #6B4C2C, #8B6914);
 }
 
 /* ============================================
@@ -167,7 +178,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-sans);
   background-color: var(--bg);
   color: var(--text);
   line-height: 1.6;
@@ -176,6 +187,21 @@ body {
   flex-direction: column;
   transition: background-color var(--transition), color var(--transition);
   font-weight: 400;
+}
+
+/* Police d'affichage pour les titres principaux — porte l'identité du site */
+h1, h2, #motTexte, .page-title {
+  font-family: var(--font-display);
+}
+
+/* Arabe : polices dédiées (rendu correct du script + lisibilité) */
+[dir="rtl"] body,
+[dir="rtl"] {
+  font-family: var(--font-sans-ar);
+}
+
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] #motTexte, [dir="rtl"] .page-title {
+  font-family: var(--font-display-ar);
 }
 
 /* Scrollbar personnalisée */
@@ -262,7 +288,7 @@ body {
    ============================================ */
 
 .dev-banner {
-  background: linear-gradient(135deg, #f59e0b, #d97706);
+  background: linear-gradient(135deg, #C09A3E, #B5602E);
   color: white;
   padding: 0.75rem 1rem;
   position: relative;
@@ -936,10 +962,10 @@ main {
   z-index: 1;
 }
 
-.timeline-dot.reunion { background: #3b82f6; }
-.timeline-dot.campagne { background: #10b981; }
-.timeline-dot.creation { background: #f59e0b; }
-.timeline-dot.evenement { background: #8b5cf6; }
+.timeline-dot.reunion { background: #6B7FA3; }
+.timeline-dot.campagne { background: #4C8C5B; }
+.timeline-dot.creation { background: #C09A3E; }
+.timeline-dot.evenement { background: #8B6A2E; }
 
 .timeline-line {
   width: 2px;
@@ -981,9 +1007,9 @@ main {
   margin-top: 0.5rem;
 }
 
-.timeline-badge.reunion { background: rgba(59,130,246,0.2); color: #3b82f6; }
-.timeline-badge.campagne { background: rgba(16,185,129,0.2); color: #10b981; }
-.timeline-badge.creation { background: rgba(245,158,11,0.2); color: #f59e0b; }
+.timeline-badge.reunion { background: rgba(107,127,163,0.2); color: #6B7FA3; }
+.timeline-badge.campagne { background: rgba(76,140,91,0.2); color: #4C8C5B; }
+.timeline-badge.creation { background: rgba(192,154,62,0.2); color: #C09A3E; }
 
 /* ============================================
    NEWSLETTER POPUP
@@ -1366,12 +1392,12 @@ html[dir="rtl"] .quiz-option:hover {
   --bg-book: #fdfbf7;
   --bg-page: #fffdf9;
   --shadow-book: 0 20px 40px rgba(0,0,0,0.15);
-  --font-serif: 'Palatino', 'Georgia', 'Times New Roman', serif;
+  --font-serif: var(--font-display);
 }
 
 body.dark {
-  --bg-book: #1e293b;
-  --bg-page: #1a2538;
+  --bg-book: #1F2E48;
+  --bg-page: #223452;
 }
 
 .book-spread {
@@ -1379,7 +1405,7 @@ body.dark {
   max-width: 1400px;
   width: 100%;
   margin: 0 auto;
-  background: linear-gradient(to right, var(--bg-page) 0%, var(--bg-page) 49.9%, #8b5a2b 50%, #8b5a2b 50.5%, var(--bg-page) 50.6%, var(--bg-page) 100%);
+  background: linear-gradient(to right, var(--bg-page) 0%, var(--bg-page) 49.9%, #B5602E 50%, #B5602E 50.5%, var(--bg-page) 50.6%, var(--bg-page) 100%);
   border-radius: 12px;
   box-shadow: var(--shadow-book);
   transition: transform 0.3s ease;
@@ -1395,12 +1421,12 @@ body.dark {
 
 .page-left {
   border-radius: 12px 0 0 12px;
-  border-right: 1px solid rgba(139, 90, 43, 0.3);
+  border-right: 1px solid rgba(181, 96, 46, 0.3);
 }
 
 .page-right {
   border-radius: 0 12px 12px 0;
-  border-left: 1px solid rgba(139, 90, 43, 0.3);
+  border-left: 1px solid rgba(181, 96, 46, 0.3);
 }
 
 .page-header {
