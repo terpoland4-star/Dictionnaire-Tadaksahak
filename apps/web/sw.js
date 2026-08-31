@@ -7,11 +7,11 @@
 // CORRIGÉ : Plus d'erreur "Response body is already used"
 // ============================================
 
-const CACHE_NAME = 'tadaksahak-v10';
-const STATIC_CACHE = 'tadaksahak-static-v10';
-const DATA_CACHE = 'tadaksahak-data-v10';
-const MEDIA_CACHE = 'tadaksahak-media-v10';
-const API_CACHE = 'tadaksahak-api-v10';
+const CACHE_NAME = 'tadaksahak-v11';
+const STATIC_CACHE = 'tadaksahak-static-v11';
+const DATA_CACHE = 'tadaksahak-data-v11';
+const MEDIA_CACHE = 'tadaksahak-media-v11';
+const API_CACHE = 'tadaksahak-api-v11';
 
 // ============================================
 // FICHIERS STATIQUES (Cache First)
@@ -20,9 +20,25 @@ const staticUrls = [
   './',
   './index.html',
   './style.css',
-  './app.js',
+  './js/state.js',
+  './js/i18n-data.js',
+  './js/utils.js',
+  './js/theme.js',
+  './js/language.js',
+  './js/chat.js',
+  './js/dictionary.js',
+  './js/grammar.js',
+  './js/contes.js',
+  './js/emissions.js',
+  './js/themesVocab.js',
+  './js/flashcards.js',
+  './js/quiz.js',
+  './js/timeline.js',
+  './js/ressources.js',
+  './js/pwa.js',
+  './js/navigation.js',
+  './js/main.js',
   './manifest.webmanifest',
-  './livre-viewer.html',
   './sw.js',
   './offline.html',
   './images/idaksahak_round.png',
