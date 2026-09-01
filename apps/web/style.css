@@ -190,7 +190,7 @@ body {
 }
 
 /* Police d'affichage pour les titres principaux — porte l'identité du site */
-h1, h2, #motTexte, .page-title {
+h1, h2, #motTexte, .grammar-page-title {
   font-family: var(--font-display);
 }
 
@@ -200,7 +200,7 @@ h1, h2, #motTexte, .page-title {
   font-family: var(--font-sans-ar);
 }
 
-[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] #motTexte, [dir="rtl"] .page-title {
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] #motTexte, [dir="rtl"] .grammar-page-title {
   font-family: var(--font-display-ar);
 }
 
@@ -1471,77 +1471,118 @@ body.dark {
   --bg-page: #223452;
 }
 
-.book-spread {
-  display: flex;
+/* ============================================
+   LECTEUR DE GRAMMAIRE — table des matières + page de lecture
+   Remplace l'ancien "livre à deux pages" (trop étriqué, contenu
+   difficile à parcourir) par un vrai lecteur : sommaire cliquable
+   listant les 30 blocs, et une page de lecture confortable.
+   ============================================ */
+
+.grammar-source-credit {
+  max-width: 900px;
+  margin: 0 auto 1.5rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--bg-elevated);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.grammar-reader {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 1.5rem;
   max-width: 1400px;
-  width: 100%;
   margin: 0 auto;
-  background: linear-gradient(to right, var(--bg-page) 0%, var(--bg-page) 49.9%, #B5602E 50%, #B5602E 50.5%, var(--bg-page) 50.6%, var(--bg-page) 100%);
-  border-radius: 12px;
-  box-shadow: var(--shadow-book);
-  transition: transform 0.3s ease;
+  align-items: start;
 }
 
-.book-page {
-  flex: 1;
-  padding: 2.5rem 2rem;
-  background: var(--bg-page);
-  min-height: 600px;
+.grammar-toc {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  max-height: 75vh;
   overflow-y: auto;
+  padding: 0.5rem;
+  position: sticky;
+  top: 100px;
 }
 
-.page-left {
-  border-radius: 12px 0 0 12px;
-  border-right: 1px solid rgba(181, 96, 46, 0.3);
+.toc-entry {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  width: 100%;
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  border: none;
+  background: transparent;
+  border-radius: var(--radius-md);
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  line-height: 1.35;
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
 }
 
-.page-right {
-  border-radius: 0 12px 12px 0;
-  border-left: 1px solid rgba(181, 96, 46, 0.3);
+.toc-entry:hover {
+  background: var(--bg-card-hover);
+  color: var(--text);
 }
 
-.page-header {
+.toc-entry.active {
+  background: var(--accent-glow);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.toc-num {
+  flex-shrink: 0;
+  opacity: 0.6;
+  font-variant-numeric: tabular-nums;
+}
+
+.grammar-page {
+  background: var(--bg-page);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-book);
+  padding: 2.5rem 3rem;
+  min-height: 500px;
+}
+
+.grammar-page-header {
   display: flex;
   justify-content: space-between;
   border-bottom: 2px solid var(--accent);
   padding-bottom: 10px;
-  margin-bottom: 20px;
-  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
   color: var(--text-muted);
 }
 
-.page-title {
-  font-weight: 700;
+.grammar-page-title {
+  font-family: var(--font-display);
   color: var(--accent);
-  text-transform: uppercase;
+  font-size: 1.7rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
 }
 
-.page-content {
+.grammar-page-content {
   font-family: var(--font-serif);
-  line-height: 1.7;
-  color: var(--text-dark);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text);
 }
 
-.page-content h3 {
-  color: var(--accent);
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
-}
-
-.page-range {
-  margin-top: 20px;
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  border-top: 1px dashed var(--border);
-  padding-top: 10px;
-  text-align: right;
-}
-
-.page-keywords {
+.grammar-page-keywords {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-top: 15px;
+  margin-top: 1.5rem;
 }
 
 .keyword-tag {
@@ -1553,30 +1594,34 @@ body.dark {
   border: 1px solid var(--border);
 }
 
-.book-controls {
+.grammar-page-nav {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 30px;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px dashed var(--border);
 }
 
 .nav-btn {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  font-size: 1.8rem;
+  border-radius: var(--radius-full);
+  padding: 0.6rem 1.25rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
   color: var(--accent);
   cursor: pointer;
-  transition: all 0.2s;
+  white-space: nowrap;
+  transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
 }
 
 .nav-btn:hover:not(:disabled) {
   background: var(--accent);
-  color: white;
-  transform: scale(1.1);
+  color: var(--bg);
+  transform: scale(1.04);
 }
 
 .nav-btn:disabled {
@@ -1607,11 +1652,17 @@ body.dark {
   border-color: var(--accent);
 }
 
-.swipe-hint {
-  text-align: center;
-  margin-top: 10px;
-  font-size: 0.8rem;
-  color: var(--text-muted);
+@media (max-width: 900px) {
+  .grammar-reader {
+    grid-template-columns: 1fr;
+  }
+  .grammar-toc {
+    max-height: 240px;
+    position: static;
+  }
+  .grammar-page {
+    padding: 1.75rem 1.5rem;
+  }
 }
 
 /* ============================================

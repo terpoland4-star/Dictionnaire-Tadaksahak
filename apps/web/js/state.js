@@ -47,22 +47,18 @@ export const state = {
   visitCounter: parseInt(localStorage.getItem('tadaksahak_visit_count') || '0'),
 };
 
-// Éléments DOM du livre (doivent correspondre aux ID dans index.html)
+// Éléments DOM du lecteur de grammaire (table des matières + page unique)
 export const bookElements = {
-  leftTitle: document.getElementById('leftTitle'),
-  leftContent: document.getElementById('leftContent'),
-  leftRange: document.getElementById('leftRange'),
-  leftKeywords: document.getElementById('leftKeywords'),
-  leftPageNum: document.getElementById('leftPageNum'),
-  rightTitle: document.getElementById('rightTitle'),
-  rightContent: document.getElementById('rightContent'),
-  rightRange: document.getElementById('rightRange'),
-  rightKeywords: document.getElementById('rightKeywords'),
-  rightPageNum: document.getElementById('rightPageNum'),
+  toc: document.getElementById('grammarToc'),
+  reader: document.getElementById('grammarReader'),
+  pageNum: document.getElementById('grammarPageNum'),
+  pageRange: document.getElementById('grammarPageRange'),
+  pageTitle: document.getElementById('grammarPageTitle'),
+  pageContent: document.getElementById('grammarPageContent'),
+  pageKeywords: document.getElementById('grammarPageKeywords'),
   pageIndicator: document.getElementById('pageIndicator'),
   prevBtn: document.getElementById('prevBtn'),
   nextBtn: document.getElementById('nextBtn'),
-  bookSpread: document.getElementById('bookSpread'),
 };
 
 // Éléments DOM principaux

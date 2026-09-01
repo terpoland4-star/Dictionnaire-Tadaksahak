@@ -233,41 +233,39 @@
       <button class="grammar-tab" data-tab="relatives">📖 Propositions relatives</button>
     </div>
     
-    <!-- Sélecteur de langue intégré au livre -->
+    <!-- Sélecteur de langue intégré au lecteur -->
     <div class="lang-selector-book">
       <button class="lang-btn active" data-lang="fr">🇫🇷 Français</button>
       <button class="lang-btn" data-lang="en">🇬🇧 English</button>
       <button class="lang-btn" data-lang="ar">🇸🇦 العربية</button>
     </div>
 
-    <!-- Livre ouvert -->
-    <div class="book-spread" id="bookSpread">
-      <div class="book-page page-left" id="pageLeft">
-        <div class="page-header">
-          <span class="page-title" id="leftTitle">Chapitre</span>
-          <span class="page-number" id="leftPageNum">p. 1</span>
-        </div>
-        <div class="page-content" id="leftContent"></div>
-        <div class="page-range" id="leftRange"></div>
-        <div class="page-keywords" id="leftKeywords"></div>
-      </div>
-      <div class="book-page page-right" id="pageRight">
-        <div class="page-header">
-          <span class="page-title" id="rightTitle">Chapitre</span>
-          <span class="page-number" id="rightPageNum">p. 2</span>
-        </div>
-        <div class="page-content" id="rightContent"></div>
-        <div class="page-range" id="rightRange"></div>
-        <div class="page-keywords" id="rightKeywords"></div>
-      </div>
-    </div>
+    <!-- Citation académique de la source -->
+    <p class="grammar-source-credit">
+      D'après : Christiansen-Bolli, R. (2010). <em>A Grammar of Tadaksahak, a Northern Songhay Language of Mali</em>.
+      Thèse de doctorat, Université de Leyde.
+    </p>
 
-    <div class="book-controls">
-      <button class="nav-btn" id="prevBtn" title="Page précédente">←</button>
-      <span class="page-indicator" id="pageIndicator">Bloc 1 / 30</span>
-      <button class="nav-btn" id="nextBtn" title="Page suivante">→</button>
+    <!-- Lecteur : table des matières + contenu -->
+    <div class="grammar-reader" id="grammarReader">
+      <nav class="grammar-toc" id="grammarToc" aria-label="Table des matières"></nav>
+
+      <div class="grammar-page" id="grammarPage">
+        <div class="grammar-page-header">
+          <span class="grammar-page-num" id="grammarPageNum">Bloc 1</span>
+          <span class="grammar-page-range" id="grammarPageRange"></span>
+        </div>
+        <h3 class="grammar-page-title" id="grammarPageTitle"></h3>
+        <div class="grammar-page-content" id="grammarPageContent"></div>
+        <div class="grammar-page-keywords" id="grammarPageKeywords"></div>
+
+        <div class="grammar-page-nav">
+          <button class="nav-btn" id="prevBtn" title="Bloc précédent">← Précédent</button>
+          <span class="page-indicator" id="pageIndicator">Bloc 1 / 30</span>
+          <button class="nav-btn" id="nextBtn" title="Bloc suivant">Suivant →</button>
+        </div>
+      </div>
     </div>
-    <div class="swipe-hint">← Swipez pour tourner les pages →</div>
     
     <!-- Container pour les relatives -->
     <div id="relativesContainer" class="relatives-container" hidden></div>

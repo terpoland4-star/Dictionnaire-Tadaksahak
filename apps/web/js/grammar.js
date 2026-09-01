@@ -21,28 +21,35 @@ export async function loadGrammarBook() {
     }
 }
 
-// Rendu d'une page (gauche ou droite)
-export function renderBookPage(side, block) {
-    const elements = side === 'left' ? {
-        title: bookElements.leftTitle,
-        content: bookElements.leftContent,
-        range: bookElements.leftRange,
-        keywords: bookElements.leftKeywords,
-        pageNum: bookElements.leftPageNum
-    } : {
-        title: bookElements.rightTitle,
-        content: bookElements.rightContent,
-        range: bookElements.rightRange,
-        keywords: bookElements.rightKeywords,
-        pageNum: bookElements.rightPageNum
-    };
+// Génère la table des matières (une seule fois, quand les blocs sont chargés)
+export function renderGrammarToc() {
+    if (!bookElements.toc) return;
+    bookElements.toc.innerHTML = state.grammarBlocks
+        .map((block) => {
+            const titre = block.titre_section[state.currentGrammarLang] || block.titre_section.fr || '';
+            return `<button class="toc-entry" data-index="${block.bloc_id - 1}">
+                <span class="toc-num">${block.bloc_id}</span>
+                <span class="toc-titre">${escapeHtml(titre)}</span>
+            </button>`;
+        })
+        .join('');
 
+    bookElements.toc.querySelectorAll('.toc-entry').forEach((entry) => {
+        entry.addEventListener('click', () => {
+            state.currentBlockIndex = parseInt(entry.dataset.index, 10);
+            updateGrammarSpread();
+        });
+    });
+}
+
+// Rendu de la page actuelle (un seul bloc à la fois, lecture confortable)
+export function renderBookPage(block) {
     if (!block) {
-        elements.title.textContent = '';
-        elements.content.innerHTML = '<p style="opacity:0.5;">— Fin du livre —</p>';
-        elements.range.textContent = '';
-        elements.keywords.innerHTML = '';
-        elements.pageNum.textContent = '';
+        bookElements.pageTitle.textContent = '';
+        bookElements.pageContent.innerHTML = '<p style="opacity:0.5;">— Fin du livre —</p>';
+        bookElements.pageRange.textContent = '';
+        bookElements.pageKeywords.innerHTML = '';
+        bookElements.pageNum.textContent = '';
         return;
     }
 
@@ -51,51 +58,50 @@ export function renderBookPage(side, block) {
     const plage = block.plage_pages || '';
     const keywords = block.mots_cles || [];
 
-    elements.title.textContent = title;
-    elements.content.innerHTML = `<p>${content.replace(/\n/g, '<br>')}</p>`;
-    elements.range.textContent = `📄 p. ${plage}`;
-    elements.keywords.innerHTML = keywords.map(k => `<span class="keyword-tag">${k}</span>`).join('');
-    elements.pageNum.textContent = `Bloc ${block.bloc_id}`;
+    bookElements.pageTitle.textContent = title;
+    bookElements.pageContent.innerHTML = `<p>${content.replace(/\n/g, '<br>')}</p>`;
+    bookElements.pageRange.textContent = plage ? `📄 p. ${plage}` : '';
+    bookElements.pageKeywords.innerHTML = keywords.map(k => `<span class="keyword-tag">${escapeHtml(k)}</span>`).join('');
+    bookElements.pageNum.textContent = `Bloc ${block.bloc_id}`;
 }
 
-// Mise à jour de l'affichage des deux pages
+// Mise à jour de l'affichage : page courante + surbrillance dans la table des matières
 export function updateGrammarSpread() {
-    const leftBlock = state.grammarBlocks[state.currentBlockIndex] || null;
-    const rightBlock = (state.currentBlockIndex + 1 < state.grammarBlocks.length) ? state.grammarBlocks[state.currentBlockIndex + 1] : null;
-
-    renderBookPage('left', leftBlock);
-    renderBookPage('right', rightBlock);
+    const block = state.grammarBlocks[state.currentBlockIndex] || null;
+    renderBookPage(block);
 
     const total = state.grammarBlocks.length;
-    const start = state.currentBlockIndex + 1;
-    const end = Math.min(state.currentBlockIndex + 2, total);
     if (bookElements.pageIndicator) {
-        bookElements.pageIndicator.textContent = `Blocs ${start}–${end} / ${total}`;
+        bookElements.pageIndicator.textContent = `Bloc ${state.currentBlockIndex + 1} / ${total}`;
+    }
+    if (bookElements.prevBtn) bookElements.prevBtn.disabled = (state.currentBlockIndex === 0);
+    if (bookElements.nextBtn) bookElements.nextBtn.disabled = (state.currentBlockIndex + 1 >= total);
+
+    bookElements.toc?.querySelectorAll('.toc-entry').forEach((entry) => {
+        entry.classList.toggle('active', parseInt(entry.dataset.index, 10) === state.currentBlockIndex);
+    });
+    const activeEntry = bookElements.toc?.querySelector('.toc-entry.active');
+    if (activeEntry?.scrollIntoView) {
+        activeEntry.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
     }
 
-    if (bookElements.prevBtn) bookElements.prevBtn.disabled = (state.currentBlockIndex === 0);
-    if (bookElements.nextBtn) bookElements.nextBtn.disabled = (state.currentBlockIndex + 2 >= total);
+    // Remonte le lecteur en haut à chaque changement de bloc (confort de lecture)
+    if (bookElements.reader?.scrollIntoView) {
+        bookElements.reader.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
 }
 
 export function nextGrammarSpread() {
-    if (state.currentBlockIndex + 2 < state.grammarBlocks.length) {
-        state.currentBlockIndex += 2;
+    if (state.currentBlockIndex + 1 < state.grammarBlocks.length) {
+        state.currentBlockIndex += 1;
         updateGrammarSpread();
-        if (bookElements.bookSpread) {
-            bookElements.bookSpread.style.transform = 'translateX(-5px)';
-            setTimeout(() => bookElements.bookSpread.style.transform = '', 150);
-        }
     }
 }
 
 export function prevGrammarSpread() {
     if (state.currentBlockIndex > 0) {
-        state.currentBlockIndex = Math.max(0, state.currentBlockIndex - 2);
+        state.currentBlockIndex -= 1;
         updateGrammarSpread();
-        if (bookElements.bookSpread) {
-            bookElements.bookSpread.style.transform = 'translateX(5px)';
-            setTimeout(() => bookElements.bookSpread.style.transform = '', 150);
-        }
     }
 }
 
@@ -107,6 +113,7 @@ export function setGrammarLanguage(lang) {
         btn.classList.toggle('active', btn.dataset.lang === lang);
     });
     if (state.grammarBlocks.length > 0) {
+        renderGrammarToc();
         updateGrammarSpread();
     }
 }
@@ -124,6 +131,7 @@ export function initGrammarBook() {
     if (state.bookInitialized) return;
     
     state.currentBlockIndex = 0;
+    renderGrammarToc();
     updateGrammarSpread();
     
     // Écouteurs des boutons de navigation
@@ -134,24 +142,6 @@ export function initGrammarBook() {
     document.querySelectorAll('#grammaire .lang-btn').forEach(btn => {
         btn.addEventListener('click', () => setGrammarLanguage(btn.dataset.lang));
     });
-    
-    // Swipe tactile
-    let touchStartX = 0;
-    if (bookElements.bookSpread) {
-        bookElements.bookSpread.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        }, { passive: true });
-        
-        bookElements.bookSpread.addEventListener('touchend', (e) => {
-            if (!touchStartX) return;
-            const diff = e.changedTouches[0].screenX - touchStartX;
-            if (Math.abs(diff) > 50) {
-                if (diff < 0) nextGrammarSpread();
-                else prevGrammarSpread();
-            }
-            touchStartX = 0;
-        });
-    }
     
     // Navigation clavier (seulement quand la section grammaire est visible)
     window.addEventListener('keydown', (e) => {
@@ -167,7 +157,7 @@ export function initGrammarBook() {
     });
     
     state.bookInitialized = true;
-    console.log('📖 Livre grammaire initialisé');
+    console.log('📖 Lecteur de grammaire initialisé');
 }
 
 // Fonction à appeler quand l'onglet Grammaire est affiché
