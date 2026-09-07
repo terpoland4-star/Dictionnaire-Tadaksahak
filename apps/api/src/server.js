@@ -7,6 +7,7 @@ const contributionsRoutes = require('./routes/contributions');
 
 const app = express();
 const port = Number.parseInt(process.env.PORT || '3003', 10);
+const host = process.env.HOST || '127.0.0.1';
 const allowedOrigins = (process.env.CORS_ORIGIN || '*').split(',').map((origin) => origin.trim()).filter(Boolean);
 
 if (!Number.isInteger(port) || port < 1 || port > 65535) throw new Error('PORT doit être un entier compris entre 1 et 65535');
@@ -35,7 +36,7 @@ app.use((err, req, res, next) => {
   return res.status(500).json({ erreur: 'Erreur serveur interne' });
 });
 
-const server = app.listen(port, () => console.log(`API Tadaksahak démarrée sur le port ${port}`));
+const server = app.listen(port, host, () => console.log(`API Tadaksahak démarrée sur ${host}:${port}`));
 function shutdown(signal) {
   console.log(`${signal}: arrêt de l’API`);
   server.close(() => process.exit(0));
