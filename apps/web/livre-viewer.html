@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Lecture d’un article ou ouvrage de la bibliothèque Tadaksahak Learning">
+  <title>Lecture — Tadaksahak Learning</title>
+  <link rel="icon" href="images/idaksahak_round.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .reader-shell { max-width: 980px; margin: 0 auto; padding: 2rem 1rem 5rem; }
+    .reader-toolbar { display:flex; gap:.75rem; flex-wrap:wrap; align-items:center; margin-bottom:1.5rem; }
+    .reader-toolbar a { text-decoration:none; }
+    .reader-meta { opacity:.8; margin:.25rem 0 1.25rem; }
+    .reader-cover { max-width:240px; width:100%; border-radius:12px; display:block; margin:0 0 1.5rem; }
+    .reader-description { font-size:1.05rem; line-height:1.7; }
+    .reader-chapter { margin:2.5rem 0; line-height:1.8; }
+    .reader-chapter h2 { margin-bottom:.35rem; }
+    .reader-chapter h3 { opacity:.85; font-weight:500; }
+    .reader-paragraph { margin:0 0 1rem; }
+    .reader-error { padding:1rem; border:1px solid #b33; border-radius:8px; }
+  </style>
+</head>
+<body>
+  <main class="reader-shell" id="reader" aria-live="polite">
+    <p>Chargement de la publication…</p>
+  </main>
+  <script>
+    const escapeHtml = (value) => String(value ?? '').replace(/[&<>"']/g, (char) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+    const paragraphHtml = (value) => `<p class="reader-paragraph">${escapeHtml(value)}</p>`;
+    const render = (book) => {
+      const chapters = Array.isArray(book.chapitres) ? book.chapitres : [];
+      const content = chapters.map((chapter) => {
+        const paragraphs = Array.isArray(chapter.contenu) ? chapter.contenu : [];
+        const notes = Array.isArray(chapter.notes) ? `<small>${chapter.notes.map(paragraphHtml).join('')}</small>` : '';
+        return `<article class="reader-chapter"><h2>${escapeHtml(chapter.numero ? `${chapter.numero}. ` : '')}${escapeHtml(chapter.titre || '')}</h2>${chapter.sous_titre ? `<h3>${escapeHtml(chapter.sous_titre)}</h3>` : ''}${paragraphs.map(paragraphHtml).join('')}${notes}</article>`;
+      }).join('');
+      const fallback = book.contenu ? (Array.isArray(book.contenu) ? book.contenu.map(paragraphHtml).join('') : paragraphHtml(book.contenu)) : '<p>Le contenu détaillé de cette publication sera ajouté prochainement.</p>';
+      document.title = `${book.titre} — Tadaksahak Learning`;
+      document.getElementById('reader').innerHTML = `
+        <nav class="reader-toolbar"><a class="btn-outline" href="index.html#livres">← Retour à la bibliothèque</a><button class="btn-outline" type="button" onclick="window.print()">Imprimer / PDF</button></nav>
+        <header><h1>${escapeHtml(book.titre)}</h1><p class="reader-meta">${escapeHtml(book.auteur || '')}${book.annee ? ` · ${escapeHtml(book.annee)}` : ''}${book.pages ? ` · ${escapeHtml(book.pages)} pages` : ''}</p></header>
+        ${book.couverture ? `<img class="reader-cover" src="${escapeHtml(book.couverture)}" alt="Couverture de ${escapeHtml(book.titre)}">` : ''}
+        ${book.description ? `<p class="reader-description">${escapeHtml(book.description)}</p>` : ''}
+        <section>${content || fallback}</section>
+        <footer><p>Édition numérique présentée sur Tadaksahak Learning. Les droits restent ceux des auteurs et ayants droit mentionnés ci-dessus.</p></footer>`;
+    };
+    (async () => {
+      const id = new URLSearchParams(location.search).get('id');
+      const reader = document.getElementById('reader');
+      if (!id) { reader.innerHTML = '<p class="reader-error">Publication introuvable : identifiant manquant.</p>'; return; }
+      try {
+        const response = await fetch('data/livres.json', { cache: 'no-store' });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const books = await response.json();
+        const book = books.find((entry) => String(entry.id) === String(id));
+        if (!book) throw new Error('Publication inconnue');
+        render(book);
+      } catch (error) {
+        console.error(error);
+        reader.innerHTML = '<p class="reader-error">Impossible de charger cette publication. Réessayez dans quelques instants.</p>';
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -7,11 +7,11 @@
 // CORRIGÉ : Plus d'erreur "Response body is already used"
 // ============================================
 
-const CACHE_NAME = 'tadaksahak-v11';
-const STATIC_CACHE = 'tadaksahak-static-v11';
-const DATA_CACHE = 'tadaksahak-data-v11';
-const MEDIA_CACHE = 'tadaksahak-media-v11';
-const API_CACHE = 'tadaksahak-api-v11';
+const CACHE_NAME = 'tadaksahak-v12';
+const STATIC_CACHE = 'tadaksahak-static-v12';
+const DATA_CACHE = 'tadaksahak-data-v12';
+const MEDIA_CACHE = 'tadaksahak-media-v12';
+const API_CACHE = 'tadaksahak-api-v12';
 
 // ============================================
 // FICHIERS STATIQUES (Cache First)
@@ -19,6 +19,7 @@ const API_CACHE = 'tadaksahak-api-v11';
 const staticUrls = [
   './',
   './index.html',
+  './livre-viewer.html',
   './style.css',
   './js/state.js',
   './js/i18n-data.js',

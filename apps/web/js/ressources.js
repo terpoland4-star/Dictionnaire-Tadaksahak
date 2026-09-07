@@ -208,30 +208,35 @@ export function afficherRessources() {
 export function chargerArticlesAcademiques() {
   const container = document.getElementById("articlesGrid");
   if (!container) return;
-  const articles = [
-    { titre: "The Tadaksahak language: a Zénaga variety of the Malian Sahara", auteur: "Christiansen-Bolli, R.", annee: 2010, url: "#", description: "Étude descriptive du tadaksahak.", tags: ["Tadaksahak", "Grammaire"] },
-    { titre: "Relative Clauses in Tadaksahak", auteur: "Christiansen, N. & Levinsohn, S.", annee: 2003, url: "#", description: "Analyse des trois stratégies de relativisation.", tags: ["Tadaksahak", "Syntaxe"] },
-    { titre: "A Grammar of Tamashek (Tuareg of Mali)", auteur: "Heath, J.", annee: 2005, url: "#", description: "Grammaire de référence du touareg.", tags: ["Touareg", "Grammaire"] },
-    { titre: "The Berber language", auteur: "Kossmann, M.", annee: 2011, url: "#", description: "Aperçu des langues berbères.", tags: ["Berbère", "Linguistique"] },
-    { titre: "Non-Tuareg Berber and the Genesis of Nomadic Northern Songhay", auteur: "Souag, L.", annee: 2015, url: "#", description: "Contacts entre berbère et songhay.", tags: ["Songhay", "Contacts"] }
-  ];
-  let html = `<div class="articles-grid-inner">`;
-  for (const article of articles) {
-    html += `
+  fetch('data/livres.json', { cache: 'no-store' })
+    .then(response => {
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return response.json();
+    })
+    .then(allLivres => {
+      const langueCible = state.currentLanguage === "fr" ? "Français" : (state.currentLanguage === "ar" ? "Arabe" : "English");
+      const articles = allLivres.filter(livre => livre.type === "rapport" && livre.langue === langueCible);
+      let html = `<div class="articles-grid-inner">`;
+      for (const article of articles) {
+        html += `
       <div class="article-card">
         <div class="article-icon">📄</div>
         <div class="article-content">
           <h4>${escapeHtml(article.titre)}</h4>
-          <p class="article-meta">${escapeHtml(article.auteur)} • ${article.annee}</p>
-          <p class="article-desc">${escapeHtml(article.description)}</p>
-          <div class="article-tags">${article.tags.map(tag => `<span class="tag">${escapeHtml(tag)}</span>`).join('')}</div>
-          <a href="${article.url}" class="article-link" target="_blank">🔗 Accéder à la publication</a>
+          <p class="article-meta">${escapeHtml(article.auteur)}${article.annee ? ` • ${escapeHtml(article.annee)}` : ''}</p>
+          <p class="article-desc">${escapeHtml(article.description || 'Publication académique disponible dans la bibliothèque.')}</p>
+          <div class="article-tags"><span class="tag">${escapeHtml(article.categorie || 'Ressource académique')}</span></div>
+          <a href="livre-viewer.html?id=${encodeURIComponent(article.id)}" class="article-link">📖 Lire la publication</a>
         </div>
       </div>
     `;
-  }
-  html += `</div>`;
-  container.innerHTML = html;
+      }
+      container.innerHTML = articles.length ? `${html}</div>` : '<p class="info-message">Aucune publication dans cette langue.</p>';
+    })
+    .catch(error => {
+      console.error("Erreur chargement articles académiques", error);
+      container.innerHTML = '<p class="error-message">Impossible de charger les publications.</p>';
+    });
 }
 
 export function chargerBibliographie() {
