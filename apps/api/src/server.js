@@ -2,30 +2,44 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
-
 const authRoutes = require('./routes/auth');
 const contributionsRoutes = require('./routes/contributions');
 
 const app = express();
+const port = Number.parseInt(process.env.PORT || '3003', 10);
+const allowedOrigins = (process.env.CORS_ORIGIN || '*').split(',').map((origin) => origin.trim()).filter(Boolean);
 
+if (!Number.isInteger(port) || port < 1 || port > 65535) throw new Error('PORT doit être un entier compris entre 1 et 65535');
+if (process.env.NODE_ENV === 'production' && (!process.env.JWT_SECRET || process.env.JWT_SECRET === 'CHANGE_MOI_EN_VALEUR_ALEATOIRE_LONGUE')) {
+  throw new Error('JWT_SECRET doit être défini en production');
+}
+
+app.disable('x-powered-by');
+app.set('trust proxy', 1);
 app.use(helmet());
-app.use(cors({ origin: process.env.CORS_ORIGIN || '*' }));
-app.use(express.json({ limit: '100kb' })); // API légère, pas besoin de gros payloads
-
-app.get('/api/health', (req, res) => {
-  res.json({ statut: 'ok' });
-});
-
+app.use(cors({
+  origin(origin, callback) {
+    if (!origin || allowedOrigins.includes('*') || allowedOrigins.includes(origin)) return callback(null, true);
+    return callback(new Error('Origine CORS non autorisée'));
+  },
+}));
+app.use(express.json({ limit: '32kb', strict: true }));
+app.get('/api/health', (req, res) => res.json({ statut: 'ok', service: 'tadaksahak-api' }));
 app.use('/api/auth', authRoutes);
 app.use('/api/contributions', contributionsRoutes);
-
-// Gestion centralisée des erreurs non capturées dans les routes
+app.use((req, res) => res.status(404).json({ erreur: 'Route introuvable' }));
 app.use((err, req, res, next) => {
   console.error(err);
-  res.status(500).json({ erreur: 'Erreur serveur interne' });
+  if (err.message === 'Origine CORS non autorisée') return res.status(403).json({ erreur: err.message });
+  if (err.type === 'entity.parse.failed') return res.status(400).json({ erreur: 'JSON invalide' });
+  return res.status(500).json({ erreur: 'Erreur serveur interne' });
 });
 
-const port = process.env.PORT || 3003;
-app.listen(port, () => {
-  console.log(`API Tadaksahak démarrée sur le port ${port}`);
-});
+const server = app.listen(port, () => console.log(`API Tadaksahak démarrée sur le port ${port}`));
+function shutdown(signal) {
+  console.log(`${signal}: arrêt de l’API`);
+  server.close(() => process.exit(0));
+}
+process.once('SIGTERM', () => shutdown('SIGTERM'));
+process.once('SIGINT', () => shutdown('SIGINT'));
+module.exports = app;

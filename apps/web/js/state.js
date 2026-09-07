@@ -100,7 +100,7 @@ export const imagesGalerie = [
     credit: '© Charles Grémont',
   },
   {
-    fichier: 'data/images/livres/chef_idoguitirane_3.jpg',
+    fichier: 'data/images/livres/chef_idoguiritane_3.jpg',
     titre_fr: 'Le chef et ses conseillers',
     titre_ar: 'الشيخ ومستشاروه',
     titre_en: 'The chief and his advisors',
@@ -110,7 +110,7 @@ export const imagesGalerie = [
     credit: '© Charles Grémont',
   },
   {
-    fichier: 'data/images/livres/Un jeune combattant Adaksahak, au nord de Ménaka, mars 1994. Photo C.G.jpeg',
+    fichier: 'data/images/livres/jeune-combattant-idaksahak-1994.jpeg',
     titre_fr: 'Jeune combattant Idaksahak (1994)',
     titre_ar: 'مقاتل شاب إدكساهق (١٩٩٤)',
     titre_en: 'Young Idaksahak fighter (1994)',
@@ -120,7 +120,7 @@ export const imagesGalerie = [
     credit: '© Charles Grémont',
   },
   {
-    fichier: 'data/images/livres/zone des idaksahak.jpeg',
+    fichier: 'data/images/livres/zone-des-idaksahak.jpeg',
     titre_fr: 'Carte de la région des Idaksahak',
     titre_ar: 'خريطة منطقة الإدكساهق',
     titre_en: 'Map of the Idaksahak region',
@@ -130,7 +130,7 @@ export const imagesGalerie = [
     credit: 'Charles Grémont',
   },
   {
-    fichier: 'data/images/livres/idaksahak_square.png',
+    fichier: 'images/idaksahak_square.png',
     titre_fr: 'Logo de la communauté Idaksahak',
     titre_ar: 'شعار مجتمع الإدكساهق',
     titre_en: 'Logo of the Idaksahak community',

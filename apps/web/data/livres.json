@@ -10,27 +10,27 @@
     "langue": "Français",
     "categorie": "Anthropologie politique",
     "description": "Une analyse approfondie de l'histoire politique des Idaksahak, leur quête d'autonomie et leur émergence sur la scène politique sahélienne.",
-    "couverture": "data/images/livres/couverture_idaksahak.jpg.jpg",
+    "couverture": "data/images/livres/couverture_idaksahak.jpg",
     "illustrations": [
       {
         "id": "illu_zone",
         "chapitre": 1,
         "titre": "Zone des Idaksahak",
-        "fichier": "data/images/livres/zone des idaksahak.jpeg",
+        "fichier": "data/images/livres/zone-des-idaksahak.jpeg",
         "legende": "Carte et territoire des Idaksahak dans le nord-est du Mali."
       },
       {
         "id": "illu_logo",
         "chapitre": 3,
         "titre": "Logo de la communauté Idaksahak",
-        "fichier": "data/images/livres/idaksahak_square.png",
+        "fichier": "images/idaksahak_square.png",
         "legende": "Logo officiel avec l'homme lisant, l'épée et les dromadaires."
       },
       {
         "id": "illu_combattant",
         "chapitre": 7,
         "titre": "Jeune combattant Adaksahak (1994)",
-        "fichier": "data/images/livres/Un jeune combattant Adaksahak, au nord de Ménaka, mars 1994. Photo  C.G..jpeg",
+        "fichier": "data/images/livres/jeune-combattant-idaksahak-1994.jpeg",
         "legende": "La rébellion des années 1990 marque la première prise d'armes de guerre par une partie significative des Idaksahak. Photo prise au nord de Ménaka en mars 1994."
       },
       {
@@ -69,7 +69,9 @@
           "De ce fait, l'histoire contemporaine de ce groupe offre une belle occasion de re-questionner le concept de tribu. En effet, depuis la rébellion touarègue des années 1990 et plus encore depuis 2012 – relance d'une insurrection armée, cette fois-ci bien plus violente, plus étendue et plus longue – les Idaksahak émergent sur la scène politique locale et sous-régionale. Ils revendiquent désormais des places de pouvoir qu'ils n'ont jamais occupées. Aussi parce qu'ils ne les avaient jamais véritablement cherchées auparavant. Si donc une tribu se définit par l'existence d'un ordre politique autonome en son sein, par un espace de souveraineté interne, l'analyse du processus d'émancipation enclenché par les Idaksahak depuis les années 1990 pourrait être riche d'enseignements.",
           "Plusieurs interrogations seront ainsi (re)formulées à l'aune de l'histoire singulière de ce groupe, laquelle sera abordée à travers des représentations produites par les Idaksahak eux-mêmes, par leurs voisins, ainsi que par des observateurs extérieurs (explorateurs européens, administrateurs coloniaux, chercheurs et médias)."
         ],
-        "notes": ["1. Ben Hounet, 2009."]
+        "notes": [
+          "1. Ben Hounet, 2009."
+        ]
       },
       {
         "numero": 2,
@@ -83,7 +85,14 @@
           "Au Sahara et au Sahel, comme dans bien d'autres régions du monde, le statut et le rang que les groupes sociaux cherchent à maintenir, ou à conquérir, tiennent pour une large part à la place qu'ils revendiquent dans l'histoire. Cela commence par les origines du groupe et, donc, par les récits qui y sont associés, lesquels sont sans cesse réajustés, au gré des contextes. Ainsi par exemple, lors de mes premières recherches menées en 1994 dans la zone de Ménaka...",
           "\"L'appellation 'IDAKSAHAK'⁶ que se donne la communauté de même nom, provient certainement d'une contraction du mot IDD-AGG ISHAK. Les communautés voisines les nomment DAW-SAHAK ou DAW-ISHAK, selon la prononciation qu'on fait du terme ISHAK, nom propre dont la connotation est plutôt de langue Sonrhaï et non celle de l'arabe ISHAQ du Coran ou ISAAC de la Bible. Il peut s'agir donc, d'une référence au nom d'un roi, en l'occurrence ISHAK I empereur Songhoï du Moyen Âge.\"⁷"
         ],
-        "notes": ["2. Tawset ou tawsit (pl. tiwsaten), mot de la langue tamasheq...", "3. Entretien avec quatre Idaksahak, Bamako, 31/10/2020", "4. Page Facebook – Communauté Idaksahak", "5. Ahmed Mohammed Ag Guidi", "6. Mise en forme majuscule conservée", "7. Ag Guidi 2019, 1–2"]
+        "notes": [
+          "2. Tawset ou tawsit (pl. tiwsaten), mot de la langue tamasheq...",
+          "3. Entretien avec quatre Idaksahak, Bamako, 31/10/2020",
+          "4. Page Facebook – Communauté Idaksahak",
+          "5. Ahmed Mohammed Ag Guidi",
+          "6. Mise en forme majuscule conservée",
+          "7. Ag Guidi 2019, 1–2"
+        ]
       },
       {
         "numero": 3,
@@ -97,7 +106,13 @@
           "L'instruction religieuse de l'ensemble du groupe est également une caractéristique fondamentale de la présentation de soi. Elle constitue, avec l'élevage et le commerce, la deuxième clé de voûte du groupe.",
           "\"Nous sommes la seule communauté, que je connais au nord, qui suit son économie et sa religion à la fois. Nous étudions et nous travaillons à la fois ! Alors que chez les autres, ceux qui étudient ne travaillent pas ! Et ceux qui travaillent n'étudient pas !\"¹²"
         ],
-        "notes": ["8. http://www.idaksahak.com/", "9. Cette caractéristique est évidemment difficile à représenter par un dessin.", "10. Page Facebook – Communauté Idaksahak", "11. Une partie d'entre eux occupe également le flanc est de la région de Gao", "12. Entretien avec trois Idaksahak, Bamako, 27/10/2020"]
+        "notes": [
+          "8. http://www.idaksahak.com/",
+          "9. Cette caractéristique est évidemment difficile à représenter par un dessin.",
+          "10. Page Facebook – Communauté Idaksahak",
+          "11. Une partie d'entre eux occupe également le flanc est de la région de Gao",
+          "12. Entretien avec trois Idaksahak, Bamako, 27/10/2020"
+        ]
       },
       {
         "numero": 4,
@@ -109,7 +124,11 @@
           "\"Les IDAKSAHK, peuple pacifique, ne répondaient pas à l'agression, même très intentionnée, sauf en cas d'humiliation à dessein ou de provocation évidente. Cette communauté avait toujours opté pour la non-violence visant, essentiellement à sauvegarder leur assiette économique d'un risque permanent de destruction dans un contexte culturel de rezzous et de contre rezzous.\"¹⁶",
           "La dimension essentialiste plane évidemment sur ces discours, comme c'est toujours un peu le cas lorsque l'on cherche à définir l'identité de son groupe d'appartenance. Les singularités, les aspérités et les contradictions sont gommées au profit de récits unitaires. Mais la mise en scène de soi est, aussi, toujours riche d'enseignements. 'Un peuple de paix qui s'occupe de sa religion…', mais un groupe qui n'a jamais pour autant bénéficié du statut de tribu 'maraboutique' (zwâya), comme c'est le cas par exemple des Touaregs Kel Es-Suq ou bien des Arabes Kunta¹⁷. Les Idaksahak, pourtant très instruits en islam – c'est d'ailleurs la principale raison qu'ils invoquent dans leur refus opposé à l'école des Blancs et à celle de l'État malien – n'ont jamais vraiment obtenu cette reconnaissance. En ce qui les concerne, le caractère pacifique rime surtout avec un statut de subalterne."
         ],
-        "notes": ["15. Entretien avec quatre Idaksahak, Bamako, 27/10/2020", "16. Ag Guidi 2019, p. 9", "17. Voir Grémont 2010"]
+        "notes": [
+          "15. Entretien avec quatre Idaksahak, Bamako, 27/10/2020",
+          "16. Ag Guidi 2019, p. 9",
+          "17. Voir Grémont 2010"
+        ]
       },
       {
         "numero": 5,
@@ -120,7 +139,12 @@
           "L'épée qui figure aujourd'hui symboliquement sur leur logo de présentation renvoie donc à une histoire très récente. Les plus anciennes sources disponibles qui évoquent les Idkasahak insistent effectivement sur le caractère pacifique de ce groupe social. C'est le cas, par exemple, du marabout Kunta Shaykh Baye qui a rédigé, vers la fin du XIXe siècle, des notes sur d'anciennes tribus touarègues :",
           "\"Les Dû Sahâq sont un peuple des Touaregs. Il est certain qu'à l'origine ils étaient Sûdân, car leur parler (kalâm) est composé des mots (kalâm) des Sûdân²⁰ et des Touaregs. Et parmi eux (il y a) une tribu qui situe ses origines vers l'Est. Ils sont tous des gens de la paix et de l'étude. La plupart d'entre eux habite avec les Ilmidan [Iwellemmedan]. Il est évident qu'ils sont des tribus d'Es-Suq. Entre eux et les Dabâkir il y a des relations.\"²¹"
         ],
-        "notes": ["18. Au sens strict, les Iwellemmedan sont des Imajeghen", "19. Disons que le statut de guerrier ne leur était reconnu par aucun de leurs voisins", "20. Kalâm est utilisée pour différencier les 'parlers locaux' des 'vraies langues' (lugha)", "21. Shaykh Baye, manuscrits conservés à la bibliothèque de l'Institut de France"]
+        "notes": [
+          "18. Au sens strict, les Iwellemmedan sont des Imajeghen",
+          "19. Disons que le statut de guerrier ne leur était reconnu par aucun de leurs voisins",
+          "20. Kalâm est utilisée pour différencier les 'parlers locaux' des 'vraies langues' (lugha)",
+          "21. Shaykh Baye, manuscrits conservés à la bibliothèque de l'Institut de France"
+        ]
       },
       {
         "numero": 6,
@@ -130,7 +154,11 @@
           "Ilias et Zeyd sont arrêtés en Algérie, à Colomb-Béchar, en novembre 1963. Ils sont remis aux autorités maliennes qui les exposent dans des situations humiliantes aux yeux des populations de l'Adagh. À titre d'exemple ! Arrêté avec eux, Younes réussit à s'échapper et s'installe en Algérie. Ayouba, le père, est arrêté et assassiné, comme d'autres chefs qui n'ont pas accepté de collaborer avec l'armée malienne.",
           "La participation de ces deux seuls individus ne suffit certainement pas à retenir cette date et cet événement comme une prise d'armes de la part des Idaksahak. Mais l'identité de ces jeunes hommes est tout de même symboliquement importante. Leur engagement aux côtés des Kel Adagh insurgés, et la répression qu'ils ont subie, avec leur père, marquent le premier acte d'une relation conflictuelle entre les Idaksahak et le pouvoir central malien."
         ],
-        "notes": ["32. Ayouba : chef renommé, soutenu par les autorités coloniales", "33. Les Ifoghas sont la tribu dominante de l'Adagh (Kidal)", "34. Voir Boilley 1999, pp. 321–324 ; Lecoq 2010, pp. 192, 214, 224"]
+        "notes": [
+          "32. Ayouba : chef renommé, soutenu par les autorités coloniales",
+          "33. Les Ifoghas sont la tribu dominante de l'Adagh (Kidal)",
+          "34. Voir Boilley 1999, pp. 321–324 ; Lecoq 2010, pp. 192, 214, 224"
+        ]
       },
       {
         "numero": 7,
@@ -140,7 +168,10 @@
           "Dans son ouvrage, Baz Lecoq présente Younes ag Ayouba comme l'un de ses principaux leaders, au moins dans sa phase de préparation³⁶.",
           "L'engagement de plusieurs centaines d'Idaksahak, les armes à la main, dans la rébellion de 1990 marque une première marche dans le processus d'émancipation de ce groupe. Aussi et surtout parce que ces armes n'ont pas visé uniquement l'armée malienne."
         ],
-        "notes": ["35. Rébellions : 1963–1964, 1990, 2006, 2012", "36. Lecoq 2010, p. 192"]
+        "notes": [
+          "35. Rébellions : 1963–1964, 1990, 2006, 2012",
+          "36. Lecoq 2010, p. 192"
+        ]
       },
       {
         "numero": 8,
@@ -152,7 +183,11 @@
           "Cette séquence marque clairement le passage des Idaksahak dans une autre dimension sociologique et politique, celle d'une tribu capable d'opposer elle-même une riposte militaire lorsque ses biens sont menacés et pillés. Un passage d'autant plus marquant qu'il s'est opéré dans une confrontation directe avec leurs anciens suzerains.",
           "\"Cet épisode de 1994 est historique ! C'est la première fois que nous avons délogé notre tête de sous le pied des Imajeghen. Avant cela, nos biens étaient leurs biens. Un Adaksahak n'était rien aux yeux des Imajeghen.\"⁴¹"
         ],
-        "notes": ["39. Entretien avec un ex-combattant Idaksahak, Bamako, 23/02/2022", "40. Aucun mort déclaré côté Idaksahak", "41. Entretien avec un ex-combattant Idaksahak, Bamako, 23/02/2022"]
+        "notes": [
+          "39. Entretien avec un ex-combattant Idaksahak, Bamako, 23/02/2022",
+          "40. Aucun mort déclaré côté Idaksahak",
+          "41. Entretien avec un ex-combattant Idaksahak, Bamako, 23/02/2022"
+        ]
       },
       {
         "numero": 9,
@@ -220,27 +255,6 @@
     "couverture": "data/images/livres/couverture_touareg.png",
     "illustrations": [
       {
-        "id": "illu_t1",
-        "chapitre": 4,
-        "titre": "Mosquée de Djingareyber",
-        "fichier": "data/images/livres/illu_t_mosquee.jpg",
-        "legende": "Mosquée historique de Tombouctou, patrimoine mondial en péril"
-      },
-      {
-        "id": "illu_t2",
-        "chapitre": 8,
-        "titre": "Femme touarègue",
-        "fichier": "data/images/livres/illu_t_femme.jpg",
-        "legende": "Femme touarègue dans sa parure traditionnelle"
-      },
-      {
-        "id": "illu_t3",
-        "chapitre": 7,
-        "titre": "Musiciens touaregs",
-        "fichier": "data/images/livres/illu_t_musique.jpg",
-        "legende": "Musiciens jouant de la guitare traditionnelle (tindé)"
-      },
-      {
         "id": "illu_chef_idoguiritane_1",
         "chapitre": 2,
         "titre": "Chef historique de la fraction Idoguiritane (1)",
@@ -275,7 +289,9 @@
           "Pourtant, malgré les tourments, l'époque touarègue a également été le théâtre de moments de résilience et de solidarité. Des voix courageuses se sont élevées pour promouvoir la paix, la réconciliation et le dialogue, cherchant à transcender les divisions et à trouver des solutions durables aux problèmes qui affligent le pays.",
           "Ainsi, le Mali en ébullition est le reflet d'une époque tourmentée, où les aspirations d'un peuple en quête de justice et de reconnaissance se heurtent aux défis complexes de la gouvernance, de l'unité nationale et de la stabilité."
         ],
-        "notes": ["Les causes profondes incluent la marginalisation, les conflits liés aux ressources naturelles, les revendications identitaires, l'influence des conflits régionaux et les facteurs socio-économiques."]
+        "notes": [
+          "Les causes profondes incluent la marginalisation, les conflits liés aux ressources naturelles, les revendications identitaires, l'influence des conflits régionaux et les facteurs socio-économiques."
+        ]
       },
       {
         "numero": 2,
@@ -563,27 +579,27 @@
     "categorie": "الأنثروبولوجيا السياسية",
     "description": "تحليل متعمق للتاريخ السياسي للإدكساهق، سعيهم نحو الحكم الذاتي وظهورهم على الساحة السياسية في منطقة الساحل. (تمت ترجمة هذا الكتاب من الفرنسية إلى العربية بواسطة حمدين أغ مكتار، الرئيس التنفيذي لشركة HAM Global Words.)",
     "credit_traduction": "تمت ترجمة هذا الكتاب من الفرنسية إلى العربية بواسطة حمدين أغ مكتار، الرئيس التنفيذي لشركة HAM Global Words.",
-    "couverture": "data/images/livres/couverture_idaksahak.jpg.jpg",
+    "couverture": "data/images/livres/couverture_idaksahak.jpg",
     "illustrations": [
       {
         "id": "illu_zone",
         "chapitre": 1,
         "titre": "منطقة الإدكساهق",
-        "fichier": "data/images/livres/zone des idaksahak.jpeg",
+        "fichier": "data/images/livres/zone-des-idaksahak.jpeg",
         "legende": "خريطة وأراضي الإدكساهق في شمال شرق مالي."
       },
       {
         "id": "illu_logo",
         "chapitre": 3,
         "titre": "شعار مجتمع الإدكساهق",
-        "fichier": "data/images/livres/idaksahak_square.png",
+        "fichier": "images/idaksahak_square.png",
         "legende": "الشعار الرسمي مع الرجل القارئ والسيف والجمال."
       },
       {
         "id": "illu_combattant",
         "chapitre": 7,
         "titre": "مقاتل شاب أدكساهق (1994)",
-        "fichier": "data/images/livres/Un jeune combattant Adaksahak, au nord de Ménaka, mars 1994. Photo  C.G..jpeg",
+        "fichier": "data/images/livres/jeune-combattant-idaksahak-1994.jpeg",
         "legende": "يمثل تمرد التسعينيات أول تسليح حربي لجزء كبير من الإدكساهق. الصورة التقطت شمال مناكا في مارس 1994."
       },
       {
@@ -622,7 +638,9 @@
           "من هذا المنطلق، يقدم التاريخ المعاصر لهذه المجموعة فرصة ممتازة لإعادة طرح مفهوم القبيلة. في الواقع، منذ تمرد الطوارق في التسعينيات، وأكثر من ذلك منذ عام 2012 – استئناف التمرد المسلح، هذه المرة أكثر عنفًا واتساعًا وطولاً – يبرز الإدكساهق على الساحة السياسية المحلية ودون الإقليمية. إنهم يطالبون الآن بمناصب سلطة لم يشغلوها أبدًا. وأيضًا لأنهم لم يبحثوا عنها حقًا من قبل. إذا كانت القبيلة تُعرّف بوجود نظام سياسي مستقل داخلها، بمساحة من السيادة الداخلية، فإن تحليل عملية التحرر التي بدأها الإدكساهق منذ التسعينيات يمكن أن يكون غنيًا بالدروس.",
           "سيتم إعادة صياغة عدة تساؤلات في ضوء التاريخ الفريد لهذه المجموعة، والذي سيتم تناوله من خلال التمثيلات التي ينتجها الإدكساهق أنفسهم، وجيرانهم، وكذلك المراقبون الخارجيون (المستكشفون الأوروبيون، الإداريون الاستعماريون، الباحثون ووسائل الإعلام)."
         ],
-        "notes": ["1. بن حونيت، 2009."]
+        "notes": [
+          "1. بن حونيت، 2009."
+        ]
       },
       {
         "numero": 2,
@@ -636,7 +654,14 @@
           "في الصحراء والساحل، كما في العديد من مناطق العالم الأخرى، يعتمد الوضع والمكانة التي تسعى المجموعات الاجتماعية إلى الحفاظ عليها أو غزوها، إلى حد كبير على المكانة التي يطالبون بها في التاريخ. يبدأ ذلك بأصول المجموعة، وبالتالي بالروايات المرتبطة بها، والتي يتم إعادة ضبطها باستمرار، حسب السياقات. على سبيل المثال، خلال أبحاثي الأولى التي أجريتها في عام 1994 في منطقة مناكا...",
           "'تسمية 'إدكساهق'⁶ التي تطلقها مجتمع الإدكساهق على نفسه، تأتي بالتأكيد من اختصار لكلمة IDD-AGG ISHAK. المجتمعات المجاورة تسميهم داو-صاهق أو داو-إشاق، حسب نطق كلمة إشاق، وهو اسم علم دلالته أقرب إلى لغة سونراي وليس إلى إسحاق العربية من القرآن أو إسحاق التوراة. قد يكون إذن إشارة إلى اسم ملك، وهو إشاق الأول إمبراطور سونغاي في العصور الوسطى.'⁷"
         ],
-        "notes": ["2. تاوست أو تاوسيت (جمع تيوساتن)، كلمة من لغة تماشق...", "3. مقابلة مع أربعة من الإدكساهق، باماكو، 31/10/2020", "4. صفحة فيسبوك – مجتمع الإدكساهق", "5. أحمد محمد أغ غيدي", "6. الحفاظ على الأحرف الكبيرة كما هي", "7. أغ غيدي 2019، 1–2"]
+        "notes": [
+          "2. تاوست أو تاوسيت (جمع تيوساتن)، كلمة من لغة تماشق...",
+          "3. مقابلة مع أربعة من الإدكساهق، باماكو، 31/10/2020",
+          "4. صفحة فيسبوك – مجتمع الإدكساهق",
+          "5. أحمد محمد أغ غيدي",
+          "6. الحفاظ على الأحرف الكبيرة كما هي",
+          "7. أغ غيدي 2019، 1–2"
+        ]
       },
       {
         "numero": 3,
@@ -650,7 +675,13 @@
           "التعليم الديني للمجموعة بأكملها هو أيضًا خاصية أساسية في تقديم الذات. إنه يشكل، مع تربية الماشية والتجارة، الركيزة الثانية للمجموعة.",
           "'نحن المجتمع الوحيد، الذي أعرفه في الشمال، الذي يتابع اقتصاده ودينه في نفس الوقت! نحن ندرس ونعمل في نفس الوقت! بينما عند الآخرين، أولئك الذين يدرسون لا يعملون! وأولئك الذين يعملون لا يدرسون!'¹²"
         ],
-        "notes": ["8. http://www.idaksahak.com/", "9. من الواضح أن هذه الخاصية يصعب تمثيلها برسم.", "10. صفحة فيسبوك – مجتمع الإدكساهق", "11. جزء منهم يسكن أيضًا الجانب الشرقي من منطقة غاو", "12. مقابلة مع ثلاثة من الإدكساهق، باماكو، 27/10/2020"]
+        "notes": [
+          "8. http://www.idaksahak.com/",
+          "9. من الواضح أن هذه الخاصية يصعب تمثيلها برسم.",
+          "10. صفحة فيسبوك – مجتمع الإدكساهق",
+          "11. جزء منهم يسكن أيضًا الجانب الشرقي من منطقة غاو",
+          "12. مقابلة مع ثلاثة من الإدكساهق، باماكو، 27/10/2020"
+        ]
       },
       {
         "numero": 4,
@@ -662,7 +693,11 @@
           "'الإدكساهق، شعب مسالم، لم يردوا على العدوان، حتى لو كان مقصودًا جدًا، إلا في حالة الإهانة المتعمدة أو الاستفزاز الواضح. هذا المجتمع كان دائمًا يختار اللاعنف بهدف حماية قاعدته الاقتصادية من خطر دائم للتدمير في سياق ثقافي من الغارات والغارات المضادة.'¹⁶",
           "البعد الجوهري يلوح بوضوح في هذه الخطابات، كما هو الحال دائمًا إلى حد ما عندما يحاول المرء تعريف هوية مجموعته. يتم محو الخصوصيات والنتوءات والتناقضات لصالح روايات موحدة. لكن تقديم الذات هو دائمًا غني بالدروس. 'شعب سلام يهتم بدينه...'، لكن مجموعة لم تستفد أبدًا من وضع قبيلة 'مرابطية' (زوايا)، كما هو الحال مثلاً مع طوارق كل السوق أو العرب الكونطة¹⁷. الإدكساهق، مع أنهم متعلمون جدًا في الإسلام – وهذا هو السبب الرئيسي الذي يذكرونه في رفضهم لمدرسة البيض ومدرسة الدولة المالية – لم يحصلوا أبدًا على هذا الاعتراف. فيما يخصهم، فإن الطابع السلمي يرتبط أكثر بوضعية تابعة."
         ],
-        "notes": ["15. مقابلة مع أربعة من الإدكساهق، باماكو، 27/10/2020", "16. أغ غيدي 2019، ص. 9", "17. انظر غريمون 2010"]
+        "notes": [
+          "15. مقابلة مع أربعة من الإدكساهق، باماكو، 27/10/2020",
+          "16. أغ غيدي 2019، ص. 9",
+          "17. انظر غريمون 2010"
+        ]
       },
       {
         "numero": 5,
@@ -673,7 +708,12 @@
           "السيف الذي يظهر اليوم رمزيًا على شعارهم يشير إلى تاريخ حديث جدًا. أقدم المصادر المتاحة التي تذكر الإدكساهق تؤكد على الطابع السلمي لهذه المجموعة الاجتماعية. وهذا هو حال المارابوط كونطة الشيخ باي الذي كتب، في أواخر القرن التاسع عشر، ملاحظات عن القبائل الطوارقية القديمة:",
           "'داو صاحق هم شعب من الطوارق. من المؤكد أنهم في الأصل كانوا سودان، لأن لغتهم (كلام) تتكون من كلمات السودان²⁰ والطوارق. ومن بينهم قبيلة ترجع أصولها إلى الشرق. كلهم أهل سلام ودراسة. معظمهم يعيشون مع إيلميدان [الإوليمدان]. من الواضح أنهم قبائل السوق. بينهم وبين دباكير هناك علاقات.'²¹"
         ],
-        "notes": ["18. بالمعنى الدقيق، الإوليمدان هم إماجيغن", "19. لنقل أن وضع المحارب لم يكن معترفًا به من قبل أي من جيرانهم", "20. كلام تستخدم للتمييز بين 'اللهجات المحلية' و 'اللغات الحقيقية' (لغة)", "21. الشيخ باي، مخطوطات محفوظة في مكتبة معهد فرنسا"]
+        "notes": [
+          "18. بالمعنى الدقيق، الإوليمدان هم إماجيغن",
+          "19. لنقل أن وضع المحارب لم يكن معترفًا به من قبل أي من جيرانهم",
+          "20. كلام تستخدم للتمييز بين 'اللهجات المحلية' و 'اللغات الحقيقية' (لغة)",
+          "21. الشيخ باي، مخطوطات محفوظة في مكتبة معهد فرنسا"
+        ]
       },
       {
         "numero": 6,
@@ -683,7 +723,11 @@
           "تم القبض على إلياس وزيد في الجزائر، في كولومب بشار، في نوفمبر 1963. تم تسليمهما للسلطات المالية التي عرّضتهما لمواقف مهينة أمام سكان أداغ. على سبيل المثال! تم القبض معهم، ونجح يونس في الفرار واستقر في الجزائر. تم القبض على أيوبا، الأب، واغتياله، مثل غيره من الزعماء الذين لم يقبلوا التعاون مع الجيش المالي.",
           "مشاركة هذين الفردين فقط لا تكفي بالتأكيد لتحديد هذا التاريخ وهذا الحدث كحمل سلاح من قبل الإدكساهق. لكن هوية هؤلاء الشباب مهمة رمزيًا. إن انخراطهم إلى جانب كل أداغ المتمردين، والقمع الذي تعرضوا له، مع والدهم، يمثل الفعل الأول للعلاقة المتوترة بين الإدكساهق والسلطة المركزية المالية."
         ],
-        "notes": ["32. أيوبا: زعيم مشهور، مدعوم من السلطات الاستعمارية", "33. إيفوغاس هي القبيلة المهيمنة في أداغ (كيدال)", "34. انظر بواييه 1999، ص. 321–324؛ ليكوك 2010، ص. 192، 214، 224"]
+        "notes": [
+          "32. أيوبا: زعيم مشهور، مدعوم من السلطات الاستعمارية",
+          "33. إيفوغاس هي القبيلة المهيمنة في أداغ (كيدال)",
+          "34. انظر بواييه 1999، ص. 321–324؛ ليكوك 2010، ص. 192، 214، 224"
+        ]
       },
       {
         "numero": 7,
@@ -693,7 +737,10 @@
           "في كتابه، يقدم باز ليكوك يونس أغ أيوبا كأحد قادته الرئيسيين، على الأقل في مرحلة التحضير³⁶.",
           "يمثل انخراط عدة مئات من الإدكساهق، حاملين السلاح، في تمرد 1990 خطوة أولى في عملية تحرر هذه المجموعة. وأيضًا وأساسًا لأن هذه الأسلحة لم تستهدف الجيش المالي فقط."
         ],
-        "notes": ["35. تمردات: 1963–1964، 1990، 2006، 2012", "36. ليكوك 2010، ص. 192"]
+        "notes": [
+          "35. تمردات: 1963–1964، 1990، 2006، 2012",
+          "36. ليكوك 2010، ص. 192"
+        ]
       },
       {
         "numero": 8,
@@ -705,7 +752,11 @@
           "يمثل هذا التسلسل بوضوح انتقال الإدكساهق إلى بعد اجتماعي وسياسي آخر، بعد قبيلة قادرة على معارضة رد عسكري بنفسها عندما تكون ممتلكاتها مهددة ومنهوبة. انتقال أكثر أهمية لأنه تم في مواجهة مباشرة مع أسيادهم السابقين.",
           "'حلقة 1994 هذه تاريخية! إنها المرة الأولى التي نزيل فيها رأسنا من تحت قدم إماجيغن. قبل ذلك، كانت ممتلكاتنا ممتلكاتهم. لم يكن الأدكساهق شيئًا في أعين إماجيغن.'⁴¹"
         ],
-        "notes": ["39. مقابلة مع مقاتل سابق إدكساهق، باماكو، 23/02/2022", "40. لم يتم الإعلان عن أي قتلى من جانب الإدكساهق", "41. مقابلة مع مقاتل سابق إدكساهق، باماكو، 23/02/2022"]
+        "notes": [
+          "39. مقابلة مع مقاتل سابق إدكساهق، باماكو، 23/02/2022",
+          "40. لم يتم الإعلان عن أي قتلى من جانب الإدكساهق",
+          "41. مقابلة مع مقاتل سابق إدكساهق، باماكو، 23/02/2022"
+        ]
       },
       {
         "numero": 9,
@@ -769,27 +820,6 @@
     "couverture": "data/images/livres/couverture_touareg.png",
     "illustrations": [
       {
-        "id": "illu_t1",
-        "chapitre": 4,
-        "titre": "مسجد دجينغاريبير",
-        "fichier": "data/images/livres/illu_t_mosquee.jpg",
-        "legende": "مسجد تمبكتو التاريخي، تراث عالمي في خطر"
-      },
-      {
-        "id": "illu_t2",
-        "chapitre": 8,
-        "titre": "امرأة طوارقية",
-        "fichier": "data/images/livres/illu_t_femme.jpg",
-        "legende": "امرأة طوارقية في زينتها التقليدية"
-      },
-      {
-        "id": "illu_t3",
-        "chapitre": 7,
-        "titre": "موسيقيون طوارق",
-        "fichier": "data/images/livres/illu_t_musique.jpg",
-        "legende": "موسيقيون يعزفون على القيتارة التقليدية (تندي)"
-      },
-      {
         "id": "illu_chef_idoguiritane_1",
         "chapitre": 2,
         "titre": "الشيخ التاريخي لفصيلة إيدوغيريتان (١)",
@@ -824,7 +854,9 @@
           "ومع ذلك، ورغم العذابات، كان العصر الطوارقي أيضاً مسرحاً للحظات من الصمود والتضامن. ارتفعت أصوات شجاعة لتعزيز السلام والمصالحة والحوار، ساعية إلى تجاوز الانقسامات وإيجاد حلول دائمة للمشاكل التي تعاني منها البلاد.",
           "وهكذا، فإن مالي في غليان هي انعكاس لعصر مضطرب، حيث تتصادم تطلعات شعب يسعى للعدالة والاعتراف مع التحديات المعقدة للحكم والوحدة الوطنية والاستقرار."
         ],
-        "notes": ["تشمل الأسباب العميقة التهميش، والصراعات المرتبطة بالموارد الطبيعية، والمطالب الهوياتية، وتأثير الصراعات الإقليمية، والعوامل الاجتماعية والاقتصادية."]
+        "notes": [
+          "تشمل الأسباب العميقة التهميش، والصراعات المرتبطة بالموارد الطبيعية، والمطالب الهوياتية، وتأثير الصراعات الإقليمية، والعوامل الاجتماعية والاقتصادية."
+        ]
       },
       {
         "numero": 2,
@@ -1573,27 +1605,27 @@
     "langue": "English",
     "categorie": "Political Anthropology",
     "description": "An in-depth analysis of the political history of the Idaksahak, their quest for autonomy and their emergence on the Sahelian political scene.",
-    "couverture": "data/images/livres/couverture_idaksahak.jpg.jpg",
+    "couverture": "data/images/livres/couverture_idaksahak.jpg",
     "illustrations": [
       {
         "id": "illu_zone",
         "chapitre": 1,
         "titre": "Zone of the Idaksahak",
-        "fichier": "data/images/livres/zone des idaksahak.jpeg",
+        "fichier": "data/images/livres/zone-des-idaksahak.jpeg",
         "legende": "Map and territory of the Idaksahak in north-eastern Mali."
       },
       {
         "id": "illu_logo",
         "chapitre": 3,
         "titre": "Logo of the Idaksahak community",
-        "fichier": "data/images/livres/idaksahak_square.png",
+        "fichier": "images/idaksahak_square.png",
         "legende": "Official logo with the reading man, the sword and the dromedaries."
       },
       {
         "id": "illu_combattant",
         "chapitre": 7,
         "titre": "Young Adaksahak fighter (1994)",
-        "fichier": "data/images/livres/Un jeune combattant Adaksahak, au nord de Ménaka, mars 1994. Photo  C.G..jpeg",
+        "fichier": "data/images/livres/jeune-combattant-idaksahak-1994.jpeg",
         "legende": "The rebellion of the 1990s marks the first armed warfare by a significant part of the Idaksahak. Photo taken north of Ménaka in March 1994."
       },
       {
@@ -1632,7 +1664,9 @@
           "Therefore, the contemporary history of this group offers a great opportunity to re-question the concept of tribe. Indeed, since the Tuareg rebellion of the 1990s and even more since 2012 – the resumption of an armed insurrection, this time much more violent, more widespread and longer – the Idaksahak are emerging on the local and sub-regional political scene. They now claim positions of power they have never held. Also because they had never really sought them before. If a tribe is defined by the existence of an autonomous political order within it, by an internal space of sovereignty, the analysis of the emancipation process initiated by the Idaksahak since the 1990s could be rich in lessons.",
           "Several questions will thus be (re)formulated in the light of the singular history of this group, which will be approached through representations produced by the Idaksahak themselves, by their neighbors, as well as by external observers (European explorers, colonial administrators, researchers and media)."
         ],
-        "notes": ["1. Ben Hounet, 2009."]
+        "notes": [
+          "1. Ben Hounet, 2009."
+        ]
       },
       {
         "numero": 2,
@@ -1646,7 +1680,14 @@
           "In the Sahara and the Sahel, as in many other regions of the world, the status and rank that social groups seek to maintain, or to conquer, depend to a large extent on the place they claim in history. It begins with the origins of the group and, therefore, with the stories associated with them, which are constantly readjusted according to the context. For example, during my first research carried out in 1994 in the Ménaka area...",
           "\"The name 'IDAKSAHAK'⁶ that the community of the same name gives itself, certainly comes from a contraction of the word IDD-AGG ISHAK. The neighboring communities call them DAW-SAHAK or DAW-ISHAK, depending on the pronunciation of the term ISHAK, a proper name whose connotation is rather Songhay and not Arabic ISHAQ from the Koran or ISAAC from the Bible. It could therefore be a reference to the name of a king, namely ISHAK I, Songhai Emperor of the Middle Ages.\"⁷"
         ],
-        "notes": ["2. Tawset or tawsit (pl. tiwsaten), word from the Tamasheq language...", "3. Interview with four Idaksahak, Bamako, 31/10/2020", "4. Facebook page – Idaksahak Community", "5. Ahmed Mohammed Ag Guidi", "6. Uppercase formatting preserved", "7. Ag Guidi 2019, 1–2"]
+        "notes": [
+          "2. Tawset or tawsit (pl. tiwsaten), word from the Tamasheq language...",
+          "3. Interview with four Idaksahak, Bamako, 31/10/2020",
+          "4. Facebook page – Idaksahak Community",
+          "5. Ahmed Mohammed Ag Guidi",
+          "6. Uppercase formatting preserved",
+          "7. Ag Guidi 2019, 1–2"
+        ]
       },
       {
         "numero": 3,
@@ -1660,7 +1701,13 @@
           "The religious education of the entire group is also a fundamental characteristic of self-presentation. It constitutes, together with herding and trade, the second keystone of the group.",
           "\"We are the only community, that I know in the north, which follows both its economy and its religion at the same time. We study and we work at the same time! Whereas among others, those who study do not work! And those who work do not study!\"¹²"
         ],
-        "notes": ["8. http://www.idaksahak.com/", "9. This characteristic is obviously difficult to represent with a drawing.", "10. Facebook page – Idaksahak Community", "11. Some of them also occupy the eastern side of the Gao region", "12. Interview with three Idaksahak, Bamako, 27/10/2020"]
+        "notes": [
+          "8. http://www.idaksahak.com/",
+          "9. This characteristic is obviously difficult to represent with a drawing.",
+          "10. Facebook page – Idaksahak Community",
+          "11. Some of them also occupy the eastern side of the Gao region",
+          "12. Interview with three Idaksahak, Bamako, 27/10/2020"
+        ]
       },
       {
         "numero": 4,
@@ -1672,7 +1719,11 @@
           "\"The IDAKSAHK, a peaceful people, did not respond to aggression, even very intentional, except in cases of deliberate humiliation or obvious provocation. This community had always opted for non-violence aimed essentially at safeguarding their economic base from a permanent risk of destruction in a cultural context of raids and counter-raids.\"¹⁶",
           "The essentialist dimension obviously hovers over these speeches, as is always the case when trying to define the identity of one's own group. Singularities, rough edges and contradictions are erased in favor of unitary narratives. But self-presentation is also always rich in lessons. 'A people of peace who take care of their religion…', but a group that has never benefited from the status of a 'maraboutic' tribe (zwâya), as is the case for example with the Kel Es-Suq Tuaregs or the Kunta Arabs¹⁷. The Idaksahak, although very educated in Islam – this is moreover the main reason they invoke in their refusal of the White man's school and that of the Malian state – never really obtained this recognition. As far as they are concerned, the peaceful character rhymes above all with a subordinate status."
         ],
-        "notes": ["15. Interview with four Idaksahak, Bamako, 27/10/2020", "16. Ag Guidi 2019, p. 9", "17. See Grémont 2010"]
+        "notes": [
+          "15. Interview with four Idaksahak, Bamako, 27/10/2020",
+          "16. Ag Guidi 2019, p. 9",
+          "17. See Grémont 2010"
+        ]
       },
       {
         "numero": 5,
@@ -1683,7 +1734,12 @@
           "The sword that appears today symbolically on their presentation logo therefore refers to a very recent history. The oldest available sources that mention the Idaksahak indeed insist on the peaceful nature of this social group. This is the case, for example, of the Kunta marabout Shaykh Baye who wrote, towards the end of the 19th century, notes on ancient Tuareg tribes:",
           "\"The Dû Sahâq are a people of the Tuaregs. It is certain that originally they were Sûdân, because their speech (kalâm) is composed of the words (kalâm) of the Sûdân²⁰ and the Tuaregs. And among them there is a tribe which traces its origins to the East. They are all people of peace and study. Most of them live with the Ilmidan [Iwellemmedan]. It is obvious that they are tribes of Es-Suq. Between them and the Dabâkir there are relations.\"²¹"
         ],
-        "notes": ["18. Strictly speaking, the Iwellemmedan are Imajeghen", "19. Let's say that the status of warrior was not recognized by any of their neighbors", "20. Kalâm is used to differentiate 'local dialects' from 'real languages' (lugha)", "21. Shaykh Baye, manuscripts kept at the library of the Institut de France"]
+        "notes": [
+          "18. Strictly speaking, the Iwellemmedan are Imajeghen",
+          "19. Let's say that the status of warrior was not recognized by any of their neighbors",
+          "20. Kalâm is used to differentiate 'local dialects' from 'real languages' (lugha)",
+          "21. Shaykh Baye, manuscripts kept at the library of the Institut de France"
+        ]
       },
       {
         "numero": 6,
@@ -1693,7 +1749,11 @@
           "Ilias and Zeyd were arrested in Algeria, in Colomb-Béchar, in November 1963. They were handed over to the Malian authorities who exposed them to humiliating situations in front of the populations of the Adagh. As an example! Arrested with them, Younes managed to escape and settled in Algeria. Ayouba, the father, was arrested and murdered, like other chiefs who did not agree to collaborate with the Malian army.",
           "The participation of these two individuals alone is certainly not enough to mark this date and this event as an armed action by the Idaksahak. But the identity of these young men is nevertheless symbolically important. Their commitment alongside the insurgent Kel Adagh, and the repression they suffered, along with their father, mark the first act of a conflictual relationship between the Idaksahak and the Malian central power."
         ],
-        "notes": ["32. Ayouba: renowned chief, supported by colonial authorities", "33. The Ifoghas are the dominant tribe of the Adagh (Kidal)", "34. See Boilley 1999, pp. 321–324; Lecoq 2010, pp. 192, 214, 224"]
+        "notes": [
+          "32. Ayouba: renowned chief, supported by colonial authorities",
+          "33. The Ifoghas are the dominant tribe of the Adagh (Kidal)",
+          "34. See Boilley 1999, pp. 321–324; Lecoq 2010, pp. 192, 214, 224"
+        ]
       },
       {
         "numero": 7,
@@ -1703,7 +1763,10 @@
           "In his work, Baz Lecoq presents Younes ag Ayouba as one of its main leaders, at least in its preparation phase³⁶.",
           "The commitment of several hundred Idaksahak, armed, in the 1990 rebellion marks a first step in the emancipation process of this group. Also and above all because these weapons did not target only the Malian army."
         ],
-        "notes": ["35. Rebellions: 1963–1964, 1990, 2006, 2012", "36. Lecoq 2010, p. 192"]
+        "notes": [
+          "35. Rebellions: 1963–1964, 1990, 2006, 2012",
+          "36. Lecoq 2010, p. 192"
+        ]
       },
       {
         "numero": 8,
@@ -1715,7 +1778,11 @@
           "This sequence clearly marks the transition of the Idaksahak into another sociological and political dimension, that of a tribe capable of mounting its own military response when its property is threatened and looted. A transition all the more striking because it took place in direct confrontation with their former suzerains.",
           "\"This 1994 episode is historic! It is the first time that we have removed our head from under the foot of the Imajeghen. Before that, our goods were their goods. An Adaksahak was nothing in the eyes of the Imajeghen.\"⁴¹"
         ],
-        "notes": ["39. Interview with a former Idaksahak fighter, Bamako, 23/02/2022", "40. No deaths declared on the Idaksahak side", "41. Interview with a former Idaksahak fighter, Bamako, 23/02/2022"]
+        "notes": [
+          "39. Interview with a former Idaksahak fighter, Bamako, 23/02/2022",
+          "40. No deaths declared on the Idaksahak side",
+          "41. Interview with a former Idaksahak fighter, Bamako, 23/02/2022"
+        ]
       },
       {
         "numero": 9,
@@ -1783,27 +1850,6 @@
     "couverture": "data/images/livres/couverture_touareg.png",
     "illustrations": [
       {
-        "id": "illu_t1",
-        "chapitre": 4,
-        "titre": "Djingareyber Mosque",
-        "fichier": "data/images/livres/illu_t_mosquee.jpg",
-        "legende": "Historic mosque of Timbuktu, world heritage in peril"
-      },
-      {
-        "id": "illu_t2",
-        "chapitre": 8,
-        "titre": "Tuareg woman",
-        "fichier": "data/images/livres/illu_t_femme.jpg",
-        "legende": "Tuareg woman in traditional adornment"
-      },
-      {
-        "id": "illu_t3",
-        "chapitre": 7,
-        "titre": "Tuareg musicians",
-        "fichier": "data/images/livres/illu_t_musique.jpg",
-        "legende": "Musicians playing traditional guitar (tindé)"
-      },
-      {
         "id": "illu_chef_idoguiritane_1",
         "chapitre": 2,
         "titre": "Historical chief of the Idoguiritane fraction (1)",
@@ -1838,7 +1884,9 @@
           "Yet, despite the torments, the Tuareg era has also been the scene of moments of resilience and solidarity. Courageous voices have been raised to promote peace, reconciliation and dialogue, seeking to transcend divisions and find lasting solutions to the problems afflicting the country.",
           "Thus, Mali in turmoil is a reflection of a tormented era, where the aspirations of a people seeking justice and recognition collide with the complex challenges of governance, national unity and stability."
         ],
-        "notes": ["Root causes include marginalization, natural resource conflicts, identity demands, the influence of regional conflicts and socio-economic factors."]
+        "notes": [
+          "Root causes include marginalization, natural resource conflicts, identity demands, the influence of regional conflicts and socio-economic factors."
+        ]
       },
       {
         "numero": 2,
@@ -2342,7 +2390,7 @@
       ]
     },
     "bibliographie": []
-    },
+  },
   {
     "id": 19,
     "titre": "Idaksahak : entre mythes, histoire et résilience",

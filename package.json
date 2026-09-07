@@ -1,9 +1,16 @@
 {
   "name": "tadaksahak-learning",
   "private": true,
-  "version": "1.0.0",
-  "description": "Monorepo Tadaksahak Learning : apps/web (PWA statique) + apps/api (contributions communautaires)",
+  "version": "2.0.0",
+  "description": "Dictionnaire Tadaksahak : PWA statique et API optionnelle de contributions",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
+    "audit": "node scripts/audit.mjs",
+    "check:syntax": "find apps -name '*.js' -type f -print0 | xargs -0 -n1 node --check",
+    "check:json": "node -e \"for (const f of require('child_process').execSync('find apps/web -name \\\"*.json\\\"').toString().trim().split(/\\n/)) JSON.parse(require('fs').readFileSync(f)); console.log('JSON OK')\"",
+    "check": "npm run check:syntax && npm run check:json && npm run audit",
     "api:install": "npm install --prefix apps/api",
     "api:dev": "npm run dev --prefix apps/api",
     "api:start": "npm start --prefix apps/api",

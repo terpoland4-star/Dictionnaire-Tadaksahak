@@ -1,114 +1,88 @@
-# 📚 Tadaksahak Learning – Dictionnaire et Grammaire
+# Dictionnaire Tadaksahak
 
-[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
-[![GitHub stars](https://img.shields.io/github/stars/terpoland4-star/Dictionnaire-Tadaksahak?style=social)](https://github.com/terpoland4-star/Dictionnaire-Tadaksahak)
+Application de préservation et d’apprentissage de la langue tadaksahak. La version actuelle adopte une architecture volontairement simple : une **PWA statique** pour la consultation et une **API optionnelle** uniquement pour les contributions communautaires.
 
-> **"Une mission : connecter nos mondes."**
+## Architecture retenue
 
-Bienvenue sur la plateforme **Tadaksahak Learning**. Ce dépôt contient une application web progressive (PWA) dédiée à la **langue et à la culture du peuple Idaksahak**, une communauté nomade du nord-est du Mali et de la région de Ménaka.
+| Composant | Emplacement | Rôle | Exécution recommandée |
+| --- | --- | --- | --- |
+| Frontend | `apps/web/` | HTML, CSS, JavaScript ES modules, JSON, PWA | Nginx ou Caddy sur `80/443` |
+| Données éditoriales | `apps/web/data/` | Source de vérité des mots, grammaire, quiz, livres et médias | Servies comme fichiers statiques |
+| API | `apps/api/` | Contributions et validation administrateur | Node.js interne sur `127.0.0.1:3003` |
+| Base | PostgreSQL | Contributions uniquement | Réseau local du VPS |
 
-Ce projet est le fruit du travail de **Hamadine Ag Moctar**, interprète, développeur et gardien de la mémoire culturelle.
+La recherche du dictionnaire reste côté navigateur. Il n’y a pas de raison de déplacer les fichiers JSON dans PostgreSQL tant que le volume et le besoin d’édition collaborative ne le justifient pas.
 
----
+## Démarrage local
 
-## 🌍 À propos du Tadaksahak
+```bash
+npm install --prefix apps/api
+npm run check
+python3 -m http.server 8080 --directory apps/web
+```
 
-Le **Tadaksahak** (ou Dawsahak) est une langue **songhay septentrionale** fortement influencée par le **tamasheq (berbère)**. Elle est parlée par environ 30 000 à 40 000 personnes.
-Cette langue, riche d'une histoire de contacts et de métissages, est aujourd'hui considérée comme un trésor linguistique à préserver.
+Pour tester l’API :
 
-Cette application vise à fournir un accès libre et gratuit à :
-- Un **dictionnaire multilingue** (Tadaksahak - Français - Anglais - Arabe).
-- Une **grammaire de référence** interactive (basée sur les travaux académiques de *Christiansen-Bolli, 2010*).
-- Des **contes traditionnels**, des **émissions radio**, et des **ressources académiques**.
+```bash
+cp apps/api/.env.example apps/api/.env
+npm run api:install
+npm run api:start
+```
 
----
+La base PostgreSQL et les variables d’environnement sont nécessaires pour les routes de contributions. Le endpoint `GET /api/health` peut être testé sans requête SQL.
 
-## ✨ Fonctionnalités Principales
+## Contrôles qualité
 
-- **📖 Dictionnaire Interactif** : Recherche plein texte, suggestions, index alphabétique, et navigation fluide.
-- **📚 Grammaire en Livre Ouvert** : Une expérience de lecture immersive en double page, paginée et disponible en 3 langues.
-- **🎙️ Médias Riches** : Galerie photos historiques (© Charles Grémont), contes audio, émissions radio.
-- **🃏 Apprentissage Ludique** : Flashcards thématiques et quiz culturels pour tester ses connaissances.
-- **🗺️ Cartographie** : Visualisation des zones dialectales (Ménaka, Talatayt, Infukaraytan).
-- **📱 PWA (Progressive Web App)** : Installation possible sur mobile/ordinateur pour une utilisation **hors-ligne**.
-- **🌙 Personnalisation** : Thèmes sombre, clair, sépia et mode contraste élevé pour une accessibilité optimale.
+`npm run check` exécute la vérification de syntaxe JavaScript, le parsing de tous les JSON et l’audit des références locales. L’audit détecte notamment les ressources absentes et les duplications binaires.
 
----
+Les assets ont été normalisés avec des noms URL-safe. La source canonique des images de livres se trouve dans `apps/web/data/images/livres/`; le logo applicatif se trouve dans `apps/web/images/`. Les doublons prouvés et les références à des illustrations absentes ont été retirés.
 
-## 🚀 Accès Rapide
+## Déploiement VPS conseillé
 
-- **Application en ligne** : [https://terpoland4-star.github.io/Dictionnaire-Tadaksahak/](https://terpoland4-star.github.io/Dictionnaire-Tadaksahak/)
-- **Dictionnaire** : Accédez directement au coeur de la langue.
-- **Grammaire** : Explorez les 369 pages de la grammaire de référence découpées en 30 blocs thématiques.
+Le frontend doit être servi par Nginx ou Caddy en HTTPS. L’API ne doit pas être exposée directement sur Internet : elle écoute sur `127.0.0.1:3003`, puis le reverse proxy publie uniquement `/api/` sous le même domaine que le frontend. Cette configuration évite les problèmes CORS et réduit la surface d’attaque.
 
----
+Exemple de vérification avant déploiement :
 
-## 📂 Structure du Projet
-├── index.html # Point d'entrée de l'application
-├── app.js # Logique principale (dictionnaire, livre, chat)
-├── style.css # Design System complet (Dark/Light/Sepia)
-├── sw.js # Service Worker (Mode Hors-ligne & Mise à jour auto)
-├── data/ # Données structurées en JSON
-│ ├── mots.json # Le dictionnaire enrichi
-│ ├── grammaire.json # Les 30 blocs de la grammaire complète
-│ ├── livres.json # Bibliothèque et rapports académiques
-│ ├── quiz.json # Questions du quiz
-│ └── ...
-├── images/ # Ressources graphiques et photos historiques
-├── livres/ # Pages de visualisation des livres/rapports
-└── README.md
+```bash
+ss -ltnp
+ss -ltnp | grep -E ':(80|443|3003)\b' || true
+```
 
----
+Le port `3003` est le port applicatif documenté et utilisé par l’API. Le contrôle effectué dans l’environnement d’audit montre que le port n’est pas occupé ici ; l’état du VPS de production doit être vérifié directement sur celui-ci avant installation. Il ne serait pas honnête de déduire les ports du VPS depuis le sandbox.
 
-## 🛠️ Technologies Utilisées
+Exemple de service systemd :
 
-- **HTML5 / CSS3 / JavaScript (ES6+)** : Pas de framework lourd, performance et légèreté.
-- **Service Workers (PWA)** : Mise en cache avancée (Network First / Cache First).
-- **Leaflet** : Librairie de cartographie interactive.
-- **Design System "maison"** : Variables CSS, thèmes dynamiques et responsive.
+```ini
+[Unit]
+Description=Tadaksahak API
+After=network.target postgresql.service
 
----
+[Service]
+WorkingDirectory=/srv/tadaksahak
+EnvironmentFile=/srv/tadaksahak/apps/api/.env
+ExecStart=/usr/bin/node /srv/tadaksahak/apps/api/src/server.js
+Restart=on-failure
+User=tadaksahak
 
-## 📜 Licence
+[Install]
+WantedBy=multi-user.target
+```
 
-**Ce projet est sous licence Creative Commons Attribution - Pas d'Utilisation Commerciale - Partage dans les Mêmes Conditions 4.0 International (CC BY-NC-SA 4.0).**
+Après mise en place, vérifier `curl -fsS http://127.0.0.1:3003/api/health`, puis tester le domaine HTTPS via le reverse proxy.
 
-[![License: CC BY-NC-SA 4.0](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+## Termux
 
-### ✅ Vous êtes autorisé à :
-- **Partager** — copier, distribuer et communiquer le matériel par tous moyens et sous tous formats.
-- **Adapter** — remixer, transformer et créer à partir du matériel.
+Termux peut servir au développement et au déploiement Git :
 
-### ⚠️ Selon les conditions suivantes :
-- **Attribution** — Vous devez créditer l'Œuvre, intégrer un lien vers la licence et indiquer si des modifications ont été effectuées.
-- **Pas d'Utilisation Commerciale** — Vous n'êtes pas autorisé à faire un usage commercial de cette Œuvre.
-- **Partage dans les Mêmes Conditions** — Si vous modifiez, transformez ou créez à partir du matériel, vous devez diffuser l'Œuvre modifiée dans les mêmes conditions.
+```bash
+pkg install git nodejs
+ git clone https://github.com/terpoland4-star/Dictionnaire-Tadaksahak.git
+cd Dictionnaire-Tadaksahak
+npm run check
+```
 
-*Pour toute utilisation commerciale (application mobile payante, intégration dans un produit vendu), merci de contacter l'auteur.*
+La base PostgreSQL et le processus API doivent rester sur le VPS ; Termux n’a pas besoin d’héberger le backend en production.
 
----
+## Limites et prochaine étape
 
-## 🙏 Remerciements et Crédits
-
-Ce projet n'aurait pas pu voir le jour sans les travaux et le soutien de nombreuses personnes :
-
-- **Linguistique et Académique** :
-    - *Regula Christiansen-Bolli* pour sa grammaire de référence (2010, Leiden University).
-    - *Niels Christiansen & Stephen H. Levinsohn* pour leur étude sur les propositions relatives (2003).
-    - *Lameen Souag* pour ses travaux sur les langues songhay et berbères.
-    - *Jeffrey Heath* pour ses dictionnaires et grammaires du songhay et du tamasheq.
-- **Sources Historiques et Photographiques** :
-    - *Charles Grémont* pour les magnifiques clichés historiques des chefs Idaksahak et de la région.
-- **Communauté** :
-    - Aux aînés et locuteurs Idaksahak qui transmettent cette langue unique.
-
----
-
-## 👤 Auteur
-
-**Hamadine Ag Moctar**
-- Interprète, Développeur Web & Gardien de la mémoire culturelle.
-- 📧 Contact : *[hamadineagmoctar@gmail.com]*
-
----
-*Dernière mise à jour : Avril 2026*
+Le dépôt ne contient pas encore de tests navigateur automatisés, de pipeline CI ni de procédure de sauvegarde PostgreSQL. Ce sont les prochaines améliorations prioritaires avant une mise en production publique. Les contenus éditoriaux doivent aussi être relus séparément : un audit technique ne valide ni l’orthographe, ni les traductions, ni les droits de diffusion des documents et photographies.
