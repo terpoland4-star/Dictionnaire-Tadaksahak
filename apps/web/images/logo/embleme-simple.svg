@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Tadaksahak"><title>Tadaksahak</title>
+<defs><mask id="s-moon"><rect width="512" height="512" fill="#fff"/><circle cx="292" cy="112" r="62" fill="#000"/></mask>
+  <clipPath id="s-clip"><circle cx="256" cy="256" r="236"/></clipPath></defs>
+<circle cx="256" cy="256" r="236" fill="#0a122a"/>
+<g clip-path="url(#s-clip)"><path d="M0 300C120 270 380 270 512 300L512 512L0 512Z" fill="#b9773f"/></g>
+<circle cx="256" cy="140" r="68" fill="#f2ca50" mask="url(#s-moon)"/>
+<path d="M256 318C206 284 140 278 76 292L76 420C140 408 206 414 256 448C306 414 372 408 436 420L436 292C372 278 306 284 256 318Z" fill="#B83A3A"/>
+<path d="M256 300C210 268 150 262 92 272L92 400C150 392 210 398 256 430Z" fill="#ffe088"/>
+<path d="M256 300C302 268 362 262 420 272L420 400C362 392 302 398 256 430Z" fill="#f2ca50"/>
+<circle cx="256" cy="256" r="236" fill="none" stroke="#f2ca50" stroke-width="28"/>
+</svg>
