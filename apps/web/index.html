@@ -456,11 +456,11 @@
   <section id="photos" class="onglet-contenu" hidden>
     <h2 data-i18n="photos_title">🖼️ Galerie Photos</h2>
     <div class="gallery-filters">
-      <button class="gallery-filter active" data-category="all">📷 Toutes</button>
-      <button class="gallery-filter" data-category="culture">🎭 Culture</button>
-      <button class="gallery-filter" data-category="evenements">📅 Événements</button>
-      <button class="gallery-filter" data-category="portraits">👤 Portraits</button>
-      <button class="gallery-filter" data-category="geographie">🗺️ Géographie</button>
+      <button type="button" class="gallery-filter active" data-category="all" data-i18n="photos_filter_all" aria-pressed="true">📷 Toutes</button>
+      <button type="button" class="gallery-filter" data-category="culture" data-i18n="photos_filter_culture" aria-pressed="false">🎭 Culture</button>
+      <button type="button" class="gallery-filter" data-category="evenements" data-i18n="photos_filter_events" aria-pressed="false">📅 Événements</button>
+      <button type="button" class="gallery-filter" data-category="portraits" data-i18n="photos_filter_portraits" aria-pressed="false">👤 Portraits</button>
+      <button type="button" class="gallery-filter" data-category="geographie" data-i18n="photos_filter_geo" aria-pressed="false">🗺️ Géographie</button>
     </div>
     <div id="photosContainer" class="grid" aria-live="polite"></div>
   </section>

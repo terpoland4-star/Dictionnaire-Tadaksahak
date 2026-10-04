@@ -105,29 +105,6 @@
       "icons": [{ "src": "images/icon-96x96.png", "sizes": "96x96" }]
     }
   ],
-  "screenshots": [
-    {
-      "src": "images/screenshot-home.jpg",
-      "sizes": "1280x720",
-      "type": "image/jpeg",
-      "form_factor": "wide",
-      "label": "Page d'accueil de Tadaksahak Learning"
-    },
-    {
-      "src": "images/screenshot-dictionary.jpg",
-      "sizes": "1280x720",
-      "type": "image/jpeg",
-      "form_factor": "wide",
-      "label": "Dictionnaire Tadaksahak"
-    },
-    {
-      "src": "images/screenshot-grammar.jpg",
-      "sizes": "1280x720",
-      "type": "image/jpeg",
-      "form_factor": "wide",
-      "label": "Livre de grammaire interactif"
-    }
-  ],
   "prefer_related_applications": false,
   "display_override": ["window-controls-overlay", "standalone"],
   "launch_handler": {

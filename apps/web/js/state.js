@@ -78,9 +78,13 @@ export const dom = {
 // ------------------------------
 // GALERIE PHOTOS
 // ------------------------------
+// fichier : image d'origine (ouverte au clic) ; vignette : version 640 px affichée dans la grille.
+// categorie : culture | evenements | portraits | geographie (boutons de filtre de index.html).
 export const imagesGalerie = [
   {
     fichier: 'data/images/livres/chef_idoguiritane_1.jpg',
+    vignette: 'data/images/galerie/chef_idoguiritane_1.jpg',
+    categorie: 'portraits',
     titre_fr: 'Chef Idoguiritane à Tin Abaw',
     titre_ar: 'الشيخ إيدوغيريتان في تين أبا',
     titre_en: 'Chief Idoguiritane in Tin Abaw',
@@ -91,6 +95,8 @@ export const imagesGalerie = [
   },
   {
     fichier: 'data/images/livres/chef_idoguiritane_2.jpg',
+    vignette: 'data/images/galerie/chef_idoguiritane_2.jpg',
+    categorie: 'culture',
     titre_fr: 'Réunion traditionnelle à Tin Abaw',
     titre_ar: 'اجتماع تقليدي في تين أبا',
     titre_en: 'Traditional meeting in Tin Abaw',
@@ -101,6 +107,8 @@ export const imagesGalerie = [
   },
   {
     fichier: 'data/images/livres/chef_idoguiritane_3.jpg',
+    vignette: 'data/images/galerie/chef_idoguiritane_3.jpg',
+    categorie: 'culture',
     titre_fr: 'Le chef et ses conseillers',
     titre_ar: 'الشيخ ومستشاروه',
     titre_en: 'The chief and his advisors',
@@ -111,6 +119,8 @@ export const imagesGalerie = [
   },
   {
     fichier: 'data/images/livres/jeune-combattant-idaksahak-1994.jpeg',
+    vignette: 'data/images/galerie/jeune-combattant-idaksahak-1994.jpg',
+    categorie: 'evenements',
     titre_fr: 'Jeune combattant Idaksahak (1994)',
     titre_ar: 'مقاتل شاب إدكساهق (١٩٩٤)',
     titre_en: 'Young Idaksahak fighter (1994)',
@@ -121,6 +131,8 @@ export const imagesGalerie = [
   },
   {
     fichier: 'data/images/livres/zone-des-idaksahak.jpeg',
+    vignette: 'data/images/galerie/zone-des-idaksahak.jpg',
+    categorie: 'geographie',
     titre_fr: 'Carte de la région des Idaksahak',
     titre_ar: 'خريطة منطقة الإدكساهق',
     titre_en: 'Map of the Idaksahak region',
@@ -131,6 +143,9 @@ export const imagesGalerie = [
   },
   {
     fichier: 'images/idaksahak_square.png',
+    vignette: 'data/images/galerie/idaksahak_square.jpg',
+    entiere: true, // logo : affiché en entier plutôt que recadré en 4:3
+    categorie: 'culture',
     titre_fr: 'Logo de la communauté Idaksahak',
     titre_ar: 'شعار مجتمع الإدكساهق',
     titre_en: 'Logo of the Idaksahak community',

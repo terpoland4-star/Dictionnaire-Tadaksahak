@@ -81,17 +81,41 @@ export async function afficherLivres() {
 // ------------------------------
 // PHOTOS
 // ------------------------------
+let filtrePhotos = 'all';
+
+function initFiltresPhotos() {
+  const barre = document.querySelector('#photos .gallery-filters');
+  if (!barre || barre.dataset.ready) return;
+  barre.dataset.ready = '1';
+  barre.addEventListener('click', (e) => {
+    const bouton = e.target.closest('.gallery-filter');
+    if (!bouton) return;
+    filtrePhotos = bouton.dataset.category || 'all';
+    afficherPhotos();
+  });
+}
+
 export function afficherPhotos() {
   const container = document.getElementById("photosContainer");
   if (!container) return;
-  let html = `<div class="album-header"><h3>📷 Album : Photos historiques</h3><p>Clichés de Charles Grémont</p></div><div class="galerie-grid">`;
-  imagesGalerie.forEach(img => {
+  initFiltresPhotos();
+  document.querySelectorAll('#photos .gallery-filter').forEach(b => {
+    const actif = (b.dataset.category || 'all') === filtrePhotos;
+    b.classList.toggle('active', actif);
+    b.setAttribute('aria-pressed', String(actif));
+  });
+
+  const t = i18n[state.currentLanguage] || i18n.fr;
+  const images = filtrePhotos === 'all' ? imagesGalerie : imagesGalerie.filter(img => img.categorie === filtrePhotos);
+  let html = `<div class="album-header"><h3>${escapeHtml(t.photos_album_title)}</h3><p>${escapeHtml(t.photos_album_credit)}</p></div><div class="galerie-grid">`;
+  images.forEach(img => {
     let titre = "", legende = "";
     if (state.currentLanguage === "fr") { titre = img.titre_fr; legende = img.legende_fr; }
     else if (state.currentLanguage === "ar") { titre = img.titre_ar; legende = img.legende_ar; }
     else { titre = img.titre_en; legende = img.legende_en; }
-    html += `<div class="galerie-item"><img src="${escapeHtml(img.fichier)}" alt="${escapeHtml(titre)}" loading="lazy"><div class="galerie-caption"><strong>${escapeHtml(titre)}</strong><p class="legende">${escapeHtml(legende)}</p><small class="credit">${escapeHtml(img.credit)}</small></div></div>`;
+    html += `<figure class="galerie-item${img.entiere ? ' galerie-item--entiere' : ''}"><a href="${escapeHtml(img.fichier)}" target="_blank" rel="noopener" title="${escapeHtml(t.photos_open_full)}"><img src="${escapeHtml(img.vignette || img.fichier)}" alt="${escapeHtml(titre)}" loading="lazy" decoding="async"></a><figcaption class="galerie-caption"><strong>${escapeHtml(titre)}</strong><p class="legende">${escapeHtml(legende)}</p><small class="credit">${escapeHtml(img.credit)}</small></figcaption></figure>`;
   });
+  if (!images.length) html += `<p class="galerie-vide">${escapeHtml(t.photos_empty)}</p>`;
   html += `</div>`;
   container.innerHTML = html;
 }
