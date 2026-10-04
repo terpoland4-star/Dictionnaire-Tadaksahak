@@ -42,8 +42,10 @@ router.post('/', chatLimiter, asyncRoute(async (req, res) => {
   const ctx = await buildContext(message);
   const contextText = formatContext(ctx);
 
+  // Le client abandonne au bout de 12 s : inutile de garder la requête Groq ouverte au-delà.
   const groqResponse = await fetch('https://api.groq.com/openai/v1/chat/completions', {
     method: 'POST',
+    signal: AbortSignal.timeout(11000),
     headers: {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${process.env.GROQ_API_KEY}`,
@@ -58,7 +60,14 @@ router.post('/', chatLimiter, asyncRoute(async (req, res) => {
       temperature: 0.4,
       max_tokens: 500,
     }),
+  }).catch((err) => {
+    if (err.name === 'TimeoutError') return null;
+    throw err;
   });
+
+  if (!groqResponse) {
+    return res.status(504).json({ erreur: 'Le service IA met trop de temps à répondre' });
+  }
 
   if (!groqResponse.ok) {
     const errText = await groqResponse.text().catch(() => '');

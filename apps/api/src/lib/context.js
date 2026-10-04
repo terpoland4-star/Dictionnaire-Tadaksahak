@@ -4,13 +4,16 @@
 // que de le laisser répondre uniquement de mémoire.
 const prisma = require('../db/prisma');
 
-const STOP_WORDS = new Set(['le','la','les','un','une','de','du','des','et','ou','mais','donc','car','pour','dans','avec','sans','par','sur','sous','que','qui','quoi','dont','où','comment','pourquoi','est','sont','être','avoir','faire','the','a','an','of','and','or','is','are','what','how','why']);
+const sansAccents = (texte) => texte.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+// Normalisés comme les mots de la question, sinon « où » ou « être » ne seraient jamais filtrés.
+const STOP_WORDS = new Set(['le','la','les','un','une','de','du','des','et','ou','mais','donc','car','pour','dans','avec','sans','par','sur','sous','que','qui','quoi','dont','où','comment','pourquoi','est','sont','être','avoir','faire','the','a','an','of','and','or','is','are','what','how','why'].map(sansAccents));
 
 function extraireMotsCles(texte) {
-  const mots = texte
-    .toLowerCase()
-    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-    .replace(/[?;:!,.']/g, '')
+  const mots = sansAccents(texte)
+    // L'apostrophe sépare deux mots (« l'arbre » -> « l arbre ») : la supprimer les collerait.
+    .replace(/[?;:!,.]/g, '')
+    .replace(/['’]/g, ' ')
     .split(/\s+/);
   return mots.filter(m => m.length > 2 && !STOP_WORDS.has(m));
 }

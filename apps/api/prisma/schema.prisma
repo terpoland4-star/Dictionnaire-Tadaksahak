@@ -192,3 +192,25 @@ model ContentItem {
   @@map("content_items")
 }
 
+
+// Table gérée par pg (migrations/001_init.sql, routes/contributions.js), déclarée ici
+// pour que `prisma db push` / `migrate` ne la considèrent pas comme à supprimer.
+model Contribution {
+  id                Int       @id @default(autoincrement())
+  type              String
+  mot               String
+  categorie         String?
+  traductionFr      String?   @map("traduction_fr")
+  traductionEn      String?   @map("traduction_en")
+  traductionAr      String?   @map("traduction_ar")
+  commentaire       String?
+  motOriginal       String?   @map("mot_original")
+  statut            String    @default("en_attente")
+  contributeurNom   String?   @map("contributeur_nom")
+  contributeurEmail String?   @map("contributeur_email")
+  creeLe            DateTime  @default(now()) @map("cree_le")
+  traiteLe          DateTime? @map("traite_le")
+
+  @@index([statut])
+  @@map("contributions")
+}

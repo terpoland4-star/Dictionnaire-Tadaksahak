@@ -7,11 +7,11 @@
 // CORRIGÉ : Plus d'erreur "Response body is already used"
 // ============================================
 
-const CACHE_NAME = 'tadaksahak-v13';
-const STATIC_CACHE = 'tadaksahak-static-v13';
-const DATA_CACHE = 'tadaksahak-data-v13';
-const MEDIA_CACHE = 'tadaksahak-media-v13';
-const API_CACHE = 'tadaksahak-api-v13';
+const CACHE_NAME = 'tadaksahak-v14';
+const STATIC_CACHE = 'tadaksahak-static-v14';
+const DATA_CACHE = 'tadaksahak-data-v14';
+const MEDIA_CACHE = 'tadaksahak-media-v14';
+const API_CACHE = 'tadaksahak-api-v14';
 
 // ============================================
 // FICHIERS STATIQUES (Cache First)
@@ -223,6 +223,9 @@ self.addEventListener('fetch', event => {
   
   // ---- STRATÉGIE 1bis : API interne tadaksahak-api (Network First, cache de secours) ----
   if (pathname.startsWith('/api/')) {
+    // POST /api/chat, connexion admin… : ni cachables ni rejouables hors-ligne,
+    // et un 429/400 doit atteindre la page tel quel au lieu d'un faux « Hors-ligne ».
+    if (request.method !== 'GET') return;
     event.respondWith(
       (async () => {
         try {
