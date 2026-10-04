@@ -44,5 +44,7 @@ symboles VI, V III, V=III, N'III et V'~ en satellites.
 | `orbite/embleme-orbite-noir.svg` | Noir et blanc (même rendu que la référence HGW) |
 | `orbite/embleme-orbite-clair.svg` | Blanc, personnage nuit, accents or |
 
+Avec le nom « TADAKSAHAK » en dessous (Fraunces Bold) : `orbite/logo-orbite-{sombre,noir,clair}.svg`.
+
 Les symboles sont en Inter ExtraBold, convertis en tracés. Trop fins en dessous de 128 px :
 utiliser `embleme-simple.svg` pour le favicon.
