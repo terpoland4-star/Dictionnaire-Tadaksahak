@@ -7,11 +7,11 @@
 // CORRIGÉ : Plus d'erreur "Response body is already used"
 // ============================================
 
-const CACHE_NAME = 'tadaksahak-v12';
-const STATIC_CACHE = 'tadaksahak-static-v12';
-const DATA_CACHE = 'tadaksahak-data-v12';
-const MEDIA_CACHE = 'tadaksahak-media-v12';
-const API_CACHE = 'tadaksahak-api-v12';
+const CACHE_NAME = 'tadaksahak-v13';
+const STATIC_CACHE = 'tadaksahak-static-v13';
+const DATA_CACHE = 'tadaksahak-data-v13';
+const MEDIA_CACHE = 'tadaksahak-media-v13';
+const API_CACHE = 'tadaksahak-api-v13';
 
 // ============================================
 // FICHIERS STATIQUES (Cache First)
@@ -134,6 +134,21 @@ self.addEventListener('install', event => {
         }
       }
       
+      // Précharger l'API interne (dictionnaire, grammaire, bibliothèque)
+      // pour que ces sections restent utilisables hors-ligne après une
+      // première visite en ligne.
+      for (const apiUrl of internalApiUrls) {
+        try {
+          const response = await fetch(apiUrl);
+          if (response.ok) {
+            await cacheData.put(apiUrl, response);
+            console.log(`✅ Préchargé (API interne): ${apiUrl}`);
+          }
+        } catch (err) {
+          console.warn(`⚠️ Préchargement API interne échoué: ${apiUrl}`);
+        }
+      }
+      
       return self.skipWaiting();
     })()
   );
@@ -201,6 +216,38 @@ self.addEventListener('fetch', event => {
         return new Response(JSON.stringify([]), {
           headers: { 'Content-Type': 'application/json' }
         });
+      })()
+    );
+    return;
+  }
+  
+  // ---- STRATÉGIE 1bis : API interne tadaksahak-api (Network First, cache de secours) ----
+  if (pathname.startsWith('/api/')) {
+    event.respondWith(
+      (async () => {
+        try {
+          const response = await fetch(request, { cache: 'no-store' });
+          if (response && response.ok) {
+            try {
+              const cache = await caches.open(DATA_CACHE);
+              await cache.put(request, response.clone());
+            } catch (cloneError) {
+              console.warn(`⚠️ Impossible de cacher ${pathname}:`, cloneError.message);
+            }
+            return response;
+          }
+          throw new Error('Network response not ok');
+        } catch (error) {
+          const cached = await caches.match(request);
+          if (cached) {
+            console.log(`📀 API interne depuis cache: ${pathname}`);
+            return cached;
+          }
+          return new Response(JSON.stringify({ erreur: 'Hors-ligne, donnée non disponible' }), {
+            status: 503,
+            headers: { 'Content-Type': 'application/json' }
+          });
+        }
       })()
     );
     return;

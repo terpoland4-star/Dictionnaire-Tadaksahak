@@ -1,0 +1,194 @@
+// Tadaksahak Learning — API v2 — schéma Prisma (PostgreSQL 15)
+// Les colonnes mot_norm / ipa_norm / search_tsv sont déclarées ici pour éviter
+// toute dérive, puis recréées comme colonnes GÉNÉRÉES par search.sql.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  admin
+  linguist
+  learner
+}
+
+enum Dialect {
+  menaka
+  abalak
+}
+
+enum RootType {
+  songhay
+  berbere
+  arabe
+}
+
+model User {
+  id            String   @id @default(uuid())
+  email         String   @unique
+  passwordHash  String   @map("password_hash")
+  role          Role     @default(learner)
+  displayName   String?  @map("display_name")
+  progressStats Json     @default("{}") @map("progress_stats")
+  createdAt     DateTime @default(now()) @map("created_at")
+  updatedAt     DateTime @updatedAt @map("updated_at")
+
+  flashcards Flashcard[]
+  recordings AudioRecording[]
+
+  @@map("users")
+}
+
+model DictionaryEntry {
+  id                  Int       @id @default(autoincrement())
+  legacyId            Int?      @unique @map("legacy_id")
+  mot                 String
+  phoneticIpa         String?   @map("phonetic_ipa")
+  rootType            RootType? @map("root_type")
+  grammaticalCategory String?   @map("grammatical_category")
+  catRaw              String?   @map("cat_raw")
+  frDef               String?   @map("fr_def")
+  arDef               String?   @map("ar_def")
+  enDef               String?   @map("en_def")
+  examples            Json      @default("[]")
+  suppletionData      Json?     @map("suppletion_data")
+  source              String?
+  motNorm             String?   @map("mot_norm")
+  ipaNorm             String?   @map("ipa_norm")
+  searchTsv           Unsupported("tsvector")? @map("search_tsv")
+  createdAt           DateTime  @default(now()) @map("created_at")
+  updatedAt           DateTime  @updatedAt @map("updated_at")
+
+  audio      AudioRecording[]
+  flashcards Flashcard[]
+
+  @@index([grammaticalCategory])
+  @@index([source])
+  @@map("dictionary_entries")
+}
+
+model AudioRecording {
+  id            Int      @id @default(autoincrement())
+  entryId       Int      @map("entry_id")
+  dialect       Dialect
+  fileUrl       String   @map("file_url")
+  durationSec   Float?   @map("duration")
+  speakerName   String?  @map("speaker_name")
+  isVerified    Boolean  @default(false) @map("is_verified")
+  qualityRating Int?     @map("quality_rating")
+  recordedAt    DateTime @default(now()) @map("recorded_at")
+  uploadedById  String?  @map("uploaded_by_id")
+
+  entry      DictionaryEntry @relation(fields: [entryId], references: [id], onDelete: Cascade)
+  uploadedBy User?           @relation(fields: [uploadedById], references: [id], onDelete: SetNull)
+
+  @@index([entryId, dialect])
+  @@map("audio_recordings")
+}
+
+// Les 30 blocs de grammaire.json (extraits paginés de la grammaire de référence).
+model GrammarLesson {
+  id                  Int      @id @default(autoincrement())
+  blockNumber         Int      @unique @map("block_number")
+  titleFr             String?  @map("title_fr")
+  titleAr             String?  @map("title_ar")
+  titleEn             String?  @map("title_en")
+  moduleId            String?  @map("module_id")
+  pagesRange          String?  @map("pages_range")
+  theoryFr            String?  @map("theory_fr")
+  theoryAr            String?  @map("theory_ar")
+  theoryEn            String?  @map("theory_en")
+  keywords            String[]
+  interactiveExercises Json    @default("[]") @map("interactive_exercises")
+  pdfAttachmentUrl    String?  @map("pdf_attachment_url")
+  createdAt           DateTime @default(now()) @map("created_at")
+  updatedAt           DateTime @updatedAt @map("updated_at")
+
+  @@map("grammar_lessons")
+}
+
+// Une carte = un utilisateur × un lemme (Leitner 5 boîtes + champs SM-2).
+model Flashcard {
+  id             Int       @id @default(autoincrement())
+  userId         String    @map("user_id")
+  entryId        Int       @map("entry_id")
+  boxLevel       Int       @default(1) @map("box_level")
+  repetitions    Int       @default(0)
+  intervalDays   Int       @default(0) @map("interval_days")
+  easeFactor     Float     @default(2.5) @map("ease_factor")
+  nextReviewAt   DateTime  @default(now()) @map("next_review_at")
+  lastReviewedAt DateTime? @map("last_reviewed_at")
+
+  user    User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  entry   DictionaryEntry   @relation(fields: [entryId], references: [id], onDelete: Cascade)
+  reviews FlashcardReview[]
+
+  @@unique([userId, entryId])
+  @@index([userId, nextReviewAt])
+  @@map("flashcards")
+}
+
+model FlashcardReview {
+  id          Int       @id @default(autoincrement())
+  flashcardId Int       @map("flashcard_id")
+  grade       Int
+  boxBefore   Int       @map("box_before")
+  boxAfter    Int       @map("box_after")
+  reviewedAt  DateTime  @default(now()) @map("reviewed_at")
+
+  flashcard Flashcard @relation(fields: [flashcardId], references: [id], onDelete: Cascade)
+
+  @@index([flashcardId])
+  @@map("flashcard_reviews")
+}
+
+// Import sans perte : l'objet d'origine de livres.json est conservé dans raw.
+model LibraryDocument {
+  id        Int      @id @default(autoincrement())
+  legacyId  Int?     @unique @map("legacy_id")
+  title     String
+  author    String?
+  year      Int?
+  language  String?
+  pdfUrl    String?  @map("pdf_url")
+  coverUrl  String?  @map("cover_url")
+  raw       Json     @default("{}")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  chunks LibraryChunk[]
+
+  @@map("library_documents")
+}
+
+model LibraryChunk {
+  id         Int    @id @default(autoincrement())
+  documentId Int    @map("document_id")
+  page       Int?
+  chapter    String?
+  content    String
+  searchTsv  Unsupported("tsvector")? @map("search_tsv")
+
+  document LibraryDocument @relation(fields: [documentId], references: [id], onDelete: Cascade)
+
+  @@index([documentId])
+  @@map("library_chunks")
+}
+
+// Contes, émissions, actualités, frise, thèmes, quiz, relatives, phonologie…
+model ContentItem {
+  id        Int      @id @default(autoincrement())
+  kind      String
+  slug      String
+  data      Json
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@unique([kind, slug])
+  @@map("content_items")
+}
+

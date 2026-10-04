@@ -122,18 +122,35 @@ export function afficheMsg(user, html) {
   chatWindow.scrollTop = chatWindow.scrollHeight;
 }
 
-export function traiterSaisie() {
+export async function traiterSaisie() {
   const input = document.getElementById("chatInput");
   const txt = input?.value.trim();
   if (!txt) return;
   input.value = "";
   input.disabled = true;
   afficheMsg("user", escapeHtml(txt));
-  setTimeout(() => {
+
+  try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 12000);
+    const response = await fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: txt }),
+      signal: controller.signal,
+    });
+    clearTimeout(timeout);
+    if (!response.ok) throw new Error('Réponse IA indisponible');
+    const data = await response.json();
+    if (!data.reply) throw new Error('Réponse IA vide');
+    afficheMsg("bot", escapeHtml(data.reply).replace(/\n/g, '<br>'));
+  } catch (e) {
+    console.warn("Chat IA indisponible, repli sur le bot local", e);
     afficheMsg("bot", reponseBot(txt));
+  } finally {
     input.disabled = false;
     input.focus();
-  }, 400);
+  }
 }
 
 // ------------------------------
