@@ -7,11 +7,11 @@
 // CORRIGÉ : Plus d'erreur "Response body is already used"
 // ============================================
 
-const CACHE_NAME = 'tadaksahak-v15';
-const STATIC_CACHE = 'tadaksahak-static-v15';
-const DATA_CACHE = 'tadaksahak-data-v15';
-const MEDIA_CACHE = 'tadaksahak-media-v15';
-const API_CACHE = 'tadaksahak-api-v15';
+const CACHE_NAME = 'tadaksahak-v16';
+const STATIC_CACHE = 'tadaksahak-static-v16';
+const DATA_CACHE = 'tadaksahak-data-v16';
+const MEDIA_CACHE = 'tadaksahak-media-v16';
+const API_CACHE = 'tadaksahak-api-v16';
 
 // ============================================
 // FICHIERS STATIQUES (Cache First)
@@ -43,6 +43,9 @@ const staticUrls = [
   './sw.js',
   './offline.html',
   './images/idaksahak_round.png',
+  './images/logo/monogramme/icone-monogramme.svg',
+  './images/favicon-32.png',
+  './images/apple-touch-icon.png',
   './images/hamadine_bio.jpg',
   './images/idaksahak_square.png',
   './images/og-image.jpg'
@@ -624,8 +627,8 @@ self.addEventListener('push', event => {
     
     const options = {
       body: data.body || '✨ Nouvelle mise à jour disponible ! Rafraîchissez la page.',
-      icon: './images/idaksahak_round.png',
-      badge: './images/idaksahak_round.png',
+      icon: './images/icon-192x192.png',
+      badge: './images/icon-96x96.png',
       vibrate: [200, 100, 200],
       data: { url: data.url || './' },
       actions: [
@@ -643,8 +646,8 @@ self.addEventListener('push', event => {
     event.waitUntil(
       self.registration.showNotification('📚 Tadaksahak Learning', {
         body: 'Nouveau contenu disponible !',
-        icon: './images/idaksahak_round.png',
-        badge: './images/idaksahak_round.png',
+        icon: './images/icon-192x192.png',
+        badge: './images/icon-96x96.png',
         data: { url: './' }
       })
     );
