@@ -37,7 +37,7 @@ export function setLanguage(lang) {
   
   if (dom.searchBar) dom.searchBar.placeholder = i18n[lang].search_placeholder || "Rechercher un mot…";
   const chatInput = document.getElementById("chatInput");
-  if (chatInput) chatInput.placeholder = i18n[lang].send || "Écrivez votre message...";
+  if (chatInput) chatInput.placeholder = i18n[lang].chat_placeholder || "Écrivez votre message...";
   const rechercheLivres = document.getElementById("rechercheLivres");
   if (rechercheLivres) rechercheLivres.placeholder = i18n[lang].search_placeholder || "Rechercher un livre...";
   

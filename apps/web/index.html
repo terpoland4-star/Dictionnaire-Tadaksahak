@@ -11,16 +11,22 @@
   <!-- Open Graph / SEO (inspiré du site Idaksahak.com) -->
   <meta property="og:title" content="Tadaksahak Learning – Langue et culture Idaksahak">
   <meta property="og:description" content="Apprenez la langue et découvrez la culture du peuple Idaksahak. Dictionnaire, grammaire, contes, quiz et ressources académiques.">
-  <meta property="og:image" content="images/og-image.jpg">
+  <!-- Les robots des réseaux sociaux exigent une URL absolue -->
+  <meta property="og:image" content="https://dictionnaire.hamadine-services.net/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Logo Tadaksahak : takouba en forme de T au-dessus du Saint Coran, dans une orbite d’étoiles et de symboles">
   <meta property="og:url" content="https://dictionnaire.hamadine-services.net">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Tadaksahak Learning">
   <meta name="twitter:description" content="Plateforme dédiée à la langue et culture Idaksahak">
+  <meta name="twitter:image" content="https://dictionnaire.hamadine-services.net/images/og-image.jpg">
   
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="icon" href="images/idaksahak_round.png" type="image/png">
-  <link rel="apple-touch-icon" sizes="180x180" href="images/idaksahak_round.png">
+  <link rel="icon" href="images/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="images/favicon-16.png" type="image/png" sizes="16x16">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
   <link rel="stylesheet" href="style.css">
   
   <!-- Google Analytics 4 – Configuration respectueuse de la vie privée -->
@@ -78,37 +84,41 @@
 
 <header class="site-header">
   <div class="header-container">
-    <img src="images/idaksahak_round.png" alt="Logo Tadaksahak Learning - Symbole de la communauté Idaksahak" class="logo-header" width="60" height="60">
+    <img src="images/logo-icone.png" alt="Emblème de la communauté Idaksahak" class="logo-header" width="60" height="60">
     <div class="header-text">
       <h1>Tadaksahak Learning</h1>
       <p class="subtitle" data-i18n="subtitle">Langue, culture et mémoire vivante du peuple Idaksahak</p>
     </div>
   </div>
 
-  <div class="theme-selector">
-    <button id="themeDark" class="theme-btn" title="Thème sombre" aria-label="Thème sombre">🌙</button>
-    <button id="themeLight" class="theme-btn" title="Thème clair" aria-label="Thème clair">📖</button>
-    <button id="themeSepia" class="theme-btn" title="Thème sépia" aria-label="Thème sépia">📜</button>
-    <select id="fontFamilySelect" class="theme-select-small" aria-label="Changer la police">
-      <option value="sans">🔤 Sans-serif</option>
-      <option value="serif">📜 Serif</option>
-      <option value="mono">💻 Monospace</option>
-    </select>
-    <select id="fontSizeSelect" class="theme-select-small" aria-label="Changer la taille du texte">
-      <option value="80">80%</option>
-      <option value="100" selected>100%</option>
-      <option value="120">120%</option>
-      <option value="140">140%</option>
-    </select>
-    <label class="contrast-label">
-      <input type="checkbox" id="highContrastCheck"> ♿ Contraste élevé
-    </label>
-  </div>
+  <button id="settingsToggle" class="settings-toggle" aria-expanded="false" aria-controls="settingsPanel">⚙️ Réglages</button>
 
-  <div class="lang-selector">
-    <button data-lang="fr" class="lang-flag" aria-label="Français">🇫🇷 Français</button>
-    <button data-lang="ar" class="lang-flag" aria-label="العربية">🇸🇦 العربية</button>
-    <button data-lang="en" class="lang-flag" aria-label="English">🇬🇧 English</button>
+  <div id="settingsPanel" class="settings-panel" hidden>
+    <div class="theme-selector">
+      <button id="themeDark" class="theme-btn" title="Thème sombre" aria-label="Thème sombre">🌙</button>
+      <button id="themeLight" class="theme-btn" title="Thème clair" aria-label="Thème clair">📖</button>
+      <button id="themeSepia" class="theme-btn" title="Thème sépia" aria-label="Thème sépia">📜</button>
+      <select id="fontFamilySelect" class="theme-select-small" aria-label="Changer la police">
+        <option value="sans">🔤 Sans-serif</option>
+        <option value="serif">📜 Serif</option>
+        <option value="mono">💻 Monospace</option>
+      </select>
+      <select id="fontSizeSelect" class="theme-select-small" aria-label="Changer la taille du texte">
+        <option value="80">80%</option>
+        <option value="100" selected>100%</option>
+        <option value="120">120%</option>
+        <option value="140">140%</option>
+      </select>
+      <label class="contrast-label">
+        <input type="checkbox" id="highContrastCheck"> ♿ Contraste élevé
+      </label>
+    </div>
+
+    <div class="lang-selector">
+      <button data-lang="fr" class="lang-flag" aria-label="Français">🇫🇷 Français</button>
+      <button data-lang="ar" class="lang-flag" aria-label="العربية">🇸🇦 العربية</button>
+      <button data-lang="en" class="lang-flag" aria-label="English">🇬🇧 English</button>
+    </div>
   </div>
 
   <nav class="main-nav" aria-label="Navigation principale">
@@ -148,46 +158,193 @@
 <main id="main-content" tabindex="-1">
 
   <section id="accueil" class="onglet-contenu">
-    <div class="hero">
-      <h2 data-i18n="welcome_title">Bienvenue</h2>
-      <p data-i18n="welcome_subtitle">Une plateforme dédiée à la langue et à la culture Tadaksahak.</p>
-      <button id="btnGoDico" class="btn btn-primary" data-i18n="go_dico">📖 Accéder au dictionnaire</button>
+  <button id="whyTLBtn" type="button" class="btn-outline" style="margin:12px 0;">💡 Pourquoi Tadaksahak Learning ?</button>
+  <script>
+  (function() {
+    function showWhyModal() {
+      var modalHtml = ''
+        + '<div id="whyModal" class="modal">'
+        + '  <div class="modal-content">'
+        + '    <span class="modal-close">&times;</span>'
+        + '    <h2>💡 Pourquoi Tadaksahak Learning ?</h2>'
+        + '    <h3>Sauver une langue avant qu\'il ne soit trop tard</h3>'
+        + '    <p>Le tadaksahak est parlé par une communauté restreinte &mdash; les Idaksahak &mdash; à cheval sur le Mali et le Niger, dans une région aujourd\'hui ravagée par le conflit. C\'est une langue rare : un sabir né du croisement entre le songhay et le tamasheq, qui ne ressemble à aucune autre langue de la région, et qui n\'a jamais eu de véritable outil numérique pour la documenter, l\'enseigner et la transmettre.</p>'
+        + '    <p>Cette langue meurt deux fois. Elle s\'efface d\'abord par l\'effet naturel du contact avec le français, l\'arabe, les langues dominantes des médias et de l\'école. Mais elle s\'efface aussi, plus brutalement, parce que la région où elle vit est en guerre depuis quinze ans &mdash; et qu\'une langue orale, sans écrit stabilisé, sans dictionnaire, sans médiathèque, disparaît avec chaque génération qui ne la transmet plus.</p>'
+        + '    <p>Quand une langue meurt, ce n\'est pas seulement un vocabulaire qui s\'éteint. C\'est une manière de nommer le monde, une mémoire collective, une part d\'humanité qui ne se retrouve nulle part ailleurs.</p>'
+        + '    <h3>Ce que Tadaksahak Learning apporte</h3>'
+        + '    <ul class="shortcuts-list">'
+        + '      <li><strong>Un dictionnaire vivant</strong>, avec audio, recherche, mot du jour &mdash; pour que le mot ne reste pas figé sur une page, mais s\'entende dans la bouche de ceux qui le parlent encore.</li>'
+        + '      <li><strong>Un parcours d\'apprentissage structuré</strong> &mdash; grammaire, vocabulaire par thème, flashcards, quiz &mdash; pour que n\'importe qui, de la diaspora ou d\'ailleurs, puisse réapprendre ce que la guerre et l\'exil menacent de faire oublier.</li>'
+        + '      <li><strong>Un espace de mémoire et de culture</strong> &mdash; contes, émissions, photothèque, vidéothèque, actualités communautaires, rapports et documentation &mdash; parce qu\'une langue ne se sauve pas seule, elle se sauve avec tout ce qu\'elle porte.</li>'
+        + '      <li><strong>Une plateforme multilingue et accessible</strong>, pensée mobile-first et fonctionnant hors-ligne &mdash; parce que dans les zones où cette langue vit, la connexion internet est souvent le luxe qu\'on n\'a pas.</li>'
+        + '    </ul>'
+        + '    <h3>Pourquoi c\'est important, au-delà de la langue elle-même</h3>'
+        + '    <p>Ce projet est né d\'une conviction simple : documenter une langue, c\'est refuser qu\'un peuple soit réduit au silence. Dans une région où les populations touarègues et alliées subissent des violences répétées, donner à une langue les moyens d\'exister durablement &mdash; sous forme écrite, orale, numérique &mdash; c\'est un acte de dignité et de résistance culturelle qui dépasse largement la linguistique.</p>'
+        + '    <h3>Ce qui rend ce projet crédible</h3>'
+        + '    <ul class="shortcuts-list">'
+        + '      <li>Un vrai travail de fond : plusieurs centaines de mots documentés, des ressources académiques référencées, pas seulement des bonnes intentions.</li>'
+        + '      <li>Une architecture technique pensée pour durer : hors-ligne, mobile-first, pas un gadget qui cesse de fonctionner au premier problème.</li>'
+        + '      <li>Un projet porté par quelqu\'un de la communauté elle-même &mdash; un travail fait de l\'intérieur, avec la légitimité que cela suppose.</li>'
+        + '    </ul>'
+        + '    <h3>Ce que ça change, concrètement</h3>'
+        + '    <p>Un enfant de la diaspora idaksahak, né à Bamako, Niamey ou ailleurs, qui n\'a jamais entendu parler tadaksahak à la maison, peut aujourd\'hui ouvrir une application et réentendre la langue de ses grands-parents. Une communauté meurtrie peut disposer d\'un espace où sa mémoire n\'est pas confiée au hasard des souvenirs individuels, mais fixée, partagée, transmissible.</p>'
+        + '  </div>'
+        + '</div>';
+      var existing = document.getElementById('whyModal');
+      if (existing) existing.remove();
+      document.body.insertAdjacentHTML('beforeend', modalHtml);
+      var modal = document.getElementById('whyModal');
+      var closeBtn = modal.querySelector('.modal-close');
+      closeBtn.addEventListener('click', function() { modal.remove(); });
+      modal.addEventListener('click', function(e) { if (e.target === modal) modal.remove(); });
+    }
+    var btn = document.getElementById('whyTLBtn');
+    if (btn) btn.addEventListener('click', showWhyModal);
+  })();
+  </script>
+
+
+    <div class="home-hero">
+      <span class="home-hero-eyebrow">
+        <span class="home-hero-dot"></span>
+        Songhay Septentrional • Sahara
+      </span>
+      <h2 class="home-hero-title" data-i18n="welcome_title">
+        Langue &amp; Mémoire vivante <span class="home-hero-accent">Idaksahak</span>
+      </h2>
+      <p class="home-hero-subtitle" data-i18n="welcome_subtitle">
+        Sanctuaire numérique de préservation linguistique, d'oralité nomade et de transmission intergénérationnelle.
+      </p>
+
+      <div class="home-search-dock">
+        <span class="home-search-icon" aria-hidden="true">🔍</span>
+        <input id="homeSearchInput" type="text" class="home-search-input" placeholder="Rechercher un mot tadaksahak, français…" aria-label="Rechercher un mot">
+        <button id="homeSearchMic" class="home-search-mic" type="button" aria-label="Recherche vocale">🎤</button>
+        <button id="homeSearchOpen" class="home-search-open" type="button">Ouvrir <span aria-hidden="true">→</span></button>
+      </div>
+
+      <div class="home-filter-chips">
+        <button class="home-chip home-chip-active" type="button" data-goto="dictionnaire">Index A-Z</button>
+        <button class="home-chip" type="button" data-goto="grammaire">Verbes Causatifs</button>
+        <button class="home-chip" type="button" data-goto="grammaire" data-goto-tab="relatives">Propositions Relatives</button>
+      </div>
     </div>
-    
-    <!-- NOUVEAU : Statistiques améliorées -->
-    <div class="stats-grid">
-      <div class="stat-card premium">
-        <div class="stat-icon">📖</div>
+
+    <div class="home-wordday-card">
+      <div class="home-wordday-header">
+        <span class="home-wordday-label">⭐ <span data-i18n="word_of_day">Mot du jour</span></span>
+        <span class="home-wordday-badge">Linguistique Songhay</span>
+      </div>
+      <div id="wordOfDayContainer" class="word-of-day" aria-live="polite"></div>
+    </div>
+
+    <div class="home-section-header">
+      <h3 class="home-section-title">Plateforme en direct</h3>
+      <span class="home-live-badge"><span class="home-live-dot"></span> En expansion</span>
+    </div>
+    <div class="stats-grid home-stats-grid">
+      <div class="stat-card premium home-stat-card">
+        <div class="home-stat-top">
+          <span class="home-stat-icon">📖</span>
+          <span class="home-stat-eyebrow">Lemmes</span>
+        </div>
         <span class="stat-number" id="statMots">0</span>
-        <span class="stat-label" data-i18n="stat_words">mots</span>
+        <span class="stat-label" data-i18n="stat_words">mots documentés</span>
       </div>
-      <div class="stat-card premium">
-        <div class="stat-icon">🎧</div>
+      <div class="stat-card premium home-stat-card">
+        <div class="home-stat-top">
+          <span class="home-stat-icon">🎧</span>
+          <span class="home-stat-eyebrow">Oralité</span>
+        </div>
         <span class="stat-number" id="statAudios">0</span>
-        <span class="stat-label" data-i18n="stat_audios">audios</span>
+        <span class="stat-label" data-i18n="stat_audios">extraits sonores</span>
       </div>
-      <div class="stat-card premium">
-        <div class="stat-icon">📚</div>
+      <div class="stat-card premium home-stat-card">
+        <div class="home-stat-top">
+          <span class="home-stat-icon">📚</span>
+          <span class="home-stat-eyebrow">Archives</span>
+        </div>
         <span class="stat-number" id="statLivres">0</span>
         <span class="stat-label" data-i18n="stat_books">livres</span>
       </div>
-      <div class="stat-card premium">
-        <div class="stat-icon">👥</div>
+      <div class="stat-card premium home-stat-card">
+        <div class="home-stat-top">
+          <span class="home-stat-icon">👥</span>
+          <span class="home-stat-eyebrow">Réseau</span>
+        </div>
         <span class="stat-number" id="statUtilisateurs">0</span>
         <span class="stat-label" data-i18n="stat_users">utilisateurs</span>
       </div>
     </div>
-    
-    <div class="bio-container">
-      <img src="images/hamadine_bio.jpg" alt="Hamadine Ag Moctar - Gardien de la mémoire culturelle Idaksahak" class="bio-photo" width="140" height="140" loading="lazy">
-      <div class="bio-text">
-        <p><strong>Hamadine Ag Moctar</strong></p>
-        <p data-i18n="bio_text1">Interprète, développeur et gardien de la mémoire culturelle.</p>
-        <p><em data-i18n="bio_text2">Une mission : connecter nos mondes.</em></p>
+
+    <div class="home-founder-card">
+      <div class="home-founder-top">
+        <div class="home-founder-avatar-wrap">
+          <img src="images/hamadine_bio.jpg" alt="Hamadine Ag Moctar - Gardien de la mémoire culturelle Idaksahak" class="home-founder-avatar" width="64" height="64" loading="lazy">
+          <span class="home-founder-verified" title="Fondateur">✓</span>
+        </div>
+        <div class="home-founder-text">
+          <span class="home-founder-eyebrow">Fondateur &amp; curateur</span>
+          <p class="home-founder-name"><strong>Hamadine Ag Moctar</strong></p>
+          <p class="home-founder-role" data-i18n="bio_text1">Interprète, développeur et gardien de la mémoire culturelle du peuple…</p>
+        </div>
+      </div>
+      <p class="home-founder-quote"><em data-i18n="bio_text2">« Une mission : connecter nos mondes. »</em></p>
+      <div class="home-founder-actions">
+        <a class="home-founder-btn" href="https://wa.me/22777641800" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
+        <a class="home-founder-btn" href="https://www.facebook.com/share/1DCH1svT4Q/" target="_blank" rel="noopener noreferrer">📘 Facebook</a>
+        <a class="home-founder-btn" href="mailto:agmoctar@hamadine-services.com">✉️ Email</a>
       </div>
     </div>
-    
-    <div id="wordOfDayContainer" class="word-of-day" aria-live="polite"></div>
+
+    <div class="home-resources-card">
+      <div class="home-section-header">
+        <h3 class="home-section-title">Ressources académiques de pointe</h3>
+      </div>
+      <p class="home-resources-quote"><em>« La connaissance ne se construit pas seule. Elle se tisse au fil des échanges. »</em></p>
+      <ul class="home-resources-list">
+        <li class="home-resources-item">
+          <span class="home-resources-icon">🎙️</span>
+          <span>Podcast exclusif — <strong>Dr. Lameen Souag (CNRS)</strong></span>
+        </li>
+        <li class="home-resources-item">
+          <span class="home-resources-icon">📘</span>
+          <span>Grammaire de référence — <strong>R. Christiansen-Bolli (Leyde, 2010)</strong></span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="home-section-header">
+      <h3 class="home-section-title">Apprentissage &amp; Culture</h3>
+      <button class="home-section-link" type="button" data-goto="apprendre">Tout explorer →</button>
+    </div>
+    <div class="home-quicklinks-grid">
+      <button class="home-quick-card" type="button" data-goto="flashcards">
+        <span class="home-quick-icon">🃏</span>
+        <span class="home-quick-eyebrow">30 cartes</span>
+        <span class="home-quick-title">Flashcards</span>
+        <span class="home-quick-subtitle">Mémorisation active</span>
+      </button>
+      <button class="home-quick-card" type="button" data-goto="contes">
+        <span class="home-quick-icon">📖</span>
+        <span class="home-quick-eyebrow">Tradition orale</span>
+        <span class="home-quick-title">Contes &amp; Récits</span>
+        <span class="home-quick-subtitle">Mémoire des anciens</span>
+      </button>
+      <button class="home-quick-card" type="button" data-goto="emissions">
+        <span class="home-quick-icon">🎙️</span>
+        <span class="home-quick-eyebrow">Émissions</span>
+        <span class="home-quick-title">Archives Radio</span>
+        <span class="home-quick-subtitle">Enregistrements</span>
+      </button>
+      <button class="home-quick-card" type="button" data-goto="quiz">
+        <span class="home-quick-icon">🧩</span>
+        <span class="home-quick-eyebrow">Auto-évaluation</span>
+        <span class="home-quick-title">Quiz Culturel</span>
+        <span class="home-quick-subtitle">Testez vos acquis</span>
+      </button>
+    </div>
+
   </section>
 
   <section id="dictionnaire" class="onglet-contenu" hidden>
@@ -305,11 +462,11 @@
   <section id="photos" class="onglet-contenu" hidden>
     <h2 data-i18n="photos_title">🖼️ Galerie Photos</h2>
     <div class="gallery-filters">
-      <button class="gallery-filter active" data-category="all">📷 Toutes</button>
-      <button class="gallery-filter" data-category="culture">🎭 Culture</button>
-      <button class="gallery-filter" data-category="evenements">📅 Événements</button>
-      <button class="gallery-filter" data-category="portraits">👤 Portraits</button>
-      <button class="gallery-filter" data-category="geographie">🗺️ Géographie</button>
+      <button type="button" class="gallery-filter active" data-category="all" data-i18n="photos_filter_all" aria-pressed="true">📷 Toutes</button>
+      <button type="button" class="gallery-filter" data-category="culture" data-i18n="photos_filter_culture" aria-pressed="false">🎭 Culture</button>
+      <button type="button" class="gallery-filter" data-category="evenements" data-i18n="photos_filter_events" aria-pressed="false">📅 Événements</button>
+      <button type="button" class="gallery-filter" data-category="portraits" data-i18n="photos_filter_portraits" aria-pressed="false">👤 Portraits</button>
+      <button type="button" class="gallery-filter" data-category="geographie" data-i18n="photos_filter_geo" aria-pressed="false">🗺️ Géographie</button>
     </div>
     <div id="photosContainer" class="grid" aria-live="polite"></div>
   </section>
@@ -413,14 +570,7 @@
 <button id="toggleChatBot" class="floating-chat-btn" aria-label="Ouvrir le chat">💬</button>
 <div id="toast" class="toast" role="alert" hidden></div>
 
-<!-- Panneau d'accessibilité flottant -->
-<div id="accessibilityPanel" class="accessibility-panel" hidden>
-  <button class="accessibility-btn" data-action="fontSizeIncrease" title="Augmenter la taille">A+</button>
-  <button class="accessibility-btn" data-action="fontSizeDecrease" title="Diminuer la taille">A-</button>
-  <button class="accessibility-btn" data-action="fontSizeReset" title="Réinitialiser">A</button>
-  <button class="accessibility-btn" data-action="highContrast" title="Contraste élevé">◑</button>
-  <button class="accessibility-btn" data-action="dyslexiaFont" title="Police dyslexie">📖</button>
-</div>
+<!-- Panneau d'accessibilité retiré (jamais activé, code inachevé) -->
 
 <!-- Bannière de consentement cookies (conforme RGPD) -->
 <div id="cookie-consent" style="position:fixed; bottom:0; left:0; right:0; background:var(--bg-card); color:var(--text); padding:12px 20px; text-align:center; z-index:1000; border-top:1px solid var(--border); display:none; backdrop-filter:blur(8px);">
@@ -447,7 +597,7 @@
       </div>
       <div class="footer-column">
         <h4 data-i18n="footer_contact">Contact</h4>
-        <p><a href="mailto:hamadineagmoctar@gmail.com">hamadineagmoctar@gmail.com</a></p>
+        <p><a href="mailto:agmoctar@hamadine-services.com">agmoctar@hamadine-services.com</a></p>
       </div>
       <div class="footer-column">
         <h4 data-i18n="footer_follow">Suivez-nous</h4>
@@ -459,6 +609,16 @@
       </div>
     </div>
     <div id="historique" class="historique-section" aria-live="polite"></div>
+
+    <div class="footer-credit">
+      <p class="footer-credit-label">Réalisation technique</p>
+      <div class="footer-credit-links">
+        <a href="https://wa.me/22777641800" target="_blank" rel="noopener noreferrer" class="credit-link">💬 WhatsApp</a>
+        <a href="https://www.hamadine-services.com" target="_blank" rel="noopener noreferrer" class="credit-link">🌐 hamadine-services.com</a>
+        <a href="mailto:agmoctar@hamadine-services.com" class="credit-link">✉️ agmoctar@hamadine-services.com</a>
+      </div>
+    </div>
+
     <div class="footer-copyright">
       <p>&copy; 2024-2026 Tadaksahak Learning - Hamadine Ag Moctar</p>
       <p class="footer-version">Version 3.0.0</p>
@@ -576,6 +736,29 @@ document.addEventListener('DOMContentLoaded', function() {
 // ============================================================
 </script>
 
+<script>
+(function() {
+  const toggle = document.getElementById('settingsToggle');
+  const panel = document.getElementById('settingsPanel');
+  if (!toggle || !panel) return;
+  toggle.addEventListener('click', () => {
+    const isHidden = panel.hasAttribute('hidden');
+    if (isHidden) {
+      panel.removeAttribute('hidden');
+      toggle.setAttribute('aria-expanded', 'true');
+    } else {
+      panel.setAttribute('hidden', '');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+  document.addEventListener('click', (e) => {
+    if (!panel.hasAttribute('hidden') && !panel.contains(e.target) && e.target !== toggle) {
+      panel.setAttribute('hidden', '');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+})();
+</script>
 <script type="module" src="js/main.js"></script>
 </body>
 </html>

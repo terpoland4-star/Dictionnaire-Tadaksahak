@@ -4,6 +4,14 @@ const cors = require('cors');
 const helmet = require('helmet');
 const authRoutes = require('./routes/auth');
 const contributionsRoutes = require('./routes/contributions');
+const dictionaryRoutes = require('./routes/dictionary');
+const v1Routes = require('./routes/v1');
+const grammarRoutes = require('./routes/grammar');
+const libraryRoutes = require('./routes/library');
+const contentRoutes = require('./routes/content');
+const chatRoutes = require('./routes/chat');
+const prisma = require('./db/prisma');
+const pool = require('./db/pool');
 
 const app = express();
 const port = Number.parseInt(process.env.PORT || '3003', 10);
@@ -28,6 +36,12 @@ app.use(express.json({ limit: '32kb', strict: true }));
 app.get('/api/health', (req, res) => res.json({ statut: 'ok', service: 'tadaksahak-api' }));
 app.use('/api/auth', authRoutes);
 app.use('/api/contributions', contributionsRoutes);
+app.use('/api/dictionary', dictionaryRoutes);
+app.use('/api/v1', v1Routes);
+app.use('/api/grammar', grammarRoutes);
+app.use('/api/library', libraryRoutes);
+app.use('/api/content', contentRoutes);
+app.use('/api/chat', chatRoutes);
 app.use((req, res) => res.status(404).json({ erreur: 'Route introuvable' }));
 app.use((err, req, res, next) => {
   console.error(err);
@@ -39,7 +53,11 @@ app.use((err, req, res, next) => {
 const server = app.listen(port, host, () => console.log(`API Tadaksahak démarrée sur ${host}:${port}`));
 function shutdown(signal) {
   console.log(`${signal}: arrêt de l’API`);
-  server.close(() => process.exit(0));
+  server.close(async () => {
+    await prisma.$disconnect();
+    await pool.end();
+    process.exit(0);
+  });
 }
 process.once('SIGTERM', () => shutdown('SIGTERM'));
 process.once('SIGINT', () => shutdown('SIGINT'));

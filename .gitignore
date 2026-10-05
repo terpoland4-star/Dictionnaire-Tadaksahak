@@ -7,3 +7,8 @@ npm-debug.log*
 .vscode/
 coverage/
 .tmp/
+*.bak
+*.bak.*
+*.bak[0-9]*
+*.bak-*
+apps/api-v2/

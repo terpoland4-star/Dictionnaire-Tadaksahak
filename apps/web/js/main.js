@@ -8,7 +8,7 @@ import { initFlashcards } from './flashcards.js';
 import { afficherRelatives, chargerRelatives, showGrammarSection } from './grammar.js';
 import { setLanguage } from './language.js';
 import { initKeyboardShortcuts, initNavigation } from './navigation.js';
-import { initAutoUpdates, registerServiceWorker, showInstallBanner } from './pwa.js';
+import { initAutoUpdates, registerServiceWorker } from './pwa.js';
 import { chargerLivresConnaissance, genererAlbumsAudio, rechercherPleinTexte, showRessourcesWelcomePopup } from './ressources.js';
 import { detectSystemTheme, initTheme, initThemeSettings } from './theme.js';
 import { chargerThemes } from './themesVocab.js';
@@ -71,6 +71,38 @@ export async function initialiserApplication() {
     dom.btnPrev?.addEventListener("click", navigationPrecedent);
     dom.btnNext?.addEventListener("click", navigationSuivant);
     document.getElementById("btnGoDico")?.addEventListener("click", () => { if (dom.sectionSelector) { dom.sectionSelector.value = "dictionnaire"; dom.sectionSelector.dispatchEvent(new Event("change")); } });
+
+    // Cartes/boutons de l'accueil restylé — navigation générique via data-goto
+    document.querySelectorAll('[data-goto]').forEach((el) => {
+      el.addEventListener('click', () => {
+        const cible = el.dataset.goto;
+        if (dom.sectionSelector && document.getElementById(cible)) {
+          dom.sectionSelector.value = cible;
+          dom.sectionSelector.dispatchEvent(new Event('change'));
+        }
+        const onglet = el.dataset.gotoTab;
+        if (onglet) {
+          setTimeout(() => document.querySelector(`.grammar-tab[data-tab="${onglet}"]`)?.click(), 50);
+        }
+      });
+    });
+
+    // Recherche rapide de l'accueil -> pré-remplit et ouvre le dictionnaire
+    const ouvrirRechercheAccueil = () => {
+      const valeur = document.getElementById('homeSearchInput')?.value.trim();
+      if (dom.sectionSelector) {
+        dom.sectionSelector.value = 'dictionnaire';
+        dom.sectionSelector.dispatchEvent(new Event('change'));
+      }
+      if (valeur && dom.searchBar) {
+        dom.searchBar.value = valeur;
+        dom.searchBar.dispatchEvent(new Event('input'));
+        dom.searchBar.focus();
+      }
+    };
+    document.getElementById('homeSearchOpen')?.addEventListener('click', ouvrirRechercheAccueil);
+    document.getElementById('homeSearchInput')?.addEventListener('keypress', (e) => { if (e.key === 'Enter') ouvrirRechercheAccueil(); });
+    document.getElementById('homeSearchMic')?.addEventListener('click', () => showToast('Recherche vocale bientôt disponible', 'info'));
     document.getElementById("toggleChatBot")?.addEventListener("click", () => { if (dom.sectionSelector) { dom.sectionSelector.value = "chat"; dom.sectionSelector.dispatchEvent(new Event("change")); } });
     document.querySelectorAll('.lang-flag').forEach(btn => { btn.addEventListener('click', () => setLanguage(btn.dataset.lang)); });
     setLanguage(state.currentLanguage);
@@ -84,7 +116,6 @@ export async function initialiserApplication() {
       });
     }
     
-    setTimeout(() => { showInstallBanner(); }, 3000);
     setTimeout(() => { showRessourcesWelcomePopup(); }, 2000);
     console.log("✅ Application fusionnée prête !");
     console.log("📚 Module des propositions relatives intégré (Christiansen & Levinsohn 2003)");

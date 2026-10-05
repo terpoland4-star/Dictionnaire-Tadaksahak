@@ -6,9 +6,20 @@ import { escapeHtml, levenshtein, normalizeText, showToast } from './utils.js';
 
 export async function chargerDictionnaire() {
   try {
-    const response = await fetch('data/mots.json');
+    const response = await fetch('/api/dictionary/all');
     if (!response.ok) throw new Error();
-    state.vocabulaire = await response.json();
+    const raw = await response.json();
+    // Mapping des champs Prisma (frDef/enDef/arDef/catRaw) vers le format
+    // attendu par le reste du fichier (fr/en/ar/cat), pour ne pas toucher
+    // à la logique de recherche/affichage déjà en place.
+    state.vocabulaire = raw.map(e => ({
+      mot: e.mot,
+      cat: e.catRaw || e.grammaticalCategory || '',
+      fr: e.frDef || '',
+      en: e.enDef || '',
+      ar: e.arDef || '',
+      audio: null,
+    }));
     console.log(`📖 Dictionnaire chargé : ${state.vocabulaire.length} mots`);
   } catch(e) {
     console.warn("Erreur chargement dictionnaire, utilisation fallback", e);

@@ -7,11 +7,11 @@
 // CORRIGÉ : Plus d'erreur "Response body is already used"
 // ============================================
 
-const CACHE_NAME = 'tadaksahak-v12';
-const STATIC_CACHE = 'tadaksahak-static-v12';
-const DATA_CACHE = 'tadaksahak-data-v12';
-const MEDIA_CACHE = 'tadaksahak-media-v12';
-const API_CACHE = 'tadaksahak-api-v12';
+const CACHE_NAME = 'tadaksahak-v17';
+const STATIC_CACHE = 'tadaksahak-static-v16';
+const DATA_CACHE = 'tadaksahak-data-v16';
+const MEDIA_CACHE = 'tadaksahak-media-v16';
+const API_CACHE = 'tadaksahak-api-v16';
 
 // ============================================
 // FICHIERS STATIQUES (Cache First)
@@ -43,6 +43,9 @@ const staticUrls = [
   './sw.js',
   './offline.html',
   './images/idaksahak_round.png',
+  './images/logo-icone.png',
+  './images/favicon-32.png',
+  './images/apple-touch-icon.png',
   './images/hamadine_bio.jpg',
   './images/idaksahak_square.png',
   './images/og-image.jpg'
@@ -134,6 +137,21 @@ self.addEventListener('install', event => {
         }
       }
       
+      // Précharger l'API interne (dictionnaire, grammaire, bibliothèque)
+      // pour que ces sections restent utilisables hors-ligne après une
+      // première visite en ligne.
+      for (const apiUrl of internalApiUrls) {
+        try {
+          const response = await fetch(apiUrl);
+          if (response.ok) {
+            await cacheData.put(apiUrl, response);
+            console.log(`✅ Préchargé (API interne): ${apiUrl}`);
+          }
+        } catch (err) {
+          console.warn(`⚠️ Préchargement API interne échoué: ${apiUrl}`);
+        }
+      }
+      
       return self.skipWaiting();
     })()
   );
@@ -201,6 +219,41 @@ self.addEventListener('fetch', event => {
         return new Response(JSON.stringify([]), {
           headers: { 'Content-Type': 'application/json' }
         });
+      })()
+    );
+    return;
+  }
+  
+  // ---- STRATÉGIE 1bis : API interne tadaksahak-api (Network First, cache de secours) ----
+  if (pathname.startsWith('/api/')) {
+    // POST /api/chat, connexion admin… : ni cachables ni rejouables hors-ligne,
+    // et un 429/400 doit atteindre la page tel quel au lieu d'un faux « Hors-ligne ».
+    if (request.method !== 'GET') return;
+    event.respondWith(
+      (async () => {
+        try {
+          const response = await fetch(request, { cache: 'no-store' });
+          if (response && response.ok) {
+            try {
+              const cache = await caches.open(DATA_CACHE);
+              await cache.put(request, response.clone());
+            } catch (cloneError) {
+              console.warn(`⚠️ Impossible de cacher ${pathname}:`, cloneError.message);
+            }
+            return response;
+          }
+          throw new Error('Network response not ok');
+        } catch (error) {
+          const cached = await caches.match(request);
+          if (cached) {
+            console.log(`📀 API interne depuis cache: ${pathname}`);
+            return cached;
+          }
+          return new Response(JSON.stringify({ erreur: 'Hors-ligne, donnée non disponible' }), {
+            status: 503,
+            headers: { 'Content-Type': 'application/json' }
+          });
+        }
       })()
     );
     return;
@@ -574,8 +627,8 @@ self.addEventListener('push', event => {
     
     const options = {
       body: data.body || '✨ Nouvelle mise à jour disponible ! Rafraîchissez la page.',
-      icon: './images/idaksahak_round.png',
-      badge: './images/idaksahak_round.png',
+      icon: './images/icon-192x192.png',
+      badge: './images/icon-96x96.png',
       vibrate: [200, 100, 200],
       data: { url: data.url || './' },
       actions: [
@@ -593,8 +646,8 @@ self.addEventListener('push', event => {
     event.waitUntil(
       self.registration.showNotification('📚 Tadaksahak Learning', {
         body: 'Nouveau contenu disponible !',
-        icon: './images/idaksahak_round.png',
-        badge: './images/idaksahak_round.png',
+        icon: './images/icon-192x192.png',
+        badge: './images/icon-96x96.png',
         data: { url: './' }
       })
     );
