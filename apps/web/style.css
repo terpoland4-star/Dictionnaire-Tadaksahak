@@ -577,6 +577,7 @@ main {
   height: 56px;
   border-radius: 50%;
   object-fit: cover;
+  background: #fff;
   transition: transform var(--transition);
   box-shadow: var(--shadow-md);
 }

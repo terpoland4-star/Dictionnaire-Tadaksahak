@@ -7,7 +7,7 @@
 // CORRIGÉ : Plus d'erreur "Response body is already used"
 // ============================================
 
-const CACHE_NAME = 'tadaksahak-v16';
+const CACHE_NAME = 'tadaksahak-v17';
 const STATIC_CACHE = 'tadaksahak-static-v16';
 const DATA_CACHE = 'tadaksahak-data-v16';
 const MEDIA_CACHE = 'tadaksahak-media-v16';
@@ -43,7 +43,7 @@ const staticUrls = [
   './sw.js',
   './offline.html',
   './images/idaksahak_round.png',
-  './images/logo/monogramme/icone-monogramme.svg',
+  './images/logo-icone.png',
   './images/favicon-32.png',
   './images/apple-touch-icon.png',
   './images/hamadine_bio.jpg',
