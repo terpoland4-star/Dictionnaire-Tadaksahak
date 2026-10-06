@@ -22,7 +22,7 @@
     },
     {
       "question": "Qui est l'auteur du livre « L'émancipation politique des Idaksahak » ?",
-      "options": ["Hamadine Ag Moctar", "Charles Grémont", "Thomas Sankara", "Moussa Ag Acharatouman"],
+      "options": ["Hamadine AG MOCTAR", "Charles Grémont", "Thomas Sankara", "Moussa Ag Acharatouman"],
       "reponse": 1
     },
     {
@@ -186,7 +186,7 @@
     },
     {
       "question": "Who wrote 'The Political Emancipation of the Idaksahak'?",
-      "options": ["Hamadine Ag Moctar", "Charles Grémont", "Thomas Sankara", "Moussa Ag Acharatouman"],
+      "options": ["Hamadine AG MOCTAR", "Charles Grémont", "Thomas Sankara", "Moussa Ag Acharatouman"],
       "reponse": 1
     },
     {
