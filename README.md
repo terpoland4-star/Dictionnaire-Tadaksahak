@@ -13,6 +13,14 @@ Application de préservation et d’apprentissage de la langue tadaksahak. La ve
 
 La recherche du dictionnaire reste côté navigateur. Il n’y a pas de raison de déplacer les fichiers JSON dans PostgreSQL tant que le volume et le besoin d’édition collaborative ne le justifient pas.
 
+## Tadaksahak TV
+
+La section « 📺 Tadaksahak TV » (pôle Culture & mémoire, carte en tête de l'accueil) affiche
+le direct et les dernières vidéos de la télévision en ligne, une application à part
+(dépôt `namu-web-tv`, servie sur `https://tv.hamadine-services.net`). Elle lit le flux public
+`GET /api/public/feed` du site TV ; l'adresse se change dans `apps/web/js/tv.js` (`TV_URL`).
+Hors-ligne, le service worker sert le dernier flux reçu.
+
 ## Démarrage local
 
 ```bash

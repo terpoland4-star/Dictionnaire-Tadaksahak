@@ -136,6 +136,7 @@
       <option value="accueil" data-i18n="nav_home">🏠 Accueil</option>
       <option value="dictionnaire" data-i18n="nav_dictionary">📖 Dictionnaire</option>
       <option value="grammaire" data-i18n="nav_grammar">📚 Grammaire</option>
+      <option value="tv" data-i18n="nav_tv">📺 Tadaksahak TV</option>
       <option value="contes" data-i18n="nav_contes">📖 Contes</option>
       <option value="emissions" data-i18n="nav_emissions">🎙️ Émissions</option>
       <option value="chat" data-i18n="nav_chat">💬 Chat Bot</option>
@@ -319,6 +320,12 @@
       <button class="home-section-link" type="button" data-goto="apprendre">Tout explorer →</button>
     </div>
     <div class="home-quicklinks-grid">
+      <button class="home-quick-card home-quick-card--tv" type="button" data-goto="tv">
+        <span class="home-quick-icon">📺</span>
+        <span class="home-quick-eyebrow">Journal &amp; direct <span id="tvHomeLive" class="tv-home-live" hidden>● En direct</span></span>
+        <span class="home-quick-title">Tadaksahak TV</span>
+        <span class="home-quick-subtitle">JT, reportages et émissions en tadaksahak</span>
+      </button>
       <button class="home-quick-card" type="button" data-goto="flashcards">
         <span class="home-quick-icon">🃏</span>
         <span class="home-quick-eyebrow">30 cartes</span>
@@ -431,6 +438,11 @@
   <section id="contes" class="onglet-contenu" hidden>
     <h2 data-i18n="contes_title">📖 Contes et légendes</h2>
     <div id="contesContainer" aria-live="polite"></div>
+  </section>
+
+  <section id="tv" class="onglet-contenu" hidden>
+    <h2 data-i18n="tv_title">📺 Tadaksahak TV</h2>
+    <div id="tvContainer" aria-live="polite"></div>
   </section>
 
   <section id="emissions" class="onglet-contenu" hidden>

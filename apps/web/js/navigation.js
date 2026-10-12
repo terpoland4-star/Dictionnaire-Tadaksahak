@@ -8,6 +8,7 @@ import { showGrammarSection } from './grammar.js';
 import { chargerQuiz } from './quiz.js';
 import { afficherDashboard, afficherLivres, afficherPhotos, afficherRapports, afficherRessources, genererAlbumsAudio, genererVideos, rechercherPleinTexte } from './ressources.js';
 import { afficherThemesPremium } from './themesVocab.js';
+import { afficherTadaksahakTV } from './tv.js';
 
 // ------------------------------
 // NAVIGATION À 5 PÔLES (pilliers → sous-sections)
@@ -20,7 +21,7 @@ const PILIERS = {
   accueil: ['accueil'],
   dictionnaire: ['dictionnaire', 'chat'],
   apprendre: ['grammaire', 'themes', 'flashcards', 'quiz'],
-  culture: ['contes', 'emissions', 'audio', 'photos', 'videos', 'livres', 'actualites', 'rapports', 'search'],
+  culture: ['tv', 'contes', 'emissions', 'audio', 'photos', 'videos', 'livres', 'actualites', 'rapports', 'search'],
   ressources: ['ressources', 'partenaires'],
 };
 
@@ -233,6 +234,7 @@ export function initNavigation() {
     if (id === "audio") genererAlbumsAudio();
     if (id === "photos") afficherPhotos();
     if (id === "videos") genererVideos();
+    if (id === "tv") afficherTadaksahakTV();
     if (id === "quiz") chargerQuiz();
     if (id === "timeline") afficherTimeline();
     if (id === "map") initialiserCarte();

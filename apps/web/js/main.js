@@ -13,6 +13,7 @@ import { chargerLivresConnaissance, genererAlbumsAudio, rechercherPleinTexte, sh
 import { detectSystemTheme, initTheme, initThemeSettings } from './theme.js';
 import { chargerThemes } from './themesVocab.js';
 import { chargerTimeline } from './timeline.js';
+import { signalerDirectAccueil } from './tv.js';
 import { hideLoader, showLoader, showToast } from './utils.js';
 
 export async function initialiserApplication() {
@@ -41,6 +42,7 @@ export async function initialiserApplication() {
     initKeyboardShortcuts();
     initFlashcards();
     initAutoUpdates();
+    signalerDirectAccueil();
     
     // Gestion des onglets de grammaire (mémorisation) - désormais désactivé car on utilise le livre
     // On peut garder les onglets pour les relatives si on veut, mais le livre remplace le causatif.

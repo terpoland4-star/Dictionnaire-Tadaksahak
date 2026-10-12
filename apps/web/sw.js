@@ -7,8 +7,8 @@
 // CORRIGÉ : Plus d'erreur "Response body is already used"
 // ============================================
 
-const CACHE_NAME = 'tadaksahak-v17';
-const STATIC_CACHE = 'tadaksahak-static-v16';
+const CACHE_NAME = 'tadaksahak-v18';
+const STATIC_CACHE = 'tadaksahak-static-v17';
 const DATA_CACHE = 'tadaksahak-data-v16';
 const MEDIA_CACHE = 'tadaksahak-media-v16';
 const API_CACHE = 'tadaksahak-api-v16';
@@ -31,6 +31,7 @@ const staticUrls = [
   './js/grammar.js',
   './js/contes.js',
   './js/emissions.js',
+  './js/tv.js',
   './js/themesVocab.js',
   './js/flashcards.js',
   './js/quiz.js',

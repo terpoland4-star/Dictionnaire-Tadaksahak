@@ -11,6 +11,7 @@ import { chargerQuiz } from './quiz.js';
 import { afficherDashboard, afficherLivres, afficherPhotos, afficherRapports, afficherRessources } from './ressources.js';
 import { afficherThemesPremium } from './themesVocab.js';
 import { afficherTimeline, initialiserCarte } from './timeline.js';
+import { afficherTadaksahakTV } from './tv.js';
 
 export function setLanguage(lang) {
   state.currentLanguage = lang;
@@ -43,6 +44,7 @@ export function setLanguage(lang) {
   
   if (document.getElementById("livres") && !document.getElementById("livres").hidden) afficherLivres();
   if (document.getElementById("photos") && !document.getElementById("photos").hidden) afficherPhotos();
+  if (document.getElementById("tv") && !document.getElementById("tv").hidden) afficherTadaksahakTV();
   if (document.getElementById("quiz") && !document.getElementById("quiz").hidden && state.quizData) chargerQuiz();
   if (document.getElementById("timeline") && !document.getElementById("timeline").hidden && state.timelineData) afficherTimeline();
   if (document.getElementById("map") && !document.getElementById("map").hidden && state.mapInitialized) initialiserCarte();
